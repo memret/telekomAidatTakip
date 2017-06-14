@@ -1,0 +1,2 @@
+# telekomAidatTakip
+Telekom staj projesi
