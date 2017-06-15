@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class Form1 : Form
+    public partial class frmTanimTahsil : Form
     {
-        public Form1()
+        public frmTanimTahsil()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmTanimil frmnew = new frmTanimil();
-            frmnew.Show();
         }
     }
 }

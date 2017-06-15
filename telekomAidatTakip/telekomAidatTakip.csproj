@@ -53,8 +53,103 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAidatListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAidatListesi.Designer.cs">
+      <DependentUpon>frmAidatListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAidatMiktar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAidatMiktar.Designer.cs">
+      <DependentUpon>frmAidatMiktar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAidatToplu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAidatToplu.Designer.cs">
+      <DependentUpon>frmAidatToplu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRaporil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRaporil.Designer.cs">
+      <DependentUpon>frmRaporil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSilinmeNedeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSilinmeNedeni.Designer.cs">
+      <DependentUpon>frmSilinmeNedeni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTanimBirim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTanimBirim.Designer.cs">
+      <DependentUpon>frmTanimBirim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTanimil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTanimil.Designer.cs">
+      <DependentUpon>frmTanimil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTanimMudurluk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTanimMudurluk.Designer.cs">
+      <DependentUpon>frmTanimMudurluk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTanimTahsil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTanimTahsil.Designer.cs">
+      <DependentUpon>frmTanimTahsil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTanimUnvan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTanimUnvan.Designer.cs">
+      <DependentUpon>frmTanimUnvan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUye.Designer.cs">
+      <DependentUpon>frmUye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUyeAidat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUyeAidat.Designer.cs">
+      <DependentUpon>frmUyeAidat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUyeListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUyeListele.Designer.cs">
+      <DependentUpon>frmUyeListele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmYedekleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmYedekleme.Designer.cs">
+      <DependentUpon>frmYedekleme.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="telekomAidatDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>telekomAidatDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTanimil.resx">
+      <DependentUpon>frmTanimil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -73,6 +168,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="telekomAidatDataSet.xsc">
+      <DependentUpon>telekomAidatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="telekomAidatDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>telekomAidatDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="telekomAidatDataSet.xss">
+      <DependentUpon>telekomAidatDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

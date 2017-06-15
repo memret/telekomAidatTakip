@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,20 +9,20 @@ namespace telekomAidatTakip
 {
     class Database
     {
-        MySqlConnection bag;
-        MySqlCommand kmt;
-        MySqlDataReader data;
+        SqlConnection bag;
+        SqlCommand kmt;
+        SqlDataReader data;
         public Database(string connectstring)
         {
-            bag = new MySqlConnection(connectstring);
-            kmt = new MySqlCommand();
+            bag = new SqlConnection(connectstring);
+            kmt = new SqlCommand();
             kmt.Connection = bag;
             bag.Open();
         }
         public Database()
         {
-            bag = new MySqlConnection(PRG.connectstring);
-            kmt = new MySqlCommand();
+            bag = new SqlConnection(Program.connectstring);
+            kmt = new SqlCommand();
             kmt.Connection = bag;
             bag.Open();
         }
@@ -29,13 +30,13 @@ namespace telekomAidatTakip
         {
             bag.Close();
         }
-        public MySqlDataReader DataOku(string query)
+        public SqlDataReader DataOku(string query)
         {
             kmt.CommandText = query;
             data = kmt.ExecuteReader();
             return data;
         }
-        public MySqlDataReader DataOku(string query, params string[] param)
+        public SqlDataReader DataOku(string query, params string[] param)
         {
             kmt.CommandText = query;
             for (int i = 0; i < param.Length; i++)
@@ -59,7 +60,7 @@ namespace telekomAidatTakip
             }
             kmt.ExecuteNonQuery();
         }
-        public void Sorgu(string query, MySqlParameter param2, params string[] param)
+        public void Sorgu(string query, SqlParameter param2, params string[] param)
         {
             kmt.CommandText = query;
             kmt.Parameters.Add(param2);
