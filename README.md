@@ -5,7 +5,7 @@ Telekom staj projesi
 Emre
 Ömer
 Onur
-Edit
+Edip
 Yasemin
 Nehir
 Burcu
