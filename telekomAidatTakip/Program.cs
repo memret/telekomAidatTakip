@@ -14,7 +14,7 @@ namespace telekomAidatTakip
         [STAThread]
         static void Main()
         {
-            connectstring = "Server=EMRELAPTOP\\SQLEXPRESS;Database=telekomAidat;User Id=telekom; Password = telekom;";
+            connectstring = "Data Source=127.0.0.1,1433;Database=telekomAidat;User=telekom; Password ='telekom';";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
