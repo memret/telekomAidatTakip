@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.Açıklama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Kod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtKod = new System.Windows.Forms.TextBox();
-            this.txtAciklama = new System.Windows.Forms.TextBox();
-            this.btnYeni = new System.Windows.Forms.Button();
-            this.btnKaydet = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnYeni = new System.Windows.Forms.Button();
+            this.txtAciklama = new System.Windows.Forms.TextBox();
+            this.txtKod = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.headerAciklama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.headerCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
@@ -61,70 +61,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Silinme Nedeni Tanımı";
             // 
-            // groupBox4
+            // btnSil
             // 
-            this.groupBox4.Controls.Add(this.listView1);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox4.Location = new System.Drawing.Point(12, 208);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(356, 149);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Kayıtlı Kodlar";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Kod:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Açıklama:";
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Açıklama,
-            this.Kod});
-            this.listView1.Location = new System.Drawing.Point(10, 19);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(340, 124);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // txtKod
-            // 
-            this.txtKod.Location = new System.Drawing.Point(114, 23);
-            this.txtKod.Name = "txtKod";
-            this.txtKod.Size = new System.Drawing.Size(100, 20);
-            this.txtKod.TabIndex = 2;
-            // 
-            // txtAciklama
-            // 
-            this.txtAciklama.Location = new System.Drawing.Point(114, 55);
-            this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(100, 20);
-            this.txtAciklama.TabIndex = 3;
-            // 
-            // btnYeni
-            // 
-            this.btnYeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnYeni.Location = new System.Drawing.Point(30, 98);
-            this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(75, 45);
-            this.btnYeni.TabIndex = 4;
-            this.btnYeni.Text = "Yeni";
-            this.btnYeni.UseVisualStyleBackColor = true;
-            this.btnYeni.Click += new System.EventHandler(this.button4_Click);
+            this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSil.Location = new System.Drawing.Point(240, 98);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(75, 45);
+            this.btnSil.TabIndex = 6;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnKaydet
             // 
@@ -137,16 +83,80 @@
             this.btnKaydet.UseVisualStyleBackColor = true;
             this.btnKaydet.Click += new System.EventHandler(this.button5_Click);
             // 
-            // btnSil
+            // btnYeni
             // 
-            this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSil.Location = new System.Drawing.Point(240, 98);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(75, 45);
-            this.btnSil.TabIndex = 6;
-            this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            this.btnYeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnYeni.Location = new System.Drawing.Point(25, 98);
+            this.btnYeni.Name = "btnYeni";
+            this.btnYeni.Size = new System.Drawing.Size(75, 45);
+            this.btnYeni.TabIndex = 4;
+            this.btnYeni.Text = "Yeni";
+            this.btnYeni.UseVisualStyleBackColor = true;
+            this.btnYeni.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // txtAciklama
+            // 
+            this.txtAciklama.Location = new System.Drawing.Point(114, 55);
+            this.txtAciklama.Name = "txtAciklama";
+            this.txtAciklama.Size = new System.Drawing.Size(100, 20);
+            this.txtAciklama.TabIndex = 3;
+            // 
+            // txtKod
+            // 
+            this.txtKod.Location = new System.Drawing.Point(114, 23);
+            this.txtKod.Name = "txtKod";
+            this.txtKod.Size = new System.Drawing.Size(100, 20);
+            this.txtKod.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 58);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Açıklama:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Kod:";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.listView1);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox4.Location = new System.Drawing.Point(12, 208);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(356, 149);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Kayıtlı Kodlar";
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.headerAciklama,
+            this.headerCode});
+            this.listView1.Location = new System.Drawing.Point(10, 19);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(340, 124);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // headerAciklama
+            // 
+            this.headerAciklama.Text = "Açıklama";
+            this.headerAciklama.Width = 206;
+            // 
+            // headerCode
+            // 
+            this.headerCode.Text = "Kod";
             // 
             // frmSilinmeNedeni
             // 
@@ -181,7 +191,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader Açıklama;
-        private System.Windows.Forms.ColumnHeader Kod;
+        private System.Windows.Forms.ColumnHeader headerAciklama;
+        private System.Windows.Forms.ColumnHeader headerCode;
     }
 }
