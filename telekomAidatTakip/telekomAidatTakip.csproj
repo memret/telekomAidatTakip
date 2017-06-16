@@ -142,8 +142,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTanimBirim.resx">
+      <DependentUpon>frmTanimBirim.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTanimil.resx">
       <DependentUpon>frmTanimil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTanimTahsil.resx">
+      <DependentUpon>frmTanimTahsil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
