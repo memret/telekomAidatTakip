@@ -16,5 +16,29 @@ namespace telekomAidatTakip
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //database bağlan, insert textbox1
+            if (txtKod.Text != string.Empty && txtAciklama.Text != string.Empty)
+            {
+                Database db = new Database();
+                db.Sorgu("insert into SilinmeNedeni (Kod,Aciklama) values (@0,@1)", txtKod.Text, txtAciklama.Text);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (txtKod.Text != string.Empty)
+            {
+                Database db = new Database();
+                db.Sorgu("delete from SilinmeNedeni where Kod=@0", txtKod.Text);
+            }
+        }
     }
 }
