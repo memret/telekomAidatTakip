@@ -142,9 +142,6 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAidatToplu.resx">
-      <DependentUpon>frmAidatToplu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmTanimBirim.resx">
       <DependentUpon>frmTanimBirim.cs</DependentUpon>
     </EmbeddedResource>

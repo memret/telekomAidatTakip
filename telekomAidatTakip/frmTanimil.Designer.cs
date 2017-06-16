@@ -146,6 +146,7 @@
             this.listvil.TabIndex = 0;
             this.listvil.UseCompatibleStateImageBehavior = false;
             this.listvil.View = System.Windows.Forms.View.Details;
+            this.listvil.SelectedIndexChanged += new System.EventHandler(this.listvil_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

@@ -58,5 +58,10 @@ namespace telekomAidatTakip
         {
 
         }
+
+        private void listvil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
