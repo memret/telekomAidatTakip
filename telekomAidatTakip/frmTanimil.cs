@@ -25,8 +25,8 @@ namespace telekomAidatTakip
             while (data.Read())
             {
                 ListViewItem item = new ListViewItem();
-                item.Name = data["ilNo"].ToString();
-                item.SubItems.Add(data["iladi"].ToString());
+                item.Text = data["ilNo"].ToString();
+                item.SubItems.Add(data["ilAdi"].ToString());
 
                 listvil.Items.Add(item);
                 //oluşturulan item liste eklenir
