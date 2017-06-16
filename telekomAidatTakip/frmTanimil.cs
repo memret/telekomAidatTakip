@@ -25,8 +25,8 @@ namespace telekomAidatTakip
             while (data.Read())
             {
                 ListViewItem item = new ListViewItem();
-                item.Name = data["ilNo"].ToString();
-                item.SubItems.Add(data["iladi"].ToString());
+                item.Text = data["ilNo"].ToString();
+                item.SubItems.Add(data["ilAdi"].ToString());
 
                 listvil.Items.Add(item);
                 //oluşturulan item liste eklenir
@@ -55,6 +55,11 @@ namespace telekomAidatTakip
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listvil_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

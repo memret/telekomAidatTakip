@@ -14,7 +14,7 @@ namespace telekomAidatTakip
         [STAThread]
         static void Main()
         {
-            connectstring = "Data Source=192.168.1.25;Database=telekomAidat;User=telekom; Password ='telekom';";
+            connectstring = "Data Source=192.168.2.201;Database=telekomAidat;User=telekom; Password ='telekom';";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
