@@ -148,6 +148,9 @@
     <EmbeddedResource Include="frmTanimil.resx">
       <DependentUpon>frmTanimil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTanimMudurluk.resx">
+      <DependentUpon>frmTanimMudurluk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
