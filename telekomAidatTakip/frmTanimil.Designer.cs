@@ -53,11 +53,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtPlakaKodu);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(436, 201);
+            this.groupBox1.Size = new System.Drawing.Size(327, 163);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "İl Tanımları";
@@ -66,10 +64,9 @@
             // btnYeni
             // 
             this.btnYeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnYeni.Location = new System.Drawing.Point(27, 122);
-            this.btnYeni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnYeni.Location = new System.Drawing.Point(20, 99);
             this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(117, 57);
+            this.btnYeni.Size = new System.Drawing.Size(88, 46);
             this.btnYeni.TabIndex = 2;
             this.btnYeni.Text = "Yeni";
             this.btnYeni.UseVisualStyleBackColor = true;
@@ -78,10 +75,9 @@
             // btnSil
             // 
             this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnSil.Location = new System.Drawing.Point(280, 122);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSil.Location = new System.Drawing.Point(210, 99);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(117, 57);
+            this.btnSil.Size = new System.Drawing.Size(88, 46);
             this.btnSil.TabIndex = 2;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
@@ -90,71 +86,63 @@
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnKaydet.Location = new System.Drawing.Point(155, 122);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnKaydet.Location = new System.Drawing.Point(116, 99);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(117, 57);
+            this.btnKaydet.Size = new System.Drawing.Size(88, 46);
             this.btnKaydet.TabIndex = 2;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
             // 
             // txtAdi
             // 
-            this.txtAdi.Location = new System.Drawing.Point(135, 71);
-            this.txtAdi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdi.Location = new System.Drawing.Point(101, 58);
             this.txtAdi.Name = "txtAdi";
-            this.txtAdi.Size = new System.Drawing.Size(132, 22);
+            this.txtAdi.Size = new System.Drawing.Size(100, 20);
             this.txtAdi.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 75);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(22, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 17);
+            this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "İl Adı:";
             // 
             // txtPlakaKodu
             // 
-            this.txtPlakaKodu.Location = new System.Drawing.Point(135, 39);
-            this.txtPlakaKodu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPlakaKodu.Location = new System.Drawing.Point(101, 32);
             this.txtPlakaKodu.Name = "txtPlakaKodu";
-            this.txtPlakaKodu.Size = new System.Drawing.Size(132, 22);
+            this.txtPlakaKodu.Size = new System.Drawing.Size(100, 20);
             this.txtPlakaKodu.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 43);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(22, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 17);
+            this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "İl Plaka Kodu:";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listvil);
-            this.groupBox2.Location = new System.Drawing.Point(17, 223);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(13, 181);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(435, 251);
+            this.groupBox2.Size = new System.Drawing.Size(326, 204);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Kayıtlı İller";
+            this.groupBox2.Text = "groupBox2";
             // 
             // listvil
             // 
             this.listvil.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listvil.Location = new System.Drawing.Point(8, 23);
-            this.listvil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.columnHeader2,
+            this.columnHeader1});
+            this.listvil.Location = new System.Drawing.Point(6, 19);
             this.listvil.Name = "listvil";
-            this.listvil.Size = new System.Drawing.Size(419, 220);
+            this.listvil.Size = new System.Drawing.Size(303, 168);
             this.listvil.TabIndex = 0;
             this.listvil.UseCompatibleStateImageBehavior = false;
             this.listvil.View = System.Windows.Forms.View.Details;
@@ -173,12 +161,11 @@
             // 
             // frmTanimil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 490);
+            this.ClientSize = new System.Drawing.Size(353, 398);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmTanimil";
             this.Text = "İl Tanımları";
             this.Load += new System.EventHandler(this.frmTanimil_Load);
