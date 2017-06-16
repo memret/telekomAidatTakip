@@ -39,9 +39,9 @@
             this.btnYeni = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
-            this.txtAdi = new System.Windows.Forms.TextBox();
+            this.txtBirimAdi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtPlakaKodu = new System.Windows.Forms.TextBox();
+            this.txtBirimKodu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
@@ -65,13 +65,11 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.DisplayIndex = 0;
             this.columnHeader1.Text = "Kod";
             this.columnHeader1.Width = 63;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.DisplayIndex = 1;
             this.columnHeader2.Text = "Kısım Adı";
             this.columnHeader2.Width = 81;
             // 
@@ -92,9 +90,9 @@
             this.groupBox1.Controls.Add(this.btnYeni);
             this.groupBox1.Controls.Add(this.btnSil);
             this.groupBox1.Controls.Add(this.btnKaydet);
-            this.groupBox1.Controls.Add(this.txtAdi);
+            this.groupBox1.Controls.Add(this.txtBirimAdi);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtPlakaKodu);
+            this.groupBox1.Controls.Add(this.txtBirimKodu);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -133,6 +131,7 @@
             this.btnYeni.TabIndex = 2;
             this.btnYeni.Text = "Yeni";
             this.btnYeni.UseVisualStyleBackColor = true;
+            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
             // btnSil
             // 
@@ -156,13 +155,13 @@
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
             // 
-            // txtAdi
+            // txtBirimAdi
             // 
-            this.txtAdi.Location = new System.Drawing.Point(135, 71);
-            this.txtAdi.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAdi.Name = "txtAdi";
-            this.txtAdi.Size = new System.Drawing.Size(302, 22);
-            this.txtAdi.TabIndex = 1;
+            this.txtBirimAdi.Location = new System.Drawing.Point(135, 71);
+            this.txtBirimAdi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBirimAdi.Name = "txtBirimAdi";
+            this.txtBirimAdi.Size = new System.Drawing.Size(302, 22);
+            this.txtBirimAdi.TabIndex = 1;
             // 
             // label2
             // 
@@ -174,13 +173,13 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Kısım Adı:";
             // 
-            // txtPlakaKodu
+            // txtBirimKodu
             // 
-            this.txtPlakaKodu.Location = new System.Drawing.Point(135, 39);
-            this.txtPlakaKodu.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPlakaKodu.Name = "txtPlakaKodu";
-            this.txtPlakaKodu.Size = new System.Drawing.Size(302, 22);
-            this.txtPlakaKodu.TabIndex = 1;
+            this.txtBirimKodu.Location = new System.Drawing.Point(135, 39);
+            this.txtBirimKodu.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBirimKodu.Name = "txtBirimKodu";
+            this.txtBirimKodu.Size = new System.Drawing.Size(302, 22);
+            this.txtBirimKodu.TabIndex = 1;
             // 
             // label1
             // 
@@ -232,9 +231,9 @@
         private System.Windows.Forms.Button btnYeni;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnKaydet;
-        private System.Windows.Forms.TextBox txtAdi;
+        private System.Windows.Forms.TextBox txtBirimAdi;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtPlakaKodu;
+        private System.Windows.Forms.TextBox txtBirimKodu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ColumnHeader columnHeader4;
