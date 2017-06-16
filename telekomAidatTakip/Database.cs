@@ -36,6 +36,14 @@ namespace telekomAidatTakip
             data = kmt.ExecuteReader();
             return data;
         }
+        public string DataOkuTek(string query, string column)
+        {
+            kmt.CommandText = query;
+            data = kmt.ExecuteReader();
+            if (data.Read())
+                return data[column].ToString();
+            return string.Empty;
+        }
         public SqlDataReader DataOku(string query, params string[] param)
         {
             kmt.CommandText = query;
@@ -45,6 +53,18 @@ namespace telekomAidatTakip
             }
             data = kmt.ExecuteReader();
             return data;
+        }
+        public string DataOkuTek(string query, string column, params string[] param)
+        {
+            kmt.CommandText = query;
+            for (int i = 0; i < param.Length; i++)
+            {
+                kmt.Parameters.AddWithValue("@" + i, param[i]);
+            }
+            data = kmt.ExecuteReader();
+            if (data.Read())
+                return data[column].ToString();
+            return string.Empty;
         }
         public void Sorgu(string query)
         {
