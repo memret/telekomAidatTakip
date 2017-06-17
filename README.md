@@ -11,10 +11,13 @@ Nehir
 Burcu
 Büşra
 
-#database giriş bilgileri
+--------------------------
+database giriş bilgileri
 
-#ip: 207.154.210.112
+ip: 207.154.210.112
 
-#k.adi: sa
+k.adi: sa
 
-#şifre: telekom123.
+şifre: telekom123.
+
+--------------------------
