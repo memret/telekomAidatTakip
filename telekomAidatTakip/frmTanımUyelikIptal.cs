@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmSilinmeNedeni : Form
+    public partial class frmTanımUyelikIptal : Form
     {
-        public frmSilinmeNedeni()
+        public frmTanımUyelikIptal()
         {
             InitializeComponent();
         }

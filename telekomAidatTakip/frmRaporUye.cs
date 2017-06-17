@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmUyeListele : Form
+    public partial class frmRaporUye : Form
     {
-        public frmUyeListele()
+        public frmRaporUye()
         {
             InitializeComponent();
         }

@@ -77,11 +77,11 @@
     <Compile Include="frmRaporil.Designer.cs">
       <DependentUpon>frmRaporil.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSilinmeNedeni.cs">
+    <Compile Include="frmTanımUyelikIptal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSilinmeNedeni.Designer.cs">
-      <DependentUpon>frmSilinmeNedeni.cs</DependentUpon>
+    <Compile Include="frmTanımUyelikIptal.Designer.cs">
+      <DependentUpon>frmTanımUyelikIptal.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTanimBirim.cs">
       <SubType>Form</SubType>
@@ -125,11 +125,11 @@
     <Compile Include="frmUyeAidat.Designer.cs">
       <DependentUpon>frmUyeAidat.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUyeListele.cs">
+    <Compile Include="frmRaporUye.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUyeListele.Designer.cs">
-      <DependentUpon>frmUyeListele.cs</DependentUpon>
+    <Compile Include="frmRaporUye.Designer.cs">
+      <DependentUpon>frmRaporUye.cs</DependentUpon>
     </Compile>
     <Compile Include="frmYedekleme.cs">
       <SubType>Form</SubType>
@@ -142,8 +142,8 @@
     <EmbeddedResource Include="frmAnaMenu.resx">
       <DependentUpon>frmAnaMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSilinmeNedeni.resx">
-      <DependentUpon>frmSilinmeNedeni.cs</DependentUpon>
+    <EmbeddedResource Include="frmTanımUyelikIptal.resx">
+      <DependentUpon>frmTanımUyelikIptal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTanimBirim.resx">
       <DependentUpon>frmTanimBirim.cs</DependentUpon>
