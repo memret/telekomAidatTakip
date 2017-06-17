@@ -71,17 +71,17 @@
     <Compile Include="frmAidatToplu.Designer.cs">
       <DependentUpon>frmAidatToplu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRaporil.cs">
+    <Compile Include="frmRaporIl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRaporil.Designer.cs">
-      <DependentUpon>frmRaporil.cs</DependentUpon>
+    <Compile Include="frmRaporIl.Designer.cs">
+      <DependentUpon>frmRaporIl.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTanımUyelikIptal.cs">
+    <Compile Include="frmTanimUyelikIptal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTanımUyelikIptal.Designer.cs">
-      <DependentUpon>frmTanımUyelikIptal.cs</DependentUpon>
+    <Compile Include="frmTanimUyelikIptal.Designer.cs">
+      <DependentUpon>frmTanimUyelikIptal.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTanimBirim.cs">
       <SubType>Form</SubType>
@@ -89,11 +89,11 @@
     <Compile Include="frmTanimBirim.Designer.cs">
       <DependentUpon>frmTanimBirim.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTanimil.cs">
+    <Compile Include="frmTanimIl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTanimil.Designer.cs">
-      <DependentUpon>frmTanimil.cs</DependentUpon>
+    <Compile Include="frmTanimIl.Designer.cs">
+      <DependentUpon>frmTanimIl.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTanimMudurluk.cs">
       <SubType>Form</SubType>
@@ -142,14 +142,14 @@
     <EmbeddedResource Include="frmAnaMenu.resx">
       <DependentUpon>frmAnaMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTanımUyelikIptal.resx">
-      <DependentUpon>frmTanımUyelikIptal.cs</DependentUpon>
+    <EmbeddedResource Include="frmTanimUyelikIptal.resx">
+      <DependentUpon>frmTanimUyelikIptal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTanimBirim.resx">
       <DependentUpon>frmTanimBirim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTanimil.resx">
-      <DependentUpon>frmTanimil.cs</DependentUpon>
+    <EmbeddedResource Include="frmTanimIl.resx">
+      <DependentUpon>frmTanimIl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTanimMudurluk.resx">
       <DependentUpon>frmTanimMudurluk.cs</DependentUpon>

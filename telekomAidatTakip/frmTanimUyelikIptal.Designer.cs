@@ -1,6 +1,6 @@
 ﻿namespace telekomAidatTakip
 {
-    partial class frmTanımUyelikIptal
+    partial class frmTanimUyelikIptal
     {
         /// <summary>
         /// Required designer variable.

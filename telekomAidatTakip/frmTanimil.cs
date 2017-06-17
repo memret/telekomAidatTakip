@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmTanimil : Form
+    public partial class frmTanimIl : Form
     {
-        public frmTanimil()
+        public frmTanimIl()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace telekomAidatTakip
 {
-    partial class frmTanimil
+    partial class frmTanimIl
     {
         /// <summary>
         /// Required designer variable.

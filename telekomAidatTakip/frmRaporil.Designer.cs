@@ -1,6 +1,6 @@
 ﻿namespace telekomAidatTakip
 {
-    partial class frmRaporil
+    partial class frmRaporIl
     {
         /// <summary>
         /// Required designer variable.
