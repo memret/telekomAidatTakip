@@ -53,11 +53,11 @@
     <Compile Include="frmAnaMenu.Designer.cs">
       <DependentUpon>frmAnaMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAidatListesi.cs">
+    <Compile Include="frmRaporAidat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAidatListesi.Designer.cs">
-      <DependentUpon>frmAidatListesi.cs</DependentUpon>
+    <Compile Include="frmRaporAidat.Designer.cs">
+      <DependentUpon>frmRaporAidat.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAidatMiktar.cs">
       <SubType>Form</SubType>
