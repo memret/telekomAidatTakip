@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="frmAnaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmAnaMenu.Designer.cs">
+      <DependentUpon>frmAnaMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAidatListesi.cs">
       <SubType>Form</SubType>
@@ -139,8 +139,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmAnaMenu.resx">
+      <DependentUpon>frmAnaMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSilinmeNedeni.resx">
       <DependentUpon>frmSilinmeNedeni.cs</DependentUpon>
