@@ -10,3 +10,11 @@ Yasemin
 Nehir
 Burcu
 Büşra
+
+#database giriş bilgileri
+
+#ip: 207.154.210.112
+
+#k.adi: sa
+
+#şifre: telekom123.
