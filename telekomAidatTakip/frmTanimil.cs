@@ -51,7 +51,19 @@ namespace telekomAidatTakip
         {
             if (btnYeni.Text == "Yeni")
             {
-                
+                if (btnKaydet.Enabled)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "Some Title", MessageBoxButtons.YesNoCancel);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        btnKaydet_Click(this, null);
+                    }
+                    else if(dialogResult == DialogResult.Cancel)
+                    {
+                        return;
+                    }
+                }
+
                 txtAdi.Text = string.Empty;
                 txtPlakaKodu.Text = string.Empty;
                 txtPlakaKodu.Enabled = true;
@@ -59,8 +71,6 @@ namespace telekomAidatTakip
                 btnYeni.Text = "Ekle";
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
-                //database bağlan, insert textbox1
-                
             }
             else
             {
