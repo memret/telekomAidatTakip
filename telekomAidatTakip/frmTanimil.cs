@@ -25,7 +25,9 @@ namespace telekomAidatTakip
         private void IlListesiniDoldur()
         {
             Database db = new Database();
-            //data objesi sqlreadera dönüşüp veriyi alır
+            //data objesi sqlreadera dönüşüp veriyi alır. 
+            //direk sqldatareaderda yazılabilir fakat bu sefer forum içerisinde using bilmemne yazmamız gerekir
+            //var kelimesi ile tanımlanan değişkene ilk olarak ne eşitlersek o değişken tipinde olur
             var data = db.DataOku("select * from il");
 
             //listview içeriğini boşaltmamız gerekiyor il önce
@@ -46,22 +48,21 @@ namespace telekomAidatTakip
             btnSil.Enabled = false;
             btnKaydet.Enabled = false;
             btnYeni.Enabled = true;
+            
         }
         private void btnYeni_Click(object sender, EventArgs e)
         {
-            if (btnYeni.Text == "Yeni")
+            // butonun ismine göre yeni kaydın veritabanına ekleneceğini mi yoksa ekleme sayfasına mı geçileceğini mi tespit ediyoruz
+
+            if (btnYeni.Text == "Yeni") // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
             {
-                if (btnKaydet.Enabled)
+                if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
                 {
                     DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
                     if (dialogResult == DialogResult.Yes)
-                    {
                         btnKaydet_Click(this, null);
-                    }
                     else if(dialogResult == DialogResult.Cancel)
-                    {
                         return;
-                    }
                 }
 
                 txtAdi.Text = string.Empty;
@@ -72,12 +73,13 @@ namespace telekomAidatTakip
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
             }
-            else
+            else //butonun ismi Yeni değilse demekki yeni kayıt sayfasındayız
             {
-                if (txtPlakaKodu.Text != string.Empty && txtAdi.Text != string.Empty)
+                if (txtPlakaKodu.Text != string.Empty && txtAdi.Text != string.Empty) //yeni kayıt eklemek için bu iki verinin boş olmaması gerekiyor
                 {
                     Database db = new Database();
                     db.Sorgu("insert into il (ilno,iladi) values (@0,@1)", txtPlakaKodu.Text, txtAdi.Text);
+
                     txtPlakaKodu.Enabled = false;
                     txtAdi.Enabled = false;
                     btnYeni.Text = "Yeni";
@@ -97,7 +99,7 @@ namespace telekomAidatTakip
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (txtPlakaKodu.Text != string.Empty)
+            if (txtPlakaKodu.Text != string.Empty) //plaka kodu olmadan veri silmek tabiki biraz zor olur
             {
                 Database db = new Database();
                 db.Sorgu("delete from il where ilno=@0", txtPlakaKodu.Text);
@@ -113,9 +115,12 @@ namespace telekomAidatTakip
 
         private void listvil_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string plakakodu = listvil.SelectedItems[0].Text;
+            string plakakodu = listvil.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
+
             Database db = new Database();
+            //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
             txtAdi.Text = db.DataOkuTek("select iladi from il where ilNo=@0", "ilAdi", plakakodu);
+
             txtPlakaKodu.Text = plakakodu;
             btnKaydet.Enabled = true;
             btnSil.Enabled = true;
@@ -128,7 +133,7 @@ namespace telekomAidatTakip
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            if (txtPlakaKodu.Text != string.Empty && txtAdi.Text != string.Empty)
+            if (txtPlakaKodu.Text != string.Empty && txtAdi.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
             {
                 Database db = new Database();
                 db.Sorgu("update il set iladi=@0 where ilno=@1", txtAdi.Text, txtPlakaKodu.Text);
@@ -145,19 +150,20 @@ namespace telekomAidatTakip
 
         private void frmTanimIl_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (btnYeni.Text != "Yeni" || btnKaydet.Enabled)
+            //burda form penceresi kapatılırken çalışacak kodlar bulunuyor
+            if (btnYeni.Text == "Ekle" || btnKaydet.Enabled) //btnYeni nin ismi Ekle ise veya btnKaydet aktif ise bir düzenleme veya kayıt yapılıyor demektir.
             {
                 DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
                 if (dialogResult == DialogResult.Yes)
                 {
                     if (btnYeni.Text == "Ekle")
-                        btnYeni_Click(this, null);
+                        btnYeni_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
                     else
-                        btnKaydet_Click(this, null);
+                        btnKaydet_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
                 }
                 else if (dialogResult == DialogResult.Cancel)
                 {
-                    e.Cancel = true;
+                    e.Cancel = true; //bu işlem ile formun kapanma işlemi iptal ediliyor
                 }
             }
         }
@@ -169,7 +175,7 @@ namespace telekomAidatTakip
 
         private void frmTanimIl_Resize(object sender, EventArgs e)
         {
-            groupBox2.Width = this.Width - 43;
+            groupBox2.Width = this.Width - 43; //design sekmesindeki boyut farklarını buraya yazdık
             groupBox2.Height = this.Height - 233;
         }
     }
