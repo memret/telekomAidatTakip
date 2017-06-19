@@ -55,6 +55,7 @@
             this.columnHeader2,
             this.columnHeader4,
             this.columnHeader3});
+            this.listvil.FullRowSelect = true;
             this.listvil.Location = new System.Drawing.Point(16, 23);
             this.listvil.Margin = new System.Windows.Forms.Padding(4);
             this.listvil.Name = "listvil";
@@ -62,6 +63,7 @@
             this.listvil.TabIndex = 0;
             this.listvil.UseCompatibleStateImageBehavior = false;
             this.listvil.View = System.Windows.Forms.View.Details;
+            this.listvil.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvil_MouseDoubleClick);
             // 
             // columnHeader1
             // 
@@ -143,6 +145,7 @@
             this.btnSil.TabIndex = 2;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnKaydet
             // 

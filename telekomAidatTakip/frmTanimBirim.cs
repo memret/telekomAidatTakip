@@ -20,26 +20,10 @@ namespace telekomAidatTakip
 
         private void frmTanimBirim_Load(object sender, EventArgs e)
         {
-            Database db = new Database();
-            var data = db.DataOku("SELECT b.birimAdi,b.birimNo,b.mudurlukNo,m.mudurlukAdi " +
-                 "FROM Mudurluk m, Birim b WHERE m.mudurlukNo = b.mudurlukNo");
+            listeDoldur();
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
-            
-            while (data.Read())
-            {
-                
-                ListViewItem item = new ListViewItem();
-                item.Text = data["birimNo"].ToString();
-                item.SubItems.Add(data["birimAdi"].ToString());
-                item.SubItems.Add(data["mudurlukNo"].ToString());
-                item.SubItems.Add(data["mudurlukAdi"].ToString());
-
-                listvil.Items.Add(item);
-            }
-           
-
             Database db2 = new Database();
-            data = db2.DataOku("SELECT mudurlukNo,mudurlukAdi FROM mudurluk");
+            var data = db2.DataOku("SELECT mudurlukNo,mudurlukAdi FROM mudurluk");
 
             while (data.Read())
             {
@@ -66,8 +50,48 @@ namespace telekomAidatTakip
             int mudurlukNo = ((KeyValuePair<int, string>)cBoxMudurluk.SelectedItem).Key;
             Database db = new Database();
             db.Sorgu("INSERT INTO Birim Values (@0,@1,@2)",txtBirimKodu.Text, txtBirimAdi.Text,mudurlukNo.ToString());
+            listvil.Items.Clear();
+            listeDoldur();
+        }
+
+        private void listvil_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            String birimKodu = listvil.SelectedItems[0].Text;
+            String birimAdi = listvil.SelectedItems[0].SubItems[1].Text;
+            txtBirimKodu.Text = birimKodu;
+            txtBirimAdi.Text = birimAdi;
+            cBoxMudurluk.Text = listvil.SelectedItems[0].SubItems[3].Text;
+
+        }
+
+        private void listeDoldur()
+        {
+            Database db = new Database();
+            var data = db.DataOku("SELECT b.birimAdi,b.birimNo,b.mudurlukNo,m.mudurlukAdi " +
+                 "FROM Mudurluk m, Birim b WHERE m.mudurlukNo = b.mudurlukNo");
+            while (data.Read())
+            {
+
+                ListViewItem item = new ListViewItem();
+                item.Text = data["birimNo"].ToString();
+                item.SubItems.Add(data["birimAdi"].ToString());
+                item.SubItems.Add(data["mudurlukNo"].ToString());
+                item.SubItems.Add(data["mudurlukAdi"].ToString());
+
+                listvil.Items.Add(item);
+            }
+
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            Database db = new Database();
+            db.Sorgu("DELETE FROM Birim Where birimNo = @0", txtBirimKodu.Text);
+            listvil.Items.Clear();
+            listeDoldur();
 
         }
     }
+
 
 }

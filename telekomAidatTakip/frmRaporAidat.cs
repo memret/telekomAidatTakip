@@ -16,5 +16,10 @@ namespace telekomAidatTakip
         {
             InitializeComponent();
         }
+
+        private void frmRaporAidat_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

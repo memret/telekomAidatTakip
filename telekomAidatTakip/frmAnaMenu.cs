@@ -23,5 +23,12 @@ namespace telekomAidatTakip
             tanimIl.MdiParent = this;
             tanimIl.Show();
         }
+
+        private void birimlerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTanimBirim tanimBirim = new frmTanimBirim();
+            tanimBirim.MdiParent = this;
+            tanimBirim.Show();
+        }
     }
 }

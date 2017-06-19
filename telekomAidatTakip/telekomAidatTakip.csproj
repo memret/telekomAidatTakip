@@ -142,6 +142,9 @@
     <EmbeddedResource Include="frmAnaMenu.resx">
       <DependentUpon>frmAnaMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRaporAidat.resx">
+      <DependentUpon>frmRaporAidat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTanimUyelikIptal.resx">
       <DependentUpon>frmTanimUyelikIptal.cs</DependentUpon>
     </EmbeddedResource>
