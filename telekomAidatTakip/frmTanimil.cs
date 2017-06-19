@@ -19,9 +19,18 @@ namespace telekomAidatTakip
 
         private void frmTanimil_Load(object sender, EventArgs e)
         {
+            IlListesiniDoldur();
+            
+        }
+        private void IlListesiniDoldur()
+        {
             Database db = new Database();
-            var data = db.DataOku("select * from il");
             //data objesi sqlreadera dönüşüp veriyi alır
+            var data = db.DataOku("select * from il");
+
+            //listview içeriğini boşaltmamız gerekiyor il önce
+            listvil.Items.Clear();
+            
             while (data.Read())
             {
                 ListViewItem item = new ListViewItem();
@@ -31,17 +40,49 @@ namespace telekomAidatTakip
                 listvil.Items.Add(item);
                 //oluşturulan item liste eklenir
             }
-            btnKaydet.Enabled = false;
-        }
 
+            txtAdi.Enabled = false;
+            txtPlakaKodu.Enabled = false;
+            btnSil.Enabled = false;
+            btnKaydet.Enabled = false;
+            btnYeni.Enabled = true;
+        }
         private void btnYeni_Click(object sender, EventArgs e)
         {
-            //database bağlan, insert textbox1
-            if (txtPlakaKodu.Text != string.Empty && txtAdi.Text != string.Empty)
+            if (btnYeni.Text == "Yeni")
             {
-                Database db = new Database();
-                db.Sorgu("insert into il (ilno,iladi) values (@0,@1)", txtPlakaKodu.Text, txtAdi.Text);
+                
+                txtAdi.Text = string.Empty;
+                txtPlakaKodu.Text = string.Empty;
+                txtPlakaKodu.Enabled = true;
+                txtAdi.Enabled = true;
+                btnYeni.Text = "Ekle";
+                btnKaydet.Enabled = false;
+                btnSil.Enabled = false;
+                //database bağlan, insert textbox1
+                
             }
+            else
+            {
+                if (txtPlakaKodu.Text != string.Empty && txtAdi.Text != string.Empty)
+                {
+                    Database db = new Database();
+                    db.Sorgu("insert into il (ilno,iladi) values (@0,@1)", txtPlakaKodu.Text, txtAdi.Text);
+                    txtPlakaKodu.Enabled = false;
+                    txtAdi.Enabled = false;
+                    btnYeni.Text = "Yeni";
+                    IlListesiniDoldur();
+                    txtAdi.Text = string.Empty;
+                    txtPlakaKodu.Text = string.Empty;
+                    btnYeni.Focus(); //görsel amaçlı
+                }
+                else
+                {
+                    MessageBox.Show("Plaka kodu veya il adı kısmı boş!");
+                }
+                
+            }
+            
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -62,6 +103,37 @@ namespace telekomAidatTakip
         private void listvil_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void listvil_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string plakakodu = listvil.SelectedItems[0].Text;
+            Database db = new Database();
+            txtAdi.Text = db.DataOkuTek("select iladi from il where ilNo=@0", "ilAdi", plakakodu);
+            txtPlakaKodu.Text = plakakodu;
+            btnKaydet.Enabled = true;
+            btnSil.Enabled = true;
+            txtAdi.Enabled = true;
+            txtPlakaKodu.Enabled = true;
+                
+         
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            if (txtPlakaKodu.Text != string.Empty && txtAdi.Text != string.Empty)
+            {
+                Database db = new Database();
+                db.Sorgu("update il set iladi=@0 where ilno=@1", txtAdi.Text, txtPlakaKodu.Text);
+
+                txtAdi.Text = string.Empty;
+                txtPlakaKodu.Text = string.Empty;
+                txtAdi.Enabled = false;
+                txtPlakaKodu.Enabled = false;
+                btnKaydet.Enabled = false;
+                btnSil.Enabled = false;
+                IlListesiniDoldur();
+            }
         }
     }
 }

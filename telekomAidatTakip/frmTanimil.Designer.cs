@@ -38,8 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listvil = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +92,7 @@
             this.btnKaydet.TabIndex = 2;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // txtAdi
             // 
@@ -140,6 +141,7 @@
             this.listvil.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2,
             this.columnHeader1});
+            this.listvil.FullRowSelect = true;
             this.listvil.Location = new System.Drawing.Point(6, 19);
             this.listvil.Name = "listvil";
             this.listvil.Size = new System.Drawing.Size(303, 168);
@@ -147,27 +149,26 @@
             this.listvil.UseCompatibleStateImageBehavior = false;
             this.listvil.View = System.Windows.Forms.View.Details;
             this.listvil.SelectedIndexChanged += new System.EventHandler(this.listvil_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.DisplayIndex = 1;
-            this.columnHeader1.Text = "İl Adı";
-            this.columnHeader1.Width = 184;
+            this.listvil.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvil_MouseDoubleClick);
             // 
             // columnHeader2
             // 
-            this.columnHeader2.DisplayIndex = 0;
             this.columnHeader2.Text = "İl Plaka Kodu";
             this.columnHeader2.Width = 81;
             // 
-            // frmTanimil
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "İl Adı";
+            this.columnHeader1.Width = 184;
+            // 
+            // frmTanimIl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(353, 398);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmTanimil";
+            this.Name = "frmTanimIl";
             this.Text = "İl Tanımları";
             this.Load += new System.EventHandler(this.frmTanimil_Load);
             this.groupBox1.ResumeLayout(false);
