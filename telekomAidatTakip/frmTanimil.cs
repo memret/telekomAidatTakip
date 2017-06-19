@@ -53,7 +53,7 @@ namespace telekomAidatTakip
             {
                 if (btnKaydet.Enabled)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "Some Title", MessageBoxButtons.YesNoCancel);
+                    DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
                     if (dialogResult == DialogResult.Yes)
                     {
                         btnKaydet_Click(this, null);
@@ -101,16 +101,12 @@ namespace telekomAidatTakip
             {
                 Database db = new Database();
                 db.Sorgu("delete from il where ilno=@0", txtPlakaKodu.Text);
+                IlListesiniDoldur();
             }
             
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listvil_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -125,7 +121,8 @@ namespace telekomAidatTakip
             btnSil.Enabled = true;
             txtAdi.Enabled = true;
             txtPlakaKodu.Enabled = true;
-                
+            btnYeni.Text = "Yeni";
+            
          
         }
 
@@ -144,6 +141,36 @@ namespace telekomAidatTakip
                 btnSil.Enabled = false;
                 IlListesiniDoldur();
             }
+        }
+
+        private void frmTanimIl_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (btnYeni.Text != "Yeni" || btnKaydet.Enabled)
+            {
+                DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (btnYeni.Text == "Ekle")
+                        btnYeni_Click(this, null);
+                    else
+                        btnKaydet_Click(this, null);
+                }
+                else if (dialogResult == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void listvil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmTanimIl_Resize(object sender, EventArgs e)
+        {
+            groupBox2.Width = this.Width - 43;
+            groupBox2.Height = this.Height - 233;
         }
     }
 }

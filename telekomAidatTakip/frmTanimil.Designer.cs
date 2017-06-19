@@ -67,7 +67,7 @@
             this.btnYeni.Location = new System.Drawing.Point(20, 99);
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(88, 46);
-            this.btnYeni.TabIndex = 2;
+            this.btnYeni.TabIndex = 5;
             this.btnYeni.Text = "Yeni";
             this.btnYeni.UseVisualStyleBackColor = true;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
@@ -78,7 +78,7 @@
             this.btnSil.Location = new System.Drawing.Point(210, 99);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(88, 46);
-            this.btnSil.TabIndex = 2;
+            this.btnSil.TabIndex = 7;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -89,7 +89,7 @@
             this.btnKaydet.Location = new System.Drawing.Point(116, 99);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(88, 46);
-            this.btnKaydet.TabIndex = 2;
+            this.btnKaydet.TabIndex = 6;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
@@ -99,7 +99,7 @@
             this.txtAdi.Location = new System.Drawing.Point(101, 58);
             this.txtAdi.Name = "txtAdi";
             this.txtAdi.Size = new System.Drawing.Size(100, 20);
-            this.txtAdi.TabIndex = 1;
+            this.txtAdi.TabIndex = 2;
             // 
             // label2
             // 
@@ -134,18 +134,19 @@
             this.groupBox2.Size = new System.Drawing.Size(326, 204);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "İl Listesi";
             // 
             // listvil
             // 
             this.listvil.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2,
             this.columnHeader1});
+            this.listvil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listvil.FullRowSelect = true;
-            this.listvil.Location = new System.Drawing.Point(6, 19);
+            this.listvil.Location = new System.Drawing.Point(3, 16);
             this.listvil.Name = "listvil";
-            this.listvil.Size = new System.Drawing.Size(303, 168);
-            this.listvil.TabIndex = 0;
+            this.listvil.Size = new System.Drawing.Size(320, 185);
+            this.listvil.TabIndex = 8;
             this.listvil.UseCompatibleStateImageBehavior = false;
             this.listvil.View = System.Windows.Forms.View.Details;
             this.listvil.SelectedIndexChanged += new System.EventHandler(this.listvil_SelectedIndexChanged);
@@ -168,9 +169,12 @@
             this.ClientSize = new System.Drawing.Size(353, 398);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MinimumSize = new System.Drawing.Size(369, 437);
             this.Name = "frmTanimIl";
             this.Text = "İl Tanımları";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimIl_FormClosing);
             this.Load += new System.EventHandler(this.frmTanimil_Load);
+            this.Resize += new System.EventHandler(this.frmTanimIl_Resize);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
