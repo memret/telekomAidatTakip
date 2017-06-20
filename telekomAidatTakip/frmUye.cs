@@ -23,6 +23,14 @@ namespace telekomAidatTakip
         {
 
         }
+        private void DoldurKomple(string sicilno)
+        {
+            DoldurTahsil();
+            DoldurUnvan();
+            DoldurIl();
+            DoldurMudurluk();
+            DoldurBirim();
+        }
         private void DoldurTemelBilgiler(string sicilno)
         {
             Database db = new Database();
@@ -80,11 +88,25 @@ namespace telekomAidatTakip
         }
         private void DoldurBirim()
         {
-
+            Database db = new Database();
+            var data = db.DataOku("select * from birim");
+            Dictionary<int, string> cboxSource = new Dictionary<int, string>();
+            while (data.Read())
+                cboxSource.Add(Convert.ToInt32(data["birimno"]), data["birimadi"].ToString());
+            cboxIl.DataSource = new BindingSource(cboxSource, null);
+            cboxIl.DisplayMember = "Value";
+            cboxIl.ValueMember = "Key";
         }
         private void DoldurUyelikTipi()
         {
-
+            Database db = new Database();
+            var data = db.DataOku("select * from uyeliktipi");
+            Dictionary<int, string> cboxSource = new Dictionary<int, string>();
+            while (data.Read())
+                cboxSource.Add(Convert.ToInt32(data["uyeliktipno"]), data["uyeliktipadi"].ToString());
+            cboxIl.DataSource = new BindingSource(cboxSource, null);
+            cboxIl.DisplayMember = "Value";
+            cboxIl.ValueMember = "Key";
         }
     }
 }
