@@ -137,6 +137,7 @@
     <Compile Include="frmYedekleme.Designer.cs">
       <DependentUpon>frmYedekleme.cs</DependentUpon>
     </Compile>
+    <Compile Include="PRG.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAnaMenu.resx">
@@ -156,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTanimMudurluk.resx">
       <DependentUpon>frmTanimMudurluk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUye.resx">
+      <DependentUpon>frmUye.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
