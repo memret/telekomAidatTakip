@@ -272,6 +272,7 @@
             this.cboxTahsilDurumu.Name = "cboxTahsilDurumu";
             this.cboxTahsilDurumu.Size = new System.Drawing.Size(117, 21);
             this.cboxTahsilDurumu.TabIndex = 1;
+            this.cboxTahsilDurumu.SelectedIndexChanged += new System.EventHandler(this.cboxTahsilDurumu_SelectedIndexChanged);
             // 
             // txtAd
             // 

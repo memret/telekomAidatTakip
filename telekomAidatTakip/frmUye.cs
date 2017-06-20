@@ -21,7 +21,7 @@ namespace telekomAidatTakip
 
         private void frmUye_Load(object sender, EventArgs e)
         {
-
+            
         }
         private void DoldurKomple(string sicilno)
         {
@@ -165,6 +165,11 @@ namespace telekomAidatTakip
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboxTahsilDurumu_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
