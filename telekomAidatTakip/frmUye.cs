@@ -21,7 +21,7 @@ namespace telekomAidatTakip
 
         private void frmUye_Load(object sender, EventArgs e)
         {
-
+            
         }
         private void DoldurKomple(string sicilno)
         {
@@ -37,8 +37,8 @@ namespace telekomAidatTakip
             var data = db.DataOku("select * from uye where sicilno=@0",sicilno);
             if (data.Read())
             {
-                txtAdSoyad.Text = data["adsoyad"].ToString();
-                txtSicilNo.Text = sicilno;
+                txtAd.Text = data["adsoyad"].ToString();
+                txtÜyeNo.Text = sicilno;
 
             }
         }
@@ -71,9 +71,9 @@ namespace telekomAidatTakip
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
             while (data.Read())
                 cboxSource.Add(Convert.ToInt32(data["ilno"]), data["iladi"].ToString());
-            cboxIl.DataSource = new BindingSource(cboxSource, null);
-            cboxIl.DisplayMember = "Value";
-            cboxIl.ValueMember = "Key";
+            cboxll.DataSource = new BindingSource(cboxSource, null);
+            cboxll.DisplayMember = "Value";
+            cboxll.ValueMember = "Key";
         }
         private void DoldurMudurluk()
         {
@@ -82,9 +82,9 @@ namespace telekomAidatTakip
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
             while (data.Read())
                 cboxSource.Add(Convert.ToInt32(data["mudurlukno"]), data["mudurlukadi"].ToString());
-            cboxIl.DataSource = new BindingSource(cboxSource, null);
-            cboxIl.DisplayMember = "Value";
-            cboxIl.ValueMember = "Key";
+            cboxMudurluk.DataSource = new BindingSource(cboxSource, null);
+            cboxUnvan.DisplayMember = "Value";
+            cboxUnvan.ValueMember = "Key";
         }
         private void DoldurBirim()
         {
@@ -93,9 +93,9 @@ namespace telekomAidatTakip
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
             while (data.Read())
                 cboxSource.Add(Convert.ToInt32(data["birimno"]), data["birimadi"].ToString());
-            cboxIl.DataSource = new BindingSource(cboxSource, null);
-            cboxIl.DisplayMember = "Value";
-            cboxIl.ValueMember = "Key";
+            cboxKısım.DataSource = new BindingSource(cboxSource, null);
+            cboxKısım.DisplayMember = "Value";
+            cboxKısım.ValueMember = "Key";
         }
         private void DoldurUyelikTipi()
         {
@@ -104,9 +104,79 @@ namespace telekomAidatTakip
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
             while (data.Read())
                 cboxSource.Add(Convert.ToInt32(data["uyeliktipno"]), data["uyeliktipadi"].ToString());
-            cboxIl.DataSource = new BindingSource(cboxSource, null);
-            cboxIl.DisplayMember = "Value";
-            cboxIl.ValueMember = "Key";
+            cboxÜyelikDurumu.DataSource = new BindingSource(cboxSource, null);
+            cboxÜyelikDurumu.DisplayMember = "Value";
+            cboxÜyelikDurumu.ValueMember = "Key";
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtİşAdresi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtÜyeNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboxTahsilDurumu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboxll_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
