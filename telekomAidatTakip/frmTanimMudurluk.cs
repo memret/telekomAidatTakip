@@ -117,9 +117,11 @@ namespace telekomAidatTakip
             }
             else //butonun ismi Yeni değilse demekki yeni kayıt sayfasındayız
             {
+                /*
                 if (txtMdrKod.Text != string.Empty && txtMdrAd.Text != string.Empty) //yeni kayıt eklemek için bu iki verinin boş olmaması gerekiyor
                 {
                     Database db = new Database();
+                    int ilAdi = ((KeyValuePair<int, string>)cBoxMudurluk.SelectedItem).Key;
                     db.Sorgu("insert into Mudurluk (mudurlukNo,mudurlukAdi) values (@0,@1)", txtMdrKod.Text, txtMdrAd.Text);
 
                     txtPlakaKodu.Enabled = false;
@@ -134,7 +136,7 @@ namespace telekomAidatTakip
                 {
                     MessageBox.Show("Plaka kodu veya il adı kısmı boş!");
                 }
-
+                */
             }
 
         }
