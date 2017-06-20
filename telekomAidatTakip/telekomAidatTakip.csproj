@@ -140,17 +140,19 @@
     <Compile Include="PRG.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAidatToplu.resx">
-      <DependentUpon>frmAidatToplu.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="telekomAidatDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>telekomAidatDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAnaMenu.resx">
       <DependentUpon>frmAnaMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRaporAidat.resx">
       <DependentUpon>frmRaporAidat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRaporIl.resx">
-      <DependentUpon>frmRaporIl.cs</DependentUpon>
+    <EmbeddedResource Include="frmTanimTahsil.resx">
+      <DependentUpon>frmTanimTahsil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTanimUyelikIptal.resx">
       <DependentUpon>frmTanimUyelikIptal.cs</DependentUpon>
@@ -185,6 +187,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="telekomAidatDataSet.xsc">
+      <DependentUpon>telekomAidatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="telekomAidatDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>telekomAidatDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="telekomAidatDataSet.xss">
+      <DependentUpon>telekomAidatDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
