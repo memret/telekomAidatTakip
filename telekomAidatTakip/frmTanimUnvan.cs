@@ -137,20 +137,20 @@ namespace telekomAidatTakip
 
         private void frmTanimUnvan_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //burda form penceresi kapatılırken çalışacak kodlar bulunuyor
-            if (btnYeni.Text == "Ekle" || btnKaydet.Enabled) //btnYeni nin ismi Ekle ise veya btnKaydet aktif ise bir düzenleme veya kayıt yapılıyor demektir.
+            
+            if (btnYeni.Text == "Ekle" || btnKaydet.Enabled) 
             {
                 DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
                 if (dialogResult == DialogResult.Yes)
                 {
                     if (btnYeni.Text == "Ekle")
-                        btnYeni_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
+                        btnYeni_Click(this, null); 
                     else
-                        btnKaydet_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
+                        btnKaydet_Click(this, null); 
                 }
                 else if (dialogResult == DialogResult.Cancel)
                 {
-                    e.Cancel = true; //bu işlem ile formun kapanma işlemi iptal ediliyor
+                    e.Cancel = true; 
                 }
             }
 
