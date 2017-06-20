@@ -37,6 +37,17 @@ namespace telekomAidatTakip
             DoldurKomple();
             DoldurTemelBilgiler(sicilno);
         }
+        private void DoldurAdresBilgiler(string sicilno)
+        {
+            Database db = new Database();
+            var data = db.DataOku("select * from adres where sicilno=@0", sicilno);
+            if (data.Read())
+            {
+                txtAdSoyad.Text = data[""].ToString();
+                txtUyeNo.Text = sicilno;
+
+            }
+        }
         private void DoldurTemelBilgiler(string sicilno)
         {
             Database db = new Database();
@@ -122,79 +133,6 @@ namespace telekomAidatTakip
             cboxUyelikTipi.ValueMember = "Key";
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtİşAdresi_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtÜyeNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboxTahsilDurumu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboxll_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSilinmeBilgisi_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
