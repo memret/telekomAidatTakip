@@ -90,11 +90,18 @@ namespace telekomAidatTakip
             DateTime dt = this.dateTarih.Value.Date;
             Database db = new Database();
             System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@3", dt);
-            db.Sorgu("INSERT INTO Birim Values (@0, ALL (SELECT sicil no FROM uyeler WHERE @1),@2,@3)",param, txtAidatLogNo.Text, mudurlukNo.ToString(),txtAidatMiktari.Text);
+
+            var kisiler = db.DataOku("SELECT sicilNo FROM uyeler WHERE birimNo =@0", birimNo.ToString());
+
+            while(kisiler.Read())
+            {
+                db.Sorgu("INSERT INTO Birim Values (@0, @1,@2,@3)", param, txtAidatLogNo.Text, kisiler["sicilNo"].ToString(), birimNo.ToString(), txtAidatMiktari.Text);
+            }
+            
 
             // "ALL (SELECT sicil no FROM uyeler WHERE @0)" mudurlukNo.ToString();
 
-            MessageBox.Show("ANAN");
+            MessageBox.Show("ÇALIŞTI REİS");
         }
 
         private void cboxil_SelectedValueChanged(object sender, EventArgs e)
