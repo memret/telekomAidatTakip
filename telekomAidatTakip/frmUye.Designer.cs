@@ -54,10 +54,10 @@
             this.dateKayit = new System.Windows.Forms.DateTimePicker();
             this.dateGiris = new System.Windows.Forms.DateTimePicker();
             this.cboxKısım = new System.Windows.Forms.ComboBox();
-            this.cboxMüdürlük = new System.Windows.Forms.ComboBox();
+            this.cboxMudurluk = new System.Windows.Forms.ComboBox();
             this.cboxll = new System.Windows.Forms.ComboBox();
-            this.cboxÜnvan = new System.Windows.Forms.ComboBox();
-            this.cboxTahsilDurumu = new System.Windows.Forms.ComboBox();
+            this.cboxUnvan = new System.Windows.Forms.ComboBox();
+            this.cboxTahsil = new System.Windows.Forms.ComboBox();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.txtÜyeNo = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -131,10 +131,10 @@
             this.lblSilinmeBilgisi.Controls.Add(this.dateKayit);
             this.lblSilinmeBilgisi.Controls.Add(this.dateGiris);
             this.lblSilinmeBilgisi.Controls.Add(this.cboxKısım);
-            this.lblSilinmeBilgisi.Controls.Add(this.cboxMüdürlük);
+            this.lblSilinmeBilgisi.Controls.Add(this.cboxMudurluk);
             this.lblSilinmeBilgisi.Controls.Add(this.cboxll);
-            this.lblSilinmeBilgisi.Controls.Add(this.cboxÜnvan);
-            this.lblSilinmeBilgisi.Controls.Add(this.cboxTahsilDurumu);
+            this.lblSilinmeBilgisi.Controls.Add(this.cboxUnvan);
+            this.lblSilinmeBilgisi.Controls.Add(this.cboxTahsil);
             this.lblSilinmeBilgisi.Controls.Add(this.txtAd);
             this.lblSilinmeBilgisi.Controls.Add(this.txtÜyeNo);
             this.lblSilinmeBilgisi.Location = new System.Drawing.Point(4, 22);
@@ -348,13 +348,13 @@
             this.cboxKısım.Size = new System.Drawing.Size(180, 21);
             this.cboxKısım.TabIndex = 1;
             // 
-            // cboxMüdürlük
+            // cboxMudurluk
             // 
-            this.cboxMüdürlük.FormattingEnabled = true;
-            this.cboxMüdürlük.Location = new System.Drawing.Point(178, 180);
-            this.cboxMüdürlük.Name = "cboxMüdürlük";
-            this.cboxMüdürlük.Size = new System.Drawing.Size(180, 21);
-            this.cboxMüdürlük.TabIndex = 1;
+            this.cboxMudurluk.FormattingEnabled = true;
+            this.cboxMudurluk.Location = new System.Drawing.Point(178, 180);
+            this.cboxMudurluk.Name = "cboxMudurluk";
+            this.cboxMudurluk.Size = new System.Drawing.Size(180, 21);
+            this.cboxMudurluk.TabIndex = 1;
             // 
             // cboxll
             // 
@@ -363,23 +363,24 @@
             this.cboxll.Name = "cboxll";
             this.cboxll.Size = new System.Drawing.Size(180, 21);
             this.cboxll.TabIndex = 1;
+            this.cboxll.SelectedIndexChanged += new System.EventHandler(this.cboxll_SelectedIndexChanged);
             // 
-            // cboxÜnvan
+            // cboxUnvan
             // 
-            this.cboxÜnvan.FormattingEnabled = true;
-            this.cboxÜnvan.Location = new System.Drawing.Point(178, 127);
-            this.cboxÜnvan.Name = "cboxÜnvan";
-            this.cboxÜnvan.Size = new System.Drawing.Size(180, 21);
-            this.cboxÜnvan.TabIndex = 1;
+            this.cboxUnvan.FormattingEnabled = true;
+            this.cboxUnvan.Location = new System.Drawing.Point(178, 127);
+            this.cboxUnvan.Name = "cboxUnvan";
+            this.cboxUnvan.Size = new System.Drawing.Size(180, 21);
+            this.cboxUnvan.TabIndex = 1;
             // 
-            // cboxTahsilDurumu
+            // cboxTahsil
             // 
-            this.cboxTahsilDurumu.FormattingEnabled = true;
-            this.cboxTahsilDurumu.Location = new System.Drawing.Point(178, 100);
-            this.cboxTahsilDurumu.Name = "cboxTahsilDurumu";
-            this.cboxTahsilDurumu.Size = new System.Drawing.Size(117, 21);
-            this.cboxTahsilDurumu.TabIndex = 1;
-            this.cboxTahsilDurumu.SelectedIndexChanged += new System.EventHandler(this.cboxTahsilDurumu_SelectedIndexChanged);
+            this.cboxTahsil.FormattingEnabled = true;
+            this.cboxTahsil.Location = new System.Drawing.Point(178, 100);
+            this.cboxTahsil.Name = "cboxTahsil";
+            this.cboxTahsil.Size = new System.Drawing.Size(117, 21);
+            this.cboxTahsil.TabIndex = 1;
+            this.cboxTahsil.SelectedIndexChanged += new System.EventHandler(this.cboxTahsilDurumu_SelectedIndexChanged);
             // 
             // txtAd
             // 
@@ -607,10 +608,10 @@
         private System.Windows.Forms.DateTimePicker dateKayit;
         private System.Windows.Forms.DateTimePicker dateGiris;
         private System.Windows.Forms.ComboBox cboxKısım;
-        private System.Windows.Forms.ComboBox cboxMüdürlük;
+        private System.Windows.Forms.ComboBox cboxMudurluk;
         private System.Windows.Forms.ComboBox cboxll;
-        private System.Windows.Forms.ComboBox cboxÜnvan;
-        private System.Windows.Forms.ComboBox cboxTahsilDurumu;
+        private System.Windows.Forms.ComboBox cboxUnvan;
+        private System.Windows.Forms.ComboBox cboxTahsil;
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.TextBox txtÜyeNo;
         private System.Windows.Forms.TabPage tabPage2;
