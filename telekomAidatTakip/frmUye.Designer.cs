@@ -55,7 +55,7 @@
             this.dateGiris = new System.Windows.Forms.DateTimePicker();
             this.cboxBirim = new System.Windows.Forms.ComboBox();
             this.cboxMudurluk = new System.Windows.Forms.ComboBox();
-            this.cboxll = new System.Windows.Forms.ComboBox();
+            this.cboxIl = new System.Windows.Forms.ComboBox();
             this.cboxUnvan = new System.Windows.Forms.ComboBox();
             this.cboxTahsil = new System.Windows.Forms.ComboBox();
             this.txtAdSoyad = new System.Windows.Forms.TextBox();
@@ -156,7 +156,7 @@
             this.lblSilinmeBilgisi.Controls.Add(this.dateGiris);
             this.lblSilinmeBilgisi.Controls.Add(this.cboxBirim);
             this.lblSilinmeBilgisi.Controls.Add(this.cboxMudurluk);
-            this.lblSilinmeBilgisi.Controls.Add(this.cboxll);
+            this.lblSilinmeBilgisi.Controls.Add(this.cboxIl);
             this.lblSilinmeBilgisi.Controls.Add(this.cboxUnvan);
             this.lblSilinmeBilgisi.Controls.Add(this.cboxTahsil);
             this.lblSilinmeBilgisi.Controls.Add(this.txtAdSoyad);
@@ -264,6 +264,7 @@
             // 
             // cboxUyelikTipi
             // 
+            this.cboxUyelikTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxUyelikTipi.FormattingEnabled = true;
             this.cboxUyelikTipi.Location = new System.Drawing.Point(179, 237);
             this.cboxUyelikTipi.Name = "cboxUyelikTipi";
@@ -365,38 +366,47 @@
             // 
             // cboxBirim
             // 
+            this.cboxBirim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxBirim.FormattingEnabled = true;
             this.cboxBirim.Location = new System.Drawing.Point(178, 210);
             this.cboxBirim.Name = "cboxBirim";
             this.cboxBirim.Size = new System.Drawing.Size(180, 21);
             this.cboxBirim.TabIndex = 1;
+            this.cboxBirim.SelectedIndexChanged += new System.EventHandler(this.cboxBirim_SelectedIndexChanged);
             // 
             // cboxMudurluk
             // 
+            this.cboxMudurluk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxMudurluk.FormattingEnabled = true;
             this.cboxMudurluk.Location = new System.Drawing.Point(178, 180);
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(180, 21);
             this.cboxMudurluk.TabIndex = 1;
+            this.cboxMudurluk.SelectedIndexChanged += new System.EventHandler(this.cboxMudurluk_SelectedIndexChanged);
             // 
-            // cboxll
+            // cboxIl
             // 
-            this.cboxll.FormattingEnabled = true;
-            this.cboxll.Location = new System.Drawing.Point(178, 154);
-            this.cboxll.Name = "cboxll";
-            this.cboxll.Size = new System.Drawing.Size(180, 21);
-            this.cboxll.TabIndex = 1;
+            this.cboxIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxIl.FormattingEnabled = true;
+            this.cboxIl.Location = new System.Drawing.Point(178, 154);
+            this.cboxIl.Name = "cboxIl";
+            this.cboxIl.Size = new System.Drawing.Size(180, 21);
+            this.cboxIl.TabIndex = 1;
+            this.cboxIl.SelectedIndexChanged += new System.EventHandler(this.cboxIl_SelectedIndexChanged);
             // 
             // cboxUnvan
             // 
+            this.cboxUnvan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxUnvan.FormattingEnabled = true;
             this.cboxUnvan.Location = new System.Drawing.Point(178, 127);
             this.cboxUnvan.Name = "cboxUnvan";
             this.cboxUnvan.Size = new System.Drawing.Size(180, 21);
             this.cboxUnvan.TabIndex = 1;
+            this.cboxUnvan.SelectedIndexChanged += new System.EventHandler(this.cboxUnvan_SelectedIndexChanged);
             // 
             // cboxTahsil
             // 
+            this.cboxTahsil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxTahsil.FormattingEnabled = true;
             this.cboxTahsil.Location = new System.Drawing.Point(178, 100);
             this.cboxTahsil.Name = "cboxTahsil";
@@ -844,7 +854,7 @@
         private System.Windows.Forms.DateTimePicker dateGiris;
         private System.Windows.Forms.ComboBox cboxBirim;
         private System.Windows.Forms.ComboBox cboxMudurluk;
-        private System.Windows.Forms.ComboBox cboxll;
+        private System.Windows.Forms.ComboBox cboxIl;
         private System.Windows.Forms.ComboBox cboxUnvan;
         private System.Windows.Forms.ComboBox cboxTahsil;
         private System.Windows.Forms.TextBox txtAdSoyad;
