@@ -78,6 +78,7 @@
             this.btnKaydet.TabIndex = 5;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnYeni
             // 
@@ -102,6 +103,7 @@
             this.txtünvanKodu.Name = "txtünvanKodu";
             this.txtünvanKodu.Size = new System.Drawing.Size(100, 20);
             this.txtünvanKodu.TabIndex = 2;
+            this.txtünvanKodu.TextChanged += new System.EventHandler(this.txtünvanKodu_TextChanged);
             // 
             // label2
             // 
@@ -129,7 +131,7 @@
             this.groupBox2.Size = new System.Drawing.Size(343, 156);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Ünvan Listesi";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // listView1
@@ -138,12 +140,15 @@
             this.ünvanKodu,
             this.ünvanAdı});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(3, 16);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(337, 137);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
             // ünvanKodu
             // 
@@ -164,6 +169,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTanimUnvan";
             this.Text = "frmTanimUnvan";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimUnvan_FormClosing);
             this.Load += new System.EventHandler(this.frmTanimUnvan_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
