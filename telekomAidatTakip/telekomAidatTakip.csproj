@@ -140,6 +140,9 @@
     <Compile Include="PRG.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAidatToplu.resx">
+      <DependentUpon>frmAidatToplu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAnaMenu.resx">
       <DependentUpon>frmAnaMenu.cs</DependentUpon>
     </EmbeddedResource>

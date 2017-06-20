@@ -22,8 +22,6 @@ namespace telekomAidatTakip
             cBoxIlDoldur();
             cBoxMudurlukDoldur();
             cBoxKisimDoldur();
-            cBoxYilDoldur();
-            cBoxAyDoldur();
 
 
         }
@@ -72,26 +70,26 @@ namespace telekomAidatTakip
             {
                 cboxSource.Add(Convert.ToInt32(data["birimNo"]), data["birimAdi"].ToString());
             }
-            cboxKisim.DataSource = new BindingSource(cboxSource, null);
-            cboxKisim.DisplayMember = "Value";
-            cboxKisim.ValueMember = "Key";
+            cboxBirim.DataSource = new BindingSource(cboxSource, null);
+            cboxBirim.DisplayMember = "Value";
+            cboxBirim.ValueMember = "Key";
         }
-        private void cBoxYilDoldur()
+  
+
+        private void btnKaydet_Click(object sender, EventArgs e)
         {
-            for (int i = 1950; i <= 2017; i++)
-            {
-                cboxYil.Items.Add(i);
-            }
+            int ilNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key;
+            int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
+            int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+            DateTime dt = this.dateTarih.Value.Date;
+            Database db = new Database();
+            db.Sorgu("INSERT INTO Birim Values (@0,@1,@2)", txtAidatMiktari.Text, txtAidatMiktari.Text, mudurlukNo.ToString());
+
+
+
+
+
+
         }
-
-        private void cBoxAyDoldur()
-        {
-            for (int i = 1; i <= 12; i++)
-            {
-                cboxAy.Items.Add(i);
-            }
-        }
-
-
     }
 }
