@@ -21,9 +21,10 @@ namespace telekomAidatTakip
 
         private void frmUye_Load(object sender, EventArgs e)
         {
+            DoldurKomple();
             
         }
-        private void DoldurKomple(string sicilno)
+        private void DoldurKomple()
         {
             DoldurTahsil();
             DoldurUnvan();
@@ -31,14 +32,19 @@ namespace telekomAidatTakip
             DoldurMudurluk();
             DoldurBirim();
         }
+        private void DoldurKomple(string sicilno)
+        {
+            DoldurKomple();
+            DoldurTemelBilgiler(sicilno);
+        }
         private void DoldurTemelBilgiler(string sicilno)
         {
             Database db = new Database();
             var data = db.DataOku("select * from uye where sicilno=@0",sicilno);
             if (data.Read())
             {
-                txtAd.Text = data["adsoyad"].ToString();
-                txtÜyeNo.Text = sicilno;
+                txtAdSoyad.Text = data["adsoyad"].ToString();
+                txtUyeNo.Text = sicilno;
 
             }
         }
@@ -60,9 +66,16 @@ namespace telekomAidatTakip
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
             while (data.Read())
                 cboxSource.Add(Convert.ToInt32(data["unvanNo"]), data["Unvanadi"].ToString());
-            cboxUnvan.DataSource = new BindingSource(cboxSource, null);
-            cboxUnvan.DisplayMember = "Value";
-            cboxUnvan.ValueMember = "Key";
+            try
+            {
+                cboxUnvan.DataSource = new BindingSource(cboxSource, null);
+                cboxUnvan.DisplayMember = "Value";
+                cboxUnvan.ValueMember = "Key";
+            }
+            catch
+            {
+                
+            }
         }
         private void DoldurIl()
         {
@@ -93,9 +106,9 @@ namespace telekomAidatTakip
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
             while (data.Read())
                 cboxSource.Add(Convert.ToInt32(data["birimno"]), data["birimadi"].ToString());
-            cboxKısım.DataSource = new BindingSource(cboxSource, null);
-            cboxKısım.DisplayMember = "Value";
-            cboxKısım.ValueMember = "Key";
+            cboxBirim.DataSource = new BindingSource(cboxSource, null);
+            cboxBirim.DisplayMember = "Value";
+            cboxBirim.ValueMember = "Key";
         }
         private void DoldurUyelikTipi()
         {
@@ -104,9 +117,9 @@ namespace telekomAidatTakip
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
             while (data.Read())
                 cboxSource.Add(Convert.ToInt32(data["uyeliktipno"]), data["uyeliktipadi"].ToString());
-            cboxÜyelikDurumu.DataSource = new BindingSource(cboxSource, null);
-            cboxÜyelikDurumu.DisplayMember = "Value";
-            cboxÜyelikDurumu.ValueMember = "Key";
+            cboxUyelikTipi.DataSource = new BindingSource(cboxSource, null);
+            cboxUyelikTipi.DisplayMember = "Value";
+            cboxUyelikTipi.ValueMember = "Key";
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -175,6 +188,11 @@ namespace telekomAidatTakip
         }
 
         private void cboxll_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSilinmeBilgisi_Click(object sender, EventArgs e)
         {
 
         }
