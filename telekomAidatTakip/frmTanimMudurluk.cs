@@ -33,7 +33,7 @@ namespace telekomAidatTakip
                  "FROM Mudurluk m, il i WHERE i.ilNo = m.ilNo");
 
             //listview içeriğini boşaltmamız gerekiyor il önce
-            listvil.Items.Clear(); //listvil --> "kayıtlı müdürlükler" :D
+            listvMdr.Items.Clear();
 
             while (data.Read())
             {
@@ -44,12 +44,13 @@ namespace telekomAidatTakip
                 item.SubItems.Add(data["ilNo"].ToString());
 
 
-                listvil.Items.Add(item);
+                listvMdr.Items.Add(item);
                 //oluşturulan item liste eklenir
             }
 
             txtMdrKod.Enabled = false;
             txtMdrAd.Enabled = false;
+            comboBox_il.Enabled = false;
             btnSil.Enabled = false;
             btnKaydet.Enabled = false;
             btnYeni.Enabled = true;
@@ -72,7 +73,7 @@ namespace telekomAidatTakip
         }
 
 
-        private void listvil_SelectedIndexChanged(object sender, EventArgs e)
+        private void listvMdr_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -111,32 +112,33 @@ namespace telekomAidatTakip
                 txtMdrAd.Text = string.Empty;
                 txtMdrKod.Enabled = true;
                 txtMdrAd.Enabled = true;
+                comboBox_il.Enabled = true;
                 btnYeni.Text = "Ekle";
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
             }
             else //butonun ismi Yeni değilse demekki yeni kayıt sayfasındayız
             {
-                /*
+
                 if (txtMdrKod.Text != string.Empty && txtMdrAd.Text != string.Empty) //yeni kayıt eklemek için bu iki verinin boş olmaması gerekiyor
                 {
                     Database db = new Database();
-                    int ilAdi = ((KeyValuePair<int, string>)cBoxMudurluk.SelectedItem).Key;
-                    db.Sorgu("insert into Mudurluk (mudurlukNo,mudurlukAdi) values (@0,@1)", txtMdrKod.Text, txtMdrAd.Text);
+                    int ilNo = ((KeyValuePair<int, string>)comboBox_il.SelectedItem).Key;
+                    db.Sorgu("insert into Mudurluk values (@0,@1,@2)", txtMdrKod.Text, txtMdrAd.Text, ilNo.ToString());
 
-                    txtPlakaKodu.Enabled = false;
-                    txtAdi.Enabled = false;
+                    txtMdrKod.Enabled = false;
+                    txtMdrAd.Enabled = false;
                     btnYeni.Text = "Yeni";
-                    IlListesiniDoldur();
-                    txtAdi.Text = string.Empty;
-                    txtPlakaKodu.Text = string.Empty;
+                    kayitliMdrDoldur();
+                    txtMdrAd.Text = string.Empty;
+                    txtMdrKod.Text = string.Empty;
                     btnYeni.Focus(); //görsel amaçlı
                 }
                 else
                 {
-                    MessageBox.Show("Plaka kodu veya il adı kısmı boş!");
+                    MessageBox.Show("Müdürlük kodu veya müdürlük adı kısmı boş!");
                 }
-                */
+
             }
 
         }
@@ -151,6 +153,31 @@ namespace telekomAidatTakip
 
         }
 
-        
+        private void listvMdr_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            /* Database db = new Database();
+             String mudurlukAdi = listvil.SelectedItems[0].SubItems[3].Text;
+             String birimKodu = listvil.SelectedItems[0].SubItems[0].Text;
+             var data = db.DataOku("SELECT b.birimAdi,b.birimNo,m.mudurlukAdi " +
+                   "FROM Mudurluk m, Birim b WHERE m.mudurlukNo = b.mudurlukNo AND m.mudurlukAdi = @0 AND b.birimNo =@1", mudurlukAdi, birimKodu);
+
+             if (data.Read())
+             {
+
+                 txtBirimAdi.Text = data["birimAdi"].ToString();
+                 txtBirimKodu.Text = data["birimNo"].ToString();
+                 cBoxMudurluk.Text = data["mudurlukAdi"].ToString();
+             }
+
+             txtMdrKod.Text = mdrKod;
+             btnKaydet.Enabled = true;
+             btnSil.Enabled = true;
+             txtMdrAd.Enabled = true;
+             txtMdrKod.Enabled = true;
+             btnYeni.Text = "Yeni";
+             */
+
+        }
     }
 }
