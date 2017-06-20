@@ -80,6 +80,7 @@ namespace telekomAidatTakip
             txtBirimAdi.Enabled = true;
             cBoxMudurluk.Enabled = true;
             txtBirimKodu.Enabled = false;
+            btnYeni.Text = "Yeni";
             Database db = new Database();
             String mudurlukAdi = listvil.SelectedItems[0].SubItems[3].Text;
             String birimKodu = listvil.SelectedItems[0].SubItems[0].Text;
@@ -145,8 +146,13 @@ namespace telekomAidatTakip
         private void frmTanimBirim_Resize(object sender, EventArgs e)
         {
             //hata var düzeltilecek
-            /*groupBox2.Width = this.Width - 32;
-            groupBox2.Height = this.Height - 233;*/
+            groupBox2.Width = this.Width - 44;
+            groupBox2.Height = this.Height - 288;
+        }
+
+        private void frmTanimBirim_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 
