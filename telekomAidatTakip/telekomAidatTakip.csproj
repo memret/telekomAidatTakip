@@ -140,6 +140,11 @@
     <Compile Include="PRG.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="telekomAidatDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>telekomAidatDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAidatToplu.resx">
       <DependentUpon>frmAidatToplu.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +187,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="telekomAidatDataSet.xsc">
+      <DependentUpon>telekomAidatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="telekomAidatDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>telekomAidatDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="telekomAidatDataSet.xss">
+      <DependentUpon>telekomAidatDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

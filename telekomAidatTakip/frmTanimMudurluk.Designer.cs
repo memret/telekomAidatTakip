@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxMdrTnm = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
             this.btnYeni = new System.Windows.Forms.Button();
             this.comboBox_il = new System.Windows.Forms.ComboBox();
             this.txtMdrAd = new System.Windows.Forms.TextBox();
@@ -39,19 +38,20 @@
             this.labelMdrAd = new System.Windows.Forms.Label();
             this.labelMdrKod = new System.Windows.Forms.Label();
             this.boxKayitliMdr = new System.Windows.Forms.GroupBox();
-            this.listMdr = new System.Windows.Forms.ListView();
+            this.listvil = new System.Windows.Forms.ListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnKaydet = new System.Windows.Forms.Button();
             this.groupBoxMdrTnm.SuspendLayout();
             this.boxKayitliMdr.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxMdrTnm
             // 
-            this.groupBoxMdrTnm.Controls.Add(this.button4);
             this.groupBoxMdrTnm.Controls.Add(this.btnKaydet);
+            this.groupBoxMdrTnm.Controls.Add(this.btnSil);
             this.groupBoxMdrTnm.Controls.Add(this.btnYeni);
             this.groupBoxMdrTnm.Controls.Add(this.comboBox_il);
             this.groupBoxMdrTnm.Controls.Add(this.txtMdrAd);
@@ -66,26 +66,16 @@
             this.groupBoxMdrTnm.TabStop = false;
             this.groupBoxMdrTnm.Text = "Müdürlük Tanımları";
             // 
-            // button4
+            // btnSil
             // 
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(394, 148);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 64);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Sil";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // btnKaydet
-            // 
-            this.btnKaydet.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnKaydet.Enabled = false;
-            this.btnKaydet.Location = new System.Drawing.Point(239, 148);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(114, 64);
-            this.btnKaydet.TabIndex = 9;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnSil.Enabled = false;
+            this.btnSil.Location = new System.Drawing.Point(394, 148);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(114, 64);
+            this.btnSil.TabIndex = 10;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnYeni
             // 
@@ -95,29 +85,33 @@
             this.btnYeni.TabIndex = 7;
             this.btnYeni.Text = "Yeni";
             this.btnYeni.UseVisualStyleBackColor = true;
-            this.btnYeni.Click += new System.EventHandler(this.button1_Click);
+            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
             // comboBox_il
             // 
+            this.comboBox_il.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_il.FormattingEnabled = true;
-            this.comboBox_il.Location = new System.Drawing.Point(120, 103);
+            this.comboBox_il.Location = new System.Drawing.Point(120, 96);
             this.comboBox_il.Name = "comboBox_il";
             this.comboBox_il.Size = new System.Drawing.Size(433, 24);
             this.comboBox_il.TabIndex = 6;
+            this.comboBox_il.SelectedIndexChanged += new System.EventHandler(this.comboBox_il_SelectedIndexChanged);
             // 
             // txtMdrAd
             // 
-            this.txtMdrAd.Location = new System.Drawing.Point(120, 64);
+            this.txtMdrAd.Location = new System.Drawing.Point(120, 62);
             this.txtMdrAd.Name = "txtMdrAd";
             this.txtMdrAd.Size = new System.Drawing.Size(433, 22);
             this.txtMdrAd.TabIndex = 5;
+            this.txtMdrAd.TextChanged += new System.EventHandler(this.txtMdrAd_TextChanged);
             // 
             // txtMdrKod
             // 
-            this.txtMdrKod.Location = new System.Drawing.Point(120, 26);
+            this.txtMdrKod.Location = new System.Drawing.Point(120, 31);
             this.txtMdrKod.Name = "txtMdrKod";
             this.txtMdrKod.Size = new System.Drawing.Size(100, 22);
             this.txtMdrKod.TabIndex = 3;
+            this.txtMdrKod.TextChanged += new System.EventHandler(this.txtMdrKod_TextChanged);
             // 
             // label_il
             // 
@@ -127,7 +121,6 @@
             this.label_il.Size = new System.Drawing.Size(18, 17);
             this.label_il.TabIndex = 2;
             this.label_il.Text = "İl:";
-            this.label_il.Click += new System.EventHandler(this.label3_Click);
             // 
             // labelMdrAd
             // 
@@ -146,11 +139,10 @@
             this.labelMdrKod.Size = new System.Drawing.Size(99, 17);
             this.labelMdrKod.TabIndex = 0;
             this.labelMdrKod.Text = "Müdürlük Kod:";
-            this.labelMdrKod.Click += new System.EventHandler(this.label1_Click);
             // 
             // boxKayitliMdr
             // 
-            this.boxKayitliMdr.Controls.Add(this.listMdr);
+            this.boxKayitliMdr.Controls.Add(this.listvil);
             this.boxKayitliMdr.Location = new System.Drawing.Point(20, 272);
             this.boxKayitliMdr.Name = "boxKayitliMdr";
             this.boxKayitliMdr.Size = new System.Drawing.Size(586, 252);
@@ -158,21 +150,21 @@
             this.boxKayitliMdr.TabStop = false;
             this.boxKayitliMdr.Text = "Kayıtlı Müdürlükler";
             // 
-            // listMdr
+            // listvil
             // 
-            this.listMdr.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listvil.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2,
             this.columnHeader1,
             this.columnHeader3,
             this.columnHeader4});
-            this.listMdr.Location = new System.Drawing.Point(18, 30);
-            this.listMdr.Margin = new System.Windows.Forms.Padding(4);
-            this.listMdr.Name = "listMdr";
-            this.listMdr.Size = new System.Drawing.Size(535, 215);
-            this.listMdr.TabIndex = 1;
-            this.listMdr.UseCompatibleStateImageBehavior = false;
-            this.listMdr.View = System.Windows.Forms.View.Details;
-            this.listMdr.SelectedIndexChanged += new System.EventHandler(this.listvil_SelectedIndexChanged);
+            this.listvil.Location = new System.Drawing.Point(18, 30);
+            this.listvil.Margin = new System.Windows.Forms.Padding(4);
+            this.listvil.Name = "listvil";
+            this.listvil.Size = new System.Drawing.Size(535, 215);
+            this.listvil.TabIndex = 1;
+            this.listvil.UseCompatibleStateImageBehavior = false;
+            this.listvil.View = System.Windows.Forms.View.Details;
+            this.listvil.SelectedIndexChanged += new System.EventHandler(this.listvil_SelectedIndexChanged);
             // 
             // columnHeader2
             // 
@@ -193,6 +185,15 @@
             // 
             this.columnHeader4.Text = "İl Kodu";
             this.columnHeader4.Width = 118;
+            // 
+            // btnKaydet
+            // 
+            this.btnKaydet.Location = new System.Drawing.Point(238, 148);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(114, 64);
+            this.btnKaydet.TabIndex = 11;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.UseVisualStyleBackColor = true;
             // 
             // frmTanimMudurluk
             // 
@@ -221,9 +222,9 @@
         private System.Windows.Forms.TextBox txtMdrAd;
         private System.Windows.Forms.TextBox txtMdrKod;
         private System.Windows.Forms.Button btnYeni;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.GroupBox boxKayitliMdr;
-        private System.Windows.Forms.ListView listMdr;
+        private System.Windows.Forms.ListView listvil;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader3;
