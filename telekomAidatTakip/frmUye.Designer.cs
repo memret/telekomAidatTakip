@@ -41,7 +41,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.cboxÜyelikDurumu = new System.Windows.Forms.ComboBox();
+            this.cboxUyelıkDurumu = new System.Windows.Forms.ComboBox();
             this.txtSoyad = new System.Windows.Forms.TextBox();
             this.txtSicilNo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,28 +52,28 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateKayit = new System.Windows.Forms.DateTimePicker();
+            this.dateKayıt = new System.Windows.Forms.DateTimePicker();
             this.dateGiris = new System.Windows.Forms.DateTimePicker();
             this.cboxKısım = new System.Windows.Forms.ComboBox();
-            this.cboxMüdürlük = new System.Windows.Forms.ComboBox();
+            this.cboxMudurluk = new System.Windows.Forms.ComboBox();
             this.cboxll = new System.Windows.Forms.ComboBox();
-            this.cboxÜnvan = new System.Windows.Forms.ComboBox();
+            this.cboxUnvan = new System.Windows.Forms.ComboBox();
             this.cboxTahsilDurumu = new System.Windows.Forms.ComboBox();
             this.txtAd = new System.Windows.Forms.TextBox();
-            this.txtÜyeNo = new System.Windows.Forms.TextBox();
+            this.txtUyeNo = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.cboxİşll = new System.Windows.Forms.ComboBox();
+            this.cboxIsII = new System.Windows.Forms.ComboBox();
             this.cboxEvIl = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtİşAdresi = new System.Windows.Forms.TextBox();
+            this.txtIsAdresi = new System.Windows.Forms.TextBox();
             this.txtCeptelefonu = new System.Windows.Forms.TextBox();
-            this.txtİşTelefonu = new System.Windows.Forms.TextBox();
+            this.txtIsTelefonu = new System.Windows.Forms.TextBox();
             this.txtEvTelefonu = new System.Windows.Forms.TextBox();
             this.txtEvAdresi = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -82,12 +82,12 @@
             this.cboxII = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.cboxKanGrubu = new System.Windows.Forms.ComboBox();
-            this.cboxMedeniHali = new System.Windows.Forms.ComboBox();
+            this.cboxMedeniHal = new System.Windows.Forms.ComboBox();
             this.cboxDogumTarihi = new System.Windows.Forms.ComboBox();
             this.txtMahalle = new System.Windows.Forms.TextBox();
-            this.txtİlçe = new System.Windows.Forms.TextBox();
+            this.txtIlce = new System.Windows.Forms.TextBox();
             this.txtSıraNo = new System.Windows.Forms.TextBox();
-            this.textAileSıraNo = new System.Windows.Forms.TextBox();
+            this.textAilesıraNo = new System.Windows.Forms.TextBox();
             this.txtCilt = new System.Windows.Forms.TextBox();
             this.txtDogumYeri = new System.Windows.Forms.TextBox();
             this.txtAnneAdı = new System.Windows.Forms.TextBox();
@@ -143,7 +143,7 @@
             this.lblSilinmeBilgisi.Controls.Add(this.label12);
             this.lblSilinmeBilgisi.Controls.Add(this.label11);
             this.lblSilinmeBilgisi.Controls.Add(this.label10);
-            this.lblSilinmeBilgisi.Controls.Add(this.cboxÜyelikDurumu);
+            this.lblSilinmeBilgisi.Controls.Add(this.cboxUyelıkDurumu);
             this.lblSilinmeBilgisi.Controls.Add(this.txtSoyad);
             this.lblSilinmeBilgisi.Controls.Add(this.txtSicilNo);
             this.lblSilinmeBilgisi.Controls.Add(this.label8);
@@ -154,15 +154,15 @@
             this.lblSilinmeBilgisi.Controls.Add(this.label5);
             this.lblSilinmeBilgisi.Controls.Add(this.label2);
             this.lblSilinmeBilgisi.Controls.Add(this.label1);
-            this.lblSilinmeBilgisi.Controls.Add(this.dateKayit);
+            this.lblSilinmeBilgisi.Controls.Add(this.dateKayıt);
             this.lblSilinmeBilgisi.Controls.Add(this.dateGiris);
             this.lblSilinmeBilgisi.Controls.Add(this.cboxKısım);
-            this.lblSilinmeBilgisi.Controls.Add(this.cboxMüdürlük);
+            this.lblSilinmeBilgisi.Controls.Add(this.cboxMudurluk);
             this.lblSilinmeBilgisi.Controls.Add(this.cboxll);
-            this.lblSilinmeBilgisi.Controls.Add(this.cboxÜnvan);
+            this.lblSilinmeBilgisi.Controls.Add(this.cboxUnvan);
             this.lblSilinmeBilgisi.Controls.Add(this.cboxTahsilDurumu);
             this.lblSilinmeBilgisi.Controls.Add(this.txtAd);
-            this.lblSilinmeBilgisi.Controls.Add(this.txtÜyeNo);
+            this.lblSilinmeBilgisi.Controls.Add(this.txtUyeNo);
             this.lblSilinmeBilgisi.Location = new System.Drawing.Point(4, 22);
             this.lblSilinmeBilgisi.Name = "lblSilinmeBilgisi";
             this.lblSilinmeBilgisi.Padding = new System.Windows.Forms.Padding(3);
@@ -267,13 +267,13 @@
             this.label10.Text = "Üyelik Durumu :";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // cboxÜyelikDurumu
+            // cboxUyelıkDurumu
             // 
-            this.cboxÜyelikDurumu.FormattingEnabled = true;
-            this.cboxÜyelikDurumu.Location = new System.Drawing.Point(179, 237);
-            this.cboxÜyelikDurumu.Name = "cboxÜyelikDurumu";
-            this.cboxÜyelikDurumu.Size = new System.Drawing.Size(179, 21);
-            this.cboxÜyelikDurumu.TabIndex = 7;
+            this.cboxUyelıkDurumu.FormattingEnabled = true;
+            this.cboxUyelıkDurumu.Location = new System.Drawing.Point(179, 237);
+            this.cboxUyelıkDurumu.Name = "cboxUyelıkDurumu";
+            this.cboxUyelıkDurumu.Size = new System.Drawing.Size(179, 21);
+            this.cboxUyelıkDurumu.TabIndex = 7;
             // 
             // txtSoyad
             // 
@@ -362,12 +362,12 @@
             this.label1.Text = "Üye No:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dateKayit
+            // dateKayıt
             // 
-            this.dateKayit.Location = new System.Drawing.Point(179, 290);
-            this.dateKayit.Name = "dateKayit";
-            this.dateKayit.Size = new System.Drawing.Size(196, 20);
-            this.dateKayit.TabIndex = 2;
+            this.dateKayıt.Location = new System.Drawing.Point(179, 290);
+            this.dateKayıt.Name = "dateKayıt";
+            this.dateKayıt.Size = new System.Drawing.Size(196, 20);
+            this.dateKayıt.TabIndex = 2;
             // 
             // dateGiris
             // 
@@ -384,13 +384,13 @@
             this.cboxKısım.Size = new System.Drawing.Size(180, 21);
             this.cboxKısım.TabIndex = 1;
             // 
-            // cboxMüdürlük
+            // cboxMudurluk
             // 
-            this.cboxMüdürlük.FormattingEnabled = true;
-            this.cboxMüdürlük.Location = new System.Drawing.Point(178, 180);
-            this.cboxMüdürlük.Name = "cboxMüdürlük";
-            this.cboxMüdürlük.Size = new System.Drawing.Size(180, 21);
-            this.cboxMüdürlük.TabIndex = 1;
+            this.cboxMudurluk.FormattingEnabled = true;
+            this.cboxMudurluk.Location = new System.Drawing.Point(178, 180);
+            this.cboxMudurluk.Name = "cboxMudurluk";
+            this.cboxMudurluk.Size = new System.Drawing.Size(180, 21);
+            this.cboxMudurluk.TabIndex = 1;
             // 
             // cboxll
             // 
@@ -400,13 +400,13 @@
             this.cboxll.Size = new System.Drawing.Size(180, 21);
             this.cboxll.TabIndex = 1;
             // 
-            // cboxÜnvan
+            // cboxUnvan
             // 
-            this.cboxÜnvan.FormattingEnabled = true;
-            this.cboxÜnvan.Location = new System.Drawing.Point(178, 127);
-            this.cboxÜnvan.Name = "cboxÜnvan";
-            this.cboxÜnvan.Size = new System.Drawing.Size(180, 21);
-            this.cboxÜnvan.TabIndex = 1;
+            this.cboxUnvan.FormattingEnabled = true;
+            this.cboxUnvan.Location = new System.Drawing.Point(178, 127);
+            this.cboxUnvan.Name = "cboxUnvan";
+            this.cboxUnvan.Size = new System.Drawing.Size(180, 21);
+            this.cboxUnvan.TabIndex = 1;
             // 
             // cboxTahsilDurumu
             // 
@@ -424,28 +424,28 @@
             this.txtAd.Size = new System.Drawing.Size(112, 20);
             this.txtAd.TabIndex = 0;
             // 
-            // txtÜyeNo
+            // txtUyeNo
             // 
-            this.txtÜyeNo.Location = new System.Drawing.Point(178, 13);
-            this.txtÜyeNo.Name = "txtÜyeNo";
-            this.txtÜyeNo.Size = new System.Drawing.Size(96, 20);
-            this.txtÜyeNo.TabIndex = 0;
-            this.txtÜyeNo.TextChanged += new System.EventHandler(this.txtÜyeNo_TextChanged);
+            this.txtUyeNo.Location = new System.Drawing.Point(178, 13);
+            this.txtUyeNo.Name = "txtUyeNo";
+            this.txtUyeNo.Size = new System.Drawing.Size(96, 20);
+            this.txtUyeNo.TabIndex = 0;
+            this.txtUyeNo.TextChanged += new System.EventHandler(this.txtÜyeNo_TextChanged);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Controls.Add(this.cboxİşll);
+            this.tabPage2.Controls.Add(this.cboxIsII);
             this.tabPage2.Controls.Add(this.cboxEvIl);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.txtİşAdresi);
+            this.tabPage2.Controls.Add(this.txtIsAdresi);
             this.tabPage2.Controls.Add(this.txtCeptelefonu);
-            this.tabPage2.Controls.Add(this.txtİşTelefonu);
+            this.tabPage2.Controls.Add(this.txtIsTelefonu);
             this.tabPage2.Controls.Add(this.txtEvTelefonu);
             this.tabPage2.Controls.Add(this.txtEvAdresi);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -476,13 +476,13 @@
             this.label17.Text = "İl";
             this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
-            // cboxİşll
+            // cboxIsII
             // 
-            this.cboxİşll.FormattingEnabled = true;
-            this.cboxİşll.Location = new System.Drawing.Point(415, 117);
-            this.cboxİşll.Name = "cboxİşll";
-            this.cboxİşll.Size = new System.Drawing.Size(146, 21);
-            this.cboxİşll.TabIndex = 9;
+            this.cboxIsII.FormattingEnabled = true;
+            this.cboxIsII.Location = new System.Drawing.Point(415, 117);
+            this.cboxIsII.Name = "cboxIsII";
+            this.cboxIsII.Size = new System.Drawing.Size(146, 21);
+            this.cboxIsII.TabIndex = 9;
             // 
             // cboxEvIl
             // 
@@ -541,14 +541,14 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "İş Adresi";
             // 
-            // txtİşAdresi
+            // txtIsAdresi
             // 
-            this.txtİşAdresi.Location = new System.Drawing.Point(103, 92);
-            this.txtİşAdresi.Multiline = true;
-            this.txtİşAdresi.Name = "txtİşAdresi";
-            this.txtİşAdresi.Size = new System.Drawing.Size(207, 46);
-            this.txtİşAdresi.TabIndex = 2;
-            this.txtİşAdresi.TextChanged += new System.EventHandler(this.txtİşAdresi_TextChanged);
+            this.txtIsAdresi.Location = new System.Drawing.Point(103, 92);
+            this.txtIsAdresi.Multiline = true;
+            this.txtIsAdresi.Name = "txtIsAdresi";
+            this.txtIsAdresi.Size = new System.Drawing.Size(207, 46);
+            this.txtIsAdresi.TabIndex = 2;
+            this.txtIsAdresi.TextChanged += new System.EventHandler(this.txtİşAdresi_TextChanged);
             // 
             // txtCeptelefonu
             // 
@@ -557,12 +557,12 @@
             this.txtCeptelefonu.Size = new System.Drawing.Size(207, 20);
             this.txtCeptelefonu.TabIndex = 1;
             // 
-            // txtİşTelefonu
+            // txtIsTelefonu
             // 
-            this.txtİşTelefonu.Location = new System.Drawing.Point(103, 252);
-            this.txtİşTelefonu.Name = "txtİşTelefonu";
-            this.txtİşTelefonu.Size = new System.Drawing.Size(207, 20);
-            this.txtİşTelefonu.TabIndex = 1;
+            this.txtIsTelefonu.Location = new System.Drawing.Point(103, 252);
+            this.txtIsTelefonu.Name = "txtIsTelefonu";
+            this.txtIsTelefonu.Size = new System.Drawing.Size(207, 20);
+            this.txtIsTelefonu.TabIndex = 1;
             // 
             // txtEvTelefonu
             // 
@@ -578,6 +578,7 @@
             this.txtEvAdresi.Name = "txtEvAdresi";
             this.txtEvAdresi.Size = new System.Drawing.Size(207, 47);
             this.txtEvAdresi.TabIndex = 0;
+            this.txtEvAdresi.TextChanged += new System.EventHandler(this.txtEvAdresi_TextChanged);
             // 
             // tabPage3
             // 
@@ -586,12 +587,12 @@
             this.tabPage3.Controls.Add(this.cboxII);
             this.tabPage3.Controls.Add(this.label23);
             this.tabPage3.Controls.Add(this.cboxKanGrubu);
-            this.tabPage3.Controls.Add(this.cboxMedeniHali);
+            this.tabPage3.Controls.Add(this.cboxMedeniHal);
             this.tabPage3.Controls.Add(this.cboxDogumTarihi);
             this.tabPage3.Controls.Add(this.txtMahalle);
-            this.tabPage3.Controls.Add(this.txtİlçe);
+            this.tabPage3.Controls.Add(this.txtIlce);
             this.tabPage3.Controls.Add(this.txtSıraNo);
-            this.tabPage3.Controls.Add(this.textAileSıraNo);
+            this.tabPage3.Controls.Add(this.textAilesıraNo);
             this.tabPage3.Controls.Add(this.txtCilt);
             this.tabPage3.Controls.Add(this.txtDogumYeri);
             this.tabPage3.Controls.Add(this.txtAnneAdı);
@@ -655,13 +656,13 @@
             this.cboxKanGrubu.Size = new System.Drawing.Size(145, 21);
             this.cboxKanGrubu.TabIndex = 3;
             // 
-            // cboxMedeniHali
+            // cboxMedeniHal
             // 
-            this.cboxMedeniHali.FormattingEnabled = true;
-            this.cboxMedeniHali.Location = new System.Drawing.Point(145, 104);
-            this.cboxMedeniHali.Name = "cboxMedeniHali";
-            this.cboxMedeniHali.Size = new System.Drawing.Size(185, 21);
-            this.cboxMedeniHali.TabIndex = 3;
+            this.cboxMedeniHal.FormattingEnabled = true;
+            this.cboxMedeniHal.Location = new System.Drawing.Point(145, 104);
+            this.cboxMedeniHal.Name = "cboxMedeniHal";
+            this.cboxMedeniHal.Size = new System.Drawing.Size(185, 21);
+            this.cboxMedeniHal.TabIndex = 3;
             // 
             // cboxDogumTarihi
             // 
@@ -678,12 +679,12 @@
             this.txtMahalle.Size = new System.Drawing.Size(185, 20);
             this.txtMahalle.TabIndex = 2;
             // 
-            // txtİlçe
+            // txtIlce
             // 
-            this.txtİlçe.Location = new System.Drawing.Point(145, 210);
-            this.txtİlçe.Name = "txtİlçe";
-            this.txtİlçe.Size = new System.Drawing.Size(185, 20);
-            this.txtİlçe.TabIndex = 2;
+            this.txtIlce.Location = new System.Drawing.Point(145, 210);
+            this.txtIlce.Name = "txtIlce";
+            this.txtIlce.Size = new System.Drawing.Size(185, 20);
+            this.txtIlce.TabIndex = 2;
             // 
             // txtSıraNo
             // 
@@ -692,12 +693,12 @@
             this.txtSıraNo.Size = new System.Drawing.Size(83, 20);
             this.txtSıraNo.TabIndex = 2;
             // 
-            // textAileSıraNo
+            // textAilesıraNo
             // 
-            this.textAileSıraNo.Location = new System.Drawing.Point(286, 257);
-            this.textAileSıraNo.Name = "textAileSıraNo";
-            this.textAileSıraNo.Size = new System.Drawing.Size(83, 20);
-            this.textAileSıraNo.TabIndex = 2;
+            this.textAilesıraNo.Location = new System.Drawing.Point(286, 257);
+            this.textAilesıraNo.Name = "textAilesıraNo";
+            this.textAilesıraNo.Size = new System.Drawing.Size(83, 20);
+            this.textAilesıraNo.TabIndex = 2;
             // 
             // txtCilt
             // 
@@ -862,15 +863,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateKayit;
+        private System.Windows.Forms.DateTimePicker dateKayıt;
         private System.Windows.Forms.DateTimePicker dateGiris;
         private System.Windows.Forms.ComboBox cboxKısım;
-        private System.Windows.Forms.ComboBox cboxMüdürlük;
+        private System.Windows.Forms.ComboBox cboxMudurluk;
         private System.Windows.Forms.ComboBox cboxll;
-        private System.Windows.Forms.ComboBox cboxÜnvan;
+        private System.Windows.Forms.ComboBox cboxUnvan;
         private System.Windows.Forms.ComboBox cboxTahsilDurumu;
         private System.Windows.Forms.TextBox txtAd;
-        private System.Windows.Forms.TextBox txtÜyeNo;
+        private System.Windows.Forms.TextBox txtUyeNo;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
@@ -881,18 +882,18 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtİşAdresi;
+        private System.Windows.Forms.TextBox txtIsAdresi;
         private System.Windows.Forms.TextBox txtCeptelefonu;
-        private System.Windows.Forms.TextBox txtİşTelefonu;
+        private System.Windows.Forms.TextBox txtIsTelefonu;
         private System.Windows.Forms.TextBox txtEvTelefonu;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cboxİşll;
+        private System.Windows.Forms.ComboBox cboxIsII;
         private System.Windows.Forms.ComboBox cboxEvIl;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cboxÜyelikDurumu;
+        private System.Windows.Forms.ComboBox cboxUyelıkDurumu;
         private System.Windows.Forms.TextBox txtSoyad;
         private System.Windows.Forms.TextBox txtSicilNo;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -906,10 +907,10 @@
         private System.Windows.Forms.ComboBox cboxII;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ComboBox cboxKanGrubu;
-        private System.Windows.Forms.ComboBox cboxMedeniHali;
+        private System.Windows.Forms.ComboBox cboxMedeniHal;
         private System.Windows.Forms.ComboBox cboxDogumTarihi;
         private System.Windows.Forms.TextBox txtMahalle;
-        private System.Windows.Forms.TextBox txtİlçe;
+        private System.Windows.Forms.TextBox txtIlce;
         private System.Windows.Forms.TextBox txtCilt;
         private System.Windows.Forms.TextBox txtDogumYeri;
         private System.Windows.Forms.TextBox txtAnneAdı;
@@ -925,6 +926,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox txtSıraNo;
-        private System.Windows.Forms.TextBox textAileSıraNo;
+        private System.Windows.Forms.TextBox textAilesıraNo;
     }
 }

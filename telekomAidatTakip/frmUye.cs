@@ -38,7 +38,7 @@ namespace telekomAidatTakip
             if (data.Read())
             {
                 txtAd.Text = data["adsoyad"].ToString();
-                txtÜyeNo.Text = sicilno;
+                txtUyeNo.Text = sicilno;
 
             }
         }
@@ -104,9 +104,9 @@ namespace telekomAidatTakip
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
             while (data.Read())
                 cboxSource.Add(Convert.ToInt32(data["uyeliktipno"]), data["uyeliktipadi"].ToString());
-            cboxÜyelikDurumu.DataSource = new BindingSource(cboxSource, null);
-            cboxÜyelikDurumu.DisplayMember = "Value";
-            cboxÜyelikDurumu.ValueMember = "Key";
+            cboxUyelıkDurumu.DataSource = new BindingSource(cboxSource, null);
+            cboxUyelıkDurumu.DisplayMember = "Value";
+            cboxUyelıkDurumu.ValueMember = "Key";
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -175,6 +175,11 @@ namespace telekomAidatTakip
         }
 
         private void cboxll_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEvAdresi_TextChanged(object sender, EventArgs e)
         {
 
         }
