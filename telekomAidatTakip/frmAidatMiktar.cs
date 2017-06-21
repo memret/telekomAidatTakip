@@ -12,7 +12,7 @@ namespace telekomAidatTakip
 {
     public partial class frmAidatMiktar : Form
     {
-        int cntrl;
+      
         private void cBoxIlDoldur()
         {
             PRG.DoldurIl(ref cboxIl);
