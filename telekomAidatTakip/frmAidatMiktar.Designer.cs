@@ -37,9 +37,12 @@
             this.cboxBirim = new System.Windows.Forms.ComboBox();
             this.txtAidatMiktari = new System.Windows.Forms.TextBox();
             this.grpbxAidatMiktar = new System.Windows.Forms.GroupBox();
-            this.btnKaydet = new System.Windows.Forms.Button();
             this.btnIptal = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.grpbxAidatMiktar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,6 +121,9 @@
             // 
             // grpbxAidatMiktar
             // 
+            this.grpbxAidatMiktar.Controls.Add(this.label7);
+            this.grpbxAidatMiktar.Controls.Add(this.label6);
+            this.grpbxAidatMiktar.Controls.Add(this.label5);
             this.grpbxAidatMiktar.Controls.Add(this.btnIptal);
             this.grpbxAidatMiktar.Controls.Add(this.button1);
             this.grpbxAidatMiktar.Controls.Add(this.txtAidatMiktari);
@@ -136,21 +142,10 @@
             this.grpbxAidatMiktar.TabStop = false;
             this.grpbxAidatMiktar.Text = "Aidat Miktarı Değiştirme";
             // 
-            // btnKaydet
-            // 
-            this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydet.Location = new System.Drawing.Point(106, 205);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(75, 50);
-            this.btnKaydet.TabIndex = 1;
-            this.btnKaydet.Text = "Güncelle";
-            this.btnKaydet.UseVisualStyleBackColor = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
             // btnIptal
             // 
             this.btnIptal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnIptal.Location = new System.Drawing.Point(268, 205);
+            this.btnIptal.Location = new System.Drawing.Point(235, 205);
             this.btnIptal.Name = "btnIptal";
             this.btnIptal.Size = new System.Drawing.Size(75, 50);
             this.btnIptal.TabIndex = 2;
@@ -161,13 +156,49 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(187, 205);
+            this.button1.Location = new System.Drawing.Point(128, 205);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 50);
             this.button1.TabIndex = 3;
             this.button1.Text = "Kaydet";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnKaydet
+            // 
+            this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKaydet.Location = new System.Drawing.Point(128, 205);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(75, 50);
+            this.btnKaydet.TabIndex = 1;
+            this.btnKaydet.Text = "Güncelle";
+            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(106, 169);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(106, 160);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 13);
+            this.label6.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(296, 136);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(20, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "TL";
             // 
             // frmAidatMiktar
             // 
@@ -200,5 +231,8 @@
         private System.Windows.Forms.Button btnIptal;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
