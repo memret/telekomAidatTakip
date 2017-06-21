@@ -24,6 +24,7 @@ namespace telekomAidatTakip
             bag = new SqlConnection(Program.connectstring);
             kmt = new SqlCommand();
             kmt.Connection = bag;
+            kmt.CommandTimeout = 15;
             bag.Open();
         }
         ~Database()
