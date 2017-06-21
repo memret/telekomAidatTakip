@@ -43,9 +43,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listUyeKayitlari = new System.Windows.Forms.ListView();
             this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -137,6 +135,7 @@
             this.btnListele.TabIndex = 11;
             this.btnListele.Text = "Ekrana Listele";
             this.btnListele.UseVisualStyleBackColor = true;
+            this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
             // 
             // checkOdemeyenler
             // 
@@ -207,9 +206,7 @@
             // 
             this.listUyeKayitlari.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader0,
-            this.columnHeader2,
             this.columnHeader1,
-            this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
@@ -227,17 +224,10 @@
             // 
             this.columnHeader0.Text = "S.N.";
             // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Üye No";
-            // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Ad";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Soyad";
+            this.columnHeader1.Text = "Ad Soyad";
+            this.columnHeader1.Width = 106;
             // 
             // columnHeader4
             // 
@@ -260,7 +250,7 @@
             // 
             // columnHeader8
             // 
-            this.columnHeader8.Text = "Kısım";
+            this.columnHeader8.Text = "Birim";
             // 
             // frmRaporAidat
             // 
@@ -296,9 +286,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView listUyeKayitlari;
         private System.Windows.Forms.ColumnHeader columnHeader0;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
