@@ -58,9 +58,9 @@ namespace telekomAidatTakip
 
 
             }
-            cboxMudurluk.DataSource = new BindingSource(cboxSource, null);
-            cboxMudurluk.DisplayMember = "Value";
-            cboxMudurluk.ValueMember = "Key";
+            cboxKisim.DataSource = new BindingSource(cboxSource, null);
+            cboxKisim.DisplayMember = "Value";
+            cboxKisim.ValueMember = "Key";
         }
 
         private void IlListesiniDoldur()
@@ -103,7 +103,7 @@ namespace telekomAidatTakip
             cbxmudurlukdoldur();
         }
     }
-    
-    
-    
 }
+
+    
+
