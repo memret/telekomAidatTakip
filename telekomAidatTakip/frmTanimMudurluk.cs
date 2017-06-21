@@ -145,39 +145,57 @@ namespace telekomAidatTakip
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            if (txtMdrKod.Text != string.Empty && txtMdrAd.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
+            {
+                Database db = new Database();
+                int ilNo = ((KeyValuePair<int, string>)comboBox_il.SelectedItem).Key;
+                db.Sorgu("update Mudurluk set mudurlukAdi=@0, ilNo=@1 where mudurlukNo=@2", txtMdrAd.Text, ilNo.ToString(), txtMdrKod.Text);
 
+                txtMdrAd.Text = string.Empty;
+                txtMdrKod.Text = string.Empty;
+                txtMdrAd.Enabled = false;
+                txtMdrKod.Enabled = false;
+                btnKaydet.Enabled = false;
+                btnSil.Enabled = false;
+                listvMdr.Items.Clear();
+                kayitliMdrDoldur();
+            }
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-
+            Database db = new Database();
+            db.Sorgu("DELETE FROM Mudurluk Where mudurlukNo = @0", txtMdrKod.Text);
+            listvMdr.Items.Clear();
+            kayitliMdrDoldur();
         }
 
         private void listvMdr_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
-            /* Database db = new Database();
-             String mudurlukAdi = listvil.SelectedItems[0].SubItems[3].Text;
-             String birimKodu = listvil.SelectedItems[0].SubItems[0].Text;
-             var data = db.DataOku("SELECT b.birimAdi,b.birimNo,m.mudurlukAdi " +
-                   "FROM Mudurluk m, Birim b WHERE m.mudurlukNo = b.mudurlukNo AND m.mudurlukAdi = @0 AND b.birimNo =@1", mudurlukAdi, birimKodu);
+             Database db = new Database();
+             String mudurlukAdi = listvMdr.SelectedItems[0].SubItems[0].Text;
+             String ilKodu = listvMdr.SelectedItems[0].SubItems[3].Text;
+             var data = db.DataOku("SELECT i.ilAdi,m.mudurlukNo,m.mudurlukAdi " +
+                   "FROM Mudurluk m, il i WHERE m.ilNo = i.ilNo AND m.mudurlukAdi = @0 AND i.ilNo =@1", mudurlukAdi, ilKodu);
 
              if (data.Read())
              {
 
-                 txtBirimAdi.Text = data["birimAdi"].ToString();
-                 txtBirimKodu.Text = data["birimNo"].ToString();
-                 cBoxMudurluk.Text = data["mudurlukAdi"].ToString();
+                 txtMdrKod.Text = data["mudurlukNo"].ToString();
+                 txtMdrAd.Text = data["mudurlukAdi"].ToString();
+                 comboBox_il.Text = data["ilAdi"].ToString();
+  
              }
 
-             txtMdrKod.Text = mdrKod;
+            // txtMdrKod.Text = mdrKod;
              btnKaydet.Enabled = true;
              btnSil.Enabled = true;
              txtMdrAd.Enabled = true;
-             txtMdrKod.Enabled = true;
+             txtMdrKod.Enabled = false;
+             comboBox_il.Enabled = true;
              btnYeni.Text = "Yeni";
-             */
-
+             
         }
     }
 }

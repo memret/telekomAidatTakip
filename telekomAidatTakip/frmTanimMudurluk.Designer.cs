@@ -74,6 +74,7 @@
             this.btnKaydet.TabIndex = 11;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnSil
             // 
@@ -166,6 +167,8 @@
             this.columnHeader1,
             this.columnHeader3,
             this.columnHeader4});
+            this.listvMdr.Cursor = System.Windows.Forms.Cursors.Default;
+            this.listvMdr.FullRowSelect = true;
             this.listvMdr.Location = new System.Drawing.Point(18, 30);
             this.listvMdr.Margin = new System.Windows.Forms.Padding(4);
             this.listvMdr.Name = "listvMdr";
@@ -173,7 +176,7 @@
             this.listvMdr.TabIndex = 1;
             this.listvMdr.UseCompatibleStateImageBehavior = false;
             this.listvMdr.View = System.Windows.Forms.View.Details;
-            //this.listvMdr.SelectedIndexChanged += new System.EventHandler(this.listvil_SelectedIndexChanged);
+            this.listvMdr.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvMdr_MouseDoubleClick);
             // 
             // columnHeader2
             // 
