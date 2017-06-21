@@ -29,6 +29,8 @@ namespace telekomAidatTakip
             PRG.DoldurTahsil(ref cboxTahsil);
             PRG.DoldurUnvan(ref cboxUnvan);
             PRG.DoldurIl(ref cboxIl);
+            PRG.DoldurIl(ref cboxEvIl);
+            PRG.DoldurIl(ref cboxIsIl);
             PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key.ToString());
             PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
             PRG.DoldurUyelikTipi(ref cboxUyelikTipi);
@@ -37,6 +39,7 @@ namespace telekomAidatTakip
         {
             DoldurKomple();
             DoldurTemelBilgiler(sicilno);
+            DoldurAdresBilgiler(sicilno);
         }
         private void DoldurAdresBilgiler(string sicilno)
         {
@@ -44,7 +47,13 @@ namespace telekomAidatTakip
             var data = db.DataOku("select * from adres where sicilno=@0", sicilno);
             if (data.Read())
             {
-                
+                txtEvAdresi.Text = data["ev"].ToString();
+                cboxEvIl.SelectedItem = PRG.cboxIndexBul(ref cboxEvIl, data["evilno"]);
+                cboxIsIl.SelectedItem = PRG.cboxIndexBul(ref cboxIsIl, data["isilno"]);
+                txtIsAdresi.Text = data["is"].ToString();
+                txtEvTel.Text = data["evtel"].ToString();
+                txtIsTel.Text = data["istel"].ToString();
+                txtCepTel.Text = data["ceptel"].ToString();
 
             }
         }
@@ -92,6 +101,31 @@ namespace telekomAidatTakip
         }
 
         private void txtUyeNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
         {
 
         }

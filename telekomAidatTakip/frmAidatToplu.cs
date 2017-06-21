@@ -93,19 +93,20 @@ namespace telekomAidatTakip
             System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@2", dt);
 
             var kisiler = db.DataOku("SELECT sicilNo FROM uyeler WHERE birimNo =@0", birimNo.ToString());
-
-            if (kisiler["sicilNo"].ToString() == string.Empty)
-            {
-                MessageBox.Show("Kişi Bulunamadı.");
-            }
-            else
-            {
                 while (kisiler.Read())
                 {
-                    db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", param, kisiler["sicilNo"].ToString(), txtAidatMiktari.Text);
+                    String sicilNo = kisiler["sicilNo"].ToString();
+                    if(!string.IsNullOrEmpty(sicilNo))
+                {
+                    db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", param, sicilNo, txtAidatMiktari.Text);
+                    MessageBox.Show("Aidat Ödemesi yapıldı.");
                 }
-                MessageBox.Show("Aidat Ödemesi yapıldı.");
-            }
+                else
+                {
+                    MessageBox.Show("Sıkıntı");
+                }
+                }
+                
             
 
             // "ALL (SELECT sicil no FROM uyeler WHERE @0)" mudurlukNo.ToString();
