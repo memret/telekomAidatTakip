@@ -16,5 +16,10 @@ namespace telekomAidatTakip
         {
             InitializeComponent();
         }
+
+        private void listUye_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
