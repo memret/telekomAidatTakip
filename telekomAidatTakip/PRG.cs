@@ -134,7 +134,20 @@ namespace telekomAidatTakip
             cboxBirim.ValueMember = "Key";
             cboxBirim.Enabled = true;
         }
-        
+        public static object cboxIndexBul(ref ComboBox cbox, object key)
+        {
+            int key1 = (int)key;
+            foreach (object item in cbox.Items)
+            {
+                if (((KeyValuePair < int, string>)item).Key == key1)
+                {
+                    return item;
+                }
+            }
+
+
+            return -1;
+        }
         
     }
 }
