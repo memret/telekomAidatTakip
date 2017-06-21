@@ -48,16 +48,25 @@ namespace telekomAidatTakip
 
             }
         }
+
         private void DoldurTemelBilgiler(string sicilno)
         {
             Database db = new Database();
-            var data = db.DataOku("select * from uye where sicilno=@0", sicilno);
+           
+            var data = db.DataOku("select * from uyeler where sicilno=@0", sicilno);
             if (data.Read())
             {
                 txtAdSoyad.Text = data["adsoyad"].ToString();
-                //txtUyeNo.Text = sicilno;
-                //txt
-
+                txtSicilNo.Text = sicilno;
+                /*cboxTahsil.SelectedItem = PRG.cboxIndexBul(ref cboxTahsil, data["tahsilno"]);
+                cboxUnvan.SelectedItem = PRG.cboxIndexBul(ref cboxUnvan, data["unvanno"]);
+                cboxIl.SelectedItem = PRG.cboxIndexBul(ref cboxIl, data["ilno"]);
+                cboxMudurluk.SelectedItem = PRG.cboxIndexBul(ref cboxMudurluk, data["mudurlukno"]);
+                cboxBirim.SelectedItem = PRG.cboxIndexBul(ref cboxBirim, data["birimno"]);
+                cboxUyelikTipi.SelectedItem = PRG.cboxIndexBul(ref cboxUyelikTipi, data["uyeliktipino"]);
+                */
+                //dateGiris.Value = Convert.ToDateTime(data["girisTarihi"]);
+                //dateKayit.Value = Convert.ToDateTime(data["kayitTarihi"]);
             }
         }
         
