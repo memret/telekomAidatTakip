@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.gboxListelemeİslemi = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnEkranaListele = new System.Windows.Forms.Button();
             this.btnYazdir = new System.Windows.Forms.Button();
+            this.btnEkranaListele = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.gboxBulunanKayitlar = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.ListSiraNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,12 +48,31 @@
             this.gboxListelemeİslemi.Controls.Add(this.btnYazdir);
             this.gboxListelemeİslemi.Controls.Add(this.btnEkranaListele);
             this.gboxListelemeİslemi.Controls.Add(this.label1);
-            this.gboxListelemeİslemi.Location = new System.Drawing.Point(0, 0);
+            this.gboxListelemeİslemi.Location = new System.Drawing.Point(6, 8);
             this.gboxListelemeİslemi.Name = "gboxListelemeİslemi";
             this.gboxListelemeİslemi.Size = new System.Drawing.Size(564, 100);
             this.gboxListelemeİslemi.TabIndex = 0;
             this.gboxListelemeİslemi.TabStop = false;
             this.gboxListelemeİslemi.Text = "Listeleme İşlemi";
+            // 
+            // btnYazdir
+            // 
+            this.btnYazdir.Location = new System.Drawing.Point(477, 59);
+            this.btnYazdir.Name = "btnYazdir";
+            this.btnYazdir.Size = new System.Drawing.Size(78, 31);
+            this.btnYazdir.TabIndex = 2;
+            this.btnYazdir.Text = "Yazdır";
+            this.btnYazdir.UseVisualStyleBackColor = true;
+            // 
+            // btnEkranaListele
+            // 
+            this.btnEkranaListele.Location = new System.Drawing.Point(388, 59);
+            this.btnEkranaListele.Name = "btnEkranaListele";
+            this.btnEkranaListele.Size = new System.Drawing.Size(83, 31);
+            this.btnEkranaListele.TabIndex = 1;
+            this.btnEkranaListele.Text = "Ekrana Listele";
+            this.btnEkranaListele.UseVisualStyleBackColor = true;
+            this.btnEkranaListele.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -64,31 +83,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "İllere Göre Üye Dağılım Listesi";
             // 
-            // btnEkranaListele
-            // 
-            this.btnEkranaListele.Location = new System.Drawing.Point(396, 68);
-            this.btnEkranaListele.Name = "btnEkranaListele";
-            this.btnEkranaListele.Size = new System.Drawing.Size(83, 31);
-            this.btnEkranaListele.TabIndex = 1;
-            this.btnEkranaListele.Text = "Ekrana Listele";
-            this.btnEkranaListele.UseVisualStyleBackColor = true;
-            this.btnEkranaListele.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnYazdir
-            // 
-            this.btnYazdir.Location = new System.Drawing.Point(485, 68);
-            this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(78, 31);
-            this.btnYazdir.TabIndex = 2;
-            this.btnYazdir.Text = "Yazdır";
-            this.btnYazdir.UseVisualStyleBackColor = true;
-            // 
             // gboxBulunanKayitlar
             // 
             this.gboxBulunanKayitlar.Controls.Add(this.listView1);
-            this.gboxBulunanKayitlar.Location = new System.Drawing.Point(3, 124);
+            this.gboxBulunanKayitlar.Location = new System.Drawing.Point(6, 114);
             this.gboxBulunanKayitlar.Name = "gboxBulunanKayitlar";
-            this.gboxBulunanKayitlar.Size = new System.Drawing.Size(690, 279);
+            this.gboxBulunanKayitlar.Size = new System.Drawing.Size(564, 279);
             this.gboxBulunanKayitlar.TabIndex = 1;
             this.gboxBulunanKayitlar.TabStop = false;
             this.gboxBulunanKayitlar.Text = "Bulunan Kayıtlar";
@@ -101,9 +101,10 @@
             this.ListAktif,
             this.ListPasif,
             this.ListToplam});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.Location = new System.Drawing.Point(3, 16);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(687, 263);
+            this.listView1.Size = new System.Drawing.Size(558, 260);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -137,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 406);
+            this.ClientSize = new System.Drawing.Size(581, 399);
             this.Controls.Add(this.gboxBulunanKayitlar);
             this.Controls.Add(this.gboxListelemeİslemi);
             this.Name = "frmRaporIl";

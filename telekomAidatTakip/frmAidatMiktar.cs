@@ -165,6 +165,11 @@ namespace telekomAidatTakip
             grpbxAidatMiktar.Width = this.Width - 40;
             grpbxAidatMiktar.Height = this.Height - 95;
         }
+
+        private void grpbxAidatMiktar_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
