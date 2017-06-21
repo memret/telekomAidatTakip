@@ -38,14 +38,14 @@
             this.label_il = new System.Windows.Forms.Label();
             this.labelMdrAd = new System.Windows.Forms.Label();
             this.labelMdrKod = new System.Windows.Forms.Label();
-            this.boxKayitliMdr = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listvMdr = new System.Windows.Forms.ListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBoxMdrTnm.SuspendLayout();
-            this.boxKayitliMdr.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxMdrTnm
@@ -150,15 +150,15 @@
             this.labelMdrKod.TabIndex = 0;
             this.labelMdrKod.Text = "Müdürlük Kod:";
             // 
-            // boxKayitliMdr
+            // groupBox2
             // 
-            this.boxKayitliMdr.Controls.Add(this.listvMdr);
-            this.boxKayitliMdr.Location = new System.Drawing.Point(20, 272);
-            this.boxKayitliMdr.Name = "boxKayitliMdr";
-            this.boxKayitliMdr.Size = new System.Drawing.Size(586, 252);
-            this.boxKayitliMdr.TabIndex = 1;
-            this.boxKayitliMdr.TabStop = false;
-            this.boxKayitliMdr.Text = "Kayıtlı Müdürlükler";
+            this.groupBox2.Controls.Add(this.listvMdr);
+            this.groupBox2.Location = new System.Drawing.Point(20, 272);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(586, 252);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Kayıtlı Müdürlükler";
             // 
             // listvMdr
             // 
@@ -168,49 +168,52 @@
             this.columnHeader3,
             this.columnHeader4});
             this.listvMdr.Cursor = System.Windows.Forms.Cursors.Default;
+            this.listvMdr.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listvMdr.FullRowSelect = true;
-            this.listvMdr.Location = new System.Drawing.Point(18, 30);
+            this.listvMdr.Location = new System.Drawing.Point(3, 18);
             this.listvMdr.Margin = new System.Windows.Forms.Padding(4);
             this.listvMdr.Name = "listvMdr";
-            this.listvMdr.Size = new System.Drawing.Size(535, 215);
+            this.listvMdr.Size = new System.Drawing.Size(580, 231);
             this.listvMdr.TabIndex = 1;
             this.listvMdr.UseCompatibleStateImageBehavior = false;
             this.listvMdr.View = System.Windows.Forms.View.Details;
+            this.listvMdr.SelectedIndexChanged += new System.EventHandler(this.listvMdr_SelectedIndexChanged_1);
             this.listvMdr.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvMdr_MouseDoubleClick);
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Müdürlük Adı";
-            this.columnHeader2.Width = 215;
+            this.columnHeader2.Width = 125;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Kod";
-            this.columnHeader1.Width = 103;
+            this.columnHeader1.Width = 125;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "İl";
-            this.columnHeader3.Width = 122;
+            this.columnHeader3.Width = 125;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "İl Kodu";
-            this.columnHeader4.Width = 118;
+            this.columnHeader4.Width = 125;
             // 
             // frmTanimMudurluk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 538);
-            this.Controls.Add(this.boxKayitliMdr);
+            this.ClientSize = new System.Drawing.Size(621, 542);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxMdrTnm);
             this.Name = "frmTanimMudurluk";
             this.Text = "Müdürlük Tanımları";
             this.Load += new System.EventHandler(this.frmTanimMudurluk_Load);
+            this.Resize += new System.EventHandler(this.frmTanimMudurluk_Resize);
             this.groupBoxMdrTnm.ResumeLayout(false);
             this.groupBoxMdrTnm.PerformLayout();
-            this.boxKayitliMdr.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -226,7 +229,7 @@
         private System.Windows.Forms.TextBox txtMdrKod;
         private System.Windows.Forms.Button btnYeni;
         private System.Windows.Forms.Button btnSil;
-        private System.Windows.Forms.GroupBox boxKayitliMdr;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView listvMdr;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
