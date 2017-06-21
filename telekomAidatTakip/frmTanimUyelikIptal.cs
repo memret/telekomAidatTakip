@@ -98,7 +98,7 @@ namespace telekomAidatTakip
             if (txtKod.Text != string.Empty)
             {
                 Database db = new Database();
-                db.Sorgu("delete from SilinmeNedeni where Kod=@0", txtKod.Text);
+                db.Sorgu("delete from SilinmeNedeni where SilinmeNedenNo=@0", txtKod.Text);
                 SilinmeListesiniDoldur();
             }
         }
