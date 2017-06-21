@@ -47,8 +47,25 @@ namespace telekomAidatTakip
             }
         }
 
+        private void btnListele_Click(object sender, EventArgs e)
+        {
+            Database db = new Database();
+            var data = db.DataOku(""); // doldurulacak
+            while (data.Read())
+            {
 
-      
+                ListViewItem item = new ListViewItem();
+                item.Text = data["sicilNo"].ToString();
+                item.SubItems.Add(data["adSoyad"].ToString());
+                item.SubItems.Add(data["aidat"].ToString());
+                item.SubItems.Add(data["miktar"].ToString());
+                item.SubItems.Add(data["ilAdi"].ToString());
+                item.SubItems.Add(data["mudurlukAdi"].ToString());
+                item.SubItems.Add(data["birimAdi"].ToString());
+
+                listUyeKayitlari.Items.Add(item);
+            }
+        }
     }
 
 

@@ -82,6 +82,24 @@ namespace telekomAidatTakip
             cboxUyelikTipi.ValueMember = "Key";
             cboxUyelikTipi.Enabled = true;
         }
+        public static void DoldurKanGrubu(ref ComboBox cboxKanGrubu)
+        {
+            Dictionary<int, string> cboxSource = new Dictionary<int, string>();
+            Database db = new Database();
+            var data = db.DataOku("select * from kangrubu");
+
+            while (data.Read())
+                cboxSource.Add(Convert.ToInt32(data["kangrubuno"]), data["kangrubu"].ToString());
+            if (cboxSource.Count == 0)
+            {
+                cboxSource.Add(-1, "Veri Yok");
+                cboxKanGrubu.Enabled = false;
+            }
+            cboxKanGrubu.DataSource = new BindingSource(cboxSource, null);
+            cboxKanGrubu.DisplayMember = "Value";
+            cboxKanGrubu.ValueMember = "Key";
+            cboxKanGrubu.Enabled = true;
+        }
         public static void DoldurMudurluk(ref ComboBox cboxMudurluk, string ilNo)
         {
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
@@ -134,7 +152,20 @@ namespace telekomAidatTakip
             cboxBirim.ValueMember = "Key";
             cboxBirim.Enabled = true;
         }
-        
+        public static object cboxIndexBul(ref ComboBox cbox, object key)
+        {
+            int key1 = (int)key;
+            foreach (object item in cbox.Items)
+            {
+                if (((KeyValuePair < int, string>)item).Key == key1)
+                {
+                    return item;
+                }
+            }
+
+
+            return -1;
+        }
         
     }
 }
