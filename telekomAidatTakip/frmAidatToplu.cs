@@ -89,13 +89,15 @@ namespace telekomAidatTakip
             int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
             DateTime dt = this.dateTarih.Value.Date;
             Database db = new Database();
-            System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@3", dt);
+            Database db2 = new Database();
+            System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@2", dt);
 
             var kisiler = db.DataOku("SELECT sicilNo FROM uyeler WHERE birimNo =@0", birimNo.ToString());
 
+
             while(kisiler.Read())
             {
-                db.Sorgu("INSERT INTO Birim Values (@0, @1,@2,@3)", param, txtAidatLogNo.Text, kisiler["sicilNo"].ToString(), birimNo.ToString(), txtAidatMiktari.Text);
+                db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", param, kisiler["sicilNo"].ToString(), txtAidatMiktari.Text);
             }
             
 
@@ -139,7 +141,7 @@ namespace telekomAidatTakip
 
         private void cboxMudurluk_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboxil.SelectedIndex != -1)
+            if (cboxMudurluk.SelectedIndex != -1)
             {
                 int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
 
