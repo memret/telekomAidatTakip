@@ -94,16 +94,23 @@ namespace telekomAidatTakip
 
             var kisiler = db.DataOku("SELECT sicilNo FROM uyeler WHERE birimNo =@0", birimNo.ToString());
 
-
-            while(kisiler.Read())
+            if (kisiler["sicilNo"].ToString() == string.Empty)
             {
-                db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", param, kisiler["sicilNo"].ToString(), txtAidatMiktari.Text);
+                MessageBox.Show("Kişi Bulunamadı.");
+            }
+            else
+            {
+                while (kisiler.Read())
+                {
+                    db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", param, kisiler["sicilNo"].ToString(), txtAidatMiktari.Text);
+                }
+                MessageBox.Show("Aidat Ödemesi yapıldı.");
             }
             
 
             // "ALL (SELECT sicil no FROM uyeler WHERE @0)" mudurlukNo.ToString();
 
-            MessageBox.Show("ÇALIŞTI REİS");
+            
         }
 
         private void cboxil_SelectedValueChanged(object sender, EventArgs e)
