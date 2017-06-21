@@ -12,7 +12,7 @@ namespace telekomAidatTakip
 {
     public partial class frmAidatMiktar : Form
     {
-        int cntrl;
+      
         private void cBoxIlDoldur()
         {
             PRG.DoldurIl(ref cboxIl);
@@ -62,7 +62,7 @@ namespace telekomAidatTakip
 
 
         private void btnKaydet_Click(object sender, EventArgs e)
-        { if (cboxIl.SelectedIndex != -1 || cboxBirim.SelectedIndex != -1 || cboxMudurluk.SelectedIndex != -1 || txtAidatMiktari.ToString() != string.Empty)
+        { if (cboxIl.SelectedIndex != -1 && cboxBirim.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1 && txtAidatMiktari.ToString() != string.Empty)
             {
                 Database db = new Database();
                 int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
@@ -75,7 +75,9 @@ namespace telekomAidatTakip
                 cboxBirim.SelectedIndex = -1;
                 txtAidatMiktari.Text = string.Empty;
             }
-         
+        else
+            MessageBox.Show("Lütfen boş alanları doldururuz!");
+
         }
 
         private void cboxMudurluk_SelectedIndexChanged(object sender, EventArgs e)
@@ -131,7 +133,7 @@ namespace telekomAidatTakip
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cboxIl.SelectedIndex != -1 || cboxBirim.SelectedIndex != -1 || cboxMudurluk.SelectedIndex != -1 || txtAidatMiktari.ToString() != string.Empty)
+            if (cboxIl.SelectedIndex != -1 && cboxBirim.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1 && txtAidatMiktari.ToString() != string.Empty)
             {
                 Database db = new Database();
                 int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
