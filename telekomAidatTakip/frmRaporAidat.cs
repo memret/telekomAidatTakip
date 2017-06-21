@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -49,36 +50,84 @@ namespace telekomAidatTakip
 
         private void btnListele_Click(object sender, EventArgs e)
         {
+            //tarih ve ödenmeyenleri listele kısımları kullanılmıyor şimdilik
             Database db = new Database();
-            String ilNo = cboxil.SelectedValue.ToString();
-            String mudurlukNo = cboxMudurluk.SelectedValue.ToString();
-            String birimNo = cboxBirim.SelectedValue.ToString();
-            var data = db.DataOku("SELECT Uyeler.sicilNo, Uyeler.adSoyad, AidatMiktar.aidat, AidatLog.miktar, il.ilAdi, Mudurluk.mudurlukAdi, Birim.birimAdi  FROM AidatMiktar, Uyeler, il, AidatLog, Mudurluk, Birim WHERE il.ilNo = Mudurluk.ilNo AND Mudurluk.mudurlukNo = Birim.mudurlukNo AND Birim.birimNo = AidatMiktar.birimNo AND Birim.birimNo = @0;",birimNo);
-          // + " WHERE i.ilNo = @0 AND m.mudurlukNo = @1 AND b.birimNo = @2 AND aim.birimNo = @3",ilNo,mudurlukNo,birimNo, birimNo); // doldurulacak
-          /*
-                      SELECT u.sicilNo, u.adSoyad, aim.aidat, miktar, i.ilAdi, m.mudurlukAdi, b.birimAdi
-                      FROM uyeler u, AidatMiktar aim, mudurluk m, birimAdi b, il i
-                      WHERE i.ilNo = @0 AND m.mudurlukNo = @1 AND b.birimNo = @2
+            string query = "select u.sicilNo, u.adSoyad, (select aidat from AidatMiktar where birimno = u.birimNo) 'Miktar', (select SUM(miktar) from aidatlog where sicilno = u.sicilno) 'toplammiktar', i.ilAdi, m.mudurlukAdi, b.birimAdi from uyeler u join il i on i.ilNo = u.ilNo join Mudurluk m on m.mudurlukNo = u.mudurlukNo join birim b on b.birimNo = u.birimNo ";
+            List<SqlParameter> paramList = new List<SqlParameter>();
+            if (checkBirim.Checked || checkMudurluk.Checked || checkIl.Checked)
+            {
+                string ekquery = " where ";
+                
+                SqlParameter paramTemp;
+                if (checkIl.Checked)
+                {
+                    if (cboxil.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("İl seçin yada yanındaki ticki kaldırın.");
+                        return;
+                    }
+                    ekquery += "i.ilno = @il and ";
+                    String ilNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key.ToString();
+                    paramTemp = new SqlParameter("@il", ilNo);
+                    paramList.Add(paramTemp);
+                }
+                if (checkMudurluk.Checked)
+                {
+                    if (cboxMudurluk.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("Müdürlük seçin yada yanındaki ticki kaldırın.");
+                        return;
+                    }
+                    ekquery += "m.mudurlukno = @mudurluk and ";
+                    String mudurlukno = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString();
+                    paramTemp = new SqlParameter("@mudurluk", mudurlukno);
+                    paramList.Add(paramTemp);
+                }
+                if (checkBirim.Checked)
+                {
+                    if (cboxBirim.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("Birim seçin yada yanındaki ticki kaldırın.");
+                        return;
+                    }
+                    ekquery += "b.birim = @birim and ";
+                    String birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key.ToString();
+                    paramTemp = new SqlParameter("@birim", birimno);
+                    paramList.Add(paramTemp);
+                }
+                ekquery = ekquery.Trim().Substring(0,ekquery.Length-5);
+                query += ekquery;
+            }
 
-                          @0=ilNo
-                          @1= mudurlukNo
-                          @2 = birimNo
-                          */
-
+            var data = db.DataOku(query,paramList);
+            listUyeKayitlari.Items.Clear();
             while (data.Read())
             {
 
                 ListViewItem item = new ListViewItem();
                 item.Text = data["sicilNo"].ToString();
                 item.SubItems.Add(data["adSoyad"].ToString());
-                item.SubItems.Add(data["aidat"].ToString());
-                item.SubItems.Add(data["miktar"].ToString());
+                if (data["miktar"].ToString() == string.Empty)
+                    item.SubItems.Add("0");
+                else
+                    item.SubItems.Add(data["miktar"].ToString());
+
+                if (data["toplammiktar"].ToString() == string.Empty)
+                    item.SubItems.Add("0");
+                else
+                    item.SubItems.Add(data["toplammiktar"].ToString());
+
                 item.SubItems.Add(data["ilAdi"].ToString());
                 item.SubItems.Add(data["mudurlukAdi"].ToString());
                 item.SubItems.Add(data["birimAdi"].ToString());
 
                 listUyeKayitlari.Items.Add(item);
             }
+        }
+
+        private void grpAramaKriterleri_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 

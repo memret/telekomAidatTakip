@@ -62,6 +62,16 @@ namespace telekomAidatTakip
             data = kmt.ExecuteReader();
             return data;
         }
+        public SqlDataReader DataOku(string query, List<SqlParameter> param)
+        {
+            kmt.CommandText = query;
+            foreach (SqlParameter item in param)
+            {
+                kmt.Parameters.Add(item);
+            }
+            data = kmt.ExecuteReader();
+            return data;
+        }
         public string DataOkuTek(string query, string column, params string[] param)
         {
             kmt.CommandText = query;

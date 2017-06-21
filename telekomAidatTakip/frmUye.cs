@@ -41,6 +41,19 @@ namespace telekomAidatTakip
             DoldurTemelBilgiler(sicilno);
             DoldurAdresBilgiler(sicilno);
         }
+        private void DoldurNufusBilgileri(string sicilno)
+        {
+            Database db = new Database();
+            var data = db.DataOku("select * from nufusbilgileri where sicilno=@0",sicilno);
+
+            if (data.Read())
+            {
+                txtNufusBaba.Text = data[""].ToString();
+                txtNufusAnne.Text = data[""].ToString();
+                txtNufusDogumYeri.Text = data[""].ToString();
+            }
+
+        }
         private void DoldurAdresBilgiler(string sicilno)
         {
             Database db = new Database();

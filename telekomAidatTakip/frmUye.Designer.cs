@@ -76,19 +76,18 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboxNufusIl = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cboxNufusKan = new System.Windows.Forms.ComboBox();
+            this.cboxNufusMedeni = new System.Windows.Forms.ComboBox();
+            this.txtMahalle = new System.Windows.Forms.TextBox();
+            this.txtNufusIlce = new System.Windows.Forms.TextBox();
+            this.txtNufusSira = new System.Windows.Forms.TextBox();
+            this.txtNufusAile = new System.Windows.Forms.TextBox();
+            this.txtNufusCilt = new System.Windows.Forms.TextBox();
+            this.txtNufusDogumYeri = new System.Windows.Forms.TextBox();
+            this.txtNufusAnne = new System.Windows.Forms.TextBox();
+            this.txtNufusBaba = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -100,12 +99,11 @@
             this.label21 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label33 = new System.Windows.Forms.Label();
-            this.cboxKanGrubu = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnYeni = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
+            this.dateNufusDogum = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.lblSilinmeBilgisi.SuspendLayout();
@@ -121,7 +119,7 @@
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(137, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(815, 397);
+            this.groupBox1.Size = new System.Drawing.Size(815, 383);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Üye Bilgileri";
@@ -138,12 +136,11 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 16);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(809, 378);
+            this.tabControl1.Size = new System.Drawing.Size(809, 364);
             this.tabControl1.TabIndex = 0;
             // 
             // lblSilinmeBilgisi
             // 
-            this.lblSilinmeBilgisi.Controls.Add(this.cboxKanGrubu);
             this.lblSilinmeBilgisi.Controls.Add(this.label1);
             this.lblSilinmeBilgisi.Controls.Add(this.groupBox2);
             this.lblSilinmeBilgisi.Controls.Add(this.label19);
@@ -154,7 +151,6 @@
             this.lblSilinmeBilgisi.Controls.Add(this.txtSicilNo);
             this.lblSilinmeBilgisi.Controls.Add(this.label8);
             this.lblSilinmeBilgisi.Controls.Add(this.label7);
-            this.lblSilinmeBilgisi.Controls.Add(this.label33);
             this.lblSilinmeBilgisi.Controls.Add(this.label4);
             this.lblSilinmeBilgisi.Controls.Add(this.label6);
             this.lblSilinmeBilgisi.Controls.Add(this.label9);
@@ -171,7 +167,7 @@
             this.lblSilinmeBilgisi.Location = new System.Drawing.Point(4, 22);
             this.lblSilinmeBilgisi.Name = "lblSilinmeBilgisi";
             this.lblSilinmeBilgisi.Padding = new System.Windows.Forms.Padding(3);
-            this.lblSilinmeBilgisi.Size = new System.Drawing.Size(801, 352);
+            this.lblSilinmeBilgisi.Size = new System.Drawing.Size(801, 338);
             this.lblSilinmeBilgisi.TabIndex = 0;
             this.lblSilinmeBilgisi.Text = "Temel Bilgiler";
             this.lblSilinmeBilgisi.UseVisualStyleBackColor = true;
@@ -179,7 +175,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(178, 323);
+            this.label1.Location = new System.Drawing.Point(178, 299);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 18;
@@ -236,7 +232,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(38, 323);
+            this.label19.Location = new System.Drawing.Point(38, 299);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(124, 13);
             this.label19.TabIndex = 11;
@@ -437,7 +433,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(801, 352);
+            this.tabPage2.Size = new System.Drawing.Size(801, 338);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Adres Bilgileri";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -560,21 +556,21 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dateNufusDogum);
             this.tabPage3.Controls.Add(this.label32);
             this.tabPage3.Controls.Add(this.label31);
-            this.tabPage3.Controls.Add(this.comboBox4);
+            this.tabPage3.Controls.Add(this.cboxNufusIl);
             this.tabPage3.Controls.Add(this.label23);
-            this.tabPage3.Controls.Add(this.comboBox3);
-            this.tabPage3.Controls.Add(this.comboBox2);
-            this.tabPage3.Controls.Add(this.comboBox1);
-            this.tabPage3.Controls.Add(this.textBox9);
-            this.tabPage3.Controls.Add(this.textBox8);
-            this.tabPage3.Controls.Add(this.textBox5);
-            this.tabPage3.Controls.Add(this.textBox4);
-            this.tabPage3.Controls.Add(this.textBox6);
-            this.tabPage3.Controls.Add(this.textBox3);
-            this.tabPage3.Controls.Add(this.textBox2);
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.cboxNufusKan);
+            this.tabPage3.Controls.Add(this.cboxNufusMedeni);
+            this.tabPage3.Controls.Add(this.txtMahalle);
+            this.tabPage3.Controls.Add(this.txtNufusIlce);
+            this.tabPage3.Controls.Add(this.txtNufusSira);
+            this.tabPage3.Controls.Add(this.txtNufusAile);
+            this.tabPage3.Controls.Add(this.txtNufusCilt);
+            this.tabPage3.Controls.Add(this.txtNufusDogumYeri);
+            this.tabPage3.Controls.Add(this.txtNufusAnne);
+            this.tabPage3.Controls.Add(this.txtNufusBaba);
             this.tabPage3.Controls.Add(this.label30);
             this.tabPage3.Controls.Add(this.label29);
             this.tabPage3.Controls.Add(this.label28);
@@ -586,7 +582,7 @@
             this.tabPage3.Controls.Add(this.label21);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(801, 352);
+            this.tabPage3.Size = new System.Drawing.Size(801, 338);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nüfus Bilgileri";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -610,13 +606,13 @@
             this.label31.TabIndex = 6;
             this.label31.Text = "Aile Sıra No:";
             // 
-            // comboBox4
+            // cboxNufusIl
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(145, 183);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(185, 21);
-            this.comboBox4.TabIndex = 5;
+            this.cboxNufusIl.FormattingEnabled = true;
+            this.cboxNufusIl.Location = new System.Drawing.Point(145, 183);
+            this.cboxNufusIl.Name = "cboxNufusIl";
+            this.cboxNufusIl.Size = new System.Drawing.Size(185, 21);
+            this.cboxNufusIl.TabIndex = 5;
             // 
             // label23
             // 
@@ -627,87 +623,79 @@
             this.label23.TabIndex = 4;
             this.label23.Text = "Nufüsa Kayıtlı Olduğu :";
             // 
-            // comboBox3
+            // cboxNufusKan
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(145, 128);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(145, 21);
-            this.comboBox3.TabIndex = 3;
+            this.cboxNufusKan.FormattingEnabled = true;
+            this.cboxNufusKan.Location = new System.Drawing.Point(145, 128);
+            this.cboxNufusKan.Name = "cboxNufusKan";
+            this.cboxNufusKan.Size = new System.Drawing.Size(145, 21);
+            this.cboxNufusKan.TabIndex = 3;
             // 
-            // comboBox2
+            // cboxNufusMedeni
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(145, 101);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(185, 21);
-            this.comboBox2.TabIndex = 3;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cboxNufusMedeni.FormattingEnabled = true;
+            this.cboxNufusMedeni.Location = new System.Drawing.Point(145, 101);
+            this.cboxNufusMedeni.Name = "cboxNufusMedeni";
+            this.cboxNufusMedeni.Size = new System.Drawing.Size(185, 21);
+            this.cboxNufusMedeni.TabIndex = 3;
+            this.cboxNufusMedeni.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // comboBox1
+            // txtMahalle
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(336, 74);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 21);
-            this.comboBox1.TabIndex = 3;
+            this.txtMahalle.Location = new System.Drawing.Point(145, 234);
+            this.txtMahalle.Name = "txtMahalle";
+            this.txtMahalle.Size = new System.Drawing.Size(185, 20);
+            this.txtMahalle.TabIndex = 2;
             // 
-            // textBox9
+            // txtNufusIlce
             // 
-            this.textBox9.Location = new System.Drawing.Point(145, 234);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(185, 20);
-            this.textBox9.TabIndex = 2;
+            this.txtNufusIlce.Location = new System.Drawing.Point(145, 210);
+            this.txtNufusIlce.Name = "txtNufusIlce";
+            this.txtNufusIlce.Size = new System.Drawing.Size(185, 20);
+            this.txtNufusIlce.TabIndex = 2;
             // 
-            // textBox8
+            // txtNufusSira
             // 
-            this.textBox8.Location = new System.Drawing.Point(145, 210);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(185, 20);
-            this.textBox8.TabIndex = 2;
+            this.txtNufusSira.Location = new System.Drawing.Point(480, 273);
+            this.txtNufusSira.Name = "txtNufusSira";
+            this.txtNufusSira.Size = new System.Drawing.Size(83, 20);
+            this.txtNufusSira.TabIndex = 2;
             // 
-            // textBox5
+            // txtNufusAile
             // 
-            this.textBox5.Location = new System.Drawing.Point(480, 273);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(83, 20);
-            this.textBox5.TabIndex = 2;
+            this.txtNufusAile.Location = new System.Drawing.Point(289, 273);
+            this.txtNufusAile.Name = "txtNufusAile";
+            this.txtNufusAile.Size = new System.Drawing.Size(83, 20);
+            this.txtNufusAile.TabIndex = 2;
             // 
-            // textBox4
+            // txtNufusCilt
             // 
-            this.textBox4.Location = new System.Drawing.Point(289, 273);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(83, 20);
-            this.textBox4.TabIndex = 2;
+            this.txtNufusCilt.Location = new System.Drawing.Point(75, 273);
+            this.txtNufusCilt.Name = "txtNufusCilt";
+            this.txtNufusCilt.Size = new System.Drawing.Size(83, 20);
+            this.txtNufusCilt.TabIndex = 2;
             // 
-            // textBox6
+            // txtNufusDogumYeri
             // 
-            this.textBox6.Location = new System.Drawing.Point(75, 273);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(83, 20);
-            this.textBox6.TabIndex = 2;
+            this.txtNufusDogumYeri.Location = new System.Drawing.Point(145, 74);
+            this.txtNufusDogumYeri.Name = "txtNufusDogumYeri";
+            this.txtNufusDogumYeri.Size = new System.Drawing.Size(185, 20);
+            this.txtNufusDogumYeri.TabIndex = 2;
+            this.txtNufusDogumYeri.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox3
+            // txtNufusAnne
             // 
-            this.textBox3.Location = new System.Drawing.Point(145, 74);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(185, 20);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtNufusAnne.Location = new System.Drawing.Point(145, 47);
+            this.txtNufusAnne.Name = "txtNufusAnne";
+            this.txtNufusAnne.Size = new System.Drawing.Size(185, 20);
+            this.txtNufusAnne.TabIndex = 2;
             // 
-            // textBox2
+            // txtNufusBaba
             // 
-            this.textBox2.Location = new System.Drawing.Point(145, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(185, 20);
-            this.textBox2.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(145, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtNufusBaba.Location = new System.Drawing.Point(145, 20);
+            this.txtNufusBaba.Name = "txtNufusBaba";
+            this.txtNufusBaba.Size = new System.Drawing.Size(185, 20);
+            this.txtNufusBaba.TabIndex = 2;
             // 
             // label30
             // 
@@ -809,24 +797,6 @@
             this.tabPage5.Text = "Not";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(38, 295);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(64, 13);
-            this.label33.TabIndex = 4;
-            this.label33.Text = "Kan Grubu :";
-            // 
-            // cboxKanGrubu
-            // 
-            this.cboxKanGrubu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxKanGrubu.FormattingEnabled = true;
-            this.cboxKanGrubu.Location = new System.Drawing.Point(180, 292);
-            this.cboxKanGrubu.Name = "cboxKanGrubu";
-            this.cboxKanGrubu.Size = new System.Drawing.Size(117, 21);
-            this.cboxKanGrubu.TabIndex = 19;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnSil);
@@ -865,6 +835,14 @@
             this.btnSil.TabIndex = 0;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            // 
+            // dateNufusDogum
+            // 
+            this.dateNufusDogum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateNufusDogum.Location = new System.Drawing.Point(336, 74);
+            this.dateNufusDogum.Name = "dateNufusDogum";
+            this.dateNufusDogum.Size = new System.Drawing.Size(95, 20);
+            this.dateNufusDogum.TabIndex = 8;
             // 
             // frmUye
             // 
@@ -941,17 +919,16 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboxNufusIl;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cboxNufusKan;
+        private System.Windows.Forms.ComboBox cboxNufusMedeni;
+        private System.Windows.Forms.TextBox txtMahalle;
+        private System.Windows.Forms.TextBox txtNufusIlce;
+        private System.Windows.Forms.TextBox txtNufusCilt;
+        private System.Windows.Forms.TextBox txtNufusDogumYeri;
+        private System.Windows.Forms.TextBox txtNufusAnne;
+        private System.Windows.Forms.TextBox txtNufusBaba;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
@@ -962,14 +939,13 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNufusSira;
+        private System.Windows.Forms.TextBox txtNufusAile;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboxKanGrubu;
-        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Button btnYeni;
+        private System.Windows.Forms.DateTimePicker dateNufusDogum;
     }
 }
