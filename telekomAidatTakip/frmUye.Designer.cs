@@ -50,7 +50,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.dateKayit = new System.Windows.Forms.DateTimePicker();
             this.dateGiris = new System.Windows.Forms.DateTimePicker();
             this.cboxBirim = new System.Windows.Forms.ComboBox();
@@ -59,7 +58,6 @@
             this.cboxUnvan = new System.Windows.Forms.ComboBox();
             this.cboxTahsil = new System.Windows.Forms.ComboBox();
             this.txtAdSoyad = new System.Windows.Forms.TextBox();
-            this.txtUyeNo = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -102,6 +100,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.lblSilinmeBilgisi.SuspendLayout();
@@ -136,6 +135,7 @@
             // 
             // lblSilinmeBilgisi
             // 
+            this.lblSilinmeBilgisi.Controls.Add(this.label1);
             this.lblSilinmeBilgisi.Controls.Add(this.groupBox2);
             this.lblSilinmeBilgisi.Controls.Add(this.label20);
             this.lblSilinmeBilgisi.Controls.Add(this.label19);
@@ -151,7 +151,6 @@
             this.lblSilinmeBilgisi.Controls.Add(this.label9);
             this.lblSilinmeBilgisi.Controls.Add(this.label5);
             this.lblSilinmeBilgisi.Controls.Add(this.label2);
-            this.lblSilinmeBilgisi.Controls.Add(this.label1);
             this.lblSilinmeBilgisi.Controls.Add(this.dateKayit);
             this.lblSilinmeBilgisi.Controls.Add(this.dateGiris);
             this.lblSilinmeBilgisi.Controls.Add(this.cboxBirim);
@@ -160,7 +159,6 @@
             this.lblSilinmeBilgisi.Controls.Add(this.cboxUnvan);
             this.lblSilinmeBilgisi.Controls.Add(this.cboxTahsil);
             this.lblSilinmeBilgisi.Controls.Add(this.txtAdSoyad);
-            this.lblSilinmeBilgisi.Controls.Add(this.txtUyeNo);
             this.lblSilinmeBilgisi.Location = new System.Drawing.Point(4, 22);
             this.lblSilinmeBilgisi.Name = "lblSilinmeBilgisi";
             this.lblSilinmeBilgisi.Padding = new System.Windows.Forms.Padding(3);
@@ -341,15 +339,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Ad Soyad :";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Üye No:";
-            // 
             // dateKayit
             // 
             this.dateKayit.Location = new System.Drawing.Point(179, 290);
@@ -419,13 +408,6 @@
             this.txtAdSoyad.Name = "txtAdSoyad";
             this.txtAdSoyad.Size = new System.Drawing.Size(180, 20);
             this.txtAdSoyad.TabIndex = 0;
-            // 
-            // txtUyeNo
-            // 
-            this.txtUyeNo.Location = new System.Drawing.Point(178, 13);
-            this.txtUyeNo.Name = "txtUyeNo";
-            this.txtUyeNo.Size = new System.Drawing.Size(96, 20);
-            this.txtUyeNo.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -814,6 +796,15 @@
             this.tabPage5.Text = "Not";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(178, 331);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "label1";
+            // 
             // frmUye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -849,7 +840,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateKayit;
         private System.Windows.Forms.DateTimePicker dateGiris;
         private System.Windows.Forms.ComboBox cboxBirim;
@@ -858,7 +848,6 @@
         private System.Windows.Forms.ComboBox cboxUnvan;
         private System.Windows.Forms.ComboBox cboxTahsil;
         private System.Windows.Forms.TextBox txtAdSoyad;
-        private System.Windows.Forms.TextBox txtUyeNo;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
@@ -913,5 +902,6 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label1;
     }
 }

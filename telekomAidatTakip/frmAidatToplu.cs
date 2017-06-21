@@ -89,19 +89,28 @@ namespace telekomAidatTakip
             int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
             DateTime dt = this.dateTarih.Value.Date;
             Database db = new Database();
-            System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@3", dt);
+            Database db2 = new Database();
+            System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@2", dt);
 
             var kisiler = db.DataOku("SELECT sicilNo FROM uyeler WHERE birimNo =@0", birimNo.ToString());
 
-            while(kisiler.Read())
+            if (kisiler["sicilNo"].ToString() == string.Empty)
             {
-                db.Sorgu("INSERT INTO Birim Values (@0, @1,@2,@3)", param, txtAidatLogNo.Text, kisiler["sicilNo"].ToString(), birimNo.ToString(), txtAidatMiktari.Text);
+                MessageBox.Show("Kişi Bulunamadı.");
+            }
+            else
+            {
+                while (kisiler.Read())
+                {
+                    db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", param, kisiler["sicilNo"].ToString(), txtAidatMiktari.Text);
+                }
+                MessageBox.Show("Aidat Ödemesi yapıldı.");
             }
             
 
             // "ALL (SELECT sicil no FROM uyeler WHERE @0)" mudurlukNo.ToString();
 
-            MessageBox.Show("ÇALIŞTI REİS");
+            
         }
 
         private void cboxil_SelectedValueChanged(object sender, EventArgs e)
@@ -139,9 +148,9 @@ namespace telekomAidatTakip
 
         private void cboxMudurluk_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboxil.SelectedIndex != -1)
+            if (cboxMudurluk.SelectedIndex != -1)
             {
-                int mudurlukNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key;
+                int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
 
 
                 Dictionary<int, string> cboxSource = new Dictionary<int, string>();

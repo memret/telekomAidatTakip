@@ -32,12 +32,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grpAramaKriterleri = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnYazdir = new System.Windows.Forms.Button();
             this.btnListele = new System.Windows.Forms.Button();
             this.checkOdemeyenler = new System.Windows.Forms.CheckBox();
-            this.cbxKisim = new System.Windows.Forms.ComboBox();
-            this.cbxMudurluk = new System.Windows.Forms.ComboBox();
-            this.cbxİl = new System.Windows.Forms.ComboBox();
+            this.cboxBirim = new System.Windows.Forms.ComboBox();
+            this.cboxMudurluk = new System.Windows.Forms.ComboBox();
+            this.cboxil = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listUyeKayitlari = new System.Windows.Forms.ListView();
@@ -50,7 +51,6 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.grpAramaKriterleri.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -71,9 +71,9 @@
             this.label2.Location = new System.Drawing.Point(64, 112);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Kısım:";
+            this.label2.Text = "Birim:";
             // 
             // label3
             // 
@@ -91,9 +91,9 @@
             this.grpAramaKriterleri.Controls.Add(this.btnYazdir);
             this.grpAramaKriterleri.Controls.Add(this.btnListele);
             this.grpAramaKriterleri.Controls.Add(this.checkOdemeyenler);
-            this.grpAramaKriterleri.Controls.Add(this.cbxKisim);
-            this.grpAramaKriterleri.Controls.Add(this.cbxMudurluk);
-            this.grpAramaKriterleri.Controls.Add(this.cbxİl);
+            this.grpAramaKriterleri.Controls.Add(this.cboxBirim);
+            this.grpAramaKriterleri.Controls.Add(this.cboxMudurluk);
+            this.grpAramaKriterleri.Controls.Add(this.cboxil);
             this.grpAramaKriterleri.Controls.Add(this.label1);
             this.grpAramaKriterleri.Controls.Add(this.label2);
             this.grpAramaKriterleri.Controls.Add(this.label3);
@@ -106,6 +106,15 @@
             this.grpAramaKriterleri.TabIndex = 3;
             this.grpAramaKriterleri.TabStop = false;
             this.grpAramaKriterleri.Text = "Arama Kriterleri";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(230, 162);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker1.TabIndex = 13;
             // 
             // btnYazdir
             // 
@@ -140,32 +149,37 @@
             this.checkOdemeyenler.Text = "Ödemeyenleri Listele";
             this.checkOdemeyenler.UseVisualStyleBackColor = true;
             // 
-            // cbxKisim
+            // cboxBirim
             // 
-            this.cbxKisim.FormattingEnabled = true;
-            this.cbxKisim.Location = new System.Drawing.Point(230, 114);
-            this.cbxKisim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbxKisim.Name = "cbxKisim";
-            this.cbxKisim.Size = new System.Drawing.Size(319, 28);
-            this.cbxKisim.TabIndex = 6;
+            this.cboxBirim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxBirim.FormattingEnabled = true;
+            this.cboxBirim.Location = new System.Drawing.Point(230, 114);
+            this.cboxBirim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboxBirim.Name = "cboxBirim";
+            this.cboxBirim.Size = new System.Drawing.Size(319, 28);
+            this.cboxBirim.TabIndex = 6;
             // 
-            // cbxMudurluk
+            // cboxMudurluk
             // 
-            this.cbxMudurluk.FormattingEnabled = true;
-            this.cbxMudurluk.Location = new System.Drawing.Point(230, 72);
-            this.cbxMudurluk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbxMudurluk.Name = "cbxMudurluk";
-            this.cbxMudurluk.Size = new System.Drawing.Size(319, 28);
-            this.cbxMudurluk.TabIndex = 5;
+            this.cboxMudurluk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxMudurluk.FormattingEnabled = true;
+            this.cboxMudurluk.Location = new System.Drawing.Point(230, 72);
+            this.cboxMudurluk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboxMudurluk.Name = "cboxMudurluk";
+            this.cboxMudurluk.Size = new System.Drawing.Size(319, 28);
+            this.cboxMudurluk.TabIndex = 5;
+            this.cboxMudurluk.SelectedIndexChanged += new System.EventHandler(this.cboxMudurluk_SelectedIndexChanged_1);
             // 
-            // cbxİl
+            // cboxil
             // 
-            this.cbxİl.FormattingEnabled = true;
-            this.cbxİl.Location = new System.Drawing.Point(230, 31);
-            this.cbxİl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbxİl.Name = "cbxİl";
-            this.cbxİl.Size = new System.Drawing.Size(319, 28);
-            this.cbxİl.TabIndex = 4;
+            this.cboxil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxil.FormattingEnabled = true;
+            this.cboxil.Location = new System.Drawing.Point(230, 31);
+            this.cboxil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboxil.Name = "cboxil";
+            this.cboxil.Size = new System.Drawing.Size(319, 28);
+            this.cboxil.TabIndex = 4;
+            this.cboxil.SelectedIndexChanged += new System.EventHandler(this.cboxil_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -248,15 +262,6 @@
             // 
             this.columnHeader8.Text = "Kısım";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(230, 162);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 13;
-            // 
             // frmRaporAidat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -284,9 +289,9 @@
         private System.Windows.Forms.Button btnYazdir;
         private System.Windows.Forms.Button btnListele;
         private System.Windows.Forms.CheckBox checkOdemeyenler;
-        private System.Windows.Forms.ComboBox cbxKisim;
-        private System.Windows.Forms.ComboBox cbxMudurluk;
-        private System.Windows.Forms.ComboBox cbxİl;
+        private System.Windows.Forms.ComboBox cboxBirim;
+        private System.Windows.Forms.ComboBox cboxMudurluk;
+        private System.Windows.Forms.ComboBox cboxil;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView listUyeKayitlari;
