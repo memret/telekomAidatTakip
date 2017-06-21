@@ -11,9 +11,8 @@ using System.Windows.Forms;
 namespace telekomAidatTakip
 {
     public partial class frmAidatMiktar : Form
-    {   try
-        {
-        private void cBoxIlDoldur()
+    {   
+          private void cBoxIlDoldur()
         {
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
             Database db2 = new Database();
@@ -37,8 +36,8 @@ namespace telekomAidatTakip
             while (data.Read())
             {
                 cboxSource.Add(Convert.ToInt32(data["mudurlukNo"]), data["mudurlukAdi"].ToString());
-                
-                
+
+
             }
             cboxMudurluk.DataSource = new BindingSource(cboxSource, null);
             cboxMudurluk.DisplayMember = "Value";
@@ -51,13 +50,13 @@ namespace telekomAidatTakip
             int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
             Database db2 = new Database();
-            
-            var data = db2.DataOku("SELECT birimNo, birimAdi FROM Birim WHERE mudurlukNo=@0",mdr.ToString());
+
+            var data = db2.DataOku("SELECT birimNo, birimAdi FROM Birim WHERE mudurlukNo=@0", mdr.ToString());
             while (data.Read())
             {
                 cboxSource.Add(Convert.ToInt32(data["birimNo"]), data["birimAdi"].ToString());
 
-                
+
             }
             cboxMudurluk.DataSource = new BindingSource(cboxSource, null);
             cboxMudurluk.DisplayMember = "Value";
@@ -66,10 +65,10 @@ namespace telekomAidatTakip
 
         private void IlListesiniDoldur()
         {
-           
 
 
-            
+
+
         }
         public frmAidatMiktar()
         {
@@ -79,8 +78,8 @@ namespace telekomAidatTakip
         private void frmAidatMiktar_Load(object sender, EventArgs e)
         {
             cBoxIlDoldur();
-           
-           
+
+
         }
 
 
@@ -91,7 +90,7 @@ namespace telekomAidatTakip
 
         private void cboxMudurluk_SelectedIndexChanged(object sender, EventArgs e)
         {
-             cbxKisimdoldur();
+            cbxKisimdoldur();
         }
 
         private void grpbxAidatMiktar_Resize(object sender, EventArgs e)
@@ -104,4 +103,7 @@ namespace telekomAidatTakip
             cbxmudurlukdoldur();
         }
     }
+    
+    
+    
 }
