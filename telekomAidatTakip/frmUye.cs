@@ -21,7 +21,7 @@ namespace telekomAidatTakip
 
         private void frmUye_Load(object sender, EventArgs e)
         {
-            DoldurKomple();
+            DoldurKomple("1");
 
         }
         private void DoldurKomple()
@@ -55,7 +55,8 @@ namespace telekomAidatTakip
             if (data.Read())
             {
                 txtAdSoyad.Text = data["adsoyad"].ToString();
-                txtUyeNo.Text = sicilno;
+                //txtUyeNo.Text = sicilno;
+                //txt
 
             }
         }
@@ -77,6 +78,11 @@ namespace telekomAidatTakip
         }
 
         private void cboxBirim_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUyeNo_TextChanged(object sender, EventArgs e)
         {
 
         }

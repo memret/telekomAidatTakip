@@ -171,6 +171,7 @@
             this.Text = "frmTanimUnvan";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimUnvan_FormClosing);
             this.Load += new System.EventHandler(this.frmTanimUnvan_Load);
+            this.Resize += new System.EventHandler(this.frmTanimUnvan_Resize);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

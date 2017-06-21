@@ -25,6 +25,7 @@ namespace telekomAidatTakip
             cboxTahsil.DataSource = new BindingSource(cboxSource, null);
             cboxTahsil.DisplayMember = "Value";
             cboxTahsil.ValueMember = "Key";
+            cboxTahsil.Enabled = true;
         }
         
         public static void DoldurUnvan(ref ComboBox cboxUnvan)
@@ -43,6 +44,7 @@ namespace telekomAidatTakip
             cboxUnvan.DataSource = new BindingSource(cboxSource, null);
             cboxUnvan.DisplayMember = "Value";
             cboxUnvan.ValueMember = "Key";
+            cboxUnvan.Enabled = true;
         }
         public static void DoldurIl(ref ComboBox cboxIl)
         {
@@ -60,6 +62,7 @@ namespace telekomAidatTakip
             cboxIl.DataSource = new BindingSource(cboxSource, null);
             cboxIl.DisplayMember = "Value";
             cboxIl.ValueMember = "Key";
+            cboxIl.Enabled = true;
         }
         public static void DoldurUyelikTipi(ref ComboBox cboxUyelikTipi)
         {
@@ -77,6 +80,7 @@ namespace telekomAidatTakip
             cboxUyelikTipi.DataSource = new BindingSource(cboxSource, null);
             cboxUyelikTipi.DisplayMember = "Value";
             cboxUyelikTipi.ValueMember = "Key";
+            cboxUyelikTipi.Enabled = true;
         }
         public static void DoldurMudurluk(ref ComboBox cboxMudurluk, string ilNo)
         {
@@ -102,6 +106,7 @@ namespace telekomAidatTakip
             cboxMudurluk.DataSource = new BindingSource(cboxSource, null);
             cboxMudurluk.DisplayMember = "Value";
             cboxMudurluk.ValueMember = "Key";
+            cboxMudurluk.Enabled = true;
         }
         public static void DoldurBirim(ref ComboBox cboxBirim, string mudurlukNo)
         {
@@ -127,6 +132,7 @@ namespace telekomAidatTakip
             cboxBirim.DataSource = new BindingSource(cboxSource, null);
             cboxBirim.DisplayMember = "Value";
             cboxBirim.ValueMember = "Key";
+            cboxBirim.Enabled = true;
         }
         
         
