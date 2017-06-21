@@ -40,6 +40,7 @@ namespace telekomAidatTakip
             DoldurKomple();
             DoldurTemelBilgiler(sicilno);
             DoldurAdresBilgiler(sicilno);
+            //DoldurNufusBilgileri(sicilno); //test edilmedi
         }
         private void DoldurNufusBilgileri(string sicilno)
         {
@@ -48,9 +49,18 @@ namespace telekomAidatTakip
 
             if (data.Read())
             {
-                txtNufusBaba.Text = data[""].ToString();
-                txtNufusAnne.Text = data[""].ToString();
-                txtNufusDogumYeri.Text = data[""].ToString();
+                txtNufusBaba.Text = data["baba"].ToString();
+                txtNufusAnne.Text = data["anne"].ToString();
+                txtNufusDogumYeri.Text = data["dogumyeri"].ToString();
+                dateNufusDogum.Value = Convert.ToDateTime(data["dogumTarihi"]);
+                cboxNufusMedeni.SelectedItem = PRG.cboxIndexBul(ref cboxNufusMedeni, data["medeniHal"]);
+                cboxNufusKan.SelectedItem = PRG.cboxIndexBul(ref cboxNufusKan, data["kangrubuno"]);
+                cboxNufusIl.SelectedItem = PRG.cboxIndexBul(ref cboxNufusIl,data["ilno"]);
+                txtNufusIlce.Text = data["ilce"].ToString();
+                txtNufusMahalle.Text = data["mahalle"].ToString();
+                txtNufusSira.Text = data["sirano"].ToString();
+                txtNufusCilt.Text = data["ailesirano"].ToString();
+                txtNufusAile.Text = data["ciltno"].ToString();
             }
 
         }
@@ -80,13 +90,13 @@ namespace telekomAidatTakip
             {
                 txtAdSoyad.Text = data["adsoyad"].ToString();
                 txtSicilNo.Text = sicilno;
-                /*cboxTahsil.SelectedItem = PRG.cboxIndexBul(ref cboxTahsil, data["tahsilno"]);
+                cboxTahsil.SelectedItem = PRG.cboxIndexBul(ref cboxTahsil, data["tahsilno"]);
                 cboxUnvan.SelectedItem = PRG.cboxIndexBul(ref cboxUnvan, data["unvanno"]);
                 cboxIl.SelectedItem = PRG.cboxIndexBul(ref cboxIl, data["ilno"]);
                 cboxMudurluk.SelectedItem = PRG.cboxIndexBul(ref cboxMudurluk, data["mudurlukno"]);
                 cboxBirim.SelectedItem = PRG.cboxIndexBul(ref cboxBirim, data["birimno"]);
                 cboxUyelikTipi.SelectedItem = PRG.cboxIndexBul(ref cboxUyelikTipi, data["uyeliktipino"]);
-                */
+                
                 //dateGiris.Value = Convert.ToDateTime(data["girisTarihi"]);
                 //dateKayit.Value = Convert.ToDateTime(data["kayitTarihi"]);
             }

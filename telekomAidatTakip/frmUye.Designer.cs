@@ -74,13 +74,14 @@
             this.txtEvTel = new System.Windows.Forms.TextBox();
             this.txtEvAdresi = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dateNufusDogum = new System.Windows.Forms.DateTimePicker();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.cboxNufusIl = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.cboxNufusKan = new System.Windows.Forms.ComboBox();
             this.cboxNufusMedeni = new System.Windows.Forms.ComboBox();
-            this.txtMahalle = new System.Windows.Forms.TextBox();
+            this.txtNufusMahalle = new System.Windows.Forms.TextBox();
             this.txtNufusIlce = new System.Windows.Forms.TextBox();
             this.txtNufusSira = new System.Windows.Forms.TextBox();
             this.txtNufusAile = new System.Windows.Forms.TextBox();
@@ -100,10 +101,9 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnYeni = new System.Windows.Forms.Button();
-            this.btnKaydet = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
-            this.dateNufusDogum = new System.Windows.Forms.DateTimePicker();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnYeni = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.lblSilinmeBilgisi.SuspendLayout();
@@ -117,7 +117,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tabControl1);
-            this.groupBox1.Location = new System.Drawing.Point(137, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(815, 383);
             this.groupBox1.TabIndex = 0;
@@ -563,7 +563,7 @@
             this.tabPage3.Controls.Add(this.label23);
             this.tabPage3.Controls.Add(this.cboxNufusKan);
             this.tabPage3.Controls.Add(this.cboxNufusMedeni);
-            this.tabPage3.Controls.Add(this.txtMahalle);
+            this.tabPage3.Controls.Add(this.txtNufusMahalle);
             this.tabPage3.Controls.Add(this.txtNufusIlce);
             this.tabPage3.Controls.Add(this.txtNufusSira);
             this.tabPage3.Controls.Add(this.txtNufusAile);
@@ -587,6 +587,14 @@
             this.tabPage3.Text = "Nüfus Bilgileri";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // dateNufusDogum
+            // 
+            this.dateNufusDogum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateNufusDogum.Location = new System.Drawing.Point(336, 74);
+            this.dateNufusDogum.Name = "dateNufusDogum";
+            this.dateNufusDogum.Size = new System.Drawing.Size(95, 20);
+            this.dateNufusDogum.TabIndex = 8;
             // 
             // label32
             // 
@@ -640,12 +648,12 @@
             this.cboxNufusMedeni.TabIndex = 3;
             this.cboxNufusMedeni.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // txtMahalle
+            // txtNufusMahalle
             // 
-            this.txtMahalle.Location = new System.Drawing.Point(145, 234);
-            this.txtMahalle.Name = "txtMahalle";
-            this.txtMahalle.Size = new System.Drawing.Size(185, 20);
-            this.txtMahalle.TabIndex = 2;
+            this.txtNufusMahalle.Location = new System.Drawing.Point(145, 234);
+            this.txtNufusMahalle.Name = "txtNufusMahalle";
+            this.txtNufusMahalle.Size = new System.Drawing.Size(185, 20);
+            this.txtNufusMahalle.TabIndex = 2;
             // 
             // txtNufusIlce
             // 
@@ -783,7 +791,7 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(814, 421);
+            this.tabPage4.Size = new System.Drawing.Size(801, 338);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Aidat Bilgileri";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -792,7 +800,7 @@
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(814, 421);
+            this.tabPage5.Size = new System.Drawing.Size(801, 338);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Not";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -802,30 +810,12 @@
             this.groupBox3.Controls.Add(this.btnSil);
             this.groupBox3.Controls.Add(this.btnKaydet);
             this.groupBox3.Controls.Add(this.btnYeni);
-            this.groupBox3.Location = new System.Drawing.Point(13, 38);
+            this.groupBox3.Location = new System.Drawing.Point(833, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(105, 198);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Üye İşlemleri";
-            // 
-            // btnYeni
-            // 
-            this.btnYeni.Location = new System.Drawing.Point(15, 27);
-            this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(75, 44);
-            this.btnYeni.TabIndex = 0;
-            this.btnYeni.Text = "Yeni Üye";
-            this.btnYeni.UseVisualStyleBackColor = true;
-            // 
-            // btnKaydet
-            // 
-            this.btnKaydet.Location = new System.Drawing.Point(15, 82);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(75, 44);
-            this.btnKaydet.TabIndex = 0;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = true;
             // 
             // btnSil
             // 
@@ -836,19 +826,29 @@
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
             // 
-            // dateNufusDogum
+            // btnKaydet
             // 
-            this.dateNufusDogum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateNufusDogum.Location = new System.Drawing.Point(336, 74);
-            this.dateNufusDogum.Name = "dateNufusDogum";
-            this.dateNufusDogum.Size = new System.Drawing.Size(95, 20);
-            this.dateNufusDogum.TabIndex = 8;
+            this.btnKaydet.Location = new System.Drawing.Point(15, 82);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(75, 44);
+            this.btnKaydet.TabIndex = 0;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.UseVisualStyleBackColor = true;
+            // 
+            // btnYeni
+            // 
+            this.btnYeni.Location = new System.Drawing.Point(15, 27);
+            this.btnYeni.Name = "btnYeni";
+            this.btnYeni.Size = new System.Drawing.Size(75, 44);
+            this.btnYeni.TabIndex = 0;
+            this.btnYeni.Text = "Yeni Üye";
+            this.btnYeni.UseVisualStyleBackColor = true;
             // 
             // frmUye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 426);
+            this.ClientSize = new System.Drawing.Size(946, 404);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmUye";
@@ -923,7 +923,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ComboBox cboxNufusKan;
         private System.Windows.Forms.ComboBox cboxNufusMedeni;
-        private System.Windows.Forms.TextBox txtMahalle;
+        private System.Windows.Forms.TextBox txtNufusMahalle;
         private System.Windows.Forms.TextBox txtNufusIlce;
         private System.Windows.Forms.TextBox txtNufusCilt;
         private System.Windows.Forms.TextBox txtNufusDogumYeri;

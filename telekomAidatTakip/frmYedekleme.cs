@@ -16,5 +16,14 @@ namespace telekomAidatTakip
         {
             InitializeComponent();
         }
+
+        private void frmYedekleme_Load(object sender, EventArgs e)
+        {
+
+        }
+        void Yedekle()
+        {
+
+        }
     }
 }

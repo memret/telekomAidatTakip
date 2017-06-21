@@ -178,6 +178,9 @@
     <EmbeddedResource Include="frmUye.resx">
       <DependentUpon>frmUye.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmYedekleme.resx">
+      <DependentUpon>frmYedekleme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
