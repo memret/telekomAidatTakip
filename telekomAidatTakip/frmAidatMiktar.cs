@@ -11,7 +11,8 @@ using System.Windows.Forms;
 namespace telekomAidatTakip
 {
     public partial class frmAidatMiktar : Form
-    {
+    {   try
+        {
         private void cBoxIlDoldur()
         {
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
@@ -47,9 +48,10 @@ namespace telekomAidatTakip
         private void cbxKisimdoldur()
         {
             //hata var 
+            int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
             Database db2 = new Database();
-            int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
+            
             var data = db2.DataOku("SELECT birimNo, birimAdi FROM Birim WHERE mudurlukNo=@0",mdr.ToString());
             while (data.Read())
             {
