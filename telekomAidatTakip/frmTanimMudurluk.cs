@@ -21,6 +21,7 @@ namespace telekomAidatTakip
         {
             kayitliMdrDoldur();
             cBoxIlDoldur();
+            frmTanimMudurluk_Resize(this, null);
         }
 
         private void kayitliMdrDoldur()
@@ -164,10 +165,23 @@ namespace telekomAidatTakip
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            Database db = new Database();
-            db.Sorgu("DELETE FROM Mudurluk Where mudurlukNo = @0", txtMdrKod.Text);
-            listvMdr.Items.Clear();
-            kayitliMdrDoldur();
+            if (btnSil.Enabled)
+            {
+                DialogResult dialogResult = MessageBox.Show("Seçili müdürlük silinecek. Emin misiniz?", "", MessageBoxButtons.YesNoCancel);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (txtMdrKod.Text != string.Empty)
+                    {
+                        Database db = new Database();
+                        db.Sorgu("DELETE FROM Mudurluk Where mudurlukNo = @0", txtMdrKod.Text);
+                        listvMdr.Items.Clear();
+                        kayitliMdrDoldur();
+                    }
+                }
+
+                else if (dialogResult == DialogResult.Cancel)
+                    return;
+            }
         }
 
         private void listvMdr_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -196,6 +210,17 @@ namespace telekomAidatTakip
              comboBox_il.Enabled = true;
              btnYeni.Text = "Yeni";
              
+        }
+
+        private void frmTanimMudurluk_Resize(object sender, EventArgs e)
+        {
+            groupBox2.Width = this.Width - 46;
+            groupBox2.Height = this.Height - 273;
+        }
+
+        private void listvMdr_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
