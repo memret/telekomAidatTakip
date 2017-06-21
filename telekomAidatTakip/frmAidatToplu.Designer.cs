@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtAidatLogNo = new System.Windows.Forms.TextBox();
             this.dateTarih = new System.Windows.Forms.DateTimePicker();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.txtAidatMiktari = new System.Windows.Forms.TextBox();
@@ -47,8 +45,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtAidatLogNo);
             this.groupBox1.Controls.Add(this.dateTarih);
             this.groupBox1.Controls.Add(this.btnKaydet);
             this.groupBox1.Controls.Add(this.txtAidatMiktari);
@@ -68,22 +64,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Toplu Aidat Girişi";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 17);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "aidatLogNo:";
-            // 
-            // txtAidatLogNo
-            // 
-            this.txtAidatLogNo.Location = new System.Drawing.Point(131, 20);
-            this.txtAidatLogNo.Name = "txtAidatLogNo";
-            this.txtAidatLogNo.Size = new System.Drawing.Size(100, 22);
-            this.txtAidatLogNo.TabIndex = 16;
             // 
             // dateTarih
             // 
@@ -223,7 +203,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.DateTimePicker dateTarih;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtAidatLogNo;
     }
 }

@@ -50,7 +50,21 @@ namespace telekomAidatTakip
         private void btnListele_Click(object sender, EventArgs e)
         {
             Database db = new Database();
-            var data = db.DataOku(""); // doldurulacak
+            String ilNo = cboxil.SelectedValue.ToString();
+            String mudurlukNo = cboxMudurluk.SelectedValue.ToString();
+            String birimNo = cboxBirim.SelectedValue.ToString();
+            var data = db.DataOku("SELECT Uyeler.sicilNo, Uyeler.adSoyad, AidatMiktar.aidat, AidatLog.miktar, il.ilAdi, Mudurluk.mudurlukAdi, Birim.birimAdi  FROM AidatMiktar, Uyeler, il, AidatLog, Mudurluk, Birim WHERE il.ilNo = Mudurluk.ilNo AND Mudurluk.mudurlukNo = Birim.mudurlukNo AND Birim.birimNo = AidatMiktar.birimNo AND Birim.birimNo = @0;",birimNo);
+          // + " WHERE i.ilNo = @0 AND m.mudurlukNo = @1 AND b.birimNo = @2 AND aim.birimNo = @3",ilNo,mudurlukNo,birimNo, birimNo); // doldurulacak
+          /*
+                      SELECT u.sicilNo, u.adSoyad, aim.aidat, miktar, i.ilAdi, m.mudurlukAdi, b.birimAdi
+                      FROM uyeler u, AidatMiktar aim, mudurluk m, birimAdi b, il i
+                      WHERE i.ilNo = @0 AND m.mudurlukNo = @1 AND b.birimNo = @2
+
+                          @0=ilNo
+                          @1= mudurlukNo
+                          @2 = birimNo
+                          */
+
             while (data.Read())
             {
 
