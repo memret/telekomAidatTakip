@@ -55,8 +55,7 @@ namespace telekomAidatTakip
 
         private void txtünvanKodu_TextChanged(object sender, EventArgs e)
         {
-            groupBox2.Width = this.Width - 43; 
-            groupBox2.Height = this.Height - 233;
+            
         }
         private void btnYeni_Click(object sender, EventArgs e)
         {
@@ -126,14 +125,23 @@ namespace telekomAidatTakip
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (txtünvanKodu.Text != string.Empty) 
+            if (btnSil.Enabled)
             {
-                Database db = new Database();
-                db.Sorgu("delete from unvan where unvanNo=@0", txtünvanKodu.Text);
-                UnvanListesiniDoldur();
+                DialogResult dialogResult = MessageBox.Show("Değişiklikleri silmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (txtünvanKodu.Text != string.Empty)
+                    {
+                        Database db = new Database();
+                        db.Sorgu("delete from unvan where unvanNo=@0", txtünvanKodu.Text);
+                        UnvanListesiniDoldur();
+                    }
+                }
+                    
+                else if (dialogResult == DialogResult.Cancel)
+                    return;
             }
-
-        }
+            }
 
         private void frmTanimUnvan_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -167,7 +175,7 @@ namespace telekomAidatTakip
 
             Database db = new Database();
             
-            txtünvanKodu.Text = db.DataOkuTek("select unvanAdi from unvan where unvanNo=@0", "unvanAdi", ünvanKodu);
+            txtünvanAdı.Text = db.DataOkuTek("select unvanAdi from unvan where unvanNo=@0", "unvanAdi", ünvanKodu);
 
             txtünvanKodu.Text = ünvanKodu;
             btnKaydet.Enabled = true;
@@ -176,7 +184,12 @@ namespace telekomAidatTakip
             txtünvanKodu.Enabled = true;
             btnYeni.Text = "Yeni";
         }
-        
-                }
+
+        private void frmTanimUnvan_Resize(object sender, EventArgs e)
+        {
+            groupBox2.Width = this.Width - 59;
+            groupBox2.Height = this.Height - 256;
+        }
+    }
             }
     

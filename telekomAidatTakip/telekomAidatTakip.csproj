@@ -151,6 +151,9 @@
     <EmbeddedResource Include="frmRaporAidat.resx">
       <DependentUpon>frmRaporAidat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRaporIl.resx">
+      <DependentUpon>frmRaporIl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRaporUye.resx">
       <DependentUpon>frmRaporUye.cs</DependentUpon>
     </EmbeddedResource>
