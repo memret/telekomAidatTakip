@@ -55,8 +55,8 @@ namespace telekomAidatTakip
             if (data.Read())
             {
                 txtAdSoyad.Text = data["adsoyad"].ToString();
-                txtUyeNo.Text = sicilno;
-                txt
+                //txtUyeNo.Text = sicilno;
+                //txt
 
             }
         }
