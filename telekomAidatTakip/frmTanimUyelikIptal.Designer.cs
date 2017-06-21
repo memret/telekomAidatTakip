@@ -65,7 +65,7 @@
             // 
             this.btnSil.Enabled = false;
             this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSil.Location = new System.Drawing.Point(201, 98);
+            this.btnSil.Location = new System.Drawing.Point(222, 92);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(75, 45);
             this.btnSil.TabIndex = 4;
@@ -77,7 +77,7 @@
             // 
             this.btnKaydet.Enabled = false;
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydet.Location = new System.Drawing.Point(120, 98);
+            this.btnKaydet.Location = new System.Drawing.Point(120, 92);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(75, 45);
             this.btnKaydet.TabIndex = 3;
@@ -88,7 +88,7 @@
             // btnYeni
             // 
             this.btnYeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnYeni.Location = new System.Drawing.Point(39, 98);
+            this.btnYeni.Location = new System.Drawing.Point(29, 92);
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(75, 45);
             this.btnYeni.TabIndex = 2;

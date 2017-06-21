@@ -98,7 +98,7 @@
             // 
             this.txtAdi.Location = new System.Drawing.Point(101, 58);
             this.txtAdi.Name = "txtAdi";
-            this.txtAdi.Size = new System.Drawing.Size(100, 20);
+            this.txtAdi.Size = new System.Drawing.Size(81, 20);
             this.txtAdi.TabIndex = 2;
             // 
             // label2
@@ -114,7 +114,7 @@
             // 
             this.txtPlakaKodu.Location = new System.Drawing.Point(101, 32);
             this.txtPlakaKodu.Name = "txtPlakaKodu";
-            this.txtPlakaKodu.Size = new System.Drawing.Size(100, 20);
+            this.txtPlakaKodu.Size = new System.Drawing.Size(131, 20);
             this.txtPlakaKodu.TabIndex = 1;
             // 
             // label1

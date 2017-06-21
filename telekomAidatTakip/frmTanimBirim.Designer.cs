@@ -59,7 +59,7 @@
             this.listvil.FullRowSelect = true;
             this.listvil.Location = new System.Drawing.Point(3, 16);
             this.listvil.Name = "listvil";
-            this.listvil.Size = new System.Drawing.Size(328, 183);
+            this.listvil.Size = new System.Drawing.Size(349, 183);
             this.listvil.TabIndex = 7;
             this.listvil.UseCompatibleStateImageBehavior = false;
             this.listvil.View = System.Windows.Forms.View.Details;
@@ -98,7 +98,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(10, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(334, 168);
+            this.groupBox1.Size = new System.Drawing.Size(355, 168);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kısım Tanımları";
@@ -108,8 +108,8 @@
             this.cBoxMudurluk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxMudurluk.Enabled = false;
             this.cBoxMudurluk.FormattingEnabled = true;
-            this.cBoxMudurluk.Location = new System.Drawing.Point(101, 85);
-            this.cBoxMudurluk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cBoxMudurluk.Location = new System.Drawing.Point(91, 75);
+            this.cBoxMudurluk.Margin = new System.Windows.Forms.Padding(2);
             this.cBoxMudurluk.Name = "cBoxMudurluk";
             this.cBoxMudurluk.Size = new System.Drawing.Size(228, 21);
             this.cBoxMudurluk.TabIndex = 3;
@@ -117,7 +117,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 85);
+            this.label3.Location = new System.Drawing.Point(14, 75);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
@@ -127,7 +127,7 @@
             // btnYeni
             // 
             this.btnYeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnYeni.Location = new System.Drawing.Point(15, 115);
+            this.btnYeni.Location = new System.Drawing.Point(11, 110);
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(88, 46);
             this.btnYeni.TabIndex = 4;
@@ -139,7 +139,7 @@
             // 
             this.btnSil.Enabled = false;
             this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnSil.Location = new System.Drawing.Point(240, 115);
+            this.btnSil.Location = new System.Drawing.Point(236, 110);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(88, 46);
             this.btnSil.TabIndex = 6;
@@ -151,7 +151,7 @@
             // 
             this.btnKaydet.Enabled = false;
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnKaydet.Location = new System.Drawing.Point(129, 115);
+            this.btnKaydet.Location = new System.Drawing.Point(125, 110);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(88, 46);
             this.btnKaydet.TabIndex = 5;
@@ -162,7 +162,7 @@
             // txtBirimAdi
             // 
             this.txtBirimAdi.Enabled = false;
-            this.txtBirimAdi.Location = new System.Drawing.Point(101, 58);
+            this.txtBirimAdi.Location = new System.Drawing.Point(91, 48);
             this.txtBirimAdi.Name = "txtBirimAdi";
             this.txtBirimAdi.Size = new System.Drawing.Size(228, 20);
             this.txtBirimAdi.TabIndex = 2;
@@ -170,7 +170,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 61);
+            this.label2.Location = new System.Drawing.Point(12, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 0;
@@ -179,7 +179,7 @@
             // txtBirimKodu
             // 
             this.txtBirimKodu.Enabled = false;
-            this.txtBirimKodu.Location = new System.Drawing.Point(101, 32);
+            this.txtBirimKodu.Location = new System.Drawing.Point(91, 22);
             this.txtBirimKodu.Name = "txtBirimKodu";
             this.txtBirimKodu.Size = new System.Drawing.Size(228, 20);
             this.txtBirimKodu.TabIndex = 1;
@@ -187,7 +187,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 35);
+            this.label1.Location = new System.Drawing.Point(12, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 0;
@@ -199,7 +199,7 @@
             this.groupBox2.Controls.Add(this.listvil);
             this.groupBox2.Location = new System.Drawing.Point(10, 185);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(334, 202);
+            this.groupBox2.Size = new System.Drawing.Size(355, 202);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kayıtlı İller";
@@ -208,10 +208,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 398);
+            this.ClientSize = new System.Drawing.Size(379, 398);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmTanimBirim";
             this.Text = "frmTanimBirim";
             this.Load += new System.EventHandler(this.frmTanimBirim_Load);
