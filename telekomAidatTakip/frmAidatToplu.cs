@@ -141,7 +141,7 @@ namespace telekomAidatTakip
         {
             if (cboxil.SelectedIndex != -1)
             {
-                int mudurlukNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key;
+                int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
 
 
                 Dictionary<int, string> cboxSource = new Dictionary<int, string>();
