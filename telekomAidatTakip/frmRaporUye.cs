@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -152,29 +153,118 @@ namespace telekomAidatTakip
 
         private void btnEkranaListele_Click(object sender, EventArgs e)
         {
+
+            //TABLODA VERİ YOKKEN VERİ YOK DİYECEK.
+
+            listUye.Items.Clear();
             //kısaltma olarak FROM uyeler u dediğimde hata veriyor ondan uzun uzun yazdım küfür etmeyin
             //tek satırda yazmazsam da hata veriyor ömer buralarda çıldırdı
-            string temelSorgu = "SELECT Uyeler.adSoyad, Uyeler.sicilNo,KanGrubu.kanGrubu, il.ilAdi, Mudurluk.mudurlukAdi, Birim.birimAdi, Unvan.unvanAdi, Tahsil.tahsilAdi FROM uyeler,KanGrubu, il, Mudurluk, Birim, Unvan, Tahsil WHERE uyeler.kanGrubuNo = KanGrubu.kanGrubuNo AND uyeler.ilNo = il.ilNo AND uyeler.mudurlukNo = Mudurluk.mudurlukNo AND uyeler.birimNo = Birim.birimNo AND uyeler.unvanNo = Unvan.unvanNo AND uyeler.tahsilNo = Tahsil.tahsilNo AND uyeler.kanGrubuNo = KanGrubu.kanGrubuNo";
             Database db = new Database();
+            SqlParameter paramTemp;
+            string temelSorgu = "SELECT u.adSoyad, u.sicilNo,kg.kanGrubu, i.ilAdi, m.mudurlukAdi, b.birimAdi, unv.unvanAdi, t.tahsilAdi FROM uyeler u,KanGrubu kg, il i, Mudurluk m, Birim b, Unvan unv, Tahsil t WHERE u.kanGrubuNo = kg.kanGrubuNo AND u.ilNo = i.ilNo AND u.mudurlukNo = m.mudurlukNo AND u.birimNo = b.birimNo AND u.unvanNo = unv.unvanNo AND u.tahsilNo = t.tahsilNo AND u.kanGrubuNo = kg.kanGrubuNo ";
+            string ekSorgu=" ";
 
-            var data = db.DataOku(temelSorgu);
+
+
+            List<SqlParameter> paramList = new List<SqlParameter>();
+            if (checkIl.Checked)
+            {
+                String ilNo = ((KeyValuePair<int, string>)cboxII.SelectedItem).Key.ToString();
+                ekSorgu += "AND u.ilNo = @il ";
+                paramTemp = new SqlParameter("@il", ilNo);
+                paramList.Add(paramTemp);
+                temelSorgu += ekSorgu;
+            }
+            
+            
+            if(checkMudurluk.Checked)
+            {
+                string mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString();
+                ekSorgu += "AND u.mudurlukNo = @mudurlukNo ";
+                paramTemp = new SqlParameter("@mudurlukNo", mudurlukNo);
+                paramList.Add(paramTemp);
+                temelSorgu += ekSorgu;
+            }
+
+            if (checkKisim.Checked)
+            {
+                string birimNo = ((KeyValuePair<int, string>)cboxKısım.SelectedItem).Key.ToString();
+                ekSorgu += "AND u.birimNo = @birimNo ";
+                paramTemp = new SqlParameter("@birimNo", birimNo);
+                paramList.Add(paramTemp);
+                temelSorgu += ekSorgu;
+            }
+
+            if(checkUnvan.Checked)
+            {
+                string unvanNo = ((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key.ToString();
+                ekSorgu += "AND u.unvanNo = @unvanNo ";
+                paramTemp = new SqlParameter("@unvanNo", unvanNo);
+                paramList.Add(paramTemp);
+                temelSorgu += ekSorgu;
+            }
+
+            if (checkTahsil.Checked)
+            {
+                string tahsilNo = ((KeyValuePair<int, string>)cboxTahsil.SelectedItem).Key.ToString();
+                ekSorgu += "AND u.tahsilNo = @tahsilNo ";
+                paramTemp = new SqlParameter("@tahsilNo", tahsilNo);
+                paramList.Add(paramTemp);
+                temelSorgu += ekSorgu;
+            }
+
+            if (checkUyelik.Checked)
+            {
+                string uyelikTipiNo = ((KeyValuePair<int, string>)cboxUyelikDurumu.SelectedItem).Key.ToString();
+                ekSorgu += "AND u.uyelikTipiNo = @uyelikTipiNo ";
+                paramTemp = new SqlParameter("@uyelikTipiNo", uyelikTipiNo);
+                paramList.Add(paramTemp);
+                temelSorgu += ekSorgu;
+            }
+
+            if (checkKanGrubu.Checked)
+            {
+                string kanGrubuNo = ((KeyValuePair<int, string>)cboxKanGrubu.SelectedItem).Key.ToString();
+                ekSorgu += "AND u.kanGrubuNo = @kanGrubuNo ";
+                paramTemp = new SqlParameter("@kanGrubuNo", kanGrubuNo);
+                paramList.Add(paramTemp);
+                temelSorgu += ekSorgu;
+            }
+
+            if (cSilinmisKayıt.Checked)
+            {
+                string uyelikTipiNo = 2.ToString();
+                ekSorgu += "AND u.aktif = '0'";
+                temelSorgu += ekSorgu;
+            }
+
+            if (!cSilinmisKayıt.Checked)
+            {
+                string uyelikTipiNo = 2.ToString();
+                ekSorgu += "AND u.aktif = '1'";
+                temelSorgu += ekSorgu;
+            }
+
+
+
+            var data = db.DataOku(temelSorgu, paramList);
             listUye.Items.Clear();
             int siraNo = 0;
-
+            
             while (data.Read())
             {
-                string ilMudBir = data["ilAdi"].ToString() + "/" + data["mudurlukAdi"].ToString() + "/" + data["birimAdi"].ToString();
-                siraNo++;
-                ListViewItem item = new ListViewItem();
-                item.Text = siraNo.ToString();
-                item.SubItems.Add(data["adSoyad"].ToString());
-                item.SubItems.Add(data["sicilNo"].ToString());
-                item.SubItems.Add(data["kanGrubu"].ToString());
-                item.SubItems.Add(ilMudBir);
-                item.SubItems.Add(data["unvanAdi"].ToString());
-                item.SubItems.Add(data["tahsilAdi"].ToString());
+                    string ilMudBir = data["ilAdi"].ToString() + "/" + data["mudurlukAdi"].ToString() + "/" + data["birimAdi"].ToString();
+                    siraNo++;
+                    ListViewItem item = new ListViewItem();
+                    item.Text = siraNo.ToString();
+                    item.SubItems.Add(data["adSoyad"].ToString());
+                    item.SubItems.Add(data["sicilNo"].ToString());
+                    item.SubItems.Add(data["kanGrubu"].ToString());
+                    item.SubItems.Add(ilMudBir);
+                    item.SubItems.Add(data["unvanAdi"].ToString());
+                    item.SubItems.Add(data["tahsilAdi"].ToString());
 
-                listUye.Items.Add(item);
+                    listUye.Items.Add(item);
             }
         }
     }
