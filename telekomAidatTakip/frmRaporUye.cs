@@ -160,7 +160,7 @@ namespace telekomAidatTakip
             var data = db.DataOku(temelSorgu);
             listUye.Items.Clear();
             int siraNo = 0;
-            
+
             while (data.Read())
             {
                 string ilMudBir = data["ilAdi"].ToString() + "/" + data["mudurlukAdi"].ToString() + "/" + data["birimAdi"].ToString();
