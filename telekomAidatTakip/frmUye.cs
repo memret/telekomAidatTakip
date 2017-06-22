@@ -101,7 +101,43 @@ namespace telekomAidatTakip
                 //dateKayit.Value = Convert.ToDateTime(data["kayitTarihi"]);
             }
         }
-        
+        private void TextboxTemizle(Control control)
+
+        {
+            foreach (Control c in control.Controls)
+            {
+                if (c is TextBox)
+                {
+                    ((TextBox)c).Clear();
+                }
+                if (c.HasChildren)
+                {
+                    TextboxTemizle(c);
+                }
+            }
+        }
+        private void ComboTemizle(Control control)
+        {
+            foreach (Control c in control.Controls)
+            {
+                if (c is ComboBox)
+                {
+                    
+                    ((ComboBox)c).SelectedIndex = -1;
+                }
+                if (c.HasChildren)
+                {
+                   ComboTemizle(c);
+                }
+            }
+        }
+        private void yeniKayitEkle()
+        {
+            
+            TextboxTemizle(groupBox1);
+            ComboTemizle(groupBox1);
+
+        }
 
         private void cboxUnvan_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -109,13 +145,14 @@ namespace telekomAidatTakip
         }
 
         private void cboxIl_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {   if(cboxIl.SelectedIndex!=-1)
             PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key.ToString());
         }
 
         private void cboxMudurluk_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
+            if (cboxMudurluk .SelectedIndex != -1)
+                PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
         }
 
         private void cboxBirim_SelectedIndexChanged(object sender, EventArgs e)
@@ -151,6 +188,16 @@ namespace telekomAidatTakip
         private void tabPage3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnYeni_Click(object sender, EventArgs e)
+        {
+            yeniKayitEkle();
         }
     }
 }
