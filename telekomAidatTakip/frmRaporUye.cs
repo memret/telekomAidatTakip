@@ -149,5 +149,33 @@ namespace telekomAidatTakip
                 cboxKanGrubu.SelectedIndex = -1;
             }
         }
+
+        private void btnEkranaListele_Click(object sender, EventArgs e)
+        {
+            //kısaltma olarak FROM uyeler u dediğimde hata veriyor ondan uzun uzun yazdım küfür etmeyin
+            //tek satırda yazmazsam da hata veriyor ömer buralarda çıldırdı
+            string temelSorgu = "SELECT Uyeler.adSoyad, Uyeler.sicilNo,KanGrubu.kanGrubu, il.ilAdi, Mudurluk.mudurlukAdi, Birim.birimAdi, Unvan.unvanAdi, Tahsil.tahsilAdi FROM uyeler,KanGrubu, il, Mudurluk, Birim, Unvan, Tahsil WHERE uyeler.kanGrubuNo = KanGrubu.kanGrubuNo AND uyeler.ilNo = il.ilNo AND uyeler.mudurlukNo = Mudurluk.mudurlukNo AND uyeler.birimNo = Birim.birimNo AND uyeler.unvanNo = Unvan.unvanNo AND uyeler.tahsilNo = Tahsil.tahsilNo AND uyeler.kanGrubuNo = KanGrubu.kanGrubuNo";
+            Database db = new Database();
+
+            var data = db.DataOku(temelSorgu);
+            listUye.Items.Clear();
+            int siraNo = 0;
+            
+            while (data.Read())
+            {
+                string ilMudBir = data["ilAdi"].ToString() + "/" + data["mudurlukAdi"].ToString() + "/" + data["birimAdi"].ToString();
+                siraNo++;
+                ListViewItem item = new ListViewItem();
+                item.Text = siraNo.ToString();
+                item.SubItems.Add(data["adSoyad"].ToString());
+                item.SubItems.Add(data["sicilNo"].ToString());
+                item.SubItems.Add(data["kanGrubu"].ToString());
+                item.SubItems.Add(ilMudBir);
+                item.SubItems.Add(data["unvanAdi"].ToString());
+                item.SubItems.Add(data["tahsilAdi"].ToString());
+
+                listUye.Items.Add(item);
+            }
+        }
     }
 }
