@@ -26,6 +26,7 @@ namespace telekomAidatTakip
             cboxTahsil.DisplayMember = "Value";
             cboxTahsil.ValueMember = "Key";
             cboxTahsil.Enabled = true;
+            cboxTahsil.SelectedIndex = -1;
         }
         
         public static void DoldurUnvan(ref ComboBox cboxUnvan)
@@ -45,6 +46,7 @@ namespace telekomAidatTakip
             cboxUnvan.DisplayMember = "Value";
             cboxUnvan.ValueMember = "Key";
             cboxUnvan.Enabled = true;
+            cboxUnvan.SelectedIndex = -1;
         }
         public static void DoldurIl(ref ComboBox cboxIl)
         {
@@ -63,6 +65,7 @@ namespace telekomAidatTakip
             cboxIl.DisplayMember = "Value";
             cboxIl.ValueMember = "Key";
             cboxIl.Enabled = true;
+            cboxIl.SelectedIndex = -1;
         }
         public static void DoldurUyelikTipi(ref ComboBox cboxUyelikTipi)
         {
@@ -81,6 +84,7 @@ namespace telekomAidatTakip
             cboxUyelikTipi.DisplayMember = "Value";
             cboxUyelikTipi.ValueMember = "Key";
             cboxUyelikTipi.Enabled = true;
+            cboxUyelikTipi.SelectedIndex = -1;
         }
         public static void DoldurKanGrubu(ref ComboBox cboxKanGrubu)
         {
@@ -99,6 +103,7 @@ namespace telekomAidatTakip
             cboxKanGrubu.DisplayMember = "Value";
             cboxKanGrubu.ValueMember = "Key";
             cboxKanGrubu.Enabled = true;
+            cboxKanGrubu.SelectedIndex = -1;
         }
         public static void DoldurMudurluk(ref ComboBox cboxMudurluk, string ilNo)
         {
@@ -118,13 +123,14 @@ namespace telekomAidatTakip
             }
             else
             {
-                cboxSource.Add(-1, "İlk önce il seçin");
+                cboxSource.Add(-2, "İlk önce il seçin");
                 cboxMudurluk.Enabled = false;
             }
             cboxMudurluk.DataSource = new BindingSource(cboxSource, null);
             cboxMudurluk.DisplayMember = "Value";
             cboxMudurluk.ValueMember = "Key";
             cboxMudurluk.Enabled = true;
+            cboxMudurluk.SelectedIndex = -1;
         }
         public static void DoldurBirim(ref ComboBox cboxBirim, string mudurlukNo)
         {
@@ -144,13 +150,14 @@ namespace telekomAidatTakip
             }
             else
             {
-                cboxSource.Add(-1, "İlk önce il seçin");
+                cboxSource.Add(-2, "İlk önce il seçin");
                 cboxBirim.Enabled = false;
             }
             cboxBirim.DataSource = new BindingSource(cboxSource, null);
             cboxBirim.DisplayMember = "Value";
             cboxBirim.ValueMember = "Key";
             cboxBirim.Enabled = true;
+            cboxBirim.SelectedIndex = -1;
         }
         public static object cboxIndexBul(ref ComboBox cbox, object key)
         {
@@ -162,8 +169,6 @@ namespace telekomAidatTakip
                     return item;
                 }
             }
-
-
             return -1;
         }
         

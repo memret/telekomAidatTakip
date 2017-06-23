@@ -91,6 +91,7 @@
             this.cboxIl.Size = new System.Drawing.Size(238, 21);
             this.cboxIl.TabIndex = 2;
             this.cboxIl.SelectedIndexChanged += new System.EventHandler(this.cboxIl_SelectedIndexChanged);
+            this.cboxIl.SelectionChangeCommitted += new System.EventHandler(this.cboxIl_SelectionChangeCommitted);
             // 
             // cboxMudurluk
             // 
@@ -101,6 +102,7 @@
             this.cboxMudurluk.Size = new System.Drawing.Size(238, 21);
             this.cboxMudurluk.TabIndex = 2;
             this.cboxMudurluk.SelectedIndexChanged += new System.EventHandler(this.cboxMudurluk_SelectedIndexChanged);
+            this.cboxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cboxMudurluk_SelectionChangeCommitted);
             // 
             // cboxBirim
             // 
@@ -111,6 +113,7 @@
             this.cboxBirim.Size = new System.Drawing.Size(238, 21);
             this.cboxBirim.TabIndex = 2;
             this.cboxBirim.SelectedIndexChanged += new System.EventHandler(this.cboxBirim_SelectedIndexChanged);
+            this.cboxBirim.SelectionChangeCommitted += new System.EventHandler(this.cboxBirim_SelectionChangeCommitted);
             // 
             // txtAidatMiktari
             // 
