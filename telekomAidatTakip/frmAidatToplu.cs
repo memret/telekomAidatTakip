@@ -39,10 +39,10 @@ namespace telekomAidatTakip
             System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@2", dt);
 
             var kisiler = db.DataOku("SELECT sicilNo FROM uyeler WHERE birimNo =@0", birimNo.ToString());
-                while (kisiler.Read())
-                {
-                    String sicilNo = kisiler["sicilNo"].ToString();
-                    if(!string.IsNullOrEmpty(sicilNo))
+            while (kisiler.Read())
+            {
+                String sicilNo = kisiler["sicilNo"].ToString();
+                if (!string.IsNullOrEmpty(sicilNo))
                 {
                     db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", param, sicilNo, txtAidatMiktari.Text);
                     MessageBox.Show("Aidat Ödemesi yapıldı.");
@@ -51,13 +51,13 @@ namespace telekomAidatTakip
                 {
                     MessageBox.Show("Sıkıntı");
                 }
-                }
-                
-            
+            }
+
+
 
             // "ALL (SELECT sicil no FROM uyeler WHERE @0)" mudurlukNo.ToString();
 
-            
+
         }
 
         private void cboxil_SelectedValueChanged(object sender, EventArgs e)

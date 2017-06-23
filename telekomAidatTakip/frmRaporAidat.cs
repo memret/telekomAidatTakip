@@ -31,10 +31,7 @@ namespace telekomAidatTakip
                
         private void cboxil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboxil.SelectedIndex != -1)
-            {
-                PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxil.SelectedItem).Key.ToString());
-            }
+            
         }
 
         
@@ -42,10 +39,7 @@ namespace telekomAidatTakip
 
         private void cboxMudurluk_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (cboxMudurluk.SelectedIndex != -1)
-            {
-                PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
-            }
+            
         }
 
         private void btnListele_Click(object sender, EventArgs e)
@@ -128,6 +122,22 @@ namespace telekomAidatTakip
         private void grpAramaKriterleri_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboxil_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cboxil.SelectedIndex != -1)
+            {
+                PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxil.SelectedItem).Key.ToString());
+            }
+        }
+
+        private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cboxMudurluk.SelectedIndex != -1)
+            {
+                PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
+            }
         }
     }
 

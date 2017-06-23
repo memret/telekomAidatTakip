@@ -176,6 +176,7 @@
             this.cboxMudurluk.Size = new System.Drawing.Size(214, 21);
             this.cboxMudurluk.TabIndex = 5;
             this.cboxMudurluk.SelectedIndexChanged += new System.EventHandler(this.cboxMudurluk_SelectedIndexChanged_1);
+            this.cboxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cboxMudurluk_SelectionChangeCommitted);
             // 
             // cboxil
             // 
@@ -186,6 +187,7 @@
             this.cboxil.Size = new System.Drawing.Size(214, 21);
             this.cboxil.TabIndex = 4;
             this.cboxil.SelectedIndexChanged += new System.EventHandler(this.cboxil_SelectedIndexChanged);
+            this.cboxil.SelectionChangeCommitted += new System.EventHandler(this.cboxil_SelectionChangeCommitted);
             // 
             // groupBox2
             // 

@@ -31,8 +31,7 @@ namespace telekomAidatTakip
             PRG.DoldurIl(ref cboxIl);
             PRG.DoldurIl(ref cboxEvIl);
             PRG.DoldurIl(ref cboxIsIl);
-            PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key.ToString());
-            PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
+            
             PRG.DoldurUyelikTipi(ref cboxUyelikTipi);
             PRG.DoldurKanGrubu(ref cboxNufusKan);
             PRG.DoldurIl(ref cboxNufusIl);
@@ -44,6 +43,7 @@ namespace telekomAidatTakip
         {
             DoldurKomple();
             DoldurTemelBilgiler(sicilno);
+            
             DoldurAdresBilgiler(sicilno);
           //  DoldurNufusBilgileri(sicilno); //test edilmedi
         }
@@ -98,6 +98,8 @@ namespace telekomAidatTakip
                 cboxTahsil.SelectedItem = PRG.cboxIndexBul(ref cboxTahsil, data["tahsilno"]);
                 cboxUnvan.SelectedItem = PRG.cboxIndexBul(ref cboxUnvan, data["unvanno"]);
                 cboxIl.SelectedItem = PRG.cboxIndexBul(ref cboxIl, data["ilno"]);
+                PRG.DoldurMudurluk(ref cboxMudurluk, data["ilno"].ToString());
+                PRG.DoldurBirim(ref cboxBirim, data["mudurlukno"].ToString());
                 cboxMudurluk.SelectedItem = PRG.cboxIndexBul(ref cboxMudurluk, data["mudurlukno"]);
                 cboxBirim.SelectedItem = PRG.cboxIndexBul(ref cboxBirim, data["birimno"]);
                 cboxUyelikTipi.SelectedItem = PRG.cboxIndexBul(ref cboxUyelikTipi, data["uyeliktipino"]);
