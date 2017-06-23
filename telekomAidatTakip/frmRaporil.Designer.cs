@@ -142,7 +142,7 @@
             this.Controls.Add(this.gboxBulunanKayitlar);
             this.Controls.Add(this.gboxListelemeİslemi);
             this.Name = "frmRaporIl";
-            this.Text = "frmRaporil";
+            this.Text = "İl Raporları";
             this.gboxListelemeİslemi.ResumeLayout(false);
             this.gboxListelemeİslemi.PerformLayout();
             this.gboxBulunanKayitlar.ResumeLayout(false);

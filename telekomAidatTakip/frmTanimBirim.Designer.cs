@@ -202,7 +202,7 @@
             this.groupBox2.Size = new System.Drawing.Size(355, 202);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Kayıtlı İller";
+            this.groupBox2.Text = "Kayıtlı Birimler";
             // 
             // frmTanimBirim
             // 
@@ -213,7 +213,7 @@
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmTanimBirim";
-            this.Text = "frmTanimBirim";
+            this.Text = "Birim Tanımlama";
             this.Load += new System.EventHandler(this.frmTanimBirim_Load);
             this.Resize += new System.EventHandler(this.frmTanimBirim_Resize);
             this.groupBox1.ResumeLayout(false);

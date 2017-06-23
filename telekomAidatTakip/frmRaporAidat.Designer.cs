@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.grpAramaKriterleri = new System.Windows.Forms.GroupBox();
+            this.checkDonem = new System.Windows.Forms.CheckBox();
+            this.checkMudurluk = new System.Windows.Forms.CheckBox();
+            this.checkBirim = new System.Windows.Forms.CheckBox();
+            this.checkIl = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnYazdir = new System.Windows.Forms.Button();
             this.btnListele = new System.Windows.Forms.Button();
@@ -45,10 +49,6 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.checkIl = new System.Windows.Forms.CheckBox();
-            this.checkMudurluk = new System.Windows.Forms.CheckBox();
-            this.checkBirim = new System.Windows.Forms.CheckBox();
-            this.checkDonem = new System.Windows.Forms.CheckBox();
             this.grpAramaKriterleri.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -74,13 +74,54 @@
             this.grpAramaKriterleri.Text = "Arama Kriterleri";
             this.grpAramaKriterleri.Enter += new System.EventHandler(this.grpAramaKriterleri_Enter);
             // 
+            // checkDonem
+            // 
+            this.checkDonem.AutoSize = true;
+            this.checkDonem.Enabled = false;
+            this.checkDonem.Location = new System.Drawing.Point(23, 103);
+            this.checkDonem.Name = "checkDonem";
+            this.checkDonem.Size = new System.Drawing.Size(92, 17);
+            this.checkDonem.TabIndex = 14;
+            this.checkDonem.Text = "Aidat Dönemi:";
+            this.checkDonem.UseVisualStyleBackColor = true;
+            // 
+            // checkMudurluk
+            // 
+            this.checkMudurluk.AutoSize = true;
+            this.checkMudurluk.Location = new System.Drawing.Point(23, 49);
+            this.checkMudurluk.Name = "checkMudurluk";
+            this.checkMudurluk.Size = new System.Drawing.Size(73, 17);
+            this.checkMudurluk.TabIndex = 14;
+            this.checkMudurluk.Text = "Müdürlük:";
+            this.checkMudurluk.UseVisualStyleBackColor = true;
+            // 
+            // checkBirim
+            // 
+            this.checkBirim.AutoSize = true;
+            this.checkBirim.Location = new System.Drawing.Point(23, 76);
+            this.checkBirim.Name = "checkBirim";
+            this.checkBirim.Size = new System.Drawing.Size(51, 17);
+            this.checkBirim.TabIndex = 14;
+            this.checkBirim.Text = "Birim:";
+            this.checkBirim.UseVisualStyleBackColor = true;
+            // 
+            // checkIl
+            // 
+            this.checkIl.AutoSize = true;
+            this.checkIl.Location = new System.Drawing.Point(23, 22);
+            this.checkIl.Name = "checkIl";
+            this.checkIl.Size = new System.Drawing.Size(34, 17);
+            this.checkIl.TabIndex = 14;
+            this.checkIl.Text = "İl:";
+            this.checkIl.UseVisualStyleBackColor = true;
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "MM/yyyy";
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(153, 98);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(135, 20);
             this.dateTimePicker1.TabIndex = 13;
@@ -206,47 +247,6 @@
             this.columnHeader8.Text = "Birim";
             this.columnHeader8.Width = 100;
             // 
-            // checkIl
-            // 
-            this.checkIl.AutoSize = true;
-            this.checkIl.Location = new System.Drawing.Point(23, 22);
-            this.checkIl.Name = "checkIl";
-            this.checkIl.Size = new System.Drawing.Size(34, 17);
-            this.checkIl.TabIndex = 14;
-            this.checkIl.Text = "İl:";
-            this.checkIl.UseVisualStyleBackColor = true;
-            // 
-            // checkMudurluk
-            // 
-            this.checkMudurluk.AutoSize = true;
-            this.checkMudurluk.Location = new System.Drawing.Point(23, 49);
-            this.checkMudurluk.Name = "checkMudurluk";
-            this.checkMudurluk.Size = new System.Drawing.Size(73, 17);
-            this.checkMudurluk.TabIndex = 14;
-            this.checkMudurluk.Text = "Müdürlük:";
-            this.checkMudurluk.UseVisualStyleBackColor = true;
-            // 
-            // checkBirim
-            // 
-            this.checkBirim.AutoSize = true;
-            this.checkBirim.Location = new System.Drawing.Point(23, 76);
-            this.checkBirim.Name = "checkBirim";
-            this.checkBirim.Size = new System.Drawing.Size(51, 17);
-            this.checkBirim.TabIndex = 14;
-            this.checkBirim.Text = "Birim:";
-            this.checkBirim.UseVisualStyleBackColor = true;
-            // 
-            // checkDonem
-            // 
-            this.checkDonem.AutoSize = true;
-            this.checkDonem.Enabled = false;
-            this.checkDonem.Location = new System.Drawing.Point(23, 103);
-            this.checkDonem.Name = "checkDonem";
-            this.checkDonem.Size = new System.Drawing.Size(92, 17);
-            this.checkDonem.TabIndex = 14;
-            this.checkDonem.Text = "Aidat Dönemi:";
-            this.checkDonem.UseVisualStyleBackColor = true;
-            // 
             // frmRaporAidat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,7 +255,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grpAramaKriterleri);
             this.Name = "frmRaporAidat";
-            this.Text = "frmAidatListesi";
+            this.Text = "Aidat Raporları";
             this.Load += new System.EventHandler(this.frmRaporAidat_Load);
             this.grpAramaKriterleri.ResumeLayout(false);
             this.grpAramaKriterleri.PerformLayout();

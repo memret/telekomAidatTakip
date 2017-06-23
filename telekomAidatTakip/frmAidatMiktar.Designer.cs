@@ -137,7 +137,7 @@
             this.grpbxAidatMiktar.Controls.Add(this.label1);
             this.grpbxAidatMiktar.Location = new System.Drawing.Point(12, 12);
             this.grpbxAidatMiktar.Name = "grpbxAidatMiktar";
-            this.grpbxAidatMiktar.Size = new System.Drawing.Size(410, 208);
+            this.grpbxAidatMiktar.Size = new System.Drawing.Size(364, 208);
             this.grpbxAidatMiktar.TabIndex = 0;
             this.grpbxAidatMiktar.TabStop = false;
             this.grpbxAidatMiktar.Text = "Aidat Miktarı Değiştirme";
@@ -205,11 +205,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 234);
+            this.ClientSize = new System.Drawing.Size(392, 233);
             this.Controls.Add(this.grpbxAidatMiktar);
-            this.MinimumSize = new System.Drawing.Size(450, 273);
+            this.MinimumSize = new System.Drawing.Size(408, 272);
             this.Name = "frmAidatMiktar";
-            this.Text = "frmAidatMiktar";
+            this.Text = "Aidat Miktarı Belirleme";
             this.Load += new System.EventHandler(this.frmAidatMiktar_Load);
             this.Resize += new System.EventHandler(this.frmAidatMiktar_Resize);
             this.grpbxAidatMiktar.ResumeLayout(false);
