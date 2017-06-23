@@ -55,16 +55,16 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(343, 163);
+            this.groupBox1.Size = new System.Drawing.Size(343, 153);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ünvan Tanımları";
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(242, 105);
+            this.btnSil.Location = new System.Drawing.Point(242, 95);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(75, 52);
+            this.btnSil.Size = new System.Drawing.Size(75, 39);
             this.btnSil.TabIndex = 6;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
@@ -72,9 +72,9 @@
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(131, 105);
+            this.btnKaydet.Location = new System.Drawing.Point(131, 95);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(75, 52);
+            this.btnKaydet.Size = new System.Drawing.Size(75, 39);
             this.btnKaydet.TabIndex = 5;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -82,9 +82,9 @@
             // 
             // btnYeni
             // 
-            this.btnYeni.Location = new System.Drawing.Point(25, 105);
+            this.btnYeni.Location = new System.Drawing.Point(25, 95);
             this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(75, 52);
+            this.btnYeni.Size = new System.Drawing.Size(75, 39);
             this.btnYeni.TabIndex = 4;
             this.btnYeni.Text = "Yeni";
             this.btnYeni.UseVisualStyleBackColor = true;
@@ -92,23 +92,23 @@
             // 
             // txtünvanAdı
             // 
-            this.txtünvanAdı.Location = new System.Drawing.Point(106, 59);
+            this.txtünvanAdı.Location = new System.Drawing.Point(94, 54);
             this.txtünvanAdı.Name = "txtünvanAdı";
-            this.txtünvanAdı.Size = new System.Drawing.Size(100, 20);
+            this.txtünvanAdı.Size = new System.Drawing.Size(158, 20);
             this.txtünvanAdı.TabIndex = 3;
             // 
             // txtünvanKodu
             // 
-            this.txtünvanKodu.Location = new System.Drawing.Point(106, 25);
+            this.txtünvanKodu.Location = new System.Drawing.Point(94, 23);
             this.txtünvanKodu.Name = "txtünvanKodu";
-            this.txtünvanKodu.Size = new System.Drawing.Size(100, 20);
+            this.txtünvanKodu.Size = new System.Drawing.Size(87, 20);
             this.txtünvanKodu.TabIndex = 2;
             this.txtünvanKodu.TextChanged += new System.EventHandler(this.txtünvanKodu_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 59);
+            this.label2.Location = new System.Drawing.Point(15, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 1;
@@ -117,7 +117,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 28);
+            this.label1.Location = new System.Drawing.Point(15, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 0;
@@ -126,7 +126,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listView1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 181);
+            this.groupBox2.Location = new System.Drawing.Point(12, 171);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(343, 156);
             this.groupBox2.TabIndex = 1;
@@ -164,11 +164,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 354);
+            this.ClientSize = new System.Drawing.Size(367, 337);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTanimUnvan";
-            this.Text = "frmTanimUnvan";
+            this.Text = "Ünvan Tanımlama";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimUnvan_FormClosing);
             this.Load += new System.EventHandler(this.frmTanimUnvan_Load);
             this.Resize += new System.EventHandler(this.frmTanimUnvan_Resize);

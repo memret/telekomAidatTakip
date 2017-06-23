@@ -108,7 +108,7 @@
             this.cBoxMudurluk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxMudurluk.Enabled = false;
             this.cBoxMudurluk.FormattingEnabled = true;
-            this.cBoxMudurluk.Location = new System.Drawing.Point(91, 75);
+            this.cBoxMudurluk.Location = new System.Drawing.Point(91, 72);
             this.cBoxMudurluk.Margin = new System.Windows.Forms.Padding(2);
             this.cBoxMudurluk.Name = "cBoxMudurluk";
             this.cBoxMudurluk.Size = new System.Drawing.Size(228, 21);
@@ -117,7 +117,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 75);
+            this.label3.Location = new System.Drawing.Point(13, 75);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
@@ -170,7 +170,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 51);
+            this.label2.Location = new System.Drawing.Point(13, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 0;
@@ -187,7 +187,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Location = new System.Drawing.Point(13, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 0;

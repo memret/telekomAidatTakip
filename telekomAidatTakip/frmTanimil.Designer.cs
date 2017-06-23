@@ -171,7 +171,7 @@
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(369, 437);
             this.Name = "frmTanimIl";
-            this.Text = "İl Tanımları";
+            this.Text = "İl Tanımlama";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimIl_FormClosing);
             this.Load += new System.EventHandler(this.frmTanimil_Load);
             this.Resize += new System.EventHandler(this.frmTanimIl_Resize);

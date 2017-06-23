@@ -166,6 +166,9 @@
     <EmbeddedResource Include="frmTanimTahsil.resx">
       <DependentUpon>frmTanimTahsil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTanimUnvan.resx">
+      <DependentUpon>frmTanimUnvan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTanimUyelikIptal.resx">
       <DependentUpon>frmTanimUyelikIptal.cs</DependentUpon>
     </EmbeddedResource>

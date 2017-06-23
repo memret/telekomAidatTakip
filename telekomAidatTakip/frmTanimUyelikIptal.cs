@@ -163,5 +163,10 @@ namespace telekomAidatTakip
             groupBox4.Width = this.Width - 48; //design sekmesindeki boyut farklarını buraya yazdık
             groupBox4.Height = this.Height - 237;
         }
+
+        private void listvSilinme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

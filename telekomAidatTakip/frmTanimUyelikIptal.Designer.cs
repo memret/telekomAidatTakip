@@ -56,7 +56,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(356, 149);
+            this.groupBox3.Size = new System.Drawing.Size(325, 149);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Silinme Nedeni Tanımı";
@@ -99,15 +99,15 @@
             // txtAciklama
             // 
             this.txtAciklama.Enabled = false;
-            this.txtAciklama.Location = new System.Drawing.Point(114, 55);
+            this.txtAciklama.Location = new System.Drawing.Point(95, 55);
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(100, 20);
+            this.txtAciklama.Size = new System.Drawing.Size(183, 20);
             this.txtAciklama.TabIndex = 1;
             // 
             // txtKod
             // 
             this.txtKod.Enabled = false;
-            this.txtKod.Location = new System.Drawing.Point(114, 23);
+            this.txtKod.Location = new System.Drawing.Point(95, 23);
             this.txtKod.Name = "txtKod";
             this.txtKod.Size = new System.Drawing.Size(100, 20);
             this.txtKod.TabIndex = 0;
@@ -115,7 +115,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 58);
+            this.label5.Location = new System.Drawing.Point(18, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 1;
@@ -124,7 +124,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 26);
+            this.label4.Location = new System.Drawing.Point(18, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 0;
@@ -136,7 +136,7 @@
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox4.Location = new System.Drawing.Point(12, 167);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(356, 210);
+            this.groupBox4.Size = new System.Drawing.Size(325, 210);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Kayıtlı Kodlar";
@@ -150,10 +150,11 @@
             this.listvSilinme.FullRowSelect = true;
             this.listvSilinme.Location = new System.Drawing.Point(3, 16);
             this.listvSilinme.Name = "listvSilinme";
-            this.listvSilinme.Size = new System.Drawing.Size(350, 191);
+            this.listvSilinme.Size = new System.Drawing.Size(319, 191);
             this.listvSilinme.TabIndex = 0;
             this.listvSilinme.UseCompatibleStateImageBehavior = false;
             this.listvSilinme.View = System.Windows.Forms.View.Details;
+            this.listvSilinme.SelectedIndexChanged += new System.EventHandler(this.listvSilinme_SelectedIndexChanged);
             this.listvSilinme.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvSilinme_MouseDoubleClick);
             // 
             // headerCode
@@ -163,15 +164,15 @@
             // headerAciklama
             // 
             this.headerAciklama.Text = "Açıklama";
-            this.headerAciklama.Width = 293;
+            this.headerAciklama.Width = 250;
             // 
             // frmTanimUyelikIptal
             // 
-            this.ClientSize = new System.Drawing.Size(369, 389);
+            this.ClientSize = new System.Drawing.Size(350, 389);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Name = "frmTanimUyelikIptal";
-            this.Text = "Silinme Nedeni";
+            this.Text = "Silinme Nedeni Tanımlama";
             this.Load += new System.EventHandler(this.frmTanimUyelikIptal_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
