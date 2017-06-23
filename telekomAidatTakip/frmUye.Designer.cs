@@ -104,6 +104,7 @@
             this.btnSil = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnYeni = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.lblSilinmeBilgisi.SuspendLayout();
@@ -111,6 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,7 +180,7 @@
             this.label1.Location = new System.Drawing.Point(178, 299);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 18;
+            this.label1.TabIndex = 11;
             this.label1.Text = "label1";
             // 
             // groupBox2
@@ -199,7 +201,7 @@
             this.btnResimSil.Location = new System.Drawing.Point(145, 263);
             this.btnResimSil.Name = "btnResimSil";
             this.btnResimSil.Size = new System.Drawing.Size(92, 27);
-            this.btnResimSil.TabIndex = 16;
+            this.btnResimSil.TabIndex = 13;
             this.btnResimSil.Text = "Resim Sİl";
             this.btnResimSil.UseVisualStyleBackColor = true;
             // 
@@ -208,7 +210,7 @@
             this.btnYeniResim.Location = new System.Drawing.Point(59, 263);
             this.btnYeniResim.Name = "btnYeniResim";
             this.btnYeniResim.Size = new System.Drawing.Size(89, 27);
-            this.btnYeniResim.TabIndex = 14;
+            this.btnYeniResim.TabIndex = 12;
             this.btnYeniResim.Text = "Yeni Resim";
             this.btnYeniResim.UseVisualStyleBackColor = true;
             // 
@@ -272,14 +274,14 @@
             this.cboxUyelikTipi.Location = new System.Drawing.Point(181, 210);
             this.cboxUyelikTipi.Name = "cboxUyelikTipi";
             this.cboxUyelikTipi.Size = new System.Drawing.Size(179, 21);
-            this.cboxUyelikTipi.TabIndex = 7;
+            this.cboxUyelikTipi.TabIndex = 8;
             // 
             // txtSicilNo
             // 
             this.txtSicilNo.Location = new System.Drawing.Point(180, 43);
             this.txtSicilNo.Name = "txtSicilNo";
             this.txtSicilNo.Size = new System.Drawing.Size(82, 20);
-            this.txtSicilNo.TabIndex = 5;
+            this.txtSicilNo.TabIndex = 2;
             // 
             // label8
             // 
@@ -349,14 +351,14 @@
             this.dateKayit.Location = new System.Drawing.Point(181, 265);
             this.dateKayit.Name = "dateKayit";
             this.dateKayit.Size = new System.Drawing.Size(196, 20);
-            this.dateKayit.TabIndex = 2;
+            this.dateKayit.TabIndex = 10;
             // 
             // dateGiris
             // 
             this.dateGiris.Location = new System.Drawing.Point(180, 238);
             this.dateGiris.Name = "dateGiris";
             this.dateGiris.Size = new System.Drawing.Size(196, 20);
-            this.dateGiris.TabIndex = 2;
+            this.dateGiris.TabIndex = 9;
             // 
             // cboxBirim
             // 
@@ -365,7 +367,7 @@
             this.cboxBirim.Location = new System.Drawing.Point(180, 182);
             this.cboxBirim.Name = "cboxBirim";
             this.cboxBirim.Size = new System.Drawing.Size(180, 21);
-            this.cboxBirim.TabIndex = 1;
+            this.cboxBirim.TabIndex = 7;
             this.cboxBirim.SelectedIndexChanged += new System.EventHandler(this.cboxBirim_SelectedIndexChanged);
             // 
             // cboxMudurluk
@@ -375,7 +377,7 @@
             this.cboxMudurluk.Location = new System.Drawing.Point(180, 154);
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(180, 21);
-            this.cboxMudurluk.TabIndex = 1;
+            this.cboxMudurluk.TabIndex = 6;
             this.cboxMudurluk.SelectedIndexChanged += new System.EventHandler(this.cboxMudurluk_SelectedIndexChanged);
             // 
             // cboxIl
@@ -385,7 +387,7 @@
             this.cboxIl.Location = new System.Drawing.Point(180, 126);
             this.cboxIl.Name = "cboxIl";
             this.cboxIl.Size = new System.Drawing.Size(180, 21);
-            this.cboxIl.TabIndex = 1;
+            this.cboxIl.TabIndex = 5;
             this.cboxIl.SelectedIndexChanged += new System.EventHandler(this.cboxIl_SelectedIndexChanged);
             // 
             // cboxUnvan
@@ -395,7 +397,7 @@
             this.cboxUnvan.Location = new System.Drawing.Point(180, 98);
             this.cboxUnvan.Name = "cboxUnvan";
             this.cboxUnvan.Size = new System.Drawing.Size(180, 21);
-            this.cboxUnvan.TabIndex = 1;
+            this.cboxUnvan.TabIndex = 4;
             this.cboxUnvan.SelectedIndexChanged += new System.EventHandler(this.cboxUnvan_SelectedIndexChanged);
             // 
             // cboxTahsil
@@ -405,7 +407,7 @@
             this.cboxTahsil.Location = new System.Drawing.Point(180, 70);
             this.cboxTahsil.Name = "cboxTahsil";
             this.cboxTahsil.Size = new System.Drawing.Size(117, 21);
-            this.cboxTahsil.TabIndex = 1;
+            this.cboxTahsil.TabIndex = 3;
             // 
             // txtAdSoyad
             // 
@@ -462,7 +464,7 @@
             this.cboxIsIl.Location = new System.Drawing.Point(142, 182);
             this.cboxIsIl.Name = "cboxIsIl";
             this.cboxIsIl.Size = new System.Drawing.Size(146, 21);
-            this.cboxIsIl.TabIndex = 9;
+            this.cboxIsIl.TabIndex = 3;
             // 
             // cboxEvIl
             // 
@@ -470,7 +472,7 @@
             this.cboxEvIl.Location = new System.Drawing.Point(142, 87);
             this.cboxEvIl.Name = "cboxEvIl";
             this.cboxEvIl.Size = new System.Drawing.Size(146, 21);
-            this.cboxEvIl.TabIndex = 8;
+            this.cboxEvIl.TabIndex = 1;
             // 
             // label16
             // 
@@ -530,21 +532,21 @@
             this.txtCepTel.Location = new System.Drawing.Point(142, 285);
             this.txtCepTel.Name = "txtCepTel";
             this.txtCepTel.Size = new System.Drawing.Size(207, 20);
-            this.txtCepTel.TabIndex = 1;
+            this.txtCepTel.TabIndex = 6;
             // 
             // txtIsTel
             // 
             this.txtIsTel.Location = new System.Drawing.Point(142, 251);
             this.txtIsTel.Name = "txtIsTel";
             this.txtIsTel.Size = new System.Drawing.Size(207, 20);
-            this.txtIsTel.TabIndex = 1;
+            this.txtIsTel.TabIndex = 5;
             // 
             // txtEvTel
             // 
             this.txtEvTel.Location = new System.Drawing.Point(142, 217);
             this.txtEvTel.Name = "txtEvTel";
             this.txtEvTel.Size = new System.Drawing.Size(207, 20);
-            this.txtEvTel.TabIndex = 1;
+            this.txtEvTel.TabIndex = 4;
             // 
             // txtEvAdresi
             // 
@@ -637,11 +639,15 @@
             this.cboxNufusKan.Location = new System.Drawing.Point(145, 128);
             this.cboxNufusKan.Name = "cboxNufusKan";
             this.cboxNufusKan.Size = new System.Drawing.Size(145, 21);
-            this.cboxNufusKan.TabIndex = 3;
+            this.cboxNufusKan.TabIndex = 4;
             // 
             // cboxNufusMedeni
             // 
             this.cboxNufusMedeni.FormattingEnabled = true;
+            this.cboxNufusMedeni.Items.AddRange(new object[] {
+            "Bekar",
+            "Evli",
+            "Dul"});
             this.cboxNufusMedeni.Location = new System.Drawing.Point(145, 101);
             this.cboxNufusMedeni.Name = "cboxNufusMedeni";
             this.cboxNufusMedeni.Size = new System.Drawing.Size(185, 21);
@@ -653,35 +659,35 @@
             this.txtNufusMahalle.Location = new System.Drawing.Point(145, 234);
             this.txtNufusMahalle.Name = "txtNufusMahalle";
             this.txtNufusMahalle.Size = new System.Drawing.Size(185, 20);
-            this.txtNufusMahalle.TabIndex = 2;
+            this.txtNufusMahalle.TabIndex = 7;
             // 
             // txtNufusIlce
             // 
             this.txtNufusIlce.Location = new System.Drawing.Point(145, 210);
             this.txtNufusIlce.Name = "txtNufusIlce";
             this.txtNufusIlce.Size = new System.Drawing.Size(185, 20);
-            this.txtNufusIlce.TabIndex = 2;
+            this.txtNufusIlce.TabIndex = 6;
             // 
             // txtNufusSira
             // 
             this.txtNufusSira.Location = new System.Drawing.Point(480, 273);
             this.txtNufusSira.Name = "txtNufusSira";
             this.txtNufusSira.Size = new System.Drawing.Size(83, 20);
-            this.txtNufusSira.TabIndex = 2;
+            this.txtNufusSira.TabIndex = 10;
             // 
             // txtNufusAile
             // 
             this.txtNufusAile.Location = new System.Drawing.Point(289, 273);
             this.txtNufusAile.Name = "txtNufusAile";
             this.txtNufusAile.Size = new System.Drawing.Size(83, 20);
-            this.txtNufusAile.TabIndex = 2;
+            this.txtNufusAile.TabIndex = 9;
             // 
             // txtNufusCilt
             // 
             this.txtNufusCilt.Location = new System.Drawing.Point(75, 273);
             this.txtNufusCilt.Name = "txtNufusCilt";
             this.txtNufusCilt.Size = new System.Drawing.Size(83, 20);
-            this.txtNufusCilt.TabIndex = 2;
+            this.txtNufusCilt.TabIndex = 8;
             // 
             // txtNufusDogumYeri
             // 
@@ -696,14 +702,14 @@
             this.txtNufusAnne.Location = new System.Drawing.Point(145, 47);
             this.txtNufusAnne.Name = "txtNufusAnne";
             this.txtNufusAnne.Size = new System.Drawing.Size(185, 20);
-            this.txtNufusAnne.TabIndex = 2;
+            this.txtNufusAnne.TabIndex = 1;
             // 
             // txtNufusBaba
             // 
             this.txtNufusBaba.Location = new System.Drawing.Point(145, 20);
             this.txtNufusBaba.Name = "txtNufusBaba";
             this.txtNufusBaba.Size = new System.Drawing.Size(185, 20);
-            this.txtNufusBaba.TabIndex = 2;
+            this.txtNufusBaba.TabIndex = 0;
             // 
             // label30
             // 
@@ -798,6 +804,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.textBox1);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(801, 338);
@@ -846,6 +853,15 @@
             this.btnYeni.UseVisualStyleBackColor = true;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(24, 20);
+            this.textBox1.MinimumSize = new System.Drawing.Size(100, 200);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(755, 283);
+            this.textBox1.TabIndex = 0;
+            // 
             // frmUye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -866,6 +882,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -949,5 +967,6 @@
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Button btnYeni;
         private System.Windows.Forms.DateTimePicker dateNufusDogum;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

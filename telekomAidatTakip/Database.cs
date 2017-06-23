@@ -89,7 +89,7 @@ namespace telekomAidatTakip
             kmt.CommandText = query;
             kmt.ExecuteNonQuery();
         }
-        public void Sorgu(string query, params string[] param)
+        public void Sorgu(string query, params object[] param)
         {
             kmt.CommandText = query;
             for (int i = 0; i < param.Length; i++)
