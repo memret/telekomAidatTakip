@@ -35,13 +35,17 @@ namespace telekomAidatTakip
             PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
             PRG.DoldurUyelikTipi(ref cboxUyelikTipi);
             PRG.DoldurKanGrubu(ref cboxNufusKan);
+            PRG.DoldurIl(ref cboxNufusIl);
+
+
+
         }
         private void DoldurKomple(string sicilno)
         {
             DoldurKomple();
             DoldurTemelBilgiler(sicilno);
             DoldurAdresBilgiler(sicilno);
-            //DoldurNufusBilgileri(sicilno); //test edilmedi
+          //  DoldurNufusBilgileri(sicilno); //test edilmedi
         }
         private void DoldurNufusBilgileri(string sicilno)
         {
@@ -188,31 +192,51 @@ namespace telekomAidatTakip
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
-
+            
+            
         }
 
         
         private void btnKaydet_Click(object sender, EventArgs e)
-        { 
-           /* int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
+        {
+             yeniKayitEkle();
+           // uyeBilgisiGuncelle();
+        }
+        private void yeniKayitEkle()
+        {
+
+            int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
             int ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
             int birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
-            int tahsilno= ((KeyValuePair<int, string>)cboxTahsil.SelectedItem).Key;
-            int uyeliktipno= ((KeyValuePair<int, string>)cboxUyelikTipi.SelectedItem).Key;
-            int unvan= ((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key;
-            int evilNo = ((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
-            int isilNo = ((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
+            int tahsilno = ((KeyValuePair<int, string>)cboxTahsil.SelectedItem).Key;
+            int uyeliktipno = ((KeyValuePair<int, string>)cboxUyelikTipi.SelectedItem).Key;
+            int unvan = ((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key;
+             int evilNo = ((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
+              int isilNo = ((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
             Database db = new Database();
             Database db3 = new Database();
             Database db2 = new Database();
-            db.Sorgu("insert into Uyeler (sicilNo,adSoyad,tahsilNo,unvanNo,ilNo,mudurlukNo,birimNo,uyelikTipiNo,girisTarihi,kayitTarihi) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)", txtSicilNo.ToString(),txtAdSoyad.ToString(),tahsilno.ToString(),unvan.ToString(),ilno.ToString(),mdr.ToString(),birimno.ToString(),uyeliktipno.ToString(),dateGiris.ToString(),dateKayit.ToString());
-            db2.Sorgu("insert into Adres (sicilNo,ev,evilNo,is,isilNo,evTel,istel,ceptel) values (@0,@1,@2,@3,@4,@5,@6,@7)", txtSicilNo.ToString(), txtEvAdresi.ToString(),evilNo.ToString(), txtIsAdresi.ToString(), isilNo.ToString(), txtEvTel.ToString(),txtIsTel.ToString(),txtCepTel.ToString());
-            db3.Sorgu("insert into nufusBilgileri (sicilNo,baba,anne,dogumYeri,medeniHali,kanGrubu,ilNo,ilçe,mahalle,ciltNo,aileSiraNo,siraNo) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11)", txtSicilNo.ToString(), txtNufusBaba.ToString(),txtNufusAnne.ToString(),txtNufusDogumYeri.ToString(),dateNufusDogum.ToString(),cboxNufusMedeni.SelectedItem.ToString(),cboxNufusKan.SelectedItem.ToString(),ilno.ToString(),txtNufusIlce.ToString(),txtNufusMahalle.ToString(),txtNufusCilt.ToString(),txtNufusAile.ToString(),txtNufusSira.ToString());
-            
-    */
+
+              db.Sorgu("insert into Uyeler (sicilNo,adSoyad,tahsilNo,unvanNo,ilNo,mudurlukNo,birimNo,uyelikTipiNo,girisTarihi,kayitTarihi) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)", txtSicilNo.Text, txtAdSoyad.ToString(), tahsilno.ToString(), unvan.ToString(), ilno.ToString(), mdr.ToString(), birimno.ToString(), uyeliktipno.ToString(), dateGiris.Value.Date, dateKayit.Value.Date);
+              db2.Sorgu("insert into Adres (sicilNo,ev,evilNo,[is],isilNo,evTel,istel,ceptel) values (@0,@1,@2,@3,@4,@5,@6,@7)", txtSicilNo.Text, txtEvAdresi.Text, evilNo.ToString(), txtIsAdresi.Text, isilNo.ToString(), txtEvTel.Text, txtIsTel.Text, txtCepTel.Text);
+              db3.Sorgu("insert into nufusBilgileri (sicilNo,baba,anne,dogumYeri,dogumTarihi,medeniHali,kanGrubuno,ilNo,ilce,mahalle,ciltNo,aileSiraNo,siraNo) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12)", txtSicilNo.Text, txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date,cboxNufusMedeni.SelectedIndex.ToString(),cboxNufusKan.SelectedIndex.ToString(),ilno.ToString(),txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text);
+
 
         }
-
+        private void uyeBilgisiGuncelle()
+        {
+            Database db = new Database();
+            int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
+            int ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
+            int birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+            int tahsilno = ((KeyValuePair<int, string>)cboxTahsil.SelectedItem).Key;
+            int uyeliktipno = ((KeyValuePair<int, string>)cboxUyelikTipi.SelectedItem).Key;
+            int unvan = ((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key;
+          //  int evilNo = ((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
+           // int isilNo = ((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
+            db.Sorgu("UPDATE Uyeler SET adSoyad=@0,tahsilNo=@1,unvanNo=@2,ilNo=@3,mudurlukNo=@4,birimNo=@5,uyelikTipiNo=@6,girisTarihi=@7,kayitTarihi=@8 WHERE sicilNo=@9", txtAdSoyad.Text, tahsilno.ToString(), unvan.ToString(), ilno.ToString(), mdr.ToString(), birimno.ToString(), uyeliktipno.ToString(), dateGiris.Value.Date, dateKayit.Value.Date, txtSicilNo.Text);
+           
+        }
         private void btnYeni_Click(object sender, EventArgs e)
         {
             ekraniTemizle();
