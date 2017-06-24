@@ -202,7 +202,7 @@ namespace telekomAidatTakip
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             // yeniKayitEkle();
-           uyeBilgisiGuncelle();
+         //  uyeBilgisiGuncelle();
         }
         private void yeniKayitEkle()
         {
