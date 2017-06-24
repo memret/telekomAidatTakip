@@ -89,7 +89,7 @@
             this.cboxIl.Location = new System.Drawing.Point(101, 28);
             this.cboxIl.Name = "cboxIl";
             this.cboxIl.Size = new System.Drawing.Size(238, 21);
-            this.cboxIl.TabIndex = 2;
+            this.cboxIl.TabIndex = 0;
             this.cboxIl.SelectedIndexChanged += new System.EventHandler(this.cboxIl_SelectedIndexChanged);
             this.cboxIl.SelectionChangeCommitted += new System.EventHandler(this.cboxIl_SelectionChangeCommitted);
             // 
@@ -100,7 +100,7 @@
             this.cboxMudurluk.Location = new System.Drawing.Point(101, 53);
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(238, 21);
-            this.cboxMudurluk.TabIndex = 2;
+            this.cboxMudurluk.TabIndex = 1;
             this.cboxMudurluk.SelectedIndexChanged += new System.EventHandler(this.cboxMudurluk_SelectedIndexChanged);
             this.cboxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cboxMudurluk_SelectionChangeCommitted);
             // 
@@ -177,7 +177,7 @@
             this.btnIptal.Location = new System.Drawing.Point(217, 141);
             this.btnIptal.Name = "btnIptal";
             this.btnIptal.Size = new System.Drawing.Size(75, 50);
-            this.btnIptal.TabIndex = 2;
+            this.btnIptal.TabIndex = 5;
             this.btnIptal.Text = "İptal";
             this.btnIptal.UseVisualStyleBackColor = true;
             this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
@@ -188,7 +188,7 @@
             this.button1.Location = new System.Drawing.Point(110, 141);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 50);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Kaydet";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

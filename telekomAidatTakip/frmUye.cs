@@ -201,8 +201,8 @@ namespace telekomAidatTakip
         
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-             yeniKayitEkle();
-           // uyeBilgisiGuncelle();
+            // yeniKayitEkle();
+           uyeBilgisiGuncelle();
         }
         private void yeniKayitEkle()
         {
@@ -219,9 +219,9 @@ namespace telekomAidatTakip
             Database db3 = new Database();
             Database db2 = new Database();
 
-              db.Sorgu("insert into Uyeler (sicilNo,adSoyad,tahsilNo,unvanNo,ilNo,mudurlukNo,birimNo,uyelikTipiNo,girisTarihi,kayitTarihi) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)", txtSicilNo.Text, txtAdSoyad.ToString(), tahsilno.ToString(), unvan.ToString(), ilno.ToString(), mdr.ToString(), birimno.ToString(), uyeliktipno.ToString(), dateGiris.Value.Date, dateKayit.Value.Date);
-              db2.Sorgu("insert into Adres (sicilNo,ev,evilNo,[is],isilNo,evTel,istel,ceptel) values (@0,@1,@2,@3,@4,@5,@6,@7)", txtSicilNo.Text, txtEvAdresi.Text, evilNo.ToString(), txtIsAdresi.Text, isilNo.ToString(), txtEvTel.Text, txtIsTel.Text, txtCepTel.Text);
-              db3.Sorgu("insert into nufusBilgileri (sicilNo,baba,anne,dogumYeri,dogumTarihi,medeniHali,kanGrubuno,ilNo,ilce,mahalle,ciltNo,aileSiraNo,siraNo) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12)", txtSicilNo.Text, txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date,cboxNufusMedeni.SelectedIndex.ToString(),cboxNufusKan.SelectedIndex.ToString(),ilno.ToString(),txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text);
+              db.Sorgu("insert into Uyeler (sicilNo,adSoyad,tahsilNo,unvanNo,ilNo,mudurlukNo,birimNo,uyelikTipiNo,girisTarihi,kayitTarihi) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)", txtSicilNo.Text, txtAdSoyad.Text, tahsilno, unvan, ilno, mdr, birimno, uyeliktipno, dateGiris.Value.Date, dateKayit.Value.Date);
+              db2.Sorgu("insert into Adres (sicilNo,ev,evilNo,[is],isilNo,evTel,istel,ceptel) values (@0,@1,@2,@3,@4,@5,@6,@7)", txtSicilNo.Text, txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text);
+              db3.Sorgu("insert into nufusBilgileri (sicilNo,baba,anne,dogumYeri,dogumTarihi,medeniHali,kanGrubuno,ilNo,ilce,mahalle,ciltNo,aileSiraNo,siraNo) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12)", txtSicilNo.Text, txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date,cboxNufusMedeni.SelectedIndex,cboxNufusKan.SelectedIndex,ilno,txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text);
 
 
         }
