@@ -12,16 +12,22 @@ namespace telekomAidatTakip
 {
     public partial class frmUye : Form
     {
-        public frmUye()
+        public frmUye() // yeni kayıt eklenirken
         {
             InitializeComponent();
+            DoldurKomple();
+        }
+        public frmUye(string sicilno) //raporuye den çağırılınca
+        {
+            InitializeComponent();
+            DoldurKomple("1");
         }
 
 
 
         private void frmUye_Load(object sender, EventArgs e)
         {
-            DoldurKomple("1");
+            DoldurKomple();
 
         }
         private void DoldurKomple()
