@@ -29,13 +29,16 @@ namespace telekomAidatTakip
         }
         ~Database()
         {
-            try
+            if (bag.State != System.Data.ConnectionState.Closed)
             {
-                bag.Close();
-            }
-            catch
-            {
+                try
+                {
+                    bag.Close();
+                }
+                catch
+                {
 
+                }
             }
         }
         public SqlDataReader DataOku(string query)
