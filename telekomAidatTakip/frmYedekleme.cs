@@ -16,20 +16,52 @@ namespace telekomAidatTakip
         {
             InitializeComponent();
         }
-
+    
         private void frmYedekleme_Load(object sender, EventArgs e)
         {
+            Database db = new Database();
+            var data = db.DataOku("select * from msdb.dbo.backupmediafamily");
 
+            //physical_device_name
+
+            while (data.Read())
+            {
+                ListViewItem item = new ListViewItem();
+
+                string veri = data["physical_device_name"].ToString();          
+                string[] split = veri.Split(new Char[] { '\\', '-', '.'});
+
+                DateTime result = DateTime.ParseExact(split[2], "ddMMyyyy", System.Globalization.CultureInfo.InvariantCulture);
+    
+
+                item.SubItems[0].Text = result.ToShortDateString();
+                item.SubItems.Add(split[1]);
+
+              
+
+                listYukle.Items.Add(item);
+
+            }
+        }
+
+        private void btnYukle_Click(object sender, EventArgs e)
+        {
+            
         }
         void Yedekle()
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnYedek_Click(object sender, EventArgs e)
         {
             Database db = new Database();
             db.Yedekle();
+        }
+
+        private void listYukle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
