@@ -118,8 +118,24 @@ namespace telekomAidatTakip
                 listUyeKayitlari.Items.Add(item);
             }
             db.Kapat();
-        }
 
+            yazdir.list = listUyeKayitlari;
+            /*
+            yazdir.items = listUyeKayitlari.Items;
+            Dictionary<string, int> basliklar = new Dictionary<string, int>();
+            basliklar.Add("Sıra No", 60);
+            basliklar.Add("Ad Soyad", 120);
+            basliklar.Add("Aidat", 80);
+            basliklar.Add("İl/Müdürlük/Kısım", 180);
+            basliklar.Add("Ünvan", 70);
+            basliklar.Add("Tahsil", 70);
+
+            yazdir.basliklar = basliklar;
+            */
+            yazdir.baslik = "Üye Listesi";
+            btnYazdir.Enabled = true;
+        }
+        Yazdir yazdir = new Yazdir();
         private void grpAramaKriterleri_Enter(object sender, EventArgs e)
         {
 
@@ -139,6 +155,11 @@ namespace telekomAidatTakip
             {
                 PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
             }
+        }
+
+        private void btnYazdir_Click(object sender, EventArgs e)
+        {
+            yazdir.printPre.ShowDialog();
         }
     }
 
