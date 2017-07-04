@@ -19,6 +19,11 @@ namespace telekomAidatTakip
 
         private void button1_Click(object sender, EventArgs e)
         {
+           // listIl.Items.Clear();
+
+           // Database db = new Database();
+           // string query = "SELECT u.aktif, i.ilAdi FROM Uyeler u, il i WHERE u.ilNo = i.ilNo";
+
 
         }
     }
