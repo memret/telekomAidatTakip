@@ -162,7 +162,7 @@ namespace telekomAidatTakip
             Database db = new Database();
             SqlParameter paramTemp;
             string temelSorgu = "SELECT u.adSoyad, u.sicilNo,kg.kanGrubu, i.ilAdi, m.mudurlukAdi, b.birimAdi, unv.unvanAdi, t.tahsilAdi FROM uyeler u,KanGrubu kg, il i, Mudurluk m, Birim b, Unvan unv, Tahsil t, nufusbilgileri nufus WHERE nufus.sicilno = u.sicilno and nufus.kanGrubuNo = kg.kanGrubuNo AND u.ilNo = i.ilNo AND u.mudurlukNo = m.mudurlukNo AND u.birimNo = b.birimNo AND u.unvanNo = unv.unvanNo AND u.tahsilNo = t.tahsilNo ";
-            string ekSorgu=" ";
+            string ekSorgu = " ";
 
 
 
@@ -175,9 +175,9 @@ namespace telekomAidatTakip
                 paramList.Add(paramTemp);
                 temelSorgu += ekSorgu;
             }
-            
-            
-            if(checkMudurluk.Checked)
+
+
+            if (checkMudurluk.Checked)
             {
                 string mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString();
                 ekSorgu += "AND u.mudurlukNo = @mudurlukNo ";
@@ -195,7 +195,7 @@ namespace telekomAidatTakip
                 temelSorgu += ekSorgu;
             }
 
-            if(checkUnvan.Checked)
+            if (checkUnvan.Checked)
             {
                 string unvanNo = ((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key.ToString();
                 ekSorgu += "AND u.unvanNo = @unvanNo ";
@@ -249,22 +249,19 @@ namespace telekomAidatTakip
 
             var data = db.DataOku(temelSorgu, paramList);
             listUye.Items.Clear();
-            int siraNo = 0;
-            
+
             while (data.Read())
             {
-                    string ilMudBir = data["ilAdi"].ToString() + "/" + data["mudurlukAdi"].ToString() + "/" + data["birimAdi"].ToString();
-                    siraNo++;
-                    ListViewItem item = new ListViewItem();
-                    item.Text = siraNo.ToString();
-                    item.SubItems.Add(data["adSoyad"].ToString());
-                    item.SubItems.Add(data["sicilNo"].ToString());
-                    item.SubItems.Add(data["kanGrubu"].ToString());
-                    item.SubItems.Add(ilMudBir);
-                    item.SubItems.Add(data["unvanAdi"].ToString());
-                    item.SubItems.Add(data["tahsilAdi"].ToString());
+                string ilMudBir = data["ilAdi"].ToString() + "/" + data["mudurlukAdi"].ToString() + "/" + data["birimAdi"].ToString();
+                ListViewItem item = new ListViewItem();
+                item.Text = data["sicilNo"].ToString();
+                item.SubItems.Add(data["adSoyad"].ToString());
+                item.SubItems.Add(data["kanGrubu"].ToString());
+                item.SubItems.Add(ilMudBir);
+                item.SubItems.Add(data["unvanAdi"].ToString());
+                item.SubItems.Add(data["tahsilAdi"].ToString());
 
-                    listUye.Items.Add(item);
+                listUye.Items.Add(item);
             }
             db.Kapat();
             //yazdir = new Yazdir(listUye.Items);
