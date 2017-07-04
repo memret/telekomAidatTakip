@@ -15,7 +15,7 @@ namespace telekomAidatTakip
         public frmUye() // yeni kayıt eklenirken
         {
             InitializeComponent();
-            DoldurKomple();
+            DoldurKomple("1");
         }
         public frmUye(string sicilno) //raporuye den çağırılınca
         {
@@ -27,7 +27,7 @@ namespace telekomAidatTakip
 
         private void frmUye_Load(object sender, EventArgs e)
         {
-            DoldurKomple();
+           // DoldurKomple();
 
         }
         private void DoldurKomple()
@@ -235,6 +235,7 @@ namespace telekomAidatTakip
         {
             Database db = new Database();
             Database db2 = new Database();
+            Database db3 = new Database();
             int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
             int ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
             int birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
@@ -244,7 +245,8 @@ namespace telekomAidatTakip
             int evilNo = ((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
             int isilNo = ((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
             db.Sorgu("UPDATE Uyeler SET adSoyad=@0,tahsilNo=@1,unvanNo=@2,ilNo=@3,mudurlukNo=@4,birimNo=@5,uyelikTipiNo=@6,girisTarihi=@7,kayitTarihi=@8 WHERE sicilNo=@9", txtAdSoyad.Text, tahsilno.ToString(), unvan.ToString(), ilno.ToString(), mdr.ToString(), birimno.ToString(), uyeliktipno.ToString(), dateGiris.Value.Date, dateKayit.Value.Date, txtSicilNo.Text);
-            db2.Sorgu("UPDATE Adres SET ev=@0,evilNo=@1,[is]=@2,isilNo=@3,evTel=@4,istel=@5,ceptel=@6 wHERE SİCİLNO=@7 ", txtSicilNo.Text, txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text);
+            db2.Sorgu("UPDATE Adres SET ev=@0,evilNo=@1,[is]=@2,isilNo=@3,evTel=@4,istel=@5,ceptel=@6 wHERE SİCİLNO=@7 ", txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text, txtSicilNo.Text);
+            db3.Sorgu("UPDATE nufusBilgileri SET baba=@0,anne=@1,dogumYeri=@2,dogumTarihi=@3,medeniHali=@4,kanGrubuno=@5,ilNo=@6,ilce=@7,mahalle=@8,ciltNo=@9,aileSiraNo=@10,siraNo=@11 WHERE sicilNo=@12)", txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date, cboxNufusMedeni.SelectedIndex, cboxNufusKan.SelectedIndex, ilno, txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text, txtSicilNo.Text);
 
         }
         private void btnYeni_Click(object sender, EventArgs e)
