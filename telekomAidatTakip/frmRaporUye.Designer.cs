@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnYazdir = new System.Windows.Forms.Button();
             this.checkKanGrubu = new System.Windows.Forms.CheckBox();
             this.checkUyelik = new System.Windows.Forms.CheckBox();
             this.checkTahsil = new System.Windows.Forms.CheckBox();
@@ -47,13 +48,12 @@
             this.cboxII = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listUye = new System.Windows.Forms.ListView();
-            this.ListAdSoyad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListKurumSicil = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ListAdSoyad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListKanGrubu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListIlMudurlukKısım = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListUnvan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListTahsil = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnYazdir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Arama Kriterleri :";
+            // 
+            // btnYazdir
+            // 
+            this.btnYazdir.Enabled = false;
+            this.btnYazdir.Location = new System.Drawing.Point(565, 204);
+            this.btnYazdir.Name = "btnYazdir";
+            this.btnYazdir.Size = new System.Drawing.Size(89, 37);
+            this.btnYazdir.TabIndex = 6;
+            this.btnYazdir.Text = "Yazdır";
+            this.btnYazdir.UseVisualStyleBackColor = true;
+            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
             // checkKanGrubu
             // 
@@ -284,15 +295,15 @@
             this.listUye.View = System.Windows.Forms.View.Details;
             this.listUye.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listUye_MouseDoubleClick);
             // 
-            // ListAdSoyad
-            // 
-            this.ListAdSoyad.Text = "Ad Soyad";
-            this.ListAdSoyad.Width = 141;
-            // 
             // ListKurumSicil
             // 
             this.ListKurumSicil.Text = "Sicil No";
             this.ListKurumSicil.Width = 96;
+            // 
+            // ListAdSoyad
+            // 
+            this.ListAdSoyad.Text = "Ad Soyad";
+            this.ListAdSoyad.Width = 141;
             // 
             // ListKanGrubu
             // 
@@ -313,16 +324,6 @@
             // 
             this.ListTahsil.Text = "Tahsil";
             this.ListTahsil.Width = 100;
-            // 
-            // btnYazdir
-            // 
-            this.btnYazdir.Location = new System.Drawing.Point(565, 204);
-            this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(89, 37);
-            this.btnYazdir.TabIndex = 6;
-            this.btnYazdir.Text = "Yazdır";
-            this.btnYazdir.UseVisualStyleBackColor = true;
-            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
             // frmRaporUye
             // 
