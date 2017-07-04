@@ -10,6 +10,15 @@ namespace telekomAidatTakipCron
     {
         static void Main(string[] args)
         {
+
+        }
+        void MailTopluGonder(string[] mailListesi, string baslik, string icerik)
+        {
+
+        }
+        void MailTekliGonder(object smtpZimbirtisi, string mail, string baslik, string icerik)
+        {
+
         }
     }
 }
