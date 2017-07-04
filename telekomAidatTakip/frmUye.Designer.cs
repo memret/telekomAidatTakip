@@ -100,11 +100,11 @@
             this.label21 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnYeni = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.lblSilinmeBilgisi.SuspendLayout();
@@ -460,6 +460,7 @@
             // 
             // cboxIsIl
             // 
+            this.cboxIsIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxIsIl.FormattingEnabled = true;
             this.cboxIsIl.Location = new System.Drawing.Point(142, 182);
             this.cboxIsIl.Name = "cboxIsIl";
@@ -468,6 +469,7 @@
             // 
             // cboxEvIl
             // 
+            this.cboxEvIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxEvIl.FormattingEnabled = true;
             this.cboxEvIl.Location = new System.Drawing.Point(142, 87);
             this.cboxEvIl.Name = "cboxEvIl";
@@ -618,6 +620,7 @@
             // 
             // cboxNufusIl
             // 
+            this.cboxNufusIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxNufusIl.FormattingEnabled = true;
             this.cboxNufusIl.Location = new System.Drawing.Point(145, 183);
             this.cboxNufusIl.Name = "cboxNufusIl";
@@ -635,6 +638,7 @@
             // 
             // cboxNufusKan
             // 
+            this.cboxNufusKan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxNufusKan.FormattingEnabled = true;
             this.cboxNufusKan.Location = new System.Drawing.Point(145, 128);
             this.cboxNufusKan.Name = "cboxNufusKan";
@@ -643,6 +647,7 @@
             // 
             // cboxNufusMedeni
             // 
+            this.cboxNufusMedeni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxNufusMedeni.FormattingEnabled = true;
             this.cboxNufusMedeni.Items.AddRange(new object[] {
             "Bekar",
@@ -812,6 +817,15 @@
             this.tabPage5.Text = "Not";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(24, 20);
+            this.textBox1.MinimumSize = new System.Drawing.Size(100, 200);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(755, 283);
+            this.textBox1.TabIndex = 0;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnSil);
@@ -852,15 +866,6 @@
             this.btnYeni.Text = "Yeni Üye";
             this.btnYeni.UseVisualStyleBackColor = true;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(24, 20);
-            this.textBox1.MinimumSize = new System.Drawing.Size(100, 200);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(755, 283);
-            this.textBox1.TabIndex = 0;
             // 
             // frmUye
             // 
