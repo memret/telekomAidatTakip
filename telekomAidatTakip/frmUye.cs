@@ -15,20 +15,18 @@ namespace telekomAidatTakip
         public frmUye() // yeni kayıt eklenirken
         {
             InitializeComponent();
-            DoldurKomple("1");
         }
         public frmUye(string sicilno) //raporuye den çağırılınca
         {
             InitializeComponent();
-            DoldurKomple("1");
         }
 
 
 
         private void frmUye_Load(object sender, EventArgs e)
         {
-           // DoldurKomple();
-
+            // DoldurKomple();
+            DoldurKomple("1");
         }
         private void DoldurKomple()
         {
@@ -51,7 +49,7 @@ namespace telekomAidatTakip
             DoldurTemelBilgiler(sicilno);
             
             DoldurAdresBilgiler(sicilno);
-          //  DoldurNufusBilgileri(sicilno); //test edilmedi
+            DoldurNufusBilgileri(sicilno); //test edilmedi
         }
         private void DoldurNufusBilgileri(string sicilno)
         {
@@ -64,7 +62,7 @@ namespace telekomAidatTakip
                 txtNufusAnne.Text = data["anne"].ToString();
                 txtNufusDogumYeri.Text = data["dogumyeri"].ToString();
                 dateNufusDogum.Value = Convert.ToDateTime(data["dogumTarihi"]);
-                cboxNufusMedeni.SelectedItem = PRG.cboxIndexBul(ref cboxNufusMedeni, data["medeniHal"]);
+                //cboxNufusMedeni.SelectedIndex = Convert.ToInt32(data["medeniHal"]);
                 cboxNufusKan.SelectedItem = PRG.cboxIndexBul(ref cboxNufusKan, data["kangrubuno"]);
                 cboxNufusIl.SelectedItem = PRG.cboxIndexBul(ref cboxNufusIl,data["ilno"]);
                 txtNufusIlce.Text = data["ilce"].ToString();
