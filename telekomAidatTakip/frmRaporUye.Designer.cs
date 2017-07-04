@@ -282,6 +282,7 @@
             this.listUye.TabIndex = 0;
             this.listUye.UseCompatibleStateImageBehavior = false;
             this.listUye.View = System.Windows.Forms.View.Details;
+            this.listUye.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listUye_MouseDoubleClick);
             // 
             // ListSiraNumarasi
             // 

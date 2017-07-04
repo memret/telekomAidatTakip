@@ -267,5 +267,15 @@ namespace telekomAidatTakip
                     listUye.Items.Add(item);
             }
         }
+
+        private void listUye_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (listUye.SelectedItems.Count > 0)
+            {
+                frmUye frm = new frmUye(listUye.SelectedItems[0].Text);
+                frm.ShowDialog();
+            }
+            
+        }
     }
 }
