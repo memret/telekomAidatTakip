@@ -460,6 +460,7 @@
             // 
             // cboxIsIl
             // 
+            this.cboxIsIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxIsIl.FormattingEnabled = true;
             this.cboxIsIl.Location = new System.Drawing.Point(142, 182);
             this.cboxIsIl.Name = "cboxIsIl";
@@ -468,6 +469,7 @@
             // 
             // cboxEvIl
             // 
+            this.cboxEvIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxEvIl.FormattingEnabled = true;
             this.cboxEvIl.Location = new System.Drawing.Point(142, 87);
             this.cboxEvIl.Name = "cboxEvIl";
@@ -618,6 +620,7 @@
             // 
             // cboxNufusIl
             // 
+            this.cboxNufusIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxNufusIl.FormattingEnabled = true;
             this.cboxNufusIl.Location = new System.Drawing.Point(145, 183);
             this.cboxNufusIl.Name = "cboxNufusIl";
@@ -635,6 +638,7 @@
             // 
             // cboxNufusKan
             // 
+            this.cboxNufusKan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxNufusKan.FormattingEnabled = true;
             this.cboxNufusKan.Location = new System.Drawing.Point(145, 128);
             this.cboxNufusKan.Name = "cboxNufusKan";
@@ -643,6 +647,7 @@
             // 
             // cboxNufusMedeni
             // 
+            this.cboxNufusMedeni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxNufusMedeni.FormattingEnabled = true;
             this.cboxNufusMedeni.Items.AddRange(new object[] {
             "Bekar",
