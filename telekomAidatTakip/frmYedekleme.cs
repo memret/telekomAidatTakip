@@ -26,20 +26,25 @@ namespace telekomAidatTakip
 
             while (data.Read())
             {
+
                 ListViewItem item = new ListViewItem();
 
                 string veri = data["physical_device_name"].ToString();          
                 string[] split = veri.Split(new Char[] { '\\', '-', '.'});
 
-                DateTime result = DateTime.ParseExact(split[2], "ddMMyyyy", System.Globalization.CultureInfo.InvariantCulture);
-    
+                if (split.Length> 2)
+                {
+                    DateTime result = DateTime.ParseExact(split[2], "ddMMyyyy", System.Globalization.CultureInfo.InvariantCulture);
 
-                item.SubItems[0].Text = result.ToShortDateString();
-                item.SubItems.Add(split[1]);
 
-              
+                    item.SubItems[0].Text = result.ToShortDateString();
+                    item.SubItems.Add(split[1]);
 
-                listYukle.Items.Add(item);
+
+
+                    listYukle.Items.Add(item);
+                }
+                
 
             }
         }
