@@ -22,8 +22,8 @@ namespace telekomAidatTakip
         {
             listeDoldur();
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
-            Database db2 = new Database();
-            var data = db2.DataOku("SELECT mudurlukNo,mudurlukAdi FROM mudurluk");
+            Database db = new Database();
+            var data = db.DataOku("SELECT mudurlukNo,mudurlukAdi FROM mudurluk");
 
             while (data.Read())
             {
@@ -32,6 +32,7 @@ namespace telekomAidatTakip
             cBoxMudurluk.DataSource = new BindingSource(cboxSource, null);
             cBoxMudurluk.DisplayMember = "Value";
             cBoxMudurluk.ValueMember = "Key";
+            db.Kapat();
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -66,7 +67,8 @@ namespace telekomAidatTakip
                     db.Sorgu("INSERT INTO Birim Values (@0,@1,@2)", txtBirimKodu.Text, txtBirimAdi.Text, mudurlukNo.ToString());
                     listvil.Items.Clear();
                     listeDoldur();
-                }
+                    db.Kapat();
+            }
             else
             {
                 MessageBox.Show("Bİrim adı veya Birim Kodu eksik.");
@@ -94,14 +96,15 @@ namespace telekomAidatTakip
                 txtBirimKodu.Text = data["birimNo"].ToString();
                 cBoxMudurluk.Text = data["mudurlukAdi"].ToString();
             }
+            db.Kapat();
 
 
-          /*  String birimKodu = listvil.SelectedItems[0].SubItems[0].Text;
-            String birimAdi = listvil.SelectedItems[0].SubItems[1].Text;
-            txtBirimKodu.Text = birimKodu;
-            txtBirimAdi.Text = birimAdi;
-            cBoxMudurluk.Text = listvil.SelectedItems[0].SubItems[3].Text;*/
-            
+            /*  String birimKodu = listvil.SelectedItems[0].SubItems[0].Text;
+              String birimAdi = listvil.SelectedItems[0].SubItems[1].Text;
+              txtBirimKodu.Text = birimKodu;
+              txtBirimAdi.Text = birimAdi;
+              cBoxMudurluk.Text = listvil.SelectedItems[0].SubItems[3].Text;*/
+
 
         }
 
@@ -121,6 +124,7 @@ namespace telekomAidatTakip
 
                 listvil.Items.Add(item);
             }
+            db.Kapat();
 
         }
 
@@ -130,6 +134,7 @@ namespace telekomAidatTakip
             db.Sorgu("DELETE FROM Birim Where birimNo = @0", txtBirimKodu.Text);
             listvil.Items.Clear();
             listeDoldur();
+            db.Kapat();
 
         }
 
@@ -140,6 +145,7 @@ namespace telekomAidatTakip
             db.Sorgu("UPDATE Birim Set birimAdi = @0, mudurlukNo=@1 WHERE birimNo=@2", txtBirimAdi.Text,mudurlukNo.ToString(),txtBirimKodu.Text);
             listvil.Items.Clear();
             listeDoldur();
+            db.Kapat();
 
         }
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace telekomAidatTakip
 {
-    class Database
+    class Database : IDisposable
     {
         SqlConnection bag;
         SqlCommand kmt;
@@ -27,20 +27,25 @@ namespace telekomAidatTakip
             kmt.CommandTimeout = 15;
             bag.Open();
         }
-        ~Database()
+        public void Dispose()
         {
-            if (bag.State != System.Data.ConnectionState.Closed)
-            {
-                try
-                {
-                    bag.Close();
-                }
-                catch
-                {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
 
-                }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing == true)
+            {
+                bag.Close(); // call close here to close connection
             }
         }
+
+        ~Database()
+        {
+            Dispose(false);
+        }
+        
         public SqlDataReader DataOku(string query)
         {
             kmt.CommandText = query;

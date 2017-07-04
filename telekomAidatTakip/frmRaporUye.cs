@@ -266,7 +266,8 @@ namespace telekomAidatTakip
 
                     listUye.Items.Add(item);
             }
-            yazdir = new Yazdir(listUye.Items);
+            db.Kapat();
+            //yazdir = new Yazdir(listUye.Items);
         }
 
         private void listUye_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -281,10 +282,10 @@ namespace telekomAidatTakip
 
         private void btnYazdir_Click(object sender, EventArgs e)
         {
-            yazdir.printPre.ShowDialog();
+           // yazdir.printPre.ShowDialog();
             
         }
-        Yazdir yazdir;
+       // Yazdir yazdir;
         private void frmRaporUye_Load(object sender, EventArgs e)
         {
             

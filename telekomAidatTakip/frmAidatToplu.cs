@@ -53,7 +53,8 @@ namespace telekomAidatTakip
                 }
             }
 
-
+            db.Kapat();
+            db2.Kapat();
 
             // "ALL (SELECT sicil no FROM uyeler WHERE @0)" mudurlukNo.ToString();
 

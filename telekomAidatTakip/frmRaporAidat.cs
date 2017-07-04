@@ -117,6 +117,7 @@ namespace telekomAidatTakip
 
                 listUyeKayitlari.Items.Add(item);
             }
+            db.Kapat();
         }
 
         private void grpAramaKriterleri_Enter(object sender, EventArgs e)

@@ -75,9 +75,11 @@ namespace telekomAidatTakip
                 cboxMudurluk.SelectedIndex = -1;
                 cboxBirim.SelectedIndex = -1;
                 txtAidatMiktari.Text = string.Empty;
+                db.Kapat();
             }
             else
                 MessageBox.Show("Lütfen boş alanları doldururuz!");
+            
 
         }
 
@@ -108,6 +110,7 @@ namespace telekomAidatTakip
                 cboxMudurluk.SelectedIndex = -1;
                 cboxBirim.SelectedIndex = -1;
                 txtAidatMiktari.Text = string.Empty;
+                db.Kapat();
             }
             else
                 MessageBox.Show("Lütfen boş alanları doldururuz!");
@@ -164,15 +167,16 @@ namespace telekomAidatTakip
                 {
                     btnKaydet.Visible = true;
                     button1.Visible = true;
-                    Database db2 = new Database();
+                    Database db = new Database();
                     int birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
                     //  var data = db2.DataOku("SELECT * FROM AidatMiktar WHERE birimNo=@1 ",birimno.ToString() );
-                    var data = db2.DataOku("SELECT * FROM aidatmiktar WHERE birimno=@0 ", birimno.ToString());
+                    var data = db.DataOku("SELECT * FROM aidatmiktar WHERE birimno=@0 ", birimno.ToString());
                     while (data.Read())
                     {
                         txtAidatMiktari.Text = data["aidat"].ToString();
                     }
 
+                    db.Kapat();
                     if (txtAidatMiktari.Text == string.Empty)
                     {
                         btnKaydet.Visible = false;

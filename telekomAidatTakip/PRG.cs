@@ -27,6 +27,7 @@ namespace telekomAidatTakip
             cboxTahsil.ValueMember = "Key";
             cboxTahsil.Enabled = true;
             cboxTahsil.SelectedIndex = -1;
+            db.Kapat();
         }
         
         public static void DoldurUnvan(ref ComboBox cboxUnvan)
@@ -47,6 +48,7 @@ namespace telekomAidatTakip
             cboxUnvan.ValueMember = "Key";
             cboxUnvan.Enabled = true;
             cboxUnvan.SelectedIndex = -1;
+            db.Kapat();
         }
         public static void DoldurIl(ref ComboBox cboxIl)
         {
@@ -66,6 +68,7 @@ namespace telekomAidatTakip
             cboxIl.ValueMember = "Key";
             cboxIl.Enabled = true;
             cboxIl.SelectedIndex = -1;
+            db.Kapat();
         }
         public static void DoldurUyelikTipi(ref ComboBox cboxUyelikTipi)
         {
@@ -85,6 +88,7 @@ namespace telekomAidatTakip
             cboxUyelikTipi.ValueMember = "Key";
             cboxUyelikTipi.Enabled = true;
             cboxUyelikTipi.SelectedIndex = -1;
+            db.Kapat();
         }
         public static void DoldurKanGrubu(ref ComboBox cboxKanGrubu)
         {
@@ -104,6 +108,7 @@ namespace telekomAidatTakip
             cboxKanGrubu.ValueMember = "Key";
             cboxKanGrubu.Enabled = true;
             cboxKanGrubu.SelectedIndex = -1;
+            db.Kapat();
         }
         public static void DoldurMudurluk(ref ComboBox cboxMudurluk, string ilNo)
         {
@@ -120,6 +125,7 @@ namespace telekomAidatTakip
                     cboxSource.Add(-1, "Veri Yok");
                     cboxMudurluk.Enabled = false;
                 }
+                db.Kapat();
             }
             else
             {
@@ -147,6 +153,7 @@ namespace telekomAidatTakip
                     cboxSource.Add(-1, "Veri Yok");
                     cboxBirim.Enabled = false;
                 }
+                db.Kapat();
             }
             else
             {
