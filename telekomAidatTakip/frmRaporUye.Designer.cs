@@ -327,6 +327,7 @@
             this.btnYazdir.TabIndex = 6;
             this.btnYazdir.Text = "Yazdır";
             this.btnYazdir.UseVisualStyleBackColor = true;
+            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
             // frmRaporUye
             // 
@@ -338,6 +339,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmRaporUye";
             this.Text = "Üye Raporu";
+            this.Load += new System.EventHandler(this.frmRaporUye_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

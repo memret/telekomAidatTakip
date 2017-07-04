@@ -145,6 +145,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>telekomAidatDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Yazdir.cs" />
     <EmbeddedResource Include="frmAidatMiktar.resx">
       <DependentUpon>frmAidatMiktar.cs</DependentUpon>
     </EmbeddedResource>
