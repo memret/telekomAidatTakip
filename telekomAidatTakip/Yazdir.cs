@@ -14,10 +14,14 @@ namespace telekomAidatTakip
         public PrintDocument printDoc = new PrintDocument();
         public PageSetupDialog pageSet = new PageSetupDialog();
         public PrintPreviewDialog printPre = new PrintPreviewDialog();
-        public ListView.ListViewItemCollection items;
-        public Yazdir(ListView.ListViewItemCollection items)
+        //public ListView.ListViewItemCollection items;
+        //public Dictionary<string, int> basliklar;
+        public ListView list;
+        public string baslik;
+        
+        
+        public Yazdir()
         {
-            this.items = items;
             pageSet.Document = printDoc;
             printPre.Document = printDoc;
             printDoc.PrintPage += new PrintPageEventHandler(OnPrintDocument);
@@ -33,42 +37,42 @@ namespace telekomAidatTakip
             //Bu kısımda başlık yazısını ve çizgileri yazdırıyorum
             e.Graphics.DrawLine(myPen, 120, 120, 750, 120);
             e.Graphics.DrawLine(myPen, 120, 180, 750, 180);
-            e.Graphics.DrawString("XXX Listesi", myFont, sbrush, 200, 120);
+            e.Graphics.DrawString(baslik, myFont, sbrush, 200, 120);
 
-            e.Graphics.DrawLine(myPen, 120, 320, 750, 320);
+            e.Graphics.DrawLine(myPen, 120, 220, 750, 220);
 
             myFont = new Font("Calibri", 12, FontStyle.Bold);
-            e.Graphics.DrawString("Adet", myFont, sbrush, 140, 328);
-            e.Graphics.DrawString("Ürün Adı", myFont, sbrush, 240, 328);
-            e.Graphics.DrawString("Birim Fiyatı", myFont, sbrush, 440, 328);
-            e.Graphics.DrawString("Fiyat", myFont, sbrush, 640, 328);
+            int x = 120;
+            foreach (ColumnHeader item in list.Columns)
+            {
+                var asd = list.Columns[0];
+                e.Graphics.DrawString(item.Text, myFont, sbrush, x, 228);
+                x += item.Width;
+            }
+            e.Graphics.DrawLine(myPen, 120, 248, 750, 248);
 
-            e.Graphics.DrawLine(myPen, 120, 348, 750, 348);
-
-            int y = 360;
+            int y = 260;
 
             StringFormat myStringFormat = new StringFormat();
             myStringFormat.Alignment = StringAlignment.Far;
-
-            //decimal gTotal = 0;
-
-            foreach (ListViewItem lvi in items)
+            
+            foreach (ListViewItem lvi in list.Items)
             {
-                e.Graphics.DrawString(lvi.SubItems[1].Text, myFont, sbrush, 160, y, myStringFormat);
-                e.Graphics.DrawString(lvi.Text, myFont, sbrush, 220, y);
-                /*
-                decimal bFiyat = Convert.ToDecimal(lvi.SubItems[2].Text);
-                decimal fiyat = Convert.ToDecimal(lvi.SubItems[1].Text) * Convert.ToDecimal(lvi.SubItems[2].Text);
-                gTotal += fiyat;
-                e.Graphics.DrawString(bFiyat.ToString("c"), myFont, sbrush, 530, y, myStringFormat);
-                e.Graphics.DrawString(fiyat.ToString("c"), myFont, sbrush, 700, y, myStringFormat);
-                */
+                int i = 0;
+                x = 120;
+                foreach (ColumnHeader item in list.Columns)
+                {
+                    Rectangle rect2 = new Rectangle(x, y, item.Width, 20);
+                    e.Graphics.DrawString(lvi.SubItems[i].Text, myFont, sbrush, rect2);
+                    e.Graphics.DrawRectangle(Pens.Black, Rectangle.Round(rect2));
+                    x += item.Width;
+                    i++;
+                }
                 y += 20;
 
             }
 
             e.Graphics.DrawLine(myPen, 120, y, 750, y);
-            //e.Graphics.DrawString(gTotal.ToString("c"), myFont, sbrush, 700, y + 10, myStringFormat);
         }
     }
 

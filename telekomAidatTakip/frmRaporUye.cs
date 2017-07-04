@@ -264,7 +264,24 @@ namespace telekomAidatTakip
                 listUye.Items.Add(item);
             }
             db.Kapat();
-            //yazdir = new Yazdir(listUye.Items);
+
+
+            yazdir.list = listUye;
+
+            /*yazdir.items = listUye.Items;
+            Dictionary<string, int> basliklar = new Dictionary<string, int>();
+            basliklar.Add("Sicil No",60);
+            basliklar.Add("Ad Soyad",120);
+            basliklar.Add("Kan Grubu",80);
+            basliklar.Add("İl/Müdürlük/Kısım",180);
+            basliklar.Add("Ünvan",70);
+            basliklar.Add("Tahsil",70);
+
+
+            yazdir.basliklar = basliklar;
+            */
+            yazdir.baslik = "Üye Listesi";
+            btnYazdir.Enabled = true;
         }
 
         private void listUye_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -279,10 +296,10 @@ namespace telekomAidatTakip
 
         private void btnYazdir_Click(object sender, EventArgs e)
         {
-           // yazdir.printPre.ShowDialog();
+            yazdir.printPre.ShowDialog();
             
         }
-       // Yazdir yazdir;
+       Yazdir yazdir = new Yazdir();
         private void frmRaporUye_Load(object sender, EventArgs e)
         {
             

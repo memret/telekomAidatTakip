@@ -135,6 +135,7 @@
             this.btnYazdir.TabIndex = 12;
             this.btnYazdir.Text = "Yazdır";
             this.btnYazdir.UseVisualStyleBackColor = true;
+            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
             // btnListele
             // 
@@ -231,7 +232,7 @@
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Aidat Genel Toplamı";
+            this.columnHeader5.Text = "Genel Toplamı";
             this.columnHeader5.Width = 123;
             // 
             // columnHeader6
