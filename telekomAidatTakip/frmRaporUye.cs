@@ -161,7 +161,7 @@ namespace telekomAidatTakip
             //tek satırda yazmazsam da hata veriyor ömer buralarda çıldırdı
             Database db = new Database();
             SqlParameter paramTemp;
-            string temelSorgu = "SELECT u.adSoyad, u.sicilNo,kg.kanGrubu, i.ilAdi, m.mudurlukAdi, b.birimAdi, unv.unvanAdi, t.tahsilAdi FROM uyeler u,KanGrubu kg, il i, Mudurluk m, Birim b, Unvan unv, Tahsil t WHERE u.kanGrubuNo = kg.kanGrubuNo AND u.ilNo = i.ilNo AND u.mudurlukNo = m.mudurlukNo AND u.birimNo = b.birimNo AND u.unvanNo = unv.unvanNo AND u.tahsilNo = t.tahsilNo AND u.kanGrubuNo = kg.kanGrubuNo ";
+            string temelSorgu = "SELECT u.adSoyad, u.sicilNo,kg.kanGrubu, i.ilAdi, m.mudurlukAdi, b.birimAdi, unv.unvanAdi, t.tahsilAdi FROM uyeler u,KanGrubu kg, il i, Mudurluk m, Birim b, Unvan unv, Tahsil t, nufusbilgileri nufus WHERE nufus.sicilno = u.sicilno and nufus.kanGrubuNo = kg.kanGrubuNo AND u.ilNo = i.ilNo AND u.mudurlukNo = m.mudurlukNo AND u.birimNo = b.birimNo AND u.unvanNo = unv.unvanNo AND u.tahsilNo = t.tahsilNo ";
             string ekSorgu=" ";
 
 
@@ -225,7 +225,7 @@ namespace telekomAidatTakip
             if (checkKanGrubu.Checked)
             {
                 string kanGrubuNo = ((KeyValuePair<int, string>)cboxKanGrubu.SelectedItem).Key.ToString();
-                ekSorgu += "AND u.kanGrubuNo = @kanGrubuNo ";
+                ekSorgu += "AND nufus.kanGrubuNo = @kanGrubuNo ";
                 paramTemp = new SqlParameter("@kanGrubuNo", kanGrubuNo);
                 paramList.Add(paramTemp);
                 temelSorgu += ekSorgu;
