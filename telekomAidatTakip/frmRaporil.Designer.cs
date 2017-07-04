@@ -33,12 +33,11 @@
             this.btnEkranaListele = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.gboxBulunanKayitlar = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.ListSiraNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Listİl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListAktif = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListPasif = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListToplam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listIl = new System.Windows.Forms.ListView();
             this.gboxListelemeİslemi.SuspendLayout();
             this.gboxBulunanKayitlar.SuspendLayout();
             this.SuspendLayout();
@@ -85,34 +84,13 @@
             // 
             // gboxBulunanKayitlar
             // 
-            this.gboxBulunanKayitlar.Controls.Add(this.listView1);
+            this.gboxBulunanKayitlar.Controls.Add(this.listIl);
             this.gboxBulunanKayitlar.Location = new System.Drawing.Point(6, 114);
             this.gboxBulunanKayitlar.Name = "gboxBulunanKayitlar";
             this.gboxBulunanKayitlar.Size = new System.Drawing.Size(564, 279);
             this.gboxBulunanKayitlar.TabIndex = 1;
             this.gboxBulunanKayitlar.TabStop = false;
             this.gboxBulunanKayitlar.Text = "Bulunan Kayıtlar";
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ListSiraNo,
-            this.Listİl,
-            this.ListAktif,
-            this.ListPasif,
-            this.ListToplam});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Location = new System.Drawing.Point(3, 16);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(558, 260);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // ListSiraNo
-            // 
-            this.ListSiraNo.Text = "S.N";
-            this.ListSiraNo.Width = 80;
             // 
             // Listİl
             // 
@@ -133,6 +111,21 @@
             // 
             this.ListToplam.Text = "Toplam";
             this.ListToplam.Width = 92;
+            // 
+            // listIl
+            // 
+            this.listIl.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Listİl,
+            this.ListAktif,
+            this.ListPasif,
+            this.ListToplam});
+            this.listIl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listIl.Location = new System.Drawing.Point(3, 16);
+            this.listIl.Name = "listIl";
+            this.listIl.Size = new System.Drawing.Size(558, 260);
+            this.listIl.TabIndex = 0;
+            this.listIl.UseCompatibleStateImageBehavior = false;
+            this.listIl.View = System.Windows.Forms.View.Details;
             // 
             // frmRaporIl
             // 
@@ -157,8 +150,7 @@
         private System.Windows.Forms.Button btnEkranaListele;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gboxBulunanKayitlar;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader ListSiraNo;
+        private System.Windows.Forms.ListView listIl;
         private System.Windows.Forms.ColumnHeader Listİl;
         private System.Windows.Forms.ColumnHeader ListAktif;
         private System.Windows.Forms.ColumnHeader ListPasif;
