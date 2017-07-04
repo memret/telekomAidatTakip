@@ -206,7 +206,8 @@ namespace telekomAidatTakip
         private void btnKaydet_Click(object sender, EventArgs e)
         {
              yeniKayitEkle();
-           //uyeBilgisiGuncelle();
+            DialogResult dialogResult = MessageBox.Show("Yeni üye kaydedildi.", "Üye Kayıt", MessageBoxButtons.OK);
+            //uyeBilgisiGuncelle();
         }
         private void yeniKayitEkle()
         {
@@ -251,6 +252,33 @@ namespace telekomAidatTakip
         {
             ekraniTemizle();
             
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (txtSicilNo.Text != string.Empty)
+            {
+                DialogResult dialogResult = MessageBox.Show("Üye silinecek. Emin misiniz?", "Üye silme", MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.OK)
+                {
+                    Database db = new Database();
+                    Database db2 = new Database();
+                    Database db3 = new Database();
+
+                    db.Sorgu("DELETE FROM Uyeler WHERE sicilNo=@0", txtSicilNo.Text);
+                    db2.Sorgu("DELETE FROM Adres WHERE sicilNo=@0", txtSicilNo.Text);
+                    db3.Sorgu("DELETE FROM nufusBilgileri WHERE sicilNo=@0", txtSicilNo.Text);
+                }
+
+                else if (dialogResult == DialogResult.Cancel)
+                    return;
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Sicil No gerekli.","Uyarı",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                
+            }
+
         }
     }
 }
