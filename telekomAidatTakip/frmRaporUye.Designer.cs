@@ -276,6 +276,7 @@
             this.ListUnvan,
             this.ListTahsil});
             this.listUye.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listUye.FullRowSelect = true;
             this.listUye.Location = new System.Drawing.Point(3, 16);
             this.listUye.Name = "listUye";
             this.listUye.Size = new System.Drawing.Size(773, 208);
