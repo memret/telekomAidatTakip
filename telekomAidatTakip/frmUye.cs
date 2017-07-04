@@ -12,21 +12,29 @@ namespace telekomAidatTakip
 {
     public partial class frmUye : Form
     {
+        string sicilno;
         public frmUye() // yeni kayıt eklenirken
         {
             InitializeComponent();
         }
         public frmUye(string sicilno) //raporuye den çağırılınca
         {
+            this.sicilno = sicilno;
             InitializeComponent();
         }
-
+        
 
 
         private void frmUye_Load(object sender, EventArgs e)
         {
             // DoldurKomple();
-            DoldurKomple("1");
+            if (sicilno != null)
+            {
+                DoldurKomple(sicilno);
+            }
+            else
+                DoldurKomple();
+
         }
         private void DoldurKomple()
         {
@@ -205,8 +213,9 @@ namespace telekomAidatTakip
         
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            // yeniKayitEkle();
-           uyeBilgisiGuncelle();
+             yeniKayitEkle();
+             //uyeBilgisiGuncelle();
+
         }
         private void yeniKayitEkle()
         {
@@ -219,14 +228,17 @@ namespace telekomAidatTakip
             int unvan = ((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key;
              int evilNo = ((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
               int isilNo = ((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
+            int kanNo= ((KeyValuePair<int, string>)cboxNufusKan.SelectedItem).Key;
             Database db = new Database();
             Database db3 = new Database();
             Database db2 = new Database();
 
-              db.Sorgu("insert into Uyeler (sicilNo,adSoyad,tahsilNo,unvanNo,ilNo,mudurlukNo,birimNo,uyelikTipiNo,girisTarihi,kayitTarihi) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9)", txtSicilNo.Text, txtAdSoyad.Text, tahsilno, unvan, ilno, mdr, birimno, uyeliktipno, dateGiris.Value.Date, dateKayit.Value.Date);
+              db.Sorgu("insert into Uyeler (sicilNo,adSoyad,tahsilNo,unvanNo,ilNo,mudurlukNo,birimNo,uyelikTipiNo,girisTarihi,kayitTarihi,aktif) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10)", txtSicilNo.Text, txtAdSoyad.Text, tahsilno, unvan, ilno, mdr, birimno, uyeliktipno, dateGiris.Value.Date, dateKayit.Value.Date,"1");
               db2.Sorgu("insert into Adres (sicilNo,ev,evilNo,[is],isilNo,evTel,istel,ceptel) values (@0,@1,@2,@3,@4,@5,@6,@7)", txtSicilNo.Text, txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text);
-              db3.Sorgu("insert into nufusBilgileri (sicilNo,baba,anne,dogumYeri,dogumTarihi,medeniHali,kanGrubuno,ilNo,ilce,mahalle,ciltNo,aileSiraNo,siraNo) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12)", txtSicilNo.Text, txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date,cboxNufusMedeni.SelectedIndex,cboxNufusKan.SelectedIndex,ilno,txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text);
+              db3.Sorgu("insert into nufusBilgileri (sicilNo,baba,anne,dogumYeri,dogumTarihi,medeniHali,kanGrubuno,ilNo,ilce,mahalle,ciltNo,aileSiraNo,siraNo) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12)", txtSicilNo.Text, txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date,cboxNufusMedeni.SelectedIndex,kanNo,ilno,txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text);
+            DialogResult dialogResult = MessageBox.Show("Yeni üye kaydedildi.", "Üye Kayıt", MessageBoxButtons.OK);
 
+            ekraniTemizle();
 
         }
         private void uyeBilgisiGuncelle()
@@ -245,12 +257,40 @@ namespace telekomAidatTakip
             db.Sorgu("UPDATE Uyeler SET adSoyad=@0,tahsilNo=@1,unvanNo=@2,ilNo=@3,mudurlukNo=@4,birimNo=@5,uyelikTipiNo=@6,girisTarihi=@7,kayitTarihi=@8 WHERE sicilNo=@9", txtAdSoyad.Text, tahsilno.ToString(), unvan.ToString(), ilno.ToString(), mdr.ToString(), birimno.ToString(), uyeliktipno.ToString(), dateGiris.Value.Date, dateKayit.Value.Date, txtSicilNo.Text);
             db2.Sorgu("UPDATE Adres SET ev=@0,evilNo=@1,[is]=@2,isilNo=@3,evTel=@4,istel=@5,ceptel=@6 wHERE SİCİLNO=@7 ", txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text, txtSicilNo.Text);
             db3.Sorgu("UPDATE nufusBilgileri SET baba=@0,anne=@1,dogumYeri=@2,dogumTarihi=@3,medeniHali=@4,kanGrubuno=@5,ilNo=@6,ilce=@7,mahalle=@8,ciltNo=@9,aileSiraNo=@10,siraNo=@11 WHERE sicilNo=@12", txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date, cboxNufusMedeni.SelectedIndex, cboxNufusKan.SelectedIndex, ilno, txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text, txtSicilNo.Text);
-
+            DialogResult dialogResult = MessageBox.Show("Üye bilgileri güncellendi!", "Kayıt Güncelleme", MessageBoxButtons.OK);
+            ekraniTemizle();
         }
         private void btnYeni_Click(object sender, EventArgs e)
         {
             ekraniTemizle();
             
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (txtSicilNo.Text != string.Empty)
+            {
+                DialogResult dialogResult = MessageBox.Show("Üye silinecek. Emin misiniz?", "Üye silme", MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.OK)
+                {
+                    Database db = new Database();
+                    Database db2 = new Database();
+                    Database db3 = new Database();
+
+                    db.Sorgu("DELETE FROM Uyeler WHERE sicilNo=@0", txtSicilNo.Text);
+                    db2.Sorgu("DELETE FROM Adres WHERE sicilNo=@0", txtSicilNo.Text);
+                    db3.Sorgu("DELETE FROM nufusBilgileri WHERE sicilNo=@0", txtSicilNo.Text);
+                }
+
+                else if (dialogResult == DialogResult.Cancel)
+                    return;
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Sicil No gerekli.","Uyarı",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                
+            }
+
         }
     }
 }

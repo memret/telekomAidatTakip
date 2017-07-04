@@ -47,7 +47,6 @@
             this.cboxII = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listUye = new System.Windows.Forms.ListView();
-            this.ListSiraNumarasi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListAdSoyad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListKurumSicil = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListKanGrubu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -61,6 +60,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnYazdir);
             this.groupBox1.Controls.Add(this.checkKanGrubu);
             this.groupBox1.Controls.Add(this.checkUyelik);
             this.groupBox1.Controls.Add(this.checkTahsil);
@@ -175,7 +175,7 @@
             // 
             // btnEkranaListele
             // 
-            this.btnEkranaListele.Location = new System.Drawing.Point(446, 220);
+            this.btnEkranaListele.Location = new System.Drawing.Point(469, 204);
             this.btnEkranaListele.Name = "btnEkranaListele";
             this.btnEkranaListele.Size = new System.Drawing.Size(90, 36);
             this.btnEkranaListele.TabIndex = 5;
@@ -268,9 +268,8 @@
             // listUye
             // 
             this.listUye.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ListSiraNumarasi,
-            this.ListAdSoyad,
             this.ListKurumSicil,
+            this.ListAdSoyad,
             this.ListKanGrubu,
             this.ListIlMudurlukKısım,
             this.ListUnvan,
@@ -285,11 +284,6 @@
             this.listUye.View = System.Windows.Forms.View.Details;
             this.listUye.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listUye_MouseDoubleClick);
             // 
-            // ListSiraNumarasi
-            // 
-            this.ListSiraNumarasi.Text = "S.N";
-            this.ListSiraNumarasi.Width = 90;
-            // 
             // ListAdSoyad
             // 
             this.ListAdSoyad.Text = "Ad Soyad";
@@ -297,7 +291,7 @@
             // 
             // ListKurumSicil
             // 
-            this.ListKurumSicil.Text = "Kurum Sicil";
+            this.ListKurumSicil.Text = "Sicil No";
             this.ListKurumSicil.Width = 96;
             // 
             // ListKanGrubu
@@ -322,7 +316,7 @@
             // 
             // btnYazdir
             // 
-            this.btnYazdir.Location = new System.Drawing.Point(548, 229);
+            this.btnYazdir.Location = new System.Drawing.Point(565, 204);
             this.btnYazdir.Name = "btnYazdir";
             this.btnYazdir.Size = new System.Drawing.Size(89, 37);
             this.btnYazdir.TabIndex = 6;
@@ -335,7 +329,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 511);
-            this.Controls.Add(this.btnYazdir);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmRaporUye";
@@ -362,7 +355,6 @@
         private System.Windows.Forms.ComboBox cboxII;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView listUye;
-        private System.Windows.Forms.ColumnHeader ListSiraNumarasi;
         private System.Windows.Forms.ColumnHeader ListAdSoyad;
         private System.Windows.Forms.ColumnHeader ListKurumSicil;
         private System.Windows.Forms.ColumnHeader ListKanGrubu;

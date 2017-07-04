@@ -25,5 +25,11 @@ namespace telekomAidatTakip
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Database db = new Database();
+            db.Yedekle();
+        }
     }
 }

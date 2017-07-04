@@ -120,7 +120,16 @@ namespace telekomAidatTakip
         {
             bag.Close();
         }
+        public bool Yedekle()
+        {
+            Database db = new Database();
+            db.Sorgu("backup database telekomAidat to disk = 'yedek2.bak'");
+            db.Kapat();
+            //select * from msdb.dbo.backupmediafamily
+            //physical_device_name
 
+            return true;
+        }
 
     }
 }
