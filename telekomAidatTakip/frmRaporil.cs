@@ -41,6 +41,7 @@ namespace telekomAidatTakip
             yazdir.list = listIl;
             yazdir.baslik = "İl Listesi";
             btnYazdir.Enabled = true;
+
         }
         Yazdir yazdir;
 
@@ -52,6 +53,7 @@ namespace telekomAidatTakip
         private void frmRaporIl_Load(object sender, EventArgs e)
         {
             yazdir = new Yazdir();
+            btnYazdir.Enabled = false;
         }
     }
 }
