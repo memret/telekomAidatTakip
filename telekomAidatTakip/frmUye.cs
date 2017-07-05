@@ -135,6 +135,7 @@ namespace telekomAidatTakip
                 txtEvTel.Text = data["evtel"].ToString();
                 txtIsTel.Text = data["istel"].ToString();
                 txtCepTel.Text = data["ceptel"].ToString();
+                txtAdresEmail.Text = data["email"].ToString();
 
             }
             db.Kapat();
@@ -290,7 +291,7 @@ namespace telekomAidatTakip
             Database db4 = new Database();
 
             db.Sorgu("insert into Uyeler (sicilNo,adSoyad,tahsilNo,unvanNo,ilNo,mudurlukNo,birimNo,uyelikTipiNo,girisTarihi,kayitTarihi,aktif) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10)", txtSicilNo.Text, txtAdSoyad.Text, tahsilno, unvan, ilno, mdr, birimno, uyeliktipno, dateGiris.Value.Date, dateKayit.Value.Date, "1");
-            db2.Sorgu("insert into Adres (sicilNo,ev,evilNo,[is],isilNo,evTel,istel,ceptel) values (@0,@1,@2,@3,@4,@5,@6,@7)", txtSicilNo.Text, txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text);
+            db2.Sorgu("insert into Adres (sicilNo,ev,evilNo,[is],isilNo,evTel,istel,ceptel,email) values (@0,@1,@2,@3,@4,@5,@6,@7,@8)", txtSicilNo.Text, txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text, txtAdresEmail.Text);
             db3.Sorgu("insert into nufusBilgileri (sicilNo,baba,anne,dogumYeri,dogumTarihi,medeniHali,kanGrubuno,ilNo,ilce,mahalle,ciltNo,aileSiraNo,siraNo) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12)", txtSicilNo.Text, txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date, cboxNufusMedeni.SelectedIndex, kanNo, ilno, txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text);
             db4.Sorgu("insert into UyeFotograf (sicilNo,Fotograf) values (@0,@1)", txtSicilNo.Text, resim);
             MessageBox.Show("Yeni üye kaydedildi.", "Üye Kayıt", MessageBoxButtons.OK);
@@ -323,7 +324,7 @@ namespace telekomAidatTakip
             int evilNo = ((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
             int isilNo = ((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
             db.Sorgu("UPDATE Uyeler SET adSoyad=@0,tahsilNo=@1,unvanNo=@2,ilNo=@3,mudurlukNo=@4,birimNo=@5,uyelikTipiNo=@6,girisTarihi=@7,kayitTarihi=@8 WHERE sicilNo=@9", txtAdSoyad.Text, tahsilno.ToString(), unvan.ToString(), ilno.ToString(), mdr.ToString(), birimno.ToString(), uyeliktipno.ToString(), dateGiris.Value.Date, dateKayit.Value.Date, txtSicilNo.Text);
-            db2.Sorgu("UPDATE Adres SET ev=@0,evilNo=@1,[is]=@2,isilNo=@3,evTel=@4,istel=@5,ceptel=@6 wHERE SİCİLNO=@7 ", txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text, txtSicilNo.Text);
+            db2.Sorgu("UPDATE Adres SET ev=@0,evilNo=@1,[is]=@2,isilNo=@3,evTel=@4,istel=@5,ceptel=@6, email=@7 wHERE SİCİLNO=@8 ", txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text,txtAdresEmail.Text, txtSicilNo.Text);
             db3.Sorgu("UPDATE nufusBilgileri SET baba=@0,anne=@1,dogumYeri=@2,dogumTarihi=@3,medeniHali=@4,kanGrubuno=@5,ilNo=@6,ilce=@7,mahalle=@8,ciltNo=@9,aileSiraNo=@10,siraNo=@11 WHERE sicilNo=@12", txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date, cboxNufusMedeni.SelectedIndex, kanNo, ilno, txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text, txtSicilNo.Text);
 
             var data = db4.DataOku("SELECT * FROM uyeFotograf WHERE sicilNo=@0", txtSicilNo.Text);

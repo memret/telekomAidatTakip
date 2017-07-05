@@ -116,6 +116,8 @@
             this.btnSil = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnYeni = new System.Windows.Forms.Button();
+            this.txtAdresEmail = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.lblSilinmeBilgisi.SuspendLayout();
@@ -427,11 +429,13 @@
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.cboxIsIl);
             this.tabPage2.Controls.Add(this.cboxEvIl);
+            this.tabPage2.Controls.Add(this.label34);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.txtAdresEmail);
             this.tabPage2.Controls.Add(this.txtIsAdresi);
             this.tabPage2.Controls.Add(this.txtCepTel);
             this.tabPage2.Controls.Add(this.txtIsTel);
@@ -448,16 +452,16 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(27, 185);
+            this.label18.Location = new System.Drawing.Point(27, 175);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(12, 13);
+            this.label18.Size = new System.Drawing.Size(15, 13);
             this.label18.TabIndex = 11;
-            this.label18.Text = "İl";
+            this.label18.Text = "İl:";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(27, 86);
+            this.label17.Location = new System.Drawing.Point(27, 80);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(15, 13);
             this.label17.TabIndex = 10;
@@ -467,7 +471,7 @@
             // 
             this.cboxIsIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxIsIl.FormattingEnabled = true;
-            this.cboxIsIl.Location = new System.Drawing.Point(142, 182);
+            this.cboxIsIl.Location = new System.Drawing.Point(142, 172);
             this.cboxIsIl.Name = "cboxIsIl";
             this.cboxIsIl.Size = new System.Drawing.Size(146, 21);
             this.cboxIsIl.TabIndex = 3;
@@ -476,7 +480,7 @@
             // 
             this.cboxEvIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxEvIl.FormattingEnabled = true;
-            this.cboxEvIl.Location = new System.Drawing.Point(142, 87);
+            this.cboxEvIl.Location = new System.Drawing.Point(142, 77);
             this.cboxEvIl.Name = "cboxEvIl";
             this.cboxEvIl.Size = new System.Drawing.Size(146, 21);
             this.cboxEvIl.TabIndex = 1;
@@ -484,7 +488,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(27, 288);
+            this.label16.Location = new System.Drawing.Point(27, 278);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(74, 13);
             this.label16.TabIndex = 7;
@@ -493,7 +497,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(27, 254);
+            this.label15.Location = new System.Drawing.Point(27, 244);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(63, 13);
             this.label15.TabIndex = 6;
@@ -502,7 +506,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(27, 220);
+            this.label14.Location = new System.Drawing.Point(27, 210);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(68, 13);
             this.label14.TabIndex = 5;
@@ -511,7 +515,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(27, 29);
+            this.label13.Location = new System.Drawing.Point(27, 19);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(55, 13);
             this.label13.TabIndex = 4;
@@ -520,7 +524,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 125);
+            this.label3.Location = new System.Drawing.Point(27, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 3;
@@ -528,7 +532,7 @@
             // 
             // txtIsAdresi
             // 
-            this.txtIsAdresi.Location = new System.Drawing.Point(142, 122);
+            this.txtIsAdresi.Location = new System.Drawing.Point(142, 112);
             this.txtIsAdresi.Multiline = true;
             this.txtIsAdresi.Name = "txtIsAdresi";
             this.txtIsAdresi.Size = new System.Drawing.Size(207, 46);
@@ -536,28 +540,28 @@
             // 
             // txtCepTel
             // 
-            this.txtCepTel.Location = new System.Drawing.Point(142, 285);
+            this.txtCepTel.Location = new System.Drawing.Point(142, 275);
             this.txtCepTel.Name = "txtCepTel";
             this.txtCepTel.Size = new System.Drawing.Size(207, 20);
             this.txtCepTel.TabIndex = 6;
             // 
             // txtIsTel
             // 
-            this.txtIsTel.Location = new System.Drawing.Point(142, 251);
+            this.txtIsTel.Location = new System.Drawing.Point(142, 241);
             this.txtIsTel.Name = "txtIsTel";
             this.txtIsTel.Size = new System.Drawing.Size(207, 20);
             this.txtIsTel.TabIndex = 5;
             // 
             // txtEvTel
             // 
-            this.txtEvTel.Location = new System.Drawing.Point(142, 217);
+            this.txtEvTel.Location = new System.Drawing.Point(142, 207);
             this.txtEvTel.Name = "txtEvTel";
             this.txtEvTel.Size = new System.Drawing.Size(207, 20);
             this.txtEvTel.TabIndex = 4;
             // 
             // txtEvAdresi
             // 
-            this.txtEvAdresi.Location = new System.Drawing.Point(142, 26);
+            this.txtEvAdresi.Location = new System.Drawing.Point(142, 16);
             this.txtEvAdresi.Multiline = true;
             this.txtEvAdresi.Name = "txtEvAdresi";
             this.txtEvAdresi.Size = new System.Drawing.Size(207, 47);
@@ -991,6 +995,22 @@
             this.btnYeni.Visible = false;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
+            // txtAdresEmail
+            // 
+            this.txtAdresEmail.Location = new System.Drawing.Point(142, 309);
+            this.txtAdresEmail.Name = "txtAdresEmail";
+            this.txtAdresEmail.Size = new System.Drawing.Size(207, 20);
+            this.txtAdresEmail.TabIndex = 6;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(27, 312);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(38, 13);
+            this.label34.TabIndex = 7;
+            this.label34.Text = "E-mail:";
+            // 
             // frmUye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1112,5 +1132,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnAidatEkle;
         private System.Windows.Forms.TextBox txtAidatMiktari;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtAdresEmail;
     }
 }
