@@ -21,7 +21,7 @@ namespace telekomAidatTakip
         {
 
 
-            // listIl.Items.Clear();
+            listIl.Items.Clear();
 
             Database db = new Database();
              string query = "SELECT distinct i.ilAdi, coalesce((Select Count(*) from Uyeler u2 where aktif = 'true' AND u.ilNo = u2.ilNo group by ilno),0) 'aktif', coalesce((Select Count(*) from Uyeler u2 where aktif = 'false' AND u.ilNo = u2.ilNo group by ilno) ,0) 'pasif', coalesce((Select Count(*) from Uyeler u2 where u.ilNo = u2.ilNo group by ilno),0) 'toplam' FROM Uyeler u , il i where u.ilno = i.ilno";
