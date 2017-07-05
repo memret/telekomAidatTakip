@@ -125,8 +125,8 @@
             // 
             // listIlAdi
             // 
-            this.listIlAdi.Text = "İl No";
-            this.listIlAdi.Width = 83;
+            this.listIlAdi.Text = "İl";
+            this.listIlAdi.Width = 91;
             // 
             // listİlNo
             // 
