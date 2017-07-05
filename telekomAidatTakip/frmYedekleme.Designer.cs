@@ -30,22 +30,22 @@
         {
             this.btnYedek = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnYukle = new System.Windows.Forms.Button();
             this.listYukle = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtYedek = new System.Windows.Forms.TextBox();
-            this.btnYukle = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnYedek
             // 
-            this.btnYedek.Location = new System.Drawing.Point(353, 45);
-            this.btnYedek.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnYedek.Location = new System.Drawing.Point(261, 19);
             this.btnYedek.Name = "btnYedek";
-            this.btnYedek.Size = new System.Drawing.Size(117, 43);
+            this.btnYedek.Size = new System.Drawing.Size(78, 32);
             this.btnYedek.TabIndex = 0;
             this.btnYedek.Text = "Yedekle";
             this.btnYedek.UseVisualStyleBackColor = true;
@@ -55,21 +55,36 @@
             // 
             this.groupBox1.Controls.Add(this.btnYukle);
             this.groupBox1.Controls.Add(this.listYukle);
-            this.groupBox1.Location = new System.Drawing.Point(40, 43);
+            this.groupBox1.Location = new System.Drawing.Point(11, 11);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1046, 249);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(351, 173);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Geri Yükleme";
+            // 
+            // btnYukle
+            // 
+            this.btnYukle.Location = new System.Drawing.Point(126, 132);
+            this.btnYukle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnYukle.Name = "btnYukle";
+            this.btnYukle.Size = new System.Drawing.Size(78, 31);
+            this.btnYukle.TabIndex = 3;
+            this.btnYukle.Text = "Geri Yükle";
+            this.btnYukle.UseVisualStyleBackColor = true;
+            this.btnYukle.Click += new System.EventHandler(this.btnYukle_Click);
             // 
             // listYukle
             // 
             this.listYukle.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.listYukle.Location = new System.Drawing.Point(27, 25);
+            this.listYukle.FullRowSelect = true;
+            this.listYukle.Location = new System.Drawing.Point(4, 17);
+            this.listYukle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listYukle.Name = "listYukle";
-            this.listYukle.Size = new System.Drawing.Size(995, 164);
+            this.listYukle.Size = new System.Drawing.Size(335, 108);
             this.listYukle.TabIndex = 0;
             this.listYukle.UseCompatibleStateImageBehavior = false;
             this.listYukle.View = System.Windows.Forms.View.Details;
@@ -87,42 +102,44 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtYedek);
             this.groupBox2.Controls.Add(this.btnYedek);
-            this.groupBox2.Location = new System.Drawing.Point(40, 298);
+            this.groupBox2.Location = new System.Drawing.Point(11, 188);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(526, 131);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(351, 62);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Yedekleme";
             // 
             // txtYedek
             // 
-            this.txtYedek.Location = new System.Drawing.Point(27, 53);
+            this.txtYedek.Location = new System.Drawing.Point(65, 26);
+            this.txtYedek.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtYedek.Name = "txtYedek";
-            this.txtYedek.Size = new System.Drawing.Size(285, 26);
+            this.txtYedek.Size = new System.Drawing.Size(191, 20);
             this.txtYedek.TabIndex = 0;
             // 
-            // btnYukle
+            // label1
             // 
-            this.btnYukle.Location = new System.Drawing.Point(290, 195);
-            this.btnYukle.Name = "btnYukle";
-            this.btnYukle.Size = new System.Drawing.Size(104, 48);
-            this.btnYukle.TabIndex = 3;
-            this.btnYukle.Text = "Geri Yükle";
-            this.btnYukle.UseVisualStyleBackColor = true;
-            this.btnYukle.Click += new System.EventHandler(this.btnYukle_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Özel Not:";
             // 
             // frmYedekleme
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 478);
+            this.ClientSize = new System.Drawing.Size(372, 258);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmYedekleme";
-            this.Text = "frmYedekleme";
+            this.Text = "Yedekleme";
             this.Load += new System.EventHandler(this.frmYedekleme_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -141,5 +158,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Button btnYukle;
+        private System.Windows.Forms.Label label1;
     }
 }

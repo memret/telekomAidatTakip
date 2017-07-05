@@ -120,16 +120,22 @@ namespace telekomAidatTakip
         {
             bag.Close();
         }
-        public bool Yedekle()
+        static public void Restore(string path)
         {
-            Database db = new Database();
-            db.Sorgu("backup database telekomAidat to disk = 'yedek2.bak'");
-            db.Kapat();
-            //select * from msdb.dbo.backupmediafamily
-            //physical_device_name
-
-            return true;
+            SqlConnection bag;
+            SqlCommand kmt;
+            bag = new SqlConnection(Program.connectstring.Replace("telekomAidat","master"));
+            kmt = new SqlCommand();
+            kmt.Connection = bag;
+            kmt.CommandTimeout = 15;
+            bag.Open();
+            kmt.CommandText = "alter database telekomAidat set offline with rollback immediate";
+            kmt.ExecuteNonQuery();
+            kmt.CommandText = "restore database telekomAidat from disk=@0";
+            kmt.Parameters.AddWithValue("@0",path);
+            kmt.ExecuteNonQuery();
+            kmt.CommandText = "alter database telekomAidat set online";
+            kmt.ExecuteNonQuery();
         }
-
     }
 }

@@ -31,6 +31,7 @@ namespace telekomAidatTakip
         frmTanimUnvan tanimUnvan = new frmTanimUnvan();
         frmTanimTahsil tanimTahsil = new frmTanimTahsil();
         frmTanimUyelikIptal tanimUyelikIptal = new frmTanimUyelikIptal();
+        frmTanimOzelGunler tanimOzelGunler = new frmTanimOzelGunler();
 
         frmRaporIl raporIl = new frmRaporIl();
         frmRaporUye raporUye = new frmRaporUye();
@@ -255,9 +256,25 @@ namespace telekomAidatTakip
             }
         }
 
+
+
         #endregion
 
-
-
+        private void özelGünlerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tanimOzelGunler.IsDisposed)
+            {
+                tanimOzelGunler = new frmTanimOzelGunler();
+                tanimOzelGunler.MdiParent = this;
+                tanimOzelGunler.Show();
+            }
+            else
+            {
+                tanimOzelGunler.MdiParent = this;
+                tanimOzelGunler.Show();
+                tanimOzelGunler.Focus();
+            }
+            
+        }
     }
 }
