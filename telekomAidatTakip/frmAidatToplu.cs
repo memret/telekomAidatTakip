@@ -83,7 +83,7 @@ namespace telekomAidatTakip
             if (cboxMudurluk.SelectedIndex != -1)
             {
                 int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
-                PRG.DoldurMudurluk(ref cboxBirim, mudurlukNo.ToString());
+                PRG.DoldurBirim(ref cboxBirim, mudurlukNo.ToString());
 
                 cboxBirim.Enabled = true;
                 cboxBirim.SelectedIndex = -1;
