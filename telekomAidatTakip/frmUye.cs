@@ -54,14 +54,46 @@ namespace telekomAidatTakip
 
 
         }
+
         private void DoldurKomple(string sicilno)
         {
             DoldurKomple();
             DoldurTemelBilgiler(sicilno);
-            
+            DoldurFotograf(sicilno);
             DoldurAdresBilgiler(sicilno);
             DoldurNufusBilgileri(sicilno); //test edilmedi
         }
+        byte[] imgBytes;
+        private void DoldurFotograf(string sicilno)
+        {
+
+            //EMRE BEY EN BOY ORANI KORUNSUN BİLMEM NE DİYO...
+            Database db = new Database();
+            Database db2 = new Database();
+
+            var data = db.DataOku("select fotograf from uyeFotograf where sicilno=@0", sicilno);
+
+            if(data.Read())
+            {
+                imgBytes = (byte[])data["fotograf"];
+            }
+            else  
+            {
+                pictureBox1.Image = Properties.Resources._default;
+                return;
+            }
+            
+
+
+            TypeConverter tc = TypeDescriptor.GetConverter(typeof(Bitmap));
+            Bitmap foto = (Bitmap)tc.ConvertFrom(imgBytes);
+            pictureBox1.Image = foto;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            db.Kapat();
+            db2.Kapat();
+
+        }
+
         private void DoldurNufusBilgileri(string sicilno)
         {
             Database db = new Database();
@@ -82,7 +114,7 @@ namespace telekomAidatTakip
                 txtNufusCilt.Text = data["ailesirano"].ToString();
                 txtNufusAile.Text = data["ciltno"].ToString();
             }
-
+            db.Kapat();
         }
         private void DoldurAdresBilgiler(string sicilno)
         {
@@ -99,6 +131,7 @@ namespace telekomAidatTakip
                 txtCepTel.Text = data["ceptel"].ToString();
 
             }
+            db.Kapat();
         }
 
         private void DoldurTemelBilgiler(string sicilno)
@@ -122,6 +155,7 @@ namespace telekomAidatTakip
                 //dateGiris.Value = Convert.ToDateTime(data["girisTarihi"]);
                 //dateKayit.Value = Convert.ToDateTime(data["kayitTarihi"]);
             }
+            db.Kapat();
         }
         private void TextboxTemizle(Control control)
 
@@ -232,14 +266,11 @@ namespace telekomAidatTakip
             //uyeBilgisiGuncelle();
 
         }
+        
         private void yeniKayitEkle()
         {
-            //fotoğrafı tanıtma 
-            FileStream fs = new FileStream(resimPath, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            byte[] resim = br.ReadBytes((int)fs.Length);
-            br.Close();
-            
+            byte[] resim = fotografiAl();
+
             int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
             int ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
             int birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
@@ -255,19 +286,29 @@ namespace telekomAidatTakip
             Database db4 = new Database();
 
             db.Sorgu("insert into Uyeler (sicilNo,adSoyad,tahsilNo,unvanNo,ilNo,mudurlukNo,birimNo,uyelikTipiNo,girisTarihi,kayitTarihi,aktif) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10)", txtSicilNo.Text, txtAdSoyad.Text, tahsilno, unvan, ilno, mdr, birimno, uyeliktipno, dateGiris.Value.Date, dateKayit.Value.Date,"1");
-              db2.Sorgu("insert into Adres (sicilNo,ev,evilNo,[is],isilNo,evTel,istel,ceptel) values (@0,@1,@2,@3,@4,@5,@6,@7)", txtSicilNo.Text, txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text);
-              db3.Sorgu("insert into nufusBilgileri (sicilNo,baba,anne,dogumYeri,dogumTarihi,medeniHali,kanGrubuno,ilNo,ilce,mahalle,ciltNo,aileSiraNo,siraNo) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12)", txtSicilNo.Text, txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date,cboxNufusMedeni.SelectedIndex,kanNo,ilno,txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text);
+            db2.Sorgu("insert into Adres (sicilNo,ev,evilNo,[is],isilNo,evTel,istel,ceptel) values (@0,@1,@2,@3,@4,@5,@6,@7)", txtSicilNo.Text, txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text);
+            db3.Sorgu("insert into nufusBilgileri (sicilNo,baba,anne,dogumYeri,dogumTarihi,medeniHali,kanGrubuno,ilNo,ilce,mahalle,ciltNo,aileSiraNo,siraNo) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12)", txtSicilNo.Text, txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date,cboxNufusMedeni.SelectedIndex,kanNo,ilno,txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text);
             DialogResult dialogResult = MessageBox.Show("Yeni üye kaydedildi.", "Üye Kayıt", MessageBoxButtons.OK);
             db4.Sorgu("insert into UyeFotograf (sicilNo,Fotograf) values (@0,@1)", txtSicilNo.Text, resim);
+
+            db.Kapat();
+            db2.Kapat();
+            db3.Kapat();
+            db4.Kapat();
 
             ekraniTemizle();
 
         }
         private void uyeBilgisiGuncelle()
         {
+
+            byte[] resim = fotografiAl();
+
             Database db = new Database();
             Database db2 = new Database();
             Database db3 = new Database();
+            Database db4 = new Database();
+            Database db5 = new Database();
             int kanNo = ((KeyValuePair<int, string>)cboxNufusKan.SelectedItem).Key;
             int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
             int ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
@@ -280,7 +321,25 @@ namespace telekomAidatTakip
             db.Sorgu("UPDATE Uyeler SET adSoyad=@0,tahsilNo=@1,unvanNo=@2,ilNo=@3,mudurlukNo=@4,birimNo=@5,uyelikTipiNo=@6,girisTarihi=@7,kayitTarihi=@8 WHERE sicilNo=@9", txtAdSoyad.Text, tahsilno.ToString(), unvan.ToString(), ilno.ToString(), mdr.ToString(), birimno.ToString(), uyeliktipno.ToString(), dateGiris.Value.Date, dateKayit.Value.Date, txtSicilNo.Text);
             db2.Sorgu("UPDATE Adres SET ev=@0,evilNo=@1,[is]=@2,isilNo=@3,evTel=@4,istel=@5,ceptel=@6 wHERE SİCİLNO=@7 ", txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text, txtSicilNo.Text);
             db3.Sorgu("UPDATE nufusBilgileri SET baba=@0,anne=@1,dogumYeri=@2,dogumTarihi=@3,medeniHali=@4,kanGrubuno=@5,ilNo=@6,ilce=@7,mahalle=@8,ciltNo=@9,aileSiraNo=@10,siraNo=@11 WHERE sicilNo=@12", txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date, cboxNufusMedeni.SelectedIndex, kanNo, ilno, txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text, txtSicilNo.Text);
-             ekraniTemizle();
+
+            var data = db4.DataOku("SELECT * FROM uyeFotograf WHERE sicilNo=@0", txtSicilNo.Text);
+
+            if(data.Read())
+            {
+            db5.Sorgu("UPDATE uyeFotograf SET fotograf = @0 WHERE sicilNo = @1", resim, txtSicilNo.Text);
+            }
+            else
+            {
+            db5.Sorgu("insert into UyeFotograf (sicilNo,Fotograf) values (@0,@1)", txtSicilNo.Text, resim);
+            }
+
+            db.Kapat();
+            db2.Kapat();
+            db3.Kapat();
+            db4.Kapat();
+            db5.Kapat();
+
+            ekraniTemizle();
         }
         private void btnYeni_Click(object sender, EventArgs e)
         {
@@ -302,7 +361,11 @@ namespace telekomAidatTakip
                     db.Sorgu("DELETE FROM Uyeler WHERE sicilNo=@0", txtSicilNo.Text);
                     db2.Sorgu("DELETE FROM Adres WHERE sicilNo=@0", txtSicilNo.Text);
                     db3.Sorgu("DELETE FROM nufusBilgileri WHERE sicilNo=@0", txtSicilNo.Text);
+                    db.Sorgu("DELETE FROM uyeFotograf WHERE sicilNo=@0", txtSicilNo.Text);
                     ekraniTemizle();
+                    db.Kapat();
+                    db2.Kapat();
+                    db3.Kapat();
                 }
 
                 else if (dialogResult == DialogResult.Cancel)
@@ -339,8 +402,33 @@ namespace telekomAidatTakip
             {
                 this.pictureBox1.Image = new Bitmap(fd.OpenFile());
                 resimPath = fd.FileName.ToString();
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
+        
+        private void btnResimSil_Click(object sender, EventArgs e)
+        {
+            if(txtSicilNo.Text != string.Empty)
+            {
+                //Silmek istiyor musun krdş diye sorulacak.
+                Database db = new Database();
+                db.Sorgu("DELETE FROM uyeFotograf WHERE sicilNo=@0", txtSicilNo.Text);
+                db.Kapat();
+            }
+            pictureBox1.Image = null;
+        }
+    
+        private byte[] fotografiAl()
+        {
+            byte[] resim;
+            //fotoğrafı tanıtma 
+            FileStream fs = new FileStream(resimPath, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            resim = br.ReadBytes((int)fs.Length);
+            br.Close();
+            return resim;
+        }
+        
 
     }
 }

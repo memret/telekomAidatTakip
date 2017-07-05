@@ -77,7 +77,9 @@
     <Compile Include="frmRaporIl.Designer.cs">
       <DependentUpon>frmRaporIl.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTanimOzelGunler.cs" />
+    <Compile Include="frmTanimOzelGunler.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTanimOzelGunler.Designer.cs">
       <DependentUpon>frmTanimOzelGunler.cs</DependentUpon>
     </Compile>
