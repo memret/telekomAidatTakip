@@ -52,7 +52,7 @@ namespace telekomAidatTakip
 
         private void frmRaporIl_Load(object sender, EventArgs e)
         {
-            yazdir = new Yazdir();
+            yazdir = new Yazdir(1);
         }
 
         private void listIl_SelectedIndexChanged(object sender, EventArgs e)
