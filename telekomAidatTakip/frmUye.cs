@@ -408,12 +408,18 @@ namespace telekomAidatTakip
 
         private void btnResimSil_Click(object sender, EventArgs e)
         {
-            if (sicilno != string.Empty)
+            if (txtSicilNo.Text != string.Empty)
             {
                 //Silmek istiyor musun krdş diye sorulacak.
-                Database db = new Database();
-                db.Sorgu("DELETE FROM uyeFotograf WHERE sicilNo=@0", sicilno);
-                db.Kapat();
+                DialogResult dialogResult = MessageBox.Show("Üye resmi silinecek. Emin misiniz?", "Resim silme", MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.OK)
+                {
+                    Database db = new Database();
+                    db.Sorgu("DELETE FROM uyeFotograf WHERE sicilNo=@0", txtSicilNo.Text);
+                    db.Kapat();
+                }
+                else if (dialogResult == DialogResult.Cancel)
+                    return;
             }
             pictureBox1.Image = null;
         }
