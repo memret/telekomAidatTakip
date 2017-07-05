@@ -56,7 +56,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(325, 149);
+            this.groupBox3.Size = new System.Drawing.Size(392, 163);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Silinme Nedeni Tanımı";
@@ -64,8 +64,8 @@
             // btnSil
             // 
             this.btnSil.Enabled = false;
-            this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSil.Location = new System.Drawing.Point(222, 92);
+            this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnSil.Location = new System.Drawing.Point(249, 92);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(75, 45);
             this.btnSil.TabIndex = 4;
@@ -76,10 +76,10 @@
             // btnKaydet
             // 
             this.btnKaydet.Enabled = false;
-            this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.btnKaydet.Location = new System.Drawing.Point(120, 92);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(75, 45);
+            this.btnKaydet.Size = new System.Drawing.Size(113, 45);
             this.btnKaydet.TabIndex = 3;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -87,7 +87,7 @@
             // 
             // btnYeni
             // 
-            this.btnYeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnYeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.btnYeni.Location = new System.Drawing.Point(29, 92);
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(75, 45);
@@ -101,7 +101,7 @@
             this.txtAciklama.Enabled = false;
             this.txtAciklama.Location = new System.Drawing.Point(95, 55);
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(183, 20);
+            this.txtAciklama.Size = new System.Drawing.Size(183, 26);
             this.txtAciklama.TabIndex = 1;
             // 
             // txtKod
@@ -109,7 +109,7 @@
             this.txtKod.Enabled = false;
             this.txtKod.Location = new System.Drawing.Point(95, 23);
             this.txtKod.Name = "txtKod";
-            this.txtKod.Size = new System.Drawing.Size(100, 20);
+            this.txtKod.Size = new System.Drawing.Size(100, 26);
             this.txtKod.TabIndex = 0;
             // 
             // label5
@@ -117,7 +117,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(18, 58);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(82, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "Açıklama:";
             // 
@@ -126,7 +126,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(18, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.Size = new System.Drawing.Size(43, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Kod:";
             // 
@@ -134,9 +134,9 @@
             // 
             this.groupBox4.Controls.Add(this.listvSilinme);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox4.Location = new System.Drawing.Point(12, 167);
+            this.groupBox4.Location = new System.Drawing.Point(12, 181);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(325, 210);
+            this.groupBox4.Size = new System.Drawing.Size(395, 220);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Kayıtlı Kodlar";
@@ -148,9 +148,9 @@
             this.headerAciklama});
             this.listvSilinme.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listvSilinme.FullRowSelect = true;
-            this.listvSilinme.Location = new System.Drawing.Point(3, 16);
+            this.listvSilinme.Location = new System.Drawing.Point(3, 22);
             this.listvSilinme.Name = "listvSilinme";
-            this.listvSilinme.Size = new System.Drawing.Size(319, 191);
+            this.listvSilinme.Size = new System.Drawing.Size(389, 195);
             this.listvSilinme.TabIndex = 0;
             this.listvSilinme.UseCompatibleStateImageBehavior = false;
             this.listvSilinme.View = System.Windows.Forms.View.Details;
@@ -168,7 +168,7 @@
             // 
             // frmTanimUyelikIptal
             // 
-            this.ClientSize = new System.Drawing.Size(350, 389);
+            this.ClientSize = new System.Drawing.Size(419, 438);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Name = "frmTanimUyelikIptal";

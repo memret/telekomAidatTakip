@@ -40,10 +40,10 @@
             this.labelMdrNo = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listvMdr = new System.Windows.Forms.ListView();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBoxMdrTnm.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -140,9 +140,9 @@
             this.labelMdrAd.AutoSize = true;
             this.labelMdrAd.Location = new System.Drawing.Point(22, 83);
             this.labelMdrAd.Name = "labelMdrAd";
-            this.labelMdrAd.Size = new System.Drawing.Size(105, 20);
+            this.labelMdrAd.Size = new System.Drawing.Size(78, 20);
             this.labelMdrAd.TabIndex = 1;
-            this.labelMdrAd.Text = "Müdürlük Adı:";
+            this.labelMdrAd.Text = "Müdürlük:";
             // 
             // labelMdrNo
             // 
@@ -183,25 +183,25 @@
             this.listvMdr.SelectedIndexChanged += new System.EventHandler(this.listvMdr_SelectedIndexChanged_1);
             this.listvMdr.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvMdr_MouseDoubleClick);
             // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Müdürlük Adı";
-            this.columnHeader2.Width = 125;
-            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Müdürlük No";
             this.columnHeader1.Width = 125;
             // 
-            // columnHeader3
+            // columnHeader2
             // 
-            this.columnHeader3.Text = "İl";
-            this.columnHeader3.Width = 125;
+            this.columnHeader2.Text = "Müdürlük";
+            this.columnHeader2.Width = 125;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "İl No";
             this.columnHeader4.Width = 125;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "İl";
+            this.columnHeader3.Width = 125;
             // 
             // frmTanimMudurluk
             // 
