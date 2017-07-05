@@ -41,7 +41,6 @@ namespace telekomAidatTakip
         frmAidatToplu aidatToplu = new frmAidatToplu();
 
         frmUye uye = new frmUye();
-        frmUyeAidat uyeAidat = new frmUyeAidat();
 
         frmYedekleme yedekleme = new frmYedekleme();
         private void ilTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)

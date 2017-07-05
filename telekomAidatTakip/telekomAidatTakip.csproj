@@ -125,12 +125,6 @@
     <Compile Include="frmUye.Designer.cs">
       <DependentUpon>frmUye.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUyeAidat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUyeAidat.Designer.cs">
-      <DependentUpon>frmUyeAidat.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmRaporUye.cs">
       <SubType>Form</SubType>
     </Compile>
