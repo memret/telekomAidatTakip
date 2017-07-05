@@ -53,6 +53,7 @@ namespace telekomAidatTakip
         private void frmRaporIl_Load(object sender, EventArgs e)
         {
             yazdir = new Yazdir(1);
+            btnYazdir.Enabled = false;
         }
 
         private void listIl_SelectedIndexChanged(object sender, EventArgs e)
