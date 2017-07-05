@@ -14,14 +14,17 @@ namespace telekomAidatTakipCron
         public const string GMAIL_SERVER = "smtp.gmail.com";
         //Connecting port
         public const int PORT = 587;
+        public static string connectstring = "Data Source=207.154.210.112;Database=telekomAidat;User=telekom; Password ='telekom';";
 
         static void Main(string[] args)
         {
-            string[] mailListesi = {"m.emret94@gmail.com", "omertanis123@gmail.com" };
-            MailTopluGonder(mailListesi, "test", "test içerik");
+            List<string> mailListesi = new List<string>();
+            mailListesi = dogumGunuTarihKontrol();
+            //string[] mailListesi = {"m.emret94@gmail.com", "omertanis123@gmail.com" };
+            MailTopluGonder(mailListesi, "doğum günü", "doğum günün kutlu olsun reis");
         }
 
-        static void MailTopluGonder(string[] mailListesi, string baslik, string icerik)
+        static void MailTopluGonder(List<string> mailListesi, string baslik, string icerik)
         {
             
             SmtpClient mailServer = new SmtpClient(GMAIL_SERVER, PORT);
@@ -64,26 +67,23 @@ namespace telekomAidatTakipCron
             }
 
         }
+
+        static private List<string> dogumGunuTarihKontrol()
+        {
+            List<string> liste = new List<string>();
+
+            Database db = new Database();
+            var data = db.DataOku("SELECT a.sicilNo,email FROM nufusBilgileri nb,Adres a WHERE dogumTarihi LIKE '%" + DateTime.Now.ToString("MM-dd") + "%' AND a.sicilNo = nb.sicilNo");
+
+            while (data.Read())
+            {
+                liste.Add(data["email"].ToString());
+                //MessageBox.Show(i + 1 + " inci " + data["dogumTarihi"].ToString());
+
+            }
+            return liste;
         }
+    }
     
-        //Buda başka çözüm ilki olmazsa bunu deneyecceğim.
-
-        /*
-        //smtp.send gibi birsey ile gönderilecek
-        SmtpClient client = new SmtpClient();
-        client.Port = 587;
-        client.Host = "smtp.gmail.com";
-        client.EnableSsl = true;
-        client.Timeout = 10000;
-        client.DeliveryMethod = SmtpDeliveryMethod.Network;
-        client.UseDefaultCredentials = false;
-        client.Credentials = new System.Net.NetworkCredential("user@gmail.com", "password");
-
-        MailMessage mailMessage = new MailMessage( gonderici mail", aliciMail, baslik, icerik);
-        mailMessage.BodyEncoding = UTF8Encoding.UTF8;
-        mailMessage.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-
-        client.Send(mailMessage);
-        client.Dispose();*/
         
     }
