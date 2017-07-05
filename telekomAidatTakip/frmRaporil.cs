@@ -24,14 +24,15 @@ namespace telekomAidatTakip
             listIl.Items.Clear();
 
             Database db = new Database();
-            string query = "SELECT distinct i.ilAdi, coalesce((Select Count(*) from Uyeler u2 where aktif = 'true' AND u.ilNo = u2.ilNo group by ilno),0) 'aktif', coalesce((Select Count(*) from Uyeler u2 where aktif = 'false' AND u.ilNo = u2.ilNo group by ilno) ,0) 'pasif', coalesce((Select Count(*) from Uyeler u2 where u.ilNo = u2.ilNo group by ilno),0) 'toplam' FROM Uyeler u , il i where u.ilno = i.ilno";
+            string query = "SELECT distinct i.ilAdi, i.ilNo, coalesce((Select Count(*) from Uyeler u2 where aktif = 'true' AND u.ilNo = u2.ilNo group by ilno),0) 'aktif', coalesce((Select Count(*) from Uyeler u2 where aktif = 'false' AND u.ilNo = u2.ilNo group by ilno) ,0) 'pasif', coalesce((Select Count(*) from Uyeler u2 where u.ilNo = u2.ilNo group by ilno),0) 'toplam' FROM Uyeler u , il i where u.ilno = i.ilno";
             var data = db.DataOku(query);
 
             while (data.Read())
             {
 
                 ListViewItem item = new ListViewItem();
-                item.Text = data["ilAdi"].ToString();
+                item.Text = data["ilno"].ToString();
+                item.SubItems.Add(data["ilAdi"].ToString());
                 item.SubItems.Add(data["aktif"].ToString());
                 item.SubItems.Add(data["pasif"].ToString());
                 item.SubItems.Add(data["toplam"].ToString());
@@ -52,6 +53,21 @@ namespace telekomAidatTakip
         private void frmRaporIl_Load(object sender, EventArgs e)
         {
             yazdir = new Yazdir();
+        }
+
+        private void listIl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listIl_DoubleClick(object sender, EventArgs e)
+        {
+            if (listIl.SelectedItems.Count > 0)
+            {
+                frmRaporUye frm = new frmRaporUye(listIl.SelectedItems[0].Text);
+                frm.Show();
+            }
+            
         }
     }
 }

@@ -18,14 +18,24 @@ namespace telekomAidatTakip
             InitializeComponent();
         }
 
-        
-        
-            
-            //PRG.DoldurTahsil(ref cboxTahsil);
-            //PRG.DoldurUyelikTipi(ref cboxUyelikDurumu);
-            
-            
-        
+
+        public frmRaporUye(string ilNo)
+        {
+            InitializeComponent();
+            //checkbox tikle
+            checkIl.Checked = true;
+            cboxII.SelectedItem = PRG.cboxIndexBul(ref cboxII, ilNo);
+            btnEkranaListele_Click(this, null);
+            //checkboxda il seç
+            //ekran listeleye tıklat
+        }
+
+
+        //PRG.DoldurTahsil(ref cboxTahsil);
+        //PRG.DoldurUyelikTipi(ref cboxUyelikDurumu);
+
+
+
 
         private void checkIl_CheckedChanged(object sender, EventArgs e)
         {
