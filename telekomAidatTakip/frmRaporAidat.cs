@@ -84,7 +84,7 @@ namespace telekomAidatTakip
                         MessageBox.Show("Birim seçin yada yanındaki ticki kaldırın.");
                         return;
                     }
-                    ekquery += "b.birim = @birim and ";
+                    ekquery += "b.birimno = @birim and ";
                     String birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key.ToString();
                     paramTemp = new SqlParameter("@birim", birimno);
                     paramList.Add(paramTemp);
@@ -112,8 +112,8 @@ namespace telekomAidatTakip
                     item.SubItems.Add(data["toplammiktar"].ToString());
 
                 item.SubItems.Add(data["ilAdi"].ToString());
-                item.SubItems.Add(data["mudurlukAdi"].ToString());
-                item.SubItems.Add(data["birimAdi"].ToString());
+                    item.SubItems.Add(data["mudurlukAdi"].ToString());
+                    item.SubItems.Add(data["birimAdi"].ToString());
 
                 listUyeKayitlari.Items.Add(item);
             }

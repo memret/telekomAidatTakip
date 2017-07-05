@@ -77,9 +77,9 @@
             this.groupBox1.Controls.Add(this.cboxKısım);
             this.groupBox1.Controls.Add(this.cboxMudurluk);
             this.groupBox1.Controls.Add(this.cboxII);
-            this.groupBox1.Location = new System.Drawing.Point(6, 9);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(669, 257);
+            this.groupBox1.Size = new System.Drawing.Size(681, 229);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Arama Kriterleri :";
@@ -87,7 +87,8 @@
             // btnYazdir
             // 
             this.btnYazdir.Enabled = false;
-            this.btnYazdir.Location = new System.Drawing.Point(565, 204);
+            this.btnYazdir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnYazdir.Location = new System.Drawing.Point(581, 179);
             this.btnYazdir.Name = "btnYazdir";
             this.btnYazdir.Size = new System.Drawing.Size(89, 37);
             this.btnYazdir.TabIndex = 6;
@@ -145,9 +146,9 @@
             this.checkKisim.Enabled = false;
             this.checkKisim.Location = new System.Drawing.Point(13, 74);
             this.checkKisim.Name = "checkKisim";
-            this.checkKisim.Size = new System.Drawing.Size(53, 17);
+            this.checkKisim.Size = new System.Drawing.Size(51, 17);
             this.checkKisim.TabIndex = 9;
-            this.checkKisim.Text = "Kısım:";
+            this.checkKisim.Text = "Birim:";
             this.checkKisim.UseVisualStyleBackColor = true;
             this.checkKisim.CheckedChanged += new System.EventHandler(this.checkKisim_CheckedChanged);
             // 
@@ -186,9 +187,10 @@
             // 
             // btnEkranaListele
             // 
-            this.btnEkranaListele.Location = new System.Drawing.Point(469, 204);
+            this.btnEkranaListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnEkranaListele.Location = new System.Drawing.Point(446, 179);
             this.btnEkranaListele.Name = "btnEkranaListele";
-            this.btnEkranaListele.Size = new System.Drawing.Size(90, 36);
+            this.btnEkranaListele.Size = new System.Drawing.Size(129, 37);
             this.btnEkranaListele.TabIndex = 5;
             this.btnEkranaListele.Text = "Ekrana Listele";
             this.btnEkranaListele.UseVisualStyleBackColor = true;
@@ -269,9 +271,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listUye);
-            this.groupBox2.Location = new System.Drawing.Point(6, 272);
+            this.groupBox2.Location = new System.Drawing.Point(12, 247);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(779, 227);
+            this.groupBox2.Size = new System.Drawing.Size(684, 227);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bulunan Üye Kayıtları";
@@ -289,7 +291,7 @@
             this.listUye.FullRowSelect = true;
             this.listUye.Location = new System.Drawing.Point(3, 16);
             this.listUye.Name = "listUye";
-            this.listUye.Size = new System.Drawing.Size(773, 208);
+            this.listUye.Size = new System.Drawing.Size(678, 208);
             this.listUye.TabIndex = 0;
             this.listUye.UseCompatibleStateImageBehavior = false;
             this.listUye.View = System.Windows.Forms.View.Details;
@@ -298,7 +300,7 @@
             // ListKurumSicil
             // 
             this.ListKurumSicil.Text = "Sicil No";
-            this.ListKurumSicil.Width = 96;
+            this.ListKurumSicil.Width = 78;
             // 
             // ListAdSoyad
             // 
@@ -308,7 +310,7 @@
             // ListKanGrubu
             // 
             this.ListKanGrubu.Text = "Kan Grubu";
-            this.ListKanGrubu.Width = 41;
+            this.ListKanGrubu.Width = 67;
             // 
             // ListIlMudurlukKısım
             // 
@@ -323,13 +325,13 @@
             // ListTahsil
             // 
             this.ListTahsil.Text = "Tahsil";
-            this.ListTahsil.Width = 100;
+            this.ListTahsil.Width = 106;
             // 
             // frmRaporUye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 511);
+            this.ClientSize = new System.Drawing.Size(706, 485);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmRaporUye";

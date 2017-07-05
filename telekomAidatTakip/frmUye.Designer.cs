@@ -62,11 +62,13 @@
             this.label17 = new System.Windows.Forms.Label();
             this.cboxIsIl = new System.Windows.Forms.ComboBox();
             this.cboxEvIl = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtAdresEmail = new System.Windows.Forms.TextBox();
             this.txtIsAdresi = new System.Windows.Forms.TextBox();
             this.txtCepTel = new System.Windows.Forms.TextBox();
             this.txtIsTel = new System.Windows.Forms.TextBox();
@@ -110,14 +112,12 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNot = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnYeni = new System.Windows.Forms.Button();
-            this.txtAdresEmail = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.lblSilinmeBilgisi.SuspendLayout();
@@ -385,7 +385,7 @@
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(180, 21);
             this.cboxMudurluk.TabIndex = 5;
-            this.cboxMudurluk.SelectedIndexChanged += new System.EventHandler(this.cboxMudurluk_SelectedIndexChanged);
+            this.cboxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cboxMudurluk_SelectionChangeCommitted);
             // 
             // cboxIl
             // 
@@ -395,7 +395,7 @@
             this.cboxIl.Name = "cboxIl";
             this.cboxIl.Size = new System.Drawing.Size(180, 21);
             this.cboxIl.TabIndex = 4;
-            this.cboxIl.SelectedIndexChanged += new System.EventHandler(this.cboxIl_SelectedIndexChanged);
+            this.cboxIl.SelectionChangeCommitted += new System.EventHandler(this.cboxIl_SelectionChangeCommitted);
             // 
             // cboxUnvan
             // 
@@ -485,6 +485,15 @@
             this.cboxEvIl.Size = new System.Drawing.Size(146, 21);
             this.cboxEvIl.TabIndex = 1;
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(27, 312);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(38, 13);
+            this.label34.TabIndex = 7;
+            this.label34.Text = "E-mail:";
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -529,6 +538,13 @@
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "İş Adresi:";
+            // 
+            // txtAdresEmail
+            // 
+            this.txtAdresEmail.Location = new System.Drawing.Point(142, 309);
+            this.txtAdresEmail.Name = "txtAdresEmail";
+            this.txtAdresEmail.Size = new System.Drawing.Size(207, 20);
+            this.txtAdresEmail.TabIndex = 6;
             // 
             // txtIsAdresi
             // 
@@ -917,7 +933,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.textBox1);
+            this.tabPage5.Controls.Add(this.txtNot);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(801, 338);
@@ -925,14 +941,14 @@
             this.tabPage5.Text = "Not";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtNot
             // 
-            this.textBox1.Location = new System.Drawing.Point(24, 20);
-            this.textBox1.MinimumSize = new System.Drawing.Size(100, 200);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(755, 283);
-            this.textBox1.TabIndex = 0;
+            this.txtNot.Location = new System.Drawing.Point(24, 20);
+            this.txtNot.MinimumSize = new System.Drawing.Size(100, 200);
+            this.txtNot.Multiline = true;
+            this.txtNot.Name = "txtNot";
+            this.txtNot.Size = new System.Drawing.Size(755, 283);
+            this.txtNot.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -994,22 +1010,6 @@
             this.btnYeni.UseVisualStyleBackColor = true;
             this.btnYeni.Visible = false;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
-            // 
-            // txtAdresEmail
-            // 
-            this.txtAdresEmail.Location = new System.Drawing.Point(142, 309);
-            this.txtAdresEmail.Name = "txtAdresEmail";
-            this.txtAdresEmail.Size = new System.Drawing.Size(207, 20);
-            this.txtAdresEmail.TabIndex = 6;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(27, 312);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(38, 13);
-            this.label34.TabIndex = 7;
-            this.label34.Text = "E-mail:";
             // 
             // frmUye
             // 
@@ -1119,7 +1119,7 @@
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Button btnYeni;
         private System.Windows.Forms.DateTimePicker dateNufusDogum;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNot;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.ListView listAidatLog;
         private System.Windows.Forms.GroupBox groupBox4;

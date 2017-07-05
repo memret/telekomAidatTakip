@@ -39,10 +39,10 @@ namespace telekomAidatTakip
             while (data.Read())
             {
                 ListViewItem item = new ListViewItem();
-                item.Text = data["mudurlukAdi"].ToString();
-                item.SubItems.Add(data["mudurlukNo"].ToString());
-                item.SubItems.Add(data["ilAdi"].ToString());
+                item.Text = data["mudurlukNo"].ToString();
+                item.SubItems.Add(data["mudurlukAdi"].ToString());
                 item.SubItems.Add(data["ilNo"].ToString());
+                item.SubItems.Add(data["ilAdi"].ToString());
 
 
                 listvMdr.Items.Add(item);
@@ -167,7 +167,7 @@ namespace telekomAidatTakip
         {
             if (btnSil.Enabled)
             {
-                DialogResult dialogResult = MessageBox.Show("Seçili müdürlük silinecek. Emin misiniz?", "", MessageBoxButtons.YesNoCancel);
+                DialogResult dialogResult = MessageBox.Show("Seçili müdürlük ve altında kayıtlı birimler silinecek. Emin misiniz?", "", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     if (txtMdrKod.Text != string.Empty)
@@ -188,10 +188,10 @@ namespace telekomAidatTakip
         {
 
              Database db = new Database();
-             String mudurlukAdi = listvMdr.SelectedItems[0].SubItems[0].Text;
-             String ilKodu = listvMdr.SelectedItems[0].SubItems[3].Text;
+             String mudurlukno = listvMdr.SelectedItems[0].SubItems[0].Text;
+             String ilKodu = listvMdr.SelectedItems[0].SubItems[2].Text;
              var data = db.DataOku("SELECT i.ilAdi,m.mudurlukNo,m.mudurlukAdi " +
-                   "FROM Mudurluk m, il i WHERE m.ilNo = i.ilNo AND m.mudurlukAdi = @0 AND i.ilNo =@1", mudurlukAdi, ilKodu);
+                   "FROM Mudurluk m, il i WHERE m.ilNo = i.ilNo AND m.mudurlukno = @0 AND i.ilNo =@1", mudurlukno, ilKodu);
 
              if (data.Read())
              {

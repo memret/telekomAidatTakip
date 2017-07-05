@@ -32,13 +32,13 @@
             this.btnSil = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnYeni = new System.Windows.Forms.Button();
-            this.txtünvanAdı = new System.Windows.Forms.TextBox();
-            this.txtünvanKodu = new System.Windows.Forms.TextBox();
+            this.txtUnvanAdi = new System.Windows.Forms.TextBox();
+            this.txtUnvanNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.ünvanKodu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listUnvan = new System.Windows.Forms.ListView();
+            this.ünvanNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ünvanAdı = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -49,22 +49,23 @@
             this.groupBox1.Controls.Add(this.btnSil);
             this.groupBox1.Controls.Add(this.btnKaydet);
             this.groupBox1.Controls.Add(this.btnYeni);
-            this.groupBox1.Controls.Add(this.txtünvanAdı);
-            this.groupBox1.Controls.Add(this.txtünvanKodu);
+            this.groupBox1.Controls.Add(this.txtUnvanAdi);
+            this.groupBox1.Controls.Add(this.txtUnvanNo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(343, 153);
+            this.groupBox1.Size = new System.Drawing.Size(327, 142);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ünvan Tanımları";
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(242, 95);
+            this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnSil.Location = new System.Drawing.Point(229, 87);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(75, 39);
+            this.btnSil.Size = new System.Drawing.Size(80, 39);
             this.btnSil.TabIndex = 6;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
@@ -72,9 +73,10 @@
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(131, 95);
+            this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnKaydet.Location = new System.Drawing.Point(123, 87);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(75, 39);
+            this.btnKaydet.Size = new System.Drawing.Size(80, 39);
             this.btnKaydet.TabIndex = 5;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -82,78 +84,76 @@
             // 
             // btnYeni
             // 
-            this.btnYeni.Location = new System.Drawing.Point(25, 95);
+            this.btnYeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnYeni.Location = new System.Drawing.Point(17, 87);
             this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(75, 39);
+            this.btnYeni.Size = new System.Drawing.Size(80, 39);
             this.btnYeni.TabIndex = 4;
             this.btnYeni.Text = "Yeni";
             this.btnYeni.UseVisualStyleBackColor = true;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
-            // txtünvanAdı
+            // txtUnvanAdi
             // 
-            this.txtünvanAdı.Location = new System.Drawing.Point(94, 54);
-            this.txtünvanAdı.Name = "txtünvanAdı";
-            this.txtünvanAdı.Size = new System.Drawing.Size(158, 20);
-            this.txtünvanAdı.TabIndex = 3;
+            this.txtUnvanAdi.Location = new System.Drawing.Point(94, 54);
+            this.txtUnvanAdi.Name = "txtUnvanAdi";
+            this.txtUnvanAdi.Size = new System.Drawing.Size(158, 20);
+            this.txtUnvanAdi.TabIndex = 3;
             // 
-            // txtünvanKodu
+            // txtUnvanNo
             // 
-            this.txtünvanKodu.Location = new System.Drawing.Point(94, 23);
-            this.txtünvanKodu.Name = "txtünvanKodu";
-            this.txtünvanKodu.Size = new System.Drawing.Size(87, 20);
-            this.txtünvanKodu.TabIndex = 2;
-            this.txtünvanKodu.TextChanged += new System.EventHandler(this.txtünvanKodu_TextChanged);
+            this.txtUnvanNo.Location = new System.Drawing.Point(94, 23);
+            this.txtUnvanNo.Name = "txtUnvanNo";
+            this.txtUnvanNo.Size = new System.Drawing.Size(87, 20);
+            this.txtUnvanNo.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(15, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Ünvan Adı :";
+            this.label2.Text = "Ünvan Adı:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(15, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ünvan Kodu :";
+            this.label1.Text = "Ünvan No:";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listView1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 171);
+            this.groupBox2.Controls.Add(this.listUnvan);
+            this.groupBox2.Location = new System.Drawing.Point(12, 160);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(343, 156);
+            this.groupBox2.Size = new System.Drawing.Size(327, 156);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ünvan Listesi";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // listView1
+            // listUnvan
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ünvanKodu,
+            this.listUnvan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ünvanNo,
             this.ünvanAdı});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(3, 16);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(337, 137);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
+            this.listUnvan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listUnvan.FullRowSelect = true;
+            this.listUnvan.Location = new System.Drawing.Point(3, 16);
+            this.listUnvan.Name = "listUnvan";
+            this.listUnvan.Size = new System.Drawing.Size(321, 137);
+            this.listUnvan.TabIndex = 0;
+            this.listUnvan.UseCompatibleStateImageBehavior = false;
+            this.listUnvan.View = System.Windows.Forms.View.Details;
+            this.listUnvan.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
-            // ünvanKodu
+            // ünvanNo
             // 
-            this.ünvanKodu.Text = "Ünvan Kodu";
-            this.ünvanKodu.Width = 89;
+            this.ünvanNo.Text = "Ünvan No";
+            this.ünvanNo.Width = 113;
             // 
             // ünvanAdı
             // 
@@ -164,7 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 337);
+            this.ClientSize = new System.Drawing.Size(350, 326);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTanimUnvan";
@@ -185,13 +185,13 @@
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Button btnYeni;
-        private System.Windows.Forms.TextBox txtünvanAdı;
-        private System.Windows.Forms.TextBox txtünvanKodu;
+        private System.Windows.Forms.TextBox txtUnvanAdi;
+        private System.Windows.Forms.TextBox txtUnvanNo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader ünvanKodu;
+        private System.Windows.Forms.ListView listUnvan;
+        private System.Windows.Forms.ColumnHeader ünvanNo;
         private System.Windows.Forms.ColumnHeader ünvanAdı;
     }
 }

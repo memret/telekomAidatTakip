@@ -95,7 +95,7 @@ namespace telekomAidatTakip
             TypeConverter tc = TypeDescriptor.GetConverter(typeof(Bitmap));
             Bitmap foto = (Bitmap)tc.ConvertFrom(imgBytes);
             pictureBox1.Image = foto;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             db.Kapat();
 
         }
@@ -223,17 +223,7 @@ namespace telekomAidatTakip
 
         }
 
-        private void cboxIl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboxIl.SelectedIndex != -1)
-                PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key.ToString());
-        }
-
-        private void cboxMudurluk_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboxMudurluk.SelectedIndex != -1)
-                PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
-        }
+        
         
         private bool boslukkontroltextbox()
         {
@@ -265,7 +255,16 @@ namespace telekomAidatTakip
         {
             // if (boslukkontroltextbox() && boslukkontrolcombo())
             //  MessageBox.Show("Test");
-            { yeniKayitEkle(); }
+            if(pictureBox1.Image == null)
+            {
+                MessageBox.Show("Fotoğraf girsene reis.");
+            }
+            else
+            {
+                yeniKayitEkle();
+
+            }
+
             //  else
             //    MessageBox.Show("Eksik alanları doldurunuz!");
             //uyeBilgisiGuncelle();
@@ -290,7 +289,7 @@ namespace telekomAidatTakip
             Database db2 = new Database();
             Database db4 = new Database();
 
-            db.Sorgu("insert into Uyeler (sicilNo,adSoyad,tahsilNo,unvanNo,ilNo,mudurlukNo,birimNo,uyelikTipiNo,girisTarihi,kayitTarihi,aktif) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10)", txtSicilNo.Text, txtAdSoyad.Text, tahsilno, unvan, ilno, mdr, birimno, uyeliktipno, dateGiris.Value.Date, dateKayit.Value.Date, "1");
+            db.Sorgu("insert into Uyeler (sicilNo,adSoyad,tahsilNo,unvanNo,ilNo,mudurlukNo,birimNo,uyelikTipiNo,girisTarihi,kayitTarihi,aktif, [not]) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11)", txtSicilNo.Text, txtAdSoyad.Text, tahsilno, unvan, ilno, mdr, birimno, uyeliktipno, dateGiris.Value.Date, dateKayit.Value.Date, "1", txtNot.Text);
             db2.Sorgu("insert into Adres (sicilNo,ev,evilNo,[is],isilNo,evTel,istel,ceptel,email) values (@0,@1,@2,@3,@4,@5,@6,@7,@8)", txtSicilNo.Text, txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text, txtAdresEmail.Text);
             db3.Sorgu("insert into nufusBilgileri (sicilNo,baba,anne,dogumYeri,dogumTarihi,medeniHali,kanGrubuno,ilNo,ilce,mahalle,ciltNo,aileSiraNo,siraNo) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12)", txtSicilNo.Text, txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date, cboxNufusMedeni.SelectedIndex, kanNo, ilno, txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text);
             db4.Sorgu("insert into UyeFotograf (sicilNo,Fotograf) values (@0,@1)", txtSicilNo.Text, resim);
@@ -323,7 +322,7 @@ namespace telekomAidatTakip
             int unvan = ((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key;
             int evilNo = ((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
             int isilNo = ((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
-            db.Sorgu("UPDATE Uyeler SET adSoyad=@0,tahsilNo=@1,unvanNo=@2,ilNo=@3,mudurlukNo=@4,birimNo=@5,uyelikTipiNo=@6,girisTarihi=@7,kayitTarihi=@8 WHERE sicilNo=@9", txtAdSoyad.Text, tahsilno.ToString(), unvan.ToString(), ilno.ToString(), mdr.ToString(), birimno.ToString(), uyeliktipno.ToString(), dateGiris.Value.Date, dateKayit.Value.Date, sicilno);
+            db.Sorgu("UPDATE Uyeler SET adSoyad=@0,tahsilNo=@1,unvanNo=@2,ilNo=@3,mudurlukNo=@4,birimNo=@5,uyelikTipiNo=@6,girisTarihi=@7,kayitTarihi=@8, [not]=@9 WHERE sicilNo=@10", txtAdSoyad.Text, tahsilno.ToString(), unvan.ToString(), ilno.ToString(), mdr.ToString(), birimno.ToString(), uyeliktipno.ToString(), dateGiris.Value.Date, dateKayit.Value.Date,txtNot.Text, sicilno);
             db2.Sorgu("UPDATE Adres SET ev=@0,evilNo=@1,[is]=@2,isilNo=@3,evTel=@4,istel=@5,ceptel=@6, email=@7 wHERE SİCİLNO=@8 ", txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text,txtAdresEmail.Text, sicilno);
             db3.Sorgu("UPDATE nufusBilgileri SET baba=@0,anne=@1,dogumYeri=@2,dogumTarihi=@3,medeniHali=@4,kanGrubuno=@5,ilNo=@6,ilce=@7,mahalle=@8,ciltNo=@9,aileSiraNo=@10,siraNo=@11 WHERE sicilNo=@12", txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date, cboxNufusMedeni.SelectedIndex, kanNo, ilno, txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text, sicilno);
 
@@ -359,6 +358,9 @@ namespace telekomAidatTakip
                 DialogResult dialogResult = MessageBox.Show("Üye silinecek. Emin misiniz?", "Üye silme", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)
                 {
+                    //üye silinmeyecek silinme nedeni verilip aktif = 0 yapılacak
+                    //silinmesi gerekse dahi ilk sorgu yeterli hepsini silmeye :D
+                    /*
                     Database db = new Database();
                     Database db2 = new Database();
                     Database db3 = new Database();
@@ -373,6 +375,7 @@ namespace telekomAidatTakip
                     db3.Kapat();
                     db4.Kapat();
                     MessageBox.Show("Üye silindi.", "Üye silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    */
                 }
 
                 else if (dialogResult == DialogResult.Cancel)
@@ -402,7 +405,7 @@ namespace telekomAidatTakip
             {
                 this.pictureBox1.Image = new Bitmap(fd.OpenFile());
                 resimPath = fd.FileName.ToString();
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
 
@@ -441,6 +444,17 @@ namespace telekomAidatTakip
             db.Sorgu("insert into aidatlog (sicilNo,miktar,tarih) Values (@0, @1,@2)",sicilno, txtAidatMiktari.Text, dateAidatTarih.Value.ToShortDateString());
             db.Kapat();
             DoldurAidatBilgileri(sicilno);
+        }
+        private void cboxIl_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cboxIl.SelectedIndex != -1)
+                PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key.ToString());
+        }
+
+        private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cboxMudurluk.SelectedIndex != -1)
+                PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
         }
     }
 }

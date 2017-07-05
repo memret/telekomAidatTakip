@@ -66,9 +66,11 @@
             this.grpAramaKriterleri.Controls.Add(this.cboxBirim);
             this.grpAramaKriterleri.Controls.Add(this.cboxMudurluk);
             this.grpAramaKriterleri.Controls.Add(this.cboxil);
-            this.grpAramaKriterleri.Location = new System.Drawing.Point(12, 12);
+            this.grpAramaKriterleri.Location = new System.Drawing.Point(18, 18);
+            this.grpAramaKriterleri.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grpAramaKriterleri.Name = "grpAramaKriterleri";
-            this.grpAramaKriterleri.Size = new System.Drawing.Size(651, 207);
+            this.grpAramaKriterleri.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpAramaKriterleri.Size = new System.Drawing.Size(976, 318);
             this.grpAramaKriterleri.TabIndex = 3;
             this.grpAramaKriterleri.TabStop = false;
             this.grpAramaKriterleri.Text = "Arama Kriterleri";
@@ -78,9 +80,10 @@
             // 
             this.checkDonem.AutoSize = true;
             this.checkDonem.Enabled = false;
-            this.checkDonem.Location = new System.Drawing.Point(23, 103);
+            this.checkDonem.Location = new System.Drawing.Point(34, 158);
+            this.checkDonem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkDonem.Name = "checkDonem";
-            this.checkDonem.Size = new System.Drawing.Size(92, 17);
+            this.checkDonem.Size = new System.Drawing.Size(135, 24);
             this.checkDonem.TabIndex = 14;
             this.checkDonem.Text = "Aidat Dönemi:";
             this.checkDonem.UseVisualStyleBackColor = true;
@@ -88,9 +91,10 @@
             // checkMudurluk
             // 
             this.checkMudurluk.AutoSize = true;
-            this.checkMudurluk.Location = new System.Drawing.Point(23, 49);
+            this.checkMudurluk.Location = new System.Drawing.Point(34, 75);
+            this.checkMudurluk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkMudurluk.Name = "checkMudurluk";
-            this.checkMudurluk.Size = new System.Drawing.Size(73, 17);
+            this.checkMudurluk.Size = new System.Drawing.Size(104, 24);
             this.checkMudurluk.TabIndex = 14;
             this.checkMudurluk.Text = "Müdürlük:";
             this.checkMudurluk.UseVisualStyleBackColor = true;
@@ -98,9 +102,10 @@
             // checkBirim
             // 
             this.checkBirim.AutoSize = true;
-            this.checkBirim.Location = new System.Drawing.Point(23, 76);
+            this.checkBirim.Location = new System.Drawing.Point(34, 117);
+            this.checkBirim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkBirim.Name = "checkBirim";
-            this.checkBirim.Size = new System.Drawing.Size(51, 17);
+            this.checkBirim.Size = new System.Drawing.Size(74, 24);
             this.checkBirim.TabIndex = 14;
             this.checkBirim.Text = "Birim:";
             this.checkBirim.UseVisualStyleBackColor = true;
@@ -108,9 +113,10 @@
             // checkIl
             // 
             this.checkIl.AutoSize = true;
-            this.checkIl.Location = new System.Drawing.Point(23, 22);
+            this.checkIl.Location = new System.Drawing.Point(34, 34);
+            this.checkIl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkIl.Name = "checkIl";
-            this.checkIl.Size = new System.Drawing.Size(34, 17);
+            this.checkIl.Size = new System.Drawing.Size(47, 24);
             this.checkIl.TabIndex = 14;
             this.checkIl.Text = "İl:";
             this.checkIl.UseVisualStyleBackColor = true;
@@ -120,19 +126,19 @@
             this.dateTimePicker1.CustomFormat = "MM/yyyy";
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(153, 98);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(230, 151);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(135, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
             this.dateTimePicker1.TabIndex = 13;
             // 
             // btnYazdir
             // 
             this.btnYazdir.Enabled = false;
-            this.btnYazdir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnYazdir.Location = new System.Drawing.Point(264, 153);
+            this.btnYazdir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnYazdir.Location = new System.Drawing.Point(391, 234);
+            this.btnYazdir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(105, 44);
+            this.btnYazdir.Size = new System.Drawing.Size(158, 68);
             this.btnYazdir.TabIndex = 12;
             this.btnYazdir.Text = "Yazdır";
             this.btnYazdir.UseVisualStyleBackColor = true;
@@ -140,10 +146,11 @@
             // 
             // btnListele
             // 
-            this.btnListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnListele.Location = new System.Drawing.Point(153, 153);
+            this.btnListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnListele.Location = new System.Drawing.Point(161, 234);
+            this.btnListele.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnListele.Name = "btnListele";
-            this.btnListele.Size = new System.Drawing.Size(105, 44);
+            this.btnListele.Size = new System.Drawing.Size(194, 68);
             this.btnListele.TabIndex = 11;
             this.btnListele.Text = "Ekrana Listele";
             this.btnListele.UseVisualStyleBackColor = true;
@@ -153,9 +160,10 @@
             // 
             this.checkOdemeyenler.AutoSize = true;
             this.checkOdemeyenler.Enabled = false;
-            this.checkOdemeyenler.Location = new System.Drawing.Point(153, 130);
+            this.checkOdemeyenler.Location = new System.Drawing.Point(230, 200);
+            this.checkOdemeyenler.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkOdemeyenler.Name = "checkOdemeyenler";
-            this.checkOdemeyenler.Size = new System.Drawing.Size(123, 17);
+            this.checkOdemeyenler.Size = new System.Drawing.Size(182, 24);
             this.checkOdemeyenler.TabIndex = 10;
             this.checkOdemeyenler.Text = "Ödemeyenleri Listele";
             this.checkOdemeyenler.UseVisualStyleBackColor = true;
@@ -164,18 +172,20 @@
             // 
             this.cboxBirim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxBirim.FormattingEnabled = true;
-            this.cboxBirim.Location = new System.Drawing.Point(153, 74);
+            this.cboxBirim.Location = new System.Drawing.Point(230, 114);
+            this.cboxBirim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboxBirim.Name = "cboxBirim";
-            this.cboxBirim.Size = new System.Drawing.Size(214, 21);
+            this.cboxBirim.Size = new System.Drawing.Size(319, 28);
             this.cboxBirim.TabIndex = 6;
             // 
             // cboxMudurluk
             // 
             this.cboxMudurluk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxMudurluk.FormattingEnabled = true;
-            this.cboxMudurluk.Location = new System.Drawing.Point(153, 47);
+            this.cboxMudurluk.Location = new System.Drawing.Point(230, 72);
+            this.cboxMudurluk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboxMudurluk.Name = "cboxMudurluk";
-            this.cboxMudurluk.Size = new System.Drawing.Size(214, 21);
+            this.cboxMudurluk.Size = new System.Drawing.Size(319, 28);
             this.cboxMudurluk.TabIndex = 5;
             this.cboxMudurluk.SelectedIndexChanged += new System.EventHandler(this.cboxMudurluk_SelectedIndexChanged_1);
             this.cboxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cboxMudurluk_SelectionChangeCommitted);
@@ -184,9 +194,10 @@
             // 
             this.cboxil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxil.FormattingEnabled = true;
-            this.cboxil.Location = new System.Drawing.Point(153, 20);
+            this.cboxil.Location = new System.Drawing.Point(230, 31);
+            this.cboxil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboxil.Name = "cboxil";
-            this.cboxil.Size = new System.Drawing.Size(214, 21);
+            this.cboxil.Size = new System.Drawing.Size(319, 28);
             this.cboxil.TabIndex = 4;
             this.cboxil.SelectedIndexChanged += new System.EventHandler(this.cboxil_SelectedIndexChanged);
             this.cboxil.SelectionChangeCommitted += new System.EventHandler(this.cboxil_SelectionChangeCommitted);
@@ -194,9 +205,11 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listUyeKayitlari);
-            this.groupBox2.Location = new System.Drawing.Point(13, 231);
+            this.groupBox2.Location = new System.Drawing.Point(20, 355);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(650, 213);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(975, 328);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bulunan Üye Kayıtları";
@@ -211,11 +224,12 @@
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
-            this.listUyeKayitlari.FullRowSelect = true;
             this.listUyeKayitlari.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listUyeKayitlari.Location = new System.Drawing.Point(7, 20);
+            this.listUyeKayitlari.FullRowSelect = true;
+            this.listUyeKayitlari.Location = new System.Drawing.Point(4, 24);
+            this.listUyeKayitlari.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listUyeKayitlari.Name = "listUyeKayitlari";
-            this.listUyeKayitlari.Size = new System.Drawing.Size(643, 187);
+            this.listUyeKayitlari.Size = new System.Drawing.Size(967, 299);
             this.listUyeKayitlari.TabIndex = 0;
             this.listUyeKayitlari.UseCompatibleStateImageBehavior = false;
             this.listUyeKayitlari.View = System.Windows.Forms.View.Details;
@@ -224,6 +238,7 @@
             // columnHeader0
             // 
             this.columnHeader0.Text = "Sicil No";
+            this.columnHeader0.Width = 88;
             // 
             // columnHeader1
             // 
@@ -256,11 +271,12 @@
             // 
             // frmRaporAidat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 453);
+            this.ClientSize = new System.Drawing.Size(1012, 697);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grpAramaKriterleri);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmRaporAidat";
             this.Text = "Aidat Raporları";
             this.Load += new System.EventHandler(this.frmRaporAidat_Load);
