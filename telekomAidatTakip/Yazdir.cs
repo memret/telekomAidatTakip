@@ -81,7 +81,7 @@ namespace telekomAidatTakip
         }
         public void OnPrintDocument_2(object sender, PrintPageEventArgs e)
         {
-
+            //frmUye için yazdırma kısmı yapılacak burada. Daha hiç başlanmadı sadece başlık atıldı
             //Yazı fontumu ve çizgi çizmek için fırçamı ve kalem nesnemi oluşturdum
             Font myFont = new Font("Calibri", 28);
             SolidBrush sbrush = new SolidBrush(Color.Black);
