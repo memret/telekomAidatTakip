@@ -381,6 +381,8 @@ namespace telekomAidatTakip
                     db.Kapat();
                     db2.Kapat();
                     db3.Kapat();
+                    db4.Kapat();
+                    MessageBox.Show("Üye silindi.", "Üye silme", MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
 
                 else if (dialogResult == DialogResult.Cancel)
