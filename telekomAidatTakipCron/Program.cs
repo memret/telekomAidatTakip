@@ -17,37 +17,37 @@ namespace telekomAidatTakipCron
 
         static void Main(string[] args)
         {
-
+            string[] mailListesi = {"m.emret94@gmail.com", "omertanis123@gmail.com" };
+            MailTopluGonder(mailListesi, "test", "test içerik");
         }
 
-        void MailTopluGonder(string[] mailListesi, string baslik, string icerik)
+        static void MailTopluGonder(string[] mailListesi, string baslik, string icerik)
         {
-            object smtp = "";
+            
+            SmtpClient mailServer = new SmtpClient(GMAIL_SERVER, PORT);
+            mailServer.EnableSsl = true;
+
+            //eMail ve şifre.
+            mailServer.Credentials = new System.Net.NetworkCredential("telekomstaj2017@gmail.com", "telekom123");
+
+            string from = "telekomstaj2017@gmail.com";
+            //Receiver email
+
+            MailMessage msg;
+
             //smtp tanımlanacak ayarları yapılacak burada belki veritabanından çekilebilir
             foreach (string mail in mailListesi)
             {
+                msg = new MailMessage(from, mail);
                 //başlık içerik veritabanından çekilecek.
-                MailTekliGonder(smtp,mail, baslik, icerik);
+                MailTekliGonder(mailServer,msg, baslik, icerik);
             }
         }
 
-        void MailTekliGonder(object smtpZimbirtisi, string aliciMail, string baslik, string icerik)
+        static void MailTekliGonder(SmtpClient mailServer, MailMessage msg, string baslik, string icerik)
         {
             try
             {
-                SmtpClient mailServer = new SmtpClient(GMAIL_SERVER, PORT);
-                mailServer.EnableSsl = true;
-
-                //eMail ve şifre.
-                mailServer.Credentials = new System.Net.NetworkCredential("myemail@gmail.com", "mypassword");
-
-                //Senders email.
-                string from = "göndericiMail@gmail.com";
-                //Receiver email
-                string to = aliciMail;
-
-                MailMessage msg = new MailMessage(from, to);
-
                 //mailin başlığı.
                 msg.Subject = baslik;
 
