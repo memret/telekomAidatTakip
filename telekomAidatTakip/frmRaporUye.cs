@@ -30,6 +30,8 @@ namespace telekomAidatTakip
             //ekran listeleye tıklat
         }
 
+       
+
 
         //PRG.DoldurTahsil(ref cboxTahsil);
         //PRG.DoldurUyelikTipi(ref cboxUyelikDurumu);

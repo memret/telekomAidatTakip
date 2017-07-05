@@ -161,6 +161,17 @@ namespace telekomAidatTakip
         {
             yazdir.printPre.ShowDialog();
         }
+
+        private void listUyeKayitlari_DoubleClick(object sender, EventArgs e)
+        {
+                if (listUyeKayitlari.SelectedItems.Count > 0)
+                {
+                    frmUye frm = new frmUye(listUyeKayitlari.SelectedItems[0].Text);
+                    frm.ShowDialog();
+                }
+
+            
+        }
     }
 
 

@@ -211,12 +211,14 @@
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
+            this.listUyeKayitlari.FullRowSelect = true;
             this.listUyeKayitlari.Location = new System.Drawing.Point(7, 20);
             this.listUyeKayitlari.Name = "listUyeKayitlari";
             this.listUyeKayitlari.Size = new System.Drawing.Size(643, 187);
             this.listUyeKayitlari.TabIndex = 0;
             this.listUyeKayitlari.UseCompatibleStateImageBehavior = false;
             this.listUyeKayitlari.View = System.Windows.Forms.View.Details;
+            this.listUyeKayitlari.DoubleClick += new System.EventHandler(this.listUyeKayitlari_DoubleClick);
             // 
             // columnHeader0
             // 
