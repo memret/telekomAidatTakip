@@ -33,7 +33,7 @@ namespace telekomAidatTakip
             var data = db.DataOku("select * from unvan");
 
             
-            listView1.Items.Clear();
+            listUnvan.Items.Clear();
 
             while (data.Read())
             {
@@ -41,12 +41,12 @@ namespace telekomAidatTakip
                 item.Text = data["unvanNo"].ToString();
                 item.SubItems.Add(data["unvanAdi"].ToString());
 
-                listView1.Items.Add(item);
+                listUnvan.Items.Add(item);
                 
             }
 
-            txtünvanAdı.Enabled = false;
-            txtünvanKodu.Enabled = false;
+            txtUnvanAdi.Enabled = false;
+            txtUnvanNo.Enabled = false;
             btnSil.Enabled = false;
             btnKaydet.Enabled = false;
             btnYeni.Enabled = true;
@@ -72,28 +72,28 @@ namespace telekomAidatTakip
                         return;
                 }
 
-                txtünvanAdı.Text = string.Empty;
-                txtünvanKodu.Text = string.Empty;
-                txtünvanKodu.Enabled = true;
-                txtünvanAdı.Enabled = true;
+                txtUnvanAdi.Text = string.Empty;
+                txtUnvanNo.Text = string.Empty;
+                txtUnvanNo.Enabled = true;
+                txtUnvanAdi.Enabled = true;
                 btnYeni.Text = "Ekle";
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
             }
             else 
             {
-                if (txtünvanKodu.Text != string.Empty && txtünvanAdı.Text != string.Empty)
+                if (txtUnvanNo.Text != string.Empty && txtUnvanAdi.Text != string.Empty)
                 {
                     Database db = new Database();
-                    db.Sorgu("insert into unvan (unvanNo,unvanAdi) values (@0,@1)", txtünvanKodu.Text, txtünvanAdı.Text);
+                    db.Sorgu("insert into unvan (unvanNo,unvanAdi) values (@0,@1)", txtUnvanNo.Text, txtUnvanAdi.Text);
 
-                    txtünvanKodu.Enabled = false;
-                    txtünvanAdı.Enabled = false;
+                    txtUnvanNo.Enabled = false;
+                    txtUnvanAdi.Enabled = false;
                     btnYeni.Text = "Yeni";
                     UnvanListesiniDoldur();
                     
-                    txtünvanAdı.Text = string.Empty;
-                    txtünvanKodu.Text = string.Empty;
+                    txtUnvanAdi.Text = string.Empty;
+                    txtUnvanNo.Text = string.Empty;
                     btnYeni.Focus(); 
                 }
                 else
@@ -108,15 +108,15 @@ namespace telekomAidatTakip
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            if (txtünvanKodu.Text != string.Empty && txtünvanAdı.Text != string.Empty) 
+            if (txtUnvanNo.Text != string.Empty && txtUnvanAdi.Text != string.Empty) 
             {
                 Database db = new Database();
-                db.Sorgu("update unvan set unvanAdİ=@0 where unvanNo=@1", txtünvanAdı.Text, txtünvanKodu.Text);
+                db.Sorgu("update unvan set unvanAdİ=@0 where unvanNo=@1", txtUnvanAdi.Text, txtUnvanNo.Text);
 
-                txtünvanAdı.Text = string.Empty;
-                txtünvanKodu.Text = string.Empty;
-                txtünvanAdı.Enabled = false;
-                txtünvanKodu.Enabled = false;
+                txtUnvanAdi.Text = string.Empty;
+                txtUnvanNo.Text = string.Empty;
+                txtUnvanAdi.Enabled = false;
+                txtUnvanNo.Enabled = false;
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
                 UnvanListesiniDoldur();
@@ -130,10 +130,10 @@ namespace telekomAidatTakip
                 DialogResult dialogResult = MessageBox.Show("Değişiklikleri silmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    if (txtünvanKodu.Text != string.Empty)
+                    if (txtUnvanNo.Text != string.Empty)
                     {
                         Database db = new Database();
-                        db.Sorgu("delete from unvan where unvanNo=@0", txtünvanKodu.Text);
+                        db.Sorgu("delete from unvan where unvanNo=@0", txtUnvanNo.Text);
                         UnvanListesiniDoldur();
                     }
                 }
@@ -171,17 +171,17 @@ namespace telekomAidatTakip
 
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
-            string ünvanKodu = listView1.SelectedItems[0].Text; 
+            string ünvanKodu = listUnvan.SelectedItems[0].Text; 
 
             Database db = new Database();
             
-            txtünvanAdı.Text = db.DataOkuTek("select unvanAdi from unvan where unvanNo=@0", "unvanAdi", ünvanKodu);
+            txtUnvanAdi.Text = db.DataOkuTek("select unvanAdi from unvan where unvanNo=@0", "unvanAdi", ünvanKodu);
 
-            txtünvanKodu.Text = ünvanKodu;
+            txtUnvanNo.Text = ünvanKodu;
             btnKaydet.Enabled = true;
             btnSil.Enabled = true;
-            txtünvanAdı.Enabled = true;
-            txtünvanKodu.Enabled = true;
+            txtUnvanAdi.Enabled = true;
+            txtUnvanNo.Enabled = true;
             btnYeni.Text = "Yeni";
         }
 
