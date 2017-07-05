@@ -33,11 +33,12 @@
             this.btnEkranaListele = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.gboxBulunanKayitlar = new System.Windows.Forms.GroupBox();
-            this.Listİl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listIl = new System.Windows.Forms.ListView();
+            this.listIlAdi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListAktif = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListPasif = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListToplam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listIl = new System.Windows.Forms.ListView();
+            this.listİlNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gboxListelemeİslemi.SuspendLayout();
             this.gboxBulunanKayitlar.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +63,7 @@
             this.btnYazdir.TabIndex = 2;
             this.btnYazdir.Text = "Yazdır";
             this.btnYazdir.UseVisualStyleBackColor = true;
+            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
             // btnEkranaListele
             // 
@@ -71,7 +73,7 @@
             this.btnEkranaListele.TabIndex = 1;
             this.btnEkranaListele.Text = "Ekrana Listele";
             this.btnEkranaListele.UseVisualStyleBackColor = true;
-            this.btnEkranaListele.Click += new System.EventHandler(this.button1_Click);
+            this.btnEkranaListele.Click += new System.EventHandler(this.btnEkranaListele_Click);
             // 
             // label1
             // 
@@ -92,10 +94,29 @@
             this.gboxBulunanKayitlar.TabStop = false;
             this.gboxBulunanKayitlar.Text = "Bulunan Kayıtlar";
             // 
-            // Listİl
+            // listIl
             // 
-            this.Listİl.Text = "İli";
-            this.Listİl.Width = 99;
+            this.listIl.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listIlAdi,
+            this.listİlNo,
+            this.ListAktif,
+            this.ListPasif,
+            this.ListToplam});
+            this.listIl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listIl.FullRowSelect = true;
+            this.listIl.Location = new System.Drawing.Point(3, 16);
+            this.listIl.Name = "listIl";
+            this.listIl.Size = new System.Drawing.Size(558, 260);
+            this.listIl.TabIndex = 0;
+            this.listIl.UseCompatibleStateImageBehavior = false;
+            this.listIl.View = System.Windows.Forms.View.Details;
+            this.listIl.SelectedIndexChanged += new System.EventHandler(this.listIl_SelectedIndexChanged);
+            this.listIl.DoubleClick += new System.EventHandler(this.listIl_DoubleClick);
+            // 
+            // listIlAdi
+            // 
+            this.listIlAdi.Text = "İl No";
+            this.listIlAdi.Width = 83;
             // 
             // ListAktif
             // 
@@ -112,20 +133,9 @@
             this.ListToplam.Text = "Toplam";
             this.ListToplam.Width = 92;
             // 
-            // listIl
+            // listİlNo
             // 
-            this.listIl.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Listİl,
-            this.ListAktif,
-            this.ListPasif,
-            this.ListToplam});
-            this.listIl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listIl.Location = new System.Drawing.Point(3, 16);
-            this.listIl.Name = "listIl";
-            this.listIl.Size = new System.Drawing.Size(558, 260);
-            this.listIl.TabIndex = 0;
-            this.listIl.UseCompatibleStateImageBehavior = false;
-            this.listIl.View = System.Windows.Forms.View.Details;
+            this.listİlNo.Text = "İl Adı";
             // 
             // frmRaporIl
             // 
@@ -136,6 +146,7 @@
             this.Controls.Add(this.gboxListelemeİslemi);
             this.Name = "frmRaporIl";
             this.Text = "İl Raporları";
+            this.Load += new System.EventHandler(this.frmRaporIl_Load);
             this.gboxListelemeİslemi.ResumeLayout(false);
             this.gboxListelemeİslemi.PerformLayout();
             this.gboxBulunanKayitlar.ResumeLayout(false);
@@ -151,9 +162,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gboxBulunanKayitlar;
         private System.Windows.Forms.ListView listIl;
-        private System.Windows.Forms.ColumnHeader Listİl;
         private System.Windows.Forms.ColumnHeader ListAktif;
         private System.Windows.Forms.ColumnHeader ListPasif;
         private System.Windows.Forms.ColumnHeader ListToplam;
+        private System.Windows.Forms.ColumnHeader listIlAdi;
+        private System.Windows.Forms.ColumnHeader listİlNo;
     }
 }

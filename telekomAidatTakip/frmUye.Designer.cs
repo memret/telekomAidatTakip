@@ -35,7 +35,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnResimSil = new System.Windows.Forms.Button();
             this.btnYeniResim = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -121,9 +120,9 @@
             // 
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1087, 471);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -139,7 +138,7 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(4, 19);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1079, 448);
@@ -171,9 +170,9 @@
             this.lblSilinmeBilgisi.Controls.Add(this.cboxTahsil);
             this.lblSilinmeBilgisi.Controls.Add(this.txtAdSoyad);
             this.lblSilinmeBilgisi.Location = new System.Drawing.Point(4, 25);
-            this.lblSilinmeBilgisi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblSilinmeBilgisi.Margin = new System.Windows.Forms.Padding(4);
             this.lblSilinmeBilgisi.Name = "lblSilinmeBilgisi";
-            this.lblSilinmeBilgisi.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblSilinmeBilgisi.Padding = new System.Windows.Forms.Padding(4);
             this.lblSilinmeBilgisi.Size = new System.Drawing.Size(1071, 419);
             this.lblSilinmeBilgisi.TabIndex = 0;
             this.lblSilinmeBilgisi.Text = "Temel Bilgiler";
@@ -193,12 +192,11 @@
             // 
             this.groupBox2.Controls.Add(this.btnResimSil);
             this.groupBox2.Controls.Add(this.btnYeniResim);
-            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Location = new System.Drawing.Point(633, 7);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(392, 388);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
@@ -207,17 +205,18 @@
             // btnResimSil
             // 
             this.btnResimSil.Location = new System.Drawing.Point(193, 324);
-            this.btnResimSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnResimSil.Margin = new System.Windows.Forms.Padding(4);
             this.btnResimSil.Name = "btnResimSil";
             this.btnResimSil.Size = new System.Drawing.Size(123, 33);
             this.btnResimSil.TabIndex = 12;
             this.btnResimSil.Text = "Resim Sİl";
             this.btnResimSil.UseVisualStyleBackColor = true;
+            this.btnResimSil.Click += new System.EventHandler(this.btnResimSil_Click);
             // 
             // btnYeniResim
             // 
             this.btnYeniResim.Location = new System.Drawing.Point(79, 324);
-            this.btnYeniResim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnYeniResim.Margin = new System.Windows.Forms.Padding(4);
             this.btnYeniResim.Name = "btnYeniResim";
             this.btnYeniResim.Size = new System.Drawing.Size(119, 33);
             this.btnYeniResim.TabIndex = 11;
@@ -225,20 +224,10 @@
             this.btnYeniResim.UseVisualStyleBackColor = true;
             this.btnYeniResim.Click += new System.EventHandler(this.btnYeniResim_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(257, 308);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(11, 10);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(79, 62);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(237, 295);
             this.pictureBox1.TabIndex = 13;
@@ -289,7 +278,7 @@
             this.cboxUyelikTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxUyelikTipi.FormattingEnabled = true;
             this.cboxUyelikTipi.Location = new System.Drawing.Point(241, 258);
-            this.cboxUyelikTipi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxUyelikTipi.Margin = new System.Windows.Forms.Padding(4);
             this.cboxUyelikTipi.Name = "cboxUyelikTipi";
             this.cboxUyelikTipi.Size = new System.Drawing.Size(237, 24);
             this.cboxUyelikTipi.TabIndex = 7;
@@ -297,7 +286,7 @@
             // txtSicilNo
             // 
             this.txtSicilNo.Location = new System.Drawing.Point(240, 53);
-            this.txtSicilNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSicilNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtSicilNo.Name = "txtSicilNo";
             this.txtSicilNo.Size = new System.Drawing.Size(108, 22);
             this.txtSicilNo.TabIndex = 1;
@@ -375,7 +364,7 @@
             // dateKayit
             // 
             this.dateKayit.Location = new System.Drawing.Point(241, 326);
-            this.dateKayit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateKayit.Margin = new System.Windows.Forms.Padding(4);
             this.dateKayit.Name = "dateKayit";
             this.dateKayit.Size = new System.Drawing.Size(260, 22);
             this.dateKayit.TabIndex = 9;
@@ -383,7 +372,7 @@
             // dateGiris
             // 
             this.dateGiris.Location = new System.Drawing.Point(240, 293);
-            this.dateGiris.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateGiris.Margin = new System.Windows.Forms.Padding(4);
             this.dateGiris.Name = "dateGiris";
             this.dateGiris.Size = new System.Drawing.Size(260, 22);
             this.dateGiris.TabIndex = 8;
@@ -393,7 +382,7 @@
             this.cboxBirim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxBirim.FormattingEnabled = true;
             this.cboxBirim.Location = new System.Drawing.Point(240, 224);
-            this.cboxBirim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxBirim.Margin = new System.Windows.Forms.Padding(4);
             this.cboxBirim.Name = "cboxBirim";
             this.cboxBirim.Size = new System.Drawing.Size(239, 24);
             this.cboxBirim.TabIndex = 6;
@@ -404,7 +393,7 @@
             this.cboxMudurluk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxMudurluk.FormattingEnabled = true;
             this.cboxMudurluk.Location = new System.Drawing.Point(240, 190);
-            this.cboxMudurluk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxMudurluk.Margin = new System.Windows.Forms.Padding(4);
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(239, 24);
             this.cboxMudurluk.TabIndex = 5;
@@ -415,7 +404,7 @@
             this.cboxIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxIl.FormattingEnabled = true;
             this.cboxIl.Location = new System.Drawing.Point(240, 155);
-            this.cboxIl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxIl.Margin = new System.Windows.Forms.Padding(4);
             this.cboxIl.Name = "cboxIl";
             this.cboxIl.Size = new System.Drawing.Size(239, 24);
             this.cboxIl.TabIndex = 4;
@@ -426,7 +415,7 @@
             this.cboxUnvan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxUnvan.FormattingEnabled = true;
             this.cboxUnvan.Location = new System.Drawing.Point(240, 121);
-            this.cboxUnvan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxUnvan.Margin = new System.Windows.Forms.Padding(4);
             this.cboxUnvan.Name = "cboxUnvan";
             this.cboxUnvan.Size = new System.Drawing.Size(239, 24);
             this.cboxUnvan.TabIndex = 3;
@@ -437,7 +426,7 @@
             this.cboxTahsil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxTahsil.FormattingEnabled = true;
             this.cboxTahsil.Location = new System.Drawing.Point(240, 86);
-            this.cboxTahsil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxTahsil.Margin = new System.Windows.Forms.Padding(4);
             this.cboxTahsil.Name = "cboxTahsil";
             this.cboxTahsil.Size = new System.Drawing.Size(155, 24);
             this.cboxTahsil.TabIndex = 2;
@@ -445,7 +434,7 @@
             // txtAdSoyad
             // 
             this.txtAdSoyad.Location = new System.Drawing.Point(240, 20);
-            this.txtAdSoyad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdSoyad.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdSoyad.Name = "txtAdSoyad";
             this.txtAdSoyad.Size = new System.Drawing.Size(239, 22);
             this.txtAdSoyad.TabIndex = 0;
@@ -467,10 +456,10 @@
             this.tabPage2.Controls.Add(this.txtEvTel);
             this.tabPage2.Controls.Add(this.txtEvAdresi);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Size = new System.Drawing.Size(1071, 417);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(1071, 419);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Adres Bilgileri";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -500,7 +489,7 @@
             this.cboxIsIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxIsIl.FormattingEnabled = true;
             this.cboxIsIl.Location = new System.Drawing.Point(189, 224);
-            this.cboxIsIl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxIsIl.Margin = new System.Windows.Forms.Padding(4);
             this.cboxIsIl.Name = "cboxIsIl";
             this.cboxIsIl.Size = new System.Drawing.Size(193, 24);
             this.cboxIsIl.TabIndex = 3;
@@ -510,7 +499,7 @@
             this.cboxEvIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxEvIl.FormattingEnabled = true;
             this.cboxEvIl.Location = new System.Drawing.Point(189, 107);
-            this.cboxEvIl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxEvIl.Margin = new System.Windows.Forms.Padding(4);
             this.cboxEvIl.Name = "cboxEvIl";
             this.cboxEvIl.Size = new System.Drawing.Size(193, 24);
             this.cboxEvIl.TabIndex = 1;
@@ -568,7 +557,7 @@
             // txtIsAdresi
             // 
             this.txtIsAdresi.Location = new System.Drawing.Point(189, 150);
-            this.txtIsAdresi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIsAdresi.Margin = new System.Windows.Forms.Padding(4);
             this.txtIsAdresi.Multiline = true;
             this.txtIsAdresi.Name = "txtIsAdresi";
             this.txtIsAdresi.Size = new System.Drawing.Size(275, 56);
@@ -577,7 +566,7 @@
             // txtCepTel
             // 
             this.txtCepTel.Location = new System.Drawing.Point(189, 351);
-            this.txtCepTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCepTel.Margin = new System.Windows.Forms.Padding(4);
             this.txtCepTel.Name = "txtCepTel";
             this.txtCepTel.Size = new System.Drawing.Size(275, 22);
             this.txtCepTel.TabIndex = 6;
@@ -585,7 +574,7 @@
             // txtIsTel
             // 
             this.txtIsTel.Location = new System.Drawing.Point(189, 309);
-            this.txtIsTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIsTel.Margin = new System.Windows.Forms.Padding(4);
             this.txtIsTel.Name = "txtIsTel";
             this.txtIsTel.Size = new System.Drawing.Size(275, 22);
             this.txtIsTel.TabIndex = 5;
@@ -593,7 +582,7 @@
             // txtEvTel
             // 
             this.txtEvTel.Location = new System.Drawing.Point(189, 267);
-            this.txtEvTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEvTel.Margin = new System.Windows.Forms.Padding(4);
             this.txtEvTel.Name = "txtEvTel";
             this.txtEvTel.Size = new System.Drawing.Size(275, 22);
             this.txtEvTel.TabIndex = 4;
@@ -601,7 +590,7 @@
             // txtEvAdresi
             // 
             this.txtEvAdresi.Location = new System.Drawing.Point(189, 32);
-            this.txtEvAdresi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEvAdresi.Margin = new System.Windows.Forms.Padding(4);
             this.txtEvAdresi.Multiline = true;
             this.txtEvAdresi.Name = "txtEvAdresi";
             this.txtEvAdresi.Size = new System.Drawing.Size(275, 57);
@@ -634,9 +623,9 @@
             this.tabPage3.Controls.Add(this.label22);
             this.tabPage3.Controls.Add(this.label21);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1071, 417);
+            this.tabPage3.Size = new System.Drawing.Size(1071, 419);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nüfus Bilgileri";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -646,7 +635,7 @@
             // 
             this.dateNufusDogum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateNufusDogum.Location = new System.Drawing.Point(448, 91);
-            this.dateNufusDogum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateNufusDogum.Margin = new System.Windows.Forms.Padding(4);
             this.dateNufusDogum.Name = "dateNufusDogum";
             this.dateNufusDogum.Size = new System.Drawing.Size(125, 22);
             this.dateNufusDogum.TabIndex = 3;
@@ -676,7 +665,7 @@
             this.cboxNufusIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxNufusIl.FormattingEnabled = true;
             this.cboxNufusIl.Location = new System.Drawing.Point(193, 225);
-            this.cboxNufusIl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxNufusIl.Margin = new System.Windows.Forms.Padding(4);
             this.cboxNufusIl.Name = "cboxNufusIl";
             this.cboxNufusIl.Size = new System.Drawing.Size(245, 24);
             this.cboxNufusIl.TabIndex = 6;
@@ -696,7 +685,7 @@
             this.cboxNufusKan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxNufusKan.FormattingEnabled = true;
             this.cboxNufusKan.Location = new System.Drawing.Point(193, 158);
-            this.cboxNufusKan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxNufusKan.Margin = new System.Windows.Forms.Padding(4);
             this.cboxNufusKan.Name = "cboxNufusKan";
             this.cboxNufusKan.Size = new System.Drawing.Size(192, 24);
             this.cboxNufusKan.TabIndex = 5;
@@ -710,7 +699,7 @@
             "Evli",
             "Dul"});
             this.cboxNufusMedeni.Location = new System.Drawing.Point(193, 124);
-            this.cboxNufusMedeni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxNufusMedeni.Margin = new System.Windows.Forms.Padding(4);
             this.cboxNufusMedeni.Name = "cboxNufusMedeni";
             this.cboxNufusMedeni.Size = new System.Drawing.Size(245, 24);
             this.cboxNufusMedeni.TabIndex = 4;
@@ -719,7 +708,7 @@
             // txtNufusMahalle
             // 
             this.txtNufusMahalle.Location = new System.Drawing.Point(193, 288);
-            this.txtNufusMahalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNufusMahalle.Margin = new System.Windows.Forms.Padding(4);
             this.txtNufusMahalle.Name = "txtNufusMahalle";
             this.txtNufusMahalle.Size = new System.Drawing.Size(245, 22);
             this.txtNufusMahalle.TabIndex = 8;
@@ -727,7 +716,7 @@
             // txtNufusIlce
             // 
             this.txtNufusIlce.Location = new System.Drawing.Point(193, 258);
-            this.txtNufusIlce.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNufusIlce.Margin = new System.Windows.Forms.Padding(4);
             this.txtNufusIlce.Name = "txtNufusIlce";
             this.txtNufusIlce.Size = new System.Drawing.Size(245, 22);
             this.txtNufusIlce.TabIndex = 7;
@@ -735,7 +724,7 @@
             // txtNufusSira
             // 
             this.txtNufusSira.Location = new System.Drawing.Point(640, 336);
-            this.txtNufusSira.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNufusSira.Margin = new System.Windows.Forms.Padding(4);
             this.txtNufusSira.Name = "txtNufusSira";
             this.txtNufusSira.Size = new System.Drawing.Size(109, 22);
             this.txtNufusSira.TabIndex = 11;
@@ -743,7 +732,7 @@
             // txtNufusAile
             // 
             this.txtNufusAile.Location = new System.Drawing.Point(385, 336);
-            this.txtNufusAile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNufusAile.Margin = new System.Windows.Forms.Padding(4);
             this.txtNufusAile.Name = "txtNufusAile";
             this.txtNufusAile.Size = new System.Drawing.Size(109, 22);
             this.txtNufusAile.TabIndex = 10;
@@ -751,7 +740,7 @@
             // txtNufusCilt
             // 
             this.txtNufusCilt.Location = new System.Drawing.Point(100, 336);
-            this.txtNufusCilt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNufusCilt.Margin = new System.Windows.Forms.Padding(4);
             this.txtNufusCilt.Name = "txtNufusCilt";
             this.txtNufusCilt.Size = new System.Drawing.Size(109, 22);
             this.txtNufusCilt.TabIndex = 9;
@@ -759,7 +748,7 @@
             // txtNufusDogumYeri
             // 
             this.txtNufusDogumYeri.Location = new System.Drawing.Point(193, 91);
-            this.txtNufusDogumYeri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNufusDogumYeri.Margin = new System.Windows.Forms.Padding(4);
             this.txtNufusDogumYeri.Name = "txtNufusDogumYeri";
             this.txtNufusDogumYeri.Size = new System.Drawing.Size(245, 22);
             this.txtNufusDogumYeri.TabIndex = 2;
@@ -768,7 +757,7 @@
             // txtNufusAnne
             // 
             this.txtNufusAnne.Location = new System.Drawing.Point(193, 58);
-            this.txtNufusAnne.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNufusAnne.Margin = new System.Windows.Forms.Padding(4);
             this.txtNufusAnne.Name = "txtNufusAnne";
             this.txtNufusAnne.Size = new System.Drawing.Size(245, 22);
             this.txtNufusAnne.TabIndex = 1;
@@ -776,7 +765,7 @@
             // txtNufusBaba
             // 
             this.txtNufusBaba.Location = new System.Drawing.Point(193, 25);
-            this.txtNufusBaba.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNufusBaba.Margin = new System.Windows.Forms.Padding(4);
             this.txtNufusBaba.Name = "txtNufusBaba";
             this.txtNufusBaba.Size = new System.Drawing.Size(245, 22);
             this.txtNufusBaba.TabIndex = 0;
@@ -875,9 +864,9 @@
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1071, 417);
+            this.tabPage4.Size = new System.Drawing.Size(1071, 419);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Aidat Bilgileri";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -886,9 +875,9 @@
             // 
             this.tabPage5.Controls.Add(this.textBox1);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1071, 417);
+            this.tabPage5.Size = new System.Drawing.Size(1071, 419);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Not";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -896,7 +885,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(32, 25);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.MinimumSize = new System.Drawing.Size(132, 245);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -910,9 +899,9 @@
             this.groupBox3.Controls.Add(this.btnKaydet);
             this.groupBox3.Controls.Add(this.btnYeni);
             this.groupBox3.Location = new System.Drawing.Point(1111, 15);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(140, 325);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
@@ -921,7 +910,7 @@
             // btnGuncelle
             // 
             this.btnGuncelle.Location = new System.Drawing.Point(20, 171);
-            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(100, 54);
             this.btnGuncelle.TabIndex = 1;
@@ -932,7 +921,7 @@
             // btnSil
             // 
             this.btnSil.Location = new System.Drawing.Point(20, 242);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(4);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(100, 54);
             this.btnSil.TabIndex = 0;
@@ -943,7 +932,7 @@
             // btnKaydet
             // 
             this.btnKaydet.Location = new System.Drawing.Point(20, 101);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(4);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(100, 54);
             this.btnKaydet.TabIndex = 0;
@@ -954,7 +943,7 @@
             // btnYeni
             // 
             this.btnYeni.Location = new System.Drawing.Point(20, 33);
-            this.btnYeni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnYeni.Margin = new System.Windows.Forms.Padding(4);
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(100, 54);
             this.btnYeni.TabIndex = 0;
@@ -969,7 +958,7 @@
             this.ClientSize = new System.Drawing.Size(1261, 497);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmUye";
             this.Text = "frmUye";
             this.Load += new System.EventHandler(this.frmUye_Load);
@@ -1035,7 +1024,6 @@
         private System.Windows.Forms.TextBox txtSicilNo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnResimSil;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnYeniResim;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label19;
