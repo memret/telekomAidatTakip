@@ -16,12 +16,6 @@ namespace telekomAidatTakip
         {
             InitializeComponent();
         }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmTanimUnvan_Load(object sender, EventArgs e)
         {
             UnvanListesiniDoldur();
@@ -52,15 +46,8 @@ namespace telekomAidatTakip
             btnYeni.Enabled = true;
 
         }
-
-        private void txtünvanKodu_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
         private void btnYeni_Click(object sender, EventArgs e)
         {
-            
-
             if (btnYeni.Text == "Yeni") 
             {
                 if (btnKaydet.Enabled) 
@@ -127,7 +114,7 @@ namespace telekomAidatTakip
         {
             if (btnSil.Enabled)
             {
-                DialogResult dialogResult = MessageBox.Show("Değişiklikleri silmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
+                DialogResult dialogResult = MessageBox.Show("Seçili ünvanı silmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
                 if (dialogResult == DialogResult.Yes)
                 {
                     if (txtUnvanNo.Text != string.Empty)
@@ -164,25 +151,23 @@ namespace telekomAidatTakip
 
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
-            string ünvanKodu = listUnvan.SelectedItems[0].Text; 
+            if (listUnvan.SelectedItems.Count > 0)
+            {
+                string unvanKodu = listUnvan.SelectedItems[0].Text;
 
-            Database db = new Database();
-            
-            txtUnvanAdi.Text = db.DataOkuTek("select unvanAdi from unvan where unvanNo=@0", "unvanAdi", ünvanKodu);
+                Database db = new Database();
 
-            txtUnvanNo.Text = ünvanKodu;
-            btnKaydet.Enabled = true;
-            btnSil.Enabled = true;
-            txtUnvanAdi.Enabled = true;
-            txtUnvanNo.Enabled = true;
-            btnYeni.Text = "Yeni";
+                txtUnvanAdi.Text = db.DataOkuTek("select unvanAdi from unvan where unvanNo=@0", "unvanAdi", unvanKodu);
+
+                txtUnvanNo.Text = unvanKodu;
+                btnKaydet.Enabled = true;
+                btnSil.Enabled = true;
+                txtUnvanAdi.Enabled = true;
+                txtUnvanNo.Enabled = true;
+                btnYeni.Text = "Yeni";
+            }
         }
 
         private void frmTanimUnvan_Resize(object sender, EventArgs e)

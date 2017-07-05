@@ -106,7 +106,6 @@
             this.txtUnvanNo.Name = "txtUnvanNo";
             this.txtUnvanNo.Size = new System.Drawing.Size(87, 20);
             this.txtUnvanNo.TabIndex = 2;
-            this.txtUnvanNo.TextChanged += new System.EventHandler(this.txtünvanKodu_TextChanged);
             // 
             // label2
             // 
@@ -135,7 +134,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ünvan Listesi";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // listUnvan
             // 
@@ -150,7 +148,6 @@
             this.listUnvan.TabIndex = 0;
             this.listUnvan.UseCompatibleStateImageBehavior = false;
             this.listUnvan.View = System.Windows.Forms.View.Details;
-            this.listUnvan.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             this.listUnvan.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
             // ünvanNo
