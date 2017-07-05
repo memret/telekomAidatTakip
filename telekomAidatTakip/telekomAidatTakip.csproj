@@ -77,6 +77,10 @@
     <Compile Include="frmRaporIl.Designer.cs">
       <DependentUpon>frmRaporIl.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTanimOzelGunler.cs" />
+    <Compile Include="frmTanimOzelGunler.Designer.cs">
+      <DependentUpon>frmTanimOzelGunler.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTanimUyelikIptal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +122,11 @@
     </Compile>
     <Compile Include="frmUye.Designer.cs">
       <DependentUpon>frmUye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUye1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>frmUye.resx</DependentUpon>
     </Compile>
     <Compile Include="frmUyeAidat.cs">
       <SubType>Form</SubType>
@@ -184,6 +193,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUye.resx">
       <DependentUpon>frmUye.cs</DependentUpon>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmUye1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="frmYedekleme.resx">
       <DependentUpon>frmYedekleme.cs</DependentUpon>
@@ -196,6 +207,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -220,6 +232,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultImage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
