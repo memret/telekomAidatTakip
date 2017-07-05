@@ -73,7 +73,7 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Birim Adı";
+            this.columnHeader2.Text = "Birim";
             this.columnHeader2.Width = 81;
             // 
             // columnHeader4
@@ -83,7 +83,7 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Müdürlük Adı";
+            this.columnHeader3.Text = "Müdürlük";
             this.columnHeader3.Width = 119;
             // 
             // groupBox1
@@ -121,9 +121,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(20, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 20);
+            this.label3.Size = new System.Drawing.Size(78, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Müdürlük Adı:";
+            this.label3.Text = "Müdürlük:";
             // 
             // btnYeni
             // 
@@ -178,9 +178,9 @@
             this.label2.Location = new System.Drawing.Point(20, 78);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Birim Adı:";
+            this.label2.Text = "Birim:";
             // 
             // txtBirimKodu
             // 

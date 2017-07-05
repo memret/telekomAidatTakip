@@ -35,10 +35,10 @@
             this.gboxBulunanKayitlar = new System.Windows.Forms.GroupBox();
             this.listIl = new System.Windows.Forms.ListView();
             this.listIlAdi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listİlNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListAktif = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListPasif = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListToplam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listİlNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gboxListelemeİslemi.SuspendLayout();
             this.gboxBulunanKayitlar.SuspendLayout();
             this.SuspendLayout();
@@ -48,18 +48,22 @@
             this.gboxListelemeİslemi.Controls.Add(this.btnYazdir);
             this.gboxListelemeİslemi.Controls.Add(this.btnEkranaListele);
             this.gboxListelemeİslemi.Controls.Add(this.label1);
-            this.gboxListelemeİslemi.Location = new System.Drawing.Point(6, 8);
+            this.gboxListelemeİslemi.Location = new System.Drawing.Point(9, 12);
+            this.gboxListelemeİslemi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gboxListelemeİslemi.Name = "gboxListelemeİslemi";
-            this.gboxListelemeİslemi.Size = new System.Drawing.Size(564, 100);
+            this.gboxListelemeİslemi.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gboxListelemeİslemi.Size = new System.Drawing.Size(846, 154);
             this.gboxListelemeİslemi.TabIndex = 0;
             this.gboxListelemeİslemi.TabStop = false;
             this.gboxListelemeİslemi.Text = "Listeleme İşlemi";
             // 
             // btnYazdir
             // 
-            this.btnYazdir.Location = new System.Drawing.Point(477, 59);
+            this.btnYazdir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnYazdir.Location = new System.Drawing.Point(716, 91);
+            this.btnYazdir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(78, 31);
+            this.btnYazdir.Size = new System.Drawing.Size(117, 48);
             this.btnYazdir.TabIndex = 2;
             this.btnYazdir.Text = "Yazdır";
             this.btnYazdir.UseVisualStyleBackColor = true;
@@ -67,9 +71,11 @@
             // 
             // btnEkranaListele
             // 
-            this.btnEkranaListele.Location = new System.Drawing.Point(388, 59);
+            this.btnEkranaListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnEkranaListele.Location = new System.Drawing.Point(519, 91);
+            this.btnEkranaListele.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEkranaListele.Name = "btnEkranaListele";
-            this.btnEkranaListele.Size = new System.Drawing.Size(83, 31);
+            this.btnEkranaListele.Size = new System.Drawing.Size(187, 48);
             this.btnEkranaListele.TabIndex = 1;
             this.btnEkranaListele.Text = "Ekrana Listele";
             this.btnEkranaListele.UseVisualStyleBackColor = true;
@@ -78,18 +84,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 45);
+            this.label1.Location = new System.Drawing.Point(9, 69);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 13);
+            this.label1.Size = new System.Drawing.Size(220, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "İllere Göre Üye Dağılım Listesi";
             // 
             // gboxBulunanKayitlar
             // 
             this.gboxBulunanKayitlar.Controls.Add(this.listIl);
-            this.gboxBulunanKayitlar.Location = new System.Drawing.Point(6, 114);
+            this.gboxBulunanKayitlar.Location = new System.Drawing.Point(9, 175);
+            this.gboxBulunanKayitlar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gboxBulunanKayitlar.Name = "gboxBulunanKayitlar";
-            this.gboxBulunanKayitlar.Size = new System.Drawing.Size(564, 279);
+            this.gboxBulunanKayitlar.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gboxBulunanKayitlar.Size = new System.Drawing.Size(846, 429);
             this.gboxBulunanKayitlar.TabIndex = 1;
             this.gboxBulunanKayitlar.TabStop = false;
             this.gboxBulunanKayitlar.Text = "Bulunan Kayıtlar";
@@ -104,9 +113,10 @@
             this.ListToplam});
             this.listIl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listIl.FullRowSelect = true;
-            this.listIl.Location = new System.Drawing.Point(3, 16);
+            this.listIl.Location = new System.Drawing.Point(4, 24);
+            this.listIl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listIl.Name = "listIl";
-            this.listIl.Size = new System.Drawing.Size(558, 260);
+            this.listIl.Size = new System.Drawing.Size(838, 400);
             this.listIl.TabIndex = 0;
             this.listIl.UseCompatibleStateImageBehavior = false;
             this.listIl.View = System.Windows.Forms.View.Details;
@@ -117,6 +127,10 @@
             // 
             this.listIlAdi.Text = "İl No";
             this.listIlAdi.Width = 83;
+            // 
+            // listİlNo
+            // 
+            this.listİlNo.Text = "İl Adı";
             // 
             // ListAktif
             // 
@@ -133,17 +147,14 @@
             this.ListToplam.Text = "Toplam";
             this.ListToplam.Width = 92;
             // 
-            // listİlNo
-            // 
-            this.listİlNo.Text = "İl Adı";
-            // 
             // frmRaporIl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 399);
+            this.ClientSize = new System.Drawing.Size(872, 614);
             this.Controls.Add(this.gboxBulunanKayitlar);
             this.Controls.Add(this.gboxListelemeİslemi);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmRaporIl";
             this.Text = "İl Raporları";
             this.Load += new System.EventHandler(this.frmRaporIl_Load);
