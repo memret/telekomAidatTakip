@@ -112,9 +112,7 @@ namespace telekomAidatTakip
                     item.SubItems.Add(data["toplammiktar"].ToString());
 
                 item.SubItems.Add(data["ilAdi"].ToString());
-                if(checkMudurluk.Checked)
                     item.SubItems.Add(data["mudurlukAdi"].ToString());
-                if(checkBirim.Checked)
                     item.SubItems.Add(data["birimAdi"].ToString());
 
                 listUyeKayitlari.Items.Add(item);

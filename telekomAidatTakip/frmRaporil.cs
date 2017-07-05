@@ -68,7 +68,6 @@ namespace telekomAidatTakip
                 frmRaporUye frm = new frmRaporUye(listIl.SelectedItems[0].Text);
                 frm.Show();
             }
-            
         }
     }
 }

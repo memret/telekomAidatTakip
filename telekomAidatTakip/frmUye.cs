@@ -95,7 +95,7 @@ namespace telekomAidatTakip
             TypeConverter tc = TypeDescriptor.GetConverter(typeof(Bitmap));
             Bitmap foto = (Bitmap)tc.ConvertFrom(imgBytes);
             pictureBox1.Image = foto;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             db.Kapat();
 
         }
@@ -265,7 +265,16 @@ namespace telekomAidatTakip
         {
             // if (boslukkontroltextbox() && boslukkontrolcombo())
             //  MessageBox.Show("Test");
-            { yeniKayitEkle(); }
+            if(pictureBox1.Image == null)
+            {
+                MessageBox.Show("Fotoğraf girsene reis.");
+            }
+            else
+            {
+                yeniKayitEkle();
+
+            }
+
             //  else
             //    MessageBox.Show("Eksik alanları doldurunuz!");
             //uyeBilgisiGuncelle();
@@ -402,7 +411,7 @@ namespace telekomAidatTakip
             {
                 this.pictureBox1.Image = new Bitmap(fd.OpenFile());
                 resimPath = fd.FileName.ToString();
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
 
