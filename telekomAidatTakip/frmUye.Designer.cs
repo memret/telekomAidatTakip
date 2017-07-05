@@ -102,6 +102,7 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnYeni = new System.Windows.Forms.Button();
@@ -222,6 +223,7 @@
             this.btnYeniResim.TabIndex = 11;
             this.btnYeniResim.Text = "Yeni Resim";
             this.btnYeniResim.UseVisualStyleBackColor = true;
+            this.btnYeniResim.Click += new System.EventHandler(this.btnYeniResim_Click);
             // 
             // button2
             // 
@@ -903,6 +905,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnGuncelle);
             this.groupBox3.Controls.Add(this.btnSil);
             this.groupBox3.Controls.Add(this.btnKaydet);
             this.groupBox3.Controls.Add(this.btnYeni);
@@ -910,14 +913,25 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(140, 244);
+            this.groupBox3.Size = new System.Drawing.Size(140, 325);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Üye İşlemleri";
             // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Location = new System.Drawing.Point(20, 171);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(100, 54);
+            this.btnGuncelle.TabIndex = 1;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(20, 170);
+            this.btnSil.Location = new System.Drawing.Point(20, 242);
             this.btnSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(100, 54);
@@ -1055,5 +1069,6 @@
         private System.Windows.Forms.Button btnYeni;
         private System.Windows.Forms.DateTimePicker dateNufusDogum;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnGuncelle;
     }
 }
