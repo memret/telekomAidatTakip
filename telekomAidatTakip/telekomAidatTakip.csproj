@@ -125,11 +125,6 @@
     <Compile Include="frmUye.Designer.cs">
       <DependentUpon>frmUye.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUye1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>frmUye.resx</DependentUpon>
-    </Compile>
     <Compile Include="frmUyeAidat.cs">
       <SubType>Form</SubType>
     </Compile>
