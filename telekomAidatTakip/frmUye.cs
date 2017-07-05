@@ -246,23 +246,38 @@ namespace telekomAidatTakip
             
             
         }
-        private bool boslukkontrol()
+        private bool boslukkontroltextbox()
+        {
+            foreach (Control c in this.groupBox1.Controls)
+            {   if (c is TextBox)
+                {
+                    if (c.Text == string.Empty || c.Name != "txtNot" || c.Name != "tabControl1")
+                        return false;
+                }
+            }
+           
+                return true;
+        }
+        private bool boslukkontrolcombo()
         {
             foreach (Control c in this.groupBox1.Controls)
             {
-                if (c.Text == string.Empty || c.Name != "txtNot" || c.Name != "tabControl1")
-                     return false;
+                if (c is ComboBox)
+                {
+                    if (c.Text==string.Empty)
+                        return false;
+                }
             }
+
             return true;
         }
-
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-           // if (boslukkontrol())
-              //  MessageBox.Show("Test");
-            yeniKayitEkle();
-           // else
-         //       MessageBox.Show("Eksik alanları doldurunuz!");
+           // if (boslukkontroltextbox() && boslukkontrolcombo())
+            //  MessageBox.Show("Test");
+            { yeniKayitEkle(); }
+          //  else
+            //    MessageBox.Show("Eksik alanları doldurunuz!");
             //uyeBilgisiGuncelle();
 
         }
@@ -358,7 +373,6 @@ namespace telekomAidatTakip
                     Database db2 = new Database();
                     Database db3 = new Database();
                     Database db4 = new Database();
-
                     db.Sorgu("DELETE FROM Uyeler WHERE sicilNo=@0", txtSicilNo.Text);
                     db2.Sorgu("DELETE FROM Adres WHERE sicilNo=@0", txtSicilNo.Text);
                     db3.Sorgu("DELETE FROM nufusBilgileri WHERE sicilNo=@0", txtSicilNo.Text);
@@ -367,8 +381,6 @@ namespace telekomAidatTakip
                     db.Kapat();
                     db2.Kapat();
                     db3.Kapat();
-                    db4.Kapat();
-                    dialogResult = MessageBox.Show("Üye silindi.", "Üye silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 else if (dialogResult == DialogResult.Cancel)
