@@ -41,12 +41,13 @@
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.üyeRaporuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ilRaporuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aidatRaporuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aidatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aidatMiktarıTanımlamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.topluAidatÖdemesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otomasyonİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yedeklemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aidatRaporuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.özelGünlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +88,8 @@
             this.müdürlükTanımlamaToolStripMenuItem,
             this.ünvanTanımlamaToolStripMenuItem,
             this.tahsilTanımlamaToolStripMenuItem,
-            this.üyelikİptalNedeniToolStripMenuItem});
+            this.üyelikİptalNedeniToolStripMenuItem,
+            this.özelGünlerToolStripMenuItem});
             this.tanımlarToolStripMenuItem.Name = "tanımlarToolStripMenuItem";
             this.tanımlarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.tanımlarToolStripMenuItem.Text = "Tanımlar";
@@ -158,6 +160,13 @@
             this.ilRaporuToolStripMenuItem.Text = "İl Raporu";
             this.ilRaporuToolStripMenuItem.Click += new System.EventHandler(this.ilRaporuToolStripMenuItem_Click);
             // 
+            // aidatRaporuToolStripMenuItem
+            // 
+            this.aidatRaporuToolStripMenuItem.Name = "aidatRaporuToolStripMenuItem";
+            this.aidatRaporuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aidatRaporuToolStripMenuItem.Text = "Aidat Raporu";
+            this.aidatRaporuToolStripMenuItem.Click += new System.EventHandler(this.aidatRaporuToolStripMenuItem_Click);
+            // 
             // aidatToolStripMenuItem
             // 
             this.aidatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -196,12 +205,12 @@
             this.yedeklemeToolStripMenuItem.Text = "Yedekleme";
             this.yedeklemeToolStripMenuItem.Click += new System.EventHandler(this.yedeklemeToolStripMenuItem_Click);
             // 
-            // aidatRaporuToolStripMenuItem
+            // özelGünlerToolStripMenuItem
             // 
-            this.aidatRaporuToolStripMenuItem.Name = "aidatRaporuToolStripMenuItem";
-            this.aidatRaporuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aidatRaporuToolStripMenuItem.Text = "Aidat Raporu";
-            this.aidatRaporuToolStripMenuItem.Click += new System.EventHandler(this.aidatRaporuToolStripMenuItem_Click);
+            this.özelGünlerToolStripMenuItem.Name = "özelGünlerToolStripMenuItem";
+            this.özelGünlerToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.özelGünlerToolStripMenuItem.Text = "Özel Günler";
+            this.özelGünlerToolStripMenuItem.Click += new System.EventHandler(this.özelGünlerToolStripMenuItem_Click);
             // 
             // frmAnaMenu
             // 
@@ -241,6 +250,7 @@
         private System.Windows.Forms.ToolStripMenuItem otomasyonİşlemleriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yedeklemeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aidatRaporuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem özelGünlerToolStripMenuItem;
     }
 }
 
