@@ -74,7 +74,6 @@
             this.dateTarih.Name = "dateTarih";
             this.dateTarih.Size = new System.Drawing.Size(103, 20);
             this.dateTarih.TabIndex = 15;
-            this.dateTarih.ValueChanged += new System.EventHandler(this.dateTarih_ValueChanged);
             // 
             // btnKaydet
             // 
@@ -94,7 +93,6 @@
             this.txtAidatMiktari.Name = "txtAidatMiktari";
             this.txtAidatMiktari.Size = new System.Drawing.Size(103, 20);
             this.txtAidatMiktari.TabIndex = 14;
-            this.txtAidatMiktari.TextChanged += new System.EventHandler(this.txtAidatMiktari_TextChanged);
             // 
             // cboxBirim
             // 
@@ -117,7 +115,6 @@
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(149, 21);
             this.cboxMudurluk.TabIndex = 7;
-            this.cboxMudurluk.SelectedIndexChanged += new System.EventHandler(this.cboxMudurluk_SelectedIndexChanged);
             this.cboxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cboxMudurluk_SelectionChangeCommitted);
             // 
             // cboxil
@@ -129,9 +126,7 @@
             this.cboxil.Name = "cboxil";
             this.cboxil.Size = new System.Drawing.Size(149, 21);
             this.cboxil.TabIndex = 6;
-            this.cboxil.SelectedIndexChanged += new System.EventHandler(this.cboxil_SelectedIndexChanged);
             this.cboxil.SelectionChangeCommitted += new System.EventHandler(this.cboxil_SelectionChangeCommitted);
-            this.cboxil.SelectedValueChanged += new System.EventHandler(this.cboxil_SelectedValueChanged);
             // 
             // label5
             // 
@@ -142,7 +137,6 @@
             this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Aidat Miktarı:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -153,7 +147,6 @@
             this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Aidat Ay ve Yılı:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 

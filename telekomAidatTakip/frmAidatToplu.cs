@@ -14,7 +14,7 @@ namespace telekomAidatTakip
     {
         public frmAidatToplu()
         {
-            
+
             InitializeComponent();
         }
 
@@ -33,10 +33,10 @@ namespace telekomAidatTakip
             int ilNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key;
             int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
             int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
-            DateTime dt = this.dateTarih.Value.Date;
+            //DateTime dt = this.dateTarih.Value.Date;
             Database db = new Database();
             Database db2 = new Database();
-            System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@2", dt);
+            //System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@2", dt);
 
             var kisiler = db.DataOku("SELECT sicilNo FROM uyeler WHERE birimNo =@0", birimNo.ToString());
             while (kisiler.Read())
@@ -44,7 +44,7 @@ namespace telekomAidatTakip
                 String sicilNo = kisiler["sicilNo"].ToString();
                 if (!string.IsNullOrEmpty(sicilNo))
                 {
-                    db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", param, sicilNo, txtAidatMiktari.Text);
+                    db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", sicilNo, txtAidatMiktari.Text, this.dateTarih.Value.Date);
                     MessageBox.Show("Aidat Ödemesi yapıldı.");
                 }
                 else
@@ -56,26 +56,9 @@ namespace telekomAidatTakip
             db.Kapat();
             db2.Kapat();
 
-            // "ALL (SELECT sicil no FROM uyeler WHERE @0)" mudurlukNo.ToString();
 
 
         }
-
-        private void cboxil_SelectedValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void cboxMudurluk_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void cboxil_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void cboxil_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (cboxil.SelectedIndex != -1)
@@ -84,7 +67,7 @@ namespace telekomAidatTakip
                 int ilNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key;
                 PRG.DoldurMudurluk(ref cboxMudurluk, ilNo.ToString());
 
-                
+
                 cboxBirim.Enabled = false;
                 cboxBirim.SelectedIndex = -1;
             }
@@ -101,7 +84,7 @@ namespace telekomAidatTakip
             {
                 int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
                 PRG.DoldurMudurluk(ref cboxBirim, mudurlukNo.ToString());
-                
+
                 cboxBirim.Enabled = true;
                 cboxBirim.SelectedIndex = -1;
 
@@ -110,26 +93,6 @@ namespace telekomAidatTakip
             {
                 cboxBirim.Enabled = false;
             }
-        }
-
-        private void txtAidatMiktari_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTarih_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

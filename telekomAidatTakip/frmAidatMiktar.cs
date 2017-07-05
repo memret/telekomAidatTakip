@@ -36,14 +36,7 @@ namespace telekomAidatTakip
             }
 
         }
-
-        private void IlListesiniDoldur()
-        {
-
-
-
-
-        }
+        
         public frmAidatMiktar()
         {
             InitializeComponent();
@@ -79,22 +72,6 @@ namespace telekomAidatTakip
             }
             else
                 MessageBox.Show("Lütfen boş alanları doldururuz!");
-            
-
-        }
-
-        private void cboxMudurluk_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-
-        private void cboxIl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboxBirim_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -122,7 +99,6 @@ namespace telekomAidatTakip
             cboxMudurluk.SelectedIndex = -1;
             cboxBirim.SelectedIndex = -1;
             txtAidatMiktari.Text = string.Empty;
-            // btnKaydet.Visible =true;
             button1.Visible = true;
             btnKaydet.Visible = false;
         }
@@ -131,11 +107,6 @@ namespace telekomAidatTakip
         {
             grpbxAidatMiktar.Width = this.Width - 40;
             grpbxAidatMiktar.Height = this.Height - 95;
-        }
-
-        private void grpbxAidatMiktar_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
@@ -169,7 +140,6 @@ namespace telekomAidatTakip
                     button1.Visible = true;
                     Database db = new Database();
                     int birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
-                    //  var data = db2.DataOku("SELECT * FROM AidatMiktar WHERE birimNo=@1 ",birimno.ToString() );
                     var data = db.DataOku("SELECT * FROM aidatmiktar WHERE birimno=@0 ", birimno.ToString());
                     while (data.Read())
                     {
