@@ -212,6 +212,7 @@
             this.columnHeader7,
             this.columnHeader8});
             this.listUyeKayitlari.FullRowSelect = true;
+            this.listUyeKayitlari.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listUyeKayitlari.Location = new System.Drawing.Point(7, 20);
             this.listUyeKayitlari.Name = "listUyeKayitlari";
             this.listUyeKayitlari.Size = new System.Drawing.Size(643, 187);
@@ -222,7 +223,7 @@
             // 
             // columnHeader0
             // 
-            this.columnHeader0.Text = "S.N.";
+            this.columnHeader0.Text = "Sicil No";
             // 
             // columnHeader1
             // 
