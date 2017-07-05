@@ -132,7 +132,7 @@ namespace telekomAidatTakip
 
             yazdir.basliklar = basliklar;
             */
-            yazdir.baslik = "Üye Listesi";
+            yazdir.baslik = "Aidat Listesi";
             btnYazdir.Enabled = true;
         }
         Yazdir yazdir = new Yazdir();

@@ -168,7 +168,7 @@ namespace telekomAidatTakip
         }
         public static object cboxIndexBul(ref ComboBox cbox, object key)
         {
-            int key1 = (int)key;
+            int key1 = Convert.ToInt32(key);
             foreach (object item in cbox.Items)
             {
                 if (((KeyValuePair < int, string>)item).Key == key1)

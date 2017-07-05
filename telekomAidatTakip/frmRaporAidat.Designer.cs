@@ -128,7 +128,8 @@
             // 
             // btnYazdir
             // 
-            this.btnYazdir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnYazdir.Enabled = false;
+            this.btnYazdir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnYazdir.Location = new System.Drawing.Point(264, 153);
             this.btnYazdir.Name = "btnYazdir";
             this.btnYazdir.Size = new System.Drawing.Size(105, 44);
@@ -139,7 +140,7 @@
             // 
             // btnListele
             // 
-            this.btnListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnListele.Location = new System.Drawing.Point(153, 153);
             this.btnListele.Name = "btnListele";
             this.btnListele.Size = new System.Drawing.Size(105, 44);
