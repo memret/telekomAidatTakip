@@ -17,14 +17,14 @@ namespace telekomAidatTakip
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnEkranaListele_Click(object sender, EventArgs e)
         {
 
 
             listIl.Items.Clear();
 
             Database db = new Database();
-             string query = "SELECT distinct i.ilAdi, coalesce((Select Count(*) from Uyeler u2 where aktif = 'true' AND u.ilNo = u2.ilNo group by ilno),0) 'aktif', coalesce((Select Count(*) from Uyeler u2 where aktif = 'false' AND u.ilNo = u2.ilNo group by ilno) ,0) 'pasif', coalesce((Select Count(*) from Uyeler u2 where u.ilNo = u2.ilNo group by ilno),0) 'toplam' FROM Uyeler u , il i where u.ilno = i.ilno";
+            string query = "SELECT distinct i.ilAdi, coalesce((Select Count(*) from Uyeler u2 where aktif = 'true' AND u.ilNo = u2.ilNo group by ilno),0) 'aktif', coalesce((Select Count(*) from Uyeler u2 where aktif = 'false' AND u.ilNo = u2.ilNo group by ilno) ,0) 'pasif', coalesce((Select Count(*) from Uyeler u2 where u.ilNo = u2.ilNo group by ilno),0) 'toplam' FROM Uyeler u , il i where u.ilno = i.ilno";
             var data = db.DataOku(query);
 
             while (data.Read())
@@ -38,6 +38,20 @@ namespace telekomAidatTakip
                 listIl.Items.Add(item);
             }
             db.Kapat();
+            yazdir.list = listIl;
+            yazdir.baslik = "İl Listesi";
+            btnYazdir.Enabled = true;
+        }
+        Yazdir yazdir;
+
+        private void btnYazdir_Click(object sender, EventArgs e)
+        {
+            yazdir.printPre.ShowDialog();
+        }
+
+        private void frmRaporIl_Load(object sender, EventArgs e)
+        {
+            yazdir = new Yazdir();
         }
     }
 }
