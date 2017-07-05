@@ -357,15 +357,18 @@ namespace telekomAidatTakip
                     Database db = new Database();
                     Database db2 = new Database();
                     Database db3 = new Database();
+                    Database db4 = new Database();
 
                     db.Sorgu("DELETE FROM Uyeler WHERE sicilNo=@0", txtSicilNo.Text);
                     db2.Sorgu("DELETE FROM Adres WHERE sicilNo=@0", txtSicilNo.Text);
                     db3.Sorgu("DELETE FROM nufusBilgileri WHERE sicilNo=@0", txtSicilNo.Text);
-                    db.Sorgu("DELETE FROM uyeFotograf WHERE sicilNo=@0", txtSicilNo.Text);
+                    db4.Sorgu("DELETE FROM uyeFotograf WHERE sicilNo=@0", txtSicilNo.Text);
                     ekraniTemizle();
                     db.Kapat();
                     db2.Kapat();
                     db3.Kapat();
+                    db4.Kapat();
+                    dialogResult = MessageBox.Show("Üye silindi.", "Üye silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 else if (dialogResult == DialogResult.Cancel)
