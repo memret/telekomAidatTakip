@@ -309,7 +309,7 @@ namespace telekomAidatTakip
             yazdir.printPre.ShowDialog();
             
         }
-       Yazdir yazdir = new Yazdir();
+       Yazdir yazdir = new Yazdir(1);
         private void frmRaporUye_Load(object sender, EventArgs e)
         {
             

@@ -20,13 +20,18 @@ namespace telekomAidatTakip
         public string baslik;
         
         
-        public Yazdir()
+        public Yazdir(int version)
         {
             pageSet.Document = printDoc;
             printPre.Document = printDoc;
-            printDoc.PrintPage += new PrintPageEventHandler(OnPrintDocument);
+            if (version == 1)
+            {
+                printDoc.PrintPage += new PrintPageEventHandler(OnPrintDocument_1);
+            }
+            else
+                printDoc.PrintPage += new PrintPageEventHandler(OnPrintDocument_2);
         }
-        public void OnPrintDocument(object sender, PrintPageEventArgs e)
+        public void OnPrintDocument_1(object sender, PrintPageEventArgs e)
         {
 
             //Yazı fontumu ve çizgi çizmek için fırçamı ve kalem nesnemi oluşturdum
@@ -55,7 +60,55 @@ namespace telekomAidatTakip
 
             StringFormat myStringFormat = new StringFormat();
             myStringFormat.Alignment = StringAlignment.Far;
-            
+
+            foreach (ListViewItem lvi in list.Items)
+            {
+                int i = 0;
+                x = 120;
+                foreach (ColumnHeader item in list.Columns)
+                {
+                    Rectangle rect2 = new Rectangle(x, y, item.Width, 20);
+                    e.Graphics.DrawString(lvi.SubItems[i].Text, myFont, sbrush, rect2);
+                    e.Graphics.DrawRectangle(Pens.Black, Rectangle.Round(rect2));
+                    x += item.Width;
+                    i++;
+                }
+                y += 20;
+
+            }
+
+            e.Graphics.DrawLine(myPen, 120, y, 750, y);
+        }
+        public void OnPrintDocument_2(object sender, PrintPageEventArgs e)
+        {
+
+            //Yazı fontumu ve çizgi çizmek için fırçamı ve kalem nesnemi oluşturdum
+            Font myFont = new Font("Calibri", 28);
+            SolidBrush sbrush = new SolidBrush(Color.Black);
+            Pen myPen = new Pen(Color.Black);
+
+            //Bu kısımda başlık yazısını ve çizgileri yazdırıyorum
+            e.Graphics.DrawLine(myPen, 120, 120, 750, 120);
+            e.Graphics.DrawLine(myPen, 120, 180, 750, 180);
+            e.Graphics.DrawString(baslik, myFont, sbrush, 200, 120);
+
+            e.Graphics.DrawLine(myPen, 120, 220, 750, 220);
+
+            myFont = new Font("Calibri", 12, FontStyle.Bold);
+            int x = 120;
+            foreach (ColumnHeader item in list.Columns)
+            {
+                var asd = list.Columns[0];
+                e.Graphics.DrawString(item.Text, myFont, sbrush, x, 228);
+                x += item.Width;
+            }
+            e.Graphics.DrawLine(myPen, 120, 248, 750, 248);
+
+            int y = 260;
+
+            StringFormat myStringFormat = new StringFormat();
+            myStringFormat.Alignment = StringAlignment.Far;
+
             foreach (ListViewItem lvi in list.Items)
             {
                 int i = 0;
