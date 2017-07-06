@@ -29,7 +29,7 @@ namespace telekomAidatTakip
 
         private void frmUye_Load(object sender, EventArgs e)
         {
-
+            btnResimSil.Enabled = false;
             // DoldurKomple();
 
             if (sicilno != null)
@@ -277,20 +277,39 @@ namespace telekomAidatTakip
             //uyeBilgisiGuncelle();
 
         }
+        //localde yemiyor :(((
+        int mdr;
+        int ilno;
+        int birimno;
+        int tahsilno;
+        int uyeliktipno;
+        int unvan;
+        int evilNo;
+        int isilNo;
+        int kanNo;
+        byte[] resim;
 
         private void yeniKayitEkle()
         {
-            byte[] resim = fotografiAl(pictureBox1.Image);
+            try
+            {
+                resim = fotografiAl(pictureBox1.Image);
+                mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
+                ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
+                birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+                tahsilno = ((KeyValuePair<int, string>)cboxTahsil.SelectedItem).Key;
+                uyeliktipno = ((KeyValuePair<int, string>)cboxUyelikTipi.SelectedItem).Key;
+                unvan = ((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key;
+                evilNo = ((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
+                isilNo = ((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
+                kanNo = ((KeyValuePair<int, string>)cboxNufusKan.SelectedItem).Key;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Tüm alanları doldurunuz." +e.ToString());
+                return;
+            }
 
-            int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
-            int ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
-            int birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
-            int tahsilno = ((KeyValuePair<int, string>)cboxTahsil.SelectedItem).Key;
-            int uyeliktipno = ((KeyValuePair<int, string>)cboxUyelikTipi.SelectedItem).Key;
-            int unvan = ((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key;
-            int evilNo = ((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
-            int isilNo = ((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
-            int kanNo = ((KeyValuePair<int, string>)cboxNufusKan.SelectedItem).Key;
             Database db = new Database();
             Database db3 = new Database();
             Database db2 = new Database();
@@ -321,15 +340,23 @@ namespace telekomAidatTakip
             Database db3 = new Database();
             Database db4 = new Database();
             Database db5 = new Database();
-            int kanNo = ((KeyValuePair<int, string>)cboxNufusKan.SelectedItem).Key;
-            int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
-            int ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
-            int birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
-            int tahsilno = ((KeyValuePair<int, string>)cboxTahsil.SelectedItem).Key;
-            int uyeliktipno = ((KeyValuePair<int, string>)cboxUyelikTipi.SelectedItem).Key;
-            int unvan = ((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key;
-            int evilNo = ((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
-            int isilNo = ((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
+            try
+            {
+                kanNo = ((KeyValuePair<int, string>)cboxNufusKan.SelectedItem).Key;
+                mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
+                ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
+                birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+                tahsilno = ((KeyValuePair<int, string>)cboxTahsil.SelectedItem).Key;
+                uyeliktipno = ((KeyValuePair<int, string>)cboxUyelikTipi.SelectedItem).Key;
+                unvan = ((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key;
+                evilNo = ((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
+                isilNo = ((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Boş alanları doldurunuz.");
+            }
+            
             db.Sorgu("UPDATE Uyeler SET adSoyad=@0,tahsilNo=@1,unvanNo=@2,ilNo=@3,mudurlukNo=@4,birimNo=@5,uyelikTipiNo=@6,girisTarihi=@7,kayitTarihi=@8, [not]=@9 WHERE sicilNo=@10", txtAdSoyad.Text, tahsilno.ToString(), unvan.ToString(), ilno.ToString(), mdr.ToString(), birimno.ToString(), uyeliktipno.ToString(), dateGiris.Value.Date, dateKayit.Value.Date,txtNot.Text, sicilno);
             db2.Sorgu("UPDATE Adres SET ev=@0,evilNo=@1,[is]=@2,isilNo=@3,evTel=@4,istel=@5,ceptel=@6, email=@7 wHERE SİCİLNO=@8 ", txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text,txtAdresEmail.Text, sicilno);
             db3.Sorgu("UPDATE nufusBilgileri SET baba=@0,anne=@1,dogumYeri=@2,dogumTarihi=@3,medeniHali=@4,kanGrubuno=@5,ilNo=@6,ilce=@7,mahalle=@8,ciltNo=@9,aileSiraNo=@10,siraNo=@11 WHERE sicilNo=@12", txtNufusBaba.Text, txtNufusAnne.Text, txtNufusDogumYeri.Text, dateNufusDogum.Value.Date, cboxNufusMedeni.SelectedIndex, kanNo, ilno, txtNufusIlce.Text, txtNufusMahalle.Text, txtNufusCilt.Text, txtNufusAile.Text, txtNufusSira.Text, sicilno);
@@ -505,6 +532,22 @@ namespace telekomAidatTakip
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
         }
+        
 
+        private void txtSicilNo_Leave(object sender, EventArgs e)
+        {
+            Database db = new Database();
+            var data = db.DataOku("select sicilNo from Uyeler");
+            while (data.Read())
+            {
+                String sicilDb = data["sicilNo"].ToString();
+                if (sicilDb.Equals(txtSicilNo.Text.ToString()))
+                {
+                    MessageBox.Show("Bu sicil Numarası kayıtlı.");
+                    txtSicilNo.Clear();
+                    txtSicilNo.Select();
+                }
+            }
+        }
     }
 }
