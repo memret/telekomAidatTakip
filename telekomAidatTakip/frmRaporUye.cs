@@ -43,29 +43,45 @@ namespace telekomAidatTakip
         {
             if (checkIl.Checked)
             {
+                cboxII.Enabled = true;
                 PRG.DoldurIl(ref cboxII);
-                checkMudurluk.Enabled = true;
+                if (cboxII.SelectedIndex == -1)
+                {
+                    checkMudurluk.Enabled = false;
+                    cboxMudurluk.Enabled = false;
+                }
+
+                else
+                {
+                    checkMudurluk.Enabled = true;
+                    cboxMudurluk.Enabled = false;
+                }
             }
             else
             {
-                checkMudurluk.Enabled = false;
                 cboxII.Enabled = false;
                 cboxII.SelectedIndex = -1;
+                cboxMudurluk.Enabled = false;
                 checkMudurluk.Checked = false;
+                checkMudurluk.Enabled = false;
             }
 
         }
 
-        private void cboxII_SelectedIndexChanged(object sender, EventArgs e)
+       /* private void cboxII_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (checkMudurluk.Checked && checkIl.Checked)
+            /*if (checkMudurluk.Checked && checkIl.Checked)
             {
                 PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxII.SelectedItem).Key.ToString());
                 cboxMudurluk.Enabled = true;
             }  
             
-        }
-
+            if (checkMudurluk.Checked)
+            {
+                checkMudurluk.Checked = false;
+            }
+        }*/
+    
         private void cboxMudurluk_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (checkKisim.Checked && checkMudurluk.Checked)
@@ -73,24 +89,37 @@ namespace telekomAidatTakip
                 PRG.DoldurBirim(ref cboxKısım, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
             }
         }
-
+        
         private void checkMudurluk_CheckedChanged(object sender, EventArgs e)
         {
             if (checkMudurluk.Checked)
             {
-                cboxII_SelectedIndexChanged(this, null);
-                checkKisim.Enabled = true;
+                cboxII_SelectionChangeCommitted(this, null);
+                cboxMudurluk.Enabled = true;
+                if (cboxMudurluk.SelectedIndex == -1)
+                {
+                    checkKisim.Enabled = false;
+                    cboxKısım.Enabled = false;
+                }
+
+                else
+                {
+                    checkKisim.Enabled = true;
+                    cboxKısım.Enabled = false;
+                }
+
             }
             else
             {
+                cboxKısım.Enabled = false;
                 cboxMudurluk.Enabled = false;
                 cboxMudurluk.SelectedIndex = -1;
-
-                checkKisim.Checked = false;
                 checkKisim.Enabled = false;
+                checkKisim.Checked = false;
+
             }
         }
-
+        
 
         private void checkKisim_CheckedChanged(object sender, EventArgs e)
         {
@@ -318,6 +347,50 @@ namespace telekomAidatTakip
             
             //this.Controls.Add(yazdir.printPre);
 
+        }
+
+        private void cboxII_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cboxII.SelectedIndex != -1)
+            {
+                PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxII.SelectedItem).Key.ToString());
+                if (!checkMudurluk.Checked)
+                    cboxMudurluk.Enabled = false;
+                checkMudurluk.Enabled = true;
+
+            }
+            else
+            {
+                checkMudurluk.Checked = false;
+                checkMudurluk.Enabled = false;
+                checkKisim.Enabled = false;
+                checkKisim.Checked = false;
+            }
+        }
+
+        private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            int mdr = PRG.cboxKeyGetir(ref cboxMudurluk);
+            if (mdr != -1)
+            {
+                PRG.DoldurBirim(ref cboxKısım, mdr.ToString());
+                if (!checkKisim.Checked)
+                    cboxKısım.Enabled = false;
+                checkKisim.Enabled = true;
+            }
+            else
+            {
+                checkKisim.Enabled = false;
+                checkKisim.Checked = false;
+            }
+        }
+
+        private void cboxII_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkMudurluk.Checked)
+            {
+                checkMudurluk.Checked = false;
+            }
         }
     }
 }

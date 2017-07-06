@@ -255,7 +255,7 @@
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(386, 21);
             this.cboxMudurluk.TabIndex = 0;
-            this.cboxMudurluk.SelectedIndexChanged += new System.EventHandler(this.cboxMudurluk_SelectedIndexChanged);
+            this.cboxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cboxMudurluk_SelectionChangeCommitted);
             // 
             // cboxII
             // 
@@ -267,6 +267,7 @@
             this.cboxII.Size = new System.Drawing.Size(386, 21);
             this.cboxII.TabIndex = 0;
             this.cboxII.SelectedIndexChanged += new System.EventHandler(this.cboxII_SelectedIndexChanged);
+            this.cboxII.SelectionChangeCommitted += new System.EventHandler(this.cboxII_SelectionChangeCommitted);
             // 
             // groupBox2
             // 
