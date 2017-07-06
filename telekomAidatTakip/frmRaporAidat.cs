@@ -143,8 +143,16 @@ namespace telekomAidatTakip
             if (cboxil.SelectedIndex != -1)
             {
                 PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxil.SelectedItem).Key.ToString());
+                if(!checkMudurluk.Checked)
+                    cboxMudurluk.Enabled = false;
                 checkMudurluk.Enabled = true;
-                cboxMudurluk.Enabled = false;
+            }
+            else
+            {
+                checkMudurluk.Checked = false;
+                checkMudurluk.Enabled = false;
+                checkBirim.Enabled = false;
+                checkBirim.Checked = false;
             }
         }
 
@@ -154,12 +162,14 @@ namespace telekomAidatTakip
             if (mdr != -1)
             {
                 PRG.DoldurBirim(ref cboxBirim, mdr.ToString());
-                cboxBirim.Enabled = false;
+                if(!checkBirim.Checked)
+                    cboxBirim.Enabled = false;
                 checkBirim.Enabled = true;
             }
             else
             {
                 checkBirim.Enabled = false;
+                checkBirim.Checked = false;
             }
         }
 
@@ -183,7 +193,7 @@ namespace telekomAidatTakip
         {
             if (checkIl.Checked)
             {
-                PRG.DoldurIl(ref cboxil);
+                cboxil.Enabled = true;
                 cboxMudurluk.Enabled = false;
                 if (cboxil.SelectedIndex == -1)
                 {
@@ -204,6 +214,7 @@ namespace telekomAidatTakip
                 cboxil.SelectedIndex = -1;
                 cboxMudurluk.Enabled = false;
                 checkMudurluk.Checked = false;
+                checkMudurluk.Enabled = false;
             }
             
         }
