@@ -19,6 +19,7 @@ namespace telekomAidatTakip
 
         private void frmTanimil_Load(object sender, EventArgs e)
         {
+            frmTanimIl_Resize(this, null);
             IlListesiniDoldur();
             
         }
@@ -226,6 +227,35 @@ namespace telekomAidatTakip
         {
           groupBox2.Width = this.Width - 49; //design sekmesindeki boyut farklarını buraya yazdık
           groupBox2.Height = this.Height - 252;
+        }
+
+        private void txtAdi_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtPlakaKodu_Leave(object sender, EventArgs e)
+        {
+            if (txtPlakaKodu.Text != string.Empty)
+            {
+                Database db = new Database();
+                var data = db.DataOku("select ilNo from il");
+                while (data.Read())
+                {
+                    String sicilDb = data["ilNo"].ToString();
+                    if (sicilDb.Equals(txtPlakaKodu.Text.ToString()))
+                    {
+                        MessageBox.Show("Bu plaka kodu kayıtlı.");
+                        txtPlakaKodu.Clear();
+                        txtPlakaKodu.Select();
+                    }
+                }
+            }
+        }
+
+        private void txtPlakaKodu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) { e.Handled = true; }
         }
     }
 }

@@ -20,6 +20,7 @@ namespace telekomAidatTakip
 
         private void frmTanimBirim_Load(object sender, EventArgs e)
         {
+            frmTanimBirim_Resize(this, null);
             listeDoldur();
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
             Database db = new Database();

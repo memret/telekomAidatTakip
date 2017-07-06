@@ -269,7 +269,7 @@ namespace telekomAidatTakip
             else
             {*/
                 yeniKayitEkle();
-
+            this.Close();
             //}
 
             //  else
@@ -287,13 +287,16 @@ namespace telekomAidatTakip
         int evilNo;
         int isilNo;
         int kanNo;
-        byte[] resim;
+        
 
         private void yeniKayitEkle()
         {
+            byte[] resim;
             try
             {
                 resim = fotografiAl(pictureBox1.Image);
+                /*
+                
                 mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
                 ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
                 birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
@@ -303,6 +306,16 @@ namespace telekomAidatTakip
                 evilNo = ((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
                 isilNo = ((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
                 kanNo = ((KeyValuePair<int, string>)cboxNufusKan.SelectedItem).Key;
+                */
+                kanNo = PRG.cboxKeyGetir(ref cboxNufusKan);// ((KeyValuePair<int, string>)cboxNufusKan.SelectedItem).Key;
+                mdr = PRG.cboxKeyGetir(ref cboxMudurluk);//((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
+                ilno = PRG.cboxKeyGetir(ref cboxIl);//((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
+                birimno = PRG.cboxKeyGetir(ref cboxBirim);//((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+                tahsilno = PRG.cboxKeyGetir(ref cboxTahsil);//((KeyValuePair<int, string>)cboxTahsil.SelectedItem).Key;
+                uyeliktipno = PRG.cboxKeyGetir(ref cboxUyelikTipi);//((KeyValuePair<int, string>)cboxUyelikTipi.SelectedItem).Key;
+                unvan = PRG.cboxKeyGetir(ref cboxUnvan);//((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key;
+                evilNo = PRG.cboxKeyGetir(ref cboxEvIl);//((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
+                isilNo = PRG.cboxKeyGetir(ref cboxIsIl);//((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
             }
             catch(Exception e)
             {
@@ -340,22 +353,17 @@ namespace telekomAidatTakip
             Database db3 = new Database();
             Database db4 = new Database();
             Database db5 = new Database();
-            try
-            {
-                kanNo = ((KeyValuePair<int, string>)cboxNufusKan.SelectedItem).Key;
-                mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
-                ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
-                birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
-                tahsilno = ((KeyValuePair<int, string>)cboxTahsil.SelectedItem).Key;
-                uyeliktipno = ((KeyValuePair<int, string>)cboxUyelikTipi.SelectedItem).Key;
-                unvan = ((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key;
-                evilNo = ((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
-                isilNo = ((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show("Boş alanları doldurunuz.");
-            }
+
+                kanNo = PRG.cboxKeyGetir(ref cboxNufusKan);// ((KeyValuePair<int, string>)cboxNufusKan.SelectedItem).Key;
+                mdr = PRG.cboxKeyGetir(ref cboxMudurluk);//((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
+                ilno = PRG.cboxKeyGetir(ref cboxIl);//((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
+                birimno = PRG.cboxKeyGetir(ref cboxBirim);//((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+                tahsilno = PRG.cboxKeyGetir(ref cboxTahsil);//((KeyValuePair<int, string>)cboxTahsil.SelectedItem).Key;
+                uyeliktipno = PRG.cboxKeyGetir(ref cboxUyelikTipi);//((KeyValuePair<int, string>)cboxUyelikTipi.SelectedItem).Key;
+                unvan = PRG.cboxKeyGetir(ref cboxUnvan);//((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key;
+                evilNo = PRG.cboxKeyGetir(ref cboxEvIl);//((KeyValuePair<int, string>)cboxEvIl.SelectedItem).Key;
+                isilNo = PRG.cboxKeyGetir(ref cboxIsIl);//((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
+            
             
             db.Sorgu("UPDATE Uyeler SET adSoyad=@0,tahsilNo=@1,unvanNo=@2,ilNo=@3,mudurlukNo=@4,birimNo=@5,uyelikTipiNo=@6,girisTarihi=@7,kayitTarihi=@8, [not]=@9 WHERE sicilNo=@10", txtAdSoyad.Text, tahsilno.ToString(), unvan.ToString(), ilno.ToString(), mdr.ToString(), birimno.ToString(), uyeliktipno.ToString(), dateGiris.Value.Date, dateKayit.Value.Date,txtNot.Text, sicilno);
             db2.Sorgu("UPDATE Adres SET ev=@0,evilNo=@1,[is]=@2,isilNo=@3,evTel=@4,istel=@5,ceptel=@6, email=@7 wHERE SİCİLNO=@8 ", txtEvAdresi.Text, evilNo, txtIsAdresi.Text, isilNo, txtEvTel.Text, txtIsTel.Text, txtCepTel.Text,txtAdresEmail.Text, sicilno);
@@ -428,6 +436,7 @@ namespace telekomAidatTakip
         {
             uyeBilgisiGuncelle();
             MessageBox.Show("Kayıt güncellendi!", "Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
 
         private void btnYeniResim_Click(object sender, EventArgs e)
@@ -500,37 +509,37 @@ namespace telekomAidatTakip
         //Buradan sonrası.. Ömer
         private void txtSicilNo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) { e.Handled = true; }
         }
 
         private void txtEvTel_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) { e.Handled = true; }
         }
 
         private void txtIsTel_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) { e.Handled = true; }
         }
 
         private void txtCepTel_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) { e.Handled = true; }
         }
 
         private void txtNufusCilt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) { e.Handled = true; }
         }
 
         private void txtNufusAile_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) { e.Handled = true; }
         }
 
         private void txtNufusSira_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) { e.Handled = true; }
         }
         
 

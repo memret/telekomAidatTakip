@@ -72,7 +72,7 @@ namespace telekomAidatTakip
         }
         public static void DoldurIlKopyala(ref ComboBox cbox, ComboBox cboxIl)
         {
-            cbox.DataSource = cboxIl.DataSource;
+            cbox.DataSource = new BindingSource(cboxIl.DataSource, null);
             cbox.DisplayMember = "Value";
             cbox.ValueMember = "Key";
             cbox.SelectedIndex = -1;

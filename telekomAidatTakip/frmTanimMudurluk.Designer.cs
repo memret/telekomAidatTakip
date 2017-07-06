@@ -59,9 +59,11 @@
             this.groupBoxMdrTnm.Controls.Add(this.label_il);
             this.groupBoxMdrTnm.Controls.Add(this.labelMdrAd);
             this.groupBoxMdrTnm.Controls.Add(this.labelMdrNo);
-            this.groupBoxMdrTnm.Location = new System.Drawing.Point(16, 17);
+            this.groupBoxMdrTnm.Location = new System.Drawing.Point(11, 11);
+            this.groupBoxMdrTnm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxMdrTnm.Name = "groupBoxMdrTnm";
-            this.groupBoxMdrTnm.Size = new System.Drawing.Size(660, 282);
+            this.groupBoxMdrTnm.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxMdrTnm.Size = new System.Drawing.Size(440, 183);
             this.groupBoxMdrTnm.TabIndex = 0;
             this.groupBoxMdrTnm.TabStop = false;
             this.groupBoxMdrTnm.Text = "Müdürlük Tanımları";
@@ -69,9 +71,10 @@
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnKaydet.Location = new System.Drawing.Point(267, 185);
+            this.btnKaydet.Location = new System.Drawing.Point(178, 120);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(129, 72);
+            this.btnKaydet.Size = new System.Drawing.Size(86, 47);
             this.btnKaydet.TabIndex = 11;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -81,9 +84,10 @@
             // 
             this.btnSil.Enabled = false;
             this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnSil.Location = new System.Drawing.Point(444, 185);
+            this.btnSil.Location = new System.Drawing.Point(296, 120);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(129, 72);
+            this.btnSil.Size = new System.Drawing.Size(86, 47);
             this.btnSil.TabIndex = 10;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
@@ -92,9 +96,10 @@
             // btnYeni
             // 
             this.btnYeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnYeni.Location = new System.Drawing.Point(94, 185);
+            this.btnYeni.Location = new System.Drawing.Point(63, 120);
+            this.btnYeni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(129, 72);
+            this.btnYeni.Size = new System.Drawing.Size(86, 47);
             this.btnYeni.TabIndex = 7;
             this.btnYeni.Text = "Yeni";
             this.btnYeni.UseVisualStyleBackColor = true;
@@ -104,61 +109,69 @@
             // 
             this.comboBox_il.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_il.FormattingEnabled = true;
-            this.comboBox_il.Location = new System.Drawing.Point(142, 123);
+            this.comboBox_il.Location = new System.Drawing.Point(95, 80);
+            this.comboBox_il.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_il.Name = "comboBox_il";
-            this.comboBox_il.Size = new System.Drawing.Size(409, 28);
+            this.comboBox_il.Size = new System.Drawing.Size(274, 21);
             this.comboBox_il.TabIndex = 6;
             this.comboBox_il.SelectedIndexChanged += new System.EventHandler(this.comboBox_il_SelectedIndexChanged);
             // 
             // txtMdrAd
             // 
-            this.txtMdrAd.Location = new System.Drawing.Point(142, 78);
+            this.txtMdrAd.Location = new System.Drawing.Point(95, 51);
+            this.txtMdrAd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMdrAd.Name = "txtMdrAd";
-            this.txtMdrAd.Size = new System.Drawing.Size(409, 26);
+            this.txtMdrAd.Size = new System.Drawing.Size(274, 20);
             this.txtMdrAd.TabIndex = 5;
             this.txtMdrAd.TextChanged += new System.EventHandler(this.txtMdrAd_TextChanged);
             // 
             // txtMdrKod
             // 
-            this.txtMdrKod.Location = new System.Drawing.Point(142, 34);
+            this.txtMdrKod.Location = new System.Drawing.Point(95, 22);
+            this.txtMdrKod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMdrKod.Name = "txtMdrKod";
-            this.txtMdrKod.Size = new System.Drawing.Size(112, 26);
+            this.txtMdrKod.Size = new System.Drawing.Size(76, 20);
             this.txtMdrKod.TabIndex = 3;
             this.txtMdrKod.TextChanged += new System.EventHandler(this.txtMdrKod_TextChanged);
             // 
             // label_il
             // 
             this.label_il.AutoSize = true;
-            this.label_il.Location = new System.Drawing.Point(22, 128);
+            this.label_il.Location = new System.Drawing.Point(15, 83);
+            this.label_il.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_il.Name = "label_il";
-            this.label_il.Size = new System.Drawing.Size(21, 20);
+            this.label_il.Size = new System.Drawing.Size(15, 13);
             this.label_il.TabIndex = 2;
             this.label_il.Text = "İl:";
             // 
             // labelMdrAd
             // 
             this.labelMdrAd.AutoSize = true;
-            this.labelMdrAd.Location = new System.Drawing.Point(22, 83);
+            this.labelMdrAd.Location = new System.Drawing.Point(15, 54);
+            this.labelMdrAd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMdrAd.Name = "labelMdrAd";
-            this.labelMdrAd.Size = new System.Drawing.Size(78, 20);
+            this.labelMdrAd.Size = new System.Drawing.Size(54, 13);
             this.labelMdrAd.TabIndex = 1;
             this.labelMdrAd.Text = "Müdürlük:";
             // 
             // labelMdrNo
             // 
             this.labelMdrNo.AutoSize = true;
-            this.labelMdrNo.Location = new System.Drawing.Point(22, 38);
+            this.labelMdrNo.Location = new System.Drawing.Point(15, 25);
+            this.labelMdrNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMdrNo.Name = "labelMdrNo";
-            this.labelMdrNo.Size = new System.Drawing.Size(102, 20);
+            this.labelMdrNo.Size = new System.Drawing.Size(71, 13);
             this.labelMdrNo.TabIndex = 0;
             this.labelMdrNo.Text = "Müdürlük No:";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listvMdr);
-            this.groupBox2.Location = new System.Drawing.Point(16, 305);
+            this.groupBox2.Location = new System.Drawing.Point(11, 198);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(660, 315);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(440, 205);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kayıtlı Müdürlükler";
@@ -173,10 +186,9 @@
             this.listvMdr.Cursor = System.Windows.Forms.Cursors.Default;
             this.listvMdr.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listvMdr.FullRowSelect = true;
-            this.listvMdr.Location = new System.Drawing.Point(3, 22);
-            this.listvMdr.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listvMdr.Location = new System.Drawing.Point(2, 15);
             this.listvMdr.Name = "listvMdr";
-            this.listvMdr.Size = new System.Drawing.Size(654, 290);
+            this.listvMdr.Size = new System.Drawing.Size(436, 188);
             this.listvMdr.TabIndex = 1;
             this.listvMdr.UseCompatibleStateImageBehavior = false;
             this.listvMdr.View = System.Windows.Forms.View.Details;
@@ -186,7 +198,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Müdürlük No";
-            this.columnHeader1.Width = 125;
+            this.columnHeader1.Width = 84;
             // 
             // columnHeader2
             // 
@@ -196,7 +208,7 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "İl No";
-            this.columnHeader4.Width = 125;
+            this.columnHeader4.Width = 62;
             // 
             // columnHeader3
             // 
@@ -205,11 +217,12 @@
             // 
             // frmTanimMudurluk
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 638);
+            this.ClientSize = new System.Drawing.Size(463, 415);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxMdrTnm);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmTanimMudurluk";
             this.Text = "Müdürlük Tanımlama";
             this.Load += new System.EventHandler(this.frmTanimMudurluk_Load);

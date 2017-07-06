@@ -18,24 +18,7 @@ namespace telekomAidatTakip
             PRG.DoldurIl(ref cboxIl);
 
         }
-        private void cbxmudurlukdoldur()
-        {
-            if (cboxIl.SelectedIndex != -1)
-            {
-                int ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
-                PRG.DoldurMudurluk(ref cboxMudurluk, ilno.ToString());
-            }
-        }
-
-        private void cbxBirimdoldur()
-        {
-            if (cboxMudurluk.SelectedIndex != -1)
-            {
-                int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
-                PRG.DoldurBirim(ref cboxBirim, mdr.ToString());
-            }
-
-        }
+        
         
         public frmAidatMiktar()
         {
@@ -49,32 +32,13 @@ namespace telekomAidatTakip
 
             cboxBirim.Enabled = false;
             cboxMudurluk.Enabled = false;
-            btnKaydet.Visible = false;
-            button1.Visible = true;
+            btnGuncelle.Visible = false;
+            btnKaydet.Visible = true;
+            frmAidatMiktar_Resize(this, null);
         }
 
 
         private void btnKaydet_Click(object sender, EventArgs e)
-        {
-            if (cboxIl.SelectedIndex != -1 && cboxBirim.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1 && txtAidatMiktari.ToString() != string.Empty)
-            {
-                Database db = new Database();
-                int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
-                int ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
-                int birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
-                db.Sorgu("update AidatMiktar set aidat=@0 where  birimNo=@1", txtAidatMiktari.Text, birimno.ToString());
-                MessageBox.Show("Aidat bilgisi güncellendi!");
-                cboxIl.SelectedIndex = -1;
-                cboxMudurluk.SelectedIndex = -1;
-                cboxBirim.SelectedIndex = -1;
-                txtAidatMiktari.Text = string.Empty;
-                db.Kapat();
-            }
-            else
-                MessageBox.Show("Lütfen boş alanları doldururuz!");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
         {
             if (cboxIl.SelectedIndex != -1 && cboxBirim.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1 && txtAidatMiktari.Text != string.Empty)
             {
@@ -99,58 +63,104 @@ namespace telekomAidatTakip
             cboxMudurluk.SelectedIndex = -1;
             cboxBirim.SelectedIndex = -1;
             txtAidatMiktari.Text = string.Empty;
-            button1.Visible = true;
-            btnKaydet.Visible = false;
+            btnKaydet.Visible = true;
+            btnGuncelle.Visible = false;
+            cboxBirim.DataSource = null;
+            cboxMudurluk.DataSource = null;
         }
 
         private void frmAidatMiktar_Resize(object sender, EventArgs e)
         {
-            grpbxAidatMiktar.Width = this.Width - 40;
-            grpbxAidatMiktar.Height = this.Height - 95;
+            grpbxAidatMiktar.Width = this.Width - 64;
+            grpbxAidatMiktar.Height = this.Height - 94;
         }
 
         private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cboxMudurluk.SelectedIndex != -1)
+            int mdr = PRG.cboxKeyGetir(ref cboxMudurluk);
+            if (mdr != -1)
             {
-                cbxBirimdoldur();
+                PRG.DoldurBirim(ref cboxBirim, mdr.ToString());
                 cboxBirim.Enabled = true;
-                cboxBirim.SelectedIndex = -1;
-                txtAidatMiktari.Text = string.Empty;
             }
+            else
+                cboxBirim.DataSource = null;
+            cboxBirim.SelectedIndex = -1;
+            txtAidatMiktari.Text = string.Empty;
+            txtAidatMiktari.Enabled = false;
+            btnKaydet.Enabled = false;
+            btnGuncelle.Enabled = false;
         }
 
         private void cboxIl_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cboxIl.SelectedIndex != -1)
+            int ilno = PRG.cboxKeyGetir(ref cboxIl);
+            if (ilno != -1)
             {
-                cbxmudurlukdoldur();
+                PRG.DoldurMudurluk(ref cboxMudurluk, ilno.ToString());
                 cboxMudurluk.Enabled = true;
-                cboxBirim.Enabled = false;
-                cboxMudurluk.SelectedIndex = -1;
-                cboxBirim.SelectedIndex = -1;
-                txtAidatMiktari.Text = string.Empty;
+                
             }
+            cboxBirim.Enabled = false;
+            cboxMudurluk.SelectedIndex = -1;
+            cboxBirim.SelectedIndex = -1;
+            txtAidatMiktari.Text = string.Empty;
+            txtAidatMiktari.Enabled = false;
+            btnKaydet.Enabled = false;
+            btnGuncelle.Enabled = false;
         }
 
         private void cboxBirim_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cboxBirim.SelectedIndex != -1 && cboxIl.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1)
+            int birimno = PRG.cboxKeyGetir(ref cboxBirim);
+            if (birimno != -1 && cboxIl.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1)
             {
-                {
-                    btnKaydet.Visible = true;
-                    button1.Visible = true;
-                    Database db = new Database();
-                    int birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
-                    var data = db.DataOku("SELECT * FROM aidatmiktar WHERE birimno=@0 ", birimno.ToString());
-                    while (data.Read())
-                    {
-                        txtAidatMiktari.Text = data["aidat"].ToString();
-                    }
+                txtAidatMiktari.Enabled = true;
+                Database db = new Database();
 
-                    db.Kapat();
+                var data = db.DataOku("SELECT * FROM aidatmiktar WHERE birimno=@0 ", birimno);
+                while (data.Read())
+                {
+                    txtAidatMiktari.Text = data["aidat"].ToString();
+                }
+
+                db.Kapat();
+                if (txtAidatMiktari.Text == string.Empty)
+                {
+                    btnGuncelle.Visible = false;
+                    btnKaydet.Enabled = true;
+                    btnKaydet.Visible = true;
+                }
+                else
+                {
+                    btnKaydet.Visible = false;
+                    btnGuncelle.Visible = true;
+                    btnGuncelle.Enabled = true;
                 }
             }
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            if (cboxIl.SelectedIndex != -1 && cboxBirim.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1 && txtAidatMiktari.Text != string.Empty)
+            {
+                Database db = new Database();
+                int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
+                int ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
+                int birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+                db.Sorgu("update AidatMiktar set aidat=@0 where  birimNo=@1", txtAidatMiktari.Text, birimno.ToString());
+                MessageBox.Show("Aidat bilgisi güncellendi!");
+                cboxIl.SelectedIndex = -1;
+                cboxMudurluk.SelectedIndex = -1;
+                cboxBirim.SelectedIndex = -1;
+                txtAidatMiktari.Text = string.Empty;
+                txtAidatMiktari.Enabled = false;
+                btnKaydet.Enabled = false;
+                btnGuncelle.Enabled = false;
+                db.Kapat();
+            }
+            else
+                MessageBox.Show("Lütfen boş alanları doldururuz!");
         }
     }
 }

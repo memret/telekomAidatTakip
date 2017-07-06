@@ -165,15 +165,43 @@ namespace telekomAidatTakip
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (btnSil.Enabled)
-            {
-                DialogResult dialogResult = MessageBox.Show("Seçili müdürlük ve altında kayıtlı birimler silinecek. Emin misiniz?", "", MessageBoxButtons.YesNo);
+                Database db1 = new Database();
+                string countBirim = "0";
+                var data = db1.DataOku("SELECT COUNT (birimNo) 'count' FROM birim WHERE mudurlukNo = @0", txtMdrKod.Text);
+                if (data.Read())
+                {
+                    countBirim = data["count"].ToString();
+                }
+                Database db2 = new Database();
+                string countKisi = "0";
+                var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE mudurlukNo = @0", txtMdrKod.Text);
+                if (data2.Read())
+                {
+                    countKisi = data2["count"].ToString();
+                }
+
+                Database db3 = new Database();
+                string countAidat = "0";
+                var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.mudurlukNo = @0", txtMdrKod.Text);
+                if (data3.Read())
+                {
+                    countAidat = data3["count"].ToString();
+                }
+
+                DialogResult dialogResult = MessageBox.Show("Seçili müdürlük ve altında kayıtlı birimler silinecek.\nSilinecek birim sayısı: "+countBirim+"\nSilinecek kişi sayısı: "+countKisi+ "\nSilinecek aidat kaydı: "+countAidat+" \nEmin misiniz?", "Müdürlük Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
                 if (dialogResult == DialogResult.Yes)
                 {
                     if (txtMdrKod.Text != string.Empty)
                     {
                         Database db = new Database();
+                        //Database db4 = new Database();
+                        //Database db5 = new Database();
+                        //Database db6 = new Database();
                         db.Sorgu("DELETE FROM Mudurluk Where mudurlukNo = @0", txtMdrKod.Text);
+                        //db4.Sorgu("DELETE FROM Birim WHERE mudurlukNo = @0", txtMdrKod.Text);
+                        //db5.Sorgu("DELETE FROM Uyeler WHERE mudurlukNo = @0", txtMdrKod.Text);
+                        ////db6.Sorgu("DELETE FROM AidatLog a JOIN Uyeler u on u.sicilNo=a.sicilNo WHERE u.mudurlukNo = @0", txtMdrKod.Text);
                         listvMdr.Items.Clear();
                         kayitliMdrDoldur();
                     }
@@ -181,7 +209,7 @@ namespace telekomAidatTakip
 
                 else if (dialogResult == DialogResult.Cancel)
                     return;
-            }
+            
         }
 
         private void listvMdr_MouseDoubleClick(object sender, MouseEventArgs e)
