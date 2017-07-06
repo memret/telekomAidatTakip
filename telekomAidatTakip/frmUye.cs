@@ -159,8 +159,8 @@ namespace telekomAidatTakip
                 cboxBirim.SelectedItem = PRG.cboxIndexBul(ref cboxBirim, data["birimno"]);
                 cboxUyelikTipi.SelectedItem = PRG.cboxIndexBul(ref cboxUyelikTipi, data["uyeliktipino"]);
 
-                //dateGiris.Value = Convert.ToDateTime(data["girisTarihi"]);
-                //dateKayit.Value = Convert.ToDateTime(data["kayitTarihi"]);
+                dateGiris.Value = Convert.ToDateTime(data["girisTarihi"]);
+                dateKayit.Value = Convert.ToDateTime(data["kayitTarihi"]);
             }
             db.Kapat();
         }
