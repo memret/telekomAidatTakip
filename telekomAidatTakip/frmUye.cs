@@ -111,7 +111,7 @@ namespace telekomAidatTakip
                 txtNufusAnne.Text = data["anne"].ToString();
                 txtNufusDogumYeri.Text = data["dogumyeri"].ToString();
                 dateNufusDogum.Value = Convert.ToDateTime(data["dogumTarihi"]);
-                //cboxNufusMedeni.SelectedIndex = Convert.ToInt32(data["medeniHal"]);
+                cboxNufusMedeni.SelectedIndex = Convert.ToInt32(data["medeniHali"]);
                 cboxNufusKan.SelectedItem = PRG.cboxIndexBul(ref cboxNufusKan, data["kangrubuno"]);
                 cboxNufusIl.SelectedItem = PRG.cboxIndexBul(ref cboxNufusIl, data["ilno"]);
                 txtNufusIlce.Text = data["ilce"].ToString();
