@@ -200,7 +200,8 @@ namespace telekomAidatTakip
                         
                         listvMdr.Items.Clear();
                         kayitliMdrDoldur();
-                    }
+                        MessageBox.Show("Müdürlük silindi!", "Müdürlük Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 }
 
                 else if (dialogResult == DialogResult.Cancel)

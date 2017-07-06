@@ -156,6 +156,7 @@ namespace telekomAidatTakip
                 listvil.Items.Clear();
                 listeDoldur();
                 db.Kapat();
+                MessageBox.Show("Seçili birim silindi!", "Birim Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (dialogResult == DialogResult.Cancel)
                 return;
