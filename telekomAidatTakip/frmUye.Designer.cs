@@ -212,9 +212,9 @@
             // 
             // btnResimSil
             // 
-            this.btnResimSil.Location = new System.Drawing.Point(145, 263);
+            this.btnResimSil.Location = new System.Drawing.Point(152, 274);
             this.btnResimSil.Name = "btnResimSil";
-            this.btnResimSil.Size = new System.Drawing.Size(92, 27);
+            this.btnResimSil.Size = new System.Drawing.Size(85, 27);
             this.btnResimSil.TabIndex = 12;
             this.btnResimSil.Text = "Resim Sİl";
             this.btnResimSil.UseVisualStyleBackColor = true;
@@ -222,9 +222,9 @@
             // 
             // btnYeniResim
             // 
-            this.btnYeniResim.Location = new System.Drawing.Point(59, 263);
+            this.btnYeniResim.Location = new System.Drawing.Point(59, 274);
             this.btnYeniResim.Name = "btnYeniResim";
-            this.btnYeniResim.Size = new System.Drawing.Size(89, 27);
+            this.btnYeniResim.Size = new System.Drawing.Size(83, 27);
             this.btnYeniResim.TabIndex = 11;
             this.btnYeniResim.Text = "Yeni Resim";
             this.btnYeniResim.UseVisualStyleBackColor = true;
@@ -234,7 +234,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(59, 50);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(178, 240);
+            this.pictureBox1.Size = new System.Drawing.Size(178, 217);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
