@@ -26,21 +26,16 @@ namespace telekomAidatTakip
             cboxBirim.SelectedIndex = -1;
             cboxMudurluk.Enabled = false;
             cboxBirim.Enabled = false;
+            cboxil.Enabled = false;
+            checkBirim.Enabled = false;
+            checkMudurluk.Enabled = false;
         }
 
-               
-        private void cboxil_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+          
 
         
         //veri yüklenince seçili gelmese iyi olur
-
-        private void cboxMudurluk_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void btnListele_Click(object sender, EventArgs e)
         {
@@ -65,6 +60,8 @@ namespace telekomAidatTakip
                     paramTemp = new SqlParameter("@il", ilNo);
                     paramList.Add(paramTemp);
                 }
+                
+
                 if (checkMudurluk.Checked)
                 {
                     if (cboxMudurluk.SelectedIndex == -1)
@@ -146,14 +143,23 @@ namespace telekomAidatTakip
             if (cboxil.SelectedIndex != -1)
             {
                 PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxil.SelectedItem).Key.ToString());
+                checkMudurluk.Enabled = true;
+                cboxMudurluk.Enabled = false;
             }
         }
 
         private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cboxMudurluk.SelectedIndex != -1)
+            int mdr = PRG.cboxKeyGetir(ref cboxMudurluk);
+            if (mdr != -1)
             {
-                PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
+                PRG.DoldurBirim(ref cboxBirim, mdr.ToString());
+                cboxBirim.Enabled = false;
+                checkBirim.Enabled = true;
+            }
+            else
+            {
+                checkBirim.Enabled = false;
             }
         }
 
@@ -171,6 +177,81 @@ namespace telekomAidatTakip
                 }
 
             
+        }
+
+        private void checkIl_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkIl.Checked)
+            {
+                PRG.DoldurIl(ref cboxil);
+                cboxMudurluk.Enabled = false;
+                if (cboxil.SelectedIndex == -1)
+                {
+                    checkMudurluk.Enabled = false;
+                    cboxMudurluk.Enabled = false;
+                }
+                   
+                else
+                {
+                    checkMudurluk.Enabled = true;
+                    cboxMudurluk.Enabled = false;
+                }
+                    
+            }
+            else 
+            {
+                cboxil.Enabled = false;
+                cboxil.SelectedIndex = -1;
+                cboxMudurluk.Enabled = false;
+                checkMudurluk.Checked = false;
+            }
+            
+        }
+
+        private void checkMudurluk_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkMudurluk.Checked)
+            {
+                cboxil_SelectionChangeCommitted(this, null);
+                cboxMudurluk.Enabled = true;
+                if (cboxMudurluk.SelectedIndex == -1)
+                {
+                    checkBirim.Enabled = false;
+                    cboxBirim.Enabled = false;
+                }
+
+                else
+                {
+                    checkBirim.Enabled = true;
+                    cboxBirim.Enabled = false;
+                }
+                
+            }
+            else
+            {
+                cboxBirim.Enabled = false;
+                cboxMudurluk.Enabled = false;
+                cboxMudurluk.SelectedIndex = -1;
+                checkBirim.Enabled = false;
+                checkBirim.Checked = false;
+                
+            }
+        }
+
+        private void checkBirim_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBirim.Checked)
+            {
+                cboxMudurluk_SelectionChangeCommitted(this, null);
+                cboxBirim.Enabled = true;
+            }
+            else
+            {
+                cboxBirim.SelectedIndex = -1;
+                cboxBirim.Enabled = false;
+                
+               
+            }
         }
     }
 
