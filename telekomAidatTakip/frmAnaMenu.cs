@@ -25,27 +25,27 @@ namespace telekomAidatTakip
         }
 
         #region Menu işlemleri
-        frmTanimIl tanimil = new frmTanimIl();
-        frmTanimBirim tanimBirim = new frmTanimBirim();
-        frmTanimMudurluk tanimMudurluk = new frmTanimMudurluk();
-        frmTanimUnvan tanimUnvan = new frmTanimUnvan();
-        frmTanimTahsil tanimTahsil = new frmTanimTahsil();
-        frmTanimUyelikIptal tanimUyelikIptal = new frmTanimUyelikIptal();
-        frmTanimOzelGunler tanimOzelGunler = new frmTanimOzelGunler();
+        frmTanimIl tanimil;
+        frmTanimBirim tanimBirim;
+        frmTanimMudurluk tanimMudurluk;
+        frmTanimUnvan tanimUnvan;
+        frmTanimTahsil tanimTahsil;
+        frmTanimUyelikIptal tanimUyelikIptal;
+        frmTanimOzelGunler tanimOzelGunler;
 
-        frmRaporIl raporIl = new frmRaporIl();
-        frmRaporUye raporUye = new frmRaporUye();
-        frmRaporAidat raporAidat = new frmRaporAidat();
+        frmRaporIl raporIl;
+        frmRaporUye raporUye;
+        frmRaporAidat raporAidat;
 
-        frmAidatMiktar aidatMiktar = new frmAidatMiktar();
-        frmAidatToplu aidatToplu = new frmAidatToplu();
+        frmAidatMiktar aidatMiktar;
+        frmAidatToplu aidatToplu ;
 
-        frmUye uye = new frmUye();
+        frmUye uye;
 
-        frmYedekleme yedekleme = new frmYedekleme();
+        frmYedekleme yedekleme;
         private void ilTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tanimil.IsDisposed)
+            if (tanimil == null || tanimil.IsDisposed)
             {
                 tanimil = new frmTanimIl();
                 tanimil.MdiParent = this;
@@ -61,7 +61,7 @@ namespace telekomAidatTakip
 
         private void birimTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tanimBirim.IsDisposed)
+            if (tanimBirim == null || tanimBirim.IsDisposed)
             {
                 tanimBirim = new frmTanimBirim();
                 tanimBirim.MdiParent = this;
@@ -77,7 +77,7 @@ namespace telekomAidatTakip
 
         private void müdürlükTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tanimMudurluk.IsDisposed)
+            if (tanimMudurluk == null || tanimMudurluk.IsDisposed)
             {
                 tanimMudurluk = new frmTanimMudurluk();
                 tanimMudurluk.MdiParent = this;
@@ -92,7 +92,7 @@ namespace telekomAidatTakip
         }
         private void üyeFormuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (uye.IsDisposed)
+            if (uye == null || uye.IsDisposed)
             {
                 uye = new frmUye();
                 uye.MdiParent = this;
@@ -108,7 +108,7 @@ namespace telekomAidatTakip
 
         private void ünvanTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tanimUnvan.IsDisposed)
+            if (tanimUnvan == null || tanimUnvan.IsDisposed)
             {
                 tanimUnvan = new frmTanimUnvan();
                 tanimUnvan.MdiParent = this;
@@ -124,7 +124,7 @@ namespace telekomAidatTakip
 
         private void tahsilTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tanimTahsil.IsDisposed)
+            if (tanimTahsil == null || tanimTahsil.IsDisposed)
             {
                 tanimTahsil = new frmTanimTahsil();
                 tanimTahsil.MdiParent = this;
@@ -140,7 +140,7 @@ namespace telekomAidatTakip
 
         private void üyelikİptalNedeniToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tanimUyelikIptal.IsDisposed)
+            if (tanimUyelikIptal == null || tanimUyelikIptal.IsDisposed)
             {
                 tanimUyelikIptal = new frmTanimUyelikIptal();
                 tanimUyelikIptal.MdiParent = this;
@@ -156,7 +156,7 @@ namespace telekomAidatTakip
 
         private void üyeRaporuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (raporUye.IsDisposed)
+            if (raporUye == null || raporUye.IsDisposed)
             {
                 raporUye = new frmRaporUye();
                 raporUye.MdiParent = this;
@@ -172,7 +172,7 @@ namespace telekomAidatTakip
 
         private void ilRaporuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (raporIl.IsDisposed)
+            if (raporIl == null || raporIl.IsDisposed)
             {
                 raporIl = new frmRaporIl();
                 raporIl.MdiParent = this;
@@ -193,7 +193,7 @@ namespace telekomAidatTakip
 
         private void aidatMiktarıTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (aidatMiktar.IsDisposed)
+            if (aidatMiktar == null || aidatMiktar.IsDisposed)
             {
                 aidatMiktar = new frmAidatMiktar();
                 aidatMiktar.MdiParent = this;
@@ -209,7 +209,7 @@ namespace telekomAidatTakip
 
         private void topluAidatÖdemesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (aidatToplu.IsDisposed)
+            if (aidatToplu == null || aidatToplu.IsDisposed)
             {
                 aidatToplu = new frmAidatToplu();
                 aidatToplu.MdiParent = this;
@@ -225,7 +225,7 @@ namespace telekomAidatTakip
 
         private void yedeklemeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (yedekleme.IsDisposed)
+            if (yedekleme == null || yedekleme.IsDisposed)
             {
                 yedekleme = new frmYedekleme();
                 yedekleme.MdiParent = this;
@@ -241,7 +241,7 @@ namespace telekomAidatTakip
 
         private void aidatRaporuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (raporAidat.IsDisposed)
+            if (raporAidat == null || raporAidat.IsDisposed)
             {
                 raporAidat = new frmRaporAidat();
                 raporAidat.MdiParent = this;
@@ -261,7 +261,7 @@ namespace telekomAidatTakip
 
         private void özelGünlerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tanimOzelGunler.IsDisposed)
+            if (tanimOzelGunler == null || tanimOzelGunler.IsDisposed)
             {
                 tanimOzelGunler = new frmTanimOzelGunler();
                 tanimOzelGunler.MdiParent = this;
