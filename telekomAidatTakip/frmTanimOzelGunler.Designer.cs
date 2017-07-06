@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gboxOzelGunTanimlari = new System.Windows.Forms.GroupBox();
+            this.txtGunNo = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnYeni = new System.Windows.Forms.Button();
@@ -47,15 +49,13 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtGünNo = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.gboxOzelGunTanimlari.SuspendLayout();
             this.gboxTabloGosterimi.SuspendLayout();
             this.SuspendLayout();
             // 
             // gboxOzelGunTanimlari
             // 
-            this.gboxOzelGunTanimlari.Controls.Add(this.txtGünNo);
+            this.gboxOzelGunTanimlari.Controls.Add(this.txtGunNo);
             this.gboxOzelGunTanimlari.Controls.Add(this.label1);
             this.gboxOzelGunTanimlari.Controls.Add(this.btnSil);
             this.gboxOzelGunTanimlari.Controls.Add(this.btnKaydet);
@@ -76,6 +76,25 @@
             this.gboxOzelGunTanimlari.TabIndex = 0;
             this.gboxOzelGunTanimlari.TabStop = false;
             this.gboxOzelGunTanimlari.Text = "Özel Gün Tanımları";
+            // 
+            // txtGunNo
+            // 
+            this.txtGunNo.Enabled = false;
+            this.txtGunNo.Location = new System.Drawing.Point(156, 31);
+            this.txtGunNo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGunNo.Name = "txtGunNo";
+            this.txtGunNo.Size = new System.Drawing.Size(384, 22);
+            this.txtGunNo.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(46, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 17);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Özel Gün No :";
             // 
             // btnSil
             // 
@@ -207,6 +226,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(4, 26);
             this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
@@ -214,6 +234,7 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             // 
             // columnHeader1
             // 
@@ -239,25 +260,6 @@
             // 
             this.columnHeader5.Text = "Yorum";
             this.columnHeader5.Width = 185;
-            // 
-            // txtGünNo
-            // 
-            this.txtGünNo.Enabled = false;
-            this.txtGünNo.Location = new System.Drawing.Point(156, 31);
-            this.txtGünNo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGünNo.Name = "txtGünNo";
-            this.txtGünNo.Size = new System.Drawing.Size(384, 22);
-            this.txtGünNo.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 17);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Özel Gün No :";
             // 
             // frmTanimOzelGunler
             // 
@@ -298,7 +300,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.MaskedTextBox txtGünNo;
+        private System.Windows.Forms.MaskedTextBox txtGunNo;
         private System.Windows.Forms.Label label1;
     }
 }

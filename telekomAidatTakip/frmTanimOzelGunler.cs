@@ -43,6 +43,7 @@ namespace telekomAidatTakip
             }
 
             txtBaslik.Enabled = false;
+            dateTimeTarih.Enabled = false;
             txtMsj.Enabled = false;
             txtYorum.Enabled = false;
             btnSil.Enabled = false;
@@ -67,6 +68,7 @@ namespace telekomAidatTakip
                 txtMsj.Text = string.Empty;
                 txtYorum.Text = string.Empty;
                 txtBaslik.Enabled = true;
+                dateTimeTarih.Enabled = true;
                 txtMsj.Enabled = true;
                 txtYorum.Enabled = true;
                 
@@ -88,6 +90,7 @@ namespace telekomAidatTakip
                     txtBaslik.Enabled = false;
                     txtMsj.Enabled = false;
                     txtYorum.Enabled = false;
+                    dateTimeTarih.Enabled = false;
                     btnYeni.Text = "Yeni";
                     tabloDoldur();
                     txtBaslik.Text = string.Empty;
@@ -115,6 +118,7 @@ namespace telekomAidatTakip
                 txtBaslik.Text = string.Empty;
                 txtMsj.Text = string.Empty;
                 txtYorum.Text = string.Empty;
+                dateTimeTarih.Enabled = false;
                 txtBaslik.Enabled = false;
                 txtMsj.Enabled = false;
                 txtYorum.Enabled = false;
@@ -154,6 +158,49 @@ namespace telekomAidatTakip
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            DialogResult dialogresult = MessageBox.Show("Seçili müdürlük ve altında kayıtlı birimler silinecek. Emin misiniz?", "", MessageBoxButtons.YesNo);
+            if (dialogresult == DialogResult.Yes)
+            {
+                if (txtGunNo.Text != string.Empty)
+                {
+
+                    Database db = new Database();
+                    db.Sorgu("DELETE FROM OzelGunler Where ozelGunNo = @0", txtGunNo.Text);
+                    listView1.Items.Clear();
+                    tabloDoldur();
+
+                }
+
+            }
+            else if (dialogresult == DialogResult.Cancel)
+                return;
+        }
+
+        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Database db = new Database();
+            String gunNo = listView1.SelectedItems[0].SubItems[0].Text;
+
+            var data = db.DataOku("SELECT * FROM OzelGunler gun where gun.ozelGunNo =@0 ", gunNo);
+
+            if (data.Read())
+            {
+                txtGunNo.Text = data["ozelGunNo"].ToString();
+                txtBaslik.Text = data["baslik"].ToString();
+                dateTimeTarih.Text = data["tarih"].ToString();
+                txtMsj.Text = data["mesaj"].ToString();
+                txtBaslik.Text = data["yorum"].ToString();
+            }
+
+            btnKaydet.Enabled = true;
+            btnSil.Enabled = true;
+            txtGunNo.Enabled = false;
+            txtBaslik.Enabled = true;
+            txtMsj.Enabled = true;
+            txtYorum.Enabled = true;
+            dateTimeTarih.Enabled = true;
+            
+            btnYeni.Text = "Yeni";
 
         }
     }
