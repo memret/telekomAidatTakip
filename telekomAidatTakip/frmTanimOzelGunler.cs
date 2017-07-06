@@ -67,6 +67,7 @@ namespace telekomAidatTakip
                 txtBaslik.Text = string.Empty;
                 txtMsj.Text = string.Empty;
                 txtYorum.Text = string.Empty;
+                txtGunNo.Text = string.Empty;
                 txtBaslik.Enabled = true;
                 dateTimeTarih.Enabled = true;
                 txtMsj.Enabled = true;
@@ -81,11 +82,11 @@ namespace telekomAidatTakip
 
                 if (txtBaslik.Text != string.Empty && txtMsj.Text != string.Empty) //yeni kayıt eklemek için bu iki verinin boş olmaması gerekiyor
                 {
-                    DateTime dt = this.dateTimeTarih.Value.Date;
+                    //DateTime dt = this.dateTimeTarih.Value.Date;
                     Database db = new Database();
                     
-                    System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@3", dt);
-                    db.Sorgu("insert into OzelGunler(baslik,mesaj,yorum,tarih) values (@0,@1,@2,@3)", param, txtBaslik.Text, txtMsj.Text, txtYorum.Text);
+                    //System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@3", dt);
+                    db.Sorgu("insert into OzelGunler(baslik,mesaj,yorum,tarih) values (@0,@1,@2,@3)", txtBaslik.Text, txtMsj.Text, txtYorum.Text, this.dateTimeTarih.Value.Date);
 
                     txtBaslik.Enabled = false;
                     txtMsj.Enabled = false;
@@ -93,6 +94,7 @@ namespace telekomAidatTakip
                     dateTimeTarih.Enabled = false;
                     btnYeni.Text = "Yeni";
                     tabloDoldur();
+                    txtGunNo.Text = string.Empty;
                     txtBaslik.Text = string.Empty;
                     txtMsj.Text = string.Empty;
                     txtYorum.Text = string.Empty;
@@ -108,16 +110,17 @@ namespace telekomAidatTakip
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            /*if (txtBaslik.Text != string.Empty && txtMsj.Text != string.Empty)
+            if (txtBaslik.Text != string.Empty && txtMsj.Text != string.Empty)
             {
-                DateTime dt = this.dateTimeTarih.Value.Date;
+                //DateTime dt = this.dateTimeTarih.Value.Date;
                 Database db = new Database();
-                System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@3", dt);
-                db.Sorgu("update OzelGunler set baslik=@0, mesaj=@1, yorum=@2, tarih=@3 where ozelGunNo=@4", param, txtBaslik.Text, txtMsj.Text, txtYorum.Text, BURAYA OzelgunNo'yu NASIL YAZACAM YA :'D);
+               // System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@3", dt);
+                db.Sorgu("update OzelGunler set baslik=@0, mesaj=@1, yorum=@2, tarih=@3 where ozelGunNo=@4", txtBaslik.Text, txtMsj.Text, txtYorum.Text, this.dateTimeTarih.Value.Date, txtGunNo.Text);
 
                 txtBaslik.Text = string.Empty;
                 txtMsj.Text = string.Empty;
                 txtYorum.Text = string.Empty;
+                txtGunNo.Text = string.Empty;
                 dateTimeTarih.Enabled = false;
                 txtBaslik.Enabled = false;
                 txtMsj.Enabled = false;
@@ -126,7 +129,7 @@ namespace telekomAidatTakip
                 btnSil.Enabled = false;
                 listView1.Items.Clear();
                 tabloDoldur();
-            }*/
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -189,7 +192,7 @@ namespace telekomAidatTakip
                 txtBaslik.Text = data["baslik"].ToString();
                 dateTimeTarih.Text = data["tarih"].ToString();
                 txtMsj.Text = data["mesaj"].ToString();
-                txtBaslik.Text = data["yorum"].ToString();
+                txtYorum.Text = data["yorum"].ToString();
             }
 
             btnKaydet.Enabled = true;
