@@ -146,6 +146,7 @@ namespace telekomAidatTakip
                 if(!checkMudurluk.Checked)
                     cboxMudurluk.Enabled = false;
                 checkMudurluk.Enabled = true;
+                
             }
             else
             {
@@ -262,6 +263,14 @@ namespace telekomAidatTakip
                 cboxBirim.Enabled = false;
                 
                
+            }
+        }
+
+        private void cboxil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkMudurluk.Checked)
+            {
+                checkMudurluk.Checked = false;
             }
         }
     }
