@@ -132,7 +132,7 @@ namespace telekomAidatTakip
                 {
                     countAidatLog = data4["count"].ToString();
                 }
-                    DialogResult dialogresult = MessageBox.Show(countMudurluk+ " Müdürlük \n"+countBirim+" Birim \n"+countUye+" Üye\n"+countAidatLog+" aidat bilgisi seçili ile ait.\n"+"Seçili il ve alt verileri silinecek. Emin misiniz?", "Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult dialogresult = MessageBox.Show("Bu işlem ile sadece ili değil, onun altında kayıtlı olan müdürlükleri, birimleri, kişileri ve aidat kayıtlarını da sileceksiniz.\n"+ " \nSilinecek Müdürlük Sayısı: " + countMudurluk +"\nSilinecek Birim Sayısı: " + countBirim  +"\nSilinecek Üye Sayısı:" + countUye +"\nSilinecek Aidat Kaydı:" +countAidatLog+ "\n\nDevam etmek istediğinize emin misiniz?", "İl Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dialogresult == DialogResult.Yes)
                 {
