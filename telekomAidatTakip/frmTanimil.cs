@@ -19,6 +19,7 @@ namespace telekomAidatTakip
 
         private void frmTanimil_Load(object sender, EventArgs e)
         {
+            frmTanimIl_Resize(this, null);
             IlListesiniDoldur();
             
         }
