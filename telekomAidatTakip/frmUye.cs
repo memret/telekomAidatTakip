@@ -47,17 +47,23 @@ namespace telekomAidatTakip
                 btnKaydet.Visible = true;
             }
         }
+
         private void DoldurKomple()
         {
             PRG.DoldurTahsil(ref cboxTahsil);
             PRG.DoldurUnvan(ref cboxUnvan);
             PRG.DoldurIl(ref cboxIl);
-            PRG.DoldurIl(ref cboxEvIl);
-            PRG.DoldurIl(ref cboxIsIl);
+
+            //3 kere daha aynı sql sorgusunu yapmasın diye cboxilden çekiyoruz verileri
+            PRG.DoldurIlKopyala(ref cboxEvIl, cboxIl);
+            PRG.DoldurIlKopyala(ref cboxIsIl, cboxIl);
+            PRG.DoldurIlKopyala(ref cboxNufusIl, cboxIl);
+            //PRG.DoldurIl(ref cboxEvIl);
+            //PRG.DoldurIl(ref cboxIsIl);
+            //PRG.DoldurIl(ref cboxNufusIl);
 
             PRG.DoldurUyelikTipi(ref cboxUyelikTipi);
             PRG.DoldurKanGrubu(ref cboxNufusKan);
-            PRG.DoldurIl(ref cboxNufusIl);
 
 
 
