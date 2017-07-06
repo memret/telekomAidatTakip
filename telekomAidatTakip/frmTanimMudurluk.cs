@@ -195,13 +195,9 @@ namespace telekomAidatTakip
                     if (txtMdrKod.Text != string.Empty)
                     {
                         Database db = new Database();
-                        //Database db4 = new Database();
-                        //Database db5 = new Database();
-                        //Database db6 = new Database();
+                        
                         db.Sorgu("DELETE FROM Mudurluk Where mudurlukNo = @0", txtMdrKod.Text);
-                        //db4.Sorgu("DELETE FROM Birim WHERE mudurlukNo = @0", txtMdrKod.Text);
-                        //db5.Sorgu("DELETE FROM Uyeler WHERE mudurlukNo = @0", txtMdrKod.Text);
-                        ////db6.Sorgu("DELETE FROM AidatLog a JOIN Uyeler u on u.sicilNo=a.sicilNo WHERE u.mudurlukNo = @0", txtMdrKod.Text);
+                        
                         listvMdr.Items.Clear();
                         kayitliMdrDoldur();
                     }
