@@ -98,12 +98,21 @@ namespace telekomAidatTakip
         }
 
         private void btnSil_Click(object sender, EventArgs e)
-        {
+        {   
             if (txtPlakaKodu.Text != string.Empty) //plaka kodu olmadan veri silmek tabiki biraz zor olur
             {
-                Database db = new Database();
-                db.Sorgu("delete from il where ilno=@0", txtPlakaKodu.Text);
-                IlListesiniDoldur();
+                DialogResult dialogresult = MessageBox.Show("Seçili il silinecek. Emin misiniz?", "Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogresult == DialogResult.Yes)
+                {
+                    Database db = new Database();
+                    db.Sorgu("delete from il where ilno=@0", txtPlakaKodu.Text);
+                    IlListesiniDoldur();
+                    txtAdi.Clear();
+                    txtPlakaKodu.Clear();
+                    MessageBox.Show("Seçili il silindi!", "Kayıt Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (dialogresult == DialogResult.Cancel)
+                    return;
             }
             
         }
@@ -175,8 +184,8 @@ namespace telekomAidatTakip
 
         private void frmTanimIl_Resize(object sender, EventArgs e)
         {
-            groupBox2.Width = this.Width - 43; //design sekmesindeki boyut farklarını buraya yazdık
-            groupBox2.Height = this.Height - 233;
+          groupBox2.Width = this.Width - 49; //design sekmesindeki boyut farklarını buraya yazdık
+          groupBox2.Height = this.Height - 252;
         }
     }
 }

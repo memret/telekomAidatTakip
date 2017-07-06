@@ -165,26 +165,25 @@ namespace telekomAidatTakip
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            DialogResult dialogresult = MessageBox.Show("Seçili özel gün silinecek. Emin misiniz?", "Silme", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if (dialogresult == DialogResult.Yes)
-            {
-                if (txtGunNo.Text != string.Empty)
-                {
+            if (txtGunNo.Text != string.Empty)
+                 {   DialogResult dialogresult = MessageBox.Show("Seçili özel gün silinecek. Emin misiniz?", "Silme", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                     if (dialogresult == DialogResult.Yes)               
+                    {
 
-                    Database db = new Database();
-                    db.Sorgu("DELETE FROM OzelGunler Where ozelGunNo = @0", txtGunNo.Text);
-                    listView1.Items.Clear();
-                    tabloDoldur();
-                    sayfayıtemizle();
-                    MessageBox.Show("Özel gün silindi!", "Özel Gün Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Database db = new Database();
+                        db.Sorgu("DELETE FROM OzelGunler Where ozelGunNo = @0", txtGunNo.Text);
+                        listView1.Items.Clear();
+                        tabloDoldur();
+                        sayfayıtemizle();
+                        MessageBox.Show("Özel gün silindi!", "Özel Gün Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    }
+                     else if (dialogresult == DialogResult.Cancel)
+                           return;
                 }
-
-            }
-            else if (dialogresult == DialogResult.Cancel)
-                return;
+          
         }
-
+      
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Database db = new Database();
