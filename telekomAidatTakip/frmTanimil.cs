@@ -100,16 +100,56 @@ namespace telekomAidatTakip
         private void btnSil_Click(object sender, EventArgs e)
         {   
             if (txtPlakaKodu.Text != string.Empty) //plaka kodu olmadan veri silmek tabiki biraz zor olur
-            {
-                DialogResult dialogresult = MessageBox.Show("Seçili il silinecek. Emin misiniz?", "Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            {    
+                Database db1 = new Database();
+                string countMudurluk="0";
+                
+                var data = db1.DataOku("select count(mudurlukNo) 'count' from Mudurluk where ilNo=@0",txtPlakaKodu.Text);
+                if(data.Read())
+                {
+                    countMudurluk = data["count"].ToString();
+                }
+                Database db2 = new Database();
+                string countUye = "0";
+
+                var data2 = db2.DataOku("select count(sicilNo) 'count' from Uyeler where ilNo=@0", txtPlakaKodu.Text);
+                if (data2.Read())
+                {
+                    countUye = data2["count"].ToString();
+                }
+                Database db3 = new Database();
+                string countBirim = "0";
+                var data3 = db3.DataOku("select count(birimno) 'count' from Birim b join mudurluk m on m.mudurlukno = b.mudurlukno where m.ilno =@0",txtPlakaKodu.Text);
+                if (data3.Read())
+                {
+                    countBirim= data3["count"].ToString();
+                }
+                Database db4 = new Database();
+                string countAidatLog = "0";
+                var data4 = db4.DataOku("select count(aidatLogNo) 'count' from AidatLog a join Uyeler u on u.sicilNo = a.sicilNo where u.ilNo =@0", txtPlakaKodu.Text);
+                if (data4.Read())
+                {
+                    countAidatLog = data4["count"].ToString();
+                }
+                    DialogResult dialogresult = MessageBox.Show(countMudurluk+ " Müdürlük \n"+countBirim+" Birim \n"+countUye+" Üye\n"+countAidatLog+" aidat bilgisi seçili ile ait.\n"+"Seçili il ve alt verileri silinecek. Emin misiniz?", "Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
                 if (dialogresult == DialogResult.Yes)
                 {
                     Database db = new Database();
-                    db.Sorgu("delete from il where ilno=@0", txtPlakaKodu.Text);
+                   // Database db5 = new Database();
+                  //  Database db6 = new Database();
+                   // Database db7 = new Database();
+                    
+                   // db6.Sorgu("delete from Uyeler where ilNo=@0",txtPlakaKodu.Text);
+                  //  db5.Sorgu("delete from Mudurluk where ilNo=@0", txtPlakaKodu.Text);
+                    db.Sorgu("delete from il where ilNo=@0", txtPlakaKodu.Text);
+                    
+                   
+
                     IlListesiniDoldur();
                     txtAdi.Clear();
                     txtPlakaKodu.Clear();
-                    MessageBox.Show("Seçili il silindi!", "Kayıt Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Seçili il silindi!" , "Kayıt Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (dialogresult == DialogResult.Cancel)
                     return;
