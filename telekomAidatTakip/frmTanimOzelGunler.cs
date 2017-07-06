@@ -158,7 +158,22 @@ namespace telekomAidatTakip
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            DialogResult dialogresult = MessageBox.Show("Seçili müdürlük ve altında kayıtlı birimler silinecek. Emin misiniz?", "", MessageBoxButtons.YesNo);
+            if (dialogresult == DialogResult.Yes)
+            {
+                if (txtGunNo.Text != string.Empty)
+                {
 
+                    Database db = new Database();
+                    db.Sorgu("DELETE FROM OzelGunler Where ozelGunNo = @0", txtGunNo.Text);
+                    listView1.Items.Clear();
+                    tabloDoldur();
+
+                }
+
+            }
+            else if (dialogresult == DialogResult.Cancel)
+                return;
         }
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
