@@ -186,6 +186,13 @@ namespace telekomAidatTakip
             }
             return null;
         }
-        
+        public static int cboxKeyGetir(ref ComboBox cbox)
+        {
+            if (cbox.SelectedIndex != -1)
+            {
+                return ((KeyValuePair<int, string>)cbox.SelectedItem).Key;
+            }
+            return -1;
+        }
     }
 }
