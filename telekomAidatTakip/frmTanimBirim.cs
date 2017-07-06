@@ -131,11 +131,34 @@ namespace telekomAidatTakip
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            Database db = new Database();
-            db.Sorgu("DELETE FROM Birim Where birimNo = @0", txtBirimKodu.Text);
-            listvil.Items.Clear();
-            listeDoldur();
-            db.Kapat();
+            Database db2 = new Database();
+            string countKisi = "0";
+            var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE birimNo = @0", txtBirimKodu.Text);
+            if (data2.Read())
+            {
+                countKisi = data2["count"].ToString();
+            }
+
+            Database db3 = new Database();
+            string countAidat = "0";
+            var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.birimNo = @0", txtBirimKodu.Text);
+            if (data3.Read())
+            {
+                countAidat = data3["count"].ToString();
+            }
+
+            DialogResult dialogResult = MessageBox.Show("Bu işlem ile sadece birimi değil, ona kayıtlı olan kişileri ve aidat kayıtlarınıda sileceksiniz. \nSilinecek kişi sayısı: " + countKisi + "\nSilinecek aidat kaydı: " + countAidat + " \nEmin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                Database db = new Database();
+                db.Sorgu("DELETE FROM Birim Where birimNo = @0", txtBirimKodu.Text);
+                listvil.Items.Clear();
+                listeDoldur();
+                db.Kapat();
+            }
+            else if (dialogResult == DialogResult.Cancel)
+                return;
 
         }
 
