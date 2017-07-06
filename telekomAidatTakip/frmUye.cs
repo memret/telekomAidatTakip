@@ -47,17 +47,23 @@ namespace telekomAidatTakip
                 btnKaydet.Visible = true;
             }
         }
+
         private void DoldurKomple()
         {
             PRG.DoldurTahsil(ref cboxTahsil);
             PRG.DoldurUnvan(ref cboxUnvan);
             PRG.DoldurIl(ref cboxIl);
-            PRG.DoldurIl(ref cboxEvIl);
-            PRG.DoldurIl(ref cboxIsIl);
+
+            //3 kere daha aynı sql sorgusunu yapmasın diye cboxilden çekiyoruz verileri
+            PRG.DoldurIlKopyala(ref cboxEvIl, cboxIl);
+            PRG.DoldurIlKopyala(ref cboxIsIl, cboxIl);
+            PRG.DoldurIlKopyala(ref cboxNufusIl, cboxIl);
+            //PRG.DoldurIl(ref cboxEvIl);
+            //PRG.DoldurIl(ref cboxIsIl);
+            //PRG.DoldurIl(ref cboxNufusIl);
 
             PRG.DoldurUyelikTipi(ref cboxUyelikTipi);
             PRG.DoldurKanGrubu(ref cboxNufusKan);
-            PRG.DoldurIl(ref cboxNufusIl);
 
 
 
@@ -463,5 +469,42 @@ namespace telekomAidatTakip
             if (cboxMudurluk.SelectedIndex != -1)
                 PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
         }
+        
+        //Buradan sonrası.. Ömer
+        private void txtSicilNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+        }
+
+        private void txtEvTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+        }
+
+        private void txtIsTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+        }
+
+        private void txtCepTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+        }
+
+        private void txtNufusCilt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+        }
+
+        private void txtNufusAile_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+        }
+
+        private void txtNufusSira_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) { e.Handled = true; }
+        }
+
     }
 }

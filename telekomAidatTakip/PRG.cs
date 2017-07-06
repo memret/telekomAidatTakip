@@ -70,6 +70,14 @@ namespace telekomAidatTakip
             cboxIl.SelectedIndex = -1;
             db.Kapat();
         }
+        public static void DoldurIlKopyala(ref ComboBox cbox, ComboBox cboxIl)
+        {
+            cbox.DataSource = cboxIl.DataSource;
+            cbox.DisplayMember = "Value";
+            cbox.ValueMember = "Key";
+            cbox.SelectedIndex = -1;
+            cbox.Enabled = true;
+        }
         public static void DoldurUyelikTipi(ref ComboBox cboxUyelikTipi)
         {
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
@@ -176,7 +184,7 @@ namespace telekomAidatTakip
                     return item;
                 }
             }
-            return -1;
+            return null;
         }
         
     }

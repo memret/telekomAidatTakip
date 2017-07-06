@@ -76,7 +76,7 @@ namespace telekomAidatTakip
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cboxIl.SelectedIndex != -1 && cboxBirim.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1 && txtAidatMiktari.ToString() != string.Empty)
+            if (cboxIl.SelectedIndex != -1 && cboxBirim.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1 && txtAidatMiktari.Text != string.Empty)
             {
                 Database db = new Database();
                 int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
@@ -128,6 +128,8 @@ namespace telekomAidatTakip
                 cboxMudurluk.Enabled = true;
                 cboxBirim.Enabled = false;
                 cboxMudurluk.SelectedIndex = -1;
+                cboxBirim.SelectedIndex = -1;
+                txtAidatMiktari.Text = string.Empty;
             }
         }
 
@@ -147,12 +149,6 @@ namespace telekomAidatTakip
                     }
 
                     db.Kapat();
-                    if (txtAidatMiktari.Text == string.Empty)
-                    {
-                        btnKaydet.Visible = false;
-                    }
-                    else
-                        button1.Visible = false;
                 }
             }
         }

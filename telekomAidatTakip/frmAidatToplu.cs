@@ -30,32 +30,41 @@ namespace telekomAidatTakip
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            int ilNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key;
-            int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
-            int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
-            //DateTime dt = this.dateTarih.Value.Date;
-            Database db = new Database();
-            Database db2 = new Database();
-            //System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@2", dt);
-
-            var kisiler = db.DataOku("SELECT sicilNo FROM uyeler WHERE birimNo =@0", birimNo.ToString());
-            while (kisiler.Read())
+            if (cboxil.SelectedIndex != -1 && cboxBirim.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1 && txtAidatMiktari.Text != string.Empty)
             {
-                String sicilNo = kisiler["sicilNo"].ToString();
-                if (!string.IsNullOrEmpty(sicilNo))
+                int ilNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key;
+                int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
+                int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+                Database db = new Database();
+                Database db2 = new Database();
+
+                var kisiler = db.DataOku("SELECT sicilNo FROM uyeler WHERE birimNo =@0", birimNo.ToString());
+                if (!kisiler.HasRows)
                 {
-                    db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", sicilNo, txtAidatMiktari.Text, this.dateTarih.Value.Date);
-                    MessageBox.Show("Aidat Ödemesi yapıldı.");
+                    MessageBox.Show("Birimde kişi yok!");
                 }
                 else
                 {
-                    MessageBox.Show("Sıkıntı");
+                    while (kisiler.Read())
+                    {
+                        String sicilNo = kisiler["sicilNo"].ToString();
+                        if (!string.IsNullOrEmpty(sicilNo))
+                        {
+                            db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", sicilNo, txtAidatMiktari.Text, this.dateTarih.Value.Date);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Birimde birisinin sicilnosuna ulaşılamadı.");
+                        }
+                    }
+                    MessageBox.Show("Aidat Ödemesi yapıldı.");
                 }
+                db.Kapat();
+                db2.Kapat();
             }
-
-            db.Kapat();
-            db2.Kapat();
-
+            else
+                MessageBox.Show("Lütfen boş alanları doldururuz!");
 
 
         }
