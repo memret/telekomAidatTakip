@@ -41,7 +41,7 @@ namespace telekomAidatTakip
                 ListViewItem item = new ListViewItem();
                 item.Text = data["ozelGunNo"].ToString();
                 item.SubItems.Add(data["baslik"].ToString());
-                item.SubItems.Add(data["tarih"].ToString());
+                item.SubItems.Add(Convert.ToDateTime(data["tarih"]).ToShortDateString());
                 item.SubItems.Add(data["mesaj"].ToString());
                 item.SubItems.Add(data["yorum"].ToString());
                
