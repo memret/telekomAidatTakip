@@ -21,7 +21,14 @@ namespace telekomAidatTakip
         {
             tabloDoldur();
         }
-
+        private void sayfayıtemizle()
+        {
+            txtBaslik.Clear();
+            txtGunNo.Clear();
+            txtMsj.Clear();
+            txtYorum.Clear();
+            dateTimeTarih.Value = DateTime.Today;
+        }
         private void tabloDoldur()
         {
             Database db = new Database();
@@ -94,10 +101,8 @@ namespace telekomAidatTakip
                     dateTimeTarih.Enabled = false;
                     btnYeni.Text = "Yeni";
                     tabloDoldur();
-                    txtGunNo.Text = string.Empty;
-                    txtBaslik.Text = string.Empty;
-                    txtMsj.Text = string.Empty;
-                    txtYorum.Text = string.Empty;
+                    sayfayıtemizle();
+                    MessageBox.Show("Yeni özel gün kaydedildi.", "Özel Gün Tanımlama", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     btnYeni.Focus(); //görsel amaçlı imiş
                 }
                 else
@@ -117,10 +122,7 @@ namespace telekomAidatTakip
                // System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@3", dt);
                 db.Sorgu("update OzelGunler set baslik=@0, mesaj=@1, yorum=@2, tarih=@3 where ozelGunNo=@4", txtBaslik.Text, txtMsj.Text, txtYorum.Text, this.dateTimeTarih.Value.Date, txtGunNo.Text);
 
-                txtBaslik.Text = string.Empty;
-                txtMsj.Text = string.Empty;
-                txtYorum.Text = string.Empty;
-                txtGunNo.Text = string.Empty;
+                sayfayıtemizle();
                 dateTimeTarih.Enabled = false;
                 txtBaslik.Enabled = false;
                 txtMsj.Enabled = false;
@@ -128,6 +130,8 @@ namespace telekomAidatTakip
 
                 btnSil.Enabled = false;
                 listView1.Items.Clear();
+                MessageBox.Show("Özel gün güncellendi.", "Özel Gün Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 tabloDoldur();
             }
         }
@@ -161,7 +165,7 @@ namespace telekomAidatTakip
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            DialogResult dialogresult = MessageBox.Show("Seçili müdürlük ve altında kayıtlı birimler silinecek. Emin misiniz?", "", MessageBoxButtons.YesNo);
+            DialogResult dialogresult = MessageBox.Show("Seçili özel gün silinecek. Emin misiniz?", "Silme", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (dialogresult == DialogResult.Yes)
             {
                 if (txtGunNo.Text != string.Empty)
@@ -171,6 +175,8 @@ namespace telekomAidatTakip
                     db.Sorgu("DELETE FROM OzelGunler Where ozelGunNo = @0", txtGunNo.Text);
                     listView1.Items.Clear();
                     tabloDoldur();
+                    sayfayıtemizle();
+                    MessageBox.Show("Özel gün silindi!", "Özel Gün Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
 
@@ -205,6 +211,16 @@ namespace telekomAidatTakip
             
             btnYeni.Text = "Yeni";
 
+        }
+
+        private void frmTanimOzelGunler_Resize(object sender, EventArgs e)
+        {
+           
+            gboxTabloGosterimi.Height = this.Height - 390;
+           
+            gboxTabloGosterimi.Width = this.Width - 60;
+            listView1.Width = this.Width - 77;
+            listView1.Height = this.Height - 419;
         }
     }
 }
