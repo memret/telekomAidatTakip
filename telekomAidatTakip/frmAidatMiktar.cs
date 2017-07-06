@@ -128,6 +128,8 @@ namespace telekomAidatTakip
                 cboxMudurluk.Enabled = true;
                 cboxBirim.Enabled = false;
                 cboxMudurluk.SelectedIndex = -1;
+                cboxBirim.SelectedIndex = -1;
+                txtAidatMiktari.Text = string.Empty;
             }
         }
 
