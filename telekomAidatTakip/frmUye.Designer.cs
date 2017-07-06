@@ -219,6 +219,7 @@
             // 
             // btnResimSil
             // 
+            this.btnResimSil.Enabled = false;
             this.btnResimSil.Location = new System.Drawing.Point(203, 337);
             this.btnResimSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnResimSil.Name = "btnResimSil";
@@ -307,6 +308,7 @@
             this.txtSicilNo.Size = new System.Drawing.Size(108, 22);
             this.txtSicilNo.TabIndex = 1;
             this.txtSicilNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSicilNo_KeyPress);
+            this.txtSicilNo.Leave += new System.EventHandler(this.txtSicilNo_Leave);
             // 
             // label8
             // 
