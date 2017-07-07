@@ -268,8 +268,52 @@ namespace telekomAidatTakip
 
             return true;
         }
+        public string BosYerVarMi()
+        {
+            if (txtSicilNo.Text == string.Empty)
+            {
+                return "Sicil numarası boş bırakılamaz";
+            }
+            if (txtAdSoyad.Text == string.Empty)
+            {
+                return "Ad soyad boş bırakılamaz";
+            }
+            if (cboxTahsil.Text == string.Empty)
+            {
+                return "Tahsil boş bırakılamaz";
+            }
+            if (cboxUnvan.Text == string.Empty)
+            {
+                return "Ünvan boş bırakılamaz";
+            }
+            if (cboxIl.Text == string.Empty)
+            {
+                return "İl boş bırakılamaz";
+            }
+            if (cboxMudurluk.Text == string.Empty)
+            {
+                return "Müdürlük boş bırakılamaz";
+            }
+            if (cboxBirim.Text == string.Empty)
+            {
+                return "Birim boş bırakılamaz";
+            }
+            if (cboxUyelikTipi.Text == string.Empty)
+            {
+                return "Üyelik tipi boş bırakılamaz";
+            }
+
+
+            return null;
+        }
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            if (BosYerVarMi() == null)
+            {
+                yeniKayitEkle();
+            }
+            else
+                MessageBox.Show(BosYerVarMi());
             // if (boslukkontroltextbox() && boslukkontrolcombo())
             //  MessageBox.Show("Test");
 
@@ -279,7 +323,6 @@ namespace telekomAidatTakip
             }
             else
             {*/
-            yeniKayitEkle();
             //}
 
             //  else
@@ -448,9 +491,15 @@ namespace telekomAidatTakip
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            uyeBilgisiGuncelle();
-            MessageBox.Show("Kayıt güncellendi!", "Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            if (BosYerVarMi() == null)
+            {
+                uyeBilgisiGuncelle();
+                MessageBox.Show("Kayıt güncellendi!", "Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+                MessageBox.Show(BosYerVarMi());
+            
         }
 
         private void btnYeniResim_Click(object sender, EventArgs e)
