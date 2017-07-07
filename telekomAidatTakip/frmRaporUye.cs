@@ -330,7 +330,7 @@ namespace telekomAidatTakip
             {
                 frmUye frm = new frmUye(listUye.SelectedItems[0].Text);
                 frm.MdiParent = this.MdiParent;
-                frm.ShowDialog();
+                frm.Show();
                 btnEkranaListele_Click(this,null);
             }
             
