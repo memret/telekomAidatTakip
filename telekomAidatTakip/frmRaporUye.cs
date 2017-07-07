@@ -24,7 +24,7 @@ namespace telekomAidatTakip
             InitializeComponent();
             //checkbox tikle
             checkIl.Checked = true;
-            cboxII.SelectedItem = PRG.cboxIndexBul(ref cboxII, ilNo);
+            cboxIl.SelectedItem = PRG.cboxIndexBul(ref cboxIl, ilNo);
             btnEkranaListele_Click(this, null);
             //checkboxda il seç
             //ekran listeleye tıklat
@@ -43,9 +43,9 @@ namespace telekomAidatTakip
         {
             if (checkIl.Checked)
             {
-                cboxII.Enabled = true;
-                PRG.DoldurIl(ref cboxII);
-                if (cboxII.SelectedIndex == -1)
+                cboxIl.Enabled = true;
+                PRG.DoldurIl(ref cboxIl);
+                if (cboxIl.SelectedIndex == -1)
                 {
                     checkMudurluk.Enabled = false;
                     cboxMudurluk.Enabled = false;
@@ -59,8 +59,8 @@ namespace telekomAidatTakip
             }
             else
             {
-                cboxII.Enabled = false;
-                cboxII.SelectedIndex = -1;
+                cboxIl.Enabled = false;
+                cboxIl.SelectedIndex = -1;
                 cboxMudurluk.Enabled = false;
                 checkMudurluk.Checked = false;
                 checkMudurluk.Enabled = false;
@@ -86,7 +86,7 @@ namespace telekomAidatTakip
         {
             if (checkKisim.Checked && checkMudurluk.Checked)
             {
-                PRG.DoldurBirim(ref cboxKısım, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
+                PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
             }
         }
         
@@ -99,19 +99,19 @@ namespace telekomAidatTakip
                 if (cboxMudurluk.SelectedIndex == -1)
                 {
                     checkKisim.Enabled = false;
-                    cboxKısım.Enabled = false;
+                    cboxBirim.Enabled = false;
                 }
 
                 else
                 {
                     checkKisim.Enabled = true;
-                    cboxKısım.Enabled = false;
+                    cboxBirim.Enabled = false;
                 }
 
             }
             else
             {
-                cboxKısım.Enabled = false;
+                cboxBirim.Enabled = false;
                 cboxMudurluk.Enabled = false;
                 cboxMudurluk.SelectedIndex = -1;
                 checkKisim.Enabled = false;
@@ -130,8 +130,8 @@ namespace telekomAidatTakip
             }
             else
             {
-                cboxKısım.SelectedIndex = -1;
-                cboxKısım.Enabled = false;
+                cboxBirim.SelectedIndex = -1;
+                cboxBirim.Enabled = false;
             }
             
         }
@@ -202,74 +202,66 @@ namespace telekomAidatTakip
             //tek satırda yazmazsam da hata veriyor ömer buralarda çıldırdı
             Database db = new Database();
             SqlParameter paramTemp;
-            string temelSorgu = "SELECT u.adSoyad, u.sicilNo, kg.kanGrubu, i.ilAdi, m.mudurlukAdi, b.birimAdi, unv.unvanAdi, t.tahsilAdi FROM uyeler u left join nufusbilgileri nufus on nufus.sicilno = u.sicilno left join kangrubu kg on nufus.kanGrubuNo = kg.kanGrubuNo left join il i on u.ilNo = i.ilNo left join mudurluk m on u.mudurlukNo = m.mudurlukNo left join birim b on u.birimNo = b.birimNo left join unvan unv on u.unvanNo = unv.unvanNo left join tahsil t on u.tahsilNo = t.tahsilNo ";
-            string ekSorgu = " ";
+            string temelSorgu = "SELECT u.adSoyad, u.sicilNo, kg.kanGrubu, i.ilAdi, m.mudurlukAdi, b.birimAdi, unv.unvanAdi, t.tahsilAdi FROM uyeler u left join nufusbilgileri nufus on nufus.sicilno = u.sicilno left join kangrubu kg on nufus.kanGrubuNo = kg.kanGrubuNo left join il i on u.ilNo = i.ilNo left join mudurluk m on u.mudurlukNo = m.mudurlukNo left join birim b on u.birimNo = b.birimNo left join unvan unv on u.unvanNo = unv.unvanNo left join tahsil t on u.tahsilNo = t.tahsilNo where ";
+            string ekSorgu = string.Empty;
 
 
 
             List<SqlParameter> paramList = new List<SqlParameter>();
             if (checkIl.Checked)
             {
-                String ilNo = ((KeyValuePair<int, string>)cboxII.SelectedItem).Key.ToString();
                 ekSorgu += "AND u.ilNo = @il ";
-                paramTemp = new SqlParameter("@il", ilNo);
+                temelSorgu.Replace("left join il","join il");
+                paramTemp = new SqlParameter("@il", PRG.cboxKeyGetir(ref cboxIl));
                 paramList.Add(paramTemp);
-                temelSorgu += ekSorgu;
             }
 
 
             if (checkMudurluk.Checked)
             {
-                string mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString();
                 ekSorgu += "AND u.mudurlukNo = @mudurlukNo ";
-                paramTemp = new SqlParameter("@mudurlukNo", mudurlukNo);
+                temelSorgu.Replace("left join mudurluk", "join mudurluk");
+                paramTemp = new SqlParameter("@mudurlukNo", PRG.cboxKeyGetir(ref cboxMudurluk));
                 paramList.Add(paramTemp);
-                temelSorgu += ekSorgu;
             }
 
             if (checkKisim.Checked)
             {
-                string birimNo = ((KeyValuePair<int, string>)cboxKısım.SelectedItem).Key.ToString();
                 ekSorgu += "AND u.birimNo = @birimNo ";
-                paramTemp = new SqlParameter("@birimNo", birimNo);
+                temelSorgu.Replace("left join birim", "join birim");
+                paramTemp = new SqlParameter("@birimNo", PRG.cboxKeyGetir(ref cboxBirim));
                 paramList.Add(paramTemp);
-                temelSorgu += ekSorgu;
             }
 
             if (checkUnvan.Checked)
             {
-                string unvanNo = ((KeyValuePair<int, string>)cboxUnvan.SelectedItem).Key.ToString();
                 ekSorgu += "AND u.unvanNo = @unvanNo ";
-                paramTemp = new SqlParameter("@unvanNo", unvanNo);
+                temelSorgu.Replace("left join unvan", "join unvan");
+                paramTemp = new SqlParameter("@unvanNo", PRG.cboxKeyGetir(ref cboxUnvan));
                 paramList.Add(paramTemp);
-                temelSorgu += ekSorgu;
             }
 
             if (checkTahsil.Checked)
             {
-                string tahsilNo = ((KeyValuePair<int, string>)cboxTahsil.SelectedItem).Key.ToString();
                 ekSorgu += "AND u.tahsilNo = @tahsilNo ";
-                paramTemp = new SqlParameter("@tahsilNo", tahsilNo);
+                temelSorgu.Replace("left join tahsil", "join tahsil");
+                paramTemp = new SqlParameter("@tahsilNo", PRG.cboxKeyGetir(ref cboxTahsil));
                 paramList.Add(paramTemp);
-                temelSorgu += ekSorgu;
             }
 
             if (checkUyelik.Checked)
             {
-                string uyelikTipiNo = ((KeyValuePair<int, string>)cboxUyelikDurumu.SelectedItem).Key.ToString();
                 ekSorgu += "AND u.uyelikTipiNo = @uyelikTipiNo ";
-                paramTemp = new SqlParameter("@uyelikTipiNo", uyelikTipiNo);
+                paramTemp = new SqlParameter("@uyelikTipiNo", PRG.cboxKeyGetir(ref cboxUyelikDurumu));
                 paramList.Add(paramTemp);
-                temelSorgu += ekSorgu;
             }
 
             if (checkKanGrubu.Checked)
             {
-                string kanGrubuNo = ((KeyValuePair<int, string>)cboxKanGrubu.SelectedItem).Key.ToString();
                 ekSorgu += "AND nufus.kanGrubuNo = @kanGrubuNo ";
-                paramTemp = new SqlParameter("@kanGrubuNo", kanGrubuNo);
+                temelSorgu.Replace("left join kangrubu", "join kangrubu");
+                paramTemp = new SqlParameter("@kanGrubuNo", PRG.cboxKeyGetir(ref cboxKanGrubu));
                 paramList.Add(paramTemp);
-                temelSorgu += ekSorgu;
             }
 
 
@@ -277,15 +269,15 @@ namespace telekomAidatTakip
             {
                 string uyelikTipiNo = 2.ToString();
                 ekSorgu += "AND u.aktif = '1'";
-                temelSorgu += ekSorgu;
             }
             else if(radioPasif.Checked)
             {
                 string uyelikTipiNo = 2.ToString();
                 ekSorgu += "AND u.aktif = '0'";
-                temelSorgu += ekSorgu;
             }
 
+            ekSorgu = ekSorgu.Substring(4);
+            temelSorgu += ekSorgu;
 
             var data = db.DataOku(temelSorgu, paramList);
             listUye.Items.Clear();
@@ -351,9 +343,9 @@ namespace telekomAidatTakip
 
         private void cboxII_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cboxII.SelectedIndex != -1)
+            if (cboxIl.SelectedIndex != -1)
             {
-                PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxII.SelectedItem).Key.ToString());
+                PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key.ToString());
                 if (!checkMudurluk.Checked)
                     cboxMudurluk.Enabled = false;
                 checkMudurluk.Enabled = true;
@@ -373,9 +365,9 @@ namespace telekomAidatTakip
             int mdr = PRG.cboxKeyGetir(ref cboxMudurluk);
             if (mdr != -1)
             {
-                PRG.DoldurBirim(ref cboxKısım, mdr.ToString());
+                PRG.DoldurBirim(ref cboxBirim, mdr.ToString());
                 if (!checkKisim.Checked)
-                    cboxKısım.Enabled = false;
+                    cboxBirim.Enabled = false;
                 checkKisim.Enabled = true;
             }
             else

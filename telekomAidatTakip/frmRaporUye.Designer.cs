@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioHepsi = new System.Windows.Forms.RadioButton();
+            this.radioPasif = new System.Windows.Forms.RadioButton();
+            this.radioAktif = new System.Windows.Forms.RadioButton();
             this.btnYazdir = new System.Windows.Forms.Button();
             this.checkKanGrubu = new System.Windows.Forms.CheckBox();
             this.checkUyelik = new System.Windows.Forms.CheckBox();
@@ -42,9 +45,9 @@
             this.cboxUyelikDurumu = new System.Windows.Forms.ComboBox();
             this.cboxTahsil = new System.Windows.Forms.ComboBox();
             this.cboxUnvan = new System.Windows.Forms.ComboBox();
-            this.cboxKısım = new System.Windows.Forms.ComboBox();
+            this.cboxBirim = new System.Windows.Forms.ComboBox();
             this.cboxMudurluk = new System.Windows.Forms.ComboBox();
-            this.cboxII = new System.Windows.Forms.ComboBox();
+            this.cboxIl = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listUye = new System.Windows.Forms.ListView();
             this.ListKurumSicil = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,9 +56,6 @@
             this.ListIlMudurlukKısım = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListUnvan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListTahsil = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.radioHepsi = new System.Windows.Forms.RadioButton();
-            this.radioPasif = new System.Windows.Forms.RadioButton();
-            this.radioAktif = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -78,26 +78,59 @@
             this.groupBox1.Controls.Add(this.cboxUyelikDurumu);
             this.groupBox1.Controls.Add(this.cboxTahsil);
             this.groupBox1.Controls.Add(this.cboxUnvan);
-            this.groupBox1.Controls.Add(this.cboxKısım);
+            this.groupBox1.Controls.Add(this.cboxBirim);
             this.groupBox1.Controls.Add(this.cboxMudurluk);
-            this.groupBox1.Controls.Add(this.cboxII);
-            this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Controls.Add(this.cboxIl);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(908, 282);
+            this.groupBox1.Size = new System.Drawing.Size(681, 229);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Arama Kriterleri :";
+            // 
+            // radioHepsi
+            // 
+            this.radioHepsi.AutoSize = true;
+            this.radioHepsi.Location = new System.Drawing.Point(211, 206);
+            this.radioHepsi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioHepsi.Name = "radioHepsi";
+            this.radioHepsi.Size = new System.Drawing.Size(79, 17);
+            this.radioHepsi.TabIndex = 15;
+            this.radioHepsi.TabStop = true;
+            this.radioHepsi.Text = "Tüm Üyeler";
+            this.radioHepsi.UseVisualStyleBackColor = true;
+            // 
+            // radioPasif
+            // 
+            this.radioPasif.AutoSize = true;
+            this.radioPasif.Location = new System.Drawing.Point(128, 206);
+            this.radioPasif.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioPasif.Name = "radioPasif";
+            this.radioPasif.Size = new System.Drawing.Size(81, 17);
+            this.radioPasif.TabIndex = 16;
+            this.radioPasif.TabStop = true;
+            this.radioPasif.Text = "Pasif Üyeler";
+            this.radioPasif.UseVisualStyleBackColor = true;
+            // 
+            // radioAktif
+            // 
+            this.radioAktif.AutoSize = true;
+            this.radioAktif.Location = new System.Drawing.Point(47, 206);
+            this.radioAktif.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioAktif.Name = "radioAktif";
+            this.radioAktif.Size = new System.Drawing.Size(79, 17);
+            this.radioAktif.TabIndex = 17;
+            this.radioAktif.TabStop = true;
+            this.radioAktif.Text = "Aktif Üyeler";
+            this.radioAktif.UseVisualStyleBackColor = true;
             // 
             // btnYazdir
             // 
             this.btnYazdir.Enabled = false;
             this.btnYazdir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnYazdir.Location = new System.Drawing.Point(775, 220);
-            this.btnYazdir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnYazdir.Location = new System.Drawing.Point(581, 179);
             this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(119, 46);
+            this.btnYazdir.Size = new System.Drawing.Size(89, 37);
             this.btnYazdir.TabIndex = 6;
             this.btnYazdir.Text = "Yazdır";
             this.btnYazdir.UseVisualStyleBackColor = true;
@@ -106,10 +139,9 @@
             // checkKanGrubu
             // 
             this.checkKanGrubu.AutoSize = true;
-            this.checkKanGrubu.Location = new System.Drawing.Point(17, 219);
-            this.checkKanGrubu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkKanGrubu.Location = new System.Drawing.Point(13, 178);
             this.checkKanGrubu.Name = "checkKanGrubu";
-            this.checkKanGrubu.Size = new System.Drawing.Size(103, 21);
+            this.checkKanGrubu.Size = new System.Drawing.Size(80, 17);
             this.checkKanGrubu.TabIndex = 13;
             this.checkKanGrubu.Text = "Kan Grubu:";
             this.checkKanGrubu.UseVisualStyleBackColor = true;
@@ -118,22 +150,20 @@
             // checkUyelik
             // 
             this.checkUyelik.AutoSize = true;
-            this.checkUyelik.Location = new System.Drawing.Point(17, 187);
-            this.checkUyelik.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkUyelik.Location = new System.Drawing.Point(13, 152);
             this.checkUyelik.Name = "checkUyelik";
-            this.checkUyelik.Size = new System.Drawing.Size(86, 21);
+            this.checkUyelik.Size = new System.Drawing.Size(78, 17);
             this.checkUyelik.TabIndex = 12;
-            this.checkUyelik.Text = "Üyelik D:";
+            this.checkUyelik.Text = "Üyelik Tipi:";
             this.checkUyelik.UseVisualStyleBackColor = true;
             this.checkUyelik.CheckedChanged += new System.EventHandler(this.checkUyelik_CheckedChanged);
             // 
             // checkTahsil
             // 
             this.checkTahsil.AutoSize = true;
-            this.checkTahsil.Location = new System.Drawing.Point(17, 155);
-            this.checkTahsil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkTahsil.Location = new System.Drawing.Point(13, 126);
             this.checkTahsil.Name = "checkTahsil";
-            this.checkTahsil.Size = new System.Drawing.Size(72, 21);
+            this.checkTahsil.Size = new System.Drawing.Size(57, 17);
             this.checkTahsil.TabIndex = 11;
             this.checkTahsil.Text = "Tahsil:";
             this.checkTahsil.UseVisualStyleBackColor = true;
@@ -142,10 +172,9 @@
             // checkUnvan
             // 
             this.checkUnvan.AutoSize = true;
-            this.checkUnvan.Location = new System.Drawing.Point(17, 123);
-            this.checkUnvan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkUnvan.Location = new System.Drawing.Point(13, 100);
             this.checkUnvan.Name = "checkUnvan";
-            this.checkUnvan.Size = new System.Drawing.Size(75, 21);
+            this.checkUnvan.Size = new System.Drawing.Size(61, 17);
             this.checkUnvan.TabIndex = 10;
             this.checkUnvan.Text = "Ünvan:";
             this.checkUnvan.UseVisualStyleBackColor = true;
@@ -155,10 +184,9 @@
             // 
             this.checkKisim.AutoSize = true;
             this.checkKisim.Enabled = false;
-            this.checkKisim.Location = new System.Drawing.Point(17, 91);
-            this.checkKisim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkKisim.Location = new System.Drawing.Point(13, 74);
             this.checkKisim.Name = "checkKisim";
-            this.checkKisim.Size = new System.Drawing.Size(65, 21);
+            this.checkKisim.Size = new System.Drawing.Size(51, 17);
             this.checkKisim.TabIndex = 9;
             this.checkKisim.Text = "Birim:";
             this.checkKisim.UseVisualStyleBackColor = true;
@@ -168,10 +196,9 @@
             // 
             this.checkMudurluk.AutoSize = true;
             this.checkMudurluk.Enabled = false;
-            this.checkMudurluk.Location = new System.Drawing.Point(17, 59);
-            this.checkMudurluk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkMudurluk.Location = new System.Drawing.Point(13, 48);
             this.checkMudurluk.Name = "checkMudurluk";
-            this.checkMudurluk.Size = new System.Drawing.Size(92, 21);
+            this.checkMudurluk.Size = new System.Drawing.Size(73, 17);
             this.checkMudurluk.TabIndex = 8;
             this.checkMudurluk.Text = "Müdürlük:";
             this.checkMudurluk.UseVisualStyleBackColor = true;
@@ -180,10 +207,9 @@
             // checkIl
             // 
             this.checkIl.AutoSize = true;
-            this.checkIl.Location = new System.Drawing.Point(17, 27);
-            this.checkIl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkIl.Location = new System.Drawing.Point(13, 22);
             this.checkIl.Name = "checkIl";
-            this.checkIl.Size = new System.Drawing.Size(40, 21);
+            this.checkIl.Size = new System.Drawing.Size(34, 17);
             this.checkIl.TabIndex = 7;
             this.checkIl.Text = "İl:";
             this.checkIl.UseVisualStyleBackColor = true;
@@ -192,10 +218,9 @@
             // btnEkranaListele
             // 
             this.btnEkranaListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnEkranaListele.Location = new System.Drawing.Point(595, 220);
-            this.btnEkranaListele.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEkranaListele.Location = new System.Drawing.Point(446, 179);
             this.btnEkranaListele.Name = "btnEkranaListele";
-            this.btnEkranaListele.Size = new System.Drawing.Size(172, 46);
+            this.btnEkranaListele.Size = new System.Drawing.Size(129, 37);
             this.btnEkranaListele.TabIndex = 5;
             this.btnEkranaListele.Text = "Ekrana Listele";
             this.btnEkranaListele.UseVisualStyleBackColor = true;
@@ -206,10 +231,9 @@
             this.cboxKanGrubu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxKanGrubu.Enabled = false;
             this.cboxKanGrubu.FormattingEnabled = true;
-            this.cboxKanGrubu.Location = new System.Drawing.Point(135, 217);
-            this.cboxKanGrubu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxKanGrubu.Location = new System.Drawing.Point(101, 176);
             this.cboxKanGrubu.Name = "cboxKanGrubu";
-            this.cboxKanGrubu.Size = new System.Drawing.Size(121, 24);
+            this.cboxKanGrubu.Size = new System.Drawing.Size(92, 21);
             this.cboxKanGrubu.TabIndex = 0;
             // 
             // cboxUyelikDurumu
@@ -217,10 +241,9 @@
             this.cboxUyelikDurumu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxUyelikDurumu.Enabled = false;
             this.cboxUyelikDurumu.FormattingEnabled = true;
-            this.cboxUyelikDurumu.Location = new System.Drawing.Point(135, 185);
-            this.cboxUyelikDurumu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxUyelikDurumu.Location = new System.Drawing.Point(101, 150);
             this.cboxUyelikDurumu.Name = "cboxUyelikDurumu";
-            this.cboxUyelikDurumu.Size = new System.Drawing.Size(248, 24);
+            this.cboxUyelikDurumu.Size = new System.Drawing.Size(187, 21);
             this.cboxUyelikDurumu.TabIndex = 0;
             // 
             // cboxTahsil
@@ -228,10 +251,9 @@
             this.cboxTahsil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxTahsil.Enabled = false;
             this.cboxTahsil.FormattingEnabled = true;
-            this.cboxTahsil.Location = new System.Drawing.Point(135, 153);
-            this.cboxTahsil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxTahsil.Location = new System.Drawing.Point(101, 124);
             this.cboxTahsil.Name = "cboxTahsil";
-            this.cboxTahsil.Size = new System.Drawing.Size(345, 24);
+            this.cboxTahsil.Size = new System.Drawing.Size(260, 21);
             this.cboxTahsil.TabIndex = 0;
             // 
             // cboxUnvan
@@ -239,56 +261,50 @@
             this.cboxUnvan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxUnvan.Enabled = false;
             this.cboxUnvan.FormattingEnabled = true;
-            this.cboxUnvan.Location = new System.Drawing.Point(135, 121);
-            this.cboxUnvan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxUnvan.Location = new System.Drawing.Point(101, 98);
             this.cboxUnvan.Name = "cboxUnvan";
-            this.cboxUnvan.Size = new System.Drawing.Size(345, 24);
+            this.cboxUnvan.Size = new System.Drawing.Size(260, 21);
             this.cboxUnvan.TabIndex = 0;
             // 
-            // cboxKısım
+            // cboxBirim
             // 
-            this.cboxKısım.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxKısım.Enabled = false;
-            this.cboxKısım.FormattingEnabled = true;
-            this.cboxKısım.Location = new System.Drawing.Point(135, 89);
-            this.cboxKısım.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cboxKısım.Name = "cboxKısım";
-            this.cboxKısım.Size = new System.Drawing.Size(513, 24);
-            this.cboxKısım.TabIndex = 0;
+            this.cboxBirim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxBirim.Enabled = false;
+            this.cboxBirim.FormattingEnabled = true;
+            this.cboxBirim.Location = new System.Drawing.Point(101, 72);
+            this.cboxBirim.Name = "cboxBirim";
+            this.cboxBirim.Size = new System.Drawing.Size(386, 21);
+            this.cboxBirim.TabIndex = 0;
             // 
             // cboxMudurluk
             // 
             this.cboxMudurluk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxMudurluk.Enabled = false;
             this.cboxMudurluk.FormattingEnabled = true;
-            this.cboxMudurluk.Location = new System.Drawing.Point(135, 57);
-            this.cboxMudurluk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxMudurluk.Location = new System.Drawing.Point(101, 46);
             this.cboxMudurluk.Name = "cboxMudurluk";
-            this.cboxMudurluk.Size = new System.Drawing.Size(513, 24);
+            this.cboxMudurluk.Size = new System.Drawing.Size(386, 21);
             this.cboxMudurluk.TabIndex = 0;
             this.cboxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cboxMudurluk_SelectionChangeCommitted);
             // 
-            // cboxII
+            // cboxIl
             // 
-            this.cboxII.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxII.Enabled = false;
-            this.cboxII.FormattingEnabled = true;
-            this.cboxII.Location = new System.Drawing.Point(135, 25);
-            this.cboxII.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cboxII.Name = "cboxII";
-            this.cboxII.Size = new System.Drawing.Size(513, 24);
-            this.cboxII.TabIndex = 0;
-            this.cboxII.SelectedIndexChanged += new System.EventHandler(this.cboxII_SelectedIndexChanged);
-            this.cboxII.SelectionChangeCommitted += new System.EventHandler(this.cboxII_SelectionChangeCommitted);
+            this.cboxIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxIl.Enabled = false;
+            this.cboxIl.FormattingEnabled = true;
+            this.cboxIl.Location = new System.Drawing.Point(101, 20);
+            this.cboxIl.Name = "cboxIl";
+            this.cboxIl.Size = new System.Drawing.Size(386, 21);
+            this.cboxIl.TabIndex = 0;
+            this.cboxIl.SelectedIndexChanged += new System.EventHandler(this.cboxII_SelectedIndexChanged);
+            this.cboxIl.SelectionChangeCommitted += new System.EventHandler(this.cboxII_SelectionChangeCommitted);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listUye);
-            this.groupBox2.Location = new System.Drawing.Point(16, 304);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(12, 247);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(912, 279);
+            this.groupBox2.Size = new System.Drawing.Size(684, 227);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bulunan Üye Kayıtları";
@@ -304,10 +320,9 @@
             this.ListTahsil});
             this.listUye.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listUye.FullRowSelect = true;
-            this.listUye.Location = new System.Drawing.Point(4, 19);
-            this.listUye.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listUye.Location = new System.Drawing.Point(3, 16);
             this.listUye.Name = "listUye";
-            this.listUye.Size = new System.Drawing.Size(904, 256);
+            this.listUye.Size = new System.Drawing.Size(678, 208);
             this.listUye.TabIndex = 0;
             this.listUye.UseCompatibleStateImageBehavior = false;
             this.listUye.View = System.Windows.Forms.View.Details;
@@ -343,47 +358,13 @@
             this.ListTahsil.Text = "Tahsil";
             this.ListTahsil.Width = 106;
             // 
-            // radioHepsi
-            // 
-            this.radioHepsi.AutoSize = true;
-            this.radioHepsi.Location = new System.Drawing.Point(281, 254);
-            this.radioHepsi.Name = "radioHepsi";
-            this.radioHepsi.Size = new System.Drawing.Size(102, 21);
-            this.radioHepsi.TabIndex = 15;
-            this.radioHepsi.TabStop = true;
-            this.radioHepsi.Text = "Tüm Üyeler";
-            this.radioHepsi.UseVisualStyleBackColor = true;
-            // 
-            // radioPasif
-            // 
-            this.radioPasif.AutoSize = true;
-            this.radioPasif.Location = new System.Drawing.Point(170, 254);
-            this.radioPasif.Name = "radioPasif";
-            this.radioPasif.Size = new System.Drawing.Size(105, 21);
-            this.radioPasif.TabIndex = 16;
-            this.radioPasif.TabStop = true;
-            this.radioPasif.Text = "Pasif Üyeler";
-            this.radioPasif.UseVisualStyleBackColor = true;
-            // 
-            // radioAktif
-            // 
-            this.radioAktif.AutoSize = true;
-            this.radioAktif.Location = new System.Drawing.Point(63, 254);
-            this.radioAktif.Name = "radioAktif";
-            this.radioAktif.Size = new System.Drawing.Size(101, 21);
-            this.radioAktif.TabIndex = 17;
-            this.radioAktif.TabStop = true;
-            this.radioAktif.Text = "Aktif Üyeler";
-            this.radioAktif.UseVisualStyleBackColor = true;
-            // 
             // frmRaporUye
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 597);
+            this.ClientSize = new System.Drawing.Size(706, 485);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmRaporUye";
             this.Text = "Üye Raporu";
             this.Load += new System.EventHandler(this.frmRaporUye_Load);
@@ -402,9 +383,9 @@
         private System.Windows.Forms.ComboBox cboxUyelikDurumu;
         private System.Windows.Forms.ComboBox cboxTahsil;
         private System.Windows.Forms.ComboBox cboxUnvan;
-        private System.Windows.Forms.ComboBox cboxKısım;
+        private System.Windows.Forms.ComboBox cboxBirim;
         private System.Windows.Forms.ComboBox cboxMudurluk;
-        private System.Windows.Forms.ComboBox cboxII;
+        private System.Windows.Forms.ComboBox cboxIl;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView listUye;
         private System.Windows.Forms.ColumnHeader ListAdSoyad;

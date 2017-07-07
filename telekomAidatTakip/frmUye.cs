@@ -280,8 +280,6 @@ namespace telekomAidatTakip
             else
             {*/
             yeniKayitEkle();
-            sicilno = txtSicilNo.Text;
-            frmUye_Load(this, null);
             //}
 
             //  else
@@ -332,9 +330,13 @@ namespace telekomAidatTakip
                     db2.Sorgu("insert into UyeFotograf (sicilNo,Fotograf) values (@0,@1)", txtSicilNo.Text, resim);
                 MessageBox.Show("Yeni üye kaydedildi.", "Üye Kayıt", MessageBoxButtons.OK);
                 ekraniTemizle();
+                db.Kapat();
+                db2.Kapat();
+                this.Close();
             }
-            catch
+            catch(Exception e)
             {
+                Exception ed = e;
                 MessageBox.Show("Yeni kayıt sırasında problem oluştu.");
             }
             finally
