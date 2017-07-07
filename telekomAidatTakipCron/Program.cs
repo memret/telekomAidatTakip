@@ -22,6 +22,14 @@ namespace telekomAidatTakipCron
             mailListesi = dogumGunuTarihKontrol();
             //string[] mailListesi = {"m.emret94@gmail.com", "omertanis123@gmail.com" };
             MailTopluGonder(mailListesi, "doğum günü", "doğum günün kutlu olsun reis");
+            mailListesi.Clear();
+
+            OzelGunler ozelGunler = TarihKontrol();
+            foreach (OzelGun ozelgun in ozelGunler.ozelgunler)
+            {
+                MailTopluGonder(ozelGunler.mailler, ozelgun.baslik, ozelgun.icerik);
+            }
+           
         }
 
         static void MailTopluGonder(List<string> mailListesi, string baslik, string icerik)
@@ -68,6 +76,7 @@ namespace telekomAidatTakipCron
 
         }
 
+        //Doğum günü kutlaması.
         static private List<string> dogumGunuTarihKontrol()
         {
             List<string> liste = new List<string>();
@@ -78,12 +87,53 @@ namespace telekomAidatTakipCron
             while (data.Read())
             {
                 liste.Add(data["email"].ToString());
-                //MessageBox.Show(i + 1 + " inci " + data["dogumTarihi"].ToString());
 
             }
             return liste;
         }
-    }
-    
         
+
+        //class
+        class OzelGun
+        {
+            public String baslik;
+            public String icerik;
+
+            public OzelGun(String baslik, String icerik)
+            {
+                this.baslik = baslik;
+                this.icerik = icerik;
+            }
+        }
+        class OzelGunler
+        {
+            public List<OzelGun> ozelgunler = new List<OzelGun>();
+            public List<string> mailler = new List<string>();
+            public OzelGunler()
+            {
+
+            }
+        }
+        //end class
+        static private OzelGunler TarihKontrol()
+        {
+            OzelGunler ogunler = new OzelGunler();
+            Database db = new Database();
+
+            var data = db.DataOku("select email from Adres WHERE email is not null");
+            while (data.Read())
+            {
+                ogunler.mailler.Add(data["email"].ToString());
+            }
+
+            Database db2 = new Database();
+            var data2 = db2.DataOku("select baslik,mesaj,tarih from OzelGunler WHERE tarih LIKE '%" + DateTime.Now.ToString("MM-dd") + "%'");
+            while (data2.Read())
+            {
+               ogunler.ozelgunler.Add(new OzelGun((data2["baslik"]).ToString(), (data2["mesaj"]).ToString()));
+            }
+            return ogunler;
+        }
     }
+}
+    
