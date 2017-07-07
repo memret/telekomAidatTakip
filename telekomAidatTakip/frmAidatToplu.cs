@@ -25,7 +25,7 @@ namespace telekomAidatTakip
             cboxBirim.SelectedIndex = -1;
             cboxMudurluk.Enabled = false;
             cboxBirim.Enabled = false;
-
+            btnKaydet.Enabled = false;
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -51,7 +51,13 @@ namespace telekomAidatTakip
                         if (!string.IsNullOrEmpty(sicilNo))
                         {
                             db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", sicilNo, txtAidatMiktari.Text, this.dateTarih.Value.Date);
-
+                            txtAidatMiktari.Text = string.Empty;
+                            cboxil.SelectedIndex = -1;
+                            cboxMudurluk.DataSource = null;
+                            cboxBirim.DataSource = null;
+                            dateTarih.Value = DateTime.Today;
+                            lblKisiSayisi.Text = "Kişi Sayısı: ";
+                            btnKaydet.Enabled = false;
                         }
                         else
                         {
@@ -107,23 +113,7 @@ namespace telekomAidatTakip
 
         private void cboxBirim_SelectedIndexChanged(object sender, EventArgs e)
         {
-          /*  Database db = new Database();
-            string countkisi = "0";
-            if (cboxBirim.SelectedIndex != -1)
-            {
-                lblKisiSayisi.Text = "";
-
-
-            int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
-            var data = db.DataOku("select count (sicilNo) 'count' from Uyeler u join Birim b on u.birimNo=b.birimNo where b.birimNo=@0", birimNo);
-            if(data.Read())
-            {
-                countkisi = data["count"].ToString();
-            }
-            
-            lblKisiSayisi.Text = "Kişi Sayısı: "+ countkisi;
-            }
-            */
+         
         }
 
         private void cboxil_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,8 +127,9 @@ namespace telekomAidatTakip
             lblKisiSayisi.Text = "Kişi Sayısı: ";
             Database db = new Database();
             string countkisi = "0";
-            if (cboxBirim.SelectedIndex != -1)
+            if (cboxBirim.SelectedIndex != -1 && cboxBirim.Text!="Veri Yok")
             {
+                btnKaydet.Enabled = true;
                 lblKisiSayisi.Text = "";
 
 
@@ -151,6 +142,11 @@ namespace telekomAidatTakip
 
                 lblKisiSayisi.Text = "Kişi Sayısı: " + countkisi;
             }
+        }
+
+        private void txtAidatMiktari_TextChanged(object sender, EventArgs e)
+        {
+                  
         }
     }
 }

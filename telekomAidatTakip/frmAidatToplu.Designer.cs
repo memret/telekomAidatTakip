@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblKisiSayisi = new System.Windows.Forms.Label();
             this.dateTarih = new System.Windows.Forms.DateTimePicker();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.txtAidatMiktari = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblKisiSayisi = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,20 +59,29 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(11, 11);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(292, 245);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Toplu Aidat Girişi";
+            // 
+            // lblKisiSayisi
+            // 
+            this.lblKisiSayisi.AutoSize = true;
+            this.lblKisiSayisi.Location = new System.Drawing.Point(110, 126);
+            this.lblKisiSayisi.Name = "lblKisiSayisi";
+            this.lblKisiSayisi.Size = new System.Drawing.Size(59, 13);
+            this.lblKisiSayisi.TabIndex = 16;
+            this.lblKisiSayisi.Text = "Kişi Sayısı: ";
             // 
             // dateTarih
             // 
             this.dateTarih.CustomFormat = "MM yyyy";
             this.dateTarih.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTarih.Location = new System.Drawing.Point(113, 150);
-            this.dateTarih.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTarih.Margin = new System.Windows.Forms.Padding(2);
             this.dateTarih.Name = "dateTarih";
             this.dateTarih.Size = new System.Drawing.Size(103, 20);
             this.dateTarih.TabIndex = 15;
@@ -81,7 +90,7 @@
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.btnKaydet.Location = new System.Drawing.Point(113, 212);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(87, 29);
             this.btnKaydet.TabIndex = 0;
@@ -92,10 +101,11 @@
             // txtAidatMiktari
             // 
             this.txtAidatMiktari.Location = new System.Drawing.Point(113, 180);
-            this.txtAidatMiktari.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAidatMiktari.Margin = new System.Windows.Forms.Padding(2);
             this.txtAidatMiktari.Name = "txtAidatMiktari";
             this.txtAidatMiktari.Size = new System.Drawing.Size(103, 20);
             this.txtAidatMiktari.TabIndex = 14;
+            this.txtAidatMiktari.TextChanged += new System.EventHandler(this.txtAidatMiktari_TextChanged);
             // 
             // cboxBirim
             // 
@@ -103,7 +113,7 @@
             this.cboxBirim.Enabled = false;
             this.cboxBirim.FormattingEnabled = true;
             this.cboxBirim.Location = new System.Drawing.Point(113, 94);
-            this.cboxBirim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxBirim.Margin = new System.Windows.Forms.Padding(2);
             this.cboxBirim.Name = "cboxBirim";
             this.cboxBirim.Size = new System.Drawing.Size(149, 21);
             this.cboxBirim.TabIndex = 8;
@@ -116,7 +126,7 @@
             this.cboxMudurluk.Enabled = false;
             this.cboxMudurluk.FormattingEnabled = true;
             this.cboxMudurluk.Location = new System.Drawing.Point(113, 62);
-            this.cboxMudurluk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxMudurluk.Margin = new System.Windows.Forms.Padding(2);
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(149, 21);
             this.cboxMudurluk.TabIndex = 7;
@@ -127,7 +137,7 @@
             this.cboxil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxil.FormattingEnabled = true;
             this.cboxil.Location = new System.Drawing.Point(113, 27);
-            this.cboxil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxil.Margin = new System.Windows.Forms.Padding(2);
             this.cboxil.Name = "cboxil";
             this.cboxil.Size = new System.Drawing.Size(149, 21);
             this.cboxil.TabIndex = 6;
@@ -184,22 +194,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "İl:";
             // 
-            // lblKisiSayisi
-            // 
-            this.lblKisiSayisi.AutoSize = true;
-            this.lblKisiSayisi.Location = new System.Drawing.Point(110, 126);
-            this.lblKisiSayisi.Name = "lblKisiSayisi";
-            this.lblKisiSayisi.Size = new System.Drawing.Size(59, 13);
-            this.lblKisiSayisi.TabIndex = 16;
-            this.lblKisiSayisi.Text = "Kişi Sayısı: ";
-            // 
             // frmAidatToplu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 266);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAidatToplu";
             this.Text = "Toplu Aidat Girişi";
             this.Load += new System.EventHandler(this.frmAidatToplu_Load);
