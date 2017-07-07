@@ -202,7 +202,7 @@ namespace telekomAidatTakip
             //tek satırda yazmazsam da hata veriyor ömer buralarda çıldırdı
             Database db = new Database();
             SqlParameter paramTemp;
-            string temelSorgu = "SELECT u.adSoyad, u.sicilNo,kg.kanGrubu, i.ilAdi, m.mudurlukAdi, b.birimAdi, unv.unvanAdi, t.tahsilAdi FROM uyeler u,KanGrubu kg, il i, Mudurluk m, Birim b, Unvan unv, Tahsil t, nufusbilgileri nufus WHERE nufus.sicilno = u.sicilno and nufus.kanGrubuNo = kg.kanGrubuNo AND u.ilNo = i.ilNo AND u.mudurlukNo = m.mudurlukNo AND u.birimNo = b.birimNo AND u.unvanNo = unv.unvanNo AND u.tahsilNo = t.tahsilNo ";
+            string temelSorgu = "SELECT u.adSoyad, u.sicilNo, kg.kanGrubu, i.ilAdi, m.mudurlukAdi, b.birimAdi, unv.unvanAdi, t.tahsilAdi FROM uyeler u left join nufusbilgileri nufus on nufus.sicilno = u.sicilno left join kangrubu kg on nufus.kanGrubuNo = kg.kanGrubuNo left join il i on u.ilNo = i.ilNo left join mudurluk m on u.mudurlukNo = m.mudurlukNo left join birim b on u.birimNo = b.birimNo left join unvan unv on u.unvanNo = unv.unvanNo left join tahsil t on u.tahsilNo = t.tahsilNo ";
             string ekSorgu = " ";
 
 
