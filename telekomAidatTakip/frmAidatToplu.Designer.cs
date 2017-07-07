@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblKisiSayisi = new System.Windows.Forms.Label();
             this.dateTarih = new System.Windows.Forms.DateTimePicker();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.txtAidatMiktari = new System.Windows.Forms.TextBox();
@@ -45,6 +46,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblKisiSayisi);
             this.groupBox1.Controls.Add(this.dateTarih);
             this.groupBox1.Controls.Add(this.btnKaydet);
             this.groupBox1.Controls.Add(this.txtAidatMiktari);
@@ -56,28 +58,41 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(16, 17);
+            this.groupBox1.Location = new System.Drawing.Point(11, 11);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(438, 377);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(292, 245);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Toplu Aidat Girişi";
+            // 
+            // lblKisiSayisi
+            // 
+            this.lblKisiSayisi.AutoSize = true;
+            this.lblKisiSayisi.Location = new System.Drawing.Point(110, 126);
+            this.lblKisiSayisi.Name = "lblKisiSayisi";
+            this.lblKisiSayisi.Size = new System.Drawing.Size(59, 13);
+            this.lblKisiSayisi.TabIndex = 16;
+            this.lblKisiSayisi.Text = "Kişi Sayısı: ";
             // 
             // dateTarih
             // 
             this.dateTarih.CustomFormat = "MM yyyy";
             this.dateTarih.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTarih.Location = new System.Drawing.Point(170, 195);
+            this.dateTarih.Location = new System.Drawing.Point(113, 150);
+            this.dateTarih.Margin = new System.Windows.Forms.Padding(2);
             this.dateTarih.Name = "dateTarih";
-            this.dateTarih.Size = new System.Drawing.Size(152, 26);
+            this.dateTarih.Size = new System.Drawing.Size(103, 20);
             this.dateTarih.TabIndex = 15;
             // 
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnKaydet.Location = new System.Drawing.Point(153, 302);
+            this.btnKaydet.Location = new System.Drawing.Point(113, 212);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(132, 57);
+            this.btnKaydet.Size = new System.Drawing.Size(87, 29);
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -85,29 +100,35 @@
             // 
             // txtAidatMiktari
             // 
-            this.txtAidatMiktari.Location = new System.Drawing.Point(170, 242);
+            this.txtAidatMiktari.Location = new System.Drawing.Point(113, 180);
+            this.txtAidatMiktari.Margin = new System.Windows.Forms.Padding(2);
             this.txtAidatMiktari.Name = "txtAidatMiktari";
-            this.txtAidatMiktari.Size = new System.Drawing.Size(152, 26);
+            this.txtAidatMiktari.Size = new System.Drawing.Size(103, 20);
             this.txtAidatMiktari.TabIndex = 14;
+            this.txtAidatMiktari.TextChanged += new System.EventHandler(this.txtAidatMiktari_TextChanged);
             // 
             // cboxBirim
             // 
             this.cboxBirim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxBirim.Enabled = false;
             this.cboxBirim.FormattingEnabled = true;
-            this.cboxBirim.Location = new System.Drawing.Point(170, 145);
+            this.cboxBirim.Location = new System.Drawing.Point(113, 94);
+            this.cboxBirim.Margin = new System.Windows.Forms.Padding(2);
             this.cboxBirim.Name = "cboxBirim";
-            this.cboxBirim.Size = new System.Drawing.Size(222, 28);
+            this.cboxBirim.Size = new System.Drawing.Size(149, 21);
             this.cboxBirim.TabIndex = 8;
+            this.cboxBirim.SelectedIndexChanged += new System.EventHandler(this.cboxBirim_SelectedIndexChanged);
+            this.cboxBirim.SelectionChangeCommitted += new System.EventHandler(this.cboxBirim_SelectionChangeCommitted);
             // 
             // cboxMudurluk
             // 
             this.cboxMudurluk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxMudurluk.Enabled = false;
             this.cboxMudurluk.FormattingEnabled = true;
-            this.cboxMudurluk.Location = new System.Drawing.Point(170, 95);
+            this.cboxMudurluk.Location = new System.Drawing.Point(113, 62);
+            this.cboxMudurluk.Margin = new System.Windows.Forms.Padding(2);
             this.cboxMudurluk.Name = "cboxMudurluk";
-            this.cboxMudurluk.Size = new System.Drawing.Size(222, 28);
+            this.cboxMudurluk.Size = new System.Drawing.Size(149, 21);
             this.cboxMudurluk.TabIndex = 7;
             this.cboxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cboxMudurluk_SelectionChangeCommitted);
             // 
@@ -115,63 +136,71 @@
             // 
             this.cboxil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxil.FormattingEnabled = true;
-            this.cboxil.Location = new System.Drawing.Point(170, 42);
+            this.cboxil.Location = new System.Drawing.Point(113, 27);
+            this.cboxil.Margin = new System.Windows.Forms.Padding(2);
             this.cboxil.Name = "cboxil";
-            this.cboxil.Size = new System.Drawing.Size(222, 28);
+            this.cboxil.Size = new System.Drawing.Size(149, 21);
             this.cboxil.TabIndex = 6;
+            this.cboxil.SelectedIndexChanged += new System.EventHandler(this.cboxil_SelectedIndexChanged);
             this.cboxil.SelectionChangeCommitted += new System.EventHandler(this.cboxil_SelectionChangeCommitted);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 246);
+            this.label5.Location = new System.Drawing.Point(19, 183);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 20);
+            this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Aidat Miktarı:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 200);
+            this.label4.Location = new System.Drawing.Point(19, 153);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 20);
+            this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Aidat Ay ve Yılı:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 149);
+            this.label3.Location = new System.Drawing.Point(19, 97);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 20);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Birim:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 100);
+            this.label2.Location = new System.Drawing.Point(19, 65);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Müdürlük:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 46);
+            this.label1.Location = new System.Drawing.Point(19, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 20);
+            this.label1.Size = new System.Drawing.Size(15, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "İl:";
             // 
             // frmAidatToplu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 409);
+            this.ClientSize = new System.Drawing.Size(316, 266);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAidatToplu";
             this.Text = "Toplu Aidat Girişi";
             this.Load += new System.EventHandler(this.frmAidatToplu_Load);
@@ -195,5 +224,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.DateTimePicker dateTarih;
+        private System.Windows.Forms.Label lblKisiSayisi;
     }
 }
