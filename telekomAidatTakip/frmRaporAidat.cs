@@ -184,7 +184,7 @@ namespace telekomAidatTakip
             {
                 frmUye frm = new frmUye(listUyeKayitlari.SelectedItems[0].Text);
                 frm.MdiParent = this.MdiParent;
-                frm.ShowDialog();
+                frm.Show();
             }
 
 
