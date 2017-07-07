@@ -31,6 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage = new System.Windows.Forms.TabPage();
+            this.btnAktiflestir = new System.Windows.Forms.Button();
             this.lblSilinmeBilgisi = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnResimSil = new System.Windows.Forms.Button();
@@ -118,7 +119,6 @@
             this.btnSil = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnYeni = new System.Windows.Forms.Button();
-            this.btnAktiflestir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage.SuspendLayout();
@@ -185,11 +185,22 @@
             this.tabPage.Controls.Add(this.txtAdSoyad);
             this.tabPage.Location = new System.Drawing.Point(4, 22);
             this.tabPage.Name = "tabPage";
-            this.tabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage.Size = new System.Drawing.Size(801, 338);
             this.tabPage.TabIndex = 0;
             this.tabPage.Text = "Temel Bilgiler";
             this.tabPage.UseVisualStyleBackColor = true;
+            // 
+            // btnAktiflestir
+            // 
+            this.btnAktiflestir.Location = new System.Drawing.Point(181, 294);
+            this.btnAktiflestir.Name = "btnAktiflestir";
+            this.btnAktiflestir.Size = new System.Drawing.Size(88, 23);
+            this.btnAktiflestir.TabIndex = 18;
+            this.btnAktiflestir.Text = "AKTİFLEŞTİR";
+            this.btnAktiflestir.UseVisualStyleBackColor = true;
+            this.btnAktiflestir.Visible = false;
+            this.btnAktiflestir.Click += new System.EventHandler(this.btnAktiflestir_Click);
             // 
             // lblSilinmeBilgisi
             // 
@@ -215,7 +226,6 @@
             // 
             // btnResimSil
             // 
-            this.btnResimSil.Enabled = false;
             this.btnResimSil.Location = new System.Drawing.Point(152, 274);
             this.btnResimSil.Name = "btnResimSil";
             this.btnResimSil.Size = new System.Drawing.Size(85, 27);
@@ -450,8 +460,8 @@
             this.tabPage2.Controls.Add(this.txtEvAdresi);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(801, 340);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(801, 338);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Adres Bilgileri";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -621,7 +631,7 @@
             this.tabPage3.Controls.Add(this.label21);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(801, 340);
+            this.tabPage3.Size = new System.Drawing.Size(801, 338);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nüfus Bilgileri";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -838,7 +848,7 @@
             this.tabPage4.Controls.Add(this.groupBox4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(801, 340);
+            this.tabPage4.Size = new System.Drawing.Size(801, 338);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Aidat Bilgileri";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -872,7 +882,7 @@
             this.dateAidatTarih.CustomFormat = "MM yyyy";
             this.dateAidatTarih.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateAidatTarih.Location = new System.Drawing.Point(103, 20);
-            this.dateAidatTarih.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateAidatTarih.Margin = new System.Windows.Forms.Padding(2);
             this.dateAidatTarih.Name = "dateAidatTarih";
             this.dateAidatTarih.Size = new System.Drawing.Size(103, 20);
             this.dateAidatTarih.TabIndex = 20;
@@ -890,7 +900,7 @@
             // btnAidatEkle
             // 
             this.btnAidatEkle.Location = new System.Drawing.Point(68, 83);
-            this.btnAidatEkle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAidatEkle.Margin = new System.Windows.Forms.Padding(2);
             this.btnAidatEkle.Name = "btnAidatEkle";
             this.btnAidatEkle.Size = new System.Drawing.Size(88, 37);
             this.btnAidatEkle.TabIndex = 16;
@@ -901,7 +911,7 @@
             // txtAidatMiktari
             // 
             this.txtAidatMiktari.Location = new System.Drawing.Point(103, 50);
-            this.txtAidatMiktari.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAidatMiktari.Margin = new System.Windows.Forms.Padding(2);
             this.txtAidatMiktari.Name = "txtAidatMiktari";
             this.txtAidatMiktari.Size = new System.Drawing.Size(103, 20);
             this.txtAidatMiktari.TabIndex = 19;
@@ -949,7 +959,7 @@
             this.tabPage5.Controls.Add(this.txtNot);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(801, 340);
+            this.tabPage5.Size = new System.Drawing.Size(801, 338);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Not";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1023,17 +1033,6 @@
             this.btnYeni.UseVisualStyleBackColor = true;
             this.btnYeni.Visible = false;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
-            // 
-            // btnAktiflestir
-            // 
-            this.btnAktiflestir.Location = new System.Drawing.Point(181, 294);
-            this.btnAktiflestir.Name = "btnAktiflestir";
-            this.btnAktiflestir.Size = new System.Drawing.Size(88, 23);
-            this.btnAktiflestir.TabIndex = 18;
-            this.btnAktiflestir.Text = "AKTİFLEŞTİR";
-            this.btnAktiflestir.UseVisualStyleBackColor = true;
-            this.btnAktiflestir.Visible = false;
-            this.btnAktiflestir.Click += new System.EventHandler(this.btnAktiflestir_Click);
             // 
             // frmUye
             // 

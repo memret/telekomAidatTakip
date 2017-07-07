@@ -202,7 +202,7 @@ namespace telekomAidatTakip
             //tek satırda yazmazsam da hata veriyor ömer buralarda çıldırdı
             Database db = new Database();
             SqlParameter paramTemp;
-            string temelSorgu = "SELECT u.adSoyad, u.sicilNo, kg.kanGrubu, i.ilAdi, m.mudurlukAdi, b.birimAdi, unv.unvanAdi, t.tahsilAdi FROM uyeler u left join nufusbilgileri nufus on nufus.sicilno = u.sicilno left join kangrubu kg on nufus.kanGrubuNo = kg.kanGrubuNo left join il i on u.ilNo = i.ilNo left join mudurluk m on u.mudurlukNo = m.mudurlukNo left join birim b on u.birimNo = b.birimNo left join unvan unv on u.unvanNo = unv.unvanNo left join tahsil t on u.tahsilNo = t.tahsilNo where ";
+            string temelSorgu = "SELECT u.adSoyad, u.sicilNo, kg.kanGrubu, i.ilAdi, m.mudurlukAdi, b.birimAdi, unv.unvanAdi, t.tahsilAdi FROM uyeler u left join nufusbilgileri nufus on nufus.sicilno = u.sicilno left join kangrubu kg on nufus.kanGrubuNo = kg.kanGrubuNo left join il i on u.ilNo = i.ilNo left join mudurluk m on u.mudurlukNo = m.mudurlukNo left join birim b on u.birimNo = b.birimNo left join unvan unv on u.unvanNo = unv.unvanNo left join tahsil t on u.tahsilNo = t.tahsilNo ";
             string ekSorgu = string.Empty;
 
 
@@ -275,8 +275,8 @@ namespace telekomAidatTakip
                 string uyelikTipiNo = 2.ToString();
                 ekSorgu += "AND u.aktif = '0'";
             }
-
-            ekSorgu = ekSorgu.Substring(4);
+            if(ekSorgu != string.Empty)
+                ekSorgu = "where " +ekSorgu.Substring(4);
             temelSorgu += ekSorgu;
 
             var data = db.DataOku(temelSorgu, paramList);

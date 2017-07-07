@@ -29,7 +29,6 @@ namespace telekomAidatTakip
 
         private void frmUye_Load(object sender, EventArgs e)
         {
-            btnResimSil.Enabled = false;
             // DoldurKomple();
 
             if (sicilno != null)
@@ -87,7 +86,8 @@ namespace telekomAidatTakip
             {
                 imgBytes = (byte[])data["fotograf"];
             }
-            else
+
+            if (imgBytes == null || imgBytes.Length == 0)
             {
                 pictureBox1.Image = Properties.Resources._default;
                 return;
@@ -469,7 +469,8 @@ namespace telekomAidatTakip
 
         private void btnResimSil_Click(object sender, EventArgs e)
         {
-            if (txtSicilNo.Text != string.Empty)
+
+            /*if (txtSicilNo.Text != string.Empty)
             {
                 //Silmek istiyor musun krdş diye sorulacak.
                 DialogResult dialogResult = MessageBox.Show("Üye resmi silinecek. Emin misiniz?", "Resim silme", MessageBoxButtons.OKCancel);
@@ -481,7 +482,7 @@ namespace telekomAidatTakip
                 }
                 else if (dialogResult == DialogResult.Cancel)
                     return;
-            }
+            }*/
             pictureBox1.Image = null;
         }
 
