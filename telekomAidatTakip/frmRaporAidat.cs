@@ -85,14 +85,7 @@ namespace telekomAidatTakip
                     paramTemp = new SqlParameter("@birim", birimno);
                     paramList.Add(paramTemp);
                 }
-                if (checkDonem.Checked)
-                {
-                    
-                    ekquery += "b.tarih = @birim and ";
-                    
-                    paramTemp = new SqlParameter("@tarih", dateTimePicker1.Value.ToString("MM/yyyy"));
-                    paramList.Add(paramTemp);
-                }
+
                 ekquery = ekquery.Trim().Substring(0, ekquery.Length - 5);
                 query += ekquery;
             }
