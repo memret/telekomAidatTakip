@@ -40,7 +40,7 @@ namespace telekomAidatTakip
         {
             //tarih ve ödenmeyenleri listele kısımları kullanılmıyor şimdilik
             Database db = new Database();
-            string query = "select u.sicilNo, u.adSoyad, (select aidat from AidatMiktar where birimno = u.birimNo) 'Miktar', (select SUM(miktar) from aidatlog where sicilno = u.sicilno) 'toplammiktar', i.ilAdi, m.mudurlukAdi, b.birimAdi from uyeler u join il i on i.ilNo = u.ilNo join Mudurluk m on m.mudurlukNo = u.mudurlukNo join birim b on b.birimNo = u.birimNo ";
+            string query = "select u.sicilNo, u.adSoyad, (select aidat from AidatMiktar where birimno = u.birimNo) 'Miktar', alog.toplam 'toplammiktar', i.ilAdi, m.mudurlukAdi, b.birimAdi from uyeler u join il i on i.ilNo = u.ilNo join Mudurluk m on m.mudurlukNo = u.mudurlukNo join birim b on b.birimNo = u.birimNo join (select SUM(miktar) toplam, sicilno from aidatlog group by sicilno) alog on alog.sicilno=u.sicilno ";
             List<SqlParameter> paramList = new List<SqlParameter>();
             if (checkBirim.Checked || checkMudurluk.Checked || checkIl.Checked)
             {
@@ -83,6 +83,14 @@ namespace telekomAidatTakip
                     ekquery += "b.birimno = @birim and ";
                     String birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key.ToString();
                     paramTemp = new SqlParameter("@birim", birimno);
+                    paramList.Add(paramTemp);
+                }
+                if (checkDonem.Checked)
+                {
+                    
+                    ekquery += "b.tarih = @birim and ";
+                    
+                    paramTemp = new SqlParameter("@tarih", dateTimePicker1.Value.ToString("MM/yyyy"));
                     paramList.Add(paramTemp);
                 }
                 ekquery = ekquery.Trim().Substring(0, ekquery.Length - 5);

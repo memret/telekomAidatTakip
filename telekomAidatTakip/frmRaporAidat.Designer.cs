@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             this.grpAramaKriterleri = new System.Windows.Forms.GroupBox();
-            this.checkDonem = new System.Windows.Forms.CheckBox();
             this.checkMudurluk = new System.Windows.Forms.CheckBox();
             this.checkBirim = new System.Windows.Forms.CheckBox();
             this.checkIl = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnYazdir = new System.Windows.Forms.Button();
             this.btnListele = new System.Windows.Forms.Button();
-            this.checkOdemeyenler = new System.Windows.Forms.CheckBox();
             this.cboxBirim = new System.Windows.Forms.ComboBox();
             this.cboxMudurluk = new System.Windows.Forms.ComboBox();
             this.cboxil = new System.Windows.Forms.ComboBox();
@@ -55,35 +52,21 @@
             // 
             // grpAramaKriterleri
             // 
-            this.grpAramaKriterleri.Controls.Add(this.checkDonem);
             this.grpAramaKriterleri.Controls.Add(this.checkMudurluk);
             this.grpAramaKriterleri.Controls.Add(this.checkBirim);
             this.grpAramaKriterleri.Controls.Add(this.checkIl);
-            this.grpAramaKriterleri.Controls.Add(this.dateTimePicker1);
             this.grpAramaKriterleri.Controls.Add(this.btnYazdir);
             this.grpAramaKriterleri.Controls.Add(this.btnListele);
-            this.grpAramaKriterleri.Controls.Add(this.checkOdemeyenler);
             this.grpAramaKriterleri.Controls.Add(this.cboxBirim);
             this.grpAramaKriterleri.Controls.Add(this.cboxMudurluk);
             this.grpAramaKriterleri.Controls.Add(this.cboxil);
             this.grpAramaKriterleri.Location = new System.Drawing.Point(12, 12);
             this.grpAramaKriterleri.Name = "grpAramaKriterleri";
-            this.grpAramaKriterleri.Size = new System.Drawing.Size(651, 207);
+            this.grpAramaKriterleri.Size = new System.Drawing.Size(651, 171);
             this.grpAramaKriterleri.TabIndex = 3;
             this.grpAramaKriterleri.TabStop = false;
             this.grpAramaKriterleri.Text = "Arama Kriterleri";
             this.grpAramaKriterleri.Enter += new System.EventHandler(this.grpAramaKriterleri_Enter);
-            // 
-            // checkDonem
-            // 
-            this.checkDonem.AutoSize = true;
-            this.checkDonem.Enabled = false;
-            this.checkDonem.Location = new System.Drawing.Point(23, 103);
-            this.checkDonem.Name = "checkDonem";
-            this.checkDonem.Size = new System.Drawing.Size(92, 17);
-            this.checkDonem.TabIndex = 14;
-            this.checkDonem.Text = "Aidat Dönemi:";
-            this.checkDonem.UseVisualStyleBackColor = true;
             // 
             // checkMudurluk
             // 
@@ -118,22 +101,11 @@
             this.checkIl.UseVisualStyleBackColor = true;
             this.checkIl.CheckedChanged += new System.EventHandler(this.checkIl_CheckedChanged);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "MM/yyyy";
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(153, 98);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(135, 20);
-            this.dateTimePicker1.TabIndex = 13;
-            // 
             // btnYazdir
             // 
             this.btnYazdir.Enabled = false;
             this.btnYazdir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnYazdir.Location = new System.Drawing.Point(261, 152);
+            this.btnYazdir.Location = new System.Drawing.Point(261, 109);
             this.btnYazdir.Name = "btnYazdir";
             this.btnYazdir.Size = new System.Drawing.Size(105, 44);
             this.btnYazdir.TabIndex = 12;
@@ -144,24 +116,13 @@
             // btnListele
             // 
             this.btnListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnListele.Location = new System.Drawing.Point(107, 152);
+            this.btnListele.Location = new System.Drawing.Point(107, 109);
             this.btnListele.Name = "btnListele";
             this.btnListele.Size = new System.Drawing.Size(129, 44);
             this.btnListele.TabIndex = 11;
             this.btnListele.Text = "Ekrana Listele";
             this.btnListele.UseVisualStyleBackColor = true;
             this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
-            // 
-            // checkOdemeyenler
-            // 
-            this.checkOdemeyenler.AutoSize = true;
-            this.checkOdemeyenler.Enabled = false;
-            this.checkOdemeyenler.Location = new System.Drawing.Point(153, 130);
-            this.checkOdemeyenler.Name = "checkOdemeyenler";
-            this.checkOdemeyenler.Size = new System.Drawing.Size(123, 17);
-            this.checkOdemeyenler.TabIndex = 10;
-            this.checkOdemeyenler.Text = "Ödemeyenleri Listele";
-            this.checkOdemeyenler.UseVisualStyleBackColor = true;
             // 
             // cboxBirim
             // 
@@ -196,7 +157,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listUyeKayitlari);
-            this.groupBox2.Location = new System.Drawing.Point(13, 231);
+            this.groupBox2.Location = new System.Drawing.Point(13, 189);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(650, 213);
             this.groupBox2.TabIndex = 4;
@@ -261,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 453);
+            this.ClientSize = new System.Drawing.Size(675, 412);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grpAramaKriterleri);
             this.Name = "frmRaporAidat";
@@ -278,7 +239,6 @@
         private System.Windows.Forms.GroupBox grpAramaKriterleri;
         private System.Windows.Forms.Button btnYazdir;
         private System.Windows.Forms.Button btnListele;
-        private System.Windows.Forms.CheckBox checkOdemeyenler;
         private System.Windows.Forms.ComboBox cboxBirim;
         private System.Windows.Forms.ComboBox cboxMudurluk;
         private System.Windows.Forms.ComboBox cboxil;
@@ -291,8 +251,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.CheckBox checkDonem;
         private System.Windows.Forms.CheckBox checkMudurluk;
         private System.Windows.Forms.CheckBox checkBirim;
         private System.Windows.Forms.CheckBox checkIl;
