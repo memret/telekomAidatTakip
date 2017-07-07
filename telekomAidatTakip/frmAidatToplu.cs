@@ -89,6 +89,7 @@ namespace telekomAidatTakip
 
         private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            lblKisiSayisi.Text = "Kişi Sayısı: ";
             if (cboxMudurluk.SelectedIndex != -1)
             {
                 int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
@@ -101,6 +102,54 @@ namespace telekomAidatTakip
             else
             {
                 cboxBirim.Enabled = false;
+            }
+        }
+
+        private void cboxBirim_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          /*  Database db = new Database();
+            string countkisi = "0";
+            if (cboxBirim.SelectedIndex != -1)
+            {
+                lblKisiSayisi.Text = "";
+
+
+            int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+            var data = db.DataOku("select count (sicilNo) 'count' from Uyeler u join Birim b on u.birimNo=b.birimNo where b.birimNo=@0", birimNo);
+            if(data.Read())
+            {
+                countkisi = data["count"].ToString();
+            }
+            
+            lblKisiSayisi.Text = "Kişi Sayısı: "+ countkisi;
+            }
+            */
+        }
+
+        private void cboxil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            lblKisiSayisi.Text = "Kişi Sayısı: ";
+        }
+
+        private void cboxBirim_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            lblKisiSayisi.Text = "Kişi Sayısı: ";
+            Database db = new Database();
+            string countkisi = "0";
+            if (cboxBirim.SelectedIndex != -1)
+            {
+                lblKisiSayisi.Text = "";
+
+
+                int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+                var data = db.DataOku("select count (sicilNo) 'count' from Uyeler u join Birim b on u.birimNo=b.birimNo where b.birimNo=@0", birimNo);
+                if (data.Read())
+                {
+                    countkisi = data["count"].ToString();
+                }
+
+                lblKisiSayisi.Text = "Kişi Sayısı: " + countkisi;
             }
         }
     }
