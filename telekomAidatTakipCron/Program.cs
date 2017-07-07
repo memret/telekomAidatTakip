@@ -21,7 +21,7 @@ namespace telekomAidatTakipCron
             List<string> mailListesi = new List<string>();
             mailListesi = dogumGunuTarihKontrol();
             //string[] mailListesi = {"m.emret94@gmail.com", "omertanis123@gmail.com" };
-            MailTopluGonder(mailListesi, "doğum günü", "doğum günün kutlu olsun reis");
+            //MailTopluGonder(mailListesi, "doğum günü", "doğum günün kutlu olsun reis");
             mailListesi.Clear();
 
             OzelGunler ozelGunler = TarihKontrol();
@@ -119,18 +119,46 @@ namespace telekomAidatTakipCron
         {
             OzelGunler ogunler = new OzelGunler();
             Database db = new Database();
-
-            var data = db.DataOku("select email from Adres WHERE email is not null");
-            while (data.Read())
-            {
-                ogunler.mailler.Add(data["email"].ToString());
-            }
+            var data = db.DataOku("select a.sicilNo, a.email, u.adSoyad,i.ilAdi, m.MudurlukAdi, b.birimAdi" +
+            " from Adres a, Uyeler u, Mudurluk m, il i,Birim b" +
+            " WHERE email is not null" +
+            " AND email != ''" +
+            " AND a.sicilNo = u.sicilNo" +
+            " AND u.MudurlukNo = m.MudurlukNo" +
+            " AND i.ilNo = u.ilNo" +
+            " AND b.birimNo = u.birimNo");
 
             Database db2 = new Database();
             var data2 = db2.DataOku("select baslik,mesaj,tarih from OzelGunler WHERE tarih LIKE '%" + DateTime.Now.ToString("MM-dd") + "%'");
-            while (data2.Read())
+
+            string degisecekAdSoyad="";
+            string degisecekSicilNo = "";
+            string degisecekIlAdi = "";
+            string degisecekMudurlukAdi = "";
+            string degisecekBirimAdi = "";
+
+
+            //BURALAR DEĞİŞECCEK REİS
+            while (data.Read())
             {
-               ogunler.ozelgunler.Add(new OzelGun((data2["baslik"]).ToString(), (data2["mesaj"]).ToString()));
+                ogunler.mailler.Add(data["email"].ToString());
+                degisecekAdSoyad = data["adSoyad"].ToString();
+                degisecekSicilNo = data["sicilNo"].ToString();
+                degisecekIlAdi = data["ilAdi"].ToString();
+                degisecekMudurlukAdi = data["MudurlukAdi"].ToString();
+                degisecekBirimAdi = data["BirimAdi"].ToString();
+
+                while (data2.Read())
+                {
+                     string mesaj = data2["mesaj"].ToString();
+                     mesaj = mesaj.Replace("%adsoyad%", degisecekAdSoyad);
+                     mesaj = mesaj.Replace("%sicilno%", degisecekSicilNo);
+                     mesaj = mesaj.Replace("%sehir%", degisecekIlAdi);
+                     mesaj = mesaj.Replace("%mudurluk%", degisecekMudurlukAdi);
+                     mesaj = mesaj.Replace("%birim%", degisecekBirimAdi);
+
+                    ogunler.ozelgunler.Add(new OzelGun((data2["baslik"]).ToString(), mesaj));
+                }
             }
             return ogunler;
         }

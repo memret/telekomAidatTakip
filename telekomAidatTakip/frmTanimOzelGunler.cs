@@ -79,6 +79,12 @@ namespace telekomAidatTakip
                 dateTimeTarih.Enabled = true;
                 txtMsj.Enabled = true;
                 txtYorum.Enabled = true;
+
+                btnAdi.Enabled = true;
+                btnSicilNo.Enabled = true;
+                btnSehir.Enabled = true;
+                btnMudurluk.Enabled = true;
+                btnBirim.Enabled = true;
                 
                 btnYeni.Text = "Ekle";
                 btnKaydet.Enabled = false;
@@ -220,6 +226,31 @@ namespace telekomAidatTakip
             gboxTabloGosterimi.Width = this.Width - 60;
             listView1.Width = this.Width - 77;
             listView1.Height = this.Height - 419;
+        }
+
+        private void btnAdi_Click(object sender, EventArgs e)
+        {
+            txtMsj.Text += " %AdSoyad% ";
+        }
+
+        private void btnSicilNo_Click(object sender, EventArgs e)
+        {
+            txtMsj.Text += " %SicilNo% ";
+        }
+
+        private void btnSehir_Click(object sender, EventArgs e)
+        {
+            txtMsj.Text += " %sehir% ";
+        }
+
+        private void btnMudurluk_Click(object sender, EventArgs e)
+        {
+            txtMsj.Text += " %mudurluk% ";
+        }
+
+        private void btnBirim_Click(object sender, EventArgs e)
+        {
+            txtMsj.Text += " %birim% ";
         }
     }
 }
