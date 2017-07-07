@@ -329,6 +329,7 @@ namespace telekomAidatTakip
             if (listUye.SelectedItems.Count > 0)
             {
                 frmUye frm = new frmUye(listUye.SelectedItems[0].Text);
+                frm.MdiParent = this.MdiParent;
                 frm.ShowDialog();
                 btnEkranaListele_Click(this,null);
             }
