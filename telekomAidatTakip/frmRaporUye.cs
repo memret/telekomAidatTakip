@@ -272,20 +272,19 @@ namespace telekomAidatTakip
                 temelSorgu += ekSorgu;
             }
 
-            if (cSilinmisKayıt.Checked)
-            {
-                string uyelikTipiNo = 2.ToString();
-                ekSorgu += "AND u.aktif = '0'";
-                temelSorgu += ekSorgu;
-            }
 
-            if (!cSilinmisKayıt.Checked)
+            if (radioAktif.Checked)
             {
                 string uyelikTipiNo = 2.ToString();
                 ekSorgu += "AND u.aktif = '1'";
                 temelSorgu += ekSorgu;
             }
-
+            else if(radioPasif.Checked)
+            {
+                string uyelikTipiNo = 2.ToString();
+                ekSorgu += "AND u.aktif = '0'";
+                temelSorgu += ekSorgu;
+            }
 
 
             var data = db.DataOku(temelSorgu, paramList);
