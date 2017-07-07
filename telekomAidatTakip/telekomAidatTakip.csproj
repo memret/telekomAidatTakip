@@ -131,10 +131,11 @@
     <Compile Include="frmRaporUye.Designer.cs">
       <DependentUpon>frmRaporUye.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUye1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>frmUye.resx</DependentUpon>
+    <Compile Include="frmUyeSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUyeSil.Designer.cs">
+      <DependentUpon>frmUyeSil.cs</DependentUpon>
     </Compile>
     <Compile Include="frmYedekleme.cs">
       <SubType>Form</SubType>
@@ -194,6 +195,9 @@
       <DependentUpon>frmUye.cs</DependentUpon>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>frmUye1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUyeSil.resx">
+      <DependentUpon>frmUyeSil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmYedekleme.resx">
       <DependentUpon>frmYedekleme.cs</DependentUpon>

@@ -165,6 +165,18 @@ namespace telekomAidatTakip
                 cboxBirim.SelectedItem = PRG.cboxIndexBul(ref cboxBirim, data["birimno"]);
                 cboxUyelikTipi.SelectedItem = PRG.cboxIndexBul(ref cboxUyelikTipi, data["uyeliktipino"]);
 
+                if (!(bool)data["aktif"])
+                {
+                    Database db2 = new Database();
+
+                    lblSilinmeBilgisi.Text = db2.DataOkuTek("select silinmenedeni from silinmenedeni where silinmenedenno = @0", "silinmenedeni", data["silinmenedenino"]);
+                    lblSilinmeBilgisi.Visible = true;
+                    lblSilinmeBilgisiLabeli.Visible = true;
+                    btnAktiflestir.Location = new Point(lblSilinmeBilgisi.Location.X + lblSilinmeBilgisi.Size.Width + 5,btnAktiflestir.Location.Y);
+                    btnAktiflestir.Visible = true;
+                    btnSil.Visible = false;
+                }
+
                 dateGiris.Value = Convert.ToDateTime(data["girisTarihi"]);
                 dateKayit.Value = Convert.ToDateTime(data["kayitTarihi"]);
             }
@@ -269,7 +281,8 @@ namespace telekomAidatTakip
             else
             {*/
                 yeniKayitEkle();
-            this.Close();
+            sicilno = txtSicilNo.Text;
+            frmUye_Load(this, null);
             //}
 
             //  else
@@ -398,12 +411,19 @@ namespace telekomAidatTakip
         {
             if (sicilno != string.Empty)
             {
-                DialogResult dialogResult = MessageBox.Show("Üye silinecek. Emin misiniz?", "Üye silme", MessageBoxButtons.OKCancel);
+                frmUyeSil frm = new frmUyeSil(sicilno);
+                frm.ShowDialog();
+                if (frm.DialogResult == DialogResult.OK)
+                {
+                    DoldurKomple(sicilno);
+                }
+                
+                /*DialogResult dialogResult = MessageBox.Show("Üye silinecek. Emin misiniz?", "Üye silme", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)
                 {
                     //üye silinmeyecek silinme nedeni verilip aktif = 0 yapılacak
                     //silinmesi gerekse dahi ilk sorgu yeterli hepsini silmeye :D
-                    /*
+                    
                     Database db = new Database();
                     Database db2 = new Database();
                     Database db3 = new Database();
@@ -418,11 +438,12 @@ namespace telekomAidatTakip
                     db3.Kapat();
                     db4.Kapat();
                     MessageBox.Show("Üye silindi.", "Üye silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    */
+                    
                 }
 
                 else if (dialogResult == DialogResult.Cancel)
                     return;
+            */
             }
             else
             {
@@ -557,6 +578,16 @@ namespace telekomAidatTakip
                     txtSicilNo.Select();
                 }
             }
+        }
+
+        private void btnAktiflestir_Click(object sender, EventArgs e)
+        {
+            Database db = new Database();
+            db.Sorgu("update uyeler set aktif = 1, silinmenedenino= NULL where sicilno=@0",sicilno);
+            lblSilinmeBilgisi.Visible = false;
+            lblSilinmeBilgisiLabeli.Visible = false;
+            btnAktiflestir.Visible = false;
+            frmUye_Load(this, null);
         }
     }
 }

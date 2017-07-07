@@ -118,6 +118,26 @@ namespace telekomAidatTakip
             cboxKanGrubu.SelectedIndex = -1;
             db.Kapat();
         }
+        public static void DoldurSilinmeNedeni(ref ComboBox cboxSilinmeNedeni)
+        {
+            Dictionary<int, string> cboxSource = new Dictionary<int, string>();
+            Database db = new Database();
+            var data = db.DataOku("select * from silinmenedeni");
+
+            while (data.Read())
+                cboxSource.Add(Convert.ToInt32(data["silinmenedenno"]), data["silinmenedeni"].ToString());
+            if (cboxSource.Count == 0)
+            {
+                cboxSource.Add(-1, "Veri Yok");
+                cboxSilinmeNedeni.Enabled = false;
+            }
+            cboxSilinmeNedeni.DataSource = new BindingSource(cboxSource, null);
+            cboxSilinmeNedeni.DisplayMember = "Value";
+            cboxSilinmeNedeni.ValueMember = "Key";
+            cboxSilinmeNedeni.Enabled = true;
+            cboxSilinmeNedeni.SelectedIndex = -1;
+            db.Kapat();
+        }
         public static void DoldurMudurluk(ref ComboBox cboxMudurluk, string ilNo)
         {
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
