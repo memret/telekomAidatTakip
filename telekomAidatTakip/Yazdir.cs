@@ -44,23 +44,23 @@ namespace telekomAidatTakip
             e.Graphics.DrawLine(myPen, 120, 180, 750, 180);
             e.Graphics.DrawString(baslik, myFont, sbrush, 200, 120);
 
-            e.Graphics.DrawLine(myPen, 120, 220, 750, 220);
+            //e.Graphics.DrawLine(myPen, 120, 220, 750, 220);
 
             myFont = new Font("Calibri", 12, FontStyle.Bold);
             int x = 120;
             foreach (ColumnHeader item in list.Columns)
             {
-                var asd = list.Columns[0];
-                e.Graphics.DrawString(item.Text, myFont, sbrush, x, 228);
+                Rectangle rect2 = new Rectangle(x, 228, item.Width, 20);
+                e.Graphics.DrawString(item.Text, myFont, sbrush, rect2);
+                e.Graphics.DrawRectangle(Pens.Black, Rectangle.Round(rect2));
+                //e.Graphics.DrawString(item.Text, myFont, sbrush, x, 228);
                 x += item.Width;
             }
-            e.Graphics.DrawLine(myPen, 120, 248, 750, 248);
+            //e.Graphics.DrawLine(myPen, 120, 248, 750, 248);
 
-            int y = 260;
+            int y = 248;
 
-            StringFormat myStringFormat = new StringFormat();
-            myStringFormat.Alignment = StringAlignment.Far;
-
+           
             foreach (ListViewItem lvi in list.Items)
             {
                 int i = 0;
@@ -98,16 +98,18 @@ namespace telekomAidatTakip
             int x = 120;
             foreach (ColumnHeader item in list.Columns)
             {
-                var asd = list.Columns[0];
-                e.Graphics.DrawString(item.Text, myFont, sbrush, x, 228);
+                /*
+                Rectangle rect2 = new Rectangle(x, 228, item.Width, 20);
+                e.Graphics.DrawString(item.Text, myFont, sbrush, rect2);
+                e.Graphics.DrawRectangle(Pens.Black, Rectangle.Round(rect2));
+                //e.Graphics.DrawString(item.Text, myFont, sbrush, x, 228);
                 x += item.Width;
+                */
             }
             e.Graphics.DrawLine(myPen, 120, 248, 750, 248);
 
             int y = 260;
-
-            StringFormat myStringFormat = new StringFormat();
-            myStringFormat.Alignment = StringAlignment.Far;
+            
 
             foreach (ListViewItem lvi in list.Items)
             {
