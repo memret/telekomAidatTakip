@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmTanimBirim : Form
+    public partial class frmTanimBirim : MetroFramework.Forms.MetroForm
     {
         public frmTanimBirim()
         {
@@ -78,34 +78,7 @@ namespace telekomAidatTakip
 
         private void listvil_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            btnKaydet.Enabled = true;
-            btnSil.Enabled = true;
-            txtBirimAdi.Enabled = true;
-            cBoxMudurluk.Enabled = true;
-            txtBirimKodu.Enabled = false;
-            btnYeni.Text = "Yeni";
-            Database db = new Database();
-            String mudurlukAdi = listvil.SelectedItems[0].SubItems[3].Text;
-            String birimKodu = listvil.SelectedItems[0].SubItems[0].Text;
-            var data = db.DataOku("SELECT b.birimAdi,b.birimNo,m.mudurlukAdi " +
-                  "FROM Mudurluk m, Birim b WHERE m.mudurlukNo = b.mudurlukNo AND m.mudurlukAdi = @0 AND b.birimNo =@1", mudurlukAdi, birimKodu);
             
-                if(data.Read())
-            {
-
-                txtBirimAdi.Text = data["birimAdi"].ToString();
-                txtBirimKodu.Text = data["birimNo"].ToString();
-                cBoxMudurluk.Text = data["mudurlukAdi"].ToString();
-            }
-            db.Kapat();
-
-
-            /*  String birimKodu = listvil.SelectedItems[0].SubItems[0].Text;
-              String birimAdi = listvil.SelectedItems[0].SubItems[1].Text;
-              txtBirimKodu.Text = birimKodu;
-              txtBirimAdi.Text = birimAdi;
-              cBoxMudurluk.Text = listvil.SelectedItems[0].SubItems[3].Text;*/
-
 
         }
 
@@ -181,12 +154,49 @@ namespace telekomAidatTakip
         private void frmTanimBirim_Resize(object sender, EventArgs e)
         {
             //hata var düzeltilecek
-            groupBox2.Width = this.Width - 44;
-            groupBox2.Height = this.Height - 288;
+            //groupBox2.Width = this.Width - 44;
+           // groupBox2.Height = this.Height - 288;
         }
 
         private void frmTanimBirim_FormClosing(object sender, FormClosingEventArgs e)
         {
+
+        }
+
+        private void cBoxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listvil_DoubleClick(object sender, EventArgs e)
+        {
+            btnKaydet.Enabled = true;
+            btnSil.Enabled = true;
+            txtBirimAdi.Enabled = true;
+            cBoxMudurluk.Enabled = true;
+            txtBirimKodu.Enabled = false;
+            btnYeni.Text = "Yeni";
+            Database db = new Database();
+            String mudurlukAdi = listvil.SelectedItems[0].SubItems[3].Text;
+            String birimKodu = listvil.SelectedItems[0].SubItems[0].Text;
+            var data = db.DataOku("SELECT b.birimAdi,b.birimNo,m.mudurlukAdi " +
+                  "FROM Mudurluk m, Birim b WHERE m.mudurlukNo = b.mudurlukNo AND m.mudurlukAdi = @0 AND b.birimNo =@1", mudurlukAdi, birimKodu);
+
+            if (data.Read())
+            {
+
+                txtBirimAdi.Text = data["birimAdi"].ToString();
+                txtBirimKodu.Text = data["birimNo"].ToString();
+                cBoxMudurluk.Text = data["mudurlukAdi"].ToString();
+            }
+            db.Kapat();
+
+
+            /*  String birimKodu = listvil.SelectedItems[0].SubItems[0].Text;
+              String birimAdi = listvil.SelectedItems[0].SubItems[1].Text;
+              txtBirimKodu.Text = birimKodu;
+              txtBirimAdi.Text = birimAdi;
+              cBoxMudurluk.Text = listvil.SelectedItems[0].SubItems[3].Text;*/
 
         }
     }
