@@ -160,9 +160,9 @@
             // 
             this.btnSil.ActiveControl = null;
             this.btnSil.Enabled = false;
-            this.btnSil.Location = new System.Drawing.Point(349, 171);
+            this.btnSil.Location = new System.Drawing.Point(355, 171);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(88, 45);
+            this.btnSil.Size = new System.Drawing.Size(82, 45);
             this.btnSil.TabIndex = 10;
             this.btnSil.Text = "Sil";
             this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -178,7 +178,7 @@
             // 
             this.btnKaydet.ActiveControl = null;
             this.btnKaydet.Enabled = false;
-            this.btnKaydet.Location = new System.Drawing.Point(201, 171);
+            this.btnKaydet.Location = new System.Drawing.Point(204, 171);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(113, 45);
             this.btnKaydet.TabIndex = 10;
@@ -211,6 +211,7 @@
             // 
             // listBirim
             // 
+            this.listBirim.AllowColumnReorder = true;
             this.listBirim.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -218,7 +219,10 @@
             this.columnHeader4});
             this.listBirim.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBirim.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.listBirim.FullRowSelect = true;
+            this.listBirim.GridLines = true;
             this.listBirim.Location = new System.Drawing.Point(20, 245);
+            this.listBirim.MultiSelect = false;
             this.listBirim.Name = "listBirim";
             this.listBirim.Size = new System.Drawing.Size(472, 214);
             this.listBirim.TabIndex = 16;
@@ -244,7 +248,7 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Müdürlük";
-            this.columnHeader4.Width = 127;
+            this.columnHeader4.Width = 155;
             // 
             // frmTanimBirim
             // 
