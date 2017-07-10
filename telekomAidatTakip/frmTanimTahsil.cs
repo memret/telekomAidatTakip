@@ -176,6 +176,8 @@ namespace telekomAidatTakip
         {
             kayıtTahsil.Width = this.Width - 80;
             kayıtTahsil.Height = this.Height - 241;
+            listvTanimTahsil.Size = new Size(listvTanimTahsil.Size.Width, this.Size.Height - 258);
+            pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y);
         }
 
         private void listvTanimTahsil_DoubleClick_1(object sender, EventArgs e)
