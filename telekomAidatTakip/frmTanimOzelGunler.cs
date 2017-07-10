@@ -230,12 +230,12 @@ namespace telekomAidatTakip
 
         private void btnAdi_Click(object sender, EventArgs e)
         {
-            txtMsj.Text += " %AdSoyad% ";
+            txtMsj.Text += " %adsoyad% ";
         }
 
         private void btnSicilNo_Click(object sender, EventArgs e)
         {
-            txtMsj.Text += " %SicilNo% ";
+            txtMsj.Text += " %sicilno% ";
         }
 
         private void btnSehir_Click(object sender, EventArgs e)
