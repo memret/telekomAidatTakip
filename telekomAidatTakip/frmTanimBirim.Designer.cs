@@ -51,7 +51,7 @@
             // 
             this.cBoxMudurluk.FormattingEnabled = true;
             this.cBoxMudurluk.ItemHeight = 23;
-            this.cBoxMudurluk.Location = new System.Drawing.Point(157, 126);
+            this.cBoxMudurluk.Location = new System.Drawing.Point(157, 125);
             this.cBoxMudurluk.Name = "cBoxMudurluk";
             this.cBoxMudurluk.Size = new System.Drawing.Size(279, 29);
             this.cBoxMudurluk.TabIndex = 7;
@@ -73,7 +73,7 @@
             this.txtBirimKodu.CustomButton.UseSelectable = true;
             this.txtBirimKodu.CustomButton.Visible = false;
             this.txtBirimKodu.Lines = new string[0];
-            this.txtBirimKodu.Location = new System.Drawing.Point(157, 68);
+            this.txtBirimKodu.Location = new System.Drawing.Point(157, 67);
             this.txtBirimKodu.MaxLength = 32767;
             this.txtBirimKodu.Name = "txtBirimKodu";
             this.txtBirimKodu.PasswordChar = '\0';
@@ -103,7 +103,7 @@
             this.txtBirimAdi.CustomButton.UseSelectable = true;
             this.txtBirimAdi.CustomButton.Visible = false;
             this.txtBirimAdi.Lines = new string[0];
-            this.txtBirimAdi.Location = new System.Drawing.Point(157, 97);
+            this.txtBirimAdi.Location = new System.Drawing.Point(157, 96);
             this.txtBirimAdi.MaxLength = 32767;
             this.txtBirimAdi.Name = "txtBirimAdi";
             this.txtBirimAdi.PasswordChar = '\0';
@@ -121,7 +121,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(73, 70);
+            this.metroLabel1.Location = new System.Drawing.Point(73, 69);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(65, 19);
             this.metroLabel1.TabIndex = 9;
@@ -130,7 +130,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(73, 99);
+            this.metroLabel2.Location = new System.Drawing.Point(73, 98);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(43, 19);
             this.metroLabel2.TabIndex = 9;
@@ -139,7 +139,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(73, 134);
+            this.metroLabel3.Location = new System.Drawing.Point(73, 133);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(67, 19);
             this.metroLabel3.TabIndex = 9;
@@ -217,10 +217,11 @@
             this.columnHeader3,
             this.columnHeader4});
             this.listBirim.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listBirim.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.listBirim.Location = new System.Drawing.Point(20, 245);
             this.listBirim.Name = "listBirim";
             this.listBirim.Size = new System.Drawing.Size(472, 214);
-            this.listBirim.TabIndex = 13;
+            this.listBirim.TabIndex = 16;
             this.listBirim.UseCompatibleStateImageBehavior = false;
             this.listBirim.View = System.Windows.Forms.View.Details;
             this.listBirim.DoubleClick += new System.EventHandler(this.listvil_DoubleClick);
@@ -228,22 +229,22 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Birim No";
-            this.columnHeader1.Width = 53;
+            this.columnHeader1.Width = 75;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Birim";
-            this.columnHeader2.Width = 125;
+            this.columnHeader2.Width = 136;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Müdürlük No";
-            this.columnHeader3.Width = 76;
+            this.columnHeader3.Width = 100;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Müdürlük";
-            this.columnHeader4.Width = 193;
+            this.columnHeader4.Width = 127;
             // 
             // frmTanimBirim
             // 

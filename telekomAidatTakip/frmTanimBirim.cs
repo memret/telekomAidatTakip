@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,7 @@ namespace telekomAidatTakip
 
         private void frmTanimBirim_Load(object sender, EventArgs e)
         {
+            
             //listBirim.Font = new MetroFramework.Fonts.FontResolver;
             frmTanimBirim_Resize(this, null);
             listeDoldur();
@@ -92,6 +94,7 @@ namespace telekomAidatTakip
             Database db = new Database();
             var data = db.DataOku("SELECT b.birimAdi,b.birimNo,b.mudurlukNo,m.mudurlukAdi " +
                  "FROM Mudurluk m, Birim b WHERE m.mudurlukNo = b.mudurlukNo");
+            listBirim.BeginUpdate();
             while (data.Read())
             {
                 ListViewItem item = new ListViewItem();
@@ -103,7 +106,7 @@ namespace telekomAidatTakip
                 listBirim.Items.Add(item);
             }
             db.Kapat();
-            
+            listBirim.EndUpdate();
             //;
         }
 
@@ -161,7 +164,8 @@ namespace telekomAidatTakip
             //hata var düzeltilecek
             //groupBox2.Width = this.Width - 44;
             // groupBox2.Height = this.Height - 288;
-            listBirim.Size = new Size(listBirim.Size.Width,this.Size.Height - 258);
+            listBirim.Size = new Size(listBirim.Size.Width, this.Size.Height - 258);
+            pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y );
         }
 
         private void frmTanimBirim_FormClosing(object sender, FormClosingEventArgs e)
@@ -208,7 +212,30 @@ namespace telekomAidatTakip
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //MessageBox.Show(listBirim.Columns[1].Width.ToString());
+
+            foreach (ColumnHeader column in listBirim.Columns)
+            {
+                column.Width = -2;
+            }
             
+            //listBirim.Columns[1].Width = -2;
+        }
+
+        private void listBirim_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+            
+        }
+
+        private void listBirim_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+           
+
         }
     }
 
