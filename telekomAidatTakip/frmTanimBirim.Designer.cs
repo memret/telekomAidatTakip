@@ -159,6 +159,7 @@
             // btnSil
             // 
             this.btnSil.ActiveControl = null;
+            this.btnSil.BackColor = System.Drawing.Color.Silver;
             this.btnSil.Enabled = false;
             this.btnSil.Location = new System.Drawing.Point(355, 171);
             this.btnSil.Name = "btnSil";
@@ -170,6 +171,7 @@
             this.btnSil.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSil.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnSil.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnSil.UseCustomBackColor = true;
             this.btnSil.UseSelectable = true;
             this.btnSil.UseTileImage = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -177,6 +179,7 @@
             // btnKaydet
             // 
             this.btnKaydet.ActiveControl = null;
+            this.btnKaydet.BackColor = System.Drawing.Color.Silver;
             this.btnKaydet.Enabled = false;
             this.btnKaydet.Location = new System.Drawing.Point(204, 171);
             this.btnKaydet.Name = "btnKaydet";
@@ -188,6 +191,7 @@
             this.btnKaydet.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKaydet.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnKaydet.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnKaydet.UseCustomBackColor = true;
             this.btnKaydet.UseSelectable = true;
             this.btnKaydet.UseTileImage = true;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
@@ -218,7 +222,7 @@
             this.columnHeader3,
             this.columnHeader4});
             this.listBirim.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listBirim.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.listBirim.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listBirim.FullRowSelect = true;
             this.listBirim.GridLines = true;
             this.listBirim.Location = new System.Drawing.Point(20, 245);
@@ -233,7 +237,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Birim No";
-            this.columnHeader1.Width = 75;
+            this.columnHeader1.Width = 65;
             // 
             // columnHeader2
             // 
@@ -243,7 +247,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Müdürlük No";
-            this.columnHeader3.Width = 100;
+            this.columnHeader3.Width = 90;
             // 
             // columnHeader4
             // 
