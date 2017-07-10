@@ -50,7 +50,7 @@
             // 
             // 
             this.txtMdrKod.CustomButton.Image = null;
-            this.txtMdrKod.CustomButton.Location = new System.Drawing.Point(47, 2);
+            this.txtMdrKod.CustomButton.Location = new System.Drawing.Point(94, 2);
             this.txtMdrKod.CustomButton.Name = "";
             this.txtMdrKod.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtMdrKod.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -148,6 +148,7 @@
             this.btnSil.Location = new System.Drawing.Point(407, 187);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(122, 42);
+            this.btnSil.Style = MetroFramework.MetroColorStyle.Lime;
             this.btnSil.TabIndex = 23;
             this.btnSil.Text = "Sil";
             this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,7 +161,8 @@
             this.btnKaydet.ActiveControl = null;
             this.btnKaydet.Location = new System.Drawing.Point(283, 187);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(122, 42);
+            this.btnKaydet.Size = new System.Drawing.Size(118, 42);
+            this.btnKaydet.Style = MetroFramework.MetroColorStyle.Lime;
             this.btnKaydet.TabIndex = 22;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,7 +175,8 @@
             this.btnYeni.ActiveControl = null;
             this.btnYeni.Location = new System.Drawing.Point(159, 187);
             this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(122, 42);
+            this.btnYeni.Size = new System.Drawing.Size(118, 42);
+            this.btnYeni.Style = MetroFramework.MetroColorStyle.Lime;
             this.btnYeni.TabIndex = 21;
             this.btnYeni.Text = "Yeni";
             this.btnYeni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -192,17 +195,17 @@
             // 
             // listvMdr
             // 
-            this.listvMdr.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listvMdr.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.listvMdr.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listvMdr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.listvMdr.FullRowSelect = true;
-            this.listvMdr.Location = new System.Drawing.Point(30, 245);
+            this.listvMdr.Location = new System.Drawing.Point(27, 239);
             this.listvMdr.Name = "listvMdr";
-            this.listvMdr.Size = new System.Drawing.Size(499, 252);
+            this.listvMdr.Size = new System.Drawing.Size(501, 252);
             this.listvMdr.TabIndex = 28;
             this.listvMdr.UseCompatibleStateImageBehavior = false;
             this.listvMdr.View = System.Windows.Forms.View.Details;
@@ -246,9 +249,12 @@
             this.Controls.Add(this.label_il);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(555, 516);
             this.Name = "frmTanimMudurluk";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
-            this.Text = "Müdürlük Tanımlama";
+            this.Style = MetroFramework.MetroColorStyle.Lime;
+            this.Text = "MÜDÜRLÜK TANIMLAMA";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmTanimMudurluk_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
