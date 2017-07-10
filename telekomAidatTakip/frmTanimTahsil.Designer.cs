@@ -39,10 +39,10 @@
             this.tahsilAd = new MetroFramework.Controls.MetroLabel();
             this.tahsilNo = new MetroFramework.Controls.MetroLabel();
             this.kayıtTahsil = new System.Windows.Forms.GroupBox();
-            this.listvTanimTahsil = new MetroFramework.Controls.MetroListView();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listvTanimTahsil = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tahsilTanim.SuspendLayout();
             this.kayıtTahsil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -220,43 +220,40 @@
             // listvTanimTahsil
             // 
             this.listvTanimTahsil.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader1,
+            this.columnHeader2});
             this.listvTanimTahsil.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listvTanimTahsil.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.listvTanimTahsil.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.listvTanimTahsil.FullRowSelect = true;
-            this.listvTanimTahsil.GridLines = true;
             this.listvTanimTahsil.Location = new System.Drawing.Point(3, 19);
             this.listvTanimTahsil.Name = "listvTanimTahsil";
-            this.listvTanimTahsil.OwnerDraw = true;
             this.listvTanimTahsil.Size = new System.Drawing.Size(490, 160);
-            this.listvTanimTahsil.TabIndex = 0;
+            this.listvTanimTahsil.TabIndex = 13;
             this.listvTanimTahsil.UseCompatibleStateImageBehavior = false;
-            this.listvTanimTahsil.UseSelectable = true;
             this.listvTanimTahsil.View = System.Windows.Forms.View.Details;
             this.listvTanimTahsil.SelectedIndexChanged += new System.EventHandler(this.listvTanimTahsil_SelectedIndexChanged);
             this.listvTanimTahsil.DoubleClick += new System.EventHandler(this.listvTanimTahsil_DoubleClick_1);
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Tahsil Kodu";
-            this.columnHeader3.Width = 97;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Tahsil Açıklama";
-            this.columnHeader4.Width = 395;
             // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
-            this.pictureBox1.Location = new System.Drawing.Point(461, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(461, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tahsil Kodu";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tahsil Açıklama";
+            this.columnHeader2.Width = 389;
             // 
             // frmTanimTahsil
             // 
@@ -294,9 +291,9 @@
         private MetroFramework.Controls.MetroTile btnYeni;
         private MetroFramework.Controls.MetroTile btnKaydet;
         private MetroFramework.Controls.MetroTile btnSil;
-        private MetroFramework.Controls.MetroListView listvTanimTahsil;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListView listvTanimTahsil;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
