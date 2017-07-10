@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmTanimIl : Form
+    public partial class frmTanimIl : MetroFramework.Forms.MetroForm
     {
         public frmTanimIl()
         {
@@ -225,8 +225,8 @@ namespace telekomAidatTakip
 
         private void frmTanimIl_Resize(object sender, EventArgs e)
         {
-          groupBox2.Width = this.Width - 49; //design sekmesindeki boyut farklarını buraya yazdık
-          groupBox2.Height = this.Height - 252;
+          //groupBox2.Width = this.Width - 49; //design sekmesindeki boyut farklarını buraya yazdık
+         // groupBox2.Height = this.Height - 252;
         }
 
         private void txtAdi_Leave(object sender, EventArgs e)
@@ -256,6 +256,11 @@ namespace telekomAidatTakip
         private void txtPlakaKodu_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) { e.Handled = true; }
+        }
+
+        private void metroLabel2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

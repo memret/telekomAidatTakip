@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -631,6 +632,22 @@ namespace telekomAidatTakip
             lblSilinmeBilgisiLabeli.Visible = false;
             btnAktiflestir.Visible = false;
             frmUye_Load(this, null);
+        }
+
+        private void txtAdresEmail_Leave(object sender, EventArgs e)
+        {
+            Regex reg = new Regex(@"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+            if(txtAdresEmail.Text != string.Empty)
+            {
+
+                if (!reg.IsMatch(txtAdresEmail.Text))
+                {
+                    MessageBox.Show("Email formatı yanlış.\n" + "Örnek: kullaniciAdi@turktelekom.com.tr");
+                    txtAdresEmail.Clear();
+                    txtAdresEmail.Select();
+
+                }
+            }
         }
     }
 }
