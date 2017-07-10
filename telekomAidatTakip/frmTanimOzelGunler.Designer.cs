@@ -170,13 +170,14 @@
             // 
             // txtMsj
             // 
+
+
             this.txtMsj.Location = new System.Drawing.Point(156, 142);
             this.txtMsj.Margin = new System.Windows.Forms.Padding(4);
             this.txtMsj.Multiline = true;
             this.txtMsj.Name = "txtMsj";
             this.txtMsj.Size = new System.Drawing.Size(384, 88);
             this.txtMsj.TabIndex = 8;
-            this.txtMsj.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtBaslik
             // 
@@ -185,7 +186,6 @@
             this.txtBaslik.Name = "txtBaslik";
             this.txtBaslik.Size = new System.Drawing.Size(384, 22);
             this.txtBaslik.TabIndex = 0;
-            this.txtBaslik.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.TboxMailBasligi_MaskInputRejected);
             // 
             // lblYorum
             // 
@@ -226,7 +226,6 @@
             this.lblMailBasligi.Size = new System.Drawing.Size(86, 17);
             this.lblMailBasligi.TabIndex = 1;
             this.lblMailBasligi.Text = "Mail Başlığı :";
-            this.lblMailBasligi.Click += new System.EventHandler(this.label2_Click);
             // 
             // gboxTabloGosterimi
             // 

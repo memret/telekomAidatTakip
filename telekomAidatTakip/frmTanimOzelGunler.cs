@@ -142,33 +142,6 @@ namespace telekomAidatTakip
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TboxMailBasligi_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void dateTarih_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (txtGunNo.Text != string.Empty)
@@ -190,6 +163,7 @@ namespace telekomAidatTakip
           
         }
       
+
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Database db = new Database();
