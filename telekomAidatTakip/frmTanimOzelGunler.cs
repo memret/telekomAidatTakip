@@ -213,7 +213,14 @@ namespace telekomAidatTakip
             txtMsj.Enabled = true;
             txtYorum.Enabled = true;
             dateTimeTarih.Enabled = true;
-            
+
+
+            btnAdi.Enabled = true;
+            btnSicilNo.Enabled = true;
+            btnSehir.Enabled = true;
+            btnMudurluk.Enabled = true;
+            btnBirim.Enabled = true;
+
             btnYeni.Text = "Yeni";
 
         }
