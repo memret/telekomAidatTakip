@@ -35,15 +35,15 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.listBirim = new MetroFramework.Controls.MetroListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSil = new MetroFramework.Controls.MetroTile();
             this.btnKaydet = new MetroFramework.Controls.MetroTile();
             this.btnYeni = new MetroFramework.Controls.MetroTile();
+            this.listBirim = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,52 +145,6 @@
             this.metroLabel3.TabIndex = 9;
             this.metroLabel3.Text = "Müdürlük:";
             // 
-            // listBirim
-            // 
-            this.listBirim.Alignment = System.Windows.Forms.ListViewAlignment.Left;
-            this.listBirim.AllowColumnReorder = true;
-            this.listBirim.AllowSorting = true;
-            this.listBirim.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.listBirim.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listBirim.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.listBirim.FullRowSelect = true;
-            this.listBirim.GridLines = true;
-            this.listBirim.Location = new System.Drawing.Point(20, 238);
-            this.listBirim.MultiSelect = false;
-            this.listBirim.Name = "listBirim";
-            this.listBirim.OwnerDraw = true;
-            this.listBirim.Size = new System.Drawing.Size(472, 221);
-            this.listBirim.Style = MetroFramework.MetroColorStyle.Blue;
-            this.listBirim.TabIndex = 4;
-            this.listBirim.UseCompatibleStateImageBehavior = false;
-            this.listBirim.UseSelectable = true;
-            this.listBirim.View = System.Windows.Forms.View.Details;
-            this.listBirim.DoubleClick += new System.EventHandler(this.listvil_DoubleClick);
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Birim No";
-            this.columnHeader5.Width = 77;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Birim";
-            this.columnHeader6.Width = 111;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Müdürlük No";
-            this.columnHeader7.Width = 117;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Müdürlük";
-            this.columnHeader8.Width = 141;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
@@ -255,14 +209,49 @@
             this.btnYeni.UseTileImage = true;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
+            // listBirim
+            // 
+            this.listBirim.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listBirim.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listBirim.Location = new System.Drawing.Point(20, 245);
+            this.listBirim.Name = "listBirim";
+            this.listBirim.Size = new System.Drawing.Size(472, 214);
+            this.listBirim.TabIndex = 13;
+            this.listBirim.UseCompatibleStateImageBehavior = false;
+            this.listBirim.View = System.Windows.Forms.View.Details;
+            this.listBirim.DoubleClick += new System.EventHandler(this.listvil_DoubleClick);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Birim No";
+            this.columnHeader1.Width = 53;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Birim";
+            this.columnHeader2.Width = 125;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Müdürlük No";
+            this.columnHeader3.Width = 76;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Müdürlük";
+            this.columnHeader4.Width = 193;
+            // 
             // frmTanimBirim
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(512, 479);
+            this.Controls.Add(this.listBirim);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSil);
-            this.Controls.Add(this.listBirim);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.btnYeni);
             this.Controls.Add(this.metroLabel1);
@@ -276,6 +265,7 @@
             this.MinimumSize = new System.Drawing.Size(512, 479);
             this.Name = "frmTanimBirim";
             this.Text = "Birim Tanımlama";
+            this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.Load += new System.EventHandler(this.frmTanimBirim_Load);
             this.Resize += new System.EventHandler(this.frmTanimBirim_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -294,11 +284,11 @@
         private MetroFramework.Controls.MetroTile btnSil;
         private MetroFramework.Controls.MetroTile btnKaydet;
         private MetroFramework.Controls.MetroTile btnYeni;
-        private MetroFramework.Controls.MetroListView listBirim;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListView listBirim;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

@@ -20,6 +20,7 @@ namespace telekomAidatTakip
 
         private void frmTanimBirim_Load(object sender, EventArgs e)
         {
+            //listBirim.Font = new MetroFramework.Fonts.FontResolver;
             frmTanimBirim_Resize(this, null);
             listeDoldur();
             Dictionary<int, string> cboxSource = new Dictionary<int, string>();
@@ -87,12 +88,12 @@ namespace telekomAidatTakip
 
         private void listeDoldur()
         {
+            listBirim.Items.Clear();
             Database db = new Database();
             var data = db.DataOku("SELECT b.birimAdi,b.birimNo,b.mudurlukNo,m.mudurlukAdi " +
                  "FROM Mudurluk m, Birim b WHERE m.mudurlukNo = b.mudurlukNo");
             while (data.Read())
             {
-
                 ListViewItem item = new ListViewItem();
                 item.Text = data["birimNo"].ToString();
                 item.SubItems.Add(data["birimAdi"].ToString());
@@ -102,7 +103,8 @@ namespace telekomAidatTakip
                 listBirim.Items.Add(item);
             }
             db.Kapat();
-
+            
+            //;
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -202,6 +204,11 @@ namespace telekomAidatTakip
               txtBirimAdi.Text = birimAdi;
               cBoxMudurluk.Text = listvil.SelectedItems[0].SubItems[3].Text;*/
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 
