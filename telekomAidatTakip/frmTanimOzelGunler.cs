@@ -213,7 +213,14 @@ namespace telekomAidatTakip
             txtMsj.Enabled = true;
             txtYorum.Enabled = true;
             dateTimeTarih.Enabled = true;
-            
+
+
+            btnAdi.Enabled = true;
+            btnSicilNo.Enabled = true;
+            btnSehir.Enabled = true;
+            btnMudurluk.Enabled = true;
+            btnBirim.Enabled = true;
+
             btnYeni.Text = "Yeni";
 
         }
@@ -230,12 +237,12 @@ namespace telekomAidatTakip
 
         private void btnAdi_Click(object sender, EventArgs e)
         {
-            txtMsj.Text += " %AdSoyad% ";
+            txtMsj.Text += " %adsoyad% ";
         }
 
         private void btnSicilNo_Click(object sender, EventArgs e)
         {
-            txtMsj.Text += " %SicilNo% ";
+            txtMsj.Text += " %sicilno% ";
         }
 
         private void btnSehir_Click(object sender, EventArgs e)

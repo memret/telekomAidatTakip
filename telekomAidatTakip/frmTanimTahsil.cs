@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmTanimTahsil : Form
+    public partial class frmTanimTahsil : MetroFramework.Forms.MetroForm
     {
         public frmTanimTahsil()
         {
@@ -66,6 +66,66 @@ namespace telekomAidatTakip
 
         }
 
+
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            if (txtTahsilKodu.Text != string.Empty && txtTahsilAd.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
+            {
+                Database db = new Database();
+                db.Sorgu("update Tahsil set tahsilAdi=@0 where tahsilNo=@1", txtTahsilAd.Text, txtTahsilKodu.Text);
+
+                txtTahsilAd.Text = string.Empty;
+                txtTahsilKodu.Text = string.Empty;
+                txtTahsilAd.Enabled = false;
+                txtTahsilAd.Enabled = false;
+                btnKaydet.Enabled = false;
+                btnSil.Enabled = false;
+                TahsilListesiDoldur();
+            }
+
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (txtTahsilKodu.Text != string.Empty) //plaka kodu olmadan veri silmek tabiki biraz zor olur
+            {
+                Database db = new Database();
+                db.Sorgu("delete from Tahsil where tahsilNo=@0", txtTahsilKodu.Text);
+                TahsilListesiDoldur();
+            }
+        }
+
+        private void listvTanimTahsil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+      
+
+        private void frmTanimTahsil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //burda form penceresi kapatılırken çalışacak kodlar bulunuyor
+            if (btnYeni.Text == "Ekle" || btnKaydet.Enabled) //btnYeni nin ismi Ekle ise veya btnKaydet aktif ise bir düzenleme veya kayıt yapılıyor demektir.
+            {
+                DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (btnYeni.Text == "Ekle")
+                        btnYeni_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
+                    else
+                        btnKaydet_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
+                }
+                else if (dialogResult == DialogResult.Cancel)
+                {
+                    e.Cancel = true; //bu işlem ile formun kapanma işlemi iptal ediliyor
+                }
+            }
+
+        }
+
+       
+
         private void btnYeni_Click(object sender, EventArgs e)
         {
             // butonun ismine göre yeni kaydın veritabanına ekleneceğini mi yoksa ekleme sayfasına mı geçileceğini mi tespit ediyoruz
@@ -110,43 +170,15 @@ namespace telekomAidatTakip
                 }
 
             }
-
         }
 
-        private void btnKaydet_Click(object sender, EventArgs e)
+        private void frmTanimTahsil_Resize(object sender, EventArgs e)
         {
-            if (txtTahsilKodu.Text != string.Empty && txtTahsilAd.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
-            {
-                Database db = new Database();
-                db.Sorgu("update Tahsil set tahsilAdi=@0 where tahsilNo=@1", txtTahsilAd.Text, txtTahsilKodu.Text);
-
-                txtTahsilAd.Text = string.Empty;
-                txtTahsilKodu.Text = string.Empty;
-                txtTahsilAd.Enabled = false;
-                txtTahsilAd.Enabled = false;
-                btnKaydet.Enabled = false;
-                btnSil.Enabled = false;
-                TahsilListesiDoldur();
-            }
-
+            kayıtTahsil.Width = this.Width - 80;
+            kayıtTahsil.Height = this.Height - 241;
         }
 
-        private void btnSil_Click(object sender, EventArgs e)
-        {
-            if (txtTahsilKodu.Text != string.Empty) //plaka kodu olmadan veri silmek tabiki biraz zor olur
-            {
-                Database db = new Database();
-                db.Sorgu("delete from Tahsil where tahsilNo=@0", txtTahsilKodu.Text);
-                TahsilListesiDoldur();
-            }
-        }
-
-        private void listvTanimTahsil_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listvTanimTahsil_DoubleClick(object sender, EventArgs e)
+        private void listvTanimTahsil_DoubleClick_1(object sender, EventArgs e)
         {
             string plakakodu = listvTanimTahsil.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
 
@@ -162,24 +194,8 @@ namespace telekomAidatTakip
             btnYeni.Text = "Yeni";
         }
 
-        private void frmTanimTahsil_FormClosing(object sender, FormClosingEventArgs e)
+        private void listvTanimTahsil_DoubleClick(object sender, EventArgs e)
         {
-            //burda form penceresi kapatılırken çalışacak kodlar bulunuyor
-            if (btnYeni.Text == "Ekle" || btnKaydet.Enabled) //btnYeni nin ismi Ekle ise veya btnKaydet aktif ise bir düzenleme veya kayıt yapılıyor demektir.
-            {
-                DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    if (btnYeni.Text == "Ekle")
-                        btnYeni_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
-                    else
-                        btnKaydet_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
-                }
-                else if (dialogResult == DialogResult.Cancel)
-                {
-                    e.Cancel = true; //bu işlem ile formun kapanma işlemi iptal ediliyor
-                }
-            }
 
         }
     }
