@@ -279,45 +279,6 @@
   <data name="&gt;&gt;btnYeni.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="columnHeader3.Text" xml:space="preserve">
-    <value>İl Plaka Kodu</value>
-  </data>
-  <data name="columnHeader3.Width" type="System.Int32, mscorlib">
-    <value>134</value>
-  </data>
-  <data name="columnHeader4.Text" xml:space="preserve">
-    <value>İl</value>
-  </data>
-  <data name="columnHeader4.Width" type="System.Int32, mscorlib">
-    <value>131</value>
-  </data>
-  <data name="listvil.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="listvil.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="listvil.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 245</value>
-  </data>
-  <data name="listvil.Size" type="System.Drawing.Size, System.Drawing">
-    <value>353, 159</value>
-  </data>
-  <data name="listvil.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;listvil.Name" xml:space="preserve">
-    <value>listvil</value>
-  </data>
-  <data name="&gt;&gt;listvil.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroListView, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;listvil.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;listvil.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -343,7 +304,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -370,7 +331,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="pictureBox1.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -424,6 +385,45 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>İl Plaka Kodu</value>
+  </data>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>165</value>
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>İl</value>
+  </data>
+  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
+    <value>119</value>
+  </data>
+  <data name="listvil.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="listvil.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11.25pt</value>
+  </data>
+  <data name="listvil.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 248</value>
+  </data>
+  <data name="listvil.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 156</value>
+  </data>
+  <data name="listvil.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;listvil.Name" xml:space="preserve">
+    <value>listvil</value>
+  </data>
+  <data name="&gt;&gt;listvil.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listvil.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;listvil.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -436,7 +436,7 @@
     <value>Center</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>379, 417</value>
+    <value>363, 417</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -453,16 +453,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>İL TANIMLAMA</value>
   </data>
-  <data name="&gt;&gt;columnHeader3.Name" xml:space="preserve">
-    <value>columnHeader3</value>
+  <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
+    <value>columnHeader1</value>
   </data>
-  <data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
+  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;columnHeader4.Name" xml:space="preserve">
-    <value>columnHeader4</value>
+  <data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
+    <value>columnHeader2</value>
   </data>
-  <data name="&gt;&gt;columnHeader4.Type" xml:space="preserve">
+  <data name="&gt;&gt;columnHeader2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

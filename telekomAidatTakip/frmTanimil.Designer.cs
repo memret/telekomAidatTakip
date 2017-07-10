@@ -34,12 +34,12 @@
             this.btnSil = new MetroFramework.Controls.MetroTile();
             this.btnKaydet = new MetroFramework.Controls.MetroTile();
             this.btnYeni = new MetroFramework.Controls.MetroTile();
-            this.listvil = new MetroFramework.Controls.MetroListView();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Label1 = new MetroFramework.Controls.MetroLabel();
             this.Label2 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listvil = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,12 +63,14 @@
             this.txtAdi.MaxLength = 32767;
             this.txtAdi.Name = "txtAdi";
             this.txtAdi.PasswordChar = '\0';
+            this.txtAdi.PromptText = "İl adı giriniz...";
             this.txtAdi.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAdi.SelectedText = "";
             this.txtAdi.SelectionLength = 0;
             this.txtAdi.SelectionStart = 0;
             this.txtAdi.ShortcutsEnabled = true;
             this.txtAdi.UseSelectable = true;
+            this.txtAdi.WaterMark = "İl adı giriniz...";
             this.txtAdi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAdi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtAdi.Leave += new System.EventHandler(this.txtAdi_Leave);
@@ -93,12 +95,14 @@
             this.txtPlakaKodu.MaxLength = 32767;
             this.txtPlakaKodu.Name = "txtPlakaKodu";
             this.txtPlakaKodu.PasswordChar = '\0';
+            this.txtPlakaKodu.PromptText = "Plaka kodu giriniz...";
             this.txtPlakaKodu.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPlakaKodu.SelectedText = "";
             this.txtPlakaKodu.SelectionLength = 0;
             this.txtPlakaKodu.SelectionStart = 0;
             this.txtPlakaKodu.ShortcutsEnabled = true;
             this.txtPlakaKodu.UseSelectable = true;
+            this.txtPlakaKodu.WaterMark = "Plaka kodu giriniz...";
             this.txtPlakaKodu.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPlakaKodu.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtPlakaKodu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlakaKodu_KeyPress);
@@ -110,7 +114,7 @@
             this.btnSil.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             resources.ApplyResources(this.btnSil, "btnSil");
             this.btnSil.Name = "btnSil";
-            this.btnSil.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnSil.Style = MetroFramework.MetroColorStyle.Lime;
             this.btnSil.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.btnSil.UseSelectable = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -121,7 +125,7 @@
             this.btnKaydet.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             resources.ApplyResources(this.btnKaydet, "btnKaydet");
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnKaydet.Style = MetroFramework.MetroColorStyle.Lime;
             this.btnKaydet.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.btnKaydet.UseSelectable = true;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
@@ -133,39 +137,12 @@
             this.btnYeni.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             resources.ApplyResources(this.btnYeni, "btnYeni");
             this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnYeni.Style = MetroFramework.MetroColorStyle.Lime;
             this.btnYeni.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnYeni.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.btnYeni.UseSelectable = true;
             this.btnYeni.UseTileImage = true;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
-            // 
-            // listvil
-            // 
-            this.listvil.AllowSorting = true;
-            this.listvil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.listvil.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader4});
-            resources.ApplyResources(this.listvil, "listvil");
-            this.listvil.FullRowSelect = true;
-            this.listvil.Name = "listvil";
-            this.listvil.OwnerDraw = true;
-            this.listvil.Style = MetroFramework.MetroColorStyle.Blue;
-            this.listvil.UseCompatibleStateImageBehavior = false;
-            this.listvil.UseCustomForeColor = true;
-            this.listvil.UseSelectable = true;
-            this.listvil.View = System.Windows.Forms.View.Details;
-            this.listvil.SelectedIndexChanged += new System.EventHandler(this.listvil_SelectedIndexChanged);
-            this.listvil.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvil_MouseDoubleClick);
-            // 
-            // columnHeader3
-            // 
-            resources.ApplyResources(this.columnHeader3, "columnHeader3");
-            // 
-            // columnHeader4
-            // 
-            resources.ApplyResources(this.columnHeader4, "columnHeader4");
             // 
             // Label1
             // 
@@ -192,6 +169,28 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
+            // listvil
+            // 
+            this.listvil.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            resources.ApplyResources(this.listvil, "listvil");
+            this.listvil.FullRowSelect = true;
+            this.listvil.MultiSelect = false;
+            this.listvil.Name = "listvil";
+            this.listvil.UseCompatibleStateImageBehavior = false;
+            this.listvil.View = System.Windows.Forms.View.Details;
+            this.listvil.SelectedIndexChanged += new System.EventHandler(this.listvil_SelectedIndexChanged);
+            this.listvil.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvil_MouseDoubleClick);
+            // 
+            // columnHeader1
+            // 
+            resources.ApplyResources(this.columnHeader1, "columnHeader1");
+            // 
+            // columnHeader2
+            // 
+            resources.ApplyResources(this.columnHeader2, "columnHeader2");
+            // 
             // frmTanimIl
             // 
             resources.ApplyResources(this, "$this");
@@ -200,10 +199,10 @@
             this.BackLocation = MetroFramework.Forms.BackLocation.BottomLeft;
             this.BackMaxSize = 15;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
+            this.Controls.Add(this.listvil);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.Label1);
-            this.Controls.Add(this.listvil);
             this.Controls.Add(this.txtAdi);
             this.Controls.Add(this.txtPlakaKodu);
             this.Controls.Add(this.btnSil);
@@ -228,11 +227,11 @@
         private MetroFramework.Controls.MetroTile btnSil;
         private MetroFramework.Controls.MetroTile btnKaydet;
         private MetroFramework.Controls.MetroTile btnYeni;
-        private MetroFramework.Controls.MetroListView listvil;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private MetroFramework.Controls.MetroLabel Label1;
         private MetroFramework.Controls.MetroLabel Label2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListView listvil;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

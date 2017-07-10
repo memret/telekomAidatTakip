@@ -1,4 +1,5 @@
 ﻿using MetroFramework;
+using MetroFramework.Drawing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -142,6 +143,8 @@ namespace telekomAidatTakip
                 listeDoldur();
                 db.Kapat();
                 MessageBox.Show("Seçili birim silindi!", "Birim Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtBirimAdi.Text = string.Empty;
+                txtBirimKodu.Text = string.Empty;
             }
             else if (dialogResult == DialogResult.Cancel)
                 return;
@@ -156,6 +159,13 @@ namespace telekomAidatTakip
             listBirim.Items.Clear();
             listeDoldur();
             db.Kapat();
+
+            btnKaydet.Enabled = false;
+            btnKaydet.UseCustomBackColor = true;
+            btnSil.Enabled = false;
+            btnSil.UseCustomBackColor = true;
+            txtBirimAdi.Text = string.Empty;
+            txtBirimKodu.Text = string.Empty;
 
         }
 
@@ -182,6 +192,8 @@ namespace telekomAidatTakip
         {
             btnKaydet.Enabled = true;
             btnSil.Enabled = true;
+            btnKaydet.UseCustomBackColor = false;
+            btnSil.UseCustomBackColor = false;
             txtBirimAdi.Enabled = true;
             cBoxMudurluk.Enabled = true;
             txtBirimKodu.Enabled = false;
