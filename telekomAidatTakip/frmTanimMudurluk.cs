@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmTanimMudurluk : Form
+    public partial class frmTanimMudurluk : MetroFramework.Forms.MetroForm
     {
         public frmTanimMudurluk()
         {
@@ -21,7 +21,7 @@ namespace telekomAidatTakip
         {
             kayitliMdrDoldur();
             cBoxIlDoldur();
-            frmTanimMudurluk_Resize(this, null);
+            //frmTanimMudurluk_Resize(this, null);
         }
 
         private void kayitliMdrDoldur()
@@ -237,11 +237,11 @@ namespace telekomAidatTakip
              
         }
 
-        private void frmTanimMudurluk_Resize(object sender, EventArgs e)
+        /*private void frmTanimMudurluk_Resize(object sender, EventArgs e)
         {
             groupBox2.Width = this.Width - 46;
             groupBox2.Height = this.Height - 273;
-        }
+        }*/
 
         private void listvMdr_SelectedIndexChanged_1(object sender, EventArgs e)
         {
