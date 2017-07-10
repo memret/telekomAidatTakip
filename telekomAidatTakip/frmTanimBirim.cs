@@ -53,6 +53,7 @@ namespace telekomAidatTakip
             if (btnYeni.Text == "Yeni")
             {
                 btnYeni.Text = "Ekle";
+                btnYeni.Image = telekomAidatTakip.Properties.Resources.if_check_101940;
                 txtBirimAdi.Enabled = true;
                 txtBirimKodu.Enabled = true;
                 cBoxMudurluk.Enabled = true;
@@ -60,15 +61,17 @@ namespace telekomAidatTakip
                 txtBirimKodu.Clear();
             }
 
-           else 
-                if(txtBirimAdi.Text != string.Empty && txtBirimKodu.Text != string.Empty)
-                {
-                    int mudurlukNo = ((KeyValuePair<int, string>)cBoxMudurluk.SelectedItem).Key;
-                    Database db = new Database();
-                    db.Sorgu("INSERT INTO Birim Values (@0,@1,@2)", txtBirimKodu.Text, txtBirimAdi.Text, mudurlukNo.ToString());
-                    listvil.Items.Clear();
-                    listeDoldur();
-                    db.Kapat();
+            else
+                if (txtBirimAdi.Text != string.Empty && txtBirimKodu.Text != string.Empty)
+            {
+                int mudurlukNo = ((KeyValuePair<int, string>)cBoxMudurluk.SelectedItem).Key;
+                Database db = new Database();
+                db.Sorgu("INSERT INTO Birim Values (@0,@1,@2)", txtBirimKodu.Text, txtBirimAdi.Text, mudurlukNo.ToString());
+                listBirim.Items.Clear();
+                listeDoldur();
+                db.Kapat();
+                btnYeni.Image = telekomAidatTakip.Properties.Resources.if_save_101946;
+                btnYeni.Text = "Yeni";
             }
             else
             {
@@ -78,7 +81,7 @@ namespace telekomAidatTakip
 
         private void listvil_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
+
 
         }
 
@@ -96,7 +99,7 @@ namespace telekomAidatTakip
                 item.SubItems.Add(data["mudurlukNo"].ToString());
                 item.SubItems.Add(data["mudurlukAdi"].ToString());
 
-                listvil.Items.Add(item);
+                listBirim.Items.Add(item);
             }
             db.Kapat();
 
@@ -130,7 +133,7 @@ namespace telekomAidatTakip
             {
                 Database db = new Database();
                 db.Sorgu("DELETE FROM Birim Where birimNo = @0", txtBirimKodu.Text);
-                listvil.Items.Clear();
+                listBirim.Items.Clear();
                 listeDoldur();
                 db.Kapat();
                 MessageBox.Show("Seçili birim silindi!", "Birim Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -144,8 +147,8 @@ namespace telekomAidatTakip
         {
             Database db = new Database();
             int mudurlukNo = ((KeyValuePair<int, string>)cBoxMudurluk.SelectedItem).Key;
-            db.Sorgu("UPDATE Birim Set birimAdi = @0, mudurlukNo=@1 WHERE birimNo=@2", txtBirimAdi.Text,mudurlukNo.ToString(),txtBirimKodu.Text);
-            listvil.Items.Clear();
+            db.Sorgu("UPDATE Birim Set birimAdi = @0, mudurlukNo=@1 WHERE birimNo=@2", txtBirimAdi.Text, mudurlukNo.ToString(), txtBirimKodu.Text);
+            listBirim.Items.Clear();
             listeDoldur();
             db.Kapat();
 
@@ -155,7 +158,8 @@ namespace telekomAidatTakip
         {
             //hata var düzeltilecek
             //groupBox2.Width = this.Width - 44;
-           // groupBox2.Height = this.Height - 288;
+            // groupBox2.Height = this.Height - 288;
+            listBirim.Size = new Size(listBirim.Size.Width,this.Size.Height - 258);
         }
 
         private void frmTanimBirim_FormClosing(object sender, FormClosingEventArgs e)
@@ -177,8 +181,8 @@ namespace telekomAidatTakip
             txtBirimKodu.Enabled = false;
             btnYeni.Text = "Yeni";
             Database db = new Database();
-            String mudurlukAdi = listvil.SelectedItems[0].SubItems[3].Text;
-            String birimKodu = listvil.SelectedItems[0].SubItems[0].Text;
+            String mudurlukAdi = listBirim.SelectedItems[0].SubItems[3].Text;
+            String birimKodu = listBirim.SelectedItems[0].SubItems[0].Text;
             var data = db.DataOku("SELECT b.birimAdi,b.birimNo,m.mudurlukAdi " +
                   "FROM Mudurluk m, Birim b WHERE m.mudurlukNo = b.mudurlukNo AND m.mudurlukAdi = @0 AND b.birimNo =@1", mudurlukAdi, birimKodu);
 

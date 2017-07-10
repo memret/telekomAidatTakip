@@ -255,6 +255,18 @@
   <ItemGroup>
     <None Include="Resources\default.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_check_101940.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_delete_101939.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_save_101946.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telekom.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
