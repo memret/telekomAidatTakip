@@ -153,9 +153,9 @@
             // 
             // 
             this.txtAidatMiktari.CustomButton.Image = null;
-            this.txtAidatMiktari.CustomButton.Location = new System.Drawing.Point(172, 1);
+            this.txtAidatMiktari.CustomButton.Location = new System.Drawing.Point(153, 1);
             this.txtAidatMiktari.CustomButton.Name = "";
-            this.txtAidatMiktari.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtAidatMiktari.CustomButton.Size = new System.Drawing.Size(24, 29);
             this.txtAidatMiktari.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtAidatMiktari.CustomButton.TabIndex = 1;
             this.txtAidatMiktari.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
