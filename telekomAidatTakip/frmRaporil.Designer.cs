@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRaporIl));
             this.listIl = new System.Windows.Forms.ListView();
             this.listIlNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listİlAdi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,6 +38,8 @@
             this.btnEkranaListele = new MetroFramework.Controls.MetroTile();
             this.btnYazdir = new MetroFramework.Controls.MetroTile();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listIl
@@ -48,11 +51,12 @@
             this.ListAktif,
             this.ListPasif,
             this.ListToplam});
+            this.listIl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listIl.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listIl.FullRowSelect = true;
-            this.listIl.Location = new System.Drawing.Point(23, 106);
+            this.listIl.Location = new System.Drawing.Point(20, 117);
             this.listIl.Name = "listIl";
-            this.listIl.Size = new System.Drawing.Size(449, 272);
+            this.listIl.Size = new System.Drawing.Size(446, 261);
             this.listIl.TabIndex = 0;
             this.listIl.UseCompatibleStateImageBehavior = false;
             this.listIl.UseWaitCursor = true;
@@ -133,11 +137,23 @@
             this.metroLabel1.Text = "İllere Göre Üye Dağılım Listesi";
             this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmRaporIl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 398);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listIl);
             this.Controls.Add(this.btnYazdir);
             this.Controls.Add(this.btnEkranaListele);
@@ -146,8 +162,9 @@
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Name = "frmRaporIl";
             this.Style = MetroFramework.MetroColorStyle.Red;
-            this.Text = "İl Raporları";
+            this.Text = "       İl Raporları";
             this.Load += new System.EventHandler(this.frmRaporIl_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +180,6 @@
         private MetroFramework.Controls.MetroTile btnEkranaListele;
         private MetroFramework.Controls.MetroTile btnYazdir;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

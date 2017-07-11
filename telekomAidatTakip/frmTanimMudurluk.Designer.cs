@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTanimMudurluk));
             this.txtMdrKod = new MetroFramework.Controls.MetroTextBox();
             this.comboBox_il = new MetroFramework.Controls.MetroComboBox();
             this.txtMdrAd = new MetroFramework.Controls.MetroTextBox();
@@ -42,6 +43,8 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMdrKod
@@ -230,11 +233,23 @@
             this.metroLabel2.TabIndex = 25;
             this.metroLabel2.Text = "İl:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 47;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmTanimMudurluk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 516);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listvMdr);
             this.Controls.Add(this.txtMdrKod);
             this.Controls.Add(this.comboBox_il);
@@ -251,9 +266,10 @@
             this.Name = "frmTanimMudurluk";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Style = MetroFramework.MetroColorStyle.Lime;
-            this.Text = "MÜDÜRLÜK TANIMLAMA";
+            this.Text = "       MÜDÜRLÜK TANIMLAMA";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmTanimMudurluk_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,5 +290,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -36,11 +36,11 @@
             this.btnYeni = new MetroFramework.Controls.MetroTile();
             this.Label1 = new MetroFramework.Controls.MetroLabel();
             this.Label2 = new MetroFramework.Controls.MetroLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.listvil = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtAdi
@@ -158,13 +158,6 @@
             this.Label2.UseCustomForeColor = true;
             this.Label2.Click += new System.EventHandler(this.metroLabel2_Click);
             // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
             // listvil
             // 
             this.listvil.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -187,6 +180,13 @@
             // 
             resources.ApplyResources(this.columnHeader2, "columnHeader2");
             // 
+            // pictureBox2
+            // 
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            // 
             // frmTanimIl
             // 
             resources.ApplyResources(this, "$this");
@@ -195,8 +195,8 @@
             this.BackLocation = MetroFramework.Forms.BackLocation.BottomLeft;
             this.BackMaxSize = 15;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.listvil);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.txtAdi);
@@ -210,7 +210,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimIl_FormClosing);
             this.Load += new System.EventHandler(this.frmTanimil_Load);
             this.Resize += new System.EventHandler(this.frmTanimIl_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,9 +225,9 @@
         private MetroFramework.Controls.MetroTile btnYeni;
         private MetroFramework.Controls.MetroLabel Label1;
         private MetroFramework.Controls.MetroLabel Label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListView listvil;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
