@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmUye : Form
+    public partial class frmUye : MetroForm
     {
         string sicilno;
         string resimPath;
@@ -364,7 +365,7 @@ namespace telekomAidatTakip
                 var isilNo = PRG.cboxKeyGetir(ref cboxIsIl);//((KeyValuePair<int, string>)cboxIsIl.SelectedItem).Key;
 
 
-                
+
 
                 db.Sorgu("insert into Uyeler (sicilNo,adSoyad,tahsilNo,unvanNo,ilNo,mudurlukNo,birimNo,uyelikTipiNo,girisTarihi,kayitTarihi,aktif, [not]) values (@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11);" +
                 "insert into Adres (sicilNo,ev,evilNo,[is],isilNo,evTel,istel,ceptel,email) values (@12,@13,@14,@15,@16,@17,@18,@19,@20);" +
@@ -378,7 +379,7 @@ namespace telekomAidatTakip
                 db2.Kapat();
                 this.Close();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Exception ed = e;
                 MessageBox.Show("Yeni kayıt sırasında problem oluştu.");
@@ -480,7 +481,7 @@ namespace telekomAidatTakip
                 {
                     DoldurKomple(sicilno);
                 }
-                
+
             }
             else
             {
@@ -500,7 +501,7 @@ namespace telekomAidatTakip
             }
             else
                 MessageBox.Show(BosYerVarMi());
-            
+
         }
 
         private void btnYeniResim_Click(object sender, EventArgs e)
@@ -637,7 +638,7 @@ namespace telekomAidatTakip
         private void txtAdresEmail_Leave(object sender, EventArgs e)
         {
             Regex reg = new Regex(@"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
-            if(txtAdresEmail.Text != string.Empty)
+            if (txtAdresEmail.Text != string.Empty)
             {
 
                 if (!reg.IsMatch(txtAdresEmail.Text))
@@ -648,6 +649,11 @@ namespace telekomAidatTakip
 
                 }
             }
+        }
+
+        private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
