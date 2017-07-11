@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmTanimOzelGunler : Form
+    public partial class frmTanimOzelGunler : MetroFramework.Forms.MetroForm
     {
         public frmTanimOzelGunler()
         {
@@ -202,11 +202,11 @@ namespace telekomAidatTakip
         private void frmTanimOzelGunler_Resize(object sender, EventArgs e)
         {
            
-            gboxTabloGosterimi.Height = this.Height - 390;
+            //gboxTabloGosterimi.Height = this.Height - 390;
            
-            gboxTabloGosterimi.Width = this.Width - 60;
-            listView1.Width = this.Width - 77;
-            listView1.Height = this.Height - 419;
+          //  gboxTabloGosterimi.Width = this.Width - 60;
+           // listView1.Width = this.Width - 77;
+           // listView1.Height = this.Height - 419;
         }
 
         private void btnAdi_Click(object sender, EventArgs e)
