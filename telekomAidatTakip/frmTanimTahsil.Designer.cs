@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTanimTahsil));
             this.label1 = new System.Windows.Forms.Label();
-            this.tahsilTanim = new System.Windows.Forms.GroupBox();
-            this.btnSil = new MetroFramework.Controls.MetroTile();
             this.btnKaydet = new MetroFramework.Controls.MetroTile();
             this.btnYeni = new MetroFramework.Controls.MetroTile();
             this.txtTahsilAd = new MetroFramework.Controls.MetroTextBox();
@@ -40,10 +38,10 @@
             this.tahsilNo = new MetroFramework.Controls.MetroLabel();
             this.kayıtTahsil = new System.Windows.Forms.GroupBox();
             this.listvTanimTahsil = new System.Windows.Forms.ListView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tahsilTanim.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSil = new MetroFramework.Controls.MetroTile();
             this.kayıtTahsil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,56 +54,19 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 0;
             // 
-            // tahsilTanim
-            // 
-            this.tahsilTanim.Controls.Add(this.btnSil);
-            this.tahsilTanim.Controls.Add(this.btnKaydet);
-            this.tahsilTanim.Controls.Add(this.btnYeni);
-            this.tahsilTanim.Controls.Add(this.txtTahsilAd);
-            this.tahsilTanim.Controls.Add(this.txtTahsilKodu);
-            this.tahsilTanim.Controls.Add(this.tahsilAd);
-            this.tahsilTanim.Controls.Add(this.tahsilNo);
-            this.tahsilTanim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tahsilTanim.Location = new System.Drawing.Point(15, 60);
-            this.tahsilTanim.Name = "tahsilTanim";
-            this.tahsilTanim.Size = new System.Drawing.Size(496, 152);
-            this.tahsilTanim.TabIndex = 3;
-            this.tahsilTanim.TabStop = false;
-            this.tahsilTanim.Text = "Tahsil Tanımları";
-            this.tahsilTanim.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // btnSil
-            // 
-            this.btnSil.ActiveControl = null;
-            this.btnSil.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSil.Location = new System.Drawing.Point(361, 87);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(96, 50);
-            this.btnSil.Style = MetroFramework.MetroColorStyle.Red;
-            this.btnSil.TabIndex = 15;
-            this.btnSil.Text = "Sil";
-            this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSil.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btnSil.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSil.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.btnSil.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.btnSil.UseSelectable = true;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
             // btnKaydet
             // 
             this.btnKaydet.ActiveControl = null;
             this.btnKaydet.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnKaydet.Location = new System.Drawing.Point(190, 87);
+            this.btnKaydet.Location = new System.Drawing.Point(254, 166);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(96, 50);
+            this.btnKaydet.Size = new System.Drawing.Size(88, 46);
             this.btnKaydet.Style = MetroFramework.MetroColorStyle.Lime;
             this.btnKaydet.TabIndex = 14;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnKaydet.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnKaydet.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnKaydet.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnKaydet.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.btnKaydet.UseSelectable = true;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
@@ -114,16 +75,15 @@
             // 
             this.btnYeni.ActiveControl = null;
             this.btnYeni.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnYeni.Location = new System.Drawing.Point(30, 87);
+            this.btnYeni.Location = new System.Drawing.Point(116, 166);
             this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(96, 50);
+            this.btnYeni.Size = new System.Drawing.Size(88, 46);
             this.btnYeni.Style = MetroFramework.MetroColorStyle.Blue;
             this.btnYeni.TabIndex = 13;
             this.btnYeni.Text = "Yeni";
             this.btnYeni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnYeni.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnYeni.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnYeni.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnYeni.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.btnYeni.UseSelectable = true;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
@@ -143,7 +103,7 @@
             this.txtTahsilAd.CustomButton.UseSelectable = true;
             this.txtTahsilAd.CustomButton.Visible = false;
             this.txtTahsilAd.Lines = new string[0];
-            this.txtTahsilAd.Location = new System.Drawing.Point(101, 58);
+            this.txtTahsilAd.Location = new System.Drawing.Point(116, 120);
             this.txtTahsilAd.MaxLength = 32767;
             this.txtTahsilAd.Name = "txtTahsilAd";
             this.txtTahsilAd.PasswordChar = '\0';
@@ -173,7 +133,7 @@
             this.txtTahsilKodu.CustomButton.UseSelectable = true;
             this.txtTahsilKodu.CustomButton.Visible = false;
             this.txtTahsilKodu.Lines = new string[0];
-            this.txtTahsilKodu.Location = new System.Drawing.Point(101, 28);
+            this.txtTahsilKodu.Location = new System.Drawing.Point(116, 79);
             this.txtTahsilKodu.MaxLength = 32767;
             this.txtTahsilKodu.Name = "txtTahsilKodu";
             this.txtTahsilKodu.PasswordChar = '\0';
@@ -191,7 +151,7 @@
             // tahsilAd
             // 
             this.tahsilAd.AutoSize = true;
-            this.tahsilAd.Location = new System.Drawing.Point(12, 54);
+            this.tahsilAd.Location = new System.Drawing.Point(23, 124);
             this.tahsilAd.Name = "tahsilAd";
             this.tahsilAd.Size = new System.Drawing.Size(63, 19);
             this.tahsilAd.TabIndex = 9;
@@ -200,7 +160,7 @@
             // tahsilNo
             // 
             this.tahsilNo.AutoSize = true;
-            this.tahsilNo.Location = new System.Drawing.Point(12, 28);
+            this.tahsilNo.Location = new System.Drawing.Point(23, 79);
             this.tahsilNo.Name = "tahsilNo";
             this.tahsilNo.Size = new System.Drawing.Size(69, 19);
             this.tahsilNo.TabIndex = 8;
@@ -234,6 +194,16 @@
             this.listvTanimTahsil.SelectedIndexChanged += new System.EventHandler(this.listvTanimTahsil_SelectedIndexChanged);
             this.listvTanimTahsil.DoubleClick += new System.EventHandler(this.listvTanimTahsil_DoubleClick_1);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tahsil Kodu";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tahsil Açıklama";
+            this.columnHeader2.Width = 389;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
@@ -245,33 +215,44 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // columnHeader1
+            // btnSil
             // 
-            this.columnHeader1.Text = "Tahsil Kodu";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tahsil Açıklama";
-            this.columnHeader2.Width = 389;
+            this.btnSil.ActiveControl = null;
+            this.btnSil.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSil.Location = new System.Drawing.Point(393, 166);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(88, 46);
+            this.btnSil.Style = MetroFramework.MetroColorStyle.Red;
+            this.btnSil.TabIndex = 15;
+            this.btnSil.Text = "Sil";
+            this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSil.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnSil.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSil.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnSil.UseSelectable = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // frmTanimTahsil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 423);
+            this.Controls.Add(this.btnSil);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.kayıtTahsil);
-            this.Controls.Add(this.tahsilTanim);
+            this.Controls.Add(this.btnYeni);
+            this.Controls.Add(this.txtTahsilAd);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtTahsilKodu);
+            this.Controls.Add(this.tahsilNo);
+            this.Controls.Add(this.tahsilAd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTanimTahsil";
             this.Text = "Tahsil Tanımlama";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimTahsil_FormClosing);
             this.Load += new System.EventHandler(this.frmTanimTahsil_Load);
             this.Resize += new System.EventHandler(this.frmTanimTahsil_Resize);
-            this.tahsilTanim.ResumeLayout(false);
-            this.tahsilTanim.PerformLayout();
             this.kayıtTahsil.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -282,7 +263,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox tahsilTanim;
         private System.Windows.Forms.GroupBox kayıtTahsil;
         private MetroFramework.Controls.MetroLabel tahsilAd;
         private MetroFramework.Controls.MetroLabel tahsilNo;
@@ -290,10 +270,10 @@
         private MetroFramework.Controls.MetroTextBox txtTahsilAd;
         private MetroFramework.Controls.MetroTile btnYeni;
         private MetroFramework.Controls.MetroTile btnKaydet;
-        private MetroFramework.Controls.MetroTile btnSil;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListView listvTanimTahsil;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private MetroFramework.Controls.MetroTile btnSil;
     }
 }

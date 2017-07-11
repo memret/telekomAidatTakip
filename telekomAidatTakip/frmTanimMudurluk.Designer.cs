@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listvMdr = new MetroFramework.Controls.MetroListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtMdrKod = new MetroFramework.Controls.MetroTextBox();
             this.comboBox_il = new MetroFramework.Controls.MetroComboBox();
             this.txtMdrAd = new MetroFramework.Controls.MetroTextBox();
@@ -42,48 +37,12 @@
             this.btnKaydet = new MetroFramework.Controls.MetroTile();
             this.btnYeni = new MetroFramework.Controls.MetroTile();
             this.label_il = new System.Windows.Forms.Label();
+            this.listvMdr = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // listvMdr
-            // 
-            this.listvMdr.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.listvMdr.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listvMdr.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.listvMdr.FullRowSelect = true;
-            this.listvMdr.Location = new System.Drawing.Point(27, 268);
-            this.listvMdr.Name = "listvMdr";
-            this.listvMdr.OwnerDraw = true;
-            this.listvMdr.Size = new System.Drawing.Size(563, 218);
-            this.listvMdr.TabIndex = 3;
-            this.listvMdr.UseCompatibleStateImageBehavior = false;
-            this.listvMdr.UseSelectable = true;
-            this.listvMdr.View = System.Windows.Forms.View.Details;
-            this.listvMdr.SelectedIndexChanged += new System.EventHandler(this.listvMdr_SelectedIndexChanged);
-            this.listvMdr.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvMdr_MouseDoubleClick);
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Müdürlük No";
-            this.columnHeader5.Width = 136;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Müdürlük";
-            this.columnHeader6.Width = 163;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "İl No";
-            this.columnHeader7.Width = 75;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "İl";
-            this.columnHeader8.Width = 176;
             // 
             // txtMdrKod
             // 
@@ -91,7 +50,7 @@
             // 
             // 
             this.txtMdrKod.CustomButton.Image = null;
-            this.txtMdrKod.CustomButton.Location = new System.Drawing.Point(47, 2);
+            this.txtMdrKod.CustomButton.Location = new System.Drawing.Point(94, 2);
             this.txtMdrKod.CustomButton.Name = "";
             this.txtMdrKod.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtMdrKod.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -104,14 +63,16 @@
             this.txtMdrKod.MaxLength = 32767;
             this.txtMdrKod.Name = "txtMdrKod";
             this.txtMdrKod.PasswordChar = '\0';
+            this.txtMdrKod.PromptText = "Müdürlük no giriniz.";
             this.txtMdrKod.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtMdrKod.SelectedText = "";
             this.txtMdrKod.SelectionLength = 0;
             this.txtMdrKod.SelectionStart = 0;
             this.txtMdrKod.ShortcutsEnabled = true;
-            this.txtMdrKod.Size = new System.Drawing.Size(75, 30);
+            this.txtMdrKod.Size = new System.Drawing.Size(122, 30);
             this.txtMdrKod.TabIndex = 27;
             this.txtMdrKod.UseSelectable = true;
+            this.txtMdrKod.WaterMark = "Müdürlük no giriniz.";
             this.txtMdrKod.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMdrKod.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtMdrKod.TextChanged += new System.EventHandler(this.txtMdrKod_TextChanged);
@@ -123,6 +84,7 @@
             this.comboBox_il.ItemHeight = 24;
             this.comboBox_il.Location = new System.Drawing.Point(159, 142);
             this.comboBox_il.Name = "comboBox_il";
+            this.comboBox_il.PromptText = "İl seçiniz.";
             this.comboBox_il.Size = new System.Drawing.Size(370, 30);
             this.comboBox_il.TabIndex = 19;
             this.comboBox_il.Tag = "";
@@ -183,9 +145,10 @@
             // btnSil
             // 
             this.btnSil.ActiveControl = null;
-            this.btnSil.Location = new System.Drawing.Point(407, 194);
+            this.btnSil.Location = new System.Drawing.Point(407, 187);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(122, 55);
+            this.btnSil.Size = new System.Drawing.Size(122, 42);
+            this.btnSil.Style = MetroFramework.MetroColorStyle.Lime;
             this.btnSil.TabIndex = 23;
             this.btnSil.Text = "Sil";
             this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -196,9 +159,10 @@
             // btnKaydet
             // 
             this.btnKaydet.ActiveControl = null;
-            this.btnKaydet.Location = new System.Drawing.Point(277, 194);
+            this.btnKaydet.Location = new System.Drawing.Point(283, 187);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(124, 55);
+            this.btnKaydet.Size = new System.Drawing.Size(118, 42);
+            this.btnKaydet.Style = MetroFramework.MetroColorStyle.Lime;
             this.btnKaydet.TabIndex = 22;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -209,9 +173,10 @@
             // btnYeni
             // 
             this.btnYeni.ActiveControl = null;
-            this.btnYeni.Location = new System.Drawing.Point(159, 194);
+            this.btnYeni.Location = new System.Drawing.Point(159, 187);
             this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(112, 55);
+            this.btnYeni.Size = new System.Drawing.Size(118, 42);
+            this.btnYeni.Style = MetroFramework.MetroColorStyle.Lime;
             this.btnYeni.TabIndex = 21;
             this.btnYeni.Text = "Yeni";
             this.btnYeni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -228,11 +193,51 @@
             this.label_il.TabIndex = 20;
             this.label_il.Text = "İl:";
             // 
+            // listvMdr
+            // 
+            this.listvMdr.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listvMdr.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listvMdr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listvMdr.FullRowSelect = true;
+            this.listvMdr.Location = new System.Drawing.Point(27, 239);
+            this.listvMdr.Name = "listvMdr";
+            this.listvMdr.Size = new System.Drawing.Size(501, 252);
+            this.listvMdr.TabIndex = 28;
+            this.listvMdr.UseCompatibleStateImageBehavior = false;
+            this.listvMdr.View = System.Windows.Forms.View.Details;
+            this.listvMdr.SelectedIndexChanged += new System.EventHandler(this.comboBox_il_SelectedIndexChanged);
+            this.listvMdr.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvMdr_MouseDoubleClick);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Müdürlük No";
+            this.columnHeader1.Width = 129;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Müdürlük";
+            this.columnHeader2.Width = 168;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "İl No";
+            this.columnHeader3.Width = 84;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "İl";
+            this.columnHeader4.Width = 112;
+            // 
             // frmTanimMudurluk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 511);
+            this.ClientSize = new System.Drawing.Size(555, 516);
+            this.Controls.Add(this.listvMdr);
             this.Controls.Add(this.txtMdrKod);
             this.Controls.Add(this.comboBox_il);
             this.Controls.Add(this.txtMdrAd);
@@ -242,13 +247,14 @@
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.btnYeni);
             this.Controls.Add(this.label_il);
-            this.Controls.Add(this.listvMdr);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(617, 511);
+            this.MinimumSize = new System.Drawing.Size(555, 516);
             this.Name = "frmTanimMudurluk";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
-            this.Text = "Müdürlük Tanımlama";
+            this.Style = MetroFramework.MetroColorStyle.Lime;
+            this.Text = "MÜDÜRLÜK TANIMLAMA";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmTanimMudurluk_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -256,11 +262,6 @@
         }
 
         #endregion
-        private MetroFramework.Controls.MetroListView listvMdr;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
         private MetroFramework.Controls.MetroTextBox txtMdrKod;
         private MetroFramework.Controls.MetroComboBox comboBox_il;
         private MetroFramework.Controls.MetroTextBox txtMdrAd;
@@ -270,5 +271,10 @@
         private MetroFramework.Controls.MetroTile btnKaydet;
         private MetroFramework.Controls.MetroTile btnYeni;
         private System.Windows.Forms.Label label_il;
+        private System.Windows.Forms.ListView listvMdr;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
