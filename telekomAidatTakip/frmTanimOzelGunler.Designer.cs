@@ -28,364 +28,476 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gboxOzelGunTanimlari = new System.Windows.Forms.GroupBox();
-            this.grpDegiskenler = new System.Windows.Forms.GroupBox();
-            this.txtGunNo = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSil = new System.Windows.Forms.Button();
-            this.btnKaydet = new System.Windows.Forms.Button();
-            this.btnYeni = new System.Windows.Forms.Button();
-            this.dateTimeTarih = new System.Windows.Forms.DateTimePicker();
-            this.txtYorum = new System.Windows.Forms.TextBox();
-            this.txtMsj = new System.Windows.Forms.TextBox();
-            this.txtBaslik = new System.Windows.Forms.MaskedTextBox();
-            this.lblYorum = new System.Windows.Forms.Label();
-            this.lblMesaj = new System.Windows.Forms.Label();
-            this.lblTarih = new System.Windows.Forms.Label();
-            this.lblMailBasligi = new System.Windows.Forms.Label();
-            this.gboxTabloGosterimi = new System.Windows.Forms.GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTanimOzelGunler));
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnAdi = new System.Windows.Forms.Button();
-            this.btnSehir = new System.Windows.Forms.Button();
-            this.btnMudurluk = new System.Windows.Forms.Button();
-            this.btnBirim = new System.Windows.Forms.Button();
-            this.btnSicilNo = new System.Windows.Forms.Button();
-            this.gboxOzelGunTanimlari.SuspendLayout();
-            this.grpDegiskenler.SuspendLayout();
-            this.gboxTabloGosterimi.SuspendLayout();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnYeni = new MetroFramework.Controls.MetroTile();
+            this.btnKaydet = new MetroFramework.Controls.MetroTile();
+            this.btnSil = new MetroFramework.Controls.MetroTile();
+            this.txtGunNo = new MetroFramework.Controls.MetroTextBox();
+            this.btnBirim = new MetroFramework.Controls.MetroTile();
+            this.btnMudurluk = new MetroFramework.Controls.MetroTile();
+            this.btnSehir = new MetroFramework.Controls.MetroTile();
+            this.btnSicilNo = new MetroFramework.Controls.MetroTile();
+            this.btnAdi = new MetroFramework.Controls.MetroTile();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.txtBaslik = new MetroFramework.Controls.MetroTextBox();
+            this.dateTimeTarih = new MetroFramework.Controls.MetroDateTime();
+            this.txtMsj = new MetroFramework.Controls.MetroTextBox();
+            this.txtYorum = new MetroFramework.Controls.MetroTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gboxOzelGunTanimlari
-            // 
-            this.gboxOzelGunTanimlari.Controls.Add(this.grpDegiskenler);
-            this.gboxOzelGunTanimlari.Controls.Add(this.txtGunNo);
-            this.gboxOzelGunTanimlari.Controls.Add(this.label1);
-            this.gboxOzelGunTanimlari.Controls.Add(this.btnSil);
-            this.gboxOzelGunTanimlari.Controls.Add(this.btnKaydet);
-            this.gboxOzelGunTanimlari.Controls.Add(this.btnYeni);
-            this.gboxOzelGunTanimlari.Controls.Add(this.dateTimeTarih);
-            this.gboxOzelGunTanimlari.Controls.Add(this.txtYorum);
-            this.gboxOzelGunTanimlari.Controls.Add(this.txtMsj);
-            this.gboxOzelGunTanimlari.Controls.Add(this.txtBaslik);
-            this.gboxOzelGunTanimlari.Controls.Add(this.lblYorum);
-            this.gboxOzelGunTanimlari.Controls.Add(this.lblMesaj);
-            this.gboxOzelGunTanimlari.Controls.Add(this.lblTarih);
-            this.gboxOzelGunTanimlari.Controls.Add(this.lblMailBasligi);
-            this.gboxOzelGunTanimlari.Location = new System.Drawing.Point(25, 14);
-            this.gboxOzelGunTanimlari.Margin = new System.Windows.Forms.Padding(4);
-            this.gboxOzelGunTanimlari.Name = "gboxOzelGunTanimlari";
-            this.gboxOzelGunTanimlari.Padding = new System.Windows.Forms.Padding(4);
-            this.gboxOzelGunTanimlari.Size = new System.Drawing.Size(727, 402);
-            this.gboxOzelGunTanimlari.TabIndex = 0;
-            this.gboxOzelGunTanimlari.TabStop = false;
-            this.gboxOzelGunTanimlari.Text = "Özel Gün Tanımları";
-            // 
-            // grpDegiskenler
-            // 
-            this.grpDegiskenler.Controls.Add(this.btnSicilNo);
-            this.grpDegiskenler.Controls.Add(this.btnBirim);
-            this.grpDegiskenler.Controls.Add(this.btnMudurluk);
-            this.grpDegiskenler.Controls.Add(this.btnSehir);
-            this.grpDegiskenler.Controls.Add(this.btnAdi);
-            this.grpDegiskenler.Location = new System.Drawing.Point(548, 22);
-            this.grpDegiskenler.Name = "grpDegiskenler";
-            this.grpDegiskenler.Size = new System.Drawing.Size(162, 309);
-            this.grpDegiskenler.TabIndex = 17;
-            this.grpDegiskenler.TabStop = false;
-            this.grpDegiskenler.Text = "Değişkenler";
-            // 
-            // txtGunNo
-            // 
-            this.txtGunNo.Enabled = false;
-            this.txtGunNo.Location = new System.Drawing.Point(156, 31);
-            this.txtGunNo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGunNo.Name = "txtGunNo";
-            this.txtGunNo.Size = new System.Drawing.Size(384, 22);
-            this.txtGunNo.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 34);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 17);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Özel Gün No :";
-            // 
-            // btnSil
-            // 
-            this.btnSil.Location = new System.Drawing.Point(599, 348);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(111, 32);
-            this.btnSil.TabIndex = 14;
-            this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnKaydet
-            // 
-            this.btnKaydet.Location = new System.Drawing.Point(471, 350);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(4);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(119, 31);
-            this.btnKaydet.TabIndex = 13;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
-            // btnYeni
-            // 
-            this.btnYeni.Location = new System.Drawing.Point(340, 350);
-            this.btnYeni.Margin = new System.Windows.Forms.Padding(4);
-            this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(124, 32);
-            this.btnYeni.TabIndex = 12;
-            this.btnYeni.Text = "Yeni";
-            this.btnYeni.UseVisualStyleBackColor = true;
-            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
-            // 
-            // dateTimeTarih
-            // 
-            this.dateTimeTarih.Location = new System.Drawing.Point(156, 110);
-            this.dateTimeTarih.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimeTarih.Name = "dateTimeTarih";
-            this.dateTimeTarih.Size = new System.Drawing.Size(384, 22);
-            this.dateTimeTarih.TabIndex = 10;
-            // 
-            // txtYorum
-            // 
-            this.txtYorum.Location = new System.Drawing.Point(156, 238);
-            this.txtYorum.Margin = new System.Windows.Forms.Padding(4);
-            this.txtYorum.Multiline = true;
-            this.txtYorum.Name = "txtYorum";
-            this.txtYorum.Size = new System.Drawing.Size(384, 93);
-            this.txtYorum.TabIndex = 9;
-            // 
-            // txtMsj
-            // 
-
-
-            this.txtMsj.Location = new System.Drawing.Point(156, 142);
-            this.txtMsj.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMsj.Multiline = true;
-            this.txtMsj.Name = "txtMsj";
-            this.txtMsj.Size = new System.Drawing.Size(384, 88);
-            this.txtMsj.TabIndex = 8;
-            // 
-            // txtBaslik
-            // 
-            this.txtBaslik.Location = new System.Drawing.Point(156, 69);
-            this.txtBaslik.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBaslik.Name = "txtBaslik";
-            this.txtBaslik.Size = new System.Drawing.Size(384, 22);
-            this.txtBaslik.TabIndex = 0;
-            // 
-            // lblYorum
-            // 
-            this.lblYorum.AutoSize = true;
-            this.lblYorum.Location = new System.Drawing.Point(45, 228);
-            this.lblYorum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblYorum.Name = "lblYorum";
-            this.lblYorum.Size = new System.Drawing.Size(57, 17);
-            this.lblYorum.TabIndex = 7;
-            this.lblYorum.Text = "Yorum :";
-            // 
-            // lblMesaj
-            // 
-            this.lblMesaj.AutoSize = true;
-            this.lblMesaj.Location = new System.Drawing.Point(45, 165);
-            this.lblMesaj.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMesaj.Name = "lblMesaj";
-            this.lblMesaj.Size = new System.Drawing.Size(53, 17);
-            this.lblMesaj.TabIndex = 6;
-            this.lblMesaj.Text = "Mesaj :";
-            // 
-            // lblTarih
-            // 
-            this.lblTarih.AutoSize = true;
-            this.lblTarih.Location = new System.Drawing.Point(45, 116);
-            this.lblTarih.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTarih.Name = "lblTarih";
-            this.lblTarih.Size = new System.Drawing.Size(49, 17);
-            this.lblTarih.TabIndex = 5;
-            this.lblTarih.Text = "Tarih :";
-            // 
-            // lblMailBasligi
-            // 
-            this.lblMailBasligi.AutoSize = true;
-            this.lblMailBasligi.Location = new System.Drawing.Point(45, 73);
-            this.lblMailBasligi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMailBasligi.Name = "lblMailBasligi";
-            this.lblMailBasligi.Size = new System.Drawing.Size(86, 17);
-            this.lblMailBasligi.TabIndex = 1;
-            this.lblMailBasligi.Text = "Mail Başlığı :";
-            // 
-            // gboxTabloGosterimi
-            // 
-            this.gboxTabloGosterimi.Controls.Add(this.listView1);
-            this.gboxTabloGosterimi.Location = new System.Drawing.Point(25, 423);
-            this.gboxTabloGosterimi.Margin = new System.Windows.Forms.Padding(4);
-            this.gboxTabloGosterimi.Name = "gboxTabloGosterimi";
-            this.gboxTabloGosterimi.Padding = new System.Windows.Forms.Padding(4);
-            this.gboxTabloGosterimi.Size = new System.Drawing.Size(727, 191);
-            this.gboxTabloGosterimi.TabIndex = 1;
-            this.gboxTabloGosterimi.TabStop = false;
-            this.gboxTabloGosterimi.Text = "Tablo Gösterimi";
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listView1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(4, 26);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
+            this.listView1.Location = new System.Drawing.Point(20, 450);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(703, 154);
-            this.listView1.TabIndex = 0;
+            this.listView1.Size = new System.Drawing.Size(565, 155);
+            this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             // 
-            // columnHeader1
+            // columnHeader6
             // 
-            this.columnHeader1.Text = "Özel Gün No";
-            this.columnHeader1.Width = 77;
+            this.columnHeader6.Text = "Özel Gün No";
+            this.columnHeader6.Width = 84;
             // 
-            // columnHeader2
+            // columnHeader7
             // 
-            this.columnHeader2.Text = "Mail Başlığı";
-            this.columnHeader2.Width = 94;
+            this.columnHeader7.Text = "Mail Başlığı";
+            this.columnHeader7.Width = 108;
             // 
-            // columnHeader3
+            // columnHeader8
             // 
-            this.columnHeader3.Text = "Tarih";
-            this.columnHeader3.Width = 87;
+            this.columnHeader8.Text = "Tarih";
+            this.columnHeader8.Width = 86;
             // 
-            // columnHeader4
+            // columnHeader9
             // 
-            this.columnHeader4.Text = "Mesaj";
-            this.columnHeader4.Width = 134;
+            this.columnHeader9.Text = "Mesaj";
+            this.columnHeader9.Width = 168;
             // 
-            // columnHeader5
+            // columnHeader10
             // 
-            this.columnHeader5.Text = "Yorum";
-            this.columnHeader5.Width = 185;
+            this.columnHeader10.Text = "Yorum";
+            this.columnHeader10.Width = 185;
             // 
-            // btnAdi
+            // btnYeni
             // 
-            this.btnAdi.Enabled = false;
-            this.btnAdi.Location = new System.Drawing.Point(6, 31);
-            this.btnAdi.Name = "btnAdi";
-            this.btnAdi.Size = new System.Drawing.Size(149, 25);
-            this.btnAdi.TabIndex = 0;
-            this.btnAdi.Text = "Ad Soyad";
-            this.btnAdi.UseVisualStyleBackColor = true;
-            this.btnAdi.Click += new System.EventHandler(this.btnAdi_Click);
+            this.btnYeni.ActiveControl = null;
+            this.btnYeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnYeni.Location = new System.Drawing.Point(120, 389);
+            this.btnYeni.Name = "btnYeni";
+            this.btnYeni.Size = new System.Drawing.Size(80, 35);
+            this.btnYeni.TabIndex = 2;
+            this.btnYeni.Text = "Yeni";
+            this.btnYeni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnYeni.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
+            this.btnYeni.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnYeni.UseCustomBackColor = true;
+            this.btnYeni.UseSelectable = true;
+            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
-            // btnSehir
+            // btnKaydet
             // 
-            this.btnSehir.Enabled = false;
-            this.btnSehir.Location = new System.Drawing.Point(6, 95);
-            this.btnSehir.Name = "btnSehir";
-            this.btnSehir.Size = new System.Drawing.Size(149, 25);
-            this.btnSehir.TabIndex = 1;
-            this.btnSehir.Text = "Şehir";
-            this.btnSehir.UseVisualStyleBackColor = true;
-            this.btnSehir.Click += new System.EventHandler(this.btnSehir_Click);
+            this.btnKaydet.ActiveControl = null;
+            this.btnKaydet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnKaydet.Location = new System.Drawing.Point(259, 389);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(80, 35);
+            this.btnKaydet.TabIndex = 3;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnKaydet.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
+            this.btnKaydet.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnKaydet.UseCustomBackColor = true;
+            this.btnKaydet.UseSelectable = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
-            // btnMudurluk
+            // btnSil
             // 
-            this.btnMudurluk.Enabled = false;
-            this.btnMudurluk.Location = new System.Drawing.Point(6, 126);
-            this.btnMudurluk.Name = "btnMudurluk";
-            this.btnMudurluk.Size = new System.Drawing.Size(149, 25);
-            this.btnMudurluk.TabIndex = 2;
-            this.btnMudurluk.Text = "Müdürlük";
-            this.btnMudurluk.UseVisualStyleBackColor = true;
-            this.btnMudurluk.Click += new System.EventHandler(this.btnMudurluk_Click);
+            this.btnSil.ActiveControl = null;
+            this.btnSil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnSil.Location = new System.Drawing.Point(397, 389);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(80, 35);
+            this.btnSil.TabIndex = 4;
+            this.btnSil.Text = "Sil";
+            this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSil.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
+            this.btnSil.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnSil.UseCustomBackColor = true;
+            this.btnSil.UseSelectable = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
+            // txtGunNo
+            // 
+            // 
+            // 
+            // 
+            this.txtGunNo.CustomButton.Image = null;
+            this.txtGunNo.CustomButton.Location = new System.Drawing.Point(282, 1);
+            this.txtGunNo.CustomButton.Name = "";
+            this.txtGunNo.CustomButton.Size = new System.Drawing.Size(23, 27);
+            this.txtGunNo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtGunNo.CustomButton.TabIndex = 1;
+            this.txtGunNo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtGunNo.CustomButton.UseSelectable = true;
+            this.txtGunNo.CustomButton.Visible = false;
+            this.txtGunNo.Lines = new string[0];
+            this.txtGunNo.Location = new System.Drawing.Point(120, 79);
+            this.txtGunNo.MaxLength = 32767;
+            this.txtGunNo.Name = "txtGunNo";
+            this.txtGunNo.PasswordChar = '\0';
+            this.txtGunNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtGunNo.SelectedText = "";
+            this.txtGunNo.SelectionLength = 0;
+            this.txtGunNo.SelectionStart = 0;
+            this.txtGunNo.ShortcutsEnabled = true;
+            this.txtGunNo.Size = new System.Drawing.Size(357, 29);
+            this.txtGunNo.TabIndex = 5;
+            this.txtGunNo.UseSelectable = true;
+            this.txtGunNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtGunNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // btnBirim
             // 
-            this.btnBirim.Enabled = false;
-            this.btnBirim.Location = new System.Drawing.Point(7, 157);
+            this.btnBirim.ActiveControl = null;
+            this.btnBirim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnBirim.Location = new System.Drawing.Point(502, 261);
             this.btnBirim.Name = "btnBirim";
-            this.btnBirim.Size = new System.Drawing.Size(149, 25);
-            this.btnBirim.TabIndex = 3;
+            this.btnBirim.Size = new System.Drawing.Size(80, 35);
+            this.btnBirim.TabIndex = 41;
             this.btnBirim.Text = "Birim";
-            this.btnBirim.UseVisualStyleBackColor = true;
+            this.btnBirim.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBirim.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
+            this.btnBirim.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnBirim.UseCustomBackColor = true;
+            this.btnBirim.UseSelectable = true;
             this.btnBirim.Click += new System.EventHandler(this.btnBirim_Click);
+            // 
+            // btnMudurluk
+            // 
+            this.btnMudurluk.ActiveControl = null;
+            this.btnMudurluk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnMudurluk.Location = new System.Drawing.Point(502, 215);
+            this.btnMudurluk.Name = "btnMudurluk";
+            this.btnMudurluk.Size = new System.Drawing.Size(80, 35);
+            this.btnMudurluk.TabIndex = 40;
+            this.btnMudurluk.Text = "Müdürlük";
+            this.btnMudurluk.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
+            this.btnMudurluk.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnMudurluk.UseCustomBackColor = true;
+            this.btnMudurluk.UseSelectable = true;
+            this.btnMudurluk.Click += new System.EventHandler(this.btnMudurluk_Click);
+            // 
+            // btnSehir
+            // 
+            this.btnSehir.ActiveControl = null;
+            this.btnSehir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnSehir.Location = new System.Drawing.Point(502, 170);
+            this.btnSehir.Name = "btnSehir";
+            this.btnSehir.Size = new System.Drawing.Size(80, 35);
+            this.btnSehir.TabIndex = 39;
+            this.btnSehir.Text = "Şehir";
+            this.btnSehir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSehir.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
+            this.btnSehir.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnSehir.UseCustomBackColor = true;
+            this.btnSehir.UseSelectable = true;
+            this.btnSehir.Click += new System.EventHandler(this.btnSehir_Click);
             // 
             // btnSicilNo
             // 
-            this.btnSicilNo.Enabled = false;
-            this.btnSicilNo.Location = new System.Drawing.Point(6, 64);
+            this.btnSicilNo.ActiveControl = null;
+            this.btnSicilNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnSicilNo.Location = new System.Drawing.Point(502, 124);
             this.btnSicilNo.Name = "btnSicilNo";
-            this.btnSicilNo.Size = new System.Drawing.Size(149, 25);
-            this.btnSicilNo.TabIndex = 4;
-            this.btnSicilNo.Text = "SicilNo";
-            this.btnSicilNo.UseVisualStyleBackColor = true;
+            this.btnSicilNo.Size = new System.Drawing.Size(80, 35);
+            this.btnSicilNo.TabIndex = 38;
+            this.btnSicilNo.Text = "Sicil No";
+            this.btnSicilNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSicilNo.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
+            this.btnSicilNo.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnSicilNo.UseCustomBackColor = true;
+            this.btnSicilNo.UseSelectable = true;
             this.btnSicilNo.Click += new System.EventHandler(this.btnSicilNo_Click);
+            // 
+            // btnAdi
+            // 
+            this.btnAdi.ActiveControl = null;
+            this.btnAdi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnAdi.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAdi.Location = new System.Drawing.Point(502, 79);
+            this.btnAdi.Name = "btnAdi";
+            this.btnAdi.Size = new System.Drawing.Size(80, 35);
+            this.btnAdi.TabIndex = 37;
+            this.btnAdi.Text = "Ad Soyad";
+            this.btnAdi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdi.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnAdi.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
+            this.btnAdi.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnAdi.UseCustomBackColor = true;
+            this.btnAdi.UseCustomForeColor = true;
+            this.btnAdi.UseSelectable = true;
+            this.btnAdi.UseStyleColors = true;
+            this.btnAdi.Click += new System.EventHandler(this.btnAdi_Click);
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(26, 280);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(51, 19);
+            this.metroLabel5.TabIndex = 36;
+            this.metroLabel5.Text = "Yorum:";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(26, 184);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(46, 19);
+            this.metroLabel4.TabIndex = 35;
+            this.metroLabel4.Text = "Mesaj:";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(26, 149);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(39, 19);
+            this.metroLabel3.TabIndex = 34;
+            this.metroLabel3.Text = "Tarih:";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(26, 114);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(78, 19);
+            this.metroLabel2.TabIndex = 33;
+            this.metroLabel2.Text = "Mail Başlığı:";
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(26, 82);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(88, 19);
+            this.metroLabel1.TabIndex = 32;
+            this.metroLabel1.Text = "Özel Gün No:";
+            // 
+            // txtBaslik
+            // 
+            // 
+            // 
+            // 
+            this.txtBaslik.CustomButton.Image = null;
+            this.txtBaslik.CustomButton.Location = new System.Drawing.Point(282, 1);
+            this.txtBaslik.CustomButton.Name = "";
+            this.txtBaslik.CustomButton.Size = new System.Drawing.Size(23, 27);
+            this.txtBaslik.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtBaslik.CustomButton.TabIndex = 1;
+            this.txtBaslik.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtBaslik.CustomButton.UseSelectable = true;
+            this.txtBaslik.CustomButton.Visible = false;
+            this.txtBaslik.Lines = new string[0];
+            this.txtBaslik.Location = new System.Drawing.Point(120, 114);
+            this.txtBaslik.MaxLength = 32767;
+            this.txtBaslik.Name = "txtBaslik";
+            this.txtBaslik.PasswordChar = '\0';
+            this.txtBaslik.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtBaslik.SelectedText = "";
+            this.txtBaslik.SelectionLength = 0;
+            this.txtBaslik.SelectionStart = 0;
+            this.txtBaslik.ShortcutsEnabled = true;
+            this.txtBaslik.Size = new System.Drawing.Size(357, 29);
+            this.txtBaslik.TabIndex = 42;
+            this.txtBaslik.UseSelectable = true;
+            this.txtBaslik.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtBaslik.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // dateTimeTarih
+            // 
+            this.dateTimeTarih.Location = new System.Drawing.Point(120, 149);
+            this.dateTimeTarih.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateTimeTarih.Name = "dateTimeTarih";
+            this.dateTimeTarih.Size = new System.Drawing.Size(357, 29);
+            this.dateTimeTarih.TabIndex = 43;
+            // 
+            // txtMsj
+            // 
+            // 
+            // 
+            // 
+            this.txtMsj.CustomButton.Image = null;
+            this.txtMsj.CustomButton.Location = new System.Drawing.Point(231, 2);
+            this.txtMsj.CustomButton.Name = "";
+            this.txtMsj.CustomButton.Size = new System.Drawing.Size(73, 85);
+            this.txtMsj.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtMsj.CustomButton.TabIndex = 1;
+            this.txtMsj.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtMsj.CustomButton.UseSelectable = true;
+            this.txtMsj.CustomButton.Visible = false;
+            this.txtMsj.Lines = new string[0];
+            this.txtMsj.Location = new System.Drawing.Point(120, 184);
+            this.txtMsj.MaxLength = 32767;
+            this.txtMsj.Multiline = true;
+            this.txtMsj.Name = "txtMsj";
+            this.txtMsj.PasswordChar = '\0';
+            this.txtMsj.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtMsj.SelectedText = "";
+            this.txtMsj.SelectionLength = 0;
+            this.txtMsj.SelectionStart = 0;
+            this.txtMsj.ShortcutsEnabled = true;
+            this.txtMsj.Size = new System.Drawing.Size(357, 90);
+            this.txtMsj.TabIndex = 44;
+            this.txtMsj.UseSelectable = true;
+            this.txtMsj.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtMsj.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtYorum
+            // 
+            // 
+            // 
+            // 
+            this.txtYorum.CustomButton.Image = null;
+            this.txtYorum.CustomButton.Location = new System.Drawing.Point(231, 2);
+            this.txtYorum.CustomButton.Name = "";
+            this.txtYorum.CustomButton.Size = new System.Drawing.Size(73, 85);
+            this.txtYorum.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtYorum.CustomButton.TabIndex = 1;
+            this.txtYorum.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtYorum.CustomButton.UseSelectable = true;
+            this.txtYorum.CustomButton.Visible = false;
+            this.txtYorum.Lines = new string[0];
+            this.txtYorum.Location = new System.Drawing.Point(120, 280);
+            this.txtYorum.MaxLength = 32767;
+            this.txtYorum.Multiline = true;
+            this.txtYorum.Name = "txtYorum";
+            this.txtYorum.PasswordChar = '\0';
+            this.txtYorum.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtYorum.SelectedText = "";
+            this.txtYorum.SelectionLength = 0;
+            this.txtYorum.SelectionStart = 0;
+            this.txtYorum.ShortcutsEnabled = true;
+            this.txtYorum.Size = new System.Drawing.Size(357, 90);
+            this.txtYorum.TabIndex = 45;
+            this.txtYorum.UseSelectable = true;
+            this.txtYorum.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtYorum.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.metroLabel6.Location = new System.Drawing.Point(77, 50);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel6.TabIndex = 47;
+            this.metroLabel6.UseCustomBackColor = true;
+            this.metroLabel6.UseCustomForeColor = true;
+            this.metroLabel6.UseStyleColors = true;
             // 
             // frmTanimOzelGunler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 623);
-            this.Controls.Add(this.gboxTabloGosterimi);
-            this.Controls.Add(this.gboxOzelGunTanimlari);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(801, 660);
+            this.ClientSize = new System.Drawing.Size(605, 625);
+            this.Controls.Add(this.metroLabel6);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtYorum);
+            this.Controls.Add(this.txtMsj);
+            this.Controls.Add(this.dateTimeTarih);
+            this.Controls.Add(this.txtBaslik);
+            this.Controls.Add(this.btnBirim);
+            this.Controls.Add(this.btnMudurluk);
+            this.Controls.Add(this.btnSehir);
+            this.Controls.Add(this.btnSicilNo);
+            this.Controls.Add(this.btnAdi);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.txtGunNo);
+            this.Controls.Add(this.btnSil);
+            this.Controls.Add(this.btnKaydet);
+            this.Controls.Add(this.btnYeni);
+            this.Controls.Add(this.listView1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.MinimumSize = new System.Drawing.Size(605, 544);
             this.Name = "frmTanimOzelGunler";
-            this.Text = "frmTanimOzelGunler";
+            this.Style = MetroFramework.MetroColorStyle.Orange;
+            this.Text = "       ÖZEL GÜN TANIMLAMA";
             this.Load += new System.EventHandler(this.frmTanimOzelGunler_Load);
             this.Resize += new System.EventHandler(this.frmTanimOzelGunler_Resize);
-            this.gboxOzelGunTanimlari.ResumeLayout(false);
-            this.gboxOzelGunTanimlari.PerformLayout();
-            this.grpDegiskenler.ResumeLayout(false);
-            this.gboxTabloGosterimi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gboxOzelGunTanimlari;
-        private System.Windows.Forms.GroupBox gboxTabloGosterimi;
-        private System.Windows.Forms.Button btnSil;
-        private System.Windows.Forms.Button btnKaydet;
-        private System.Windows.Forms.Button btnYeni;
-        private System.Windows.Forms.DateTimePicker dateTimeTarih;
-        private System.Windows.Forms.TextBox txtYorum;
-        private System.Windows.Forms.TextBox txtMsj;
-        private System.Windows.Forms.MaskedTextBox txtBaslik;
-        private System.Windows.Forms.Label lblYorum;
-        private System.Windows.Forms.Label lblMesaj;
-        private System.Windows.Forms.Label lblTarih;
-        private System.Windows.Forms.Label lblMailBasligi;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.MaskedTextBox txtGunNo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox grpDegiskenler;
-        private System.Windows.Forms.Button btnAdi;
-        private System.Windows.Forms.Button btnSicilNo;
-        private System.Windows.Forms.Button btnBirim;
-        private System.Windows.Forms.Button btnMudurluk;
-        private System.Windows.Forms.Button btnSehir;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private MetroFramework.Controls.MetroTile btnYeni;
+        private MetroFramework.Controls.MetroTile btnKaydet;
+        private MetroFramework.Controls.MetroTile btnSil;
+        private MetroFramework.Controls.MetroTextBox txtGunNo;
+        private MetroFramework.Controls.MetroTile btnBirim;
+        private MetroFramework.Controls.MetroTile btnMudurluk;
+        private MetroFramework.Controls.MetroTile btnSehir;
+        private MetroFramework.Controls.MetroTile btnSicilNo;
+        private MetroFramework.Controls.MetroTile btnAdi;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroTextBox txtBaslik;
+        private MetroFramework.Controls.MetroDateTime dateTimeTarih;
+        private MetroFramework.Controls.MetroTextBox txtMsj;
+        private MetroFramework.Controls.MetroTextBox txtYorum;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
     }
 }

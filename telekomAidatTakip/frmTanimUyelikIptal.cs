@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmTanimUyelikIptal : Form
+    public partial class frmTanimUyelikIptal : MetroForm
     {
         public frmTanimUyelikIptal()
         {
@@ -160,11 +161,61 @@ namespace telekomAidatTakip
 
         private void frmTanimUyelikIptal_Resize(object sender, EventArgs e)
         {
-            groupBox4.Width = this.Width - 48; //design sekmesindeki boyut farklarını buraya yazdık
-            groupBox4.Height = this.Height - 237;
+            //groupBox4.Width = this.Width - 48; //design sekmesindeki boyut farklarını buraya yazdık
+            //groupBox4.Height = this.Height - 237;
         }
 
         private void listvSilinme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnYeni_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void metroLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnYeni_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnKaydet_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBoxAciklama_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBoxKod_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
