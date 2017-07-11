@@ -51,6 +51,9 @@ namespace telekomAidatTakip
 
             txtMdrKod.Enabled = false;
             txtMdrAd.Enabled = false;
+            txtMdrAd.WaterMark = "Yeni kayıt açınız.";
+            txtMdrKod.WaterMark = "Yeni kayıt açınız.";
+            comboBox_il.PromptText = "-";
             comboBox_il.Enabled = false;
             btnSil.Enabled = false;
             btnKaydet.Enabled = false;
@@ -71,6 +74,8 @@ namespace telekomAidatTakip
             comboBox_il.DataSource = new BindingSource(cboxSource, null);
             comboBox_il.DisplayMember = "Value";
             comboBox_il.ValueMember = "Key";
+            comboBox_il.SelectedIndex = -1;
+            
         }
 
 
@@ -113,6 +118,9 @@ namespace telekomAidatTakip
                 txtMdrAd.Text = string.Empty;
                 txtMdrKod.Enabled = true;
                 txtMdrAd.Enabled = true;
+                txtMdrAd.WaterMark = "Müdürlük adı giriniz.";
+                txtMdrKod.WaterMark = "Müdürlük no giriniz.";
+                comboBox_il.PromptText = "İl seçiniz.";
                 comboBox_il.Enabled = true;
                 btnYeni.Text = "Ekle";
                 btnKaydet.Enabled = false;
@@ -242,10 +250,5 @@ namespace telekomAidatTakip
             groupBox2.Width = this.Width - 46;
             groupBox2.Height = this.Height - 273;
         }*/
-
-        private void listvMdr_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

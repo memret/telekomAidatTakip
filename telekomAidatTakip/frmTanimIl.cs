@@ -21,7 +21,8 @@ namespace telekomAidatTakip
         {
             frmTanimIl_Resize(this, null);
             IlListesiniDoldur();
-            
+            txtPlakaKodu.WaterMark = "Yeni kayıt açınız...";
+            txtAdi.WaterMark = "Yeni kayıt açınız...";
         }
         private void IlListesiniDoldur()
         {
@@ -56,7 +57,9 @@ namespace telekomAidatTakip
             // butonun ismine göre yeni kaydın veritabanına ekleneceğini mi yoksa ekleme sayfasına mı geçileceğini mi tespit ediyoruz
 
             if (btnYeni.Text == "Yeni") // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
-            {   
+            {
+                txtPlakaKodu.WaterMark = "Plaka kodunu giriniz...";
+                txtAdi.WaterMark = "İl adını giriniz...";
                 if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
                 {
                     DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
@@ -77,7 +80,7 @@ namespace telekomAidatTakip
             else //butonun ismi Yeni değilse demekki yeni kayıt sayfasındayız
             {
                 if (txtPlakaKodu.Text != string.Empty && txtAdi.Text != string.Empty) //yeni kayıt eklemek için bu iki verinin boş olmaması gerekiyor
-                {
+                {  
                     Database db = new Database();
                     db.Sorgu("insert into il (ilno,iladi) values (@0,@1)", txtPlakaKodu.Text, txtAdi.Text);
 
@@ -150,6 +153,8 @@ namespace telekomAidatTakip
                     IlListesiniDoldur();
                     txtAdi.Clear();
                     txtPlakaKodu.Clear();
+                    txtPlakaKodu.WaterMark = "Yeni kayıt açınız...";
+                    txtAdi.WaterMark = "Yeni kayıt açınız...";
                     MessageBox.Show("Seçili il silindi!" , "Kayıt Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (dialogresult == DialogResult.Cancel)
@@ -195,6 +200,8 @@ namespace telekomAidatTakip
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
                 IlListesiniDoldur();
+                txtPlakaKodu.WaterMark = "Yeni kayıt açınız...";
+                txtAdi.WaterMark = "Yeni kayıt açınız...";
             }
         }
 

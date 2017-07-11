@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             this.grpAramaKriterleri = new System.Windows.Forms.GroupBox();
-            this.checkMudurluk = new System.Windows.Forms.CheckBox();
-            this.checkBirim = new System.Windows.Forms.CheckBox();
-            this.checkIl = new System.Windows.Forms.CheckBox();
-            this.btnYazdir = new System.Windows.Forms.Button();
-            this.btnListele = new System.Windows.Forms.Button();
-            this.cboxBirim = new System.Windows.Forms.ComboBox();
-            this.cboxMudurluk = new System.Windows.Forms.ComboBox();
-            this.cboxil = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listUyeKayitlari = new System.Windows.Forms.ListView();
             this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,120 +38,46 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cboxil = new MetroFramework.Controls.MetroComboBox();
+            this.cboxMudurluk = new MetroFramework.Controls.MetroComboBox();
+            this.cboxBirim = new MetroFramework.Controls.MetroComboBox();
+            this.checkIl = new MetroFramework.Controls.MetroCheckBox();
+            this.checkMudurluk = new MetroFramework.Controls.MetroCheckBox();
+            this.checkBirim = new MetroFramework.Controls.MetroCheckBox();
+            this.btnListele = new MetroFramework.Controls.MetroButton();
+            this.btnYazdir = new MetroFramework.Controls.MetroButton();
             this.grpAramaKriterleri.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpAramaKriterleri
             // 
-            this.grpAramaKriterleri.Controls.Add(this.checkMudurluk);
-            this.grpAramaKriterleri.Controls.Add(this.checkBirim);
-            this.grpAramaKriterleri.Controls.Add(this.checkIl);
             this.grpAramaKriterleri.Controls.Add(this.btnYazdir);
             this.grpAramaKriterleri.Controls.Add(this.btnListele);
+            this.grpAramaKriterleri.Controls.Add(this.checkBirim);
+            this.grpAramaKriterleri.Controls.Add(this.checkMudurluk);
+            this.grpAramaKriterleri.Controls.Add(this.checkIl);
             this.grpAramaKriterleri.Controls.Add(this.cboxBirim);
             this.grpAramaKriterleri.Controls.Add(this.cboxMudurluk);
             this.grpAramaKriterleri.Controls.Add(this.cboxil);
-            this.grpAramaKriterleri.Location = new System.Drawing.Point(12, 12);
+            this.grpAramaKriterleri.Location = new System.Drawing.Point(17, 64);
+            this.grpAramaKriterleri.Margin = new System.Windows.Forms.Padding(4);
             this.grpAramaKriterleri.Name = "grpAramaKriterleri";
-            this.grpAramaKriterleri.Size = new System.Drawing.Size(651, 171);
+            this.grpAramaKriterleri.Padding = new System.Windows.Forms.Padding(4);
+            this.grpAramaKriterleri.Size = new System.Drawing.Size(868, 241);
             this.grpAramaKriterleri.TabIndex = 3;
             this.grpAramaKriterleri.TabStop = false;
             this.grpAramaKriterleri.Text = "Arama Kriterleri";
             this.grpAramaKriterleri.Enter += new System.EventHandler(this.grpAramaKriterleri_Enter);
             // 
-            // checkMudurluk
-            // 
-            this.checkMudurluk.AutoSize = true;
-            this.checkMudurluk.Location = new System.Drawing.Point(23, 49);
-            this.checkMudurluk.Name = "checkMudurluk";
-            this.checkMudurluk.Size = new System.Drawing.Size(73, 17);
-            this.checkMudurluk.TabIndex = 14;
-            this.checkMudurluk.Text = "Müdürlük:";
-            this.checkMudurluk.UseVisualStyleBackColor = true;
-            this.checkMudurluk.CheckedChanged += new System.EventHandler(this.checkMudurluk_CheckedChanged);
-            // 
-            // checkBirim
-            // 
-            this.checkBirim.AutoSize = true;
-            this.checkBirim.Location = new System.Drawing.Point(23, 76);
-            this.checkBirim.Name = "checkBirim";
-            this.checkBirim.Size = new System.Drawing.Size(51, 17);
-            this.checkBirim.TabIndex = 14;
-            this.checkBirim.Text = "Birim:";
-            this.checkBirim.UseVisualStyleBackColor = true;
-            this.checkBirim.CheckedChanged += new System.EventHandler(this.checkBirim_CheckedChanged);
-            // 
-            // checkIl
-            // 
-            this.checkIl.AutoSize = true;
-            this.checkIl.Location = new System.Drawing.Point(23, 22);
-            this.checkIl.Name = "checkIl";
-            this.checkIl.Size = new System.Drawing.Size(34, 17);
-            this.checkIl.TabIndex = 14;
-            this.checkIl.Text = "İl:";
-            this.checkIl.UseVisualStyleBackColor = true;
-            this.checkIl.CheckedChanged += new System.EventHandler(this.checkIl_CheckedChanged);
-            // 
-            // btnYazdir
-            // 
-            this.btnYazdir.Enabled = false;
-            this.btnYazdir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnYazdir.Location = new System.Drawing.Point(261, 109);
-            this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(105, 44);
-            this.btnYazdir.TabIndex = 12;
-            this.btnYazdir.Text = "Yazdır";
-            this.btnYazdir.UseVisualStyleBackColor = true;
-            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
-            // 
-            // btnListele
-            // 
-            this.btnListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnListele.Location = new System.Drawing.Point(107, 109);
-            this.btnListele.Name = "btnListele";
-            this.btnListele.Size = new System.Drawing.Size(129, 44);
-            this.btnListele.TabIndex = 11;
-            this.btnListele.Text = "Ekrana Listele";
-            this.btnListele.UseVisualStyleBackColor = true;
-            this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
-            // 
-            // cboxBirim
-            // 
-            this.cboxBirim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxBirim.FormattingEnabled = true;
-            this.cboxBirim.Location = new System.Drawing.Point(153, 74);
-            this.cboxBirim.Name = "cboxBirim";
-            this.cboxBirim.Size = new System.Drawing.Size(214, 21);
-            this.cboxBirim.TabIndex = 6;
-            // 
-            // cboxMudurluk
-            // 
-            this.cboxMudurluk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxMudurluk.FormattingEnabled = true;
-            this.cboxMudurluk.Location = new System.Drawing.Point(153, 47);
-            this.cboxMudurluk.Name = "cboxMudurluk";
-            this.cboxMudurluk.Size = new System.Drawing.Size(214, 21);
-            this.cboxMudurluk.TabIndex = 5;
-            this.cboxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cboxMudurluk_SelectionChangeCommitted);
-            // 
-            // cboxil
-            // 
-            this.cboxil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxil.FormattingEnabled = true;
-            this.cboxil.Location = new System.Drawing.Point(153, 20);
-            this.cboxil.Name = "cboxil";
-            this.cboxil.Size = new System.Drawing.Size(214, 21);
-            this.cboxil.TabIndex = 4;
-            this.cboxil.SelectedIndexChanged += new System.EventHandler(this.cboxil_SelectedIndexChanged);
-            this.cboxil.SelectionChangeCommitted += new System.EventHandler(this.cboxil_SelectionChangeCommitted);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listUyeKayitlari);
-            this.groupBox2.Location = new System.Drawing.Point(13, 189);
+            this.groupBox2.Location = new System.Drawing.Point(17, 313);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(650, 213);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(867, 262);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bulunan Üye Kayıtları";
@@ -176,9 +94,10 @@
             this.columnHeader8});
             this.listUyeKayitlari.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listUyeKayitlari.FullRowSelect = true;
-            this.listUyeKayitlari.Location = new System.Drawing.Point(3, 16);
+            this.listUyeKayitlari.Location = new System.Drawing.Point(4, 19);
+            this.listUyeKayitlari.Margin = new System.Windows.Forms.Padding(4);
             this.listUyeKayitlari.Name = "listUyeKayitlari";
-            this.listUyeKayitlari.Size = new System.Drawing.Size(644, 194);
+            this.listUyeKayitlari.Size = new System.Drawing.Size(859, 239);
             this.listUyeKayitlari.TabIndex = 0;
             this.listUyeKayitlari.UseCompatibleStateImageBehavior = false;
             this.listUyeKayitlari.View = System.Windows.Forms.View.Details;
@@ -218,13 +137,99 @@
             this.columnHeader8.Text = "Birim";
             this.columnHeader8.Width = 100;
             // 
+            // cboxil
+            // 
+            this.cboxil.ItemHeight = 24;
+            this.cboxil.Location = new System.Drawing.Point(204, 23);
+            this.cboxil.Name = "cboxil";
+            this.cboxil.Size = new System.Drawing.Size(284, 30);
+            this.cboxil.TabIndex = 0;
+            this.cboxil.UseSelectable = true;
+            this.cboxil.SelectedIndexChanged += new System.EventHandler(this.cboxil_SelectedIndexChanged);
+            this.cboxil.SelectionChangeCommitted += new System.EventHandler(this.cboxil_SelectionChangeCommitted);
+            // 
+            // cboxMudurluk
+            // 
+            this.cboxMudurluk.FormattingEnabled = true;
+            this.cboxMudurluk.ItemHeight = 24;
+            this.cboxMudurluk.Location = new System.Drawing.Point(204, 59);
+            this.cboxMudurluk.Name = "cboxMudurluk";
+            this.cboxMudurluk.Size = new System.Drawing.Size(284, 30);
+            this.cboxMudurluk.TabIndex = 15;
+            this.cboxMudurluk.UseSelectable = true;
+            this.cboxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cboxMudurluk_SelectionChangeCommitted);
+            // 
+            // cboxBirim
+            // 
+            this.cboxBirim.FormattingEnabled = true;
+            this.cboxBirim.ItemHeight = 24;
+            this.cboxBirim.Location = new System.Drawing.Point(204, 95);
+            this.cboxBirim.Name = "cboxBirim";
+            this.cboxBirim.Size = new System.Drawing.Size(284, 30);
+            this.cboxBirim.TabIndex = 16;
+            this.cboxBirim.UseSelectable = true;
+            // 
+            // checkIl
+            // 
+            this.checkIl.AutoSize = true;
+            this.checkIl.Location = new System.Drawing.Point(31, 33);
+            this.checkIl.Name = "checkIl";
+            this.checkIl.Size = new System.Drawing.Size(33, 17);
+            this.checkIl.TabIndex = 17;
+            this.checkIl.Text = "İl:";
+            this.checkIl.UseSelectable = true;
+            this.checkIl.CheckedChanged += new System.EventHandler(this.checkIl_CheckedChanged);
+            // 
+            // checkMudurluk
+            // 
+            this.checkMudurluk.AutoSize = true;
+            this.checkMudurluk.Location = new System.Drawing.Point(31, 67);
+            this.checkMudurluk.Name = "checkMudurluk";
+            this.checkMudurluk.Size = new System.Drawing.Size(82, 17);
+            this.checkMudurluk.TabIndex = 18;
+            this.checkMudurluk.Text = "Müdürlük:";
+            this.checkMudurluk.UseSelectable = true;
+            this.checkMudurluk.CheckedChanged += new System.EventHandler(this.checkMudurluk_CheckedChanged);
+            // 
+            // checkBirim
+            // 
+            this.checkBirim.AutoSize = true;
+            this.checkBirim.Location = new System.Drawing.Point(31, 104);
+            this.checkBirim.Name = "checkBirim";
+            this.checkBirim.Size = new System.Drawing.Size(56, 17);
+            this.checkBirim.TabIndex = 19;
+            this.checkBirim.Text = "Birim:";
+            this.checkBirim.UseSelectable = true;
+            this.checkBirim.CheckedChanged += new System.EventHandler(this.checkBirim_CheckedChanged);
+            // 
+            // btnListele
+            // 
+            this.btnListele.Location = new System.Drawing.Point(146, 156);
+            this.btnListele.Name = "btnListele";
+            this.btnListele.Size = new System.Drawing.Size(144, 54);
+            this.btnListele.TabIndex = 20;
+            this.btnListele.Text = "Ekrana Listele";
+            this.btnListele.UseSelectable = true;
+            this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
+            // 
+            // btnYazdir
+            // 
+            this.btnYazdir.Location = new System.Drawing.Point(344, 156);
+            this.btnYazdir.Name = "btnYazdir";
+            this.btnYazdir.Size = new System.Drawing.Size(144, 54);
+            this.btnYazdir.TabIndex = 21;
+            this.btnYazdir.Text = "Yazdır";
+            this.btnYazdir.UseSelectable = true;
+            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
+            // 
             // frmRaporAidat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 412);
+            this.ClientSize = new System.Drawing.Size(900, 595);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grpAramaKriterleri);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRaporAidat";
             this.Text = "Aidat Raporları";
             this.Load += new System.EventHandler(this.frmRaporAidat_Load);
@@ -237,11 +242,6 @@
 
         #endregion
         private System.Windows.Forms.GroupBox grpAramaKriterleri;
-        private System.Windows.Forms.Button btnYazdir;
-        private System.Windows.Forms.Button btnListele;
-        private System.Windows.Forms.ComboBox cboxBirim;
-        private System.Windows.Forms.ComboBox cboxMudurluk;
-        private System.Windows.Forms.ComboBox cboxil;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView listUyeKayitlari;
         private System.Windows.Forms.ColumnHeader columnHeader0;
@@ -251,8 +251,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.CheckBox checkMudurluk;
-        private System.Windows.Forms.CheckBox checkBirim;
-        private System.Windows.Forms.CheckBox checkIl;
+        private MetroFramework.Controls.MetroComboBox cboxil;
+        private MetroFramework.Controls.MetroCheckBox checkMudurluk;
+        private MetroFramework.Controls.MetroCheckBox checkIl;
+        private MetroFramework.Controls.MetroComboBox cboxBirim;
+        private MetroFramework.Controls.MetroComboBox cboxMudurluk;
+        private MetroFramework.Controls.MetroButton btnYazdir;
+        private MetroFramework.Controls.MetroButton btnListele;
+        private MetroFramework.Controls.MetroCheckBox checkBirim;
     }
 }
