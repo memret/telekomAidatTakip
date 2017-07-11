@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmAidatToplu : Form
+    public partial class frmAidatToplu : MetroFramework.Forms.MetroForm
     {
         public frmAidatToplu()
         {
