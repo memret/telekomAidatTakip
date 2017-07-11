@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grpAramaKriterleri = new System.Windows.Forms.GroupBox();
             this.btnYazdir = new MetroFramework.Controls.MetroTile();
             this.btnListele = new MetroFramework.Controls.MetroTile();
             this.checkBirim = new MetroFramework.Controls.MetroCheckBox();
@@ -37,7 +36,6 @@
             this.cboxBirim = new MetroFramework.Controls.MetroComboBox();
             this.cboxMudurluk = new MetroFramework.Controls.MetroComboBox();
             this.cboxil = new MetroFramework.Controls.MetroComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listUyeKayitlari = new System.Windows.Forms.ListView();
             this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,32 +44,12 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.grpAramaKriterleri.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // grpAramaKriterleri
-            // 
-            this.grpAramaKriterleri.Controls.Add(this.btnYazdir);
-            this.grpAramaKriterleri.Controls.Add(this.btnListele);
-            this.grpAramaKriterleri.Controls.Add(this.checkBirim);
-            this.grpAramaKriterleri.Controls.Add(this.checkMudurluk);
-            this.grpAramaKriterleri.Controls.Add(this.checkIl);
-            this.grpAramaKriterleri.Controls.Add(this.cboxBirim);
-            this.grpAramaKriterleri.Controls.Add(this.cboxMudurluk);
-            this.grpAramaKriterleri.Controls.Add(this.cboxil);
-            this.grpAramaKriterleri.Location = new System.Drawing.Point(13, 52);
-            this.grpAramaKriterleri.Name = "grpAramaKriterleri";
-            this.grpAramaKriterleri.Size = new System.Drawing.Size(651, 196);
-            this.grpAramaKriterleri.TabIndex = 3;
-            this.grpAramaKriterleri.TabStop = false;
-            this.grpAramaKriterleri.Text = "Arama Kriterleri";
-            this.grpAramaKriterleri.Enter += new System.EventHandler(this.grpAramaKriterleri_Enter);
             // 
             // btnYazdir
             // 
             this.btnYazdir.ActiveControl = null;
-            this.btnYazdir.Location = new System.Drawing.Point(268, 146);
+            this.btnYazdir.Location = new System.Drawing.Point(262, 183);
             this.btnYazdir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnYazdir.Name = "btnYazdir";
             this.btnYazdir.Size = new System.Drawing.Size(98, 44);
@@ -86,7 +64,7 @@
             // btnListele
             // 
             this.btnListele.ActiveControl = null;
-            this.btnListele.Location = new System.Drawing.Point(130, 146);
+            this.btnListele.Location = new System.Drawing.Point(124, 183);
             this.btnListele.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnListele.Name = "btnListele";
             this.btnListele.Size = new System.Drawing.Size(98, 44);
@@ -101,7 +79,7 @@
             // checkBirim
             // 
             this.checkBirim.AutoSize = true;
-            this.checkBirim.Location = new System.Drawing.Point(23, 104);
+            this.checkBirim.Location = new System.Drawing.Point(17, 141);
             this.checkBirim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBirim.Name = "checkBirim";
             this.checkBirim.Size = new System.Drawing.Size(54, 15);
@@ -113,7 +91,7 @@
             // checkMudurluk
             // 
             this.checkMudurluk.AutoSize = true;
-            this.checkMudurluk.Location = new System.Drawing.Point(23, 65);
+            this.checkMudurluk.Location = new System.Drawing.Point(17, 102);
             this.checkMudurluk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkMudurluk.Name = "checkMudurluk";
             this.checkMudurluk.Size = new System.Drawing.Size(78, 15);
@@ -125,7 +103,7 @@
             // checkIl
             // 
             this.checkIl.AutoSize = true;
-            this.checkIl.Location = new System.Drawing.Point(23, 27);
+            this.checkIl.Location = new System.Drawing.Point(17, 64);
             this.checkIl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkIl.Name = "checkIl";
             this.checkIl.Size = new System.Drawing.Size(32, 15);
@@ -138,7 +116,7 @@
             // 
             this.cboxBirim.FormattingEnabled = true;
             this.cboxBirim.ItemHeight = 23;
-            this.cboxBirim.Location = new System.Drawing.Point(153, 101);
+            this.cboxBirim.Location = new System.Drawing.Point(147, 138);
             this.cboxBirim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboxBirim.Name = "cboxBirim";
             this.cboxBirim.Size = new System.Drawing.Size(214, 29);
@@ -149,7 +127,7 @@
             // 
             this.cboxMudurluk.FormattingEnabled = true;
             this.cboxMudurluk.ItemHeight = 23;
-            this.cboxMudurluk.Location = new System.Drawing.Point(153, 60);
+            this.cboxMudurluk.Location = new System.Drawing.Point(147, 97);
             this.cboxMudurluk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(214, 29);
@@ -160,7 +138,7 @@
             // cboxil
             // 
             this.cboxil.ItemHeight = 23;
-            this.cboxil.Location = new System.Drawing.Point(153, 19);
+            this.cboxil.Location = new System.Drawing.Point(147, 56);
             this.cboxil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboxil.Name = "cboxil";
             this.cboxil.Size = new System.Drawing.Size(214, 29);
@@ -168,16 +146,6 @@
             this.cboxil.UseSelectable = true;
             this.cboxil.SelectedIndexChanged += new System.EventHandler(this.cboxil_SelectedIndexChanged);
             this.cboxil.SelectionChangeCommitted += new System.EventHandler(this.cboxil_SelectionChangeCommitted);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.listUyeKayitlari);
-            this.groupBox2.Location = new System.Drawing.Point(13, 254);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(650, 213);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Bulunan Üye Kayıtları";
             // 
             // listUyeKayitlari
             // 
@@ -189,12 +157,12 @@
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
-            this.listUyeKayitlari.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listUyeKayitlari.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listUyeKayitlari.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listUyeKayitlari.FullRowSelect = true;
-            this.listUyeKayitlari.Location = new System.Drawing.Point(3, 16);
+            this.listUyeKayitlari.Location = new System.Drawing.Point(15, 246);
             this.listUyeKayitlari.Name = "listUyeKayitlari";
-            this.listUyeKayitlari.Size = new System.Drawing.Size(644, 194);
+            this.listUyeKayitlari.Size = new System.Drawing.Size(645, 221);
             this.listUyeKayitlari.TabIndex = 0;
             this.listUyeKayitlari.UseCompatibleStateImageBehavior = false;
             this.listUyeKayitlari.View = System.Windows.Forms.View.Details;
@@ -239,30 +207,25 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 483);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.grpAramaKriterleri);
+            this.Controls.Add(this.btnYazdir);
+            this.Controls.Add(this.listUyeKayitlari);
+            this.Controls.Add(this.btnListele);
+            this.Controls.Add(this.checkBirim);
+            this.Controls.Add(this.cboxil);
+            this.Controls.Add(this.checkMudurluk);
+            this.Controls.Add(this.cboxMudurluk);
+            this.Controls.Add(this.checkIl);
+            this.Controls.Add(this.cboxBirim);
             this.Name = "frmRaporAidat";
             this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
             this.Text = "Aidat Raporları";
             this.Load += new System.EventHandler(this.frmRaporAidat_Load);
-            this.grpAramaKriterleri.ResumeLayout(false);
-            this.grpAramaKriterleri.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox grpAramaKriterleri;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView listUyeKayitlari;
-        private System.Windows.Forms.ColumnHeader columnHeader0;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
         private MetroFramework.Controls.MetroComboBox cboxil;
         private MetroFramework.Controls.MetroCheckBox checkMudurluk;
         private MetroFramework.Controls.MetroCheckBox checkIl;
@@ -271,5 +234,13 @@
         private MetroFramework.Controls.MetroCheckBox checkBirim;
         private MetroFramework.Controls.MetroTile btnListele;
         private MetroFramework.Controls.MetroTile btnYazdir;
+        private System.Windows.Forms.ListView listUyeKayitlari;
+        private System.Windows.Forms.ColumnHeader columnHeader0;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
     }
 }
