@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTanimUyelikIptal));
             this.txtAciklama = new MetroFramework.Controls.MetroTextBox();
             this.txtKod = new MetroFramework.Controls.MetroTextBox();
             this.btnSil = new MetroFramework.Controls.MetroTile();
@@ -41,12 +40,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.aidatMiktarTableAdapter1 = new telekomAidatTakip.telekomAidatDataSetTableAdapters.AidatMiktarTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ilTableAdapter1 = new telekomAidatTakip.telekomAidatDataSetTableAdapters.ilTableAdapter();
             this.listvSilinme = new System.Windows.Forms.ListView();
             this.columnHeaderKod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderAciklama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtAciklama
@@ -66,7 +63,7 @@
             this.txtAciklama.CustomButton.UseWaitCursor = true;
             this.txtAciklama.CustomButton.Visible = false;
             this.txtAciklama.Lines = new string[0];
-            this.txtAciklama.Location = new System.Drawing.Point(79, 112);
+            this.txtAciklama.Location = new System.Drawing.Point(114, 112);
             this.txtAciklama.MaxLength = 32767;
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
@@ -86,7 +83,6 @@
             this.txtAciklama.UseWaitCursor = true;
             this.txtAciklama.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAciklama.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtAciklama.Click += new System.EventHandler(this.metroTextBoxAciklama_Click);
             // 
             // txtKod
             // 
@@ -105,7 +101,7 @@
             this.txtKod.CustomButton.UseWaitCursor = true;
             this.txtKod.CustomButton.Visible = false;
             this.txtKod.Lines = new string[0];
-            this.txtKod.Location = new System.Drawing.Point(79, 72);
+            this.txtKod.Location = new System.Drawing.Point(114, 72);
             this.txtKod.MaxLength = 32767;
             this.txtKod.Name = "txtKod";
             this.txtKod.PasswordChar = '●';
@@ -114,7 +110,7 @@
             this.txtKod.SelectionLength = 0;
             this.txtKod.SelectionStart = 0;
             this.txtKod.ShortcutsEnabled = true;
-            this.txtKod.Size = new System.Drawing.Size(183, 24);
+            this.txtKod.Size = new System.Drawing.Size(183, 29);
             this.txtKod.TabIndex = 19;
             this.txtKod.UseCustomBackColor = true;
             this.txtKod.UseCustomForeColor = true;
@@ -124,7 +120,6 @@
             this.txtKod.UseWaitCursor = true;
             this.txtKod.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtKod.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtKod.Click += new System.EventHandler(this.metroTextBoxKod_Click);
             // 
             // btnSil
             // 
@@ -143,6 +138,7 @@
             this.btnSil.UseStyleColors = true;
             this.btnSil.UseTileImage = true;
             this.btnSil.UseWaitCursor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnKaydet
             // 
@@ -161,7 +157,7 @@
             this.btnKaydet.UseStyleColors = true;
             this.btnKaydet.UseTileImage = true;
             this.btnKaydet.UseWaitCursor = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click_1);
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnYeni
             // 
@@ -181,7 +177,7 @@
             this.btnYeni.UseStyleColors = true;
             this.btnYeni.UseTileImage = true;
             this.btnYeni.UseWaitCursor = true;
-            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click_2);
+            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
             // label5
             // 
@@ -202,17 +198,16 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(4, 104);
+            this.metroLabel1.Location = new System.Drawing.Point(23, 117);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(69, 19);
             this.metroLabel1.TabIndex = 27;
             this.metroLabel1.Text = "Açıklama :";
-            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
             // metroLabelKod
             // 
             this.metroLabelKod.AutoSize = true;
-            this.metroLabelKod.Location = new System.Drawing.Point(34, 72);
+            this.metroLabelKod.Location = new System.Drawing.Point(23, 77);
             this.metroLabelKod.Name = "metroLabelKod";
             this.metroLabelKod.Size = new System.Drawing.Size(39, 19);
             this.metroLabelKod.TabIndex = 26;
@@ -238,16 +233,6 @@
             // 
             this.aidatMiktarTableAdapter1.ClearBeforeFill = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(295, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 46);
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // ilTableAdapter1
             // 
             this.ilTableAdapter1.ClearBeforeFill = true;
@@ -258,13 +243,14 @@
             this.listvSilinme.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderKod,
             this.columnHeaderAciklama});
-            this.listvSilinme.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listvSilinme.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listvSilinme.Location = new System.Drawing.Point(16, 258);
             this.listvSilinme.Name = "listvSilinme";
-            this.listvSilinme.Size = new System.Drawing.Size(323, 113);
+            this.listvSilinme.Size = new System.Drawing.Size(323, 122);
             this.listvSilinme.TabIndex = 29;
             this.listvSilinme.UseCompatibleStateImageBehavior = false;
             this.listvSilinme.View = System.Windows.Forms.View.Details;
+            this.listvSilinme.DoubleClick += new System.EventHandler(this.listvSilinme_DoubleClick);
             // 
             // columnHeaderKod
             // 
@@ -278,9 +264,8 @@
             // 
             // frmTanimUyelikIptal
             // 
-            this.ClientSize = new System.Drawing.Size(362, 383);
+            this.ClientSize = new System.Drawing.Size(362, 403);
             this.Controls.Add(this.listvSilinme);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLabelKod);
             this.Controls.Add(this.label1);
@@ -300,7 +285,6 @@
             this.Text = "Silinme Nedeni Tanımlama";
             this.Load += new System.EventHandler(this.frmTanimUyelikIptal_Load);
             this.BackColorChanged += new System.EventHandler(this.frmTanimUyelikIptal_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,7 +303,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private telekomAidatDataSetTableAdapters.AidatMiktarTableAdapter aidatMiktarTableAdapter1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private telekomAidatDataSetTableAdapters.ilTableAdapter ilTableAdapter1;
         private System.Windows.Forms.ListView listvSilinme;
         private System.Windows.Forms.ColumnHeader columnHeaderKod;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmRaporUye : Form
+    public partial class frmRaporUye : MetroForm
     {
         public frmRaporUye()
         {
@@ -82,14 +83,7 @@ namespace telekomAidatTakip
             }
         }*/
     
-        private void cboxMudurluk_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (checkKisim.Checked && checkMudurluk.Checked)
-            {
-                PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
-            }
-        }
-        
+
         private void checkMudurluk_CheckedChanged(object sender, EventArgs e)
         {
             if (checkMudurluk.Checked)
@@ -98,13 +92,13 @@ namespace telekomAidatTakip
                 cboxMudurluk.Enabled = true;
                 if (cboxMudurluk.SelectedIndex == -1)
                 {
-                    checkKisim.Enabled = false;
+                    checkBirim.Enabled = false;
                     cboxBirim.Enabled = false;
                 }
 
                 else
                 {
-                    checkKisim.Enabled = true;
+                    checkBirim.Enabled = true;
                     cboxBirim.Enabled = false;
                 }
 
@@ -114,18 +108,18 @@ namespace telekomAidatTakip
                 cboxBirim.Enabled = false;
                 cboxMudurluk.Enabled = false;
                 cboxMudurluk.SelectedIndex = -1;
-                checkKisim.Enabled = false;
-                checkKisim.Checked = false;
+                checkBirim.Enabled = false;
+                checkBirim.Checked = false;
 
             }
         }
         
 
-        private void checkKisim_CheckedChanged(object sender, EventArgs e)
+        private void checkBirim_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkKisim.Checked)
+            if (checkBirim.Checked)
             {
-                cboxMudurluk_SelectedIndexChanged(this, null);
+                cboxMudurluk_SelectionChangeCommitted(this, null);
                 cboxMudurluk.Enabled = true;
             }
             else
@@ -225,7 +219,7 @@ namespace telekomAidatTakip
                 paramList.Add(paramTemp);
             }
 
-            if (checkKisim.Checked)
+            if (checkBirim.Checked)
             {
                 ekSorgu += "AND u.birimNo = @birimNo ";
                 temelSorgu.Replace("left join birim", "join birim");
@@ -355,8 +349,8 @@ namespace telekomAidatTakip
             {
                 checkMudurluk.Checked = false;
                 checkMudurluk.Enabled = false;
-                checkKisim.Enabled = false;
-                checkKisim.Checked = false;
+                checkBirim.Enabled = false;
+                checkBirim.Checked = false;
             }
         }
 
@@ -366,14 +360,14 @@ namespace telekomAidatTakip
             if (mdr != -1)
             {
                 PRG.DoldurBirim(ref cboxBirim, mdr.ToString());
-                if (!checkKisim.Checked)
+                if (!checkBirim.Checked)
                     cboxBirim.Enabled = false;
-                checkKisim.Enabled = true;
+                checkBirim.Enabled = true;
             }
             else
             {
-                checkKisim.Enabled = false;
-                checkKisim.Checked = false;
+                checkBirim.Enabled = false;
+                checkBirim.Checked = false;
             }
         }
 

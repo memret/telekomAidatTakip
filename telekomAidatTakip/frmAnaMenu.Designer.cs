@@ -53,15 +53,17 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.üyeToolStripMenuItem,
             this.tanımlarToolStripMenuItem,
             this.raporlarToolStripMenuItem,
             this.aidatToolStripMenuItem,
             this.otomasyonİşlemleriToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1317, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1277, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -76,7 +78,7 @@
             // üyeFormuToolStripMenuItem
             // 
             this.üyeFormuToolStripMenuItem.Name = "üyeFormuToolStripMenuItem";
-            this.üyeFormuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.üyeFormuToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.üyeFormuToolStripMenuItem.Text = "Yeni Üye Kaydı";
             this.üyeFormuToolStripMenuItem.Click += new System.EventHandler(this.üyeFormuToolStripMenuItem_Click);
             // 
@@ -156,21 +158,21 @@
             // üyeRaporuToolStripMenuItem
             // 
             this.üyeRaporuToolStripMenuItem.Name = "üyeRaporuToolStripMenuItem";
-            this.üyeRaporuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.üyeRaporuToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.üyeRaporuToolStripMenuItem.Text = "Üye Raporu";
             this.üyeRaporuToolStripMenuItem.Click += new System.EventHandler(this.üyeRaporuToolStripMenuItem_Click);
             // 
             // ilRaporuToolStripMenuItem
             // 
             this.ilRaporuToolStripMenuItem.Name = "ilRaporuToolStripMenuItem";
-            this.ilRaporuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ilRaporuToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ilRaporuToolStripMenuItem.Text = "İl Raporu";
             this.ilRaporuToolStripMenuItem.Click += new System.EventHandler(this.ilRaporuToolStripMenuItem_Click);
             // 
             // aidatRaporuToolStripMenuItem
             // 
             this.aidatRaporuToolStripMenuItem.Name = "aidatRaporuToolStripMenuItem";
-            this.aidatRaporuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aidatRaporuToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.aidatRaporuToolStripMenuItem.Text = "Aidat Raporu";
             this.aidatRaporuToolStripMenuItem.Click += new System.EventHandler(this.aidatRaporuToolStripMenuItem_Click);
             // 
@@ -208,7 +210,7 @@
             // yedeklemeToolStripMenuItem
             // 
             this.yedeklemeToolStripMenuItem.Name = "yedeklemeToolStripMenuItem";
-            this.yedeklemeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yedeklemeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.yedeklemeToolStripMenuItem.Text = "Yedekleme";
             this.yedeklemeToolStripMenuItem.Click += new System.EventHandler(this.yedeklemeToolStripMenuItem_Click);
             // 
@@ -220,8 +222,8 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Name = "frmAnaMenu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Türk Telekom Teknisyen Derneği Otomasyonu";
+            this.TransparencyKey = System.Drawing.Color.Empty;
             this.Load += new System.EventHandler(this.frmAnaMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

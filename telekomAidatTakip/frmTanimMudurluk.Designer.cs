@@ -81,11 +81,11 @@
             // 
             this.comboBox_il.Enabled = false;
             this.comboBox_il.FormattingEnabled = true;
-            this.comboBox_il.ItemHeight = 24;
+            this.comboBox_il.ItemHeight = 23;
             this.comboBox_il.Location = new System.Drawing.Point(159, 142);
             this.comboBox_il.Name = "comboBox_il";
             this.comboBox_il.PromptText = "İl seçiniz.";
-            this.comboBox_il.Size = new System.Drawing.Size(370, 30);
+            this.comboBox_il.Size = new System.Drawing.Size(370, 29);
             this.comboBox_il.TabIndex = 19;
             this.comboBox_il.Tag = "";
             this.comboBox_il.UseSelectable = true;
@@ -129,7 +129,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(30, 114);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(75, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(71, 19);
             this.metroLabel1.TabIndex = 25;
             this.metroLabel1.Text = "Müdürlük: ";
             // 
@@ -138,7 +138,7 @@
             this.labelMdrNo.AutoSize = true;
             this.labelMdrNo.Location = new System.Drawing.Point(30, 77);
             this.labelMdrNo.Name = "labelMdrNo";
-            this.labelMdrNo.Size = new System.Drawing.Size(98, 20);
+            this.labelMdrNo.Size = new System.Drawing.Size(93, 19);
             this.labelMdrNo.TabIndex = 24;
             this.labelMdrNo.Text = "Müdürlük No: ";
             // 
@@ -189,7 +189,7 @@
             this.label_il.AutoSize = true;
             this.label_il.Location = new System.Drawing.Point(30, 155);
             this.label_il.Name = "label_il";
-            this.label_il.Size = new System.Drawing.Size(18, 17);
+            this.label_il.Size = new System.Drawing.Size(15, 13);
             this.label_il.TabIndex = 20;
             this.label_il.Text = "İl:";
             // 
@@ -201,7 +201,7 @@
             this.columnHeader3,
             this.columnHeader4});
             this.listvMdr.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listvMdr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listvMdr.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listvMdr.FullRowSelect = true;
             this.listvMdr.Location = new System.Drawing.Point(27, 239);
             this.listvMdr.Name = "listvMdr";
@@ -234,7 +234,7 @@
             // 
             // frmTanimMudurluk
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 516);
             this.Controls.Add(this.listvMdr);

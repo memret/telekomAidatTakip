@@ -142,7 +142,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(33, 92);
+            this.metroLabel1.Location = new System.Drawing.Point(33, 98);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(70, 19);
             this.metroLabel1.TabIndex = 8;
@@ -151,7 +151,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(34, 137);
+            this.metroLabel2.Location = new System.Drawing.Point(33, 143);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(72, 19);
             this.metroLabel2.TabIndex = 9;
@@ -162,7 +162,8 @@
             this.listUnvan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.unvanNo,
             this.unvanAdi});
-            this.listUnvan.Location = new System.Drawing.Point(33, 289);
+            this.listUnvan.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.listUnvan.Location = new System.Drawing.Point(33, 259);
             this.listUnvan.Name = "listUnvan";
             this.listUnvan.Size = new System.Drawing.Size(433, 179);
             this.listUnvan.TabIndex = 10;
@@ -194,9 +195,9 @@
             // 
             // frmTanimUnvan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 486);
+            this.ClientSize = new System.Drawing.Size(497, 455);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listUnvan);
             this.Controls.Add(this.metroLabel2);
