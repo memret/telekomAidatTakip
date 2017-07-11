@@ -76,6 +76,9 @@ namespace telekomAidatTakip
                 db.Kapat();
                 btnYeni.Image = telekomAidatTakip.Properties.Resources.if_save_101946;
                 btnYeni.Text = "Yeni";
+
+                txtBirimAdi.Enabled = false;
+                cBoxMudurluk.Enabled = false;
             }
             else
             {
@@ -85,6 +88,23 @@ namespace telekomAidatTakip
 
         private void listvil_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+
+
+            string birimKodu = listBirim.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
+
+            Database db = new Database();
+            //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
+            var data = db.DataOku("select birimNo,birimAdi,mudurlukAdi from birim b, Mudurluk m where b.mudurlukNo = m.mudurlukNo AND birimNo = @0", birimKodu);
+
+            while(data.Read())
+            {
+                txtBirimKodu.Text = data["birimNo"].ToString();
+                txtBirimAdi.Text = data["birimAdi"].ToString();
+                cBoxMudurluk.Text = data["mudurlukAdi"].ToString();
+
+                txtBirimAdi.Enabled = true;
+                cBoxMudurluk.Enabled = true;
+            }
 
 
         }
@@ -145,6 +165,9 @@ namespace telekomAidatTakip
                 MessageBox.Show("Seçili birim silindi!", "Birim Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtBirimAdi.Text = string.Empty;
                 txtBirimKodu.Text = string.Empty;
+
+                txtBirimAdi.Enabled = false;
+                cBoxMudurluk.Enabled = false;
             }
             else if (dialogResult == DialogResult.Cancel)
                 return;
@@ -166,6 +189,10 @@ namespace telekomAidatTakip
             btnSil.UseCustomBackColor = true;
             txtBirimAdi.Text = string.Empty;
             txtBirimKodu.Text = string.Empty;
+
+
+            txtBirimAdi.Enabled = false;
+            cBoxMudurluk.Enabled = false;
 
         }
 

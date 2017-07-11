@@ -67,9 +67,10 @@
             this.columnHeader9,
             this.columnHeader10});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listView1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.listView1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(20, 450);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(565, 155);
             this.listView1.TabIndex = 1;
@@ -80,7 +81,7 @@
             // columnHeader6
             // 
             this.columnHeader6.Text = "Özel Gün No";
-            this.columnHeader6.Width = 84;
+            this.columnHeader6.Width = 100;
             // 
             // columnHeader7
             // 
@@ -156,9 +157,9 @@
             // 
             // 
             this.txtGunNo.CustomButton.Image = null;
-            this.txtGunNo.CustomButton.Location = new System.Drawing.Point(282, 1);
+            this.txtGunNo.CustomButton.Location = new System.Drawing.Point(329, 1);
             this.txtGunNo.CustomButton.Name = "";
-            this.txtGunNo.CustomButton.Size = new System.Drawing.Size(23, 27);
+            this.txtGunNo.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtGunNo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtGunNo.CustomButton.TabIndex = 1;
             this.txtGunNo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -314,9 +315,9 @@
             // 
             // 
             this.txtBaslik.CustomButton.Image = null;
-            this.txtBaslik.CustomButton.Location = new System.Drawing.Point(282, 1);
+            this.txtBaslik.CustomButton.Location = new System.Drawing.Point(329, 1);
             this.txtBaslik.CustomButton.Name = "";
-            this.txtBaslik.CustomButton.Size = new System.Drawing.Size(23, 27);
+            this.txtBaslik.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtBaslik.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtBaslik.CustomButton.TabIndex = 1;
             this.txtBaslik.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -352,9 +353,9 @@
             // 
             // 
             this.txtMsj.CustomButton.Image = null;
-            this.txtMsj.CustomButton.Location = new System.Drawing.Point(231, 2);
+            this.txtMsj.CustomButton.Location = new System.Drawing.Point(269, 2);
             this.txtMsj.CustomButton.Name = "";
-            this.txtMsj.CustomButton.Size = new System.Drawing.Size(73, 85);
+            this.txtMsj.CustomButton.Size = new System.Drawing.Size(85, 85);
             this.txtMsj.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtMsj.CustomButton.TabIndex = 1;
             this.txtMsj.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -383,9 +384,9 @@
             // 
             // 
             this.txtYorum.CustomButton.Image = null;
-            this.txtYorum.CustomButton.Location = new System.Drawing.Point(231, 2);
+            this.txtYorum.CustomButton.Location = new System.Drawing.Point(269, 2);
             this.txtYorum.CustomButton.Name = "";
-            this.txtYorum.CustomButton.Size = new System.Drawing.Size(73, 85);
+            this.txtYorum.CustomButton.Size = new System.Drawing.Size(85, 85);
             this.txtYorum.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtYorum.CustomButton.TabIndex = 1;
             this.txtYorum.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -435,6 +436,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(605, 625);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.pictureBox1);

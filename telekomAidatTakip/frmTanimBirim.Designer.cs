@@ -49,11 +49,12 @@
             // 
             // cBoxMudurluk
             // 
+            this.cBoxMudurluk.Enabled = false;
             this.cBoxMudurluk.FormattingEnabled = true;
-            this.cBoxMudurluk.ItemHeight = 23;
+            this.cBoxMudurluk.ItemHeight = 24;
             this.cBoxMudurluk.Location = new System.Drawing.Point(157, 125);
             this.cBoxMudurluk.Name = "cBoxMudurluk";
-            this.cBoxMudurluk.Size = new System.Drawing.Size(279, 29);
+            this.cBoxMudurluk.Size = new System.Drawing.Size(279, 30);
             this.cBoxMudurluk.TabIndex = 7;
             this.cBoxMudurluk.UseSelectable = true;
             this.cBoxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cBoxMudurluk_SelectionChangeCommitted);
@@ -72,6 +73,7 @@
             this.txtBirimKodu.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtBirimKodu.CustomButton.UseSelectable = true;
             this.txtBirimKodu.CustomButton.Visible = false;
+            this.txtBirimKodu.Enabled = false;
             this.txtBirimKodu.Lines = new string[0];
             this.txtBirimKodu.Location = new System.Drawing.Point(157, 67);
             this.txtBirimKodu.MaxLength = 32767;
@@ -102,6 +104,7 @@
             this.txtBirimAdi.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtBirimAdi.CustomButton.UseSelectable = true;
             this.txtBirimAdi.CustomButton.Visible = false;
+            this.txtBirimAdi.Enabled = false;
             this.txtBirimAdi.Lines = new string[0];
             this.txtBirimAdi.Location = new System.Drawing.Point(157, 96);
             this.txtBirimAdi.MaxLength = 32767;
@@ -123,7 +126,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(73, 69);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(65, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(66, 20);
             this.metroLabel1.TabIndex = 9;
             this.metroLabel1.Text = "Birim No:";
             // 
@@ -132,7 +135,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(73, 98);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(43, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(43, 20);
             this.metroLabel2.TabIndex = 9;
             this.metroLabel2.Text = "Birim:";
             // 
@@ -141,7 +144,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(73, 133);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(67, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(71, 20);
             this.metroLabel3.TabIndex = 9;
             this.metroLabel3.Text = "Müdürlük:";
             // 

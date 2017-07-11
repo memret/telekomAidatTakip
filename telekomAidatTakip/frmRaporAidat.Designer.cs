@@ -44,8 +44,8 @@
             this.checkIl = new MetroFramework.Controls.MetroCheckBox();
             this.checkMudurluk = new MetroFramework.Controls.MetroCheckBox();
             this.checkBirim = new MetroFramework.Controls.MetroCheckBox();
-            this.btnListele = new MetroFramework.Controls.MetroButton();
-            this.btnYazdir = new MetroFramework.Controls.MetroButton();
+            this.btnListele = new MetroFramework.Controls.MetroTile();
+            this.btnYazdir = new MetroFramework.Controls.MetroTile();
             this.grpAramaKriterleri.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -152,7 +152,7 @@
             // 
             this.cboxMudurluk.FormattingEnabled = true;
             this.cboxMudurluk.ItemHeight = 24;
-            this.cboxMudurluk.Location = new System.Drawing.Point(204, 59);
+            this.cboxMudurluk.Location = new System.Drawing.Point(204, 74);
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(284, 30);
             this.cboxMudurluk.TabIndex = 15;
@@ -163,7 +163,7 @@
             // 
             this.cboxBirim.FormattingEnabled = true;
             this.cboxBirim.ItemHeight = 24;
-            this.cboxBirim.Location = new System.Drawing.Point(204, 95);
+            this.cboxBirim.Location = new System.Drawing.Point(204, 124);
             this.cboxBirim.Name = "cboxBirim";
             this.cboxBirim.Size = new System.Drawing.Size(284, 30);
             this.cboxBirim.TabIndex = 16;
@@ -183,7 +183,7 @@
             // checkMudurluk
             // 
             this.checkMudurluk.AutoSize = true;
-            this.checkMudurluk.Location = new System.Drawing.Point(31, 67);
+            this.checkMudurluk.Location = new System.Drawing.Point(31, 80);
             this.checkMudurluk.Name = "checkMudurluk";
             this.checkMudurluk.Size = new System.Drawing.Size(82, 17);
             this.checkMudurluk.TabIndex = 18;
@@ -194,7 +194,7 @@
             // checkBirim
             // 
             this.checkBirim.AutoSize = true;
-            this.checkBirim.Location = new System.Drawing.Point(31, 104);
+            this.checkBirim.Location = new System.Drawing.Point(31, 128);
             this.checkBirim.Name = "checkBirim";
             this.checkBirim.Size = new System.Drawing.Size(56, 17);
             this.checkBirim.TabIndex = 19;
@@ -204,21 +204,29 @@
             // 
             // btnListele
             // 
-            this.btnListele.Location = new System.Drawing.Point(146, 156);
+            this.btnListele.ActiveControl = null;
+            this.btnListele.Location = new System.Drawing.Point(173, 180);
             this.btnListele.Name = "btnListele";
-            this.btnListele.Size = new System.Drawing.Size(144, 54);
-            this.btnListele.TabIndex = 20;
+            this.btnListele.Size = new System.Drawing.Size(131, 54);
+            this.btnListele.TabIndex = 22;
             this.btnListele.Text = "Ekrana Listele";
+            this.btnListele.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnListele.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnListele.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
             this.btnListele.UseSelectable = true;
             this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
             // 
             // btnYazdir
             // 
-            this.btnYazdir.Location = new System.Drawing.Point(344, 156);
+            this.btnYazdir.ActiveControl = null;
+            this.btnYazdir.Location = new System.Drawing.Point(357, 180);
             this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(144, 54);
-            this.btnYazdir.TabIndex = 21;
+            this.btnYazdir.Size = new System.Drawing.Size(131, 54);
+            this.btnYazdir.TabIndex = 23;
             this.btnYazdir.Text = "Yazdır";
+            this.btnYazdir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnYazdir.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnYazdir.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
             this.btnYazdir.UseSelectable = true;
             this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
@@ -256,8 +264,8 @@
         private MetroFramework.Controls.MetroCheckBox checkIl;
         private MetroFramework.Controls.MetroComboBox cboxBirim;
         private MetroFramework.Controls.MetroComboBox cboxMudurluk;
-        private MetroFramework.Controls.MetroButton btnYazdir;
-        private MetroFramework.Controls.MetroButton btnListele;
         private MetroFramework.Controls.MetroCheckBox checkBirim;
+        private MetroFramework.Controls.MetroTile btnListele;
+        private MetroFramework.Controls.MetroTile btnYazdir;
     }
 }
