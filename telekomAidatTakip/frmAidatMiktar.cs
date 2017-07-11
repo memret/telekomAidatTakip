@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmAidatMiktar : Form
+    public partial class frmAidatMiktar : MetroFramework.Forms.MetroForm
     {
 
         private void cBoxIlDoldur()
@@ -71,8 +71,7 @@ namespace telekomAidatTakip
 
         private void frmAidatMiktar_Resize(object sender, EventArgs e)
         {
-            grpbxAidatMiktar.Width = this.Width - 64;
-            grpbxAidatMiktar.Height = this.Height - 94;
+            pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y);
         }
 
         private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
@@ -84,7 +83,7 @@ namespace telekomAidatTakip
                 cboxBirim.Enabled = true;
             }
             else
-                cboxBirim.DataSource = null;
+            cboxBirim.DataSource = null;
             cboxBirim.SelectedIndex = -1;
             txtAidatMiktari.Text = string.Empty;
             txtAidatMiktari.Enabled = false;
