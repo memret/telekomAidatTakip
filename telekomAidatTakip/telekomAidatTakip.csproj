@@ -205,8 +205,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUye.resx">
       <DependentUpon>frmUye.cs</DependentUpon>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>frmUye1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUyeSil.resx">
       <DependentUpon>frmUyeSil.cs</DependentUpon>
