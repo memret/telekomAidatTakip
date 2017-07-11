@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmRaporIl : Form
+    public partial class frmRaporIl : MetroFramework.Forms.MetroForm
     {
         public frmRaporIl()
         {
@@ -70,6 +70,26 @@ namespace telekomAidatTakip
                 frm.Show();
             }
             
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnYeni_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
