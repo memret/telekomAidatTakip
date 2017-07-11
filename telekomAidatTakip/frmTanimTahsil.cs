@@ -201,8 +201,6 @@ namespace telekomAidatTakip
 
         private void frmTanimTahsil_Resize(object sender, EventArgs e)
         {
-            kayıtTahsil.Width = this.Width - 80;
-            kayıtTahsil.Height = this.Height - 241;
             listvTanimTahsil.Size = new Size(listvTanimTahsil.Size.Width, this.Size.Height - 258);
             pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y);
         }

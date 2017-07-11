@@ -36,13 +36,11 @@
             this.txtTahsilKodu = new MetroFramework.Controls.MetroTextBox();
             this.tahsilAd = new MetroFramework.Controls.MetroLabel();
             this.tahsilNo = new MetroFramework.Controls.MetroLabel();
-            this.kayıtTahsil = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSil = new MetroFramework.Controls.MetroTile();
             this.listvTanimTahsil = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSil = new MetroFramework.Controls.MetroTile();
-            this.kayıtTahsil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,44 +164,6 @@
             this.tahsilNo.TabIndex = 8;
             this.tahsilNo.Text = "Tahsil Kod:";
             // 
-            // kayıtTahsil
-            // 
-            this.kayıtTahsil.Controls.Add(this.listvTanimTahsil);
-            this.kayıtTahsil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kayıtTahsil.Location = new System.Drawing.Point(15, 218);
-            this.kayıtTahsil.Name = "kayıtTahsil";
-            this.kayıtTahsil.Size = new System.Drawing.Size(496, 182);
-            this.kayıtTahsil.TabIndex = 4;
-            this.kayıtTahsil.TabStop = false;
-            this.kayıtTahsil.Text = "Kayıtlı Tahsil Tanımları";
-            // 
-            // listvTanimTahsil
-            // 
-            this.listvTanimTahsil.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listvTanimTahsil.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listvTanimTahsil.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.listvTanimTahsil.FullRowSelect = true;
-            this.listvTanimTahsil.Location = new System.Drawing.Point(3, 19);
-            this.listvTanimTahsil.Name = "listvTanimTahsil";
-            this.listvTanimTahsil.Size = new System.Drawing.Size(490, 160);
-            this.listvTanimTahsil.TabIndex = 13;
-            this.listvTanimTahsil.UseCompatibleStateImageBehavior = false;
-            this.listvTanimTahsil.View = System.Windows.Forms.View.Details;
-            this.listvTanimTahsil.SelectedIndexChanged += new System.EventHandler(this.listvTanimTahsil_SelectedIndexChanged);
-            this.listvTanimTahsil.DoubleClick += new System.EventHandler(this.listvTanimTahsil_DoubleClick_1);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Tahsil Kodu";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tahsil Açıklama";
-            this.columnHeader2.Width = 389;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
@@ -232,15 +192,41 @@
             this.btnSil.UseSelectable = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
+            // listvTanimTahsil
+            // 
+            this.listvTanimTahsil.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listvTanimTahsil.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.listvTanimTahsil.FullRowSelect = true;
+            this.listvTanimTahsil.Location = new System.Drawing.Point(23, 218);
+            this.listvTanimTahsil.Name = "listvTanimTahsil";
+            this.listvTanimTahsil.Size = new System.Drawing.Size(488, 182);
+            this.listvTanimTahsil.TabIndex = 13;
+            this.listvTanimTahsil.UseCompatibleStateImageBehavior = false;
+            this.listvTanimTahsil.View = System.Windows.Forms.View.Details;
+            this.listvTanimTahsil.SelectedIndexChanged += new System.EventHandler(this.listvTanimTahsil_SelectedIndexChanged);
+            this.listvTanimTahsil.DoubleClick += new System.EventHandler(this.listvTanimTahsil_DoubleClick_1);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tahsil Kodu";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tahsil Açıklama";
+            this.columnHeader2.Width = 389;
+            // 
             // frmTanimTahsil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 423);
+            this.Controls.Add(this.listvTanimTahsil);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.kayıtTahsil);
             this.Controls.Add(this.btnYeni);
             this.Controls.Add(this.txtTahsilAd);
             this.Controls.Add(this.label1);
@@ -253,7 +239,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimTahsil_FormClosing);
             this.Load += new System.EventHandler(this.frmTanimTahsil_Load);
             this.Resize += new System.EventHandler(this.frmTanimTahsil_Resize);
-            this.kayıtTahsil.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -263,7 +248,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox kayıtTahsil;
         private MetroFramework.Controls.MetroLabel tahsilAd;
         private MetroFramework.Controls.MetroLabel tahsilNo;
         private MetroFramework.Controls.MetroTextBox txtTahsilKodu;
@@ -271,9 +255,9 @@
         private MetroFramework.Controls.MetroTile btnYeni;
         private MetroFramework.Controls.MetroTile btnKaydet;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroTile btnSil;
         private System.Windows.Forms.ListView listvTanimTahsil;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private MetroFramework.Controls.MetroTile btnSil;
     }
 }
