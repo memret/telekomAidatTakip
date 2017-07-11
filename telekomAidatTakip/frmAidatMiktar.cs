@@ -71,7 +71,7 @@ namespace telekomAidatTakip
 
         private void frmAidatMiktar_Resize(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y);
+            //pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y);
         }
 
         private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)

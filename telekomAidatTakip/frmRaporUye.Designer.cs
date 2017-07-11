@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRaporUye));
             this.listUye = new System.Windows.Forms.ListView();
             this.ListKurumSicil = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListAdSoyad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,6 +55,8 @@
             this.radioHepsi = new MetroFramework.Controls.MetroRadioButton();
             this.btnEkranaListele = new MetroFramework.Controls.MetroTile();
             this.btnYazdir = new MetroFramework.Controls.MetroTile();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listUye
@@ -319,11 +322,23 @@
             this.btnYazdir.UseSelectable = true;
             this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 47;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmRaporUye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 574);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnYazdir);
             this.Controls.Add(this.btnEkranaListele);
             this.Controls.Add(this.listUye);
@@ -345,8 +360,9 @@
             this.Controls.Add(this.cboxIl);
             this.Controls.Add(this.checkIl);
             this.Name = "frmRaporUye";
-            this.Text = "Üye Raporu";
+            this.Text = "       Üye Raporu";
             this.Load += new System.EventHandler(this.frmRaporUye_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,5 +395,6 @@
         private MetroFramework.Controls.MetroRadioButton radioHepsi;
         private MetroFramework.Controls.MetroTile btnEkranaListele;
         private MetroFramework.Controls.MetroTile btnYazdir;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

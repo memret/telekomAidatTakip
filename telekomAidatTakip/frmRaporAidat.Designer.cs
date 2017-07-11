@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRaporAidat));
             this.btnYazdir = new MetroFramework.Controls.MetroTile();
             this.btnListele = new MetroFramework.Controls.MetroTile();
             this.checkBirim = new MetroFramework.Controls.MetroCheckBox();
@@ -44,13 +45,15 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnYazdir
             // 
             this.btnYazdir.ActiveControl = null;
-            this.btnYazdir.Location = new System.Drawing.Point(262, 183);
-            this.btnYazdir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnYazdir.Location = new System.Drawing.Point(267, 193);
+            this.btnYazdir.Margin = new System.Windows.Forms.Padding(2);
             this.btnYazdir.Name = "btnYazdir";
             this.btnYazdir.Size = new System.Drawing.Size(98, 44);
             this.btnYazdir.TabIndex = 23;
@@ -64,8 +67,8 @@
             // btnListele
             // 
             this.btnListele.ActiveControl = null;
-            this.btnListele.Location = new System.Drawing.Point(124, 183);
-            this.btnListele.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListele.Location = new System.Drawing.Point(129, 193);
+            this.btnListele.Margin = new System.Windows.Forms.Padding(2);
             this.btnListele.Name = "btnListele";
             this.btnListele.Size = new System.Drawing.Size(98, 44);
             this.btnListele.TabIndex = 22;
@@ -79,8 +82,8 @@
             // checkBirim
             // 
             this.checkBirim.AutoSize = true;
-            this.checkBirim.Location = new System.Drawing.Point(17, 141);
-            this.checkBirim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBirim.Location = new System.Drawing.Point(22, 151);
+            this.checkBirim.Margin = new System.Windows.Forms.Padding(2);
             this.checkBirim.Name = "checkBirim";
             this.checkBirim.Size = new System.Drawing.Size(54, 15);
             this.checkBirim.TabIndex = 19;
@@ -91,8 +94,8 @@
             // checkMudurluk
             // 
             this.checkMudurluk.AutoSize = true;
-            this.checkMudurluk.Location = new System.Drawing.Point(17, 102);
-            this.checkMudurluk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkMudurluk.Location = new System.Drawing.Point(22, 112);
+            this.checkMudurluk.Margin = new System.Windows.Forms.Padding(2);
             this.checkMudurluk.Name = "checkMudurluk";
             this.checkMudurluk.Size = new System.Drawing.Size(78, 15);
             this.checkMudurluk.TabIndex = 18;
@@ -103,8 +106,8 @@
             // checkIl
             // 
             this.checkIl.AutoSize = true;
-            this.checkIl.Location = new System.Drawing.Point(17, 64);
-            this.checkIl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkIl.Location = new System.Drawing.Point(22, 74);
+            this.checkIl.Margin = new System.Windows.Forms.Padding(2);
             this.checkIl.Name = "checkIl";
             this.checkIl.Size = new System.Drawing.Size(32, 15);
             this.checkIl.TabIndex = 17;
@@ -116,8 +119,8 @@
             // 
             this.cboxBirim.FormattingEnabled = true;
             this.cboxBirim.ItemHeight = 23;
-            this.cboxBirim.Location = new System.Drawing.Point(147, 138);
-            this.cboxBirim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxBirim.Location = new System.Drawing.Point(152, 148);
+            this.cboxBirim.Margin = new System.Windows.Forms.Padding(2);
             this.cboxBirim.Name = "cboxBirim";
             this.cboxBirim.Size = new System.Drawing.Size(214, 29);
             this.cboxBirim.TabIndex = 16;
@@ -127,8 +130,8 @@
             // 
             this.cboxMudurluk.FormattingEnabled = true;
             this.cboxMudurluk.ItemHeight = 23;
-            this.cboxMudurluk.Location = new System.Drawing.Point(147, 97);
-            this.cboxMudurluk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxMudurluk.Location = new System.Drawing.Point(152, 107);
+            this.cboxMudurluk.Margin = new System.Windows.Forms.Padding(2);
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(214, 29);
             this.cboxMudurluk.TabIndex = 15;
@@ -138,8 +141,8 @@
             // cboxil
             // 
             this.cboxil.ItemHeight = 23;
-            this.cboxil.Location = new System.Drawing.Point(147, 56);
-            this.cboxil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboxil.Location = new System.Drawing.Point(152, 66);
+            this.cboxil.Margin = new System.Windows.Forms.Padding(2);
             this.cboxil.Name = "cboxil";
             this.cboxil.Size = new System.Drawing.Size(214, 29);
             this.cboxil.TabIndex = 0;
@@ -160,9 +163,9 @@
             this.listUyeKayitlari.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listUyeKayitlari.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listUyeKayitlari.FullRowSelect = true;
-            this.listUyeKayitlari.Location = new System.Drawing.Point(15, 246);
+            this.listUyeKayitlari.Location = new System.Drawing.Point(15, 254);
             this.listUyeKayitlari.Name = "listUyeKayitlari";
-            this.listUyeKayitlari.Size = new System.Drawing.Size(645, 221);
+            this.listUyeKayitlari.Size = new System.Drawing.Size(645, 213);
             this.listUyeKayitlari.TabIndex = 0;
             this.listUyeKayitlari.UseCompatibleStateImageBehavior = false;
             this.listUyeKayitlari.View = System.Windows.Forms.View.Details;
@@ -202,11 +205,23 @@
             this.columnHeader8.Text = "Birim";
             this.columnHeader8.Width = 100;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmRaporAidat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 483);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnYazdir);
             this.Controls.Add(this.listUyeKayitlari);
             this.Controls.Add(this.btnListele);
@@ -217,9 +232,10 @@
             this.Controls.Add(this.checkIl);
             this.Controls.Add(this.cboxBirim);
             this.Name = "frmRaporAidat";
-            this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
-            this.Text = "Aidat Raporları";
+            this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
+            this.Text = "       Aidat Raporları";
             this.Load += new System.EventHandler(this.frmRaporAidat_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +258,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -35,7 +35,6 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSil = new MetroFramework.Controls.MetroTile();
             this.btnKaydet = new MetroFramework.Controls.MetroTile();
             this.btnYeni = new MetroFramework.Controls.MetroTile();
@@ -44,17 +43,18 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // cBoxMudurluk
             // 
             this.cBoxMudurluk.Enabled = false;
             this.cBoxMudurluk.FormattingEnabled = true;
-            this.cBoxMudurluk.ItemHeight = 24;
+            this.cBoxMudurluk.ItemHeight = 23;
             this.cBoxMudurluk.Location = new System.Drawing.Point(157, 125);
             this.cBoxMudurluk.Name = "cBoxMudurluk";
-            this.cBoxMudurluk.Size = new System.Drawing.Size(279, 30);
+            this.cBoxMudurluk.Size = new System.Drawing.Size(279, 29);
             this.cBoxMudurluk.TabIndex = 7;
             this.cBoxMudurluk.UseSelectable = true;
             this.cBoxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cBoxMudurluk_SelectionChangeCommitted);
@@ -126,7 +126,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(73, 69);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(66, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(65, 19);
             this.metroLabel1.TabIndex = 9;
             this.metroLabel1.Text = "Birim No:";
             // 
@@ -135,7 +135,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(73, 98);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(43, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(43, 19);
             this.metroLabel2.TabIndex = 9;
             this.metroLabel2.Text = "Birim:";
             // 
@@ -144,20 +144,9 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(73, 133);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(71, 20);
+            this.metroLabel3.Size = new System.Drawing.Size(67, 19);
             this.metroLabel3.TabIndex = 9;
             this.metroLabel3.Text = "Müdürlük:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
-            this.pictureBox1.Location = new System.Drawing.Point(442, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 38);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
             // 
             // btnSil
             // 
@@ -257,12 +246,23 @@
             this.columnHeader4.Text = "Müdürlük";
             this.columnHeader4.Width = 155;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
+            this.pictureBox2.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox2.Location = new System.Drawing.Point(15, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 47;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmTanimBirim
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(512, 479);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.listBirim);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.btnYeni);
@@ -276,11 +276,11 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(512, 479);
             this.Name = "frmTanimBirim";
-            this.Text = "Birim Tanımlama";
+            this.Text = "       Birim Tanımlama";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.Load += new System.EventHandler(this.frmTanimBirim_Load);
             this.Resize += new System.EventHandler(this.frmTanimBirim_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,11 +296,11 @@
         private MetroFramework.Controls.MetroTile btnSil;
         private MetroFramework.Controls.MetroTile btnKaydet;
         private MetroFramework.Controls.MetroTile btnYeni;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListView listBirim;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

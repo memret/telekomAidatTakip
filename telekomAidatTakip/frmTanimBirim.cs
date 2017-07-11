@@ -205,7 +205,7 @@ namespace telekomAidatTakip
             //groupBox2.Width = this.Width - 44;
             // groupBox2.Height = this.Height - 288;
             listBirim.Size = new Size(listBirim.Size.Width, this.Size.Height - 258);
-            pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y );
+           // pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y );
         }
 
         private void frmTanimBirim_FormClosing(object sender, FormClosingEventArgs e)

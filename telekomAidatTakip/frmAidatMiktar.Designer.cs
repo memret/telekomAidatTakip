@@ -58,7 +58,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(16, 195);
+            this.metroLabel3.Location = new System.Drawing.Point(16, 182);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(87, 19);
             this.metroLabel3.TabIndex = 12;
@@ -67,7 +67,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(16, 151);
+            this.metroLabel2.Location = new System.Drawing.Point(15, 147);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(43, 19);
             this.metroLabel2.TabIndex = 11;
@@ -76,7 +76,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(16, 107);
+            this.metroLabel1.Location = new System.Drawing.Point(16, 112);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(67, 19);
             this.metroLabel1.TabIndex = 10;
@@ -85,7 +85,7 @@
             // tahsilNo
             // 
             this.tahsilNo.AutoSize = true;
-            this.tahsilNo.Location = new System.Drawing.Point(16, 69);
+            this.tahsilNo.Location = new System.Drawing.Point(16, 74);
             this.tahsilNo.Name = "tahsilNo";
             this.tahsilNo.Size = new System.Drawing.Size(18, 19);
             this.tahsilNo.TabIndex = 9;
@@ -105,7 +105,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(346, 205);
+            this.metroLabel4.Location = new System.Drawing.Point(342, 182);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(22, 19);
             this.metroLabel4.TabIndex = 15;
@@ -115,7 +115,7 @@
             // 
             this.cboxBirim.FormattingEnabled = true;
             this.cboxBirim.ItemHeight = 23;
-            this.cboxBirim.Location = new System.Drawing.Point(126, 151);
+            this.cboxBirim.Location = new System.Drawing.Point(126, 142);
             this.cboxBirim.Name = "cboxBirim";
             this.cboxBirim.Size = new System.Drawing.Size(238, 29);
             this.cboxBirim.TabIndex = 16;
@@ -137,7 +137,7 @@
             this.txtAidatMiktari.CustomButton.UseSelectable = true;
             this.txtAidatMiktari.CustomButton.Visible = false;
             this.txtAidatMiktari.Lines = new string[0];
-            this.txtAidatMiktari.Location = new System.Drawing.Point(126, 195);
+            this.txtAidatMiktari.Location = new System.Drawing.Point(126, 177);
             this.txtAidatMiktari.MaxLength = 32767;
             this.txtAidatMiktari.Name = "txtAidatMiktari";
             this.txtAidatMiktari.PasswordChar = '\0';
@@ -156,7 +156,7 @@
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
-            this.pictureBox1.Location = new System.Drawing.Point(400, 31);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 20);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -167,7 +167,7 @@
             // 
             this.btnKaydet.ActiveControl = null;
             this.btnKaydet.BackColor = System.Drawing.Color.White;
-            this.btnKaydet.Location = new System.Drawing.Point(126, 252);
+            this.btnKaydet.Location = new System.Drawing.Point(179, 218);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(88, 46);
             this.btnKaydet.Style = MetroFramework.MetroColorStyle.Blue;
@@ -182,7 +182,7 @@
             // btnGuncelle
             // 
             this.btnGuncelle.ActiveControl = null;
-            this.btnGuncelle.Location = new System.Drawing.Point(280, 252);
+            this.btnGuncelle.Location = new System.Drawing.Point(179, 218);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(88, 46);
             this.btnGuncelle.Style = MetroFramework.MetroColorStyle.Lime;
@@ -198,7 +198,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 320);
+            this.ClientSize = new System.Drawing.Size(389, 280);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.pictureBox1);
@@ -214,7 +214,7 @@
             this.Name = "frmAidatMiktar";
             this.Padding = new System.Windows.Forms.Padding(13, 60, 13, 13);
             this.Style = MetroFramework.MetroColorStyle.Default;
-            this.Text = "Aidat Miktarı Belirleme";
+            this.Text = "       Aidat Miktarı Belirleme";
             this.Load += new System.EventHandler(this.frmAidatMiktar_Load);
             this.Resize += new System.EventHandler(this.frmAidatMiktar_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
