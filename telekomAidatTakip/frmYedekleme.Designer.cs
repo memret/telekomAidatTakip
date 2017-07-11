@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmYedekleme));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnYukle = new MetroFramework.Controls.MetroTile();
             this.listYukle = new System.Windows.Forms.ListView();
@@ -37,8 +38,10 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txtYedek = new MetroFramework.Controls.MetroTextBox();
             this.btnYedek = new MetroFramework.Controls.MetroTile();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -55,7 +58,7 @@
             // btnYukle
             // 
             this.btnYukle.ActiveControl = null;
-            this.btnYukle.Location = new System.Drawing.Point(148, 214);
+            this.btnYukle.Location = new System.Drawing.Point(191, 214);
             this.btnYukle.Name = "btnYukle";
             this.btnYukle.Size = new System.Drawing.Size(190, 55);
             this.btnYukle.TabIndex = 4;
@@ -70,8 +73,10 @@
             this.listYukle.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
+            this.listYukle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.listYukle.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.listYukle.FullRowSelect = true;
-            this.listYukle.Location = new System.Drawing.Point(6, 26);
+            this.listYukle.Location = new System.Drawing.Point(17, 25);
             this.listYukle.Name = "listYukle";
             this.listYukle.Size = new System.Drawing.Size(542, 174);
             this.listYukle.TabIndex = 0;
@@ -96,7 +101,7 @@
             this.groupBox2.Controls.Add(this.btnYedek);
             this.groupBox2.Location = new System.Drawing.Point(23, 411);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(572, 140);
+            this.groupBox2.Size = new System.Drawing.Size(572, 124);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Yedekleme";
@@ -117,9 +122,9 @@
             // 
             // 
             this.txtYedek.CustomButton.Image = null;
-            this.txtYedek.CustomButton.Location = new System.Drawing.Point(178, 1);
+            this.txtYedek.CustomButton.Location = new System.Drawing.Point(172, 1);
             this.txtYedek.CustomButton.Name = "";
-            this.txtYedek.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtYedek.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.txtYedek.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtYedek.CustomButton.TabIndex = 1;
             this.txtYedek.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -154,11 +159,23 @@
             this.btnYedek.UseSelectable = true;
             this.btnYedek.Click += new System.EventHandler(this.btnYedek_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Location = new System.Drawing.Point(545, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmYedekleme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 572);
+            this.ClientSize = new System.Drawing.Size(619, 572);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -168,6 +185,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -182,5 +200,6 @@
         private MetroFramework.Controls.MetroTile btnYedek;
         private MetroFramework.Controls.MetroTextBox txtYedek;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
