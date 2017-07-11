@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmTanimUnvan : Form
+    public partial class frmTanimUnvan : MetroFramework.Forms.MetroForm
     {
         public frmTanimUnvan()
         {
@@ -170,11 +170,12 @@ namespace telekomAidatTakip
             }
         }
 
-        private void frmTanimUnvan_Resize(object sender, EventArgs e)
+        /*private void frmTanimUnvan_Resize(object sender, EventArgs e)
         {
             groupBox2.Width = this.Width - 59;
             groupBox2.Height = this.Height - 256;
-        }
+        }*/
+        
     }
             }
     

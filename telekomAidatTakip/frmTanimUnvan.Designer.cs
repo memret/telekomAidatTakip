@@ -28,170 +28,208 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSil = new System.Windows.Forms.Button();
-            this.btnKaydet = new System.Windows.Forms.Button();
-            this.btnYeni = new System.Windows.Forms.Button();
-            this.txtUnvanAdi = new System.Windows.Forms.TextBox();
-            this.txtUnvanNo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTanimUnvan));
+            this.btnKaydet = new MetroFramework.Controls.MetroTile();
+            this.btnYeni = new MetroFramework.Controls.MetroTile();
+            this.btnSil = new MetroFramework.Controls.MetroTile();
+            this.txtUnvanNo = new MetroFramework.Controls.MetroTextBox();
+            this.txtUnvanAdi = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.listUnvan = new System.Windows.Forms.ListView();
-            this.ünvanNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ünvanAdı = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.unvanNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.unvanAdi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnSil);
-            this.groupBox1.Controls.Add(this.btnKaydet);
-            this.groupBox1.Controls.Add(this.btnYeni);
-            this.groupBox1.Controls.Add(this.txtUnvanAdi);
-            this.groupBox1.Controls.Add(this.txtUnvanNo);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(327, 142);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ünvan Tanımları";
-            // 
-            // btnSil
-            // 
-            this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnSil.Location = new System.Drawing.Point(229, 87);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(80, 39);
-            this.btnSil.TabIndex = 6;
-            this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnKaydet.Location = new System.Drawing.Point(123, 87);
+            this.btnKaydet.ActiveControl = null;
+            this.btnKaydet.Location = new System.Drawing.Point(181, 199);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(80, 39);
-            this.btnKaydet.TabIndex = 5;
+            this.btnKaydet.Size = new System.Drawing.Size(111, 45);
+            this.btnKaydet.TabIndex = 2;
             this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnKaydet.UseSelectable = true;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnYeni
             // 
-            this.btnYeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnYeni.Location = new System.Drawing.Point(17, 87);
+            this.btnYeni.ActiveControl = null;
+            this.btnYeni.Location = new System.Drawing.Point(34, 199);
             this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(80, 39);
-            this.btnYeni.TabIndex = 4;
+            this.btnYeni.Size = new System.Drawing.Size(111, 45);
+            this.btnYeni.TabIndex = 0;
             this.btnYeni.Text = "Yeni";
-            this.btnYeni.UseVisualStyleBackColor = true;
+            this.btnYeni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnYeni.UseSelectable = true;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
-            // txtUnvanAdi
+            // btnSil
             // 
-            this.txtUnvanAdi.Location = new System.Drawing.Point(94, 54);
-            this.txtUnvanAdi.Name = "txtUnvanAdi";
-            this.txtUnvanAdi.Size = new System.Drawing.Size(158, 20);
-            this.txtUnvanAdi.TabIndex = 3;
+            this.btnSil.ActiveControl = null;
+            this.btnSil.Location = new System.Drawing.Point(345, 199);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(111, 45);
+            this.btnSil.TabIndex = 7;
+            this.btnSil.Text = "Sil";
+            this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSil.UseSelectable = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // txtUnvanNo
             // 
-            this.txtUnvanNo.Location = new System.Drawing.Point(94, 23);
+            // 
+            // 
+            // 
+            this.txtUnvanNo.CustomButton.Image = null;
+            this.txtUnvanNo.CustomButton.Location = new System.Drawing.Point(92, 2);
+            this.txtUnvanNo.CustomButton.Name = "";
+            this.txtUnvanNo.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtUnvanNo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtUnvanNo.CustomButton.TabIndex = 1;
+            this.txtUnvanNo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtUnvanNo.CustomButton.UseSelectable = true;
+            this.txtUnvanNo.CustomButton.Visible = false;
+            this.txtUnvanNo.Lines = new string[0];
+            this.txtUnvanNo.Location = new System.Drawing.Point(151, 92);
+            this.txtUnvanNo.MaxLength = 32767;
             this.txtUnvanNo.Name = "txtUnvanNo";
-            this.txtUnvanNo.Size = new System.Drawing.Size(87, 20);
-            this.txtUnvanNo.TabIndex = 2;
+            this.txtUnvanNo.PasswordChar = '\0';
+            this.txtUnvanNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUnvanNo.SelectedText = "";
+            this.txtUnvanNo.SelectionLength = 0;
+            this.txtUnvanNo.SelectionStart = 0;
+            this.txtUnvanNo.ShortcutsEnabled = true;
+            this.txtUnvanNo.Size = new System.Drawing.Size(120, 30);
+            this.txtUnvanNo.TabIndex = 4;
+            this.txtUnvanNo.UseSelectable = true;
+            this.txtUnvanNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtUnvanNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // label2
+            // txtUnvanAdi
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Ünvan Adı:";
             // 
-            // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ünvan No:";
             // 
-            // groupBox2
+            this.txtUnvanAdi.CustomButton.Image = null;
+            this.txtUnvanAdi.CustomButton.Location = new System.Drawing.Point(92, 2);
+            this.txtUnvanAdi.CustomButton.Name = "";
+            this.txtUnvanAdi.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtUnvanAdi.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtUnvanAdi.CustomButton.TabIndex = 1;
+            this.txtUnvanAdi.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtUnvanAdi.CustomButton.UseSelectable = true;
+            this.txtUnvanAdi.CustomButton.Visible = false;
+            this.txtUnvanAdi.Lines = new string[0];
+            this.txtUnvanAdi.Location = new System.Drawing.Point(151, 137);
+            this.txtUnvanAdi.MaxLength = 32767;
+            this.txtUnvanAdi.Name = "txtUnvanAdi";
+            this.txtUnvanAdi.PasswordChar = '\0';
+            this.txtUnvanAdi.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUnvanAdi.SelectedText = "";
+            this.txtUnvanAdi.SelectionLength = 0;
+            this.txtUnvanAdi.SelectionStart = 0;
+            this.txtUnvanAdi.ShortcutsEnabled = true;
+            this.txtUnvanAdi.Size = new System.Drawing.Size(120, 30);
+            this.txtUnvanAdi.TabIndex = 5;
+            this.txtUnvanAdi.UseSelectable = true;
+            this.txtUnvanAdi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtUnvanAdi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.groupBox2.Controls.Add(this.listUnvan);
-            this.groupBox2.Location = new System.Drawing.Point(12, 160);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(327, 156);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Ünvan Listesi";
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(33, 92);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(70, 19);
+            this.metroLabel1.TabIndex = 8;
+            this.metroLabel1.Text = "Ünvan No:";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(34, 137);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(72, 19);
+            this.metroLabel2.TabIndex = 9;
+            this.metroLabel2.Text = "Ünvan Adı:";
             // 
             // listUnvan
             // 
             this.listUnvan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ünvanNo,
-            this.ünvanAdı});
-            this.listUnvan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listUnvan.FullRowSelect = true;
-            this.listUnvan.Location = new System.Drawing.Point(3, 16);
+            this.unvanNo,
+            this.unvanAdi});
+            this.listUnvan.Location = new System.Drawing.Point(33, 289);
             this.listUnvan.Name = "listUnvan";
-            this.listUnvan.Size = new System.Drawing.Size(321, 137);
-            this.listUnvan.TabIndex = 0;
+            this.listUnvan.Size = new System.Drawing.Size(433, 179);
+            this.listUnvan.TabIndex = 10;
             this.listUnvan.UseCompatibleStateImageBehavior = false;
             this.listUnvan.View = System.Windows.Forms.View.Details;
             this.listUnvan.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
-            // ünvanNo
+            // unvanNo
             // 
-            this.ünvanNo.Text = "Ünvan No";
-            this.ünvanNo.Width = 113;
+            this.unvanNo.Text = "Ünvan No";
+            this.unvanNo.Width = 122;
             // 
-            // ünvanAdı
+            // unvanAdi
             // 
-            this.ünvanAdı.Text = "Ünvan Adı";
-            this.ünvanAdı.Width = 193;
+            this.unvanAdi.Text = "Ünvan Adı";
+            this.unvanAdi.Width = 131;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Location = new System.Drawing.Point(416, 22);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // frmTanimUnvan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 326);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(500, 486);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.listUnvan);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.txtUnvanNo);
+            this.Controls.Add(this.txtUnvanAdi);
+            this.Controls.Add(this.btnSil);
+            this.Controls.Add(this.btnKaydet);
+            this.Controls.Add(this.btnYeni);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmTanimUnvan";
+            this.Padding = new System.Windows.Forms.Padding(30, 92, 30, 31);
             this.Text = "Ünvan Tanımlama";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimUnvan_FormClosing);
             this.Load += new System.EventHandler(this.frmTanimUnvan_Load);
-            this.Resize += new System.EventHandler(this.frmTanimUnvan_Resize);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnSil;
-        private System.Windows.Forms.Button btnKaydet;
-        private System.Windows.Forms.Button btnYeni;
-        private System.Windows.Forms.TextBox txtUnvanAdi;
-        private System.Windows.Forms.TextBox txtUnvanNo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private MetroFramework.Controls.MetroTile btnSil;
+        private MetroFramework.Controls.MetroTile btnKaydet;
+        private MetroFramework.Controls.MetroTile btnYeni;
+        private MetroFramework.Controls.MetroTextBox txtUnvanAdi;
+        private MetroFramework.Controls.MetroTextBox txtUnvanNo;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.ListView listUnvan;
-        private System.Windows.Forms.ColumnHeader ünvanNo;
-        private System.Windows.Forms.ColumnHeader ünvanAdı;
+        private System.Windows.Forms.ColumnHeader unvanNo;
+        private System.Windows.Forms.ColumnHeader unvanAdi;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
