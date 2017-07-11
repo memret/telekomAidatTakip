@@ -67,7 +67,7 @@
             this.columnHeader9,
             this.columnHeader10});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listView1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+            this.listView1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(20, 450);
             this.listView1.MultiSelect = false;
@@ -86,7 +86,7 @@
             // columnHeader7
             // 
             this.columnHeader7.Text = "Mail Başlığı";
-            this.columnHeader7.Width = 108;
+            this.columnHeader7.Width = 128;
             // 
             // columnHeader8
             // 

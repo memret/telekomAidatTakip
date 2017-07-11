@@ -63,7 +63,7 @@
             this.txtAciklama.CustomButton.UseWaitCursor = true;
             this.txtAciklama.CustomButton.Visible = false;
             this.txtAciklama.Lines = new string[0];
-            this.txtAciklama.Location = new System.Drawing.Point(79, 112);
+            this.txtAciklama.Location = new System.Drawing.Point(114, 112);
             this.txtAciklama.MaxLength = 32767;
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
@@ -101,7 +101,7 @@
             this.txtKod.CustomButton.UseWaitCursor = true;
             this.txtKod.CustomButton.Visible = false;
             this.txtKod.Lines = new string[0];
-            this.txtKod.Location = new System.Drawing.Point(79, 72);
+            this.txtKod.Location = new System.Drawing.Point(114, 72);
             this.txtKod.MaxLength = 32767;
             this.txtKod.Name = "txtKod";
             this.txtKod.PasswordChar = '●';
@@ -110,7 +110,7 @@
             this.txtKod.SelectionLength = 0;
             this.txtKod.SelectionStart = 0;
             this.txtKod.ShortcutsEnabled = true;
-            this.txtKod.Size = new System.Drawing.Size(183, 24);
+            this.txtKod.Size = new System.Drawing.Size(183, 29);
             this.txtKod.TabIndex = 19;
             this.txtKod.UseCustomBackColor = true;
             this.txtKod.UseCustomForeColor = true;
@@ -198,7 +198,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(4, 104);
+            this.metroLabel1.Location = new System.Drawing.Point(23, 117);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(69, 19);
             this.metroLabel1.TabIndex = 27;
@@ -207,7 +207,7 @@
             // metroLabelKod
             // 
             this.metroLabelKod.AutoSize = true;
-            this.metroLabelKod.Location = new System.Drawing.Point(34, 72);
+            this.metroLabelKod.Location = new System.Drawing.Point(23, 77);
             this.metroLabelKod.Name = "metroLabelKod";
             this.metroLabelKod.Size = new System.Drawing.Size(39, 19);
             this.metroLabelKod.TabIndex = 26;
@@ -243,10 +243,10 @@
             this.listvSilinme.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderKod,
             this.columnHeaderAciklama});
-            this.listvSilinme.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listvSilinme.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listvSilinme.Location = new System.Drawing.Point(16, 258);
             this.listvSilinme.Name = "listvSilinme";
-            this.listvSilinme.Size = new System.Drawing.Size(323, 113);
+            this.listvSilinme.Size = new System.Drawing.Size(323, 122);
             this.listvSilinme.TabIndex = 29;
             this.listvSilinme.UseCompatibleStateImageBehavior = false;
             this.listvSilinme.View = System.Windows.Forms.View.Details;
@@ -264,7 +264,7 @@
             // 
             // frmTanimUyelikIptal
             // 
-            this.ClientSize = new System.Drawing.Size(362, 383);
+            this.ClientSize = new System.Drawing.Size(362, 403);
             this.Controls.Add(this.listvSilinme);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLabelKod);

@@ -94,16 +94,16 @@
             // 
             // 
             this.txtTahsilAd.CustomButton.Image = null;
-            this.txtTahsilAd.CustomButton.Location = new System.Drawing.Point(221, 1);
+            this.txtTahsilAd.CustomButton.Location = new System.Drawing.Point(215, 1);
             this.txtTahsilAd.CustomButton.Name = "";
-            this.txtTahsilAd.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtTahsilAd.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtTahsilAd.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtTahsilAd.CustomButton.TabIndex = 1;
             this.txtTahsilAd.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtTahsilAd.CustomButton.UseSelectable = true;
             this.txtTahsilAd.CustomButton.Visible = false;
             this.txtTahsilAd.Lines = new string[0];
-            this.txtTahsilAd.Location = new System.Drawing.Point(116, 120);
+            this.txtTahsilAd.Location = new System.Drawing.Point(116, 114);
             this.txtTahsilAd.MaxLength = 32767;
             this.txtTahsilAd.Name = "txtTahsilAd";
             this.txtTahsilAd.PasswordChar = '\0';
@@ -112,7 +112,7 @@
             this.txtTahsilAd.SelectionLength = 0;
             this.txtTahsilAd.SelectionStart = 0;
             this.txtTahsilAd.ShortcutsEnabled = true;
-            this.txtTahsilAd.Size = new System.Drawing.Size(243, 23);
+            this.txtTahsilAd.Size = new System.Drawing.Size(243, 29);
             this.txtTahsilAd.TabIndex = 11;
             this.txtTahsilAd.UseSelectable = true;
             this.txtTahsilAd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -124,9 +124,9 @@
             // 
             // 
             this.txtTahsilKodu.CustomButton.Image = null;
-            this.txtTahsilKodu.CustomButton.Location = new System.Drawing.Point(118, 1);
+            this.txtTahsilKodu.CustomButton.Location = new System.Drawing.Point(112, 1);
             this.txtTahsilKodu.CustomButton.Name = "";
-            this.txtTahsilKodu.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtTahsilKodu.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtTahsilKodu.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtTahsilKodu.CustomButton.TabIndex = 1;
             this.txtTahsilKodu.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -142,7 +142,7 @@
             this.txtTahsilKodu.SelectionLength = 0;
             this.txtTahsilKodu.SelectionStart = 0;
             this.txtTahsilKodu.ShortcutsEnabled = true;
-            this.txtTahsilKodu.Size = new System.Drawing.Size(140, 23);
+            this.txtTahsilKodu.Size = new System.Drawing.Size(140, 29);
             this.txtTahsilKodu.TabIndex = 10;
             this.txtTahsilKodu.UseSelectable = true;
             this.txtTahsilKodu.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -151,7 +151,7 @@
             // tahsilAd
             // 
             this.tahsilAd.AutoSize = true;
-            this.tahsilAd.Location = new System.Drawing.Point(23, 124);
+            this.tahsilAd.Location = new System.Drawing.Point(23, 119);
             this.tahsilAd.Name = "tahsilAd";
             this.tahsilAd.Size = new System.Drawing.Size(63, 19);
             this.tahsilAd.TabIndex = 9;
@@ -160,7 +160,7 @@
             // tahsilNo
             // 
             this.tahsilNo.AutoSize = true;
-            this.tahsilNo.Location = new System.Drawing.Point(23, 79);
+            this.tahsilNo.Location = new System.Drawing.Point(23, 84);
             this.tahsilNo.Name = "tahsilNo";
             this.tahsilNo.Size = new System.Drawing.Size(69, 19);
             this.tahsilNo.TabIndex = 8;
@@ -183,7 +183,7 @@
             this.columnHeader1,
             this.columnHeader2});
             this.listvTanimTahsil.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listvTanimTahsil.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.listvTanimTahsil.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listvTanimTahsil.FullRowSelect = true;
             this.listvTanimTahsil.Location = new System.Drawing.Point(3, 19);
             this.listvTanimTahsil.Name = "listvTanimTahsil";
@@ -236,7 +236,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 423);
+            this.ClientSize = new System.Drawing.Size(534, 423);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnKaydet);

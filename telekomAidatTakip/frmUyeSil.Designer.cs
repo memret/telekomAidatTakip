@@ -28,62 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnOnayla = new System.Windows.Forms.Button();
-            this.btnIptal = new System.Windows.Forms.Button();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.comboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.btnOnayla = new MetroFramework.Controls.MetroTile();
+            this.btnIptal = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(23, 66);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(100, 19);
+            this.metroLabel1.TabIndex = 4;
+            this.metroLabel1.Text = "Silinme Nedeni:";
             // 
             // comboBox1
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(98, 6);
+            this.comboBox1.ItemHeight = 23;
+            this.comboBox1.Location = new System.Drawing.Point(132, 61);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Silinme Nedeni:";
+            this.comboBox1.Size = new System.Drawing.Size(192, 29);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.UseSelectable = true;
             // 
             // btnOnayla
             // 
-            this.btnOnayla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnOnayla.Location = new System.Drawing.Point(100, 38);
+            this.btnOnayla.ActiveControl = null;
+            this.btnOnayla.Location = new System.Drawing.Point(132, 96);
             this.btnOnayla.Name = "btnOnayla";
-            this.btnOnayla.Size = new System.Drawing.Size(86, 44);
-            this.btnOnayla.TabIndex = 2;
+            this.btnOnayla.Size = new System.Drawing.Size(82, 40);
+            this.btnOnayla.TabIndex = 6;
             this.btnOnayla.Text = "Onayla";
-            this.btnOnayla.UseVisualStyleBackColor = true;
+            this.btnOnayla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnOnayla.UseSelectable = true;
             this.btnOnayla.Click += new System.EventHandler(this.btnOnayla_Click);
             // 
             // btnIptal
             // 
-            this.btnIptal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnIptal.Location = new System.Drawing.Point(213, 38);
+            this.btnIptal.ActiveControl = null;
+            this.btnIptal.Location = new System.Drawing.Point(242, 96);
             this.btnIptal.Name = "btnIptal";
-            this.btnIptal.Size = new System.Drawing.Size(86, 44);
-            this.btnIptal.TabIndex = 3;
+            this.btnIptal.Size = new System.Drawing.Size(82, 40);
+            this.btnIptal.TabIndex = 6;
             this.btnIptal.Text = "İptal";
-            this.btnIptal.UseVisualStyleBackColor = true;
+            this.btnIptal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnIptal.UseSelectable = true;
             this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // frmUyeSil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(311, 93);
+            this.ClientSize = new System.Drawing.Size(352, 150);
             this.Controls.Add(this.btnIptal);
             this.Controls.Add(this.btnOnayla);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Controls.Add(this.metroLabel1);
             this.Name = "frmUyeSil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Üye Silme Nedeni";
@@ -95,9 +97,9 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnOnayla;
-        private System.Windows.Forms.Button btnIptal;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroComboBox comboBox1;
+        private MetroFramework.Controls.MetroTile btnOnayla;
+        private MetroFramework.Controls.MetroTile btnIptal;
     }
 }
