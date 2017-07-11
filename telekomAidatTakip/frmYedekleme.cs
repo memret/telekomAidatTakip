@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace telekomAidatTakip
 {
-    public partial class frmYedekleme : Form
+    public partial class frmYedekleme : MetroForm
     {
         public frmYedekleme()
         {
@@ -94,5 +95,7 @@ namespace telekomAidatTakip
         {
             
         }
+
+    
     }
 }
