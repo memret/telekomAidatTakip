@@ -28,202 +28,204 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblKisiSayisi = new System.Windows.Forms.Label();
-            this.dateTarih = new System.Windows.Forms.DateTimePicker();
-            this.btnKaydet = new System.Windows.Forms.Button();
-            this.txtAidatMiktari = new System.Windows.Forms.TextBox();
-            this.cboxBirim = new System.Windows.Forms.ComboBox();
-            this.cboxMudurluk = new System.Windows.Forms.ComboBox();
-            this.cboxil = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.lblKisiSayisi = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.cboxil = new MetroFramework.Controls.MetroComboBox();
+            this.cboxBirim = new MetroFramework.Controls.MetroComboBox();
+            this.cboxMudurluk = new MetroFramework.Controls.MetroComboBox();
+            this.dateTarih = new MetroFramework.Controls.MetroDateTime();
+            this.txtAidatMiktari = new MetroFramework.Controls.MetroTextBox();
+            this.btnKaydet = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // metroLabel1
             // 
-            this.groupBox1.Controls.Add(this.lblKisiSayisi);
-            this.groupBox1.Controls.Add(this.dateTarih);
-            this.groupBox1.Controls.Add(this.btnKaydet);
-            this.groupBox1.Controls.Add(this.txtAidatMiktari);
-            this.groupBox1.Controls.Add(this.cboxBirim);
-            this.groupBox1.Controls.Add(this.cboxMudurluk);
-            this.groupBox1.Controls.Add(this.cboxil);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(11, 11);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(292, 245);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Toplu Aidat Girişi";
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(47, 90);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(18, 20);
+            this.metroLabel1.TabIndex = 1;
+            this.metroLabel1.Text = "İl:";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(47, 141);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(71, 20);
+            this.metroLabel2.TabIndex = 2;
+            this.metroLabel2.Text = "Müdürlük:";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(47, 183);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(43, 20);
+            this.metroLabel3.TabIndex = 3;
+            this.metroLabel3.Text = "Birim:";
             // 
             // lblKisiSayisi
             // 
             this.lblKisiSayisi.AutoSize = true;
-            this.lblKisiSayisi.Location = new System.Drawing.Point(110, 126);
+            this.lblKisiSayisi.Location = new System.Drawing.Point(181, 227);
             this.lblKisiSayisi.Name = "lblKisiSayisi";
-            this.lblKisiSayisi.Size = new System.Drawing.Size(59, 13);
-            this.lblKisiSayisi.TabIndex = 16;
-            this.lblKisiSayisi.Text = "Kişi Sayısı: ";
+            this.lblKisiSayisi.Size = new System.Drawing.Size(69, 20);
+            this.lblKisiSayisi.TabIndex = 4;
+            this.lblKisiSayisi.Text = "Kişi Sayısı:";
             // 
-            // dateTarih
+            // metroLabel5
             // 
-            this.dateTarih.CustomFormat = "MM yyyy";
-            this.dateTarih.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTarih.Location = new System.Drawing.Point(113, 150);
-            this.dateTarih.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTarih.Name = "dateTarih";
-            this.dateTarih.Size = new System.Drawing.Size(103, 20);
-            this.dateTarih.TabIndex = 15;
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(47, 263);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(103, 20);
+            this.metroLabel5.TabIndex = 5;
+            this.metroLabel5.Text = "Aidat Ay ve Yılı:";
             // 
-            // btnKaydet
+            // metroLabel6
             // 
-            this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnKaydet.Location = new System.Drawing.Point(113, 212);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(87, 29);
-            this.btnKaydet.TabIndex = 0;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(47, 320);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(88, 20);
+            this.metroLabel6.TabIndex = 6;
+            this.metroLabel6.Text = "Aidat miktarı:";
             // 
-            // txtAidatMiktari
+            // cboxil
             // 
-            this.txtAidatMiktari.Location = new System.Drawing.Point(113, 180);
-            this.txtAidatMiktari.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAidatMiktari.Name = "txtAidatMiktari";
-            this.txtAidatMiktari.Size = new System.Drawing.Size(103, 20);
-            this.txtAidatMiktari.TabIndex = 14;
-            this.txtAidatMiktari.TextChanged += new System.EventHandler(this.txtAidatMiktari_TextChanged);
+            this.cboxil.FormattingEnabled = true;
+            this.cboxil.ItemHeight = 24;
+            this.cboxil.Location = new System.Drawing.Point(181, 80);
+            this.cboxil.Name = "cboxil";
+            this.cboxil.Size = new System.Drawing.Size(236, 30);
+            this.cboxil.TabIndex = 7;
+            this.cboxil.UseSelectable = true;
+            this.cboxil.SelectedIndexChanged += new System.EventHandler(this.cboxil_SelectedIndexChanged);
+            this.cboxil.SelectionChangeCommitted += new System.EventHandler(this.cboxil_SelectionChangeCommitted);
             // 
             // cboxBirim
             // 
-            this.cboxBirim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxBirim.Enabled = false;
             this.cboxBirim.FormattingEnabled = true;
-            this.cboxBirim.Location = new System.Drawing.Point(113, 94);
-            this.cboxBirim.Margin = new System.Windows.Forms.Padding(2);
+            this.cboxBirim.ItemHeight = 24;
+            this.cboxBirim.Location = new System.Drawing.Point(181, 183);
             this.cboxBirim.Name = "cboxBirim";
-            this.cboxBirim.Size = new System.Drawing.Size(149, 21);
+            this.cboxBirim.Size = new System.Drawing.Size(236, 30);
             this.cboxBirim.TabIndex = 8;
+            this.cboxBirim.UseSelectable = true;
             this.cboxBirim.SelectedIndexChanged += new System.EventHandler(this.cboxBirim_SelectedIndexChanged);
             this.cboxBirim.SelectionChangeCommitted += new System.EventHandler(this.cboxBirim_SelectionChangeCommitted);
             // 
             // cboxMudurluk
             // 
-            this.cboxMudurluk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxMudurluk.Enabled = false;
             this.cboxMudurluk.FormattingEnabled = true;
-            this.cboxMudurluk.Location = new System.Drawing.Point(113, 62);
-            this.cboxMudurluk.Margin = new System.Windows.Forms.Padding(2);
+            this.cboxMudurluk.ItemHeight = 24;
+            this.cboxMudurluk.Location = new System.Drawing.Point(181, 131);
             this.cboxMudurluk.Name = "cboxMudurluk";
-            this.cboxMudurluk.Size = new System.Drawing.Size(149, 21);
-            this.cboxMudurluk.TabIndex = 7;
+            this.cboxMudurluk.Size = new System.Drawing.Size(236, 30);
+            this.cboxMudurluk.TabIndex = 9;
+            this.cboxMudurluk.UseSelectable = true;
             this.cboxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cboxMudurluk_SelectionChangeCommitted);
             // 
-            // cboxil
+            // dateTarih
             // 
-            this.cboxil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxil.FormattingEnabled = true;
-            this.cboxil.Location = new System.Drawing.Point(113, 27);
-            this.cboxil.Margin = new System.Windows.Forms.Padding(2);
-            this.cboxil.Name = "cboxil";
-            this.cboxil.Size = new System.Drawing.Size(149, 21);
-            this.cboxil.TabIndex = 6;
-            this.cboxil.SelectedIndexChanged += new System.EventHandler(this.cboxil_SelectedIndexChanged);
-            this.cboxil.SelectionChangeCommitted += new System.EventHandler(this.cboxil_SelectionChangeCommitted);
+            this.dateTarih.CustomFormat = "MM yyyy";
+            this.dateTarih.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTarih.Location = new System.Drawing.Point(181, 263);
+            this.dateTarih.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dateTarih.Name = "dateTarih";
+            this.dateTarih.Size = new System.Drawing.Size(200, 30);
+            this.dateTarih.TabIndex = 10;
             // 
-            // label5
+            // txtAidatMiktari
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 183);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Aidat Miktarı:";
             // 
-            // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 153);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Aidat Ay ve Yılı:";
             // 
-            // label3
+            this.txtAidatMiktari.CustomButton.Image = null;
+            this.txtAidatMiktari.CustomButton.Location = new System.Drawing.Point(178, 1);
+            this.txtAidatMiktari.CustomButton.Name = "";
+            this.txtAidatMiktari.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtAidatMiktari.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtAidatMiktari.CustomButton.TabIndex = 1;
+            this.txtAidatMiktari.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtAidatMiktari.CustomButton.UseSelectable = true;
+            this.txtAidatMiktari.CustomButton.Visible = false;
+            this.txtAidatMiktari.Lines = new string[0];
+            this.txtAidatMiktari.Location = new System.Drawing.Point(181, 320);
+            this.txtAidatMiktari.MaxLength = 32767;
+            this.txtAidatMiktari.Name = "txtAidatMiktari";
+            this.txtAidatMiktari.PasswordChar = '\0';
+            this.txtAidatMiktari.PromptText = "Aidat miktarını giriniz.";
+            this.txtAidatMiktari.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtAidatMiktari.SelectedText = "";
+            this.txtAidatMiktari.SelectionLength = 0;
+            this.txtAidatMiktari.SelectionStart = 0;
+            this.txtAidatMiktari.ShortcutsEnabled = true;
+            this.txtAidatMiktari.Size = new System.Drawing.Size(200, 29);
+            this.txtAidatMiktari.TabIndex = 11;
+            this.txtAidatMiktari.UseSelectable = true;
+            this.txtAidatMiktari.WaterMark = "Aidat miktarını giriniz.";
+            this.txtAidatMiktari.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtAidatMiktari.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtAidatMiktari.TextChanged += new System.EventHandler(this.txtAidatMiktari_TextChanged);
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 97);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Birim:";
+            // btnKaydet
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 65);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Müdürlük:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 30);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "İl:";
+            this.btnKaydet.ActiveControl = null;
+            this.btnKaydet.Location = new System.Drawing.Point(181, 369);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(109, 53);
+            this.btnKaydet.TabIndex = 12;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnKaydet.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnKaydet.UseSelectable = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // frmAidatToplu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 266);
-            this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.ClientSize = new System.Drawing.Size(469, 464);
+            this.Controls.Add(this.btnKaydet);
+            this.Controls.Add(this.txtAidatMiktari);
+            this.Controls.Add(this.dateTarih);
+            this.Controls.Add(this.cboxMudurluk);
+            this.Controls.Add(this.cboxBirim);
+            this.Controls.Add(this.cboxil);
+            this.Controls.Add(this.metroLabel6);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.lblKisiSayisi);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmAidatToplu";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Toplu Aidat Girişi";
             this.Load += new System.EventHandler(this.frmAidatToplu_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtAidatMiktari;
-        private System.Windows.Forms.ComboBox cboxBirim;
-        private System.Windows.Forms.ComboBox cboxMudurluk;
-        private System.Windows.Forms.ComboBox cboxil;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnKaydet;
-        private System.Windows.Forms.DateTimePicker dateTarih;
-        private System.Windows.Forms.Label lblKisiSayisi;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel lblKisiSayisi;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroComboBox cboxil;
+        private MetroFramework.Controls.MetroComboBox cboxBirim;
+        private MetroFramework.Controls.MetroComboBox cboxMudurluk;
+        private MetroFramework.Controls.MetroDateTime dateTarih;
+        private MetroFramework.Controls.MetroTextBox txtAidatMiktari;
+        private MetroFramework.Controls.MetroTile btnKaydet;
     }
 }
