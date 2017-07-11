@@ -90,10 +90,37 @@ namespace telekomAidatTakip
         {
             if (txtTahsilKodu.Text != string.Empty) //plaka kodu olmadan veri silmek tabiki biraz zor olur
             {
-                Database db = new Database();
-                db.Sorgu("delete from Tahsil where tahsilNo=@0", txtTahsilKodu.Text);
-                TahsilListesiDoldur();
+                Database db2 = new Database();
+                string countKisi = "0";
+                var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE tahsilNo = @0", txtTahsilKodu.Text);
+                if (data2.Read())
+                {
+                    countKisi = data2["count"].ToString();
+                }
+
+                Database db3 = new Database();
+                string countAidat = "0";
+                var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.tahsilno = @0", txtTahsilKodu.Text);
+                if (data3.Read())
+                {
+                    countAidat = data3["count"].ToString();
+                }
+                // 0dan büyüklerse bu soruyu sormak lazım.
+                DialogResult dialogResult;
+                if (countAidat != "0" && countKisi != "0")
+                    dialogResult = MessageBox.Show("Bu işlem ile sadece seçtiğiniz tahsili değil, ona kayıtlı olan kişileri ve aidat kayıtlarınıda sileceksiniz. \nSilinecek kişi sayısı: " + countKisi + "\nSilinecek aidat kaydı: " + countAidat + " \nEmin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                else
+                    dialogResult = MessageBox.Show("Seçili birim silinecek. Emin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Database db = new Database();
+                    db.Sorgu("delete from Tahsil where tahsilNo=@0", txtTahsilKodu.Text);
+                    TahsilListesiDoldur();
+                }
             }
+            else
+                MessageBox.Show("Tahsil no kısmı boş");
         }
 
         private void listvTanimTahsil_SelectedIndexChanged(object sender, EventArgs e)
