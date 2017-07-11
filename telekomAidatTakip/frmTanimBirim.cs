@@ -133,44 +133,47 @@ namespace telekomAidatTakip
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            Database db2 = new Database();
-            string countKisi = "0";
-            var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE birimNo = @0", txtBirimKodu.Text);
-            if (data2.Read())
+            if (txtBirimKodu.Text == string.Empty)
             {
-                countKisi = data2["count"].ToString();
-            }
+                Database db2 = new Database();
+                string countKisi = "0";
+                var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE birimNo = @0", txtBirimKodu.Text);
+                if (data2.Read())
+                {
+                    countKisi = data2["count"].ToString();
+                }
 
-            Database db3 = new Database();
-            string countAidat = "0";
-            var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.birimNo = @0", txtBirimKodu.Text);
-            if (data3.Read())
-            {
-                countAidat = data3["count"].ToString();
+                Database db3 = new Database();
+                string countAidat = "0";
+                var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.birimNo = @0", txtBirimKodu.Text);
+                if (data3.Read())
+                {
+                    countAidat = data3["count"].ToString();
+                }
+                // 0dan büyüklerse bu soruyu sormak lazım.
+                DialogResult dialogResult;
+                if (countAidat != "0" && countKisi != "0")
+                    dialogResult = MessageBox.Show("Bu işlem ile sadece birimi değil, ona kayıtlı olan kişileri ve aidat kayıtlarınıda sileceksiniz. \nSilinecek kişi sayısı: " + countKisi + "\nSilinecek aidat kaydı: " + countAidat + " \nEmin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                else
+                    dialogResult = MessageBox.Show("Seçili birim silinecek. Emin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Database db = new Database();
+                    db.Sorgu("DELETE FROM Birim Where birimNo = @0", txtBirimKodu.Text);
+                    listBirim.Items.Clear();
+                    listeDoldur();
+                    db.Kapat();
+                    MessageBox.Show("Seçili birim silindi!", "Birim Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtBirimAdi.Text = string.Empty;
+                    txtBirimKodu.Text = string.Empty;
+
+                    txtBirimAdi.Enabled = false;
+                    cBoxMudurluk.Enabled = false;
+                }
             }
-            // 0dan büyüklerse bu soruyu sormak lazım.
-            DialogResult dialogResult;
-            if (countAidat != "0" && countKisi != "0")
-                dialogResult = MessageBox.Show("Bu işlem ile sadece birimi değil, ona kayıtlı olan kişileri ve aidat kayıtlarınıda sileceksiniz. \nSilinecek kişi sayısı: " + countKisi + "\nSilinecek aidat kaydı: " + countAidat + " \nEmin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             else
-                dialogResult = MessageBox.Show("Seçili birim silinecek. Emin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dialogResult == DialogResult.Yes)
-            {
-                Database db = new Database();
-                db.Sorgu("DELETE FROM Birim Where birimNo = @0", txtBirimKodu.Text);
-                listBirim.Items.Clear();
-                listeDoldur();
-                db.Kapat();
-                MessageBox.Show("Seçili birim silindi!", "Birim Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtBirimAdi.Text = string.Empty;
-                txtBirimKodu.Text = string.Empty;
-
-                txtBirimAdi.Enabled = false;
-                cBoxMudurluk.Enabled = false;
-            }
-            else if (dialogResult == DialogResult.Cancel)
-                return;
+                MessageBox.Show("Birim no kısmı boş");
 
         }
 
