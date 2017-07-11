@@ -25,6 +25,8 @@ namespace telekomAidatTakip
             cboxBirim.SelectedIndex = -1;
             cboxMudurluk.Enabled = false;
             cboxBirim.Enabled = false;
+            cboxBirim.PromptText = " ";
+            cboxMudurluk.PromptText = " ";
             btnKaydet.Enabled = false;
         }
 
@@ -84,12 +86,15 @@ namespace telekomAidatTakip
 
 
                 cboxBirim.Enabled = false;
+                cboxBirim.PromptText = " ";
                 cboxBirim.SelectedIndex = -1;
             }
             else
             {
                 cboxMudurluk.Enabled = false;
                 cboxBirim.Enabled = false;
+                cboxBirim.PromptText = " ";
+                cboxMudurluk.PromptText = " ";
             }
         }
 
@@ -102,12 +107,15 @@ namespace telekomAidatTakip
                 PRG.DoldurBirim(ref cboxBirim, mudurlukNo.ToString());
 
                 cboxBirim.Enabled = true;
+                cboxBirim.PromptText = "Birim seçiniz.";
                 cboxBirim.SelectedIndex = -1;
 
             }
             else
             {
                 cboxBirim.Enabled = false;
+                cboxBirim.PromptText = " ";
+                
             }
         }
 
@@ -120,6 +128,7 @@ namespace telekomAidatTakip
         {
 
             lblKisiSayisi.Text = "Kişi Sayısı: ";
+            cboxMudurluk.PromptText = "Müdürlük seçiniz.";
         }
 
         private void cboxBirim_SelectionChangeCommitted(object sender, EventArgs e)

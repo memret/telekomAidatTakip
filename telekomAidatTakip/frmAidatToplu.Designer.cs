@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAidatToplu));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -40,6 +41,8 @@
             this.dateTarih = new MetroFramework.Controls.MetroDateTime();
             this.txtAidatMiktari = new MetroFramework.Controls.MetroTextBox();
             this.btnKaydet = new MetroFramework.Controls.MetroTile();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -102,6 +105,7 @@
             this.cboxil.ItemHeight = 24;
             this.cboxil.Location = new System.Drawing.Point(181, 80);
             this.cboxil.Name = "cboxil";
+            this.cboxil.PromptText = "İl seçiniz.";
             this.cboxil.Size = new System.Drawing.Size(236, 30);
             this.cboxil.TabIndex = 7;
             this.cboxil.UseSelectable = true;
@@ -114,6 +118,7 @@
             this.cboxBirim.ItemHeight = 24;
             this.cboxBirim.Location = new System.Drawing.Point(181, 183);
             this.cboxBirim.Name = "cboxBirim";
+            this.cboxBirim.PromptText = "Birim seçiniz.";
             this.cboxBirim.Size = new System.Drawing.Size(236, 30);
             this.cboxBirim.TabIndex = 8;
             this.cboxBirim.UseSelectable = true;
@@ -126,6 +131,7 @@
             this.cboxMudurluk.ItemHeight = 24;
             this.cboxMudurluk.Location = new System.Drawing.Point(181, 131);
             this.cboxMudurluk.Name = "cboxMudurluk";
+            this.cboxMudurluk.PromptText = "Müdürlük seçiniz.";
             this.cboxMudurluk.Size = new System.Drawing.Size(236, 30);
             this.cboxMudurluk.TabIndex = 9;
             this.cboxMudurluk.UseSelectable = true;
@@ -147,9 +153,9 @@
             // 
             // 
             this.txtAidatMiktari.CustomButton.Image = null;
-            this.txtAidatMiktari.CustomButton.Location = new System.Drawing.Point(178, 1);
+            this.txtAidatMiktari.CustomButton.Location = new System.Drawing.Point(172, 1);
             this.txtAidatMiktari.CustomButton.Name = "";
-            this.txtAidatMiktari.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtAidatMiktari.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtAidatMiktari.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtAidatMiktari.CustomButton.TabIndex = 1;
             this.txtAidatMiktari.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -180,6 +186,7 @@
             this.btnKaydet.Location = new System.Drawing.Point(181, 369);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(109, 53);
+            this.btnKaydet.Style = MetroFramework.MetroColorStyle.Red;
             this.btnKaydet.TabIndex = 12;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -187,11 +194,23 @@
             this.btnKaydet.UseSelectable = true;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Location = new System.Drawing.Point(400, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 47;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmAidatToplu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 464);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.txtAidatMiktari);
             this.Controls.Add(this.dateTarih);
@@ -207,8 +226,10 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmAidatToplu";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
-            this.Text = "Toplu Aidat Girişi";
+            this.Style = MetroFramework.MetroColorStyle.Red;
+            this.Text = "TOPLU AİDAT GİRİŞİ";
             this.Load += new System.EventHandler(this.frmAidatToplu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +248,6 @@
         private MetroFramework.Controls.MetroDateTime dateTarih;
         private MetroFramework.Controls.MetroTextBox txtAidatMiktari;
         private MetroFramework.Controls.MetroTile btnKaydet;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
