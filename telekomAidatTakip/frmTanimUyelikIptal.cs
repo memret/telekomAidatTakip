@@ -104,22 +104,6 @@ namespace telekomAidatTakip
             }
         }
 
-        private void listvSilinme_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            string kod = listvSilinme.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
-
-            Database db = new Database();
-            //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
-            txtAciklama.Text = db.DataOkuTek("select silinmeNedeni from SilinmeNedeni where silinmeNedeni=@0", "silinmeNedenNo", kod);
-
-            txtKod.Text = kod;
-            btnKaydet.Enabled = true;
-            btnSil.Enabled = true;
-            txtAciklama.Enabled = true;
-            txtKod.Enabled = true;
-            btnYeni.Text = "Yeni";
-        }
-
 
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -165,59 +149,20 @@ namespace telekomAidatTakip
             //groupBox4.Height = this.Height - 237;
         }
 
-        private void listvSilinme_SelectedIndexChanged(object sender, EventArgs e)
+        private void listvSilinme_DoubleClick(object sender, EventArgs e)
         {
+            string kod = listvSilinme.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
 
-        }
+            Database db = new Database();
+            //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
+            txtAciklama.Text = db.DataOkuTek("select silinmeNedeni from SilinmeNedeni where silinmeNedeni=@0", "silinmeNedenNo", kod);
 
-        private void btnYeni_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void metroLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnYeni_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnKaydet_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroTextBoxAciklama_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroTextBoxKod_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            txtKod.Text = kod;
+            btnKaydet.Enabled = true;
+            btnSil.Enabled = true;
+            txtAciklama.Enabled = true;
+            txtKod.Enabled = true;
+            btnYeni.Text = "Yeni";
         }
     }
 }

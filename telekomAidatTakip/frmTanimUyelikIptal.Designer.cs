@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTanimUyelikIptal));
             this.txtAciklama = new MetroFramework.Controls.MetroTextBox();
             this.txtKod = new MetroFramework.Controls.MetroTextBox();
             this.btnSil = new MetroFramework.Controls.MetroTile();
@@ -41,12 +40,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.aidatMiktarTableAdapter1 = new telekomAidatTakip.telekomAidatDataSetTableAdapters.AidatMiktarTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ilTableAdapter1 = new telekomAidatTakip.telekomAidatDataSetTableAdapters.ilTableAdapter();
             this.listvSilinme = new System.Windows.Forms.ListView();
             this.columnHeaderKod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderAciklama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtAciklama
@@ -86,7 +83,6 @@
             this.txtAciklama.UseWaitCursor = true;
             this.txtAciklama.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAciklama.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtAciklama.Click += new System.EventHandler(this.metroTextBoxAciklama_Click);
             // 
             // txtKod
             // 
@@ -124,7 +120,6 @@
             this.txtKod.UseWaitCursor = true;
             this.txtKod.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtKod.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtKod.Click += new System.EventHandler(this.metroTextBoxKod_Click);
             // 
             // btnSil
             // 
@@ -143,6 +138,7 @@
             this.btnSil.UseStyleColors = true;
             this.btnSil.UseTileImage = true;
             this.btnSil.UseWaitCursor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnKaydet
             // 
@@ -161,7 +157,7 @@
             this.btnKaydet.UseStyleColors = true;
             this.btnKaydet.UseTileImage = true;
             this.btnKaydet.UseWaitCursor = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click_1);
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnYeni
             // 
@@ -181,7 +177,7 @@
             this.btnYeni.UseStyleColors = true;
             this.btnYeni.UseTileImage = true;
             this.btnYeni.UseWaitCursor = true;
-            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click_2);
+            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
             // label5
             // 
@@ -207,7 +203,6 @@
             this.metroLabel1.Size = new System.Drawing.Size(69, 19);
             this.metroLabel1.TabIndex = 27;
             this.metroLabel1.Text = "Açıklama :";
-            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
             // metroLabelKod
             // 
@@ -238,16 +233,6 @@
             // 
             this.aidatMiktarTableAdapter1.ClearBeforeFill = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(295, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 46);
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // ilTableAdapter1
             // 
             this.ilTableAdapter1.ClearBeforeFill = true;
@@ -265,6 +250,7 @@
             this.listvSilinme.TabIndex = 29;
             this.listvSilinme.UseCompatibleStateImageBehavior = false;
             this.listvSilinme.View = System.Windows.Forms.View.Details;
+            this.listvSilinme.DoubleClick += new System.EventHandler(this.listvSilinme_DoubleClick);
             // 
             // columnHeaderKod
             // 
@@ -280,7 +266,6 @@
             // 
             this.ClientSize = new System.Drawing.Size(362, 383);
             this.Controls.Add(this.listvSilinme);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLabelKod);
             this.Controls.Add(this.label1);
@@ -300,7 +285,6 @@
             this.Text = "Silinme Nedeni Tanımlama";
             this.Load += new System.EventHandler(this.frmTanimUyelikIptal_Load);
             this.BackColorChanged += new System.EventHandler(this.frmTanimUyelikIptal_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,7 +303,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private telekomAidatDataSetTableAdapters.AidatMiktarTableAdapter aidatMiktarTableAdapter1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private telekomAidatDataSetTableAdapters.ilTableAdapter ilTableAdapter1;
         private System.Windows.Forms.ListView listvSilinme;
         private System.Windows.Forms.ColumnHeader columnHeaderKod;
