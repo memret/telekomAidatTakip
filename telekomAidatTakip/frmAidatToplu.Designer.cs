@@ -166,7 +166,6 @@
             this.txtAidatMiktari.MaxLength = 32767;
             this.txtAidatMiktari.Name = "txtAidatMiktari";
             this.txtAidatMiktari.PasswordChar = '\0';
-            this.txtAidatMiktari.PromptText = "Aidat miktarını giriniz.";
             this.txtAidatMiktari.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAidatMiktari.SelectedText = "";
             this.txtAidatMiktari.SelectionLength = 0;

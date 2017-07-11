@@ -63,7 +63,6 @@
             this.txtMdrKod.MaxLength = 32767;
             this.txtMdrKod.Name = "txtMdrKod";
             this.txtMdrKod.PasswordChar = '\0';
-            this.txtMdrKod.PromptText = "Müdürlük no giriniz.";
             this.txtMdrKod.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtMdrKod.SelectedText = "";
             this.txtMdrKod.SelectionLength = 0;
@@ -110,7 +109,6 @@
             this.txtMdrAd.MaxLength = 32767;
             this.txtMdrAd.Name = "txtMdrAd";
             this.txtMdrAd.PasswordChar = '\0';
-            this.txtMdrAd.PromptText = "Müdürlük adı giriniz.";
             this.txtMdrAd.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtMdrAd.SelectedText = "";
             this.txtMdrAd.SelectionLength = 0;
