@@ -269,7 +269,7 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.Location = new System.Drawing.Point(26, 280);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(52, 20);
+            this.metroLabel5.Size = new System.Drawing.Size(51, 19);
             this.metroLabel5.TabIndex = 36;
             this.metroLabel5.Text = "Yorum:";
             // 
@@ -278,7 +278,7 @@
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.Location = new System.Drawing.Point(26, 184);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(48, 20);
+            this.metroLabel4.Size = new System.Drawing.Size(46, 19);
             this.metroLabel4.TabIndex = 35;
             this.metroLabel4.Text = "Mesaj:";
             // 
@@ -287,7 +287,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(26, 149);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(41, 20);
+            this.metroLabel3.Size = new System.Drawing.Size(39, 19);
             this.metroLabel3.TabIndex = 34;
             this.metroLabel3.Text = "Tarih:";
             // 
@@ -296,7 +296,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(26, 114);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(79, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(78, 19);
             this.metroLabel2.TabIndex = 33;
             this.metroLabel2.Text = "Mail Başlığı:";
             // 
@@ -305,7 +305,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(26, 82);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(94, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(88, 19);
             this.metroLabel1.TabIndex = 32;
             this.metroLabel1.Text = "Özel Gün No:";
             // 
@@ -342,9 +342,9 @@
             // dateTimeTarih
             // 
             this.dateTimeTarih.Location = new System.Drawing.Point(120, 149);
-            this.dateTimeTarih.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dateTimeTarih.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateTimeTarih.Name = "dateTimeTarih";
-            this.dateTimeTarih.Size = new System.Drawing.Size(357, 30);
+            this.dateTimeTarih.Size = new System.Drawing.Size(357, 29);
             this.dateTimeTarih.TabIndex = 43;
             // 
             // txtMsj
@@ -434,7 +434,7 @@
             // 
             // frmTanimOzelGunler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(605, 625);
