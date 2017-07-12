@@ -46,9 +46,10 @@ namespace telekomAidatTakip
             btnYeni.Enabled = true;
 
         }
+        bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
-            if (btnYeni.Text == "Yeni") 
+            if (yeniKayit) 
             {
                 if (btnKaydet.Enabled) 
                 {
@@ -63,9 +64,11 @@ namespace telekomAidatTakip
                 txtUnvanNo.Text = string.Empty;
                 txtUnvanNo.Enabled = true;
                 txtUnvanAdi.Enabled = true;
-                btnYeni.Text = "Ekle";
+                //btnYeni.Text = "Ekle";
+                yeniKayit = false;
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
+                toolTip1.SetToolTip(btnYeni, "Ekle");
             }
             else 
             {
@@ -76,12 +79,14 @@ namespace telekomAidatTakip
 
                     txtUnvanNo.Enabled = false;
                     txtUnvanAdi.Enabled = false;
-                    btnYeni.Text = "Yeni";
+                    //btnYeni.Text = "Yeni";
+                    yeniKayit = true;
                     UnvanListesiniDoldur();
                     
                     txtUnvanAdi.Text = string.Empty;
                     txtUnvanNo.Text = string.Empty;
-                    btnYeni.Focus(); 
+                    btnYeni.Focus();
+                    toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
                 }
                 else
                 {
@@ -98,7 +103,7 @@ namespace telekomAidatTakip
             if (txtUnvanNo.Text != string.Empty && txtUnvanAdi.Text != string.Empty) 
             {
                 Database db = new Database();
-                db.Sorgu("update unvan set unvanAdİ=@0 where unvanNo=@1", txtUnvanAdi.Text, txtUnvanNo.Text);
+                db.Sorgu("update unvan set unvanAdi=@0 where unvanNo=@1", txtUnvanAdi.Text, txtUnvanNo.Text);
 
                 txtUnvanAdi.Text = string.Empty;
                 txtUnvanNo.Text = string.Empty;
@@ -114,7 +119,7 @@ namespace telekomAidatTakip
         {
             if (btnSil.Enabled)
             {
-                DialogResult dialogResult = MessageBox.Show("Seçili ünvanı silmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
+                DialogResult dialogResult = MessageBox.Show("Seçili ünvanı silmek istiyor musunuz?", "", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     if (txtUnvanNo.Text != string.Empty)
@@ -123,9 +128,11 @@ namespace telekomAidatTakip
                         db.Sorgu("delete from unvan where unvanNo=@0", txtUnvanNo.Text);
                         UnvanListesiniDoldur();
                     }
-                }
                     
-                else if (dialogResult == DialogResult.Cancel)
+
+                }
+
+                else if (dialogResult == DialogResult.No)
                     return;
             }
             }
@@ -138,7 +145,7 @@ namespace telekomAidatTakip
                 DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    if (btnYeni.Text == "Ekle")
+                    if (yeniKayit)
                         btnYeni_Click(this, null); 
                     else
                         btnKaydet_Click(this, null); 
@@ -166,16 +173,22 @@ namespace telekomAidatTakip
                 btnSil.Enabled = true;
                 txtUnvanAdi.Enabled = true;
                 txtUnvanNo.Enabled = true;
-                btnYeni.Text = "Yeni";
+               // btnYeni.Text = "Yeni";
+                yeniKayit = true;
+                toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
             }
         }
+
+        
+
+
 
         /*private void frmTanimUnvan_Resize(object sender, EventArgs e)
         {
             groupBox2.Width = this.Width - 59;
             groupBox2.Height = this.Height - 256;
         }*/
-        
+
     }
             }
     
