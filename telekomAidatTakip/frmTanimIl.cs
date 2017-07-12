@@ -77,6 +77,7 @@ namespace telekomAidatTakip
               //  btnYeni.Text = "Ekle";
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
+                toolTip1.SetToolTip(btnYeni, "Ekle");
             }
             else //butonun ismi Yeni değilse demekki yeni kayıt sayfasındayız
             {
