@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTanimIl));
             this.txtAdi = new MetroFramework.Controls.MetroTextBox();
             this.txtPlakaKodu = new MetroFramework.Controls.MetroTextBox();
-            this.btnSil = new MetroFramework.Controls.MetroTile();
-            this.btnKaydet = new MetroFramework.Controls.MetroTile();
-            this.btnYeni = new MetroFramework.Controls.MetroTile();
             this.Label1 = new MetroFramework.Controls.MetroLabel();
             this.Label2 = new MetroFramework.Controls.MetroLabel();
             this.listvil = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnYeni = new System.Windows.Forms.Button();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,42 +106,6 @@
             this.txtPlakaKodu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlakaKodu_KeyPress);
             this.txtPlakaKodu.Leave += new System.EventHandler(this.txtPlakaKodu_Leave);
             // 
-            // btnSil
-            // 
-            this.btnSil.ActiveControl = null;
-            this.btnSil.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            resources.ApplyResources(this.btnSil, "btnSil");
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Style = MetroFramework.MetroColorStyle.Lime;
-            this.btnSil.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.btnSil.UseSelectable = true;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnKaydet
-            // 
-            this.btnKaydet.ActiveControl = null;
-            this.btnKaydet.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            resources.ApplyResources(this.btnKaydet, "btnKaydet");
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Style = MetroFramework.MetroColorStyle.Lime;
-            this.btnKaydet.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.btnKaydet.UseSelectable = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
-            // btnYeni
-            // 
-            this.btnYeni.ActiveControl = null;
-            this.btnYeni.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnYeni.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            resources.ApplyResources(this.btnYeni, "btnYeni");
-            this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Style = MetroFramework.MetroColorStyle.Lime;
-            this.btnYeni.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnYeni.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.btnYeni.UseSelectable = true;
-            this.btnYeni.UseTileImage = true;
-            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
-            // 
             // Label1
             // 
             resources.ApplyResources(this.Label1, "Label1");
@@ -187,6 +153,39 @@
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 
+            // btnYeni
+            // 
+            this.btnYeni.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btnYeni, "btnYeni");
+            this.btnYeni.FlatAppearance.BorderSize = 0;
+            this.btnYeni.Image = global::telekomAidatTakip.Properties.Resources.if_ic_control_point_48px_352288;
+            this.btnYeni.Name = "btnYeni";
+            this.toolTip1.SetToolTip(this.btnYeni, resources.GetString("btnYeni.ToolTip"));
+            this.btnYeni.UseVisualStyleBackColor = false;
+            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
+            // 
+            // btnKaydet
+            // 
+            this.btnKaydet.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btnKaydet, "btnKaydet");
+            this.btnKaydet.FlatAppearance.BorderSize = 0;
+            this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet.Name = "btnKaydet";
+            this.toolTip1.SetToolTip(this.btnKaydet, resources.GetString("btnKaydet.ToolTip"));
+            this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // btnSil
+            // 
+            this.btnSil.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btnSil, "btnSil");
+            this.btnSil.FlatAppearance.BorderSize = 0;
+            this.btnSil.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
+            this.btnSil.Name = "btnSil";
+            this.toolTip1.SetToolTip(this.btnSil, resources.GetString("btnSil.ToolTip"));
+            this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
             // frmTanimIl
             // 
             resources.ApplyResources(this, "$this");
@@ -195,18 +194,17 @@
             this.BackLocation = MetroFramework.Forms.BackLocation.BottomLeft;
             this.BackMaxSize = 15;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
+            this.Controls.Add(this.btnYeni);
+            this.Controls.Add(this.btnKaydet);
+            this.Controls.Add(this.btnSil);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.listvil);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.txtAdi);
             this.Controls.Add(this.txtPlakaKodu);
-            this.Controls.Add(this.btnSil);
-            this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.btnYeni);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Name = "frmTanimIl";
-            this.Style = MetroFramework.MetroColorStyle.Lime;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimIl_FormClosing);
             this.Load += new System.EventHandler(this.frmTanimil_Load);
             this.Resize += new System.EventHandler(this.frmTanimIl_Resize);
@@ -220,14 +218,15 @@
 
         private MetroFramework.Controls.MetroTextBox txtAdi;
         private MetroFramework.Controls.MetroTextBox txtPlakaKodu;
-        private MetroFramework.Controls.MetroTile btnSil;
-        private MetroFramework.Controls.MetroTile btnKaydet;
-        private MetroFramework.Controls.MetroTile btnYeni;
         private MetroFramework.Controls.MetroLabel Label1;
         private MetroFramework.Controls.MetroLabel Label2;
         private System.Windows.Forms.ListView listvil;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnYeni;
+        private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
