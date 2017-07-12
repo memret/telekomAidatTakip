@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTanimUyelikIptal));
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabelKod = new MetroFramework.Controls.MetroLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,26 +49,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(46, 123);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 84);
-            this.label5.TabIndex = 13;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 84);
-            this.label4.TabIndex = 12;
-            // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(39, 133);
+            this.metroLabel1.Location = new System.Drawing.Point(34, 119);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(69, 19);
             this.metroLabel1.TabIndex = 27;
@@ -79,7 +61,7 @@
             // metroLabelKod
             // 
             this.metroLabelKod.AutoSize = true;
-            this.metroLabelKod.Location = new System.Drawing.Point(69, 88);
+            this.metroLabelKod.Location = new System.Drawing.Point(34, 84);
             this.metroLabelKod.Name = "metroLabelKod";
             this.metroLabelKod.Size = new System.Drawing.Size(39, 19);
             this.metroLabelKod.TabIndex = 26;
@@ -115,11 +97,12 @@
             this.listvSilinme.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderKod,
             this.columnHeaderAciklama});
+            this.listvSilinme.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listvSilinme.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listvSilinme.FullRowSelect = true;
-            this.listvSilinme.Location = new System.Drawing.Point(12, 231);
+            this.listvSilinme.Location = new System.Drawing.Point(20, 197);
             this.listvSilinme.Name = "listvSilinme";
-            this.listvSilinme.Size = new System.Drawing.Size(412, 167);
+            this.listvSilinme.Size = new System.Drawing.Size(407, 186);
             this.listvSilinme.TabIndex = 29;
             this.listvSilinme.UseCompatibleStateImageBehavior = false;
             this.listvSilinme.View = System.Windows.Forms.View.Details;
@@ -150,7 +133,7 @@
             this.txtKod.CustomButton.UseSelectable = true;
             this.txtKod.CustomButton.Visible = false;
             this.txtKod.Lines = new string[0];
-            this.txtKod.Location = new System.Drawing.Point(116, 91);
+            this.txtKod.Location = new System.Drawing.Point(121, 79);
             this.txtKod.MaxLength = 32767;
             this.txtKod.Name = "txtKod";
             this.txtKod.PasswordChar = '\0';
@@ -171,7 +154,7 @@
             // 
             // 
             this.txtAciklama.CustomButton.Image = null;
-            this.txtAciklama.CustomButton.Location = new System.Drawing.Point(197, 1);
+            this.txtAciklama.CustomButton.Location = new System.Drawing.Point(233, 1);
             this.txtAciklama.CustomButton.Name = "";
             this.txtAciklama.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtAciklama.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -180,7 +163,7 @@
             this.txtAciklama.CustomButton.UseSelectable = true;
             this.txtAciklama.CustomButton.Visible = false;
             this.txtAciklama.Lines = new string[0];
-            this.txtAciklama.Location = new System.Drawing.Point(116, 133);
+            this.txtAciklama.Location = new System.Drawing.Point(121, 114);
             this.txtAciklama.MaxLength = 32767;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.PasswordChar = '\0';
@@ -189,7 +172,7 @@
             this.txtAciklama.SelectionLength = 0;
             this.txtAciklama.SelectionStart = 0;
             this.txtAciklama.ShortcutsEnabled = true;
-            this.txtAciklama.Size = new System.Drawing.Size(225, 29);
+            this.txtAciklama.Size = new System.Drawing.Size(261, 29);
             this.txtAciklama.TabIndex = 32;
             this.txtAciklama.UseSelectable = true;
             this.txtAciklama.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -213,7 +196,7 @@
             this.btnYeni.FlatAppearance.BorderSize = 0;
             this.btnYeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYeni.Image = global::telekomAidatTakip.Properties.Resources.if_ic_control_point_48px_352288;
-            this.btnYeni.Location = new System.Drawing.Point(238, 166);
+            this.btnYeni.Location = new System.Drawing.Point(238, 146);
             this.btnYeni.Margin = new System.Windows.Forms.Padding(0);
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(48, 48);
@@ -230,7 +213,7 @@
             this.btnKaydet.FlatAppearance.BorderSize = 0;
             this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
-            this.btnKaydet.Location = new System.Drawing.Point(286, 166);
+            this.btnKaydet.Location = new System.Drawing.Point(286, 146);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(48, 48);
@@ -247,7 +230,7 @@
             this.btnSil.FlatAppearance.BorderSize = 0;
             this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSil.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
-            this.btnSil.Location = new System.Drawing.Point(334, 166);
+            this.btnSil.Location = new System.Drawing.Point(334, 146);
             this.btnSil.Margin = new System.Windows.Forms.Padding(0);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(48, 48);
@@ -271,8 +254,6 @@
             this.Controls.Add(this.metroLabelKod);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
             this.Font = new System.Drawing.Font("Cambria Math", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.MaximizeBox = false;
@@ -289,8 +270,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabelKod;
         private System.Windows.Forms.Label label1;

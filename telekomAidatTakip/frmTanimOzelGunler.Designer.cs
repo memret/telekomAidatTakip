@@ -230,7 +230,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(26, 184);
+            this.metroLabel4.Location = new System.Drawing.Point(26, 189);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(46, 19);
             this.metroLabel4.TabIndex = 35;
@@ -239,7 +239,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(26, 149);
+            this.metroLabel3.Location = new System.Drawing.Point(26, 154);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(39, 19);
             this.metroLabel3.TabIndex = 34;
@@ -248,7 +248,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(26, 114);
+            this.metroLabel2.Location = new System.Drawing.Point(26, 119);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(78, 19);
             this.metroLabel2.TabIndex = 33;
@@ -257,7 +257,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(26, 82);
+            this.metroLabel1.Location = new System.Drawing.Point(26, 84);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(88, 19);
             this.metroLabel1.TabIndex = 32;

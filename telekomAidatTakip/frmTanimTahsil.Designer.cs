@@ -116,7 +116,7 @@
             // tahsilAd
             // 
             this.tahsilAd.AutoSize = true;
-            this.tahsilAd.Location = new System.Drawing.Point(65, 115);
+            this.tahsilAd.Location = new System.Drawing.Point(65, 120);
             this.tahsilAd.Name = "tahsilAd";
             this.tahsilAd.Size = new System.Drawing.Size(63, 19);
             this.tahsilAd.TabIndex = 9;
@@ -125,7 +125,7 @@
             // tahsilNo
             // 
             this.tahsilNo.AutoSize = true;
-            this.tahsilNo.Location = new System.Drawing.Point(65, 80);
+            this.tahsilNo.Location = new System.Drawing.Point(65, 85);
             this.tahsilNo.Name = "tahsilNo";
             this.tahsilNo.Size = new System.Drawing.Size(69, 19);
             this.tahsilNo.TabIndex = 8;
