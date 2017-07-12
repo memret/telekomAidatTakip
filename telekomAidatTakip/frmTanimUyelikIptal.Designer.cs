@@ -277,6 +277,7 @@
             this.Font = new System.Drawing.Font("Cambria Math", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmTanimUyelikIptal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.Text = "       Silinme Nedeni Tanımlama";

@@ -237,6 +237,7 @@
             this.Controls.Add(this.checkIl);
             this.Controls.Add(this.cboxBirim);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmRaporAidat";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Text = "       Aidat Raporları";

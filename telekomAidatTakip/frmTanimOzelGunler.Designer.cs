@@ -469,6 +469,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(605, 544);
             this.Name = "frmTanimOzelGunler";
             this.Text = "       ÖZEL GÜN TANIMLAMA";

@@ -39,154 +39,198 @@ namespace telekomAidatTakip
         frmRaporAidat raporAidat;
 
         frmAidatMiktar aidatMiktar;
-        frmAidatToplu aidatToplu ;
+        frmAidatToplu aidatToplu;
 
         frmUye uye;
 
         frmYedekleme yedekleme;
-        private void ilTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
+        Form acikForm;
+
+        public bool tekPencere()
         {
-            if (tanimil == null || tanimil.IsDisposed)
+            if (acikForm == null || acikForm.IsDisposed)
             {
-                tanimil = new frmTanimIl();
-                tanimil.MdiParent = this;
-                tanimil.Show();
+                return true;
             }
             else
             {
-                tanimil.MdiParent = this;
-                tanimil.Show();
-                tanimil.Focus();
+                MessageBox.Show("Aynı anda tek bir pencere açabilirsiniz.\nİlk önce açık olan pencereyi kapatın\n" + acikForm.Text);
+                return false;
             }
+
+        }
+        private void ilTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tekPencere())
+            {
+                if (tanimil == null || tanimil.IsDisposed)
+                {
+                    tanimil = new frmTanimIl();
+                    tanimil.MdiParent = this;
+                    tanimil.Show();
+                }
+                else
+                {
+                    tanimil.MdiParent = this;
+                    tanimil.Show();
+                    tanimil.Focus();
+                }
+            }
+
         }
 
         private void birimTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tanimBirim == null || tanimBirim.IsDisposed)
+            if (tekPencere())
             {
-                tanimBirim = new frmTanimBirim();
-                tanimBirim.MdiParent = this;
-                tanimBirim.Show();
-            }
-            else
-            {
-                tanimBirim.MdiParent = this;
-                tanimBirim.Show();
-                tanimBirim.Focus();
+                if (tanimBirim == null || tanimBirim.IsDisposed)
+                {
+                    tanimBirim = new frmTanimBirim();
+                    tanimBirim.MdiParent = this;
+                    acikForm = tanimBirim;
+                    tanimBirim.Show();
+                }
+                else
+                {
+                    tanimBirim.MdiParent = this;
+                    tanimBirim.Show();
+                    tanimBirim.Focus();
+                }
             }
         }
-
         private void müdürlükTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tanimMudurluk == null || tanimMudurluk.IsDisposed)
+            if (tekPencere())
             {
-                tanimMudurluk = new frmTanimMudurluk();
-                tanimMudurluk.MdiParent = this;
-                tanimMudurluk.Show();
-            }
-            else
-            {
-                tanimMudurluk.MdiParent = this;
-                tanimMudurluk.Show();
-                tanimMudurluk.Focus();
+                if (tanimMudurluk == null || tanimMudurluk.IsDisposed)
+                {
+                    tanimMudurluk = new frmTanimMudurluk();
+                    tanimMudurluk.MdiParent = this;
+                    acikForm = tanimMudurluk;
+                    tanimMudurluk.Show();
+                }
+                else
+                {
+                    tanimMudurluk.MdiParent = this;
+                    tanimMudurluk.Show();
+                    tanimMudurluk.Focus();
+                }
             }
         }
         private void üyeFormuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (uye == null || uye.IsDisposed)
+            if (tekPencere())
             {
-                uye = new frmUye();
-                uye.MdiParent = this;
-                uye.Show();
-            }
-            else
-            {
-                uye.MdiParent = this;
-                uye.Show();
-                uye.Focus();
+                if (uye == null || uye.IsDisposed)
+                {
+                    uye = new frmUye();
+                    uye.MdiParent = this;
+                    acikForm = uye;
+                    uye.Show();
+                }
+                else
+                {
+                    uye.MdiParent = this;
+                    uye.Show();
+                    uye.Focus();
+                }
             }
         }
-
         private void ünvanTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tanimUnvan == null || tanimUnvan.IsDisposed)
+            if (tekPencere())
             {
-                tanimUnvan = new frmTanimUnvan();
-                tanimUnvan.MdiParent = this;
-                tanimUnvan.Show();
-            }
-            else
-            {
-                tanimUnvan.MdiParent = this;
-                tanimUnvan.Show();
-                tanimUnvan.Focus();
+                if (tanimUnvan == null || tanimUnvan.IsDisposed)
+                {
+                    tanimUnvan = new frmTanimUnvan();
+                    tanimUnvan.MdiParent = this;
+                    acikForm = tanimUnvan;
+                    tanimUnvan.Show();
+                }
+                else
+                {
+                    tanimUnvan.MdiParent = this;
+                    tanimUnvan.Show();
+                    tanimUnvan.Focus();
+                }
             }
         }
-
         private void tahsilTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tanimTahsil == null || tanimTahsil.IsDisposed)
+            if (tekPencere())
             {
-                tanimTahsil = new frmTanimTahsil();
-                tanimTahsil.MdiParent = this;
-                tanimTahsil.Show();
-            }
-            else
-            {
-                tanimTahsil.MdiParent = this;
-                tanimTahsil.Show();
-                tanimTahsil.Focus();
+                if (tanimTahsil == null || tanimTahsil.IsDisposed)
+                {
+                    tanimTahsil = new frmTanimTahsil();
+                    tanimTahsil.MdiParent = this;
+                    acikForm = tanimTahsil;
+                    tanimTahsil.Show();
+                }
+                else
+                {
+                    tanimTahsil.MdiParent = this;
+                    tanimTahsil.Show();
+                    tanimTahsil.Focus();
+                }
             }
         }
-
         private void üyelikİptalNedeniToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tanimUyelikIptal == null || tanimUyelikIptal.IsDisposed)
+            if (tekPencere())
             {
-                tanimUyelikIptal = new frmTanimUyelikIptal();
-                tanimUyelikIptal.MdiParent = this;
-                tanimUyelikIptal.Show();
-            }
-            else
-            {
-                tanimUyelikIptal.MdiParent = this;
-                tanimUyelikIptal.Show();
-                tanimUyelikIptal.Focus();
+                if (tanimUyelikIptal == null || tanimUyelikIptal.IsDisposed)
+                {
+                    tanimUyelikIptal = new frmTanimUyelikIptal();
+                    tanimUyelikIptal.MdiParent = this;
+                    acikForm = tanimUyelikIptal;
+                    tanimUyelikIptal.Show();
+                }
+                else
+                {
+                    tanimUyelikIptal.MdiParent = this;
+                    tanimUyelikIptal.Show();
+                    tanimUyelikIptal.Focus();
+                }
             }
         }
-
         private void üyeRaporuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (raporUye == null || raporUye.IsDisposed)
+            if (tekPencere())
             {
-                raporUye = new frmRaporUye();
-                raporUye.MdiParent = this;
-                raporUye.Show();
-            }
-            else
-            {
-                raporUye.MdiParent = this;
-                raporUye.Show();
-                raporUye.Focus();
+                if (raporUye == null || raporUye.IsDisposed)
+                {
+                    raporUye = new frmRaporUye();
+                    raporUye.MdiParent = this;
+                    acikForm = raporUye;
+                    raporUye.Show();
+                }
+                else
+                {
+                    raporUye.MdiParent = this;
+                    raporUye.Show();
+                    raporUye.Focus();
+                }
             }
         }
-
         private void ilRaporuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (raporIl == null || raporIl.IsDisposed)
+            if (tekPencere())
             {
-                raporIl = new frmRaporIl();
-                raporIl.MdiParent = this;
-                raporIl.Show();
-            }
-            else
-            {
-                raporIl.MdiParent = this;
-                raporIl.Show();
-                raporIl.Focus();
+                if (raporIl == null || raporIl.IsDisposed)
+                {
+                    raporIl = new frmRaporIl();
+                    raporIl.MdiParent = this;
+                    acikForm = raporIl;
+                    raporIl.Show();
+                }
+                else
+                {
+                    raporIl.MdiParent = this;
+                    raporIl.Show();
+                    raporIl.Focus();
+                }
             }
         }
-
         private void aidatListesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -194,65 +238,80 @@ namespace telekomAidatTakip
 
         private void aidatMiktarıTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (aidatMiktar == null || aidatMiktar.IsDisposed)
+            if (tekPencere())
             {
-                aidatMiktar = new frmAidatMiktar();
-                aidatMiktar.MdiParent = this;
-                aidatMiktar.Show();
-            }
-            else
-            {
-                aidatMiktar.MdiParent = this;
-                aidatMiktar.Show();
-                aidatMiktar.Focus();
+                if (aidatMiktar == null || aidatMiktar.IsDisposed)
+                {
+                    aidatMiktar = new frmAidatMiktar();
+                    aidatMiktar.MdiParent = this;
+                    acikForm = aidatMiktar;
+                    aidatMiktar.Show();
+                }
+                else
+                {
+                    aidatMiktar.MdiParent = this;
+                    aidatMiktar.Show();
+                    aidatMiktar.Focus();
+                }
             }
         }
 
         private void topluAidatÖdemesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (aidatToplu == null || aidatToplu.IsDisposed)
+            if (tekPencere())
             {
-                aidatToplu = new frmAidatToplu();
-                aidatToplu.MdiParent = this;
-                aidatToplu.Show();
-            }
-            else
-            {
-                aidatToplu.MdiParent = this;
-                aidatToplu.Show();
-                aidatToplu.Focus();
+                if (aidatToplu == null || aidatToplu.IsDisposed)
+                {
+                    aidatToplu = new frmAidatToplu();
+                    aidatToplu.MdiParent = this;
+                    acikForm = aidatToplu;
+                    aidatToplu.Show();
+                }
+                else
+                {
+                    aidatToplu.MdiParent = this;
+                    aidatToplu.Show();
+                    aidatToplu.Focus();
+                }
             }
         }
 
         private void yedeklemeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (yedekleme == null || yedekleme.IsDisposed)
+            if (tekPencere())
             {
-                yedekleme = new frmYedekleme();
-                yedekleme.MdiParent = this;
-                yedekleme.Show();
-            }
-            else
-            {
-                yedekleme.MdiParent = this;
-                yedekleme.Show();
-                yedekleme.Focus();
+                if (yedekleme == null || yedekleme.IsDisposed)
+                {
+                    yedekleme = new frmYedekleme();
+                    yedekleme.MdiParent = this;
+                    acikForm = yedekleme;
+                    yedekleme.Show();
+                }
+                else
+                {
+                    yedekleme.MdiParent = this;
+                    yedekleme.Show();
+                    yedekleme.Focus();
+                }
             }
         }
-
         private void aidatRaporuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (raporAidat == null || raporAidat.IsDisposed)
+            if (tekPencere())
             {
-                raporAidat = new frmRaporAidat();
-                raporAidat.MdiParent = this;
-                raporAidat.Show();
-            }
-            else
-            {
-                raporAidat.MdiParent = this;
-                raporAidat.Show();
-                raporAidat.Focus();
+                if (raporAidat == null || raporAidat.IsDisposed)
+                {
+                    raporAidat = new frmRaporAidat();
+                    raporAidat.MdiParent = this;
+                    acikForm = raporAidat;
+                    raporAidat.Show();
+                }
+                else
+                {
+                    raporAidat.MdiParent = this;
+                    raporAidat.Show();
+                    raporAidat.Focus();
+                }
             }
         }
 
@@ -262,19 +321,22 @@ namespace telekomAidatTakip
 
         private void özelGünlerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tanimOzelGunler == null || tanimOzelGunler.IsDisposed)
+            if (tekPencere())
             {
-                tanimOzelGunler = new frmTanimOzelGunler();
-                tanimOzelGunler.MdiParent = this;
-                tanimOzelGunler.Show();
+                if (tanimOzelGunler == null || tanimOzelGunler.IsDisposed)
+                {
+                    tanimOzelGunler = new frmTanimOzelGunler();
+                    tanimOzelGunler.MdiParent = this;
+                    acikForm = tanimOzelGunler;
+                    tanimOzelGunler.Show();
+                }
+                else
+                {
+                    tanimOzelGunler.MdiParent = this;
+                    tanimOzelGunler.Show();
+                    tanimOzelGunler.Focus();
+                }
             }
-            else
-            {
-                tanimOzelGunler.MdiParent = this;
-                tanimOzelGunler.Show();
-                tanimOzelGunler.Focus();
-            }
-            
         }
     }
 }

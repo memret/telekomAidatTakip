@@ -243,6 +243,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAidatToplu";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "       TOPLU AİDAT GİRİŞİ";

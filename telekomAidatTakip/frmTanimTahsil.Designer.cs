@@ -240,6 +240,7 @@
             this.Controls.Add(this.tahsilAd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmTanimTahsil";
             this.Text = "       Tahsil Tanımlama";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimTahsil_FormClosing);

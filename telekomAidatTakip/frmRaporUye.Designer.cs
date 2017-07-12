@@ -367,6 +367,7 @@
             this.Controls.Add(this.cboxIl);
             this.Controls.Add(this.checkIl);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmRaporUye";
             this.Text = "       Üye Raporu";
             this.Load += new System.EventHandler(this.frmRaporUye_Load);

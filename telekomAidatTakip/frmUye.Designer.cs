@@ -1581,6 +1581,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.metroTabControl1);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmUye";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Text = "       Üye Düzenleme";
