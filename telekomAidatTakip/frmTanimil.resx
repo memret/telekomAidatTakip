@@ -166,7 +166,7 @@
     <value>NoControl</value>
   </data>
   <data name="resource.Location1" type="System.Drawing.Point, System.Drawing">
-    <value>142, 1</value>
+    <value>56, 1</value>
   </data>
   <data name="resource.Size1" type="System.Drawing.Size, System.Drawing">
     <value>27, 27</value>
@@ -181,7 +181,7 @@
     <value>133, 82</value>
   </data>
   <data name="txtPlakaKodu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 29</value>
+    <value>84, 29</value>
   </data>
   <data name="txtPlakaKodu.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -548,9 +548,6 @@
   <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="btnYeni.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -572,6 +569,9 @@
   <data name="btnYeni.TabIndex" type="System.Int32, mscorlib">
     <value>49</value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="btnYeni.ToolTip" xml:space="preserve">
     <value>Yeni Kayıt</value>
   </data>
@@ -659,9 +659,6 @@
   <data name="&gt;&gt;btnSil.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

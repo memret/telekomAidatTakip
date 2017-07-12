@@ -241,5 +241,10 @@ namespace telekomAidatTakip
         {
             listvSilinme.Size = new Size(listvSilinme.Size.Width, this.Size.Height - 217);
         }
+
+        private void txtKod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) { e.Handled = true; }
+        }
     }
 }

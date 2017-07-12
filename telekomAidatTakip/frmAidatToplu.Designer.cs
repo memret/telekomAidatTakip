@@ -193,6 +193,7 @@
             this.txtAidatMiktari.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAidatMiktari.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtAidatMiktari.TextChanged += new System.EventHandler(this.txtAidatMiktari_TextChanged);
+            this.txtAidatMiktari.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAidatMiktari_KeyPress);
             // 
             // pictureBox1
             // 

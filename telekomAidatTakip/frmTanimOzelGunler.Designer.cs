@@ -111,7 +111,7 @@
             // 
             // 
             this.txtGunNo.CustomButton.Image = null;
-            this.txtGunNo.CustomButton.Location = new System.Drawing.Point(329, 1);
+            this.txtGunNo.CustomButton.Location = new System.Drawing.Point(79, 1);
             this.txtGunNo.CustomButton.Name = "";
             this.txtGunNo.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtGunNo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -129,11 +129,12 @@
             this.txtGunNo.SelectionLength = 0;
             this.txtGunNo.SelectionStart = 0;
             this.txtGunNo.ShortcutsEnabled = true;
-            this.txtGunNo.Size = new System.Drawing.Size(357, 29);
+            this.txtGunNo.Size = new System.Drawing.Size(107, 29);
             this.txtGunNo.TabIndex = 5;
             this.txtGunNo.UseSelectable = true;
             this.txtGunNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGunNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtGunNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGunNo_KeyPress);
             // 
             // btnBirim
             // 

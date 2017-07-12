@@ -81,6 +81,7 @@
             this.txtMdrKod.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMdrKod.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtMdrKod.TextChanged += new System.EventHandler(this.txtMdrKod_TextChanged);
+            this.txtMdrKod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMdrKod_KeyPress);
             // 
             // comboBox_il
             // 

@@ -252,6 +252,11 @@ namespace telekomAidatTakip
             listUnvan.Size = new Size(listUnvan.Size.Width, this.Size.Height - 213);
         }
 
+        private void txtUnvanNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) { e.Handled = true; }
+        }
+
 
 
 

@@ -76,6 +76,7 @@
             this.txtUnvanNo.UseSelectable = true;
             this.txtUnvanNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtUnvanNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUnvanNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnvanNo_KeyPress);
             // 
             // txtUnvanAdi
             // 

@@ -201,6 +201,11 @@ namespace telekomAidatTakip
             else
                 MessageBox.Show("Lütfen boş alanları doldururuz!");
         }
+
+        private void txtAidatMiktari_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) { e.Handled = true; }
+        }
     }
 }
 
