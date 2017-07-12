@@ -77,7 +77,7 @@ namespace telekomAidatTakip
 
             }
 
-            e.Graphics.DrawLine(myPen, 120, y, 750, y);
+            //e.Graphics.DrawLine(myPen, 120, y, 750, y);
         }
         public void OnPrintDocument_2(object sender, PrintPageEventArgs e)
         {
@@ -127,7 +127,7 @@ namespace telekomAidatTakip
 
             }
 
-            e.Graphics.DrawLine(myPen, 120, y, 750, y);
+            //e.Graphics.DrawLine(myPen, 120, y, 750, y);
         }
     }
 

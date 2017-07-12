@@ -117,6 +117,8 @@ namespace telekomAidatTakip
                     Database db = new Database();
                     db.Sorgu("delete from Tahsil where tahsilNo=@0", txtTahsilKodu.Text);
                     TahsilListesiDoldur();
+                    txtTahsilAd.Text = string.Empty;
+                    txtTahsilKodu.Text = string.Empty;
                 }
             }
             else
@@ -151,13 +153,13 @@ namespace telekomAidatTakip
 
         }
 
-       
 
+        bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
             // butonun ismine göre yeni kaydın veritabanına ekleneceğini mi yoksa ekleme sayfasına mı geçileceğini mi tespit ediyoruz
 
-            if (btnYeni.Text == "Yeni") // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
+            if (yeniKayit) // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
             {
                 if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
                 {
@@ -167,12 +169,12 @@ namespace telekomAidatTakip
                     else if (dialogResult == DialogResult.Cancel)
                         return;
                 }
-
+                yeniKayit = false;
                 txtTahsilKodu.Text = string.Empty;
                 txtTahsilAd.Text = string.Empty;
                 txtTahsilKodu.Enabled = true;
                 txtTahsilAd.Enabled = true;
-                btnYeni.Text = "Ekle";
+                toolTip.SetToolTip(btnYeni, "Ekle");
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
             }
@@ -185,11 +187,12 @@ namespace telekomAidatTakip
 
                     txtTahsilAd.Enabled = false;
                     txtTahsilKodu.Enabled = false;
-                    btnYeni.Text = "Yeni";
                     TahsilListesiDoldur();
                     txtTahsilAd.Text = string.Empty;
                     txtTahsilKodu.Text = string.Empty;
                     btnYeni.Focus(); //görsel amaçlı
+                    yeniKayit = false;
+                    toolTip.SetToolTip(btnYeni, "Yeni Kayıt");
                 }
                 else
                 {
@@ -202,7 +205,7 @@ namespace telekomAidatTakip
         private void frmTanimTahsil_Resize(object sender, EventArgs e)
         {
             listvTanimTahsil.Size = new Size(listvTanimTahsil.Size.Width, this.Size.Height - 258);
-            pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y);
+           // pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y);
         }
 
         private void listvTanimTahsil_DoubleClick_1(object sender, EventArgs e)
@@ -218,7 +221,8 @@ namespace telekomAidatTakip
             btnSil.Enabled = true;
             txtTahsilAd.Enabled = true;
             txtTahsilKodu.Enabled = true;
-            btnYeni.Text = "Yeni";
+            yeniKayit = true;
+            toolTip.SetToolTip(btnYeni, "Yeni Kayıt");
         }
 
         private void listvTanimTahsil_DoubleClick(object sender, EventArgs e)

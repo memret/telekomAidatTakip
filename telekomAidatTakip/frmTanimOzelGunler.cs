@@ -57,10 +57,10 @@ namespace telekomAidatTakip
             btnKaydet.Enabled = false;
             btnYeni.Enabled = true;
         }
-
+        bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
-            if (btnYeni.Text == "Yeni") // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
+            if (yeniKayit) // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
             {
                 if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
                 {
@@ -79,14 +79,15 @@ namespace telekomAidatTakip
                 dateTimeTarih.Enabled = true;
                 txtMsj.Enabled = true;
                 txtYorum.Enabled = true;
-
+                yeniKayit = false;
                 btnAdi.Enabled = true;
                 btnSicilNo.Enabled = true;
                 btnSehir.Enabled = true;
                 btnMudurluk.Enabled = true;
                 btnBirim.Enabled = true;
-                
-                btnYeni.Text = "Ekle";
+                toolTip1.SetToolTip(btnYeni, "Ekle");
+
+                //  btnYeni.Text = "Ekle";
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
             }
@@ -105,7 +106,7 @@ namespace telekomAidatTakip
                     txtMsj.Enabled = false;
                     txtYorum.Enabled = false;
                     dateTimeTarih.Enabled = false;
-                    btnYeni.Text = "Yeni";
+                   // btnYeni.Text = "Yeni";
                     tabloDoldur();
                     sayfayıtemizle();
                     MessageBox.Show("Yeni özel gün kaydedildi.", "Özel Gün Tanımlama", MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -195,7 +196,7 @@ namespace telekomAidatTakip
             btnMudurluk.Enabled = true;
             btnBirim.Enabled = true;
 
-            btnYeni.Text = "Yeni";
+           // btnYeni.Text = "Yeni";
 
         }
 

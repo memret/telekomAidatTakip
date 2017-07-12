@@ -98,12 +98,12 @@ namespace telekomAidatTakip
         {
 
         }
-
+        bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
             // butonun ismine göre yeni kaydın veritabanına ekleneceğini mi yoksa ekleme sayfasına mı geçileceğini mi tespit ediyoruz
 
-            if (btnYeni.Text == "Yeni") // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
+            if (yeniKayit) 
             {
                 if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
                 {
@@ -113,18 +113,20 @@ namespace telekomAidatTakip
                     else if (dialogResult == DialogResult.Cancel)
                         return;
                 }
-
+                yeniKayit = false;
                 txtMdrKod.Text = string.Empty;
                 txtMdrAd.Text = string.Empty;
+                comboBox_il.SelectedIndex = -1;
                 txtMdrKod.Enabled = true;
                 txtMdrAd.Enabled = true;
                 txtMdrAd.WaterMark = "Müdürlük adı giriniz.";
                 txtMdrKod.WaterMark = "Müdürlük no giriniz.";
                 comboBox_il.PromptText = "İl seçiniz.";
                 comboBox_il.Enabled = true;
-                btnYeni.Text = "Ekle";
+                //btnYeni.Text =b "Ekle";
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
+                toolTip1.SetToolTip(btnYeni, "Ekle");
             }
             else //butonun ismi Yeni değilse demekki yeni kayıt sayfasındayız
             {
@@ -137,10 +139,13 @@ namespace telekomAidatTakip
 
                     txtMdrKod.Enabled = false;
                     txtMdrAd.Enabled = false;
-                    btnYeni.Text = "Yeni";
+                    //btnYeni.Text = "Yeni";
                     kayitliMdrDoldur();
                     txtMdrAd.Text = string.Empty;
                     txtMdrKod.Text = string.Empty;
+                    comboBox_il.SelectedIndex = -1;
+                    yeniKayit = true;
+                    toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
                     btnYeni.Focus(); //görsel amaçlı
                 }
                 else
@@ -167,6 +172,7 @@ namespace telekomAidatTakip
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
                 listvMdr.Items.Clear();
+                comboBox_il.SelectedIndex = -1;
                 kayitliMdrDoldur();
             }
         }
@@ -195,9 +201,12 @@ namespace telekomAidatTakip
                 {
                     countAidat = data3["count"].ToString();
                 }
-
-                DialogResult dialogResult = MessageBox.Show("Seçili müdürlük ve altında kayıtlı birimler silinecek.\nSilinecek birim sayısı: "+countBirim+"\nSilinecek kişi sayısı: "+countKisi+ "\nSilinecek aidat kaydı: "+countAidat+" \nEmin misiniz?", "Müdürlük Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+                DialogResult dialogResult;
+                if (countAidat != "0" && countBirim!="0" && countKisi != "0")
+                    dialogResult = MessageBox.Show("Seçili müdürlük ve altında kayıtlı birimler silinecek.\nSilinecek birim sayısı: "+countBirim+"\nSilinecek kişi sayısı: "+countKisi+ "\nSilinecek aidat kaydı: "+countAidat+" \nEmin misiniz?", "Müdürlük Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                else
+                    dialogResult = MessageBox.Show("Seçili müdürlük ve altında kayıtlı birimler silinecek. Emin misiniz?", "Müdürlük Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                
                 if (dialogResult == DialogResult.Yes)
                 {
                     if (txtMdrKod.Text != string.Empty)
@@ -207,7 +216,10 @@ namespace telekomAidatTakip
                         db.Sorgu("DELETE FROM Mudurluk Where mudurlukNo = @0", txtMdrKod.Text);
                         
                         listvMdr.Items.Clear();
+                        txtMdrAd.Text = string.Empty;
+                        txtMdrKod.Text = string.Empty;
                         kayitliMdrDoldur();
+                        comboBox_il.SelectedIndex = -1;
                         MessageBox.Show("Müdürlük silindi!", "Müdürlük Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 }
@@ -241,7 +253,7 @@ namespace telekomAidatTakip
              txtMdrAd.Enabled = true;
              txtMdrKod.Enabled = false;
              comboBox_il.Enabled = true;
-             btnYeni.Text = "Yeni";
+             //btnYeni.Text = "Yeni";
              
         }
 

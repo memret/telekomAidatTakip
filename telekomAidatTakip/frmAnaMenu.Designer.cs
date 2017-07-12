@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAnaMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.üyeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.üyeFormuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,9 @@
             this.topluAidatÖdemesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otomasyonİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yedeklemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -214,19 +217,32 @@
             this.yedeklemeToolStripMenuItem.Text = "Yedekleme";
             this.yedeklemeToolStripMenuItem.Click += new System.EventHandler(this.yedeklemeToolStripMenuItem_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmAnaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1317, 655);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Name = "frmAnaMenu";
-            this.Text = "Türk Telekom Teknisyen Derneği Otomasyonu";
+            this.Text = "       Türk Telekom Teknisyen Derneği Otomasyonu";
             this.TransparencyKey = System.Drawing.Color.Empty;
             this.Load += new System.EventHandler(this.frmAnaMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,6 +269,7 @@
         private System.Windows.Forms.ToolStripMenuItem yedeklemeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aidatRaporuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem özelGünlerToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
