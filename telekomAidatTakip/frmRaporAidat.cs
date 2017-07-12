@@ -21,117 +21,137 @@ namespace telekomAidatTakip
 
         private void frmRaporAidat_Load(object sender, EventArgs e)
         {
-            PRG.DoldurIl(ref cboxil);
-            cboxil.SelectedIndex = -1;
-            cboxMudurluk.SelectedIndex = -1;
-            cboxBirim.SelectedIndex = -1;
-            cboxMudurluk.Enabled = false;
-            cboxBirim.Enabled = false;
-            cboxil.Enabled = false;
-            checkBirim.Enabled = false;
-            checkMudurluk.Enabled = false;
+            try
+            {
+
+                PRG.DoldurIl(ref cboxil);
+                cboxil.SelectedIndex = -1;
+                cboxMudurluk.SelectedIndex = -1;
+                cboxBirim.SelectedIndex = -1;
+                cboxMudurluk.Enabled = false;
+                cboxBirim.Enabled = false;
+                cboxil.Enabled = false;
+                checkBirim.Enabled = false;
+                checkMudurluk.Enabled = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
         }
 
 
 
-        
+
 
 
         private void btnListele_Click(object sender, EventArgs e)
         {
-            //tarih ve ödenmeyenleri listele kısımları kullanılmıyor şimdilik
-            Database db = new Database();
-            string query = "select u.sicilNo, u.adSoyad, (select aidat from AidatMiktar where birimno = u.birimNo) 'Miktar', alog.toplam 'toplammiktar', i.ilAdi, m.mudurlukAdi, b.birimAdi from uyeler u join il i on i.ilNo = u.ilNo join Mudurluk m on m.mudurlukNo = u.mudurlukNo join birim b on b.birimNo = u.birimNo join (select SUM(miktar) toplam, sicilno from aidatlog group by sicilno) alog on alog.sicilno=u.sicilno ";
-            List<SqlParameter> paramList = new List<SqlParameter>();
-            if (checkBirim.Checked || checkMudurluk.Checked || checkIl.Checked)
+            try
             {
-                string ekquery = " where ";
-
-                SqlParameter paramTemp;
-                if (checkIl.Checked)
+                //tarih ve ödenmeyenleri listele kısımları kullanılmıyor şimdilik
+                Database db = new Database();
+                string query = "select u.sicilNo, u.adSoyad, (select aidat from AidatMiktar where birimno = u.birimNo) 'Miktar', alog.toplam 'toplammiktar', i.ilAdi, m.mudurlukAdi, b.birimAdi from uyeler u join il i on i.ilNo = u.ilNo join Mudurluk m on m.mudurlukNo = u.mudurlukNo join birim b on b.birimNo = u.birimNo join (select SUM(miktar) toplam, sicilno from aidatlog group by sicilno) alog on alog.sicilno=u.sicilno ";
+                List<SqlParameter> paramList = new List<SqlParameter>();
+                if (checkBirim.Checked || checkMudurluk.Checked || checkIl.Checked)
                 {
-                    if (cboxil.SelectedIndex == -1)
+                    string ekquery = " where ";
+
+                    SqlParameter paramTemp;
+                    if (checkIl.Checked)
                     {
-                        MessageBox.Show("İl seçin yada yanındaki ticki kaldırın.");
-                        return;
+                        if (cboxil.SelectedIndex == -1)
+                        {
+                            MessageBox.Show("İl seçin yada yanındaki ticki kaldırın.");
+                            return;
+                        }
+                        ekquery += "i.ilno = @il and ";
+                        String ilNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key.ToString();
+                        paramTemp = new SqlParameter("@il", ilNo);
+                        paramList.Add(paramTemp);
                     }
-                    ekquery += "i.ilno = @il and ";
-                    String ilNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key.ToString();
-                    paramTemp = new SqlParameter("@il", ilNo);
-                    paramList.Add(paramTemp);
+
+
+                    if (checkMudurluk.Checked)
+                    {
+                        if (cboxMudurluk.SelectedIndex == -1)
+                        {
+                            MessageBox.Show("Müdürlük seçin yada yanındaki ticki kaldırın.");
+                            return;
+                        }
+                        ekquery += "m.mudurlukno = @mudurluk and ";
+                        String mudurlukno = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString();
+                        paramTemp = new SqlParameter("@mudurluk", mudurlukno);
+                        paramList.Add(paramTemp);
+                    }
+                    if (checkBirim.Checked)
+                    {
+                        if (cboxBirim.SelectedIndex == -1)
+                        {
+                            MessageBox.Show("Birim seçin yada yanındaki ticki kaldırın.");
+                            return;
+                        }
+                        ekquery += "b.birimno = @birim and ";
+                        String birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key.ToString();
+                        paramTemp = new SqlParameter("@birim", birimno);
+                        paramList.Add(paramTemp);
+                    }
+
+                    ekquery = ekquery.Trim().Substring(0, ekquery.Length - 5);
+                    query += ekquery;
                 }
 
-
-                if (checkMudurluk.Checked)
+                var data = db.DataOku(query, paramList);
+                listUyeKayitlari.Items.Clear();
+                while (data.Read())
                 {
-                    if (cboxMudurluk.SelectedIndex == -1)
-                    {
-                        MessageBox.Show("Müdürlük seçin yada yanındaki ticki kaldırın.");
-                        return;
-                    }
-                    ekquery += "m.mudurlukno = @mudurluk and ";
-                    String mudurlukno = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString();
-                    paramTemp = new SqlParameter("@mudurluk", mudurlukno);
-                    paramList.Add(paramTemp);
-                }
-                if (checkBirim.Checked)
-                {
-                    if (cboxBirim.SelectedIndex == -1)
-                    {
-                        MessageBox.Show("Birim seçin yada yanındaki ticki kaldırın.");
-                        return;
-                    }
-                    ekquery += "b.birimno = @birim and ";
-                    String birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key.ToString();
-                    paramTemp = new SqlParameter("@birim", birimno);
-                    paramList.Add(paramTemp);
-                }
 
-                ekquery = ekquery.Trim().Substring(0, ekquery.Length - 5);
-                query += ekquery;
+                    ListViewItem item = new ListViewItem();
+                    item.Text = data["sicilNo"].ToString();
+                    item.SubItems.Add(data["adSoyad"].ToString());
+                    if (data["miktar"].ToString() == string.Empty)
+                        item.SubItems.Add("0");
+                    else
+                        item.SubItems.Add(data["miktar"].ToString());
+
+                    if (data["toplammiktar"].ToString() == string.Empty)
+                        item.SubItems.Add("0");
+                    else
+                        item.SubItems.Add(data["toplammiktar"].ToString());
+
+                    item.SubItems.Add(data["ilAdi"].ToString());
+                    item.SubItems.Add(data["mudurlukAdi"].ToString());
+                    item.SubItems.Add(data["birimAdi"].ToString());
+
+                    listUyeKayitlari.Items.Add(item);
+                }
+                db.Kapat();
+
+                yazdir.list = listUyeKayitlari;
+                /*
+                yazdir.items = listUyeKayitlari.Items;
+                Dictionary<string, int> basliklar = new Dictionary<string, int>();
+                basliklar.Add("Sıra No", 60);
+                basliklar.Add("Ad Soyad", 120);
+                basliklar.Add("Aidat", 80);
+                basliklar.Add("İl/Müdürlük/Kısım", 180);
+                basliklar.Add("Ünvan", 70);
+                basliklar.Add("Tahsil", 70);
+
+                yazdir.basliklar = basliklar;
+                */
+                yazdir.baslik = "Aidat Listesi";
+                btnYazdir.Enabled = true;
+
+
+
             }
-
-            var data = db.DataOku(query, paramList);
-            listUyeKayitlari.Items.Clear();
-            while (data.Read())
+            catch (Exception ex)
             {
-
-                ListViewItem item = new ListViewItem();
-                item.Text = data["sicilNo"].ToString();
-                item.SubItems.Add(data["adSoyad"].ToString());
-                if (data["miktar"].ToString() == string.Empty)
-                    item.SubItems.Add("0");
-                else
-                    item.SubItems.Add(data["miktar"].ToString());
-
-                if (data["toplammiktar"].ToString() == string.Empty)
-                    item.SubItems.Add("0");
-                else
-                    item.SubItems.Add(data["toplammiktar"].ToString());
-
-                item.SubItems.Add(data["ilAdi"].ToString());
-                item.SubItems.Add(data["mudurlukAdi"].ToString());
-                item.SubItems.Add(data["birimAdi"].ToString());
-
-                listUyeKayitlari.Items.Add(item);
+                MessageBox.Show(ex.Message);
             }
-            db.Kapat();
-
-            yazdir.list = listUyeKayitlari;
-            /*
-            yazdir.items = listUyeKayitlari.Items;
-            Dictionary<string, int> basliklar = new Dictionary<string, int>();
-            basliklar.Add("Sıra No", 60);
-            basliklar.Add("Ad Soyad", 120);
-            basliklar.Add("Aidat", 80);
-            basliklar.Add("İl/Müdürlük/Kısım", 180);
-            basliklar.Add("Ünvan", 70);
-            basliklar.Add("Tahsil", 70);
-
-            yazdir.basliklar = basliklar;
-            */
-            yazdir.baslik = "Aidat Listesi";
-            btnYazdir.Enabled = true;
         }
         Yazdir yazdir = new Yazdir(1);
         private void grpAramaKriterleri_Enter(object sender, EventArgs e)
@@ -141,37 +161,52 @@ namespace telekomAidatTakip
 
         private void cboxil_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cboxil.SelectedIndex != -1)
+            try
             {
-                PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxil.SelectedItem).Key.ToString());
-                if (!checkMudurluk.Checked)
-                    cboxMudurluk.Enabled = false;
-                checkMudurluk.Enabled = true;
+                if (cboxil.SelectedIndex != -1)
+                {
+                    PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxil.SelectedItem).Key.ToString());
+                    if (!checkMudurluk.Checked)
+                        cboxMudurluk.Enabled = false;
+                    checkMudurluk.Enabled = true;
 
+                }
+                else
+                {
+                    checkMudurluk.Checked = false;
+                    checkMudurluk.Enabled = false;
+                    checkBirim.Enabled = false;
+                    checkBirim.Checked = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                checkMudurluk.Checked = false;
-                checkMudurluk.Enabled = false;
-                checkBirim.Enabled = false;
-                checkBirim.Checked = false;
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            int mdr = PRG.cboxKeyGetir(ref cboxMudurluk);
-            if (mdr != -1)
+            try
             {
-                PRG.DoldurBirim(ref cboxBirim, mdr.ToString());
-                if (!checkBirim.Checked)
-                    cboxBirim.Enabled = false;
-                checkBirim.Enabled = true;
+                int mdr = PRG.cboxKeyGetir(ref cboxMudurluk);
+                if (mdr != -1)
+                {
+                    PRG.DoldurBirim(ref cboxBirim, mdr.ToString());
+                    if (!checkBirim.Checked)
+                        cboxBirim.Enabled = false;
+                    checkBirim.Enabled = true;
+                }
+                else
+                {
+                    checkBirim.Enabled = false;
+                    checkBirim.Checked = false;
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                checkBirim.Enabled = false;
-                checkBirim.Checked = false;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -182,97 +217,135 @@ namespace telekomAidatTakip
 
         private void listUyeKayitlari_DoubleClick(object sender, EventArgs e)
         {
-            if (listUyeKayitlari.SelectedItems.Count > 0)
+            try
             {
-                frmUye frm = new frmUye(listUyeKayitlari.SelectedItems[0].Text);
-                frm.MdiParent = this.MdiParent;
-                frm.Show();
-            }
+                if (listUyeKayitlari.SelectedItems.Count > 0)
+                {
+                    frmUye frm = new frmUye(listUyeKayitlari.SelectedItems[0].Text);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
         private void checkIl_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkIl.Checked)
+            try
             {
-                cboxil.Enabled = true;
-                cboxMudurluk.Enabled = false;
-                if (cboxil.SelectedIndex == -1)
+                if (checkIl.Checked)
                 {
-                    checkMudurluk.Enabled = false;
+                    cboxil.Enabled = true;
                     cboxMudurluk.Enabled = false;
-                }
+                    if (cboxil.SelectedIndex == -1)
+                    {
+                        checkMudurluk.Enabled = false;
+                        cboxMudurluk.Enabled = false;
+                    }
 
+                    else
+                    {
+                        checkMudurluk.Enabled = true;
+                        cboxMudurluk.Enabled = false;
+                    }
+
+                }
                 else
                 {
-                    checkMudurluk.Enabled = true;
+                    cboxil.Enabled = false;
+                    cboxil.SelectedIndex = -1;
                     cboxMudurluk.Enabled = false;
+                    checkMudurluk.Checked = false;
+                    checkMudurluk.Enabled = false;
                 }
 
             }
-            else
+            catch (Exception ex)
             {
-                cboxil.Enabled = false;
-                cboxil.SelectedIndex = -1;
-                cboxMudurluk.Enabled = false;
-                checkMudurluk.Checked = false;
-                checkMudurluk.Enabled = false;
+                MessageBox.Show(ex.Message);
             }
-
         }
 
         private void checkMudurluk_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkMudurluk.Checked)
+            try
             {
-                cboxil_SelectionChangeCommitted(this, null);
-                cboxMudurluk.Enabled = true;
-                if (cboxMudurluk.SelectedIndex == -1)
+                if (checkMudurluk.Checked)
                 {
-                    checkBirim.Enabled = false;
-                    cboxBirim.Enabled = false;
-                }
+                    cboxil_SelectionChangeCommitted(this, null);
+                    cboxMudurluk.Enabled = true;
+                    if (cboxMudurluk.SelectedIndex == -1)
+                    {
+                        checkBirim.Enabled = false;
+                        cboxBirim.Enabled = false;
+                    }
 
+                    else
+                    {
+                        checkBirim.Enabled = true;
+                        cboxBirim.Enabled = false;
+                    }
+
+                }
                 else
                 {
-                    checkBirim.Enabled = true;
                     cboxBirim.Enabled = false;
+                    cboxMudurluk.Enabled = false;
+                    cboxMudurluk.SelectedIndex = -1;
+                    checkBirim.Enabled = false;
+                    checkBirim.Checked = false;
+
                 }
 
             }
-            else
+            catch (Exception ex)
             {
-                cboxBirim.Enabled = false;
-                cboxMudurluk.Enabled = false;
-                cboxMudurluk.SelectedIndex = -1;
-                checkBirim.Enabled = false;
-                checkBirim.Checked = false;
-
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void checkBirim_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBirim.Checked)
+            try
             {
-                cboxMudurluk_SelectionChangeCommitted(this, null);
-                cboxBirim.Enabled = true;
+                if (checkBirim.Checked)
+                {
+                    cboxMudurluk_SelectionChangeCommitted(this, null);
+                    cboxBirim.Enabled = true;
+                }
+                else
+                {
+                    cboxBirim.SelectedIndex = -1;
+                    cboxBirim.Enabled = false;
+
+
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                cboxBirim.SelectedIndex = -1;
-                cboxBirim.Enabled = false;
-
-
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void cboxil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (checkMudurluk.Checked)
+            try
             {
-                checkMudurluk.Checked = false;
+                if (checkMudurluk.Checked)
+                {
+                    checkMudurluk.Checked = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
