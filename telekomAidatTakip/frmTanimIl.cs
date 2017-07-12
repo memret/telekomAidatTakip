@@ -52,14 +52,13 @@ namespace telekomAidatTakip
             btnYeni.Enabled = true;
             
         }
+        bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
             // butonun ismine göre yeni kaydın veritabanına ekleneceğini mi yoksa ekleme sayfasına mı geçileceğini mi tespit ediyoruz
-
-            if (btnYeni.Text == "Yeni") // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
+            if (yeniKayit) // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
             {
-                txtPlakaKodu.WaterMark = "Plaka kodunu giriniz...";
-                txtAdi.WaterMark = "İl adını giriniz...";
+                
                 if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
                 {
                     DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
@@ -68,12 +67,14 @@ namespace telekomAidatTakip
                     else if(dialogResult == DialogResult.Cancel)
                         return;
                 }
-
+                txtPlakaKodu.WaterMark = "Plaka kodunu giriniz...";
+                txtAdi.WaterMark = "İl adını giriniz...";
                 txtAdi.Text = string.Empty;
                 txtPlakaKodu.Text = string.Empty;
+                yeniKayit = false;
                 txtPlakaKodu.Enabled = true;
                 txtAdi.Enabled = true;
-                btnYeni.Text = "Ekle";
+              //  btnYeni.Text = "Ekle";
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
             }
@@ -86,11 +87,13 @@ namespace telekomAidatTakip
 
                     txtPlakaKodu.Enabled = false;
                     txtAdi.Enabled = false;
-                    btnYeni.Text = "Yeni";
+                  //  btnYeni.Text = "Yeni";
                     IlListesiniDoldur();
                     txtAdi.Text = string.Empty;
                     txtPlakaKodu.Text = string.Empty;
                     btnYeni.Focus(); //görsel amaçlı
+                    yeniKayit = true;
+                   // toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
                 }
                 else
                 {
@@ -181,7 +184,7 @@ namespace telekomAidatTakip
             btnSil.Enabled = true;
             txtAdi.Enabled = true;
             txtPlakaKodu.Enabled = true;
-            btnYeni.Text = "Yeni";
+           // btnYeni.Text = "Yeni";
             
          
         }

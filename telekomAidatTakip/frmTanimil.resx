@@ -126,10 +126,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="resource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 1</value>
+    <value>142, 1</value>
   </data>
   <data name="resource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
+    <value>27, 27</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="resource.TabIndex" type="System.Int32, mscorlib">
@@ -139,10 +139,10 @@
     <value>False</value>
   </data>
   <data name="txtAdi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 109</value>
+    <value>133, 117</value>
   </data>
   <data name="txtAdi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 23</value>
+    <value>170, 29</value>
   </data>
   <data name="txtAdi.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -157,7 +157,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtAdi.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="resource.Image1" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -166,10 +166,10 @@
     <value>NoControl</value>
   </data>
   <data name="resource.Location1" type="System.Drawing.Point, System.Drawing">
-    <value>148, 1</value>
+    <value>142, 1</value>
   </data>
   <data name="resource.Size1" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
+    <value>27, 27</value>
   </data>
   <data name="resource.TabIndex1" type="System.Int32, mscorlib">
     <value>1</value>
@@ -178,10 +178,10 @@
     <value>False</value>
   </data>
   <data name="txtPlakaKodu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 80</value>
+    <value>133, 82</value>
   </data>
   <data name="txtPlakaKodu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 23</value>
+    <value>170, 29</value>
   </data>
   <data name="txtPlakaKodu.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -196,94 +196,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtPlakaKodu.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="btnSil.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 164</value>
-  </data>
-  <data name="btnSil.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 46</value>
-  </data>
-  <data name="btnSil.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="btnSil.Text" xml:space="preserve">
-    <value>Sil</value>
-  </data>
-  <data name="btnSil.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;btnSil.Name" xml:space="preserve">
-    <value>btnSil</value>
-  </data>
-  <data name="&gt;&gt;btnSil.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;btnSil.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnSil.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btnKaydet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 164</value>
-  </data>
-  <data name="btnKaydet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 46</value>
-  </data>
-  <data name="btnKaydet.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="btnKaydet.Text" xml:space="preserve">
-    <value>Kaydet</value>
-  </data>
-  <data name="btnKaydet.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;btnKaydet.Name" xml:space="preserve">
-    <value>btnKaydet</value>
-  </data>
-  <data name="&gt;&gt;btnKaydet.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;btnKaydet.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnKaydet.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="btnYeni.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 164</value>
-  </data>
-  <data name="btnYeni.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 46</value>
-  </data>
-  <data name="btnYeni.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="btnYeni.Text" xml:space="preserve">
-    <value>Yeni</value>
-  </data>
-  <data name="btnYeni.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;btnYeni.Name" xml:space="preserve">
-    <value>btnYeni</value>
-  </data>
-  <data name="&gt;&gt;btnYeni.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTile, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;btnYeni.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnYeni.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 80</value>
+    <value>36, 92</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 19</value>
@@ -304,13 +223,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 109</value>
+    <value>36, 127</value>
   </data>
   <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 19</value>
@@ -331,19 +250,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>İl Plaka Kodu</value>
-  </data>
-  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
-    <value>165</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>İl</value>
-  </data>
-  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
-    <value>119</value>
+    <value>5</value>
   </data>
   <data name="listvil.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -370,7 +277,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;listvil.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>İl Plaka Kodu</value>
+  </data>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>165</value>
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>İl</value>
+  </data>
+  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
+    <value>119</value>
   </data>
   <data name="pictureBox2.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -424,8 +343,125 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="btnYeni.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnYeni.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnYeni.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnYeni.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 164</value>
+  </data>
+  <data name="btnYeni.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnYeni.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 48</value>
+  </data>
+  <data name="btnYeni.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="btnYeni.ToolTip" xml:space="preserve">
+    <value>Yeni Kayıt</value>
+  </data>
+  <data name="&gt;&gt;btnYeni.Name" xml:space="preserve">
+    <value>btnYeni</value>
+  </data>
+  <data name="&gt;&gt;btnYeni.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnYeni.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnYeni.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="btnKaydet.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnKaydet.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnKaydet.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnKaydet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 164</value>
+  </data>
+  <data name="btnKaydet.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnKaydet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 48</value>
+  </data>
+  <data name="btnKaydet.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="btnKaydet.ToolTip" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="&gt;&gt;btnKaydet.Name" xml:space="preserve">
+    <value>btnKaydet</value>
+  </data>
+  <data name="&gt;&gt;btnKaydet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnKaydet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnKaydet.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnSil.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnSil.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnSil.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnSil.Location" type="System.Drawing.Point, System.Drawing">
+    <value>255, 163</value>
+  </data>
+  <data name="btnSil.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnSil.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 48</value>
+  </data>
+  <data name="btnSil.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="btnSil.ToolTip" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="&gt;&gt;btnSil.Name" xml:space="preserve">
+    <value>btnSil</value>
+  </data>
+  <data name="&gt;&gt;btnSil.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSil.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSil.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -464,6 +500,12 @@
   </data>
   <data name="&gt;&gt;columnHeader2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmTanimIl</value>
