@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtAciklama = new MetroFramework.Controls.MetroTextBox();
-            this.txtKod = new MetroFramework.Controls.MetroTextBox();
-            this.btnSil = new MetroFramework.Controls.MetroTile();
-            this.btnKaydet = new MetroFramework.Controls.MetroTile();
-            this.btnYeni = new MetroFramework.Controls.MetroTile();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTanimUyelikIptal));
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -44,140 +41,15 @@
             this.listvSilinme = new System.Windows.Forms.ListView();
             this.columnHeaderKod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderAciklama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtKod = new MetroFramework.Controls.MetroTextBox();
+            this.txtAciklama = new MetroFramework.Controls.MetroTextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnYeni = new System.Windows.Forms.Button();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtAciklama
-            // 
-            this.txtAciklama.BackColor = System.Drawing.Color.Gainsboro;
-            // 
-            // 
-            // 
-            this.txtAciklama.CustomButton.Image = null;
-            this.txtAciklama.CustomButton.Location = new System.Drawing.Point(125, 2);
-            this.txtAciklama.CustomButton.Name = "";
-            this.txtAciklama.CustomButton.Size = new System.Drawing.Size(55, 55);
-            this.txtAciklama.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtAciklama.CustomButton.TabIndex = 1;
-            this.txtAciklama.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtAciklama.CustomButton.UseSelectable = true;
-            this.txtAciklama.CustomButton.UseWaitCursor = true;
-            this.txtAciklama.CustomButton.Visible = false;
-            this.txtAciklama.Lines = new string[0];
-            this.txtAciklama.Location = new System.Drawing.Point(114, 112);
-            this.txtAciklama.MaxLength = 32767;
-            this.txtAciklama.Multiline = true;
-            this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.PasswordChar = '\0';
-            this.txtAciklama.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtAciklama.SelectedText = "";
-            this.txtAciklama.SelectionLength = 0;
-            this.txtAciklama.SelectionStart = 0;
-            this.txtAciklama.ShortcutsEnabled = true;
-            this.txtAciklama.Size = new System.Drawing.Size(183, 60);
-            this.txtAciklama.TabIndex = 20;
-            this.txtAciklama.UseCustomBackColor = true;
-            this.txtAciklama.UseCustomForeColor = true;
-            this.txtAciklama.UseSelectable = true;
-            this.txtAciklama.UseStyleColors = true;
-            this.txtAciklama.UseSystemPasswordChar = true;
-            this.txtAciklama.UseWaitCursor = true;
-            this.txtAciklama.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtAciklama.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtKod
-            // 
-            this.txtKod.BackColor = System.Drawing.Color.Gainsboro;
-            // 
-            // 
-            // 
-            this.txtKod.CustomButton.Image = null;
-            this.txtKod.CustomButton.Location = new System.Drawing.Point(161, 2);
-            this.txtKod.CustomButton.Name = "";
-            this.txtKod.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.txtKod.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtKod.CustomButton.TabIndex = 1;
-            this.txtKod.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtKod.CustomButton.UseSelectable = true;
-            this.txtKod.CustomButton.UseWaitCursor = true;
-            this.txtKod.CustomButton.Visible = false;
-            this.txtKod.Lines = new string[0];
-            this.txtKod.Location = new System.Drawing.Point(114, 72);
-            this.txtKod.MaxLength = 32767;
-            this.txtKod.Name = "txtKod";
-            this.txtKod.PasswordChar = '●';
-            this.txtKod.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtKod.SelectedText = "";
-            this.txtKod.SelectionLength = 0;
-            this.txtKod.SelectionStart = 0;
-            this.txtKod.ShortcutsEnabled = true;
-            this.txtKod.Size = new System.Drawing.Size(183, 29);
-            this.txtKod.TabIndex = 19;
-            this.txtKod.UseCustomBackColor = true;
-            this.txtKod.UseCustomForeColor = true;
-            this.txtKod.UseSelectable = true;
-            this.txtKod.UseStyleColors = true;
-            this.txtKod.UseSystemPasswordChar = true;
-            this.txtKod.UseWaitCursor = true;
-            this.txtKod.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtKod.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // btnSil
-            // 
-            this.btnSil.ActiveControl = null;
-            this.btnSil.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnSil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSil.Location = new System.Drawing.Point(216, 192);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(66, 48);
-            this.btnSil.TabIndex = 16;
-            this.btnSil.Text = "Sil";
-            this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSil.UseCustomBackColor = true;
-            this.btnSil.UseCustomForeColor = true;
-            this.btnSil.UseSelectable = true;
-            this.btnSil.UseStyleColors = true;
-            this.btnSil.UseTileImage = true;
-            this.btnSil.UseWaitCursor = true;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnKaydet
-            // 
-            this.btnKaydet.ActiveControl = null;
-            this.btnKaydet.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnKaydet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnKaydet.Location = new System.Drawing.Point(134, 192);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(66, 48);
-            this.btnKaydet.TabIndex = 15;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnKaydet.UseCustomBackColor = true;
-            this.btnKaydet.UseCustomForeColor = true;
-            this.btnKaydet.UseSelectable = true;
-            this.btnKaydet.UseStyleColors = true;
-            this.btnKaydet.UseTileImage = true;
-            this.btnKaydet.UseWaitCursor = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
-            // btnYeni
-            // 
-            this.btnYeni.ActiveControl = null;
-            this.btnYeni.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnYeni.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.btnYeni.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnYeni.Location = new System.Drawing.Point(52, 192);
-            this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(67, 49);
-            this.btnYeni.TabIndex = 14;
-            this.btnYeni.Text = "Yeni";
-            this.btnYeni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnYeni.UseCustomBackColor = true;
-            this.btnYeni.UseCustomForeColor = true;
-            this.btnYeni.UseSelectable = true;
-            this.btnYeni.UseStyleColors = true;
-            this.btnYeni.UseTileImage = true;
-            this.btnYeni.UseWaitCursor = true;
-            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
             // label5
             // 
@@ -198,16 +70,17 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 117);
+            this.metroLabel1.Location = new System.Drawing.Point(39, 133);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(69, 19);
             this.metroLabel1.TabIndex = 27;
             this.metroLabel1.Text = "Açıklama :";
+            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
             // metroLabelKod
             // 
             this.metroLabelKod.AutoSize = true;
-            this.metroLabelKod.Location = new System.Drawing.Point(23, 77);
+            this.metroLabelKod.Location = new System.Drawing.Point(69, 88);
             this.metroLabelKod.Name = "metroLabelKod";
             this.metroLabelKod.Size = new System.Drawing.Size(39, 19);
             this.metroLabelKod.TabIndex = 26;
@@ -239,14 +112,15 @@
             // 
             // listvSilinme
             // 
-            this.listvSilinme.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.listvSilinme.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.listvSilinme.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderKod,
             this.columnHeaderAciklama});
             this.listvSilinme.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.listvSilinme.Location = new System.Drawing.Point(16, 258);
+            this.listvSilinme.FullRowSelect = true;
+            this.listvSilinme.Location = new System.Drawing.Point(12, 231);
             this.listvSilinme.Name = "listvSilinme";
-            this.listvSilinme.Size = new System.Drawing.Size(323, 122);
+            this.listvSilinme.Size = new System.Drawing.Size(412, 167);
             this.listvSilinme.TabIndex = 29;
             this.listvSilinme.UseCompatibleStateImageBehavior = false;
             this.listvSilinme.View = System.Windows.Forms.View.Details;
@@ -262,40 +136,158 @@
             this.columnHeaderAciklama.Text = "Açıklama";
             this.columnHeaderAciklama.Width = 188;
             // 
+            // txtKod
+            // 
+            // 
+            // 
+            // 
+            this.txtKod.CustomButton.Image = null;
+            this.txtKod.CustomButton.Location = new System.Drawing.Point(133, 1);
+            this.txtKod.CustomButton.Name = "";
+            this.txtKod.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtKod.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtKod.CustomButton.TabIndex = 1;
+            this.txtKod.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtKod.CustomButton.UseSelectable = true;
+            this.txtKod.CustomButton.Visible = false;
+            this.txtKod.Lines = new string[0];
+            this.txtKod.Location = new System.Drawing.Point(116, 91);
+            this.txtKod.MaxLength = 32767;
+            this.txtKod.Name = "txtKod";
+            this.txtKod.PasswordChar = '\0';
+            this.txtKod.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtKod.SelectedText = "";
+            this.txtKod.SelectionLength = 0;
+            this.txtKod.SelectionStart = 0;
+            this.txtKod.ShortcutsEnabled = true;
+            this.txtKod.Size = new System.Drawing.Size(161, 29);
+            this.txtKod.TabIndex = 31;
+            this.txtKod.UseSelectable = true;
+            this.txtKod.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtKod.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtAciklama
+            // 
+            // 
+            // 
+            // 
+            this.txtAciklama.CustomButton.Image = null;
+            this.txtAciklama.CustomButton.Location = new System.Drawing.Point(133, 1);
+            this.txtAciklama.CustomButton.Name = "";
+            this.txtAciklama.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtAciklama.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtAciklama.CustomButton.TabIndex = 1;
+            this.txtAciklama.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtAciklama.CustomButton.UseSelectable = true;
+            this.txtAciklama.CustomButton.Visible = false;
+            this.txtAciklama.Lines = new string[0];
+            this.txtAciklama.Location = new System.Drawing.Point(116, 133);
+            this.txtAciklama.MaxLength = 32767;
+            this.txtAciklama.Name = "txtAciklama";
+            this.txtAciklama.PasswordChar = '\0';
+            this.txtAciklama.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtAciklama.SelectedText = "";
+            this.txtAciklama.SelectionLength = 0;
+            this.txtAciklama.SelectionStart = 0;
+            this.txtAciklama.ShortcutsEnabled = true;
+            this.txtAciklama.Size = new System.Drawing.Size(225, 29);
+            this.txtAciklama.TabIndex = 32;
+            this.txtAciklama.UseSelectable = true;
+            this.txtAciklama.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtAciklama.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
+            this.pictureBox2.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox2.Location = new System.Drawing.Point(23, 17);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 48;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnYeni
+            // 
+            this.btnYeni.BackColor = System.Drawing.Color.White;
+            this.btnYeni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnYeni.FlatAppearance.BorderSize = 0;
+            this.btnYeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnYeni.Image = global::telekomAidatTakip.Properties.Resources.if_ic_control_point_48px_352288;
+            this.btnYeni.Location = new System.Drawing.Point(185, 166);
+            this.btnYeni.Margin = new System.Windows.Forms.Padding(0);
+            this.btnYeni.Name = "btnYeni";
+            this.btnYeni.Size = new System.Drawing.Size(48, 48);
+            this.btnYeni.TabIndex = 49;
+            this.toolTip1.SetToolTip(this.btnYeni, "Yeni Kayıt");
+            this.btnYeni.UseVisualStyleBackColor = false;
+            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
+            // 
+            // btnKaydet
+            // 
+            this.btnKaydet.BackColor = System.Drawing.Color.White;
+            this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKaydet.Enabled = false;
+            this.btnKaydet.FlatAppearance.BorderSize = 0;
+            this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet.Location = new System.Drawing.Point(239, 166);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(48, 48);
+            this.btnKaydet.TabIndex = 50;
+            this.toolTip1.SetToolTip(this.btnKaydet, "Kaydet");
+            this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // btnSil
+            // 
+            this.btnSil.BackColor = System.Drawing.Color.White;
+            this.btnSil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSil.Enabled = false;
+            this.btnSil.FlatAppearance.BorderSize = 0;
+            this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
+            this.btnSil.Location = new System.Drawing.Point(293, 165);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(48, 48);
+            this.btnSil.TabIndex = 51;
+            this.toolTip1.SetToolTip(this.btnSil, "Sil");
+            this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
             // frmTanimUyelikIptal
             // 
-            this.ClientSize = new System.Drawing.Size(362, 403);
+            this.BackImage = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.ClientSize = new System.Drawing.Size(447, 403);
+            this.Controls.Add(this.btnYeni);
+            this.Controls.Add(this.btnKaydet);
+            this.Controls.Add(this.btnSil);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.txtAciklama);
+            this.Controls.Add(this.txtKod);
             this.Controls.Add(this.listvSilinme);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLabelKod);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtAciklama);
-            this.Controls.Add(this.txtKod);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnSil);
-            this.Controls.Add(this.btnYeni);
-            this.Controls.Add(this.btnKaydet);
             this.Font = new System.Drawing.Font("Cambria Math", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.Name = "frmTanimUyelikIptal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
-            this.Style = MetroFramework.MetroColorStyle.Red;
-            this.Text = "Silinme Nedeni Tanımlama";
+            this.Text = "       Silinme Nedeni Tanımlama";
             this.Load += new System.EventHandler(this.frmTanimUyelikIptal_Load);
             this.BackColorChanged += new System.EventHandler(this.frmTanimUyelikIptal_Resize);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private MetroFramework.Controls.MetroTextBox txtAciklama;
-        private MetroFramework.Controls.MetroTextBox txtKod;
-        private MetroFramework.Controls.MetroTile btnSil;
-        private MetroFramework.Controls.MetroTile btnKaydet;
-        private MetroFramework.Controls.MetroTile btnYeni;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private MetroFramework.Controls.MetroLabel metroLabel1;
@@ -307,5 +299,12 @@
         private System.Windows.Forms.ListView listvSilinme;
         private System.Windows.Forms.ColumnHeader columnHeaderKod;
         private System.Windows.Forms.ColumnHeader columnHeaderAciklama;
+        private MetroFramework.Controls.MetroTextBox txtKod;
+        private MetroFramework.Controls.MetroTextBox txtAciklama;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnYeni;
+        private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.Button btnSil;
     }
 }
