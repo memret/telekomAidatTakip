@@ -73,7 +73,6 @@
             this.txtAdi.UseSelectable = true;
             this.txtAdi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAdi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtAdi.Leave += new System.EventHandler(this.txtAdi_Leave);
             // 
             // txtPlakaKodu
             // 
@@ -122,7 +121,6 @@
             this.Label2.ForeColor = System.Drawing.Color.Black;
             this.Label2.Name = "Label2";
             this.Label2.UseCustomForeColor = true;
-            this.Label2.Click += new System.EventHandler(this.metroLabel2_Click);
             // 
             // listvil
             // 
@@ -135,7 +133,6 @@
             this.listvil.Name = "listvil";
             this.listvil.UseCompatibleStateImageBehavior = false;
             this.listvil.View = System.Windows.Forms.View.Details;
-            this.listvil.SelectedIndexChanged += new System.EventHandler(this.listvil_SelectedIndexChanged);
             this.listvil.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvil_MouseDoubleClick);
             // 
             // columnHeader1
