@@ -19,7 +19,14 @@ namespace telekomAidatTakip
 
         private void frmTanimTahsil_Load(object sender, EventArgs e)
         {
+            try { 
             TahsilListesiDoldur();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void TahsilListesiDoldur()
@@ -50,26 +57,12 @@ namespace telekomAidatTakip
             btnYeni.Enabled = true;
 
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tahsilNo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
 
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            try { 
             if (txtTahsilKodu.Text != string.Empty && txtTahsilAd.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
             {
                 Database db = new Database();
@@ -84,10 +77,16 @@ namespace telekomAidatTakip
                 TahsilListesiDoldur();
             }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            try { 
             if (txtTahsilKodu.Text != string.Empty) //plaka kodu olmadan veri silmek tabiki biraz zor olur
             {
                 Database db2 = new Database();
@@ -123,17 +122,19 @@ namespace telekomAidatTakip
             }
             else
                 MessageBox.Show("Tahsil no kısmı boş");
-        }
 
-        private void listvTanimTahsil_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
       
 
         private void frmTanimTahsil_FormClosing(object sender, FormClosingEventArgs e)
         {
+            try { 
             //burda form penceresi kapatılırken çalışacak kodlar bulunuyor
             if (btnYeni.Text == "Ekle" || btnKaydet.Enabled) //btnYeni nin ismi Ekle ise veya btnKaydet aktif ise bir düzenleme veya kayıt yapılıyor demektir.
             {
@@ -151,12 +152,18 @@ namespace telekomAidatTakip
                 }
             }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
         bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
+            try { 
             // butonun ismine göre yeni kaydın veritabanına ekleneceğini mi yoksa ekleme sayfasına mı geçileceğini mi tespit ediyoruz
 
             if (yeniKayit) // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
@@ -200,16 +207,30 @@ namespace telekomAidatTakip
                 }
 
             }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void frmTanimTahsil_Resize(object sender, EventArgs e)
         {
+            try { 
             listvTanimTahsil.Size = new Size(listvTanimTahsil.Size.Width, this.Size.Height - 258);
-           // pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y);
+                // pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void listvTanimTahsil_DoubleClick_1(object sender, EventArgs e)
         {
+            try { 
             string plakakodu = listvTanimTahsil.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
 
             Database db = new Database();
@@ -223,6 +244,12 @@ namespace telekomAidatTakip
             txtTahsilKodu.Enabled = true;
             yeniKayit = true;
             toolTip.SetToolTip(btnYeni, "Yeni Kayıt");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void listvTanimTahsil_DoubleClick(object sender, EventArgs e)

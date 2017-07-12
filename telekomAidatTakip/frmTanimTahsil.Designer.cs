@@ -156,7 +156,6 @@
             this.listvTanimTahsil.TabIndex = 13;
             this.listvTanimTahsil.UseCompatibleStateImageBehavior = false;
             this.listvTanimTahsil.View = System.Windows.Forms.View.Details;
-            this.listvTanimTahsil.SelectedIndexChanged += new System.EventHandler(this.listvTanimTahsil_SelectedIndexChanged);
             this.listvTanimTahsil.DoubleClick += new System.EventHandler(this.listvTanimTahsil_DoubleClick_1);
             // 
             // columnHeader1

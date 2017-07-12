@@ -19,15 +19,32 @@ namespace telekomAidatTakip
 
         private void frmTanimOzelGunler_Load(object sender, EventArgs e)
         {
-            tabloDoldur();
+            try
+            {
+                tabloDoldur();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
         }
         private void sayfayıtemizle()
         {
-            txtBaslik.Clear();
-            txtGunNo.Clear();
-            txtMsj.Clear();
-            txtYorum.Clear();
-            dateTimeTarih.Value = DateTime.Today;
+            try
+            {
+                txtBaslik.Clear();
+                txtGunNo.Clear();
+                txtMsj.Clear();
+                txtYorum.Clear();
+                dateTimeTarih.Value = DateTime.Today;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void tabloDoldur()
         {
@@ -44,7 +61,7 @@ namespace telekomAidatTakip
                 item.SubItems.Add(Convert.ToDateTime(data["tarih"]).ToShortDateString());
                 item.SubItems.Add(data["mesaj"].ToString());
                 item.SubItems.Add(data["yorum"].ToString());
-               
+
                 listView1.Items.Add(item);
                 //oluşturulan item liste eklenir
             }
@@ -60,154 +77,178 @@ namespace telekomAidatTakip
         bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
-            if (yeniKayit) // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
+            try
             {
-                if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
+                if (yeniKayit) // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
                 {
-                    DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
-                    if (dialogResult == DialogResult.Yes)
-                        btnKaydet_Click(this, null);
-                    else if (dialogResult == DialogResult.Cancel)
-                        return;
+                    if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
+                        if (dialogResult == DialogResult.Yes)
+                            btnKaydet_Click(this, null);
+                        else if (dialogResult == DialogResult.Cancel)
+                            return;
+                    }
+
+                    txtBaslik.Text = string.Empty;
+                    txtMsj.Text = string.Empty;
+                    txtYorum.Text = string.Empty;
+                    txtGunNo.Text = string.Empty;
+                    txtBaslik.Enabled = true;
+                    dateTimeTarih.Enabled = true;
+                    txtMsj.Enabled = true;
+                    txtYorum.Enabled = true;
+                    yeniKayit = false;
+                    btnAdi.Enabled = true;
+                    btnSicilNo.Enabled = true;
+                    btnSehir.Enabled = true;
+                    btnMudurluk.Enabled = true;
+                    btnBirim.Enabled = true;
+                    toolTip1.SetToolTip(btnYeni, "Ekle");
+
+                    //  btnYeni.Text = "Ekle";
+                    btnKaydet.Enabled = false;
+                    btnSil.Enabled = false;
+                }
+                else //butonun ismi Yeni değilse demekki yeni kayıt sayfasındayız
+                {
+
+                    if (txtBaslik.Text != string.Empty && txtMsj.Text != string.Empty) //yeni kayıt eklemek için bu iki verinin boş olmaması gerekiyor
+                    {
+                        //DateTime dt = this.dateTimeTarih.Value.Date;
+                        Database db = new Database();
+
+                        //System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@3", dt);
+                        db.Sorgu("insert into OzelGunler(baslik,mesaj,yorum,tarih) values (@0,@1,@2,@3)", txtBaslik.Text, txtMsj.Text, txtYorum.Text, this.dateTimeTarih.Value.Date);
+
+                        txtBaslik.Enabled = false;
+                        txtMsj.Enabled = false;
+                        txtYorum.Enabled = false;
+                        dateTimeTarih.Enabled = false;
+                        // btnYeni.Text = "Yeni";
+                        tabloDoldur();
+                        sayfayıtemizle();
+                        MessageBox.Show("Yeni özel gün kaydedildi.", "Özel Gün Tanımlama", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnYeni.Focus(); //görsel amaçlı imiş
+                    }
+                    else
+                    {
+                        MessageBox.Show("Başlık veya mesaj boş!");
+                    }
+
                 }
 
-                txtBaslik.Text = string.Empty;
-                txtMsj.Text = string.Empty;
-                txtYorum.Text = string.Empty;
-                txtGunNo.Text = string.Empty;
-                txtBaslik.Enabled = true;
-                dateTimeTarih.Enabled = true;
-                txtMsj.Enabled = true;
-                txtYorum.Enabled = true;
-                yeniKayit = false;
-                btnAdi.Enabled = true;
-                btnSicilNo.Enabled = true;
-                btnSehir.Enabled = true;
-                btnMudurluk.Enabled = true;
-                btnBirim.Enabled = true;
-                toolTip1.SetToolTip(btnYeni, "Ekle");
-
-                //  btnYeni.Text = "Ekle";
-                btnKaydet.Enabled = false;
-                btnSil.Enabled = false;
             }
-            else //butonun ismi Yeni değilse demekki yeni kayıt sayfasındayız
+            catch (Exception ex)
             {
-
-                if (txtBaslik.Text != string.Empty && txtMsj.Text != string.Empty) //yeni kayıt eklemek için bu iki verinin boş olmaması gerekiyor
-                {
-                    //DateTime dt = this.dateTimeTarih.Value.Date;
-                    Database db = new Database();
-                    
-                    //System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@3", dt);
-                    db.Sorgu("insert into OzelGunler(baslik,mesaj,yorum,tarih) values (@0,@1,@2,@3)", txtBaslik.Text, txtMsj.Text, txtYorum.Text, this.dateTimeTarih.Value.Date);
-
-                    txtBaslik.Enabled = false;
-                    txtMsj.Enabled = false;
-                    txtYorum.Enabled = false;
-                    dateTimeTarih.Enabled = false;
-                   // btnYeni.Text = "Yeni";
-                    tabloDoldur();
-                    sayfayıtemizle();
-                    MessageBox.Show("Yeni özel gün kaydedildi.", "Özel Gün Tanımlama", MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    btnYeni.Focus(); //görsel amaçlı imiş
-                }
-                else
-                {
-                    MessageBox.Show("Başlık veya mesaj boş!");
-                }
-
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            if (txtBaslik.Text != string.Empty && txtMsj.Text != string.Empty)
+            try
             {
-                //DateTime dt = this.dateTimeTarih.Value.Date;
-                Database db = new Database();
-               // System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@3", dt);
-                db.Sorgu("update OzelGunler set baslik=@0, mesaj=@1, yorum=@2, tarih=@3 where ozelGunNo=@4", txtBaslik.Text, txtMsj.Text, txtYorum.Text, this.dateTimeTarih.Value.Date, txtGunNo.Text);
+                if (txtBaslik.Text != string.Empty && txtMsj.Text != string.Empty)
+                {
+                    //DateTime dt = this.dateTimeTarih.Value.Date;
+                    Database db = new Database();
+                    // System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@3", dt);
+                    db.Sorgu("update OzelGunler set baslik=@0, mesaj=@1, yorum=@2, tarih=@3 where ozelGunNo=@4", txtBaslik.Text, txtMsj.Text, txtYorum.Text, this.dateTimeTarih.Value.Date, txtGunNo.Text);
 
-                sayfayıtemizle();
-                dateTimeTarih.Enabled = false;
-                txtBaslik.Enabled = false;
-                txtMsj.Enabled = false;
-                txtYorum.Enabled = false;
+                    sayfayıtemizle();
+                    dateTimeTarih.Enabled = false;
+                    txtBaslik.Enabled = false;
+                    txtMsj.Enabled = false;
+                    txtYorum.Enabled = false;
 
-                btnSil.Enabled = false;
-                listView1.Items.Clear();
-                MessageBox.Show("Özel gün güncellendi.", "Özel Gün Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnSil.Enabled = false;
+                    listView1.Items.Clear();
+                    MessageBox.Show("Özel gün güncellendi.", "Özel Gün Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                tabloDoldur();
+                    tabloDoldur();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (txtGunNo.Text != string.Empty)
-                 {   DialogResult dialogresult = MessageBox.Show("Seçili özel gün silinecek. Emin misiniz?", "Silme", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-                     if (dialogresult == DialogResult.Yes)               
-                    {
+            {
+                DialogResult dialogresult = MessageBox.Show("Seçili özel gün silinecek. Emin misiniz?", "Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogresult == DialogResult.Yes)
+                {
 
-                        Database db = new Database();
-                        db.Sorgu("DELETE FROM OzelGunler Where ozelGunNo = @0", txtGunNo.Text);
-                        listView1.Items.Clear();
-                        tabloDoldur();
-                        sayfayıtemizle();
-                        MessageBox.Show("Özel gün silindi!", "Özel Gün Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Database db = new Database();
+                    db.Sorgu("DELETE FROM OzelGunler Where ozelGunNo = @0", txtGunNo.Text);
+                    listView1.Items.Clear();
+                    tabloDoldur();
+                    sayfayıtemizle();
+                    MessageBox.Show("Özel gün silindi!", "Özel Gün Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    }
-                     else if (dialogresult == DialogResult.Cancel)
-                           return;
                 }
-          
+                else if (dialogresult == DialogResult.Cancel)
+                    return;
+            }
+
         }
-      
+
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Database db = new Database();
-            String gunNo = listView1.SelectedItems[0].SubItems[0].Text;
-
-            var data = db.DataOku("SELECT * FROM OzelGunler gun where gun.ozelGunNo =@0 ", gunNo);
-
-            if (data.Read())
+            try
             {
-                txtGunNo.Text = data["ozelGunNo"].ToString();
-                txtBaslik.Text = data["baslik"].ToString();
-                dateTimeTarih.Text = data["tarih"].ToString();
-                txtMsj.Text = data["mesaj"].ToString();
-                txtYorum.Text = data["yorum"].ToString();
+                Database db = new Database();
+                String gunNo = listView1.SelectedItems[0].SubItems[0].Text;
+
+                var data = db.DataOku("SELECT * FROM OzelGunler gun where gun.ozelGunNo =@0 ", gunNo);
+
+                if (data.Read())
+                {
+                    txtGunNo.Text = data["ozelGunNo"].ToString();
+                    txtBaslik.Text = data["baslik"].ToString();
+                    dateTimeTarih.Text = data["tarih"].ToString();
+                    txtMsj.Text = data["mesaj"].ToString();
+                    txtYorum.Text = data["yorum"].ToString();
+                }
+
+                btnKaydet.Enabled = true;
+                btnSil.Enabled = true;
+                txtGunNo.Enabled = false;
+                txtBaslik.Enabled = true;
+                txtMsj.Enabled = true;
+                txtYorum.Enabled = true;
+                dateTimeTarih.Enabled = true;
+
+
+                btnAdi.Enabled = true;
+                btnSicilNo.Enabled = true;
+                btnSehir.Enabled = true;
+                btnMudurluk.Enabled = true;
+                btnBirim.Enabled = true;
+
+                // btnYeni.Text = "Yeni";
+
             }
-
-            btnKaydet.Enabled = true;
-            btnSil.Enabled = true;
-            txtGunNo.Enabled = false;
-            txtBaslik.Enabled = true;
-            txtMsj.Enabled = true;
-            txtYorum.Enabled = true;
-            dateTimeTarih.Enabled = true;
-
-
-            btnAdi.Enabled = true;
-            btnSicilNo.Enabled = true;
-            btnSehir.Enabled = true;
-            btnMudurluk.Enabled = true;
-            btnBirim.Enabled = true;
-
-           // btnYeni.Text = "Yeni";
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void frmTanimOzelGunler_Resize(object sender, EventArgs e)
         {
-           
+
             //gboxTabloGosterimi.Height = this.Height - 390;
-           
-          //  gboxTabloGosterimi.Width = this.Width - 60;
-           // listView1.Width = this.Width - 77;
-           // listView1.Height = this.Height - 419;
+
+            //  gboxTabloGosterimi.Width = this.Width - 60;
+            // listView1.Width = this.Width - 77;
+            // listView1.Height = this.Height - 419;
         }
 
         private void btnAdi_Click(object sender, EventArgs e)

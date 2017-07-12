@@ -20,7 +20,14 @@ namespace telekomAidatTakip
 
         private void frmTanimUyelikIptal_Load(object sender, EventArgs e)
         {
+            try { 
             SilinmeListesiniDoldur();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void SilinmeListesiniDoldur()
@@ -50,7 +57,7 @@ namespace telekomAidatTakip
         bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
-            
+            try { 
             if (yeniKayit)
             {
                 if (btnKaydet.Enabled)
@@ -94,15 +101,27 @@ namespace telekomAidatTakip
                     MessageBox.Show("Silinme kodu veya açıklama kısmı boş!");
                 }
             }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         
         private void btnSil_Click(object sender, EventArgs e)
         {
+            try { 
             if (txtKod.Text != string.Empty)
             {
                 Database db = new Database();
                 db.Sorgu("delete from SilinmeNedeni where SilinmeNedenNo=@0", txtKod.Text);
                 SilinmeListesiniDoldur();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -110,6 +129,7 @@ namespace telekomAidatTakip
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            try { 
             if (txtKod.Text != string.Empty && txtAciklama.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
             {
                 Database db = new Database();
@@ -122,11 +142,17 @@ namespace telekomAidatTakip
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
                 SilinmeListesiniDoldur();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void frmTanimUyelikIptal_FormClosing(object sender, FormClosingEventArgs e)
         {
+            try { 
             //burda form penceresi kapatılırken çalışacak kodlar bulunuyor
             if (!yeniKayit || btnKaydet.Enabled) //btnYeni nin ismi Ekle ise veya btnKaydet aktif ise bir düzenleme veya kayıt yapılıyor demektir.
             {
@@ -142,6 +168,11 @@ namespace telekomAidatTakip
                 {
                     e.Cancel = true; //bu işlem ile formun kapanma işlemi iptal ediliyor
                 }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -153,6 +184,7 @@ namespace telekomAidatTakip
 
         private void listvSilinme_DoubleClick(object sender, EventArgs e)
         {
+            try { 
             string kod = listvSilinme.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
 
             Database db = new Database();
@@ -164,12 +196,13 @@ namespace telekomAidatTakip
             btnSil.Enabled = true;
             txtAciklama.Enabled = true;
             txtKod.Enabled = true;
-           // btnYeni.Text = "Yeni";
+                // btnYeni.Text = "Yeni";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-
-        private void metroLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
