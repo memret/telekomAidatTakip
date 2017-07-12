@@ -145,7 +145,28 @@ namespace telekomAidatTakip
             {
                 if (btnSil.Enabled)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Seçili ünvanı silmek istiyor musunuz?", "", MessageBoxButtons.YesNo);
+                    Database db2 = new Database();
+                    string countKisi = "0";
+                    var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE unvanno = @0", txtUnvanNo.Text);
+                    if (data2.Read())
+                    {
+                        countKisi = data2["count"].ToString();
+                    }
+
+                    Database db3 = new Database();
+                    string countAidat = "0";
+                    var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.unvanno = @0", txtUnvanNo.Text);
+                    if (data3.Read())
+                    {
+                        countAidat = data3["count"].ToString();
+                    }
+                    // 0dan büyüklerse bu soruyu sormak lazım.
+                    DialogResult dialogResult;
+                    if (countAidat != "0" && countKisi != "0")
+                        dialogResult = MessageBox.Show("Bu işlem ile sadece seçtiğiniz ünvanı değil, ona kayıtlı olan kişileri ve aidat kayıtlarınıda sileceksiniz. \nSilinecek kişi sayısı: " + countKisi + "\nSilinecek aidat kaydı: " + countAidat + " \nEmin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    else
+                        dialogResult = MessageBox.Show("Seçili ünvan silinecek. Emin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
                     if (dialogResult == DialogResult.Yes)
                     {
                         if (txtUnvanNo.Text != string.Empty)
