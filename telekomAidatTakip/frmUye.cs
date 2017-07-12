@@ -244,13 +244,6 @@ namespace telekomAidatTakip
         {
             if (BosYerVarMi() == null)
             {
-                
-            }
-            else
-                MessageBox.Show(BosYerVarMi());
-
-            if (BosYerVarMi() == null)
-            {
                 if (sicilno == null)
                 {
                     yeniKayitEkle();
