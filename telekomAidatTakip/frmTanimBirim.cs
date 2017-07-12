@@ -143,7 +143,7 @@ namespace telekomAidatTakip
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (txtBirimKodu.Text == string.Empty)
+            if (txtBirimKodu.Text != string.Empty)
             {
                 Database db2 = new Database();
                 string countKisi = "0";
