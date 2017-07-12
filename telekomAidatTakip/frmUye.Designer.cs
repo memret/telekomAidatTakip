@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUye));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.listAidatLog = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -110,21 +112,18 @@
             this.dateAidatTarih = new MetroFramework.Controls.MetroDateTime();
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.txtNot = new MetroFramework.Controls.MetroTextBox();
-            this.btnKaydet = new MetroFramework.Controls.MetroTile();
-            this.btnGuncelle = new MetroFramework.Controls.MetroTile();
-            this.btnSil = new MetroFramework.Controls.MetroTile();
-            this.btnSil2 = new MetroFramework.Controls.MetroTile();
-            this.btnGuncelle2 = new MetroFramework.Controls.MetroTile();
-            this.btnKaydet2 = new MetroFramework.Controls.MetroTile();
-            this.btnSil3 = new MetroFramework.Controls.MetroTile();
-            this.btnGuncelle3 = new MetroFramework.Controls.MetroTile();
-            this.btnKaydet3 = new MetroFramework.Controls.MetroTile();
-            this.btnSil4 = new MetroFramework.Controls.MetroTile();
-            this.btnGuncelle4 = new MetroFramework.Controls.MetroTile();
-            this.btnKaydet4 = new MetroFramework.Controls.MetroTile();
-            this.btnSil5 = new MetroFramework.Controls.MetroTile();
-            this.btnGuncelle5 = new MetroFramework.Controls.MetroTile();
-            this.btnKaydet5 = new MetroFramework.Controls.MetroTile();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnKaydet2 = new System.Windows.Forms.Button();
+            this.btnSil2 = new System.Windows.Forms.Button();
+            this.btnKaydet3 = new System.Windows.Forms.Button();
+            this.btnSil3 = new System.Windows.Forms.Button();
+            this.btnKaydet4 = new System.Windows.Forms.Button();
+            this.btnSil4 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnKaydet5 = new System.Windows.Forms.Button();
+            this.btnSil5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -132,6 +131,7 @@
             this.metroTabPage3.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -179,16 +179,15 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Location = new System.Drawing.Point(18, 63);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 3;
             this.metroTabControl1.Size = new System.Drawing.Size(580, 477);
-            this.metroTabControl1.TabIndex = 2;
+            this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
             // 
             // metroTabPage1
             // 
-            this.metroTabPage1.Controls.Add(this.btnSil);
-            this.metroTabPage1.Controls.Add(this.btnGuncelle);
             this.metroTabPage1.Controls.Add(this.btnKaydet);
+            this.metroTabPage1.Controls.Add(this.btnSil);
             this.metroTabPage1.Controls.Add(this.btnResimSil);
             this.metroTabPage1.Controls.Add(this.btnYeniResim);
             this.metroTabPage1.Controls.Add(this.pictureBox1);
@@ -515,6 +514,7 @@
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.btnKaydet2);
             this.metroTabPage2.Controls.Add(this.btnSil2);
             this.metroTabPage2.Controls.Add(this.metroLabel20);
             this.metroTabPage2.Controls.Add(this.metroLabel19);
@@ -532,8 +532,6 @@
             this.metroTabPage2.Controls.Add(this.cboxEvIl);
             this.metroTabPage2.Controls.Add(this.txtIsAdresi);
             this.metroTabPage2.Controls.Add(this.txtEvAdresi);
-            this.metroTabPage2.Controls.Add(this.btnGuncelle2);
-            this.metroTabPage2.Controls.Add(this.btnKaydet2);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.HorizontalScrollbarSize = 10;
@@ -826,8 +824,8 @@
             // 
             // metroTabPage3
             // 
-            this.metroTabPage3.Controls.Add(this.btnSil3);
             this.metroTabPage3.Controls.Add(this.btnKaydet3);
+            this.metroTabPage3.Controls.Add(this.btnSil3);
             this.metroTabPage3.Controls.Add(this.dateNufusDogum);
             this.metroTabPage3.Controls.Add(this.metroLabel27);
             this.metroTabPage3.Controls.Add(this.metroLabel26);
@@ -852,7 +850,6 @@
             this.metroTabPage3.Controls.Add(this.txtNufusAnne);
             this.metroTabPage3.Controls.Add(this.txtNufusDogumYeri);
             this.metroTabPage3.Controls.Add(this.txtNufusBaba);
-            this.metroTabPage3.Controls.Add(this.btnGuncelle3);
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.HorizontalScrollbarSize = 10;
@@ -1261,15 +1258,14 @@
             // 
             // metroTabPage4
             // 
-            this.metroTabPage4.Controls.Add(this.btnSil4);
             this.metroTabPage4.Controls.Add(this.btnKaydet4);
+            this.metroTabPage4.Controls.Add(this.btnSil4);
             this.metroTabPage4.Controls.Add(this.btnAidatEkle);
             this.metroTabPage4.Controls.Add(this.metroLabel33);
             this.metroTabPage4.Controls.Add(this.metroLabel34);
             this.metroTabPage4.Controls.Add(this.txtAidatMiktari);
             this.metroTabPage4.Controls.Add(this.dateAidatTarih);
             this.metroTabPage4.Controls.Add(this.listAidatLog);
-            this.metroTabPage4.Controls.Add(this.btnGuncelle4);
             this.metroTabPage4.HorizontalScrollbarBarColor = true;
             this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.HorizontalScrollbarSize = 10;
@@ -1290,6 +1286,7 @@
             this.btnAidatEkle.Size = new System.Drawing.Size(130, 40);
             this.btnAidatEkle.TabIndex = 14;
             this.btnAidatEkle.Text = "Ödemeyi Ekle";
+            this.btnAidatEkle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAidatEkle.UseSelectable = true;
             this.btnAidatEkle.Click += new System.EventHandler(this.btnAidatEkle_Click);
             // 
@@ -1354,10 +1351,9 @@
             // 
             // metroTabPage5
             // 
-            this.metroTabPage5.Controls.Add(this.btnSil5);
             this.metroTabPage5.Controls.Add(this.btnKaydet5);
+            this.metroTabPage5.Controls.Add(this.btnSil5);
             this.metroTabPage5.Controls.Add(this.txtNot);
-            this.metroTabPage5.Controls.Add(this.btnGuncelle5);
             this.metroTabPage5.HorizontalScrollbarBarColor = true;
             this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage5.HorizontalScrollbarSize = 10;
@@ -1403,223 +1399,190 @@
             // 
             // btnKaydet
             // 
-            this.btnKaydet.ActiveControl = null;
-            this.btnKaydet.Enabled = false;
-            this.btnKaydet.Location = new System.Drawing.Point(484, 392);
+            this.btnKaydet.BackColor = System.Drawing.Color.White;
+            this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKaydet.FlatAppearance.BorderSize = 0;
+            this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet.Location = new System.Drawing.Point(524, 387);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(85, 40);
-            this.btnKaydet.TabIndex = 3;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnKaydet.UseSelectable = true;
-            this.btnKaydet.Visible = false;
+            this.btnKaydet.Size = new System.Drawing.Size(48, 48);
+            this.btnKaydet.TabIndex = 54;
+            this.toolTip1.SetToolTip(this.btnKaydet, "Kaydet");
+            this.btnKaydet.UseVisualStyleBackColor = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.ActiveControl = null;
-            this.btnGuncelle.Enabled = false;
-            this.btnGuncelle.Location = new System.Drawing.Point(484, 392);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(85, 40);
-            this.btnGuncelle.TabIndex = 3;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuncelle.UseSelectable = true;
-            this.btnGuncelle.Visible = false;
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnSil
             // 
-            this.btnSil.ActiveControl = null;
-            this.btnSil.Enabled = false;
-            this.btnSil.Location = new System.Drawing.Point(393, 392);
+            this.btnSil.BackColor = System.Drawing.Color.White;
+            this.btnSil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSil.FlatAppearance.BorderSize = 0;
+            this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
+            this.btnSil.Location = new System.Drawing.Point(476, 387);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(0);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(85, 40);
-            this.btnSil.TabIndex = 3;
-            this.btnSil.Text = "Sil";
-            this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSil.UseSelectable = true;
+            this.btnSil.Size = new System.Drawing.Size(48, 48);
+            this.btnSil.TabIndex = 55;
+            this.toolTip1.SetToolTip(this.btnSil, "Sil");
+            this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Visible = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
+            // btnKaydet2
+            // 
+            this.btnKaydet2.BackColor = System.Drawing.Color.White;
+            this.btnKaydet2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKaydet2.FlatAppearance.BorderSize = 0;
+            this.btnKaydet2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet2.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet2.Location = new System.Drawing.Point(524, 387);
+            this.btnKaydet2.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKaydet2.Name = "btnKaydet2";
+            this.btnKaydet2.Size = new System.Drawing.Size(48, 48);
+            this.btnKaydet2.TabIndex = 56;
+            this.toolTip1.SetToolTip(this.btnKaydet2, "Kaydet");
+            this.btnKaydet2.UseVisualStyleBackColor = false;
+            this.btnKaydet2.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
             // btnSil2
             // 
-            this.btnSil2.ActiveControl = null;
-            this.btnSil2.Enabled = false;
-            this.btnSil2.Location = new System.Drawing.Point(393, 392);
+            this.btnSil2.BackColor = System.Drawing.Color.White;
+            this.btnSil2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSil2.FlatAppearance.BorderSize = 0;
+            this.btnSil2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil2.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
+            this.btnSil2.Location = new System.Drawing.Point(476, 387);
+            this.btnSil2.Margin = new System.Windows.Forms.Padding(0);
             this.btnSil2.Name = "btnSil2";
-            this.btnSil2.Size = new System.Drawing.Size(85, 40);
-            this.btnSil2.TabIndex = 6;
-            this.btnSil2.Text = "Sil";
-            this.btnSil2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSil2.UseSelectable = true;
+            this.btnSil2.Size = new System.Drawing.Size(48, 48);
+            this.btnSil2.TabIndex = 57;
+            this.toolTip1.SetToolTip(this.btnSil2, "Sil");
+            this.btnSil2.UseVisualStyleBackColor = false;
             this.btnSil2.Visible = false;
             this.btnSil2.Click += new System.EventHandler(this.btnSil_Click);
             // 
-            // btnGuncelle2
+            // btnKaydet3
             // 
-            this.btnGuncelle2.ActiveControl = null;
-            this.btnGuncelle2.Enabled = false;
-            this.btnGuncelle2.Location = new System.Drawing.Point(484, 392);
-            this.btnGuncelle2.Name = "btnGuncelle2";
-            this.btnGuncelle2.Size = new System.Drawing.Size(85, 40);
-            this.btnGuncelle2.TabIndex = 7;
-            this.btnGuncelle2.Text = "Güncelle";
-            this.btnGuncelle2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuncelle2.UseSelectable = true;
-            this.btnGuncelle2.Visible = false;
-            this.btnGuncelle2.Click += new System.EventHandler(this.btnGuncelle_Click);
-            // 
-            // btnKaydet2
-            // 
-            this.btnKaydet2.ActiveControl = null;
-            this.btnKaydet2.Enabled = false;
-            this.btnKaydet2.Location = new System.Drawing.Point(484, 392);
-            this.btnKaydet2.Name = "btnKaydet2";
-            this.btnKaydet2.Size = new System.Drawing.Size(85, 40);
-            this.btnKaydet2.TabIndex = 8;
-            this.btnKaydet2.Text = "Kaydet";
-            this.btnKaydet2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnKaydet2.UseSelectable = true;
-            this.btnKaydet2.Visible = false;
-            this.btnKaydet2.Click += new System.EventHandler(this.btnKaydet_Click);
+            this.btnKaydet3.BackColor = System.Drawing.Color.White;
+            this.btnKaydet3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKaydet3.FlatAppearance.BorderSize = 0;
+            this.btnKaydet3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet3.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet3.Location = new System.Drawing.Point(524, 387);
+            this.btnKaydet3.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKaydet3.Name = "btnKaydet3";
+            this.btnKaydet3.Size = new System.Drawing.Size(48, 48);
+            this.btnKaydet3.TabIndex = 56;
+            this.toolTip1.SetToolTip(this.btnKaydet3, "Kaydet");
+            this.btnKaydet3.UseVisualStyleBackColor = false;
+            this.btnKaydet3.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnSil3
             // 
-            this.btnSil3.ActiveControl = null;
-            this.btnSil3.Enabled = false;
-            this.btnSil3.Location = new System.Drawing.Point(393, 392);
+            this.btnSil3.BackColor = System.Drawing.Color.White;
+            this.btnSil3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSil3.FlatAppearance.BorderSize = 0;
+            this.btnSil3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil3.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
+            this.btnSil3.Location = new System.Drawing.Point(476, 387);
+            this.btnSil3.Margin = new System.Windows.Forms.Padding(0);
             this.btnSil3.Name = "btnSil3";
-            this.btnSil3.Size = new System.Drawing.Size(85, 40);
-            this.btnSil3.TabIndex = 15;
-            this.btnSil3.Text = "Sil";
-            this.btnSil3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSil3.UseSelectable = true;
+            this.btnSil3.Size = new System.Drawing.Size(48, 48);
+            this.btnSil3.TabIndex = 57;
+            this.toolTip1.SetToolTip(this.btnSil3, "Sil");
+            this.btnSil3.UseVisualStyleBackColor = false;
             this.btnSil3.Visible = false;
             this.btnSil3.Click += new System.EventHandler(this.btnSil_Click);
             // 
-            // btnGuncelle3
+            // btnKaydet4
             // 
-            this.btnGuncelle3.ActiveControl = null;
-            this.btnGuncelle3.Enabled = false;
-            this.btnGuncelle3.Location = new System.Drawing.Point(484, 392);
-            this.btnGuncelle3.Name = "btnGuncelle3";
-            this.btnGuncelle3.Size = new System.Drawing.Size(85, 40);
-            this.btnGuncelle3.TabIndex = 16;
-            this.btnGuncelle3.Text = "Güncelle";
-            this.btnGuncelle3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuncelle3.UseSelectable = true;
-            this.btnGuncelle3.Visible = false;
-            this.btnGuncelle3.Click += new System.EventHandler(this.btnGuncelle_Click);
-            // 
-            // btnKaydet3
-            // 
-            this.btnKaydet3.ActiveControl = null;
-            this.btnKaydet3.Enabled = false;
-            this.btnKaydet3.Location = new System.Drawing.Point(484, 392);
-            this.btnKaydet3.Name = "btnKaydet3";
-            this.btnKaydet3.Size = new System.Drawing.Size(85, 40);
-            this.btnKaydet3.TabIndex = 17;
-            this.btnKaydet3.Text = "Kaydet";
-            this.btnKaydet3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnKaydet3.UseSelectable = true;
-            this.btnKaydet3.Visible = false;
-            this.btnKaydet3.Click += new System.EventHandler(this.btnKaydet_Click);
+            this.btnKaydet4.BackColor = System.Drawing.Color.White;
+            this.btnKaydet4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKaydet4.FlatAppearance.BorderSize = 0;
+            this.btnKaydet4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet4.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet4.Location = new System.Drawing.Point(524, 387);
+            this.btnKaydet4.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKaydet4.Name = "btnKaydet4";
+            this.btnKaydet4.Size = new System.Drawing.Size(48, 48);
+            this.btnKaydet4.TabIndex = 56;
+            this.toolTip1.SetToolTip(this.btnKaydet4, "Kaydet");
+            this.btnKaydet4.UseVisualStyleBackColor = false;
+            this.btnKaydet4.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnSil4
             // 
-            this.btnSil4.ActiveControl = null;
-            this.btnSil4.Enabled = false;
-            this.btnSil4.Location = new System.Drawing.Point(393, 392);
+            this.btnSil4.BackColor = System.Drawing.Color.White;
+            this.btnSil4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSil4.FlatAppearance.BorderSize = 0;
+            this.btnSil4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil4.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
+            this.btnSil4.Location = new System.Drawing.Point(476, 387);
+            this.btnSil4.Margin = new System.Windows.Forms.Padding(0);
             this.btnSil4.Name = "btnSil4";
-            this.btnSil4.Size = new System.Drawing.Size(85, 40);
-            this.btnSil4.TabIndex = 15;
-            this.btnSil4.Text = "Sil";
-            this.btnSil4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSil4.UseSelectable = true;
+            this.btnSil4.Size = new System.Drawing.Size(48, 48);
+            this.btnSil4.TabIndex = 57;
+            this.toolTip1.SetToolTip(this.btnSil4, "Sil");
+            this.btnSil4.UseVisualStyleBackColor = false;
             this.btnSil4.Visible = false;
             this.btnSil4.Click += new System.EventHandler(this.btnSil_Click);
             // 
-            // btnGuncelle4
+            // pictureBox2
             // 
-            this.btnGuncelle4.ActiveControl = null;
-            this.btnGuncelle4.Enabled = false;
-            this.btnGuncelle4.Location = new System.Drawing.Point(484, 392);
-            this.btnGuncelle4.Name = "btnGuncelle4";
-            this.btnGuncelle4.Size = new System.Drawing.Size(85, 40);
-            this.btnGuncelle4.TabIndex = 16;
-            this.btnGuncelle4.Text = "Güncelle";
-            this.btnGuncelle4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuncelle4.UseSelectable = true;
-            this.btnGuncelle4.Visible = false;
-            this.btnGuncelle4.Click += new System.EventHandler(this.btnGuncelle_Click);
-            // 
-            // btnKaydet4
-            // 
-            this.btnKaydet4.ActiveControl = null;
-            this.btnKaydet4.Enabled = false;
-            this.btnKaydet4.Location = new System.Drawing.Point(484, 392);
-            this.btnKaydet4.Name = "btnKaydet4";
-            this.btnKaydet4.Size = new System.Drawing.Size(85, 40);
-            this.btnKaydet4.TabIndex = 17;
-            this.btnKaydet4.Text = "Kaydet";
-            this.btnKaydet4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnKaydet4.UseSelectable = true;
-            this.btnKaydet4.Visible = false;
-            this.btnKaydet4.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
-            // btnSil5
-            // 
-            this.btnSil5.ActiveControl = null;
-            this.btnSil5.Enabled = false;
-            this.btnSil5.Location = new System.Drawing.Point(393, 392);
-            this.btnSil5.Name = "btnSil5";
-            this.btnSil5.Size = new System.Drawing.Size(85, 40);
-            this.btnSil5.TabIndex = 4;
-            this.btnSil5.Text = "Sil";
-            this.btnSil5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSil5.UseSelectable = true;
-            this.btnSil5.Visible = false;
-            this.btnSil5.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnGuncelle5
-            // 
-            this.btnGuncelle5.ActiveControl = null;
-            this.btnGuncelle5.Enabled = false;
-            this.btnGuncelle5.Location = new System.Drawing.Point(484, 392);
-            this.btnGuncelle5.Name = "btnGuncelle5";
-            this.btnGuncelle5.Size = new System.Drawing.Size(85, 40);
-            this.btnGuncelle5.TabIndex = 5;
-            this.btnGuncelle5.Text = "Güncelle";
-            this.btnGuncelle5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuncelle5.UseSelectable = true;
-            this.btnGuncelle5.Visible = false;
-            this.btnGuncelle5.Click += new System.EventHandler(this.btnGuncelle_Click);
+            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(15, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 48;
+            this.pictureBox2.TabStop = false;
             // 
             // btnKaydet5
             // 
-            this.btnKaydet5.ActiveControl = null;
-            this.btnKaydet5.Enabled = false;
-            this.btnKaydet5.Location = new System.Drawing.Point(484, 392);
+            this.btnKaydet5.BackColor = System.Drawing.Color.White;
+            this.btnKaydet5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKaydet5.FlatAppearance.BorderSize = 0;
+            this.btnKaydet5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet5.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet5.Location = new System.Drawing.Point(524, 387);
+            this.btnKaydet5.Margin = new System.Windows.Forms.Padding(0);
             this.btnKaydet5.Name = "btnKaydet5";
-            this.btnKaydet5.Size = new System.Drawing.Size(85, 40);
-            this.btnKaydet5.TabIndex = 6;
-            this.btnKaydet5.Text = "Kaydet";
-            this.btnKaydet5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnKaydet5.UseSelectable = true;
-            this.btnKaydet5.Visible = false;
+            this.btnKaydet5.Size = new System.Drawing.Size(48, 48);
+            this.btnKaydet5.TabIndex = 58;
+            this.toolTip1.SetToolTip(this.btnKaydet5, "Kaydet");
+            this.btnKaydet5.UseVisualStyleBackColor = false;
             this.btnKaydet5.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // btnSil5
+            // 
+            this.btnSil5.BackColor = System.Drawing.Color.White;
+            this.btnSil5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSil5.FlatAppearance.BorderSize = 0;
+            this.btnSil5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil5.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
+            this.btnSil5.Location = new System.Drawing.Point(476, 387);
+            this.btnSil5.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSil5.Name = "btnSil5";
+            this.btnSil5.Size = new System.Drawing.Size(48, 48);
+            this.btnSil5.TabIndex = 59;
+            this.toolTip1.SetToolTip(this.btnSil5, "Sil");
+            this.btnSil5.UseVisualStyleBackColor = false;
+            this.btnSil5.Visible = false;
+            this.btnSil5.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // frmUye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 555);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.metroTabControl1);
             this.Name = "frmUye";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
-            this.Text = "Üye Düzenleme";
+            this.Text = "       Üye Düzenleme";
             this.Load += new System.EventHandler(this.frmUye_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroTabControl1.ResumeLayout(false);
@@ -1632,6 +1595,7 @@
             this.metroTabPage4.ResumeLayout(false);
             this.metroTabPage4.PerformLayout();
             this.metroTabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1719,20 +1683,17 @@
         private MetroFramework.Controls.MetroTile btnAidatEkle;
         private MetroFramework.Controls.MetroTile btnResimSil;
         private MetroFramework.Controls.MetroTile btnYeniResim;
-        private MetroFramework.Controls.MetroTile btnKaydet;
-        private MetroFramework.Controls.MetroTile btnGuncelle;
-        private MetroFramework.Controls.MetroTile btnSil;
-        private MetroFramework.Controls.MetroTile btnSil2;
-        private MetroFramework.Controls.MetroTile btnGuncelle2;
-        private MetroFramework.Controls.MetroTile btnKaydet2;
-        private MetroFramework.Controls.MetroTile btnSil3;
-        private MetroFramework.Controls.MetroTile btnGuncelle3;
-        private MetroFramework.Controls.MetroTile btnKaydet3;
-        private MetroFramework.Controls.MetroTile btnSil4;
-        private MetroFramework.Controls.MetroTile btnGuncelle4;
-        private MetroFramework.Controls.MetroTile btnKaydet4;
-        private MetroFramework.Controls.MetroTile btnSil5;
-        private MetroFramework.Controls.MetroTile btnGuncelle5;
-        private MetroFramework.Controls.MetroTile btnKaydet5;
+        private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnKaydet2;
+        private System.Windows.Forms.Button btnSil2;
+        private System.Windows.Forms.Button btnKaydet3;
+        private System.Windows.Forms.Button btnSil3;
+        private System.Windows.Forms.Button btnKaydet4;
+        private System.Windows.Forms.Button btnSil4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnKaydet5;
+        private System.Windows.Forms.Button btnSil5;
     }
 }
