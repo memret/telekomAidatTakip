@@ -172,7 +172,7 @@
             // 
             // 
             this.txtAciklama.CustomButton.Image = null;
-            this.txtAciklama.CustomButton.Location = new System.Drawing.Point(133, 1);
+            this.txtAciklama.CustomButton.Location = new System.Drawing.Point(197, 1);
             this.txtAciklama.CustomButton.Name = "";
             this.txtAciklama.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtAciklama.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -199,7 +199,7 @@
             // pictureBox2
             // 
             this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
-            this.pictureBox2.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(23, 17);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 38);
@@ -259,7 +259,7 @@
             // 
             // frmTanimUyelikIptal
             // 
-            this.BackImage = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
             this.ClientSize = new System.Drawing.Size(447, 403);
             this.Controls.Add(this.btnYeni);
             this.Controls.Add(this.btnKaydet);
@@ -276,6 +276,7 @@
             this.Controls.Add(this.label5);
             this.Font = new System.Drawing.Font("Cambria Math", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.MaximizeBox = false;
             this.Name = "frmTanimUyelikIptal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.Text = "       Silinme Nedeni Tanımlama";

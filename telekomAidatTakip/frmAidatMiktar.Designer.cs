@@ -220,6 +220,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnKaydet);
+            this.MaximizeBox = false;
             this.Name = "frmAidatMiktar";
             this.Padding = new System.Windows.Forms.Padding(13, 60, 13, 13);
             this.Style = MetroFramework.MetroColorStyle.Default;

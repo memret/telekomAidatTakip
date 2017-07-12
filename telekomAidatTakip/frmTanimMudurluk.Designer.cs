@@ -86,11 +86,11 @@
             // 
             this.comboBox_il.Enabled = false;
             this.comboBox_il.FormattingEnabled = true;
-            this.comboBox_il.ItemHeight = 24;
+            this.comboBox_il.ItemHeight = 23;
             this.comboBox_il.Location = new System.Drawing.Point(159, 142);
             this.comboBox_il.Name = "comboBox_il";
             this.comboBox_il.PromptText = "İl seçiniz.";
-            this.comboBox_il.Size = new System.Drawing.Size(369, 30);
+            this.comboBox_il.Size = new System.Drawing.Size(369, 29);
             this.comboBox_il.TabIndex = 19;
             this.comboBox_il.Tag = "";
             this.comboBox_il.UseSelectable = true;
@@ -102,7 +102,7 @@
             // 
             // 
             this.txtMdrAd.CustomButton.Image = null;
-            this.txtMdrAd.CustomButton.Location = new System.Drawing.Point(342, 2);
+            this.txtMdrAd.CustomButton.Location = new System.Drawing.Point(341, 2);
             this.txtMdrAd.CustomButton.Name = "";
             this.txtMdrAd.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtMdrAd.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -134,7 +134,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(30, 110);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(75, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(71, 19);
             this.metroLabel1.TabIndex = 25;
             this.metroLabel1.Text = "Müdürlük: ";
             // 
@@ -143,7 +143,7 @@
             this.labelMdrNo.AutoSize = true;
             this.labelMdrNo.Location = new System.Drawing.Point(30, 73);
             this.labelMdrNo.Name = "labelMdrNo";
-            this.labelMdrNo.Size = new System.Drawing.Size(98, 20);
+            this.labelMdrNo.Size = new System.Drawing.Size(93, 19);
             this.labelMdrNo.TabIndex = 24;
             this.labelMdrNo.Text = "Müdürlük No: ";
             // 
@@ -191,14 +191,14 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(30, 147);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(18, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(18, 19);
             this.metroLabel2.TabIndex = 25;
             this.metroLabel2.Text = "İl:";
             // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(15, 20);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 38);
@@ -258,7 +258,7 @@
             // 
             // frmTanimMudurluk
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 516);
             this.Controls.Add(this.btnSil);
@@ -274,6 +274,7 @@
             this.Controls.Add(this.labelMdrNo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(555, 516);
             this.Name = "frmTanimMudurluk";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);

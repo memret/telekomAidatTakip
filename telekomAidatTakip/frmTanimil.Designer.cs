@@ -203,6 +203,7 @@
             this.Controls.Add(this.txtAdi);
             this.Controls.Add(this.txtPlakaKodu);
             this.ForeColor = System.Drawing.SystemColors.Control;
+            this.MaximizeBox = false;
             this.Name = "frmTanimIl";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimIl_FormClosing);
             this.Load += new System.EventHandler(this.frmTanimil_Load);

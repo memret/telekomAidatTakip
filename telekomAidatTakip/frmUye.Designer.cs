@@ -37,6 +37,8 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
             this.btnResimSil = new MetroFramework.Controls.MetroTile();
             this.btnYeniResim = new MetroFramework.Controls.MetroTile();
             this.btnAktiflestir = new MetroFramework.Controls.MetroTile();
@@ -63,6 +65,8 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.cboxBirim = new MetroFramework.Controls.MetroComboBox();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.btnKaydet2 = new System.Windows.Forms.Button();
+            this.btnSil2 = new System.Windows.Forms.Button();
             this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
@@ -80,6 +84,8 @@
             this.txtIsAdresi = new MetroFramework.Controls.MetroTextBox();
             this.txtEvAdresi = new MetroFramework.Controls.MetroTextBox();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.btnKaydet3 = new System.Windows.Forms.Button();
+            this.btnSil3 = new System.Windows.Forms.Button();
             this.dateNufusDogum = new MetroFramework.Controls.MetroDateTime();
             this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
@@ -105,25 +111,19 @@
             this.txtNufusDogumYeri = new MetroFramework.Controls.MetroTextBox();
             this.txtNufusBaba = new MetroFramework.Controls.MetroTextBox();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.btnKaydet4 = new System.Windows.Forms.Button();
+            this.btnSil4 = new System.Windows.Forms.Button();
             this.btnAidatEkle = new MetroFramework.Controls.MetroTile();
             this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel34 = new MetroFramework.Controls.MetroLabel();
             this.txtAidatMiktari = new MetroFramework.Controls.MetroTextBox();
             this.dateAidatTarih = new MetroFramework.Controls.MetroDateTime();
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
-            this.txtNot = new MetroFramework.Controls.MetroTextBox();
-            this.btnKaydet = new System.Windows.Forms.Button();
-            this.btnSil = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnKaydet2 = new System.Windows.Forms.Button();
-            this.btnSil2 = new System.Windows.Forms.Button();
-            this.btnKaydet3 = new System.Windows.Forms.Button();
-            this.btnSil3 = new System.Windows.Forms.Button();
-            this.btnKaydet4 = new System.Windows.Forms.Button();
-            this.btnSil4 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnKaydet5 = new System.Windows.Forms.Button();
             this.btnSil5 = new System.Windows.Forms.Button();
+            this.txtNot = new MetroFramework.Controls.MetroTextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -225,6 +225,39 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // btnKaydet
+            // 
+            this.btnKaydet.BackColor = System.Drawing.Color.White;
+            this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKaydet.FlatAppearance.BorderSize = 0;
+            this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet.Location = new System.Drawing.Point(524, 387);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(48, 48);
+            this.btnKaydet.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnKaydet, "Kaydet");
+            this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // btnSil
+            // 
+            this.btnSil.BackColor = System.Drawing.Color.White;
+            this.btnSil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSil.FlatAppearance.BorderSize = 0;
+            this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
+            this.btnSil.Location = new System.Drawing.Point(476, 387);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(48, 48);
+            this.btnSil.TabIndex = 55;
+            this.toolTip1.SetToolTip(this.btnSil, "Sil");
+            this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Visible = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnResimSil
             // 
@@ -544,6 +577,39 @@
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
+            // btnKaydet2
+            // 
+            this.btnKaydet2.BackColor = System.Drawing.Color.White;
+            this.btnKaydet2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKaydet2.FlatAppearance.BorderSize = 0;
+            this.btnKaydet2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet2.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet2.Location = new System.Drawing.Point(524, 387);
+            this.btnKaydet2.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKaydet2.Name = "btnKaydet2";
+            this.btnKaydet2.Size = new System.Drawing.Size(48, 48);
+            this.btnKaydet2.TabIndex = 56;
+            this.toolTip1.SetToolTip(this.btnKaydet2, "Kaydet");
+            this.btnKaydet2.UseVisualStyleBackColor = false;
+            this.btnKaydet2.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // btnSil2
+            // 
+            this.btnSil2.BackColor = System.Drawing.Color.White;
+            this.btnSil2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSil2.FlatAppearance.BorderSize = 0;
+            this.btnSil2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil2.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
+            this.btnSil2.Location = new System.Drawing.Point(476, 387);
+            this.btnSil2.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSil2.Name = "btnSil2";
+            this.btnSil2.Size = new System.Drawing.Size(48, 48);
+            this.btnSil2.TabIndex = 57;
+            this.toolTip1.SetToolTip(this.btnSil2, "Sil");
+            this.btnSil2.UseVisualStyleBackColor = false;
+            this.btnSil2.Visible = false;
+            this.btnSil2.Click += new System.EventHandler(this.btnSil_Click);
+            // 
             // metroLabel20
             // 
             this.metroLabel20.AutoSize = true;
@@ -862,11 +928,44 @@
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.VerticalScrollbarSize = 10;
             // 
+            // btnKaydet3
+            // 
+            this.btnKaydet3.BackColor = System.Drawing.Color.White;
+            this.btnKaydet3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKaydet3.FlatAppearance.BorderSize = 0;
+            this.btnKaydet3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet3.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet3.Location = new System.Drawing.Point(524, 387);
+            this.btnKaydet3.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKaydet3.Name = "btnKaydet3";
+            this.btnKaydet3.Size = new System.Drawing.Size(48, 48);
+            this.btnKaydet3.TabIndex = 56;
+            this.toolTip1.SetToolTip(this.btnKaydet3, "Kaydet");
+            this.btnKaydet3.UseVisualStyleBackColor = false;
+            this.btnKaydet3.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // btnSil3
+            // 
+            this.btnSil3.BackColor = System.Drawing.Color.White;
+            this.btnSil3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSil3.FlatAppearance.BorderSize = 0;
+            this.btnSil3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil3.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
+            this.btnSil3.Location = new System.Drawing.Point(476, 387);
+            this.btnSil3.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSil3.Name = "btnSil3";
+            this.btnSil3.Size = new System.Drawing.Size(48, 48);
+            this.btnSil3.TabIndex = 57;
+            this.toolTip1.SetToolTip(this.btnSil3, "Sil");
+            this.btnSil3.UseVisualStyleBackColor = false;
+            this.btnSil3.Visible = false;
+            this.btnSil3.Click += new System.EventHandler(this.btnSil_Click);
+            // 
             // dateNufusDogum
             // 
             this.dateNufusDogum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateNufusDogum.Location = new System.Drawing.Point(251, 85);
-            this.dateNufusDogum.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateNufusDogum.MinimumSize = new System.Drawing.Size(4, 29);
             this.dateNufusDogum.Name = "dateNufusDogum";
             this.dateNufusDogum.Size = new System.Drawing.Size(99, 29);
             this.dateNufusDogum.TabIndex = 14;
@@ -1278,6 +1377,39 @@
             this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.VerticalScrollbarSize = 10;
             // 
+            // btnKaydet4
+            // 
+            this.btnKaydet4.BackColor = System.Drawing.Color.White;
+            this.btnKaydet4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKaydet4.FlatAppearance.BorderSize = 0;
+            this.btnKaydet4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet4.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet4.Location = new System.Drawing.Point(524, 387);
+            this.btnKaydet4.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKaydet4.Name = "btnKaydet4";
+            this.btnKaydet4.Size = new System.Drawing.Size(48, 48);
+            this.btnKaydet4.TabIndex = 56;
+            this.toolTip1.SetToolTip(this.btnKaydet4, "Kaydet");
+            this.btnKaydet4.UseVisualStyleBackColor = false;
+            this.btnKaydet4.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // btnSil4
+            // 
+            this.btnSil4.BackColor = System.Drawing.Color.White;
+            this.btnSil4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSil4.FlatAppearance.BorderSize = 0;
+            this.btnSil4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil4.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
+            this.btnSil4.Location = new System.Drawing.Point(476, 387);
+            this.btnSil4.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSil4.Name = "btnSil4";
+            this.btnSil4.Size = new System.Drawing.Size(48, 48);
+            this.btnSil4.TabIndex = 57;
+            this.toolTip1.SetToolTip(this.btnSil4, "Sil");
+            this.btnSil4.UseVisualStyleBackColor = false;
+            this.btnSil4.Visible = false;
+            this.btnSil4.Click += new System.EventHandler(this.btnSil_Click);
+            // 
             // btnAidatEkle
             // 
             this.btnAidatEkle.ActiveControl = null;
@@ -1344,7 +1476,7 @@
             this.dateAidatTarih.CustomFormat = "MMMMMM / yyyy";
             this.dateAidatTarih.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateAidatTarih.Location = new System.Drawing.Point(411, 15);
-            this.dateAidatTarih.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateAidatTarih.MinimumSize = new System.Drawing.Size(4, 29);
             this.dateAidatTarih.Name = "dateAidatTarih";
             this.dateAidatTarih.Size = new System.Drawing.Size(130, 29);
             this.dateAidatTarih.TabIndex = 2;
@@ -1365,180 +1497,6 @@
             this.metroTabPage5.VerticalScrollbarBarColor = true;
             this.metroTabPage5.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage5.VerticalScrollbarSize = 10;
-            // 
-            // txtNot
-            // 
-            // 
-            // 
-            // 
-            this.txtNot.CustomButton.Image = null;
-            this.txtNot.CustomButton.Location = new System.Drawing.Point(200, 2);
-            this.txtNot.CustomButton.Name = "";
-            this.txtNot.CustomButton.Size = new System.Drawing.Size(353, 353);
-            this.txtNot.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNot.CustomButton.TabIndex = 1;
-            this.txtNot.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtNot.CustomButton.UseSelectable = true;
-            this.txtNot.CustomButton.Visible = false;
-            this.txtNot.Lines = new string[0];
-            this.txtNot.Location = new System.Drawing.Point(3, 15);
-            this.txtNot.MaxLength = 32767;
-            this.txtNot.Multiline = true;
-            this.txtNot.Name = "txtNot";
-            this.txtNot.PasswordChar = '\0';
-            this.txtNot.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNot.SelectedText = "";
-            this.txtNot.SelectionLength = 0;
-            this.txtNot.SelectionStart = 0;
-            this.txtNot.ShortcutsEnabled = true;
-            this.txtNot.Size = new System.Drawing.Size(556, 358);
-            this.txtNot.TabIndex = 2;
-            this.txtNot.UseSelectable = true;
-            this.txtNot.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtNot.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // btnKaydet
-            // 
-            this.btnKaydet.BackColor = System.Drawing.Color.White;
-            this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnKaydet.FlatAppearance.BorderSize = 0;
-            this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
-            this.btnKaydet.Location = new System.Drawing.Point(524, 387);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(48, 48);
-            this.btnKaydet.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.btnKaydet, "Kaydet");
-            this.btnKaydet.UseVisualStyleBackColor = false;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
-            // btnSil
-            // 
-            this.btnSil.BackColor = System.Drawing.Color.White;
-            this.btnSil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSil.FlatAppearance.BorderSize = 0;
-            this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSil.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
-            this.btnSil.Location = new System.Drawing.Point(476, 387);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(48, 48);
-            this.btnSil.TabIndex = 55;
-            this.toolTip1.SetToolTip(this.btnSil, "Sil");
-            this.btnSil.UseVisualStyleBackColor = false;
-            this.btnSil.Visible = false;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnKaydet2
-            // 
-            this.btnKaydet2.BackColor = System.Drawing.Color.White;
-            this.btnKaydet2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnKaydet2.FlatAppearance.BorderSize = 0;
-            this.btnKaydet2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKaydet2.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
-            this.btnKaydet2.Location = new System.Drawing.Point(524, 387);
-            this.btnKaydet2.Margin = new System.Windows.Forms.Padding(0);
-            this.btnKaydet2.Name = "btnKaydet2";
-            this.btnKaydet2.Size = new System.Drawing.Size(48, 48);
-            this.btnKaydet2.TabIndex = 56;
-            this.toolTip1.SetToolTip(this.btnKaydet2, "Kaydet");
-            this.btnKaydet2.UseVisualStyleBackColor = false;
-            this.btnKaydet2.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
-            // btnSil2
-            // 
-            this.btnSil2.BackColor = System.Drawing.Color.White;
-            this.btnSil2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSil2.FlatAppearance.BorderSize = 0;
-            this.btnSil2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSil2.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
-            this.btnSil2.Location = new System.Drawing.Point(476, 387);
-            this.btnSil2.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSil2.Name = "btnSil2";
-            this.btnSil2.Size = new System.Drawing.Size(48, 48);
-            this.btnSil2.TabIndex = 57;
-            this.toolTip1.SetToolTip(this.btnSil2, "Sil");
-            this.btnSil2.UseVisualStyleBackColor = false;
-            this.btnSil2.Visible = false;
-            this.btnSil2.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnKaydet3
-            // 
-            this.btnKaydet3.BackColor = System.Drawing.Color.White;
-            this.btnKaydet3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnKaydet3.FlatAppearance.BorderSize = 0;
-            this.btnKaydet3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKaydet3.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
-            this.btnKaydet3.Location = new System.Drawing.Point(524, 387);
-            this.btnKaydet3.Margin = new System.Windows.Forms.Padding(0);
-            this.btnKaydet3.Name = "btnKaydet3";
-            this.btnKaydet3.Size = new System.Drawing.Size(48, 48);
-            this.btnKaydet3.TabIndex = 56;
-            this.toolTip1.SetToolTip(this.btnKaydet3, "Kaydet");
-            this.btnKaydet3.UseVisualStyleBackColor = false;
-            this.btnKaydet3.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
-            // btnSil3
-            // 
-            this.btnSil3.BackColor = System.Drawing.Color.White;
-            this.btnSil3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSil3.FlatAppearance.BorderSize = 0;
-            this.btnSil3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSil3.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
-            this.btnSil3.Location = new System.Drawing.Point(476, 387);
-            this.btnSil3.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSil3.Name = "btnSil3";
-            this.btnSil3.Size = new System.Drawing.Size(48, 48);
-            this.btnSil3.TabIndex = 57;
-            this.toolTip1.SetToolTip(this.btnSil3, "Sil");
-            this.btnSil3.UseVisualStyleBackColor = false;
-            this.btnSil3.Visible = false;
-            this.btnSil3.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnKaydet4
-            // 
-            this.btnKaydet4.BackColor = System.Drawing.Color.White;
-            this.btnKaydet4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnKaydet4.FlatAppearance.BorderSize = 0;
-            this.btnKaydet4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKaydet4.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
-            this.btnKaydet4.Location = new System.Drawing.Point(524, 387);
-            this.btnKaydet4.Margin = new System.Windows.Forms.Padding(0);
-            this.btnKaydet4.Name = "btnKaydet4";
-            this.btnKaydet4.Size = new System.Drawing.Size(48, 48);
-            this.btnKaydet4.TabIndex = 56;
-            this.toolTip1.SetToolTip(this.btnKaydet4, "Kaydet");
-            this.btnKaydet4.UseVisualStyleBackColor = false;
-            this.btnKaydet4.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
-            // btnSil4
-            // 
-            this.btnSil4.BackColor = System.Drawing.Color.White;
-            this.btnSil4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSil4.FlatAppearance.BorderSize = 0;
-            this.btnSil4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSil4.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
-            this.btnSil4.Location = new System.Drawing.Point(476, 387);
-            this.btnSil4.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSil4.Name = "btnSil4";
-            this.btnSil4.Size = new System.Drawing.Size(48, 48);
-            this.btnSil4.TabIndex = 57;
-            this.toolTip1.SetToolTip(this.btnSil4, "Sil");
-            this.btnSil4.UseVisualStyleBackColor = false;
-            this.btnSil4.Visible = false;
-            this.btnSil4.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(15, 20);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 48;
-            this.pictureBox2.TabStop = false;
             // 
             // btnKaydet5
             // 
@@ -1573,6 +1531,48 @@
             this.btnSil5.Visible = false;
             this.btnSil5.Click += new System.EventHandler(this.btnSil_Click);
             // 
+            // txtNot
+            // 
+            // 
+            // 
+            // 
+            this.txtNot.CustomButton.Image = null;
+            this.txtNot.CustomButton.Location = new System.Drawing.Point(200, 2);
+            this.txtNot.CustomButton.Name = "";
+            this.txtNot.CustomButton.Size = new System.Drawing.Size(353, 353);
+            this.txtNot.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNot.CustomButton.TabIndex = 1;
+            this.txtNot.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNot.CustomButton.UseSelectable = true;
+            this.txtNot.CustomButton.Visible = false;
+            this.txtNot.Lines = new string[0];
+            this.txtNot.Location = new System.Drawing.Point(3, 15);
+            this.txtNot.MaxLength = 32767;
+            this.txtNot.Multiline = true;
+            this.txtNot.Name = "txtNot";
+            this.txtNot.PasswordChar = '\0';
+            this.txtNot.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNot.SelectedText = "";
+            this.txtNot.SelectionLength = 0;
+            this.txtNot.SelectionStart = 0;
+            this.txtNot.ShortcutsEnabled = true;
+            this.txtNot.Size = new System.Drawing.Size(556, 358);
+            this.txtNot.TabIndex = 2;
+            this.txtNot.UseSelectable = true;
+            this.txtNot.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNot.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(15, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 48;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmUye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1580,6 +1580,7 @@
             this.ClientSize = new System.Drawing.Size(617, 555);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.metroTabControl1);
+            this.MaximizeBox = false;
             this.Name = "frmUye";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Text = "       Üye Düzenleme";

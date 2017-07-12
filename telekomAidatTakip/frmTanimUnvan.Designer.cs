@@ -158,7 +158,7 @@
             // pictureBox2
             // 
             this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
-            this.pictureBox2.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(17, 21);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 38);
@@ -218,7 +218,7 @@
             // 
             // frmTanimUnvan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 465);
             this.Controls.Add(this.btnYeni);
@@ -232,6 +232,7 @@
             this.Controls.Add(this.txtUnvanAdi);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.MaximizeBox = false;
             this.Name = "frmTanimUnvan";
             this.Padding = new System.Windows.Forms.Padding(45, 142, 45, 48);
             this.Text = "       Ünvan Tanımlama";

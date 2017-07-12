@@ -366,7 +366,7 @@
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(20, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 38);
@@ -468,6 +468,7 @@
             this.Controls.Add(this.listView1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(605, 544);
             this.Name = "frmTanimOzelGunler";
             this.Text = "       ÖZEL GÜN TANIMLAMA";

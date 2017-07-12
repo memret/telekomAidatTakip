@@ -153,6 +153,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.MaximizeBox = false;
             this.Name = "frmRaporIl";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "       İl Raporları";

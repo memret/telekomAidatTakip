@@ -59,7 +59,7 @@
             // 
             // 
             this.txtTahsilAd.CustomButton.Image = null;
-            this.txtTahsilAd.CustomButton.Location = new System.Drawing.Point(254, 1);
+            this.txtTahsilAd.CustomButton.Location = new System.Drawing.Point(206, 1);
             this.txtTahsilAd.CustomButton.Name = "";
             this.txtTahsilAd.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtTahsilAd.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -239,6 +239,7 @@
             this.Controls.Add(this.tahsilNo);
             this.Controls.Add(this.tahsilAd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmTanimTahsil";
             this.Text = "       Tahsil Tanımlama";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimTahsil_FormClosing);

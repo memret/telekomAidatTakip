@@ -93,6 +93,8 @@
             this.Controls.Add(this.btnIptal);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.metroLabel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmUyeSil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Üye Silme Nedeni";
