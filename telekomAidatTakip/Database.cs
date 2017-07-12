@@ -12,7 +12,7 @@ namespace telekomAidatTakip
         SqlConnection bag;
         SqlCommand kmt;
         SqlDataReader data;
-        Exception excepBaglanti = new Exception("Bağlantı hatası");
+        Exception excepBaglanti = new Exception("Veritabanı hatası");
 
         public Database(string connectstring)
         {
