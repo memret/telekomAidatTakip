@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRaporAidat));
             this.checkBirim = new MetroFramework.Controls.MetroCheckBox();
             this.checkMudurluk = new MetroFramework.Controls.MetroCheckBox();
@@ -46,6 +47,7 @@
             this.btnYazdir = new System.Windows.Forms.Button();
             this.btnListele = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,6 +190,7 @@
             this.btnYazdir.Name = "btnYazdir";
             this.btnYazdir.Size = new System.Drawing.Size(48, 48);
             this.btnYazdir.TabIndex = 49;
+            this.toolTip1.SetToolTip(this.btnYazdir, "Yazdır");
             this.btnYazdir.UseVisualStyleBackColor = false;
             this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
@@ -203,6 +206,7 @@
             this.btnListele.Name = "btnListele";
             this.btnListele.Size = new System.Drawing.Size(48, 48);
             this.btnListele.TabIndex = 49;
+            this.toolTip1.SetToolTip(this.btnListele, "Ekrana Listele");
             this.btnListele.UseVisualStyleBackColor = false;
             this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
             // 
@@ -260,5 +264,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnListele;
         private System.Windows.Forms.Button btnYazdir;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
