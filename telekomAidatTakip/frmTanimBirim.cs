@@ -24,6 +24,7 @@ namespace telekomAidatTakip
         {
             try
             {
+                this.MinimumSize = this.Size;
                 //listBirim.Font = new MetroFramework.Fonts.FontResolver;
                 frmTanimBirim_Resize(this, null);
                 listeDoldur();

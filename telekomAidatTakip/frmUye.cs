@@ -32,24 +32,28 @@ namespace telekomAidatTakip
         private void frmUye_Load(object sender, EventArgs e)
         {
             // DoldurKomple();
-            try {
-            if (sicilno != null)
+            try
             {
-                DoldurKomple(sicilno);
-                btnSil.Enabled = true;
-                btnSil.Visible = true;
-                btnSil2.Enabled = true;
-                btnSil2.Visible = true;
-                btnSil3.Enabled = true;
-                btnSil3.Visible = true;
-                btnSil4.Enabled = true;
-                btnSil4.Visible = true;
-                btnSil5.Enabled = true;
-                btnSil5.Visible = true;
-            }
-            else
-            {
-                DoldurKomple();
+
+                this.MaximumSize = this.Size;
+                this.MinimumSize = this.Size;
+                if (sicilno != null)
+                {
+                    DoldurKomple(sicilno);
+                    btnSil.Enabled = true;
+                    btnSil.Visible = true;
+                    btnSil2.Enabled = true;
+                    btnSil2.Visible = true;
+                    btnSil3.Enabled = true;
+                    btnSil3.Visible = true;
+                    btnSil4.Enabled = true;
+                    btnSil4.Visible = true;
+                    btnSil5.Enabled = true;
+                    btnSil5.Visible = true;
+                }
+                else
+                {
+                    DoldurKomple();
                 }
             }
             catch (Exception ex)
@@ -248,20 +252,21 @@ namespace telekomAidatTakip
         }
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            try { 
-            if (BosYerVarMi() == null)
+            try
             {
-                if (sicilno == null)
+                if (BosYerVarMi() == null)
                 {
-                    yeniKayitEkle();
+                    if (sicilno == null)
+                    {
+                        yeniKayitEkle();
+                    }
+                    else
+                    {
+                        uyeBilgisiGuncelle();
+                    }
                 }
                 else
-                {
-                    uyeBilgisiGuncelle();
-                }
-            }
-            else
-                MessageBox.Show(BosYerVarMi());
+                    MessageBox.Show(BosYerVarMi());
 
             }
             catch (Exception ex)
@@ -316,8 +321,9 @@ namespace telekomAidatTakip
         }
         private void uyeBilgisiGuncelle()
         {
-            try { 
-            Database db, db2, db3;
+            try
+            {
+                Database db, db2, db3;
                 byte[] resim = fotografiAl(pictureBox1.Image);
                 db = new Database();
                 db2 = new Database();
@@ -355,7 +361,7 @@ namespace telekomAidatTakip
 
                 MessageBox.Show("Kayıt güncellendi!", "Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
-           
+
 
             }
             catch (Exception ex)
@@ -365,22 +371,23 @@ namespace telekomAidatTakip
         }
         private void btnSil_Click(object sender, EventArgs e)
         {
-            try { 
-            if (sicilno != string.Empty)
+            try
             {
-                frmUyeSil frm = new frmUyeSil(sicilno);
-                frm.ShowDialog();
-                if (frm.DialogResult == DialogResult.OK)
+                if (sicilno != string.Empty)
                 {
-                    DoldurKomple(sicilno);
+                    frmUyeSil frm = new frmUyeSil(sicilno);
+                    frm.ShowDialog();
+                    if (frm.DialogResult == DialogResult.OK)
+                    {
+                        DoldurKomple(sicilno);
+                    }
+
                 }
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Silme işlemi için sicil numarası gerekli.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            }
-            else
-            {
-                DialogResult dialogResult = MessageBox.Show("Silme işlemi için sicil numarası gerekli.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            }
+                }
 
             }
             catch (Exception ex)
@@ -388,21 +395,22 @@ namespace telekomAidatTakip
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
 
         private void btnYeniResim_Click(object sender, EventArgs e)
         {
-            try { 
-            OpenFileDialog fd = new OpenFileDialog();
-            fd.Title = "Resim seç";
-            fd.Filter = "Resim Dosyaları (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
-
-            if (fd.ShowDialog() == DialogResult.OK)
+            try
             {
-                this.pictureBox1.Image = new Bitmap(fd.OpenFile());
-                resimPath = fd.FileName.ToString();
-                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            }
+                OpenFileDialog fd = new OpenFileDialog();
+                fd.Title = "Resim seç";
+                fd.Filter = "Resim Dosyaları (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+
+                if (fd.ShowDialog() == DialogResult.OK)
+                {
+                    this.pictureBox1.Image = new Bitmap(fd.OpenFile());
+                    resimPath = fd.FileName.ToString();
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                }
 
             }
             catch (Exception ex)
@@ -424,11 +432,12 @@ namespace telekomAidatTakip
 
         private void btnAidatEkle_Click(object sender, EventArgs e)
         {
-            try { 
-            Database db = new Database();
-            db.Sorgu("insert into aidatlog (sicilNo,miktar,tarih) Values (@0, @1,@2)", sicilno, txtAidatMiktari.Text, dateAidatTarih.Value.ToShortDateString());
-            db.Kapat();
-            DoldurAidatBilgileri(sicilno);
+            try
+            {
+                Database db = new Database();
+                db.Sorgu("insert into aidatlog (sicilNo,miktar,tarih) Values (@0, @1,@2)", sicilno, txtAidatMiktari.Text, dateAidatTarih.Value.ToShortDateString());
+                db.Kapat();
+                DoldurAidatBilgileri(sicilno);
 
             }
             catch (Exception ex)
@@ -438,9 +447,10 @@ namespace telekomAidatTakip
         }
         private void cboxIl_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try { 
-            if (cboxIl.SelectedIndex != -1)
-                PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key.ToString());
+            try
+            {
+                if (cboxIl.SelectedIndex != -1)
+                    PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key.ToString());
 
             }
             catch (Exception ex)
@@ -451,9 +461,10 @@ namespace telekomAidatTakip
 
         private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try { 
-            if (cboxMudurluk.SelectedIndex != -1)
-                PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
+            try
+            {
+                if (cboxMudurluk.SelectedIndex != -1)
+                    PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
 
             }
             catch (Exception ex)
@@ -506,19 +517,20 @@ namespace telekomAidatTakip
 
         private void txtSicilNo_Leave(object sender, EventArgs e)
         {
-            try { 
-            Database db = new Database();
-            var data = db.DataOku("select sicilNo from Uyeler");
-            while (data.Read())
+            try
             {
-                String sicilDb = data["sicilNo"].ToString();
-                if (sicilDb.Equals(txtSicilNo.Text.ToString()))
+                Database db = new Database();
+                var data = db.DataOku("select sicilNo from Uyeler");
+                while (data.Read())
                 {
-                    MessageBox.Show("Bu sicil Numarası kayıtlı.");
-                    txtSicilNo.Clear();
-                    txtSicilNo.Select();
+                    String sicilDb = data["sicilNo"].ToString();
+                    if (sicilDb.Equals(txtSicilNo.Text.ToString()))
+                    {
+                        MessageBox.Show("Bu sicil Numarası kayıtlı.");
+                        txtSicilNo.Clear();
+                        txtSicilNo.Select();
+                    }
                 }
-            }
 
             }
             catch (Exception ex)
@@ -529,13 +541,14 @@ namespace telekomAidatTakip
 
         private void btnAktiflestir_Click(object sender, EventArgs e)
         {
-            try { 
-            Database db = new Database();
-            db.Sorgu("update uyeler set aktif = 1, silinmenedenino= NULL where sicilno=@0", sicilno);
-            lblSilinmeBilgisi.Visible = false;
-            lblSilinmeBilgisiLabeli.Visible = false;
-            btnAktiflestir.Visible = false;
-            frmUye_Load(this, null);
+            try
+            {
+                Database db = new Database();
+                db.Sorgu("update uyeler set aktif = 1, silinmenedenino= NULL where sicilno=@0", sicilno);
+                lblSilinmeBilgisi.Visible = false;
+                lblSilinmeBilgisiLabeli.Visible = false;
+                btnAktiflestir.Visible = false;
+                frmUye_Load(this, null);
 
             }
             catch (Exception ex)

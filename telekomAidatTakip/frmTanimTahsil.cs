@@ -21,6 +21,7 @@ namespace telekomAidatTakip
         {
             try
             {
+                this.MinimumSize = this.Size;
                 TahsilListesiDoldur();
 
             }

@@ -21,6 +21,7 @@ namespace telekomAidatTakip
         {
             try
             {
+                this.MinimumSize = this.Size;
                 frmTanimIl_Resize(this, null);
                 IlListesiniDoldur();
                 txtPlakaKodu.WaterMark = "Yeni kayıt açınız...";

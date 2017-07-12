@@ -52,8 +52,11 @@ namespace telekomAidatTakip
     
         private void frmYedekleme_Load(object sender, EventArgs e)
         {
-            try { 
-            listele();
+            try {
+
+                this.MaximumSize = this.Size;
+                this.MinimumSize = this.Size;
+                listele();
 
             }
             catch (Exception ex)

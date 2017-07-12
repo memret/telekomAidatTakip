@@ -413,6 +413,7 @@ namespace telekomAidatTakip
         private void frmRaporUye_Load(object sender, EventArgs e)
         {
 
+            this.MinimumSize = this.Size;
             //this.Controls.Add(yazdir.printPre);
 
         }

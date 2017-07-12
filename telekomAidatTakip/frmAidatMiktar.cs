@@ -25,15 +25,17 @@ namespace telekomAidatTakip
         {
             try
             {
+                this.MaximumSize = this.Size;
+                this.MinimumSize = this.Size;
                 cboxIl.SelectedIndex = -1;
-            
+
                 PRG.DoldurIl(ref cboxIl);
-            
-            cboxBirim.Enabled = false;
-            cboxMudurluk.Enabled = false;
-            btnGuncelle.Visible = false;
-            btnKaydet.Visible = true;
-            frmAidatMiktar_Resize(this, null);
+
+                cboxBirim.Enabled = false;
+                cboxMudurluk.Enabled = false;
+                btnGuncelle.Visible = false;
+                btnKaydet.Visible = true;
+                frmAidatMiktar_Resize(this, null);
             }
             catch (Exception ex)
             {

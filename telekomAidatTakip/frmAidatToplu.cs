@@ -22,6 +22,8 @@ namespace telekomAidatTakip
         {
             try
             {
+                this.MaximumSize = this.Size;
+                this.MinimumSize = this.Size;
                 PRG.DoldurIl(ref cboxil);
                 cboxMudurluk.SelectedIndex = -1;
                 cboxBirim.SelectedIndex = -1;

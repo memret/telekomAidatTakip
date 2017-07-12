@@ -71,6 +71,7 @@ namespace telekomAidatTakip
         {
             try
             {
+                this.MinimumSize = this.Size;
                 yazdir = new Yazdir(1);
                 btnYazdir.Enabled = false;
 

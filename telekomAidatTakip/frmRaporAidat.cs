@@ -23,6 +23,7 @@ namespace telekomAidatTakip
         {
             try
             {
+                this.MinimumSize = this.Size;
 
                 PRG.DoldurIl(ref cboxil);
                 cboxil.SelectedIndex = -1;
