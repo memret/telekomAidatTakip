@@ -103,5 +103,10 @@ namespace telekomAidatTakip
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void frmRaporIl_Resize(object sender, EventArgs e)
+        {
+            listIl.Size = new Size(listIl.Size.Width, this.Size.Height - 137);
+        }
     }
 }

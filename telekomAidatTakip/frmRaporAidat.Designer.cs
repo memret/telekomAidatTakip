@@ -242,6 +242,7 @@
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Text = "       Aidat Raporları";
             this.Load += new System.EventHandler(this.frmRaporAidat_Load);
+            this.Resize += new System.EventHandler(this.frmRaporAidat_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

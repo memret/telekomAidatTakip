@@ -158,6 +158,7 @@
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "       İl Raporları";
             this.Load += new System.EventHandler(this.frmRaporIl_Load);
+            this.Resize += new System.EventHandler(this.frmRaporIl_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

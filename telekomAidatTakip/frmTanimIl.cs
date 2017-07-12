@@ -273,6 +273,7 @@ namespace telekomAidatTakip
         {
             //groupBox2.Width = this.Width - 49; //design sekmesindeki boyut farklarını buraya yazdık
             // groupBox2.Height = this.Height - 252;
+            listvil.Size = new Size(listvil.Size.Width, this.Size.Height - 214);
         }
 
 

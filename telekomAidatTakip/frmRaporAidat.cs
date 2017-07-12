@@ -344,6 +344,11 @@ namespace telekomAidatTakip
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void frmRaporAidat_Resize(object sender, EventArgs e)
+        {
+            listUyeKayitlari.Size = new Size(listUyeKayitlari.Size.Width, this.Size.Height - 241);
+        }
     }
 
 

@@ -371,6 +371,7 @@
             this.Name = "frmRaporUye";
             this.Text = "       Üye Raporu";
             this.Load += new System.EventHandler(this.frmRaporUye_Load);
+            this.Resize += new System.EventHandler(this.frmRaporUye_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

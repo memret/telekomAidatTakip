@@ -476,5 +476,10 @@ namespace telekomAidatTakip
                 checkMudurluk.Checked = false;
             }
         }
+
+        private void frmRaporUye_Resize(object sender, EventArgs e)
+        {
+            listUye.Size = new Size(listUye.Size.Width, this.Size.Height - 366);
+        }
     }
 }
