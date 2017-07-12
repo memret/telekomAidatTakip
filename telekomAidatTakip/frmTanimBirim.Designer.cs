@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTanimBirim));
             this.cBoxMudurluk = new MetroFramework.Controls.MetroComboBox();
             this.txtBirimKodu = new MetroFramework.Controls.MetroTextBox();
@@ -44,6 +45,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,16 +155,16 @@
             this.btnSil.ActiveControl = null;
             this.btnSil.BackColor = System.Drawing.Color.Silver;
             this.btnSil.Enabled = false;
-            this.btnSil.Location = new System.Drawing.Point(355, 171);
+            this.btnSil.Location = new System.Drawing.Point(391, 160);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(82, 45);
+            this.btnSil.Size = new System.Drawing.Size(45, 45);
             this.btnSil.TabIndex = 10;
-            this.btnSil.Text = "Sil";
-            this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSil.TileImage = global::telekomAidatTakip.Properties.Resources.if_delete_101939;
-            this.btnSil.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSil.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSil.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnSil.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.toolTip1.SetToolTip(this.btnSil, "Sil");
             this.btnSil.UseCustomBackColor = true;
             this.btnSil.UseSelectable = true;
             this.btnSil.UseTileImage = true;
@@ -173,16 +175,16 @@
             this.btnKaydet.ActiveControl = null;
             this.btnKaydet.BackColor = System.Drawing.Color.Silver;
             this.btnKaydet.Enabled = false;
-            this.btnKaydet.Location = new System.Drawing.Point(204, 171);
+            this.btnKaydet.Location = new System.Drawing.Point(340, 160);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(113, 45);
+            this.btnKaydet.Size = new System.Drawing.Size(45, 45);
             this.btnKaydet.TabIndex = 10;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnKaydet.TileImage = global::telekomAidatTakip.Properties.Resources.if_check_101940;
-            this.btnKaydet.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKaydet.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnKaydet.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnKaydet.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.toolTip1.SetToolTip(this.btnKaydet, "Kaydet");
             this.btnKaydet.UseCustomBackColor = true;
             this.btnKaydet.UseSelectable = true;
             this.btnKaydet.UseTileImage = true;
@@ -191,16 +193,16 @@
             // btnYeni
             // 
             this.btnYeni.ActiveControl = null;
-            this.btnYeni.Location = new System.Drawing.Point(73, 171);
+            this.btnYeni.Location = new System.Drawing.Point(289, 160);
             this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(92, 45);
+            this.btnYeni.Size = new System.Drawing.Size(45, 45);
             this.btnYeni.TabIndex = 10;
-            this.btnYeni.Text = "Yeni";
-            this.btnYeni.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnYeni.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnYeni.TileImage = global::telekomAidatTakip.Properties.Resources.if_save_101946;
-            this.btnYeni.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnYeni.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnYeni.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.btnYeni.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.toolTip1.SetToolTip(this.btnYeni, "Yeni Kayıt");
             this.btnYeni.UseSelectable = true;
             this.btnYeni.UseTileImage = true;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
@@ -217,7 +219,7 @@
             this.listBirim.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listBirim.FullRowSelect = true;
             this.listBirim.GridLines = true;
-            this.listBirim.Location = new System.Drawing.Point(20, 245);
+            this.listBirim.Location = new System.Drawing.Point(20, 215);
             this.listBirim.MultiSelect = false;
             this.listBirim.Name = "listBirim";
             this.listBirim.Size = new System.Drawing.Size(472, 214);
@@ -260,7 +262,7 @@
             // frmTanimBirim
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(512, 479);
+            this.ClientSize = new System.Drawing.Size(512, 449);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.listBirim);
             this.Controls.Add(this.btnSil);
@@ -274,7 +276,6 @@
             this.Controls.Add(this.txtBirimAdi);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(512, 479);
             this.Name = "frmTanimBirim";
             this.Text = "       Birim Tanımlama";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
@@ -302,5 +303,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

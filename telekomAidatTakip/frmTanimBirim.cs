@@ -49,20 +49,28 @@ namespace telekomAidatTakip
         {
 
         }
-
+        bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
-            //Aynı birim no varsa hata kontrolü yap.
-
-            if (btnYeni.Text == "Yeni")
+            if (yeniKayit)
             {
-                btnYeni.Text = "Ekle";
+                if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
+                {
+                    DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
+                    if (dialogResult == DialogResult.Yes)
+                        btnKaydet_Click(this, null);
+                    else if (dialogResult == DialogResult.Cancel)
+                        return;
+                }
+                yeniKayit = false;
                 btnYeni.Image = telekomAidatTakip.Properties.Resources.if_check_101940;
                 txtBirimAdi.Enabled = true;
                 txtBirimKodu.Enabled = true;
                 cBoxMudurluk.Enabled = true;
                 txtBirimAdi.Clear();
                 txtBirimKodu.Clear();
+                cBoxMudurluk.SelectedIndex = -1;
+                toolTip1.SetToolTip(btnYeni,"Ekle");
             }
 
             else
@@ -75,10 +83,12 @@ namespace telekomAidatTakip
                 listeDoldur();
                 db.Kapat();
                 btnYeni.Image = telekomAidatTakip.Properties.Resources.if_save_101946;
-                btnYeni.Text = "Yeni";
+                
 
                 txtBirimAdi.Enabled = false;
                 cBoxMudurluk.Enabled = false;
+                yeniKayit = true;
+                toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
             }
             else
             {
@@ -227,7 +237,8 @@ namespace telekomAidatTakip
             txtBirimAdi.Enabled = true;
             cBoxMudurluk.Enabled = true;
             txtBirimKodu.Enabled = false;
-            btnYeni.Text = "Yeni";
+            yeniKayit = true;
+            toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
             Database db = new Database();
             String mudurlukAdi = listBirim.SelectedItems[0].SubItems[3].Text;
             String birimKodu = listBirim.SelectedItems[0].SubItems[0].Text;
