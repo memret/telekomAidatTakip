@@ -263,7 +263,6 @@
     <Content Include="Resources\if_icons_new_1564516.png" />
     <Content Include="Resources\if_icons_search_1564527.png" />
     <Content Include="Resources\if_ic_control_point_48px_352288.png" />
-    <Content Include="Resources\if_ic_control_point_48px_352288_DB.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -194,7 +194,7 @@
             // pictureBox2
             // 
             this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
-            this.pictureBox2.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox2.Image = global::telekomAidatTakip.Properties.Resources.telekom1;
             this.pictureBox2.Location = new System.Drawing.Point(15, 20);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 38);
@@ -207,6 +207,8 @@
             this.btnSil.BackColor = System.Drawing.Color.White;
             this.btnSil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSil.Enabled = false;
+            this.btnSil.FlatAppearance.BorderSize = 0;
+            this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSil.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
             this.btnSil.Location = new System.Drawing.Point(389, 172);
             this.btnSil.Margin = new System.Windows.Forms.Padding(0);
@@ -222,6 +224,8 @@
             this.btnKaydet.BackColor = System.Drawing.Color.White;
             this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnKaydet.Enabled = false;
+            this.btnKaydet.FlatAppearance.BorderSize = 0;
+            this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
             this.btnKaydet.Location = new System.Drawing.Point(335, 173);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
@@ -236,6 +240,8 @@
             // 
             this.btnYeni.BackColor = System.Drawing.Color.White;
             this.btnYeni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnYeni.FlatAppearance.BorderSize = 0;
+            this.btnYeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYeni.Image = global::telekomAidatTakip.Properties.Resources.if_ic_control_point_48px_352288;
             this.btnYeni.Location = new System.Drawing.Point(281, 173);
             this.btnYeni.Margin = new System.Windows.Forms.Padding(0);
