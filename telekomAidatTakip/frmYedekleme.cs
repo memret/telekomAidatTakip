@@ -52,17 +52,30 @@ namespace telekomAidatTakip
     
         private void frmYedekleme_Load(object sender, EventArgs e)
         {
+            try { 
             listele();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnYukle_Click(object sender, EventArgs e)
         {
+            try { 
             if (listYukle.SelectedItems.Count > 0)
             {
                 Database.Restore(listYukle.SelectedItems[0].Tag.ToString());
                 MessageBox.Show("Geri Yükleme tamamlandı");
             }
-           
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
         void Yedekle()
@@ -87,8 +100,15 @@ namespace telekomAidatTakip
 
         private void btnYedek_Click(object sender, EventArgs e)
         {
+            try { 
             Yedekle();
             listele();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void listYukle_SelectedIndexChanged(object sender, EventArgs e)

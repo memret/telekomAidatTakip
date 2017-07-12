@@ -22,7 +22,15 @@ namespace telekomAidatTakip
 
         private void frmUyeSil_Load(object sender, EventArgs e)
         {
+            try { 
             PRG.DoldurSilinmeNedeni(ref comboBox1);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
         }
 
         private void btnIptal_Click(object sender, EventArgs e)
@@ -33,10 +41,17 @@ namespace telekomAidatTakip
 
         private void btnOnayla_Click(object sender, EventArgs e)
         {
+            try { 
             Database db = new Database();
             db.Sorgu("update uyeler set aktif = 0, silinmenedenino=@0 where sicilno=@1",PRG.cboxKeyGetir(ref comboBox1),sicilno);
             this.DialogResult = DialogResult.OK;
             this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

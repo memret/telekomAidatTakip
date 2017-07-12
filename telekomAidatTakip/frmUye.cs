@@ -32,7 +32,7 @@ namespace telekomAidatTakip
         private void frmUye_Load(object sender, EventArgs e)
         {
             // DoldurKomple();
-
+            try {
             if (sicilno != null)
             {
                 DoldurKomple(sicilno);
@@ -50,6 +50,12 @@ namespace telekomAidatTakip
             else
             {
                 DoldurKomple();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
             }
         }
 
@@ -242,6 +248,7 @@ namespace telekomAidatTakip
         }
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            try { 
             if (BosYerVarMi() == null)
             {
                 if (sicilno == null)
@@ -255,18 +262,24 @@ namespace telekomAidatTakip
             }
             else
                 MessageBox.Show(BosYerVarMi());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void yeniKayitEkle()
         {
-            Database db, db2;
-            byte[] resim;
             try
             {
+                Database db, db2;
+                byte[] resim;
                 db = new Database();
                 db2 = new Database();
                 resim = fotografiAl(pictureBox1.Image);
-                
+
                 var kanNo = PRG.cboxKeyGetir(ref cboxNufusKan);// ((KeyValuePair<int, string>)cboxNufusKan.SelectedItem).Key;
                 var mdr = PRG.cboxKeyGetir(ref cboxMudurluk);//((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
                 var ilno = PRG.cboxKeyGetir(ref cboxIl);//((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
@@ -287,31 +300,24 @@ namespace telekomAidatTakip
                 if (pictureBox1.Image != null)
                     db2.Sorgu("insert into UyeFotograf (sicilNo,Fotograf) values (@0,@1)", txtSicilNo.Text, resim);
                 MessageBox.Show("Yeni üye kaydedildi.", "Üye Kayıt", MessageBoxButtons.OK);
-                
+
                 db.Kapat();
                 db2.Kapat();
                 this.Close();
+
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Exception ed = e;
-                MessageBox.Show("Yeni kayıt sırasında problem oluştu.");
+                MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                db = null;
-                db2 = null;
-            }
-            
 
 
 
         }
         private void uyeBilgisiGuncelle()
         {
+            try { 
             Database db, db2, db3;
-            try
-            {
                 byte[] resim = fotografiAl(pictureBox1.Image);
                 db = new Database();
                 db2 = new Database();
@@ -349,22 +355,17 @@ namespace telekomAidatTakip
 
                 MessageBox.Show("Kayıt güncellendi!", "Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
-            }
-            catch
-            {
-                MessageBox.Show("Güncelleme sırasında problem oluştu.");
+           
 
             }
-            finally
+            catch (Exception ex)
             {
-                db = null;
-                db2 = null;
-                db3 = null;
+                MessageBox.Show(ex.Message);
             }
-
         }
         private void btnSil_Click(object sender, EventArgs e)
         {
+            try { 
             if (sicilno != string.Empty)
             {
                 frmUyeSil frm = new frmUyeSil(sicilno);
@@ -381,11 +382,17 @@ namespace telekomAidatTakip
 
             }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         
 
         private void btnYeniResim_Click(object sender, EventArgs e)
         {
+            try { 
             OpenFileDialog fd = new OpenFileDialog();
             fd.Title = "Resim seç";
             fd.Filter = "Resim Dosyaları (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
@@ -395,6 +402,12 @@ namespace telekomAidatTakip
                 this.pictureBox1.Image = new Bitmap(fd.OpenFile());
                 resimPath = fd.FileName.ToString();
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -407,26 +420,46 @@ namespace telekomAidatTakip
         {
             ImageConverter converter = new ImageConverter();
             return (byte[])converter.ConvertTo(img, typeof(byte[]));
-            
         }
 
         private void btnAidatEkle_Click(object sender, EventArgs e)
         {
+            try { 
             Database db = new Database();
             db.Sorgu("insert into aidatlog (sicilNo,miktar,tarih) Values (@0, @1,@2)", sicilno, txtAidatMiktari.Text, dateAidatTarih.Value.ToShortDateString());
             db.Kapat();
             DoldurAidatBilgileri(sicilno);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void cboxIl_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            try { 
             if (cboxIl.SelectedIndex != -1)
                 PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key.ToString());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            try { 
             if (cboxMudurluk.SelectedIndex != -1)
                 PRG.DoldurBirim(ref cboxBirim, ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key.ToString());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Buradan sonrası.. Ömer
@@ -473,6 +506,7 @@ namespace telekomAidatTakip
 
         private void txtSicilNo_Leave(object sender, EventArgs e)
         {
+            try { 
             Database db = new Database();
             var data = db.DataOku("select sicilNo from Uyeler");
             while (data.Read())
@@ -485,16 +519,29 @@ namespace telekomAidatTakip
                     txtSicilNo.Select();
                 }
             }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnAktiflestir_Click(object sender, EventArgs e)
         {
+            try { 
             Database db = new Database();
             db.Sorgu("update uyeler set aktif = 1, silinmenedenino= NULL where sicilno=@0", sicilno);
             lblSilinmeBilgisi.Visible = false;
             lblSilinmeBilgisiLabeli.Visible = false;
             btnAktiflestir.Visible = false;
             frmUye_Load(this, null);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void txtAdresEmail_Leave(object sender, EventArgs e)
