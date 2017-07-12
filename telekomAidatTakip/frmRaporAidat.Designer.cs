@@ -179,6 +179,7 @@
             // 
             this.btnYazdir.BackColor = System.Drawing.Color.White;
             this.btnYazdir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnYazdir.Enabled = false;
             this.btnYazdir.FlatAppearance.BorderSize = 0;
             this.btnYazdir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYazdir.Image = global::telekomAidatTakip.Properties.Resources.if_ic_format_paint_48px_352391;
