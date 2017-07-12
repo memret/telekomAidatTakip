@@ -221,7 +221,6 @@
             this.btnKaydet.TabIndex = 52;
             this.toolTip1.SetToolTip(this.btnKaydet, "Ekle");
             this.btnKaydet.UseVisualStyleBackColor = false;
-            this.btnKaydet.Visible = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // frmAidatToplu
