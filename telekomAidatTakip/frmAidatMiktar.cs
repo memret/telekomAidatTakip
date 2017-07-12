@@ -23,20 +23,23 @@ namespace telekomAidatTakip
 
         private void frmAidatMiktar_Load(object sender, EventArgs e)
         {
-            cboxIl.SelectedIndex = -1;
             try
             {
+                cboxIl.SelectedIndex = -1;
+            
                 PRG.DoldurIl(ref cboxIl);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
             cboxBirim.Enabled = false;
             cboxMudurluk.Enabled = false;
             btnGuncelle.Visible = false;
             btnKaydet.Visible = true;
             frmAidatMiktar_Resize(this, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
         }
 
 

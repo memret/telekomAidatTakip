@@ -20,18 +20,29 @@ namespace telekomAidatTakip
 
         private void frmAidatToplu_Load(object sender, EventArgs e)
         {
-            PRG.DoldurIl(ref cboxil);
-            cboxMudurluk.SelectedIndex = -1;
-            cboxBirim.SelectedIndex = -1;
-            cboxMudurluk.Enabled = false;
-            cboxBirim.Enabled = false;
-            cboxBirim.PromptText = " ";
-            cboxMudurluk.PromptText = " ";
-            btnKaydet.Enabled = false;
-        }
+            try {
+                PRG.DoldurIl(ref cboxil);
+                cboxMudurluk.SelectedIndex = -1;
+                cboxBirim.SelectedIndex = -1;
+                cboxMudurluk.Enabled = false;
+                cboxBirim.Enabled = false;
+                cboxBirim.PromptText = " ";
+                cboxMudurluk.PromptText = " ";
+                btnKaydet.Enabled = false;
+            
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
+}
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            try { 
             if (cboxil.SelectedIndex != -1 && cboxBirim.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1 && txtAidatMiktari.Text != string.Empty)
             {
                 int ilNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key;
@@ -75,31 +86,45 @@ namespace telekomAidatTakip
                 MessageBox.Show("Lütfen boş alanları doldururuz!");
 
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void cboxil_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cboxil.SelectedIndex != -1)
+            try
             {
+                if (cboxil.SelectedIndex != -1)
+                {
 
-                int ilNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key;
-                PRG.DoldurMudurluk(ref cboxMudurluk, ilNo.ToString());
+                    int ilNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key;
+                    PRG.DoldurMudurluk(ref cboxMudurluk, ilNo.ToString());
 
 
-                cboxBirim.Enabled = false;
-                cboxBirim.PromptText = " ";
-                cboxBirim.SelectedIndex = -1;
+                    cboxBirim.Enabled = false;
+                    cboxBirim.PromptText = " ";
+                    cboxBirim.SelectedIndex = -1;
+                }
+                else
+                {
+                    cboxMudurluk.Enabled = false;
+                    cboxBirim.Enabled = false;
+                    cboxBirim.PromptText = " ";
+                    cboxMudurluk.PromptText = " ";
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                cboxMudurluk.Enabled = false;
-                cboxBirim.Enabled = false;
-                cboxBirim.PromptText = " ";
-                cboxMudurluk.PromptText = " ";
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            try { 
             lblKisiSayisi.Text = "Kişi Sayısı: ";
             if (cboxMudurluk.SelectedIndex != -1)
             {
@@ -117,6 +142,12 @@ namespace telekomAidatTakip
                 cboxBirim.PromptText = " ";
                 
             }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cboxBirim_SelectedIndexChanged(object sender, EventArgs e)
@@ -133,6 +164,7 @@ namespace telekomAidatTakip
 
         private void cboxBirim_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            try { 
             lblKisiSayisi.Text = "Kişi Sayısı: ";
             Database db = new Database();
             string countkisi = "0";
@@ -150,6 +182,11 @@ namespace telekomAidatTakip
                 }
 
                 lblKisiSayisi.Text = "Kişi Sayısı: " + countkisi;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
