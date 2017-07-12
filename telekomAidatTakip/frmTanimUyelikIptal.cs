@@ -47,11 +47,11 @@ namespace telekomAidatTakip
             btnYeni.Enabled = true;
 
         }
-
+        bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
-
-            if (btnYeni.Text == "Yeni")
+            
+            if (yeniKayit)
             {
                 if (btnKaydet.Enabled)
                 {
@@ -61,14 +61,15 @@ namespace telekomAidatTakip
                     else if (dialogResult == DialogResult.Cancel)
                         return;
                 }
-
-                txtKod.Text = string.Empty;
+                yeniKayit = false;
+                txtAciklama.Text = string.Empty;
                 txtAciklama.Text = string.Empty;
                 txtKod.Enabled = true;
                 txtAciklama.Enabled = true;
-                btnYeni.Text = "Ekle";
+                //btnYeni.Text = "Ekle";
                 btnKaydet.Enabled = false;
                 btnSil.Enabled = false;
+                toolTip1.SetToolTip(btnYeni, "Ekle");
             }
             else
             {   //database bağlan, insert textbox1
@@ -80,7 +81,8 @@ namespace telekomAidatTakip
 
                     txtKod.Enabled = false;
                     txtAciklama.Enabled = false;
-                    btnYeni.Text = "Yeni";
+                    //  btnYeni.Text = "Yeni";
+                    yeniKayit = true;
                     SilinmeListesiniDoldur();
                     txtKod.Text = string.Empty;
                     txtAciklama.Text = string.Empty;
@@ -126,12 +128,12 @@ namespace telekomAidatTakip
         private void frmTanimUyelikIptal_FormClosing(object sender, FormClosingEventArgs e)
         {
             //burda form penceresi kapatılırken çalışacak kodlar bulunuyor
-            if (btnYeni.Text == "Ekle" || btnKaydet.Enabled) //btnYeni nin ismi Ekle ise veya btnKaydet aktif ise bir düzenleme veya kayıt yapılıyor demektir.
+            if (!yeniKayit || btnKaydet.Enabled) //btnYeni nin ismi Ekle ise veya btnKaydet aktif ise bir düzenleme veya kayıt yapılıyor demektir.
             {
                 DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    if (btnYeni.Text == "Ekle")
+                    if (!yeniKayit)
                         btnYeni_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
                     else
                         btnKaydet_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
@@ -162,7 +164,12 @@ namespace telekomAidatTakip
             btnSil.Enabled = true;
             txtAciklama.Enabled = true;
             txtKod.Enabled = true;
-            btnYeni.Text = "Yeni";
+           // btnYeni.Text = "Yeni";
+        }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

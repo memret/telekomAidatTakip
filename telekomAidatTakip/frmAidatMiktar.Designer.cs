@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAidatMiktar));
             this.cboxIl = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -39,8 +40,9 @@
             this.cboxBirim = new MetroFramework.Controls.MetroComboBox();
             this.txtAidatMiktari = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnKaydet = new MetroFramework.Controls.MetroTile();
-            this.btnGuncelle = new MetroFramework.Controls.MetroTile();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +60,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(16, 182);
+            this.metroLabel3.Location = new System.Drawing.Point(16, 179);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(87, 19);
             this.metroLabel3.TabIndex = 12;
@@ -67,7 +69,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(15, 147);
+            this.metroLabel2.Location = new System.Drawing.Point(16, 144);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(43, 19);
             this.metroLabel2.TabIndex = 11;
@@ -76,7 +78,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(16, 112);
+            this.metroLabel1.Location = new System.Drawing.Point(16, 109);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(67, 19);
             this.metroLabel1.TabIndex = 10;
@@ -95,7 +97,7 @@
             // 
             this.cboxMudurluk.FormattingEnabled = true;
             this.cboxMudurluk.ItemHeight = 23;
-            this.cboxMudurluk.Location = new System.Drawing.Point(126, 107);
+            this.cboxMudurluk.Location = new System.Drawing.Point(126, 104);
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(238, 29);
             this.cboxMudurluk.TabIndex = 14;
@@ -115,7 +117,7 @@
             // 
             this.cboxBirim.FormattingEnabled = true;
             this.cboxBirim.ItemHeight = 23;
-            this.cboxBirim.Location = new System.Drawing.Point(126, 142);
+            this.cboxBirim.Location = new System.Drawing.Point(126, 139);
             this.cboxBirim.Name = "cboxBirim";
             this.cboxBirim.Size = new System.Drawing.Size(238, 29);
             this.cboxBirim.TabIndex = 16;
@@ -137,7 +139,7 @@
             this.txtAidatMiktari.CustomButton.UseSelectable = true;
             this.txtAidatMiktari.CustomButton.Visible = false;
             this.txtAidatMiktari.Lines = new string[0];
-            this.txtAidatMiktari.Location = new System.Drawing.Point(126, 177);
+            this.txtAidatMiktari.Location = new System.Drawing.Point(126, 174);
             this.txtAidatMiktari.MaxLength = 32767;
             this.txtAidatMiktari.Name = "txtAidatMiktari";
             this.txtAidatMiktari.PasswordChar = '\0';
@@ -155,7 +157,7 @@
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(15, 20);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 38);
@@ -165,42 +167,47 @@
             // 
             // btnKaydet
             // 
-            this.btnKaydet.ActiveControl = null;
             this.btnKaydet.BackColor = System.Drawing.Color.White;
-            this.btnKaydet.Location = new System.Drawing.Point(179, 218);
+            this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKaydet.Enabled = false;
+            this.btnKaydet.FlatAppearance.BorderSize = 0;
+            this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnKaydet.Location = new System.Drawing.Point(316, 209);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(88, 46);
-            this.btnKaydet.Style = MetroFramework.MetroColorStyle.Blue;
-            this.btnKaydet.TabIndex = 20;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnKaydet.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btnKaydet.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.btnKaydet.UseSelectable = true;
+            this.btnKaydet.Size = new System.Drawing.Size(48, 48);
+            this.btnKaydet.TabIndex = 51;
+            this.toolTip1.SetToolTip(this.btnKaydet, "Kaydet");
+            this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Visible = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.ActiveControl = null;
-            this.btnGuncelle.Location = new System.Drawing.Point(179, 218);
+            this.btnGuncelle.BackColor = System.Drawing.Color.White;
+            this.btnGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGuncelle.Enabled = false;
+            this.btnGuncelle.FlatAppearance.BorderSize = 0;
+            this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuncelle.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnGuncelle.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGuncelle.Location = new System.Drawing.Point(316, 209);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(88, 46);
-            this.btnGuncelle.Style = MetroFramework.MetroColorStyle.Lime;
-            this.btnGuncelle.TabIndex = 20;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuncelle.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btnGuncelle.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.btnGuncelle.UseSelectable = true;
+            this.btnGuncelle.Size = new System.Drawing.Size(48, 48);
+            this.btnGuncelle.TabIndex = 52;
+            this.toolTip1.SetToolTip(this.btnGuncelle, "Güncelle");
+            this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Visible = false;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // frmAidatMiktar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 280);
-            this.Controls.Add(this.btnGuncelle);
-            this.Controls.Add(this.btnKaydet);
+            this.ClientSize = new System.Drawing.Size(389, 270);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtAidatMiktari);
             this.Controls.Add(this.cboxBirim);
@@ -211,6 +218,8 @@
             this.Controls.Add(this.cboxIl);
             this.Controls.Add(this.tahsilNo);
             this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.btnGuncelle);
+            this.Controls.Add(this.btnKaydet);
             this.Name = "frmAidatMiktar";
             this.Padding = new System.Windows.Forms.Padding(13, 60, 13, 13);
             this.Style = MetroFramework.MetroColorStyle.Default;
@@ -234,7 +243,8 @@
         private MetroFramework.Controls.MetroComboBox cboxBirim;
         private MetroFramework.Controls.MetroTextBox txtAidatMiktari;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MetroFramework.Controls.MetroTile btnKaydet;
-        private MetroFramework.Controls.MetroTile btnGuncelle;
+        private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.Button btnGuncelle;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
