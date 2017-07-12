@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRaporAidat));
-            this.btnYazdir = new MetroFramework.Controls.MetroTile();
-            this.btnListele = new MetroFramework.Controls.MetroTile();
             this.checkBirim = new MetroFramework.Controls.MetroCheckBox();
             this.checkMudurluk = new MetroFramework.Controls.MetroCheckBox();
             this.checkIl = new MetroFramework.Controls.MetroCheckBox();
@@ -45,44 +43,16 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnYazdir = new System.Windows.Forms.Button();
+            this.btnListele = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnYazdir
-            // 
-            this.btnYazdir.ActiveControl = null;
-            this.btnYazdir.Location = new System.Drawing.Point(267, 193);
-            this.btnYazdir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(98, 44);
-            this.btnYazdir.TabIndex = 23;
-            this.btnYazdir.Text = "Yazdır";
-            this.btnYazdir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnYazdir.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnYazdir.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
-            this.btnYazdir.UseSelectable = true;
-            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
-            // 
-            // btnListele
-            // 
-            this.btnListele.ActiveControl = null;
-            this.btnListele.Location = new System.Drawing.Point(129, 193);
-            this.btnListele.Margin = new System.Windows.Forms.Padding(2);
-            this.btnListele.Name = "btnListele";
-            this.btnListele.Size = new System.Drawing.Size(98, 44);
-            this.btnListele.TabIndex = 22;
-            this.btnListele.Text = "Ekrana Listele";
-            this.btnListele.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnListele.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnListele.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
-            this.btnListele.UseSelectable = true;
-            this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
-            // 
             // checkBirim
             // 
             this.checkBirim.AutoSize = true;
-            this.checkBirim.Location = new System.Drawing.Point(22, 151);
+            this.checkBirim.Location = new System.Drawing.Point(22, 141);
             this.checkBirim.Margin = new System.Windows.Forms.Padding(2);
             this.checkBirim.Name = "checkBirim";
             this.checkBirim.Size = new System.Drawing.Size(54, 15);
@@ -94,7 +64,7 @@
             // checkMudurluk
             // 
             this.checkMudurluk.AutoSize = true;
-            this.checkMudurluk.Location = new System.Drawing.Point(22, 112);
+            this.checkMudurluk.Location = new System.Drawing.Point(22, 108);
             this.checkMudurluk.Margin = new System.Windows.Forms.Padding(2);
             this.checkMudurluk.Name = "checkMudurluk";
             this.checkMudurluk.Size = new System.Drawing.Size(78, 15);
@@ -106,7 +76,7 @@
             // checkIl
             // 
             this.checkIl.AutoSize = true;
-            this.checkIl.Location = new System.Drawing.Point(22, 74);
+            this.checkIl.Location = new System.Drawing.Point(22, 75);
             this.checkIl.Margin = new System.Windows.Forms.Padding(2);
             this.checkIl.Name = "checkIl";
             this.checkIl.Size = new System.Drawing.Size(32, 15);
@@ -119,7 +89,7 @@
             // 
             this.cboxBirim.FormattingEnabled = true;
             this.cboxBirim.ItemHeight = 23;
-            this.cboxBirim.Location = new System.Drawing.Point(152, 148);
+            this.cboxBirim.Location = new System.Drawing.Point(152, 132);
             this.cboxBirim.Margin = new System.Windows.Forms.Padding(2);
             this.cboxBirim.Name = "cboxBirim";
             this.cboxBirim.Size = new System.Drawing.Size(214, 29);
@@ -130,7 +100,7 @@
             // 
             this.cboxMudurluk.FormattingEnabled = true;
             this.cboxMudurluk.ItemHeight = 23;
-            this.cboxMudurluk.Location = new System.Drawing.Point(152, 107);
+            this.cboxMudurluk.Location = new System.Drawing.Point(152, 99);
             this.cboxMudurluk.Margin = new System.Windows.Forms.Padding(2);
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(214, 29);
@@ -163,7 +133,7 @@
             this.listUyeKayitlari.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listUyeKayitlari.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listUyeKayitlari.FullRowSelect = true;
-            this.listUyeKayitlari.Location = new System.Drawing.Point(15, 254);
+            this.listUyeKayitlari.Location = new System.Drawing.Point(15, 225);
             this.listUyeKayitlari.Name = "listUyeKayitlari";
             this.listUyeKayitlari.Size = new System.Drawing.Size(645, 213);
             this.listUyeKayitlari.TabIndex = 0;
@@ -205,10 +175,40 @@
             this.columnHeader8.Text = "Birim";
             this.columnHeader8.Width = 100;
             // 
+            // btnYazdir
+            // 
+            this.btnYazdir.BackColor = System.Drawing.Color.White;
+            this.btnYazdir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnYazdir.FlatAppearance.BorderSize = 0;
+            this.btnYazdir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnYazdir.Image = global::telekomAidatTakip.Properties.Resources.if_ic_format_paint_48px_352391;
+            this.btnYazdir.Location = new System.Drawing.Point(318, 163);
+            this.btnYazdir.Margin = new System.Windows.Forms.Padding(0);
+            this.btnYazdir.Name = "btnYazdir";
+            this.btnYazdir.Size = new System.Drawing.Size(48, 48);
+            this.btnYazdir.TabIndex = 49;
+            this.btnYazdir.UseVisualStyleBackColor = false;
+            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
+            // 
+            // btnListele
+            // 
+            this.btnListele.BackColor = System.Drawing.Color.White;
+            this.btnListele.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnListele.FlatAppearance.BorderSize = 0;
+            this.btnListele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListele.Image = global::telekomAidatTakip.Properties.Resources.if_icons_search_1564527;
+            this.btnListele.Location = new System.Drawing.Point(270, 163);
+            this.btnListele.Margin = new System.Windows.Forms.Padding(0);
+            this.btnListele.Name = "btnListele";
+            this.btnListele.Size = new System.Drawing.Size(48, 48);
+            this.btnListele.TabIndex = 49;
+            this.btnListele.UseVisualStyleBackColor = false;
+            this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(15, 20);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 38);
@@ -220,11 +220,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 483);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(675, 454);
             this.Controls.Add(this.btnYazdir);
-            this.Controls.Add(this.listUyeKayitlari);
             this.Controls.Add(this.btnListele);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.listUyeKayitlari);
             this.Controls.Add(this.checkBirim);
             this.Controls.Add(this.cboxil);
             this.Controls.Add(this.checkMudurluk);
@@ -248,8 +248,6 @@
         private MetroFramework.Controls.MetroComboBox cboxBirim;
         private MetroFramework.Controls.MetroComboBox cboxMudurluk;
         private MetroFramework.Controls.MetroCheckBox checkBirim;
-        private MetroFramework.Controls.MetroTile btnListele;
-        private MetroFramework.Controls.MetroTile btnYazdir;
         private System.Windows.Forms.ListView listUyeKayitlari;
         private System.Windows.Forms.ColumnHeader columnHeader0;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -259,5 +257,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnListele;
+        private System.Windows.Forms.Button btnYazdir;
     }
 }
