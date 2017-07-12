@@ -58,8 +58,7 @@ namespace telekomAidatTakip
 
             if (btnYeni.Text == "Yeni") // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
             {
-                txtPlakaKodu.WaterMark = "Plaka kodunu giriniz...";
-                txtAdi.WaterMark = "İl adını giriniz...";
+                
                 if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
                 {
                     DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
@@ -68,7 +67,8 @@ namespace telekomAidatTakip
                     else if(dialogResult == DialogResult.Cancel)
                         return;
                 }
-
+                txtPlakaKodu.WaterMark = "Plaka kodunu giriniz...";
+                txtAdi.WaterMark = "İl adını giriniz...";
                 txtAdi.Text = string.Empty;
                 txtPlakaKodu.Text = string.Empty;
                 txtPlakaKodu.Enabled = true;
