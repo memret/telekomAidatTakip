@@ -154,10 +154,6 @@ namespace telekomAidatTakip
             }
         }
         Yazdir yazdir = new Yazdir(1);
-        private void grpAramaKriterleri_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void cboxil_SelectionChangeCommitted(object sender, EventArgs e)
         {

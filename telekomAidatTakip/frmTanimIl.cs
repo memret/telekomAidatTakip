@@ -35,8 +35,6 @@ namespace telekomAidatTakip
         }
         private void IlListesiniDoldur()
         {
-            try
-            {
                 Database db = new Database();
                 //data objesi sqlreadera dönüşüp veriyi alır. 
                 //direk sqldatareaderda yazılabilir fakat bu sefer forum içerisinde using bilmemne yazmamız gerekir
@@ -61,12 +59,6 @@ namespace telekomAidatTakip
                 btnSil.Enabled = false;
                 btnKaydet.Enabled = false;
                 btnYeni.Enabled = true;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
         bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
