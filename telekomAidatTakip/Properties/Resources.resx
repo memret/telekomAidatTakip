@@ -127,11 +127,17 @@
   <data name="default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\default.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_icons_search_1564527" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_icons_search_1564527.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_icons_check_1564499" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_icons_check_1564499.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_ic_control_point_48px_352288" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_ic_control_point_48px_352288.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="if_icons_update_1564533" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_icons_update_1564533.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="telekom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\telekom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,10 +145,10 @@
   <data name="if_icons_new_1564516" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_icons_new_1564516.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_icons_search_1564527" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_icons_search_1564527.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="if_icons_share_1564530" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_icons_share_1564530.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="if_icons_paste_1564521" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_icons_paste_1564521.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

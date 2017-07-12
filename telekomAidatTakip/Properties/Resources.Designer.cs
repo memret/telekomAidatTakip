@@ -123,6 +123,16 @@ namespace telekomAidatTakip.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_icons_paste_1564521 {
+            get {
+                object obj = ResourceManager.GetObject("if_icons_paste_1564521", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_icons_search_1564527 {
             get {
                 object obj = ResourceManager.GetObject("if_icons_search_1564527", resourceCulture);
@@ -136,6 +146,16 @@ namespace telekomAidatTakip.Properties {
         internal static System.Drawing.Bitmap if_icons_share_1564530 {
             get {
                 object obj = ResourceManager.GetObject("if_icons_share_1564530", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_icons_update_1564533 {
+            get {
+                object obj = ResourceManager.GetObject("if_icons_update_1564533", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
