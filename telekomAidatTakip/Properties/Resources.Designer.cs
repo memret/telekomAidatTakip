@@ -133,6 +133,16 @@ namespace telekomAidatTakip.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_icons_share_1564530 {
+            get {
+                object obj = ResourceManager.GetObject("if_icons_share_1564530", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap telekom {
             get {
                 object obj = ResourceManager.GetObject("telekom", resourceCulture);

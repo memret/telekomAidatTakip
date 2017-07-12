@@ -262,6 +262,7 @@
     <Content Include="Resources\if_icons_exit_1564505.png" />
     <Content Include="Resources\if_icons_new_1564516.png" />
     <Content Include="Resources\if_icons_search_1564527.png" />
+    <Content Include="Resources\if_icons_share_1564530.png" />
     <Content Include="Resources\if_ic_control_point_48px_352288.png" />
     <Content Include="Resources\if_ic_format_paint_48px_352391.png" />
   </ItemGroup>

@@ -30,8 +30,8 @@
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.comboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.btnOnayla = new MetroFramework.Controls.MetroTile();
-            this.btnIptal = new MetroFramework.Controls.MetroTile();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnIptal = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -53,28 +53,35 @@
             this.comboBox1.TabIndex = 5;
             this.comboBox1.UseSelectable = true;
             // 
-            // btnOnayla
+            // btnKaydet
             // 
-            this.btnOnayla.ActiveControl = null;
-            this.btnOnayla.Location = new System.Drawing.Point(132, 96);
-            this.btnOnayla.Name = "btnOnayla";
-            this.btnOnayla.Size = new System.Drawing.Size(82, 40);
-            this.btnOnayla.TabIndex = 6;
-            this.btnOnayla.Text = "Onayla";
-            this.btnOnayla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnOnayla.UseSelectable = true;
-            this.btnOnayla.Click += new System.EventHandler(this.btnOnayla_Click);
+            this.btnKaydet.BackColor = System.Drawing.Color.White;
+            this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKaydet.FlatAppearance.BorderSize = 0;
+            this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet.Location = new System.Drawing.Point(228, 93);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(48, 48);
+            this.btnKaydet.TabIndex = 56;
+            this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnOnayla_Click);
             // 
             // btnIptal
             // 
-            this.btnIptal.ActiveControl = null;
-            this.btnIptal.Location = new System.Drawing.Point(242, 96);
+            this.btnIptal.BackColor = System.Drawing.Color.White;
+            this.btnIptal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnIptal.FlatAppearance.BorderSize = 0;
+            this.btnIptal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIptal.Image = global::telekomAidatTakip.Properties.Resources.if_icons_share_1564530;
+            this.btnIptal.Location = new System.Drawing.Point(276, 93);
+            this.btnIptal.Margin = new System.Windows.Forms.Padding(0);
             this.btnIptal.Name = "btnIptal";
-            this.btnIptal.Size = new System.Drawing.Size(82, 40);
-            this.btnIptal.TabIndex = 6;
-            this.btnIptal.Text = "İptal";
-            this.btnIptal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnIptal.UseSelectable = true;
+            this.btnIptal.Size = new System.Drawing.Size(48, 48);
+            this.btnIptal.TabIndex = 57;
+            this.btnIptal.UseVisualStyleBackColor = false;
+            this.btnIptal.Visible = false;
             this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // frmUyeSil
@@ -82,8 +89,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 150);
+            this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.btnIptal);
-            this.Controls.Add(this.btnOnayla);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.metroLabel1);
             this.Name = "frmUyeSil";
@@ -99,7 +106,7 @@
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroComboBox comboBox1;
-        private MetroFramework.Controls.MetroTile btnOnayla;
-        private MetroFramework.Controls.MetroTile btnIptal;
+        private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.Button btnIptal;
     }
 }
