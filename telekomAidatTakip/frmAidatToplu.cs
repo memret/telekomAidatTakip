@@ -20,7 +20,8 @@ namespace telekomAidatTakip
 
         private void frmAidatToplu_Load(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 PRG.DoldurIl(ref cboxil);
                 cboxMudurluk.SelectedIndex = -1;
                 cboxBirim.SelectedIndex = -1;
@@ -29,7 +30,7 @@ namespace telekomAidatTakip
                 cboxBirim.PromptText = " ";
                 cboxMudurluk.PromptText = " ";
                 btnKaydet.Enabled = false;
-            
+
 
 
             }
@@ -38,52 +39,53 @@ namespace telekomAidatTakip
                 MessageBox.Show(ex.Message);
                 this.Close();
             }
-}
+        }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            try { 
-            if (cboxil.SelectedIndex != -1 && cboxBirim.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1 && txtAidatMiktari.Text != string.Empty)
+            try
             {
-                int ilNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key;
-                int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
-                int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
-                Database db = new Database();
-                Database db2 = new Database();
-
-                var kisiler = db.DataOku("SELECT sicilNo FROM uyeler WHERE birimNo =@0", birimNo.ToString());
-                if (!kisiler.HasRows)
+                if (cboxil.SelectedIndex != -1 && cboxBirim.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1 && txtAidatMiktari.Text != string.Empty)
                 {
-                    MessageBox.Show("Birimde kişi yok!");
+                    int ilNo = ((KeyValuePair<int, string>)cboxil.SelectedItem).Key;
+                    int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
+                    int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+                    Database db = new Database();
+                    Database db2 = new Database();
+
+                    var kisiler = db.DataOku("SELECT sicilNo FROM uyeler WHERE birimNo =@0", birimNo.ToString());
+                    if (!kisiler.HasRows)
+                    {
+                        MessageBox.Show("Birimde kişi yok!");
+                    }
+                    else
+                    {
+                        while (kisiler.Read())
+                        {
+                            String sicilNo = kisiler["sicilNo"].ToString();
+                            if (!string.IsNullOrEmpty(sicilNo))
+                            {
+                                db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", sicilNo, txtAidatMiktari.Text, this.dateTarih.Value.Date);
+                                txtAidatMiktari.Text = string.Empty;
+                                cboxil.SelectedIndex = -1;
+                                cboxMudurluk.DataSource = null;
+                                cboxBirim.DataSource = null;
+                                dateTarih.Value = DateTime.Today;
+                                lblKisiSayisi.Text = "Kişi Sayısı: ";
+                                btnKaydet.Enabled = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Birimde birisinin sicilnosuna ulaşılamadı.");
+                            }
+                        }
+                        MessageBox.Show("Aidat Ödemesi yapıldı.");
+                    }
+                    db.Kapat();
+                    db2.Kapat();
                 }
                 else
-                {
-                    while (kisiler.Read())
-                    {
-                        String sicilNo = kisiler["sicilNo"].ToString();
-                        if (!string.IsNullOrEmpty(sicilNo))
-                        {
-                            db2.Sorgu("INSERT INTO AidatLog (sicilNo,miktar,tarih) Values (@0, @1,@2)", sicilNo, txtAidatMiktari.Text, this.dateTarih.Value.Date);
-                            txtAidatMiktari.Text = string.Empty;
-                            cboxil.SelectedIndex = -1;
-                            cboxMudurluk.DataSource = null;
-                            cboxBirim.DataSource = null;
-                            dateTarih.Value = DateTime.Today;
-                            lblKisiSayisi.Text = "Kişi Sayısı: ";
-                            btnKaydet.Enabled = false;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Birimde birisinin sicilnosuna ulaşılamadı.");
-                        }
-                    }
-                    MessageBox.Show("Aidat Ödemesi yapıldı.");
-                }
-                db.Kapat();
-                db2.Kapat();
-            }
-            else
-                MessageBox.Show("Lütfen boş alanları doldururuz!");
+                    MessageBox.Show("Lütfen boş alanları doldururuz!");
 
 
             }
@@ -124,24 +126,25 @@ namespace telekomAidatTakip
 
         private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try { 
-            lblKisiSayisi.Text = "Kişi Sayısı: ";
-            if (cboxMudurluk.SelectedIndex != -1)
+            try
             {
-                int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
-                PRG.DoldurBirim(ref cboxBirim, mudurlukNo.ToString());
+                lblKisiSayisi.Text = "Kişi Sayısı: ";
+                if (cboxMudurluk.SelectedIndex != -1)
+                {
+                    int mudurlukNo = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
+                    PRG.DoldurBirim(ref cboxBirim, mudurlukNo.ToString());
 
-                cboxBirim.Enabled = true;
-                cboxBirim.PromptText = "Birim seçiniz.";
-                cboxBirim.SelectedIndex = -1;
+                    cboxBirim.Enabled = true;
+                    cboxBirim.PromptText = "Birim seçiniz.";
+                    cboxBirim.SelectedIndex = -1;
 
-            }
-            else
-            {
-                cboxBirim.Enabled = false;
-                cboxBirim.PromptText = " ";
-                
-            }
+                }
+                else
+                {
+                    cboxBirim.Enabled = false;
+                    cboxBirim.PromptText = " ";
+
+                }
 
             }
             catch (Exception ex)
@@ -152,7 +155,7 @@ namespace telekomAidatTakip
 
         private void cboxBirim_SelectedIndexChanged(object sender, EventArgs e)
         {
-         
+
         }
 
         private void cboxil_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,24 +167,25 @@ namespace telekomAidatTakip
 
         private void cboxBirim_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try { 
-            lblKisiSayisi.Text = "Kişi Sayısı: ";
-            Database db = new Database();
-            string countkisi = "0";
-            if (cboxBirim.SelectedIndex != -1 && cboxBirim.Text!="Veri Yok")
+            try
             {
-                btnKaydet.Enabled = true;
-                lblKisiSayisi.Text = "";
-
-
-                int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
-                var data = db.DataOku("select count (sicilNo) 'count' from Uyeler u join Birim b on u.birimNo=b.birimNo where b.birimNo=@0", birimNo);
-                if (data.Read())
+                lblKisiSayisi.Text = "Kişi Sayısı: ";
+                Database db = new Database();
+                string countkisi = "0";
+                if (cboxBirim.SelectedIndex != -1 && cboxBirim.Text != "Veri Yok")
                 {
-                    countkisi = data["count"].ToString();
-                }
+                    btnKaydet.Enabled = true;
+                    lblKisiSayisi.Text = "";
 
-                lblKisiSayisi.Text = "Kişi Sayısı: " + countkisi;
+
+                    int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+                    var data = db.DataOku("select count (sicilNo) 'count' from Uyeler u join Birim b on u.birimNo=b.birimNo where b.birimNo=@0", birimNo);
+                    if (data.Read())
+                    {
+                        countkisi = data["count"].ToString();
+                    }
+
+                    lblKisiSayisi.Text = "Kişi Sayısı: " + countkisi;
                 }
             }
             catch (Exception ex)
@@ -192,7 +196,7 @@ namespace telekomAidatTakip
 
         private void txtAidatMiktari_TextChanged(object sender, EventArgs e)
         {
-                  
+
         }
     }
 }
