@@ -22,7 +22,7 @@ namespace telekomAidatTakip
 
         private void frmTanimBirim_Load(object sender, EventArgs e)
         {
-            
+            try { 
             //listBirim.Font = new MetroFramework.Fonts.FontResolver;
             frmTanimBirim_Resize(this, null);
             listeDoldur();
@@ -39,20 +39,19 @@ namespace telekomAidatTakip
             cBoxMudurluk.ValueMember = "Key";
             db.Kapat();
             cBoxMudurluk.SelectedIndex = -1;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
         }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
+            try { 
             if (yeniKayit)
             {
                 if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
@@ -95,12 +94,18 @@ namespace telekomAidatTakip
             {
                 MessageBox.Show("Bİrim adı veya Birim Kodu eksik.");
             }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void listvil_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
-
+            try { 
             string birimKodu = listBirim.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
 
             Database db = new Database();
@@ -118,10 +123,16 @@ namespace telekomAidatTakip
             }
 
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void listeDoldur()
         {
+            try { 
             listBirim.Items.Clear();
             Database db = new Database();
             var data = db.DataOku("SELECT b.birimAdi,b.birimNo,b.mudurlukNo,m.mudurlukAdi " +
@@ -139,11 +150,18 @@ namespace telekomAidatTakip
             }
             db.Kapat();
             listBirim.EndUpdate();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             //;
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            try { 
             if (txtBirimKodu.Text != string.Empty)
             {
                 Database db2 = new Database();
@@ -186,10 +204,16 @@ namespace telekomAidatTakip
             else
                 MessageBox.Show("Birim no kısmı boş");
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            try { 
             Database db = new Database();
             int mudurlukNo = ((KeyValuePair<int, string>)cBoxMudurluk.SelectedItem).Key;
             db.Sorgu("UPDATE Birim Set birimAdi = @0, mudurlukNo=@1 WHERE birimNo=@2", txtBirimAdi.Text, mudurlukNo.ToString(), txtBirimKodu.Text);
@@ -208,29 +232,32 @@ namespace telekomAidatTakip
             txtBirimAdi.Enabled = false;
             cBoxMudurluk.Enabled = false;
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void frmTanimBirim_Resize(object sender, EventArgs e)
         {
-            //hata var düzeltilecek
+            try
+            { 
             //groupBox2.Width = this.Width - 44;
             // groupBox2.Height = this.Height - 288;
             listBirim.Size = new Size(listBirim.Size.Width, this.Size.Height - 258);
-           // pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y );
-        }
+                // pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y );
 
-        private void frmTanimBirim_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
-        private void cBoxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void listvil_DoubleClick(object sender, EventArgs e)
         {
+            try { 
             btnKaydet.Enabled = true;
             btnSil.Enabled = true;
             //btnKaydet.UseCustomBackColor = false;
@@ -256,41 +283,19 @@ namespace telekomAidatTakip
             db.Kapat();
 
 
-            /*  String birimKodu = listvil.SelectedItems[0].SubItems[0].Text;
-              String birimAdi = listvil.SelectedItems[0].SubItems[1].Text;
-              txtBirimKodu.Text = birimKodu;
-              txtBirimAdi.Text = birimAdi;
-              cBoxMudurluk.Text = listvil.SelectedItems[0].SubItems[3].Text;*/
+                /*  String birimKodu = listvil.SelectedItems[0].SubItems[0].Text;
+                  String birimAdi = listvil.SelectedItems[0].SubItems[1].Text;
+                  txtBirimKodu.Text = birimKodu;
+                  txtBirimAdi.Text = birimAdi;
+                  cBoxMudurluk.Text = listvil.SelectedItems[0].SubItems[3].Text;*/
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            //MessageBox.Show(listBirim.Columns[1].Width.ToString());
-
-            foreach (ColumnHeader column in listBirim.Columns)
-            {
-                column.Width = -2;
             }
-            
-            //listBirim.Columns[1].Width = -2;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-
-        private void listBirim_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
-        {
-            
-        }
-
-        private void listBirim_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-        {
-           
-
-        }
+        
     }
 
 

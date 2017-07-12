@@ -59,7 +59,6 @@
             this.cBoxMudurluk.Size = new System.Drawing.Size(279, 29);
             this.cBoxMudurluk.TabIndex = 7;
             this.cBoxMudurluk.UseSelectable = true;
-            this.cBoxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cBoxMudurluk_SelectionChangeCommitted);
             // 
             // txtBirimKodu
             // 
