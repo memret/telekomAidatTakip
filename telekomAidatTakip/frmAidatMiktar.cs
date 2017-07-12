@@ -13,13 +13,9 @@ namespace telekomAidatTakip
     public partial class frmAidatMiktar : MetroFramework.Forms.MetroForm
     {
 
-        private void cBoxIlDoldur()
-        {
-            PRG.DoldurIl(ref cboxIl);
 
-        }
-        
-        
+
+
         public frmAidatMiktar()
         {
             InitializeComponent();
@@ -28,8 +24,14 @@ namespace telekomAidatTakip
         private void frmAidatMiktar_Load(object sender, EventArgs e)
         {
             cboxIl.SelectedIndex = -1;
-            cBoxIlDoldur();
-
+            try
+            {
+                PRG.DoldurIl(ref cboxIl);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             cboxBirim.Enabled = false;
             cboxMudurluk.Enabled = false;
             btnGuncelle.Visible = false;
@@ -40,21 +42,30 @@ namespace telekomAidatTakip
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            if (cboxIl.SelectedIndex != -1 && cboxBirim.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1 && txtAidatMiktari.Text != string.Empty)
+            try
             {
-                Database db = new Database();
-                int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
-                int ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
-                int birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
-                db.Sorgu("INSERT INTO AidatMiktar values (@0,@1)", birimno.ToString(), txtAidatMiktari.Text);
-                cboxIl.SelectedIndex = -1;
-                cboxMudurluk.SelectedIndex = -1;
-                cboxBirim.SelectedIndex = -1;
-                txtAidatMiktari.Text = string.Empty;
-                db.Kapat();
+                if (cboxIl.SelectedIndex != -1 && cboxBirim.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1 && txtAidatMiktari.Text != string.Empty)
+                {
+
+                    Database db = new Database();
+                    int mdr = ((KeyValuePair<int, string>)cboxMudurluk.SelectedItem).Key;
+                    int ilno = ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key;
+                    int birimno = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+                    db.Sorgu("INSERT INTO AidatMiktar values (@0,@1)", birimno.ToString(), txtAidatMiktari.Text);
+                    cboxIl.SelectedIndex = -1;
+                    cboxMudurluk.SelectedIndex = -1;
+                    cboxBirim.SelectedIndex = -1;
+                    txtAidatMiktari.Text = string.Empty;
+                    db.Kapat();
+                }
+                else
+                    MessageBox.Show("Lütfen boş alanları doldururuz!");
+
             }
-            else
-                MessageBox.Show("Lütfen boş alanları doldururuz!");
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnIptal_Click(object sender, EventArgs e)
@@ -76,66 +87,90 @@ namespace telekomAidatTakip
 
         private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            int mdr = PRG.cboxKeyGetir(ref cboxMudurluk);
-            if (mdr != -1)
+            try
             {
-                PRG.DoldurBirim(ref cboxBirim, mdr.ToString());
-                cboxBirim.Enabled = true;
+                int mdr = PRG.cboxKeyGetir(ref cboxMudurluk);
+                if (mdr != -1)
+                {
+
+                    PRG.DoldurBirim(ref cboxBirim, mdr.ToString());
+                    cboxBirim.Enabled = true;
+                }
+                else
+                    cboxBirim.DataSource = null;
+                cboxBirim.SelectedIndex = -1;
+                txtAidatMiktari.Text = string.Empty;
+                txtAidatMiktari.Enabled = false;
+                btnKaydet.Enabled = false;
+                btnGuncelle.Enabled = false;
             }
-            else
-            cboxBirim.DataSource = null;
-            cboxBirim.SelectedIndex = -1;
-            txtAidatMiktari.Text = string.Empty;
-            txtAidatMiktari.Enabled = false;
-            btnKaydet.Enabled = false;
-            btnGuncelle.Enabled = false;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cboxIl_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            int ilno = PRG.cboxKeyGetir(ref cboxIl);
-            if (ilno != -1)
+            try
             {
-                PRG.DoldurMudurluk(ref cboxMudurluk, ilno.ToString());
-                cboxMudurluk.Enabled = true;
-                
+                int ilno = PRG.cboxKeyGetir(ref cboxIl);
+                if (ilno != -1)
+                {
+                    PRG.DoldurMudurluk(ref cboxMudurluk, ilno.ToString());
+                    cboxMudurluk.Enabled = true;
+
+                }
+                cboxBirim.Enabled = false;
+                cboxMudurluk.SelectedIndex = -1;
+                cboxBirim.SelectedIndex = -1;
+                txtAidatMiktari.Text = string.Empty;
+                txtAidatMiktari.Enabled = false;
+                btnKaydet.Enabled = false;
+                btnGuncelle.Enabled = false;
+
             }
-            cboxBirim.Enabled = false;
-            cboxMudurluk.SelectedIndex = -1;
-            cboxBirim.SelectedIndex = -1;
-            txtAidatMiktari.Text = string.Empty;
-            txtAidatMiktari.Enabled = false;
-            btnKaydet.Enabled = false;
-            btnGuncelle.Enabled = false;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cboxBirim_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            int birimno = PRG.cboxKeyGetir(ref cboxBirim);
-            if (birimno != -1 && cboxIl.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1)
+            try
             {
-                txtAidatMiktari.Enabled = true;
-                Database db = new Database();
+                int birimno = PRG.cboxKeyGetir(ref cboxBirim);
+                if (birimno != -1 && cboxIl.SelectedIndex != -1 && cboxMudurluk.SelectedIndex != -1)
+                {
+                    txtAidatMiktari.Enabled = true;
+                    Database db = new Database();
 
-                var data = db.DataOku("SELECT * FROM aidatmiktar WHERE birimno=@0 ", birimno);
-                while (data.Read())
-                {
-                    txtAidatMiktari.Text = data["aidat"].ToString();
+                    var data = db.DataOku("SELECT * FROM aidatmiktar WHERE birimno=@0 ", birimno);
+                    while (data.Read())
+                    {
+                        txtAidatMiktari.Text = data["aidat"].ToString();
+                    }
+
+                    db.Kapat();
+                    if (txtAidatMiktari.Text == string.Empty)
+                    {
+                        btnGuncelle.Visible = false;
+                        btnKaydet.Enabled = true;
+                        btnKaydet.Visible = true;
+                    }
+                    else
+                    {
+                        btnKaydet.Visible = false;
+                        btnGuncelle.Visible = true;
+                        btnGuncelle.Enabled = true;
+                    }
                 }
 
-                db.Kapat();
-                if (txtAidatMiktari.Text == string.Empty)
-                {
-                    btnGuncelle.Visible = false;
-                    btnKaydet.Enabled = true;
-                    btnKaydet.Visible = true;
-                }
-                else
-                {
-                    btnKaydet.Visible = false;
-                    btnGuncelle.Visible = true;
-                    btnGuncelle.Enabled = true;
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
