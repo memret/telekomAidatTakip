@@ -53,9 +53,9 @@
             this.radioAktif = new MetroFramework.Controls.MetroRadioButton();
             this.radioPasif = new MetroFramework.Controls.MetroRadioButton();
             this.radioHepsi = new MetroFramework.Controls.MetroRadioButton();
-            this.btnEkranaListele = new MetroFramework.Controls.MetroTile();
-            this.btnYazdir = new MetroFramework.Controls.MetroTile();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnYazdir = new System.Windows.Forms.Button();
+            this.btnListele = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -298,34 +298,10 @@
             this.radioHepsi.Text = "Tüm Üyeler";
             this.radioHepsi.UseSelectable = true;
             // 
-            // btnEkranaListele
-            // 
-            this.btnEkranaListele.ActiveControl = null;
-            this.btnEkranaListele.Location = new System.Drawing.Point(477, 291);
-            this.btnEkranaListele.Name = "btnEkranaListele";
-            this.btnEkranaListele.Size = new System.Drawing.Size(129, 40);
-            this.btnEkranaListele.TabIndex = 7;
-            this.btnEkranaListele.Text = "Ekrana Listele";
-            this.btnEkranaListele.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnEkranaListele.UseSelectable = true;
-            this.btnEkranaListele.Click += new System.EventHandler(this.btnEkranaListele_Click);
-            // 
-            // btnYazdir
-            // 
-            this.btnYazdir.ActiveControl = null;
-            this.btnYazdir.Location = new System.Drawing.Point(612, 291);
-            this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(89, 40);
-            this.btnYazdir.TabIndex = 7;
-            this.btnYazdir.Text = "Yazdır";
-            this.btnYazdir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnYazdir.UseSelectable = true;
-            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(15, 20);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 38);
@@ -333,14 +309,45 @@
             this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;
             // 
+            // btnYazdir
+            // 
+            this.btnYazdir.BackColor = System.Drawing.Color.White;
+            this.btnYazdir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnYazdir.Enabled = false;
+            this.btnYazdir.FlatAppearance.BorderSize = 0;
+            this.btnYazdir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnYazdir.Image = global::telekomAidatTakip.Properties.Resources.if_ic_format_paint_48px_352391;
+            this.btnYazdir.Location = new System.Drawing.Point(661, 295);
+            this.btnYazdir.Margin = new System.Windows.Forms.Padding(0);
+            this.btnYazdir.Name = "btnYazdir";
+            this.btnYazdir.Size = new System.Drawing.Size(48, 48);
+            this.btnYazdir.TabIndex = 50;
+            this.btnYazdir.UseVisualStyleBackColor = false;
+            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
+            // 
+            // btnListele
+            // 
+            this.btnListele.BackColor = System.Drawing.Color.White;
+            this.btnListele.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnListele.FlatAppearance.BorderSize = 0;
+            this.btnListele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListele.Image = global::telekomAidatTakip.Properties.Resources.if_icons_search_1564527;
+            this.btnListele.Location = new System.Drawing.Point(613, 295);
+            this.btnListele.Margin = new System.Windows.Forms.Padding(0);
+            this.btnListele.Name = "btnListele";
+            this.btnListele.Size = new System.Drawing.Size(48, 48);
+            this.btnListele.TabIndex = 51;
+            this.btnListele.UseVisualStyleBackColor = false;
+            this.btnListele.Click += new System.EventHandler(this.btnEkranaListele_Click);
+            // 
             // frmRaporUye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 574);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnYazdir);
-            this.Controls.Add(this.btnEkranaListele);
+            this.Controls.Add(this.btnListele);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listUye);
             this.Controls.Add(this.radioHepsi);
             this.Controls.Add(this.radioPasif);
@@ -393,8 +400,8 @@
         private MetroFramework.Controls.MetroRadioButton radioAktif;
         private MetroFramework.Controls.MetroRadioButton radioPasif;
         private MetroFramework.Controls.MetroRadioButton radioHepsi;
-        private MetroFramework.Controls.MetroTile btnEkranaListele;
-        private MetroFramework.Controls.MetroTile btnYazdir;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnYazdir;
+        private System.Windows.Forms.Button btnListele;
     }
 }
