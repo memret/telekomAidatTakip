@@ -43,8 +43,8 @@ namespace telekomAidatTakip
                 //oluşturulan item liste eklenir
             }
 
-            txtTahsilAd.Enabled = true;
-            txtTahsilKodu.Enabled = true;
+            txtTahsilAd.Enabled = false;
+            txtTahsilKodu.Enabled = false;
             btnSil.Enabled = false;
             btnKaydet.Enabled = false;
             btnYeni.Enabled = true;
