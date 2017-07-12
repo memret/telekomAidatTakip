@@ -19,77 +19,89 @@ namespace telekomAidatTakip
 
         private void btnEkranaListele_Click(object sender, EventArgs e)
         {
-
-
-            listIl.Items.Clear();
-
-            Database db = new Database();
-            string query = "SELECT distinct i.ilAdi, i.ilNo, coalesce((Select Count(*) from Uyeler u2 where aktif = 'true' AND u.ilNo = u2.ilNo group by ilno),0) 'aktif', coalesce((Select Count(*) from Uyeler u2 where aktif = 'false' AND u.ilNo = u2.ilNo group by ilno) ,0) 'pasif', coalesce((Select Count(*) from Uyeler u2 where u.ilNo = u2.ilNo group by ilno),0) 'toplam' FROM Uyeler u , il i where u.ilno = i.ilno";
-            var data = db.DataOku(query);
-
-            while (data.Read())
+            try
             {
 
-                ListViewItem item = new ListViewItem();
-                item.Text = data["ilno"].ToString();
-                item.SubItems.Add(data["ilAdi"].ToString());
-                item.SubItems.Add(data["aktif"].ToString());
-                item.SubItems.Add(data["pasif"].ToString());
-                item.SubItems.Add(data["toplam"].ToString());
-                listIl.Items.Add(item);
+
+
+                Database db = new Database();
+                string query = "SELECT distinct i.ilAdi, i.ilNo, coalesce((Select Count(*) from Uyeler u2 where aktif = 'true' AND u.ilNo = u2.ilNo group by ilno),0) 'aktif', coalesce((Select Count(*) from Uyeler u2 where aktif = 'false' AND u.ilNo = u2.ilNo group by ilno) ,0) 'pasif', coalesce((Select Count(*) from Uyeler u2 where u.ilNo = u2.ilNo group by ilno),0) 'toplam' FROM Uyeler u , il i where u.ilno = i.ilno";
+                var data = db.DataOku(query);
+                listIl.Items.Clear();
+                while (data.Read())
+                {
+
+                    ListViewItem item = new ListViewItem();
+                    item.Text = data["ilno"].ToString();
+                    item.SubItems.Add(data["ilAdi"].ToString());
+                    item.SubItems.Add(data["aktif"].ToString());
+                    item.SubItems.Add(data["pasif"].ToString());
+                    item.SubItems.Add(data["toplam"].ToString());
+                    listIl.Items.Add(item);
+                }
+                db.Kapat();
+                yazdir.list = listIl;
+                yazdir.baslik = "İl Listesi";
+                btnYazdir.Enabled = true;
+
+
+
             }
-            db.Kapat();
-            yazdir.list = listIl;
-            yazdir.baslik = "İl Listesi";
-            btnYazdir.Enabled = true;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         Yazdir yazdir;
 
         private void btnYazdir_Click(object sender, EventArgs e)
         {
-            yazdir.printPre.ShowDialog();
+            try
+            {
+                yazdir.printPre.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void frmRaporIl_Load(object sender, EventArgs e)
         {
-            yazdir = new Yazdir(1);
-            btnYazdir.Enabled = false;
+            try
+            {
+                yazdir = new Yazdir(1);
+                btnYazdir.Enabled = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void listIl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void listIl_DoubleClick(object sender, EventArgs e)
         {
-            if (listIl.SelectedItems.Count > 0)
+            try
             {
-                frmRaporUye frm = new frmRaporUye(listIl.SelectedItems[0].Text);
-                frm.MdiParent = this.MdiParent;
-                frm.Show();
+                if (listIl.SelectedItems.Count > 0)
+                {
+                    frmRaporUye frm = new frmRaporUye(listIl.SelectedItems[0].Text);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+
             }
-            
-        }
-
-        private void metroTile1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnYeni_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLabel1_Click(object sender, EventArgs e)
-        {
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -97,7 +97,6 @@
             this.metroLabel1.Size = new System.Drawing.Size(182, 19);
             this.metroLabel1.TabIndex = 5;
             this.metroLabel1.Text = "İllere Göre Üye Dağılım Listesi";
-            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
             // pictureBox1
             // 
