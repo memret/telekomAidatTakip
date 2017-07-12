@@ -134,7 +134,7 @@
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = global::telekomAidatTakip.Properties.Resources.telekom;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(15, 20);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 38);
@@ -147,11 +147,12 @@
             this.listvTanimTahsil.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
+            this.listvTanimTahsil.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listvTanimTahsil.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listvTanimTahsil.FullRowSelect = true;
-            this.listvTanimTahsil.Location = new System.Drawing.Point(23, 218);
+            this.listvTanimTahsil.Location = new System.Drawing.Point(20, 207);
             this.listvTanimTahsil.Name = "listvTanimTahsil";
-            this.listvTanimTahsil.Size = new System.Drawing.Size(488, 182);
+            this.listvTanimTahsil.Size = new System.Drawing.Size(494, 182);
             this.listvTanimTahsil.TabIndex = 13;
             this.listvTanimTahsil.UseCompatibleStateImageBehavior = false;
             this.listvTanimTahsil.View = System.Windows.Forms.View.Details;
@@ -175,7 +176,7 @@
             this.btnYeni.FlatAppearance.BorderSize = 0;
             this.btnYeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYeni.Image = global::telekomAidatTakip.Properties.Resources.if_ic_control_point_48px_352288;
-            this.btnYeni.Location = new System.Drawing.Point(264, 164);
+            this.btnYeni.Location = new System.Drawing.Point(302, 151);
             this.btnYeni.Margin = new System.Windows.Forms.Padding(0);
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(48, 48);
@@ -192,7 +193,7 @@
             this.btnKaydet.FlatAppearance.BorderSize = 0;
             this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
-            this.btnKaydet.Location = new System.Drawing.Point(332, 164);
+            this.btnKaydet.Location = new System.Drawing.Point(350, 151);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(48, 48);
@@ -208,7 +209,7 @@
             this.btnSil.FlatAppearance.BorderSize = 0;
             this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSil.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
-            this.btnSil.Location = new System.Drawing.Point(398, 164);
+            this.btnSil.Location = new System.Drawing.Point(398, 151);
             this.btnSil.Margin = new System.Windows.Forms.Padding(0);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(48, 48);
@@ -226,7 +227,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 423);
+            this.ClientSize = new System.Drawing.Size(534, 409);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.btnYeni);
