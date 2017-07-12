@@ -36,40 +36,20 @@ namespace telekomAidatTakip
             if (sicilno != null)
             {
                 DoldurKomple(sicilno);
-                btnGuncelle.Enabled = true;
-                btnGuncelle.Visible = true;
                 btnSil.Enabled = true;
                 btnSil.Visible = true;
                 btnSil2.Enabled = true;
                 btnSil2.Visible = true;
-                btnGuncelle2.Enabled = true;
-                btnGuncelle2.Visible = true;
                 btnSil3.Enabled = true;
                 btnSil3.Visible = true;
-                btnGuncelle3.Enabled = true;
-                btnGuncelle3.Visible = true;
                 btnSil4.Enabled = true;
                 btnSil4.Visible = true;
-                btnGuncelle4.Enabled = true;
-                btnGuncelle4.Visible = true;
                 btnSil5.Enabled = true;
                 btnSil5.Visible = true;
-                btnGuncelle5.Enabled = true;
-                btnGuncelle5.Visible = true;
             }
             else
             {
                 DoldurKomple();
-                btnKaydet.Enabled = true;
-                btnKaydet.Visible = true;
-                btnKaydet2.Enabled = true;
-                btnKaydet2.Visible = true;
-                btnKaydet3.Enabled = true;
-                btnKaydet3.Visible = true;
-                btnKaydet4.Enabled = true;
-                btnKaydet4.Visible = true;
-                btnKaydet5.Enabled = true;
-                btnKaydet5.Visible = true;
             }
         }
 
@@ -264,7 +244,21 @@ namespace telekomAidatTakip
         {
             if (BosYerVarMi() == null)
             {
-                yeniKayitEkle();
+                
+            }
+            else
+                MessageBox.Show(BosYerVarMi());
+
+            if (BosYerVarMi() == null)
+            {
+                if (sicilno == null)
+                {
+                    yeniKayitEkle();
+                }
+                else
+                {
+                    uyeBilgisiGuncelle();
+                }
             }
             else
                 MessageBox.Show(BosYerVarMi());
@@ -359,7 +353,9 @@ namespace telekomAidatTakip
                 {
                     db3.Sorgu("insert into UyeFotograf (sicilNo,Fotograf) values (@0,@1)", sicilno, resim);
                 }
-                
+
+                MessageBox.Show("Kayıt güncellendi!", "Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch
             {
@@ -393,19 +389,7 @@ namespace telekomAidatTakip
             }
 
         }
-
-        private void btnGuncelle_Click(object sender, EventArgs e)
-        {
-            if (BosYerVarMi() == null)
-            {
-                uyeBilgisiGuncelle();
-                MessageBox.Show("Kayıt güncellendi!", "Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            else
-                MessageBox.Show(BosYerVarMi());
-
-        }
+        
 
         private void btnYeniResim_Click(object sender, EventArgs e)
         {
