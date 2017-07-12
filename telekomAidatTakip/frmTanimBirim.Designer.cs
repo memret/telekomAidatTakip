@@ -36,9 +36,6 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.btnSil = new MetroFramework.Controls.MetroTile();
-            this.btnKaydet = new MetroFramework.Controls.MetroTile();
-            this.btnYeni = new MetroFramework.Controls.MetroTile();
             this.listBirim = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,6 +43,9 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnSil = new System.Windows.Forms.Button();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnYeni = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@
             this.cBoxMudurluk.Enabled = false;
             this.cBoxMudurluk.FormattingEnabled = true;
             this.cBoxMudurluk.ItemHeight = 23;
-            this.cBoxMudurluk.Location = new System.Drawing.Point(157, 125);
+            this.cBoxMudurluk.Location = new System.Drawing.Point(157, 137);
             this.cBoxMudurluk.Name = "cBoxMudurluk";
             this.cBoxMudurluk.Size = new System.Drawing.Size(279, 29);
             this.cBoxMudurluk.TabIndex = 7;
@@ -67,9 +67,9 @@
             // 
             // 
             this.txtBirimKodu.CustomButton.Image = null;
-            this.txtBirimKodu.CustomButton.Location = new System.Drawing.Point(139, 1);
+            this.txtBirimKodu.CustomButton.Location = new System.Drawing.Point(133, 1);
             this.txtBirimKodu.CustomButton.Name = "";
-            this.txtBirimKodu.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtBirimKodu.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtBirimKodu.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtBirimKodu.CustomButton.TabIndex = 1;
             this.txtBirimKodu.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -86,7 +86,7 @@
             this.txtBirimKodu.SelectionLength = 0;
             this.txtBirimKodu.SelectionStart = 0;
             this.txtBirimKodu.ShortcutsEnabled = true;
-            this.txtBirimKodu.Size = new System.Drawing.Size(161, 23);
+            this.txtBirimKodu.Size = new System.Drawing.Size(161, 29);
             this.txtBirimKodu.TabIndex = 8;
             this.txtBirimKodu.UseSelectable = true;
             this.txtBirimKodu.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -98,9 +98,9 @@
             // 
             // 
             this.txtBirimAdi.CustomButton.Image = null;
-            this.txtBirimAdi.CustomButton.Location = new System.Drawing.Point(258, 1);
+            this.txtBirimAdi.CustomButton.Location = new System.Drawing.Point(252, 1);
             this.txtBirimAdi.CustomButton.Name = "";
-            this.txtBirimAdi.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtBirimAdi.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtBirimAdi.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtBirimAdi.CustomButton.TabIndex = 1;
             this.txtBirimAdi.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -108,7 +108,7 @@
             this.txtBirimAdi.CustomButton.Visible = false;
             this.txtBirimAdi.Enabled = false;
             this.txtBirimAdi.Lines = new string[0];
-            this.txtBirimAdi.Location = new System.Drawing.Point(157, 96);
+            this.txtBirimAdi.Location = new System.Drawing.Point(157, 102);
             this.txtBirimAdi.MaxLength = 32767;
             this.txtBirimAdi.Name = "txtBirimAdi";
             this.txtBirimAdi.PasswordChar = '\0';
@@ -117,7 +117,7 @@
             this.txtBirimAdi.SelectionLength = 0;
             this.txtBirimAdi.SelectionStart = 0;
             this.txtBirimAdi.ShortcutsEnabled = true;
-            this.txtBirimAdi.Size = new System.Drawing.Size(280, 23);
+            this.txtBirimAdi.Size = new System.Drawing.Size(280, 29);
             this.txtBirimAdi.TabIndex = 8;
             this.txtBirimAdi.UseSelectable = true;
             this.txtBirimAdi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -126,7 +126,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(73, 69);
+            this.metroLabel1.Location = new System.Drawing.Point(73, 72);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(65, 19);
             this.metroLabel1.TabIndex = 9;
@@ -135,7 +135,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(73, 98);
+            this.metroLabel2.Location = new System.Drawing.Point(73, 107);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(43, 19);
             this.metroLabel2.TabIndex = 9;
@@ -144,68 +144,11 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(73, 133);
+            this.metroLabel3.Location = new System.Drawing.Point(73, 142);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(67, 19);
             this.metroLabel3.TabIndex = 9;
             this.metroLabel3.Text = "Müdürlük:";
-            // 
-            // btnSil
-            // 
-            this.btnSil.ActiveControl = null;
-            this.btnSil.BackColor = System.Drawing.Color.Silver;
-            this.btnSil.Enabled = false;
-            this.btnSil.Location = new System.Drawing.Point(391, 160);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(45, 45);
-            this.btnSil.TabIndex = 10;
-            this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSil.TileImage = global::telekomAidatTakip.Properties.Resources.if_delete_101939;
-            this.btnSil.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSil.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.btnSil.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.toolTip1.SetToolTip(this.btnSil, "Sil");
-            this.btnSil.UseCustomBackColor = true;
-            this.btnSil.UseSelectable = true;
-            this.btnSil.UseTileImage = true;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnKaydet
-            // 
-            this.btnKaydet.ActiveControl = null;
-            this.btnKaydet.BackColor = System.Drawing.Color.Silver;
-            this.btnKaydet.Enabled = false;
-            this.btnKaydet.Location = new System.Drawing.Point(340, 160);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(45, 45);
-            this.btnKaydet.TabIndex = 10;
-            this.btnKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnKaydet.TileImage = global::telekomAidatTakip.Properties.Resources.if_check_101940;
-            this.btnKaydet.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnKaydet.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.btnKaydet.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.toolTip1.SetToolTip(this.btnKaydet, "Kaydet");
-            this.btnKaydet.UseCustomBackColor = true;
-            this.btnKaydet.UseSelectable = true;
-            this.btnKaydet.UseTileImage = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
-            // btnYeni
-            // 
-            this.btnYeni.ActiveControl = null;
-            this.btnYeni.Location = new System.Drawing.Point(289, 160);
-            this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(45, 45);
-            this.btnYeni.TabIndex = 10;
-            this.btnYeni.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnYeni.TileImage = global::telekomAidatTakip.Properties.Resources.if_save_101946;
-            this.btnYeni.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnYeni.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.btnYeni.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.toolTip1.SetToolTip(this.btnYeni, "Yeni Kayıt");
-            this.btnYeni.UseSelectable = true;
-            this.btnYeni.UseTileImage = true;
-            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
             // listBirim
             // 
@@ -219,7 +162,7 @@
             this.listBirim.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listBirim.FullRowSelect = true;
             this.listBirim.GridLines = true;
-            this.listBirim.Location = new System.Drawing.Point(20, 215);
+            this.listBirim.Location = new System.Drawing.Point(20, 230);
             this.listBirim.MultiSelect = false;
             this.listBirim.Name = "listBirim";
             this.listBirim.Size = new System.Drawing.Size(472, 214);
@@ -259,15 +202,59 @@
             this.pictureBox2.TabIndex = 47;
             this.pictureBox2.TabStop = false;
             // 
+            // btnSil
+            // 
+            this.btnSil.BackColor = System.Drawing.Color.White;
+            this.btnSil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSil.Enabled = false;
+            this.btnSil.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
+            this.btnSil.Location = new System.Drawing.Point(389, 172);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(48, 48);
+            this.btnSil.TabIndex = 48;
+            this.toolTip1.SetToolTip(this.btnSil, "Sil");
+            this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
+            // btnKaydet
+            // 
+            this.btnKaydet.BackColor = System.Drawing.Color.White;
+            this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKaydet.Enabled = false;
+            this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
+            this.btnKaydet.Location = new System.Drawing.Point(335, 173);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(48, 48);
+            this.btnKaydet.TabIndex = 48;
+            this.toolTip1.SetToolTip(this.btnKaydet, "Kaydet");
+            this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // btnYeni
+            // 
+            this.btnYeni.BackColor = System.Drawing.Color.White;
+            this.btnYeni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnYeni.Image = global::telekomAidatTakip.Properties.Resources.if_ic_control_point_48px_352288;
+            this.btnYeni.Location = new System.Drawing.Point(281, 173);
+            this.btnYeni.Margin = new System.Windows.Forms.Padding(0);
+            this.btnYeni.Name = "btnYeni";
+            this.btnYeni.Size = new System.Drawing.Size(48, 48);
+            this.btnYeni.TabIndex = 48;
+            this.toolTip1.SetToolTip(this.btnYeni, "Yeni Kayıt");
+            this.btnYeni.UseVisualStyleBackColor = false;
+            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
+            // 
             // frmTanimBirim
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(512, 449);
+            this.ClientSize = new System.Drawing.Size(512, 464);
+            this.Controls.Add(this.btnYeni);
+            this.Controls.Add(this.btnKaydet);
+            this.Controls.Add(this.btnSil);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.listBirim);
-            this.Controls.Add(this.btnSil);
-            this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.btnYeni);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.cBoxMudurluk);
@@ -294,9 +281,6 @@
         private MetroFramework.Controls.MetroTextBox txtBirimAdi;
         private MetroFramework.Controls.MetroTextBox txtBirimKodu;
         private MetroFramework.Controls.MetroComboBox cBoxMudurluk;
-        private MetroFramework.Controls.MetroTile btnSil;
-        private MetroFramework.Controls.MetroTile btnKaydet;
-        private MetroFramework.Controls.MetroTile btnYeni;
         private System.Windows.Forms.ListView listBirim;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -304,5 +288,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.Button btnYeni;
     }
 }

@@ -73,9 +73,9 @@ namespace telekomAidatTakip.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap if_check_101940 {
+        internal static System.Drawing.Bitmap if_ic_control_point_48px_352288 {
             get {
-                object obj = ResourceManager.GetObject("if_check_101940", resourceCulture);
+                object obj = ResourceManager.GetObject("if_ic_control_point_48px_352288", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace telekomAidatTakip.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap if_delete_101939 {
+        internal static System.Drawing.Bitmap if_icons_check_1564499 {
             get {
-                object obj = ResourceManager.GetObject("if_delete_101939", resourceCulture);
+                object obj = ResourceManager.GetObject("if_icons_check_1564499", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,19 @@ namespace telekomAidatTakip.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap if_save_101946 {
+        internal static System.Drawing.Bitmap if_icons_exit_1564505 {
             get {
-                object obj = ResourceManager.GetObject("if_save_101946", resourceCulture);
+                object obj = ResourceManager.GetObject("if_icons_exit_1564505", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_icons_new_1564516 {
+            get {
+                object obj = ResourceManager.GetObject("if_icons_new_1564516", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

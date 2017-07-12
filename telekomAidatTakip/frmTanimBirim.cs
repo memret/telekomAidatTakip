@@ -63,7 +63,7 @@ namespace telekomAidatTakip
                         return;
                 }
                 yeniKayit = false;
-                btnYeni.Image = telekomAidatTakip.Properties.Resources.if_check_101940;
+                //btnYeni.Image = telekomAidatTakip.Properties.Resources.if_check_101940;
                 txtBirimAdi.Enabled = true;
                 txtBirimKodu.Enabled = true;
                 cBoxMudurluk.Enabled = true;
@@ -82,7 +82,7 @@ namespace telekomAidatTakip
                 listBirim.Items.Clear();
                 listeDoldur();
                 db.Kapat();
-                btnYeni.Image = telekomAidatTakip.Properties.Resources.if_save_101946;
+                //btnYeni.Image = telekomAidatTakip.Properties.Resources.if_save_101946;
                 
 
                 txtBirimAdi.Enabled = false;
@@ -143,7 +143,7 @@ namespace telekomAidatTakip
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (txtBirimKodu.Text == string.Empty)
+            if (txtBirimKodu.Text != string.Empty)
             {
                 Database db2 = new Database();
                 string countKisi = "0";
@@ -197,9 +197,9 @@ namespace telekomAidatTakip
             db.Kapat();
 
             btnKaydet.Enabled = false;
-            btnKaydet.UseCustomBackColor = true;
+            //btnKaydet.UseCustomBackColor = true;
             btnSil.Enabled = false;
-            btnSil.UseCustomBackColor = true;
+            //btnSil.UseCustomBackColor = true;
             txtBirimAdi.Text = string.Empty;
             txtBirimKodu.Text = string.Empty;
 
@@ -232,8 +232,8 @@ namespace telekomAidatTakip
         {
             btnKaydet.Enabled = true;
             btnSil.Enabled = true;
-            btnKaydet.UseCustomBackColor = false;
-            btnSil.UseCustomBackColor = false;
+            //btnKaydet.UseCustomBackColor = false;
+            //btnSil.UseCustomBackColor = false;
             txtBirimAdi.Enabled = true;
             cBoxMudurluk.Enabled = true;
             txtBirimKodu.Enabled = false;
