@@ -116,11 +116,36 @@ namespace telekomAidatTakip
         {
             try
             {
-                if (txtKod.Text != string.Empty)
+                Database db2 = new Database();
+                string countKisi = "0";
+                var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE silinmeNedeniNo = @0", txtKod.Text);
+                if (data2.Read())
                 {
-                    Database db = new Database();
-                    db.Sorgu("delete from SilinmeNedeni where SilinmeNedenNo=@0", txtKod.Text);
-                    SilinmeListesiniDoldur();
+                    countKisi = data2["count"].ToString();
+                }
+
+                Database db3 = new Database();
+                string countAidat = "0";
+                var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.silinmeNedeniNo = @0", txtKod.Text);
+                if (data3.Read())
+                {
+                    countAidat = data3["count"].ToString();
+                }
+                // 0dan büyüklerse bu soruyu sormak lazım.
+                DialogResult dialogResult;
+                if (countAidat != "0" && countKisi != "0")
+                    dialogResult = MessageBox.Show("Bu işlem ile sadece seçtiğiniz üyelik iptal nedenini değil, ona kayıtlı olan kişileri ve aidat kayıtlarınıda sileceksiniz. \nSilinecek kişi sayısı: " + countKisi + "\nSilinecek aidat kaydı: " + countAidat + " \nEmin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                else
+                    dialogResult = MessageBox.Show("Seçili üyelik iptal nedeni silinecek. Emin misiniz?", "Silme İşlemi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (txtKod.Text != string.Empty)
+                    {
+                        Database db = new Database();
+                        db.Sorgu("delete from SilinmeNedeni where SilinmeNedenNo=@0", txtKod.Text);
+                        SilinmeListesiniDoldur();
+                    }
                 }
             }
             catch (Exception ex)

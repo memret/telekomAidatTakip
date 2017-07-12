@@ -113,7 +113,7 @@ namespace telekomAidatTakip
                     if (countAidat != "0" && countKisi != "0")
                         dialogResult = MessageBox.Show("Bu işlem ile sadece seçtiğiniz tahsili değil, ona kayıtlı olan kişileri ve aidat kayıtlarınıda sileceksiniz. \nSilinecek kişi sayısı: " + countKisi + "\nSilinecek aidat kaydı: " + countAidat + " \nEmin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     else
-                        dialogResult = MessageBox.Show("Seçili tahsil silinecek. Emin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        dialogResult = MessageBox.Show("Seçili tahsil silinecek. Emin misiniz?", "Silme İşlemi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (dialogResult == DialogResult.Yes)
                     {
