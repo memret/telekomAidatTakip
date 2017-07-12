@@ -22,13 +22,21 @@ namespace telekomAidatTakip
 
         public frmRaporUye(string ilNo)
         {
+            try { 
             InitializeComponent();
             //checkbox tikle
             checkIl.Checked = true;
             cboxIl.SelectedItem = PRG.cboxIndexBul(ref cboxIl, ilNo);
             btnEkranaListele_Click(this, null);
-            //checkboxda il seç
-            //ekran listeleye tıklat
+                //checkboxda il seç
+                //ekran listeleye tıklat
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
         }
 
        
@@ -42,6 +50,7 @@ namespace telekomAidatTakip
 
         private void checkIl_CheckedChanged(object sender, EventArgs e)
         {
+            try { 
             if (checkIl.Checked)
             {
                 cboxIl.Enabled = true;
@@ -67,6 +76,11 @@ namespace telekomAidatTakip
                 checkMudurluk.Enabled = false;
             }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
        /* private void cboxII_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,6 +100,7 @@ namespace telekomAidatTakip
 
         private void checkMudurluk_CheckedChanged(object sender, EventArgs e)
         {
+            try { 
             if (checkMudurluk.Checked)
             {
                 cboxII_SelectionChangeCommitted(this, null);
@@ -112,11 +127,18 @@ namespace telekomAidatTakip
                 checkBirim.Checked = false;
 
             }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         
 
         private void checkBirim_CheckedChanged(object sender, EventArgs e)
         {
+            try { 
             if (checkBirim.Checked)
             {
                 cboxMudurluk_SelectionChangeCommitted(this, null);
@@ -127,11 +149,17 @@ namespace telekomAidatTakip
                 cboxBirim.SelectedIndex = -1;
                 cboxBirim.Enabled = false;
             }
-            
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void checkUnvan_CheckedChanged(object sender, EventArgs e)
         {
+            try { 
             if(checkUnvan.Checked)
             {
                 PRG.DoldurUnvan(ref cboxUnvan);
@@ -142,10 +170,17 @@ namespace telekomAidatTakip
                 cboxUnvan.Enabled = false;
                 cboxUnvan.SelectedIndex = -1;
             }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void checkTahsil_CheckedChanged(object sender, EventArgs e)
         {
+            try { 
             if (checkTahsil.Checked)
             {
                 PRG.DoldurTahsil(ref cboxTahsil);
@@ -155,25 +190,38 @@ namespace telekomAidatTakip
             {
                 cboxTahsil.Enabled = false;
                 cboxTahsil.SelectedIndex = -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void checkUyelik_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkUyelik.Checked)
+            try
             {
-                PRG.DoldurUyelikTipi(ref cboxUyelikDurumu);
-            }
+                if (checkUyelik.Checked)
+                {
+                    PRG.DoldurUyelikTipi(ref cboxUyelikDurumu);
+                }
 
-            else
+                else
+                {
+                    cboxUyelikDurumu.Enabled = false;
+                    cboxUyelikDurumu.SelectedIndex = -1;
+                }
+            }
+            catch (Exception ex)
             {
-                cboxUyelikDurumu.Enabled = false;
-                cboxUyelikDurumu.SelectedIndex = -1;
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void checkKanGrubu_CheckedChanged(object sender, EventArgs e)
         {
+            try { 
             if (checkKanGrubu.Checked)
             {
                 PRG.DoldurKanGrubu(ref cboxKanGrubu);
@@ -184,14 +232,20 @@ namespace telekomAidatTakip
                 cboxKanGrubu.Enabled = false;
                 cboxKanGrubu.SelectedIndex = -1;
             }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnEkranaListele_Click(object sender, EventArgs e)
         {
-
+            try { 
             //TABLODA VERİ YOKKEN VERİ YOK DİYECEK.
 
-            listUye.Items.Clear();
+            
             //kısaltma olarak FROM uyeler u dediğimde hata veriyor ondan uzun uzun yazdım küfür etmeyin
             //tek satırda yazmazsam da hata veriyor ömer buralarda çıldırdı
             Database db = new Database();
@@ -275,7 +329,7 @@ namespace telekomAidatTakip
 
             var data = db.DataOku(temelSorgu, paramList);
             listUye.Items.Clear();
-
+listUye.Items.Clear();
             while (data.Read())
             {
                 string ilMudBir = data["ilAdi"].ToString() + "/" + data["mudurlukAdi"].ToString() + "/" + data["birimAdi"].ToString();
@@ -308,10 +362,17 @@ namespace telekomAidatTakip
             */
             yazdir.baslik = "Üye Listesi";
             btnYazdir.Enabled = true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void listUye_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            try { 
             if (listUye.SelectedItems.Count > 0)
             {
                 frmUye frm = new frmUye(listUye.SelectedItems[0].Text);
@@ -319,13 +380,24 @@ namespace telekomAidatTakip
                 frm.Show();
                 btnEkranaListele_Click(this,null);
             }
-            
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnYazdir_Click(object sender, EventArgs e)
         {
+            try { 
             yazdir.printPre.ShowDialog();
-            
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
        Yazdir yazdir = new Yazdir(1);
         private void frmRaporUye_Load(object sender, EventArgs e)
@@ -337,6 +409,7 @@ namespace telekomAidatTakip
 
         private void cboxII_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            try { 
             if (cboxIl.SelectedIndex != -1)
             {
                 PRG.DoldurMudurluk(ref cboxMudurluk, ((KeyValuePair<int, string>)cboxIl.SelectedItem).Key.ToString());
@@ -352,10 +425,17 @@ namespace telekomAidatTakip
                 checkBirim.Enabled = false;
                 checkBirim.Checked = false;
             }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cboxMudurluk_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            try { 
             int mdr = PRG.cboxKeyGetir(ref cboxMudurluk);
             if (mdr != -1)
             {
@@ -368,6 +448,12 @@ namespace telekomAidatTakip
             {
                 checkBirim.Enabled = false;
                 checkBirim.Checked = false;
+            }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
