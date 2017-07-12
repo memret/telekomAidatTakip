@@ -19,9 +19,18 @@ namespace telekomAidatTakip
 
         private void frmTanimMudurluk_Load(object sender, EventArgs e)
         {
-            kayitliMdrDoldur();
-            cBoxIlDoldur();
-            //frmTanimMudurluk_Resize(this, null);
+            try
+            {
+
+                kayitliMdrDoldur();
+                cBoxIlDoldur();
+                //frmTanimMudurluk_Resize(this, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
         }
 
         private void kayitliMdrDoldur()
@@ -75,7 +84,7 @@ namespace telekomAidatTakip
             comboBox_il.DisplayMember = "Value";
             comboBox_il.ValueMember = "Key";
             comboBox_il.SelectedIndex = -1;
-            
+
         }
 
 
@@ -101,84 +110,101 @@ namespace telekomAidatTakip
         bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
-            // butonun ismine göre yeni kaydın veritabanına ekleneceğini mi yoksa ekleme sayfasına mı geçileceğini mi tespit ediyoruz
-
-            if (yeniKayit) 
+            try
             {
-                if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
-                {
-                    DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
-                    if (dialogResult == DialogResult.Yes)
-                        btnKaydet_Click(this, null);
-                    else if (dialogResult == DialogResult.Cancel)
-                        return;
-                }
-                yeniKayit = false;
-                txtMdrKod.Text = string.Empty;
-                txtMdrAd.Text = string.Empty;
-                comboBox_il.SelectedIndex = -1;
-                txtMdrKod.Enabled = true;
-                txtMdrAd.Enabled = true;
-                txtMdrAd.WaterMark = "Müdürlük adı giriniz.";
-                txtMdrKod.WaterMark = "Müdürlük no giriniz.";
-                comboBox_il.PromptText = "İl seçiniz.";
-                comboBox_il.Enabled = true;
-                //btnYeni.Text =b "Ekle";
-                btnKaydet.Enabled = false;
-                btnSil.Enabled = false;
-                toolTip1.SetToolTip(btnYeni, "Ekle");
-            }
-            else //butonun ismi Yeni değilse demekki yeni kayıt sayfasındayız
-            {
+                // butonun ismine göre yeni kaydın veritabanına ekleneceğini mi yoksa ekleme sayfasına mı geçileceğini mi tespit ediyoruz
 
-                if (txtMdrKod.Text != string.Empty && txtMdrAd.Text != string.Empty) //yeni kayıt eklemek için bu iki verinin boş olmaması gerekiyor
+                if (yeniKayit)
                 {
-                    Database db = new Database();
-                    int ilNo = ((KeyValuePair<int, string>)comboBox_il.SelectedItem).Key;
-                    db.Sorgu("insert into Mudurluk values (@0,@1,@2)", txtMdrKod.Text, txtMdrAd.Text, ilNo.ToString());
-
-                    txtMdrKod.Enabled = false;
-                    txtMdrAd.Enabled = false;
-                    //btnYeni.Text = "Yeni";
-                    kayitliMdrDoldur();
-                    txtMdrAd.Text = string.Empty;
+                    if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
+                        if (dialogResult == DialogResult.Yes)
+                            btnKaydet_Click(this, null);
+                        else if (dialogResult == DialogResult.Cancel)
+                            return;
+                    }
+                    yeniKayit = false;
                     txtMdrKod.Text = string.Empty;
+                    txtMdrAd.Text = string.Empty;
                     comboBox_il.SelectedIndex = -1;
-                    yeniKayit = true;
-                    toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
-                    btnYeni.Focus(); //görsel amaçlı
+                    txtMdrKod.Enabled = true;
+                    txtMdrAd.Enabled = true;
+                    txtMdrAd.WaterMark = "Müdürlük adı giriniz.";
+                    txtMdrKod.WaterMark = "Müdürlük no giriniz.";
+                    comboBox_il.PromptText = "İl seçiniz.";
+                    comboBox_il.Enabled = true;
+                    //btnYeni.Text =b "Ekle";
+                    btnKaydet.Enabled = false;
+                    btnSil.Enabled = false;
+                    toolTip1.SetToolTip(btnYeni, "Ekle");
                 }
-                else
+                else //butonun ismi Yeni değilse demekki yeni kayıt sayfasındayız
                 {
-                    MessageBox.Show("Müdürlük kodu veya müdürlük adı kısmı boş!");
+
+                    if (txtMdrKod.Text != string.Empty && txtMdrAd.Text != string.Empty) //yeni kayıt eklemek için bu iki verinin boş olmaması gerekiyor
+                    {
+                        Database db = new Database();
+                        int ilNo = ((KeyValuePair<int, string>)comboBox_il.SelectedItem).Key;
+                        db.Sorgu("insert into Mudurluk values (@0,@1,@2)", txtMdrKod.Text, txtMdrAd.Text, ilNo.ToString());
+
+                        txtMdrKod.Enabled = false;
+                        txtMdrAd.Enabled = false;
+                        //btnYeni.Text = "Yeni";
+                        kayitliMdrDoldur();
+                        txtMdrAd.Text = string.Empty;
+                        txtMdrKod.Text = string.Empty;
+                        comboBox_il.SelectedIndex = -1;
+                        yeniKayit = true;
+                        toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
+                        btnYeni.Focus(); //görsel amaçlı
+                    }
+                    else
+                    {
+                        MessageBox.Show("Müdürlük kodu veya müdürlük adı kısmı boş!");
+                    }
+
                 }
 
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            if (txtMdrKod.Text != string.Empty && txtMdrAd.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
+            try
             {
-                Database db = new Database();
-                int ilNo = ((KeyValuePair<int, string>)comboBox_il.SelectedItem).Key;
-                db.Sorgu("update Mudurluk set mudurlukAdi=@0, ilNo=@1 where mudurlukNo=@2", txtMdrAd.Text, ilNo.ToString(), txtMdrKod.Text);
+                if (txtMdrKod.Text != string.Empty && txtMdrAd.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
+                {
+                    Database db = new Database();
+                    int ilNo = ((KeyValuePair<int, string>)comboBox_il.SelectedItem).Key;
+                    db.Sorgu("update Mudurluk set mudurlukAdi=@0, ilNo=@1 where mudurlukNo=@2", txtMdrAd.Text, ilNo.ToString(), txtMdrKod.Text);
 
-                txtMdrAd.Text = string.Empty;
-                txtMdrKod.Text = string.Empty;
-                txtMdrAd.Enabled = false;
-                txtMdrKod.Enabled = false;
-                btnKaydet.Enabled = false;
-                btnSil.Enabled = false;
-                listvMdr.Items.Clear();
-                comboBox_il.SelectedIndex = -1;
-                kayitliMdrDoldur();
+                    txtMdrAd.Text = string.Empty;
+                    txtMdrKod.Text = string.Empty;
+                    txtMdrAd.Enabled = false;
+                    txtMdrKod.Enabled = false;
+                    btnKaydet.Enabled = false;
+                    btnSil.Enabled = false;
+                    listvMdr.Items.Clear();
+                    comboBox_il.SelectedIndex = -1;
+                    kayitliMdrDoldur();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            try
+            {
                 Database db1 = new Database();
                 string countBirim = "0";
                 var data = db1.DataOku("SELECT COUNT (birimNo) 'count' FROM birim WHERE mudurlukNo = @0", txtMdrKod.Text);
@@ -202,59 +228,70 @@ namespace telekomAidatTakip
                     countAidat = data3["count"].ToString();
                 }
                 DialogResult dialogResult;
-                if (countAidat != "0" && countBirim!="0" && countKisi != "0")
-                    dialogResult = MessageBox.Show("Seçili müdürlük ve altında kayıtlı birimler silinecek.\nSilinecek birim sayısı: "+countBirim+"\nSilinecek kişi sayısı: "+countKisi+ "\nSilinecek aidat kaydı: "+countAidat+" \nEmin misiniz?", "Müdürlük Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (countAidat != "0" && countBirim != "0" && countKisi != "0")
+                    dialogResult = MessageBox.Show("Seçili müdürlük ve altında kayıtlı birimler silinecek.\nSilinecek birim sayısı: " + countBirim + "\nSilinecek kişi sayısı: " + countKisi + "\nSilinecek aidat kaydı: " + countAidat + " \nEmin misiniz?", "Müdürlük Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 else
                     dialogResult = MessageBox.Show("Seçili müdürlük ve altında kayıtlı birimler silinecek. Emin misiniz?", "Müdürlük Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                
+
                 if (dialogResult == DialogResult.Yes)
                 {
                     if (txtMdrKod.Text != string.Empty)
                     {
                         Database db = new Database();
-                        
+
                         db.Sorgu("DELETE FROM Mudurluk Where mudurlukNo = @0", txtMdrKod.Text);
-                        
+
                         listvMdr.Items.Clear();
                         txtMdrAd.Text = string.Empty;
                         txtMdrKod.Text = string.Empty;
                         kayitliMdrDoldur();
                         comboBox_il.SelectedIndex = -1;
                         MessageBox.Show("Müdürlük silindi!", "Müdürlük Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    }
                 }
 
                 else if (dialogResult == DialogResult.Cancel)
                     return;
-            
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void listvMdr_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            try
+            {
+                Database db = new Database();
+                String mudurlukno = listvMdr.SelectedItems[0].SubItems[0].Text;
+                String ilKodu = listvMdr.SelectedItems[0].SubItems[2].Text;
+                var data = db.DataOku("SELECT i.ilAdi,m.mudurlukNo,m.mudurlukAdi " +
+                      "FROM Mudurluk m, il i WHERE m.ilNo = i.ilNo AND m.mudurlukno = @0 AND i.ilNo =@1", mudurlukno, ilKodu);
 
-             Database db = new Database();
-             String mudurlukno = listvMdr.SelectedItems[0].SubItems[0].Text;
-             String ilKodu = listvMdr.SelectedItems[0].SubItems[2].Text;
-             var data = db.DataOku("SELECT i.ilAdi,m.mudurlukNo,m.mudurlukAdi " +
-                   "FROM Mudurluk m, il i WHERE m.ilNo = i.ilNo AND m.mudurlukno = @0 AND i.ilNo =@1", mudurlukno, ilKodu);
+                if (data.Read())
+                {
 
-             if (data.Read())
-             {
+                    txtMdrKod.Text = data["mudurlukNo"].ToString();
+                    txtMdrAd.Text = data["mudurlukAdi"].ToString();
+                    comboBox_il.Text = data["ilAdi"].ToString();
 
-                 txtMdrKod.Text = data["mudurlukNo"].ToString();
-                 txtMdrAd.Text = data["mudurlukAdi"].ToString();
-                 comboBox_il.Text = data["ilAdi"].ToString();
-  
-             }
+                }
 
-            // txtMdrKod.Text = mdrKod;
-             btnKaydet.Enabled = true;
-             btnSil.Enabled = true;
-             txtMdrAd.Enabled = true;
-             txtMdrKod.Enabled = false;
-             comboBox_il.Enabled = true;
-             //btnYeni.Text = "Yeni";
-             
+                // txtMdrKod.Text = mdrKod;
+                btnKaydet.Enabled = true;
+                btnSil.Enabled = true;
+                txtMdrAd.Enabled = true;
+                txtMdrKod.Enabled = false;
+                comboBox_il.Enabled = true;
+                //btnYeni.Text = "Yeni";
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         /*private void frmTanimMudurluk_Resize(object sender, EventArgs e)
