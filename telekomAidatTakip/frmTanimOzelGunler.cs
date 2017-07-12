@@ -243,7 +243,7 @@ namespace telekomAidatTakip
 
         private void frmTanimOzelGunler_Resize(object sender, EventArgs e)
         {
-
+            listView1.Size = new Size(listView1.Size.Width, this.Size.Height - 444);
             //gboxTabloGosterimi.Height = this.Height - 390;
 
             //  gboxTabloGosterimi.Width = this.Width - 60;

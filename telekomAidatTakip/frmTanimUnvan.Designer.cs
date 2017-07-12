@@ -51,7 +51,7 @@
             // 
             // 
             this.txtUnvanNo.CustomButton.Image = null;
-            this.txtUnvanNo.CustomButton.Location = new System.Drawing.Point(165, 1);
+            this.txtUnvanNo.CustomButton.Location = new System.Drawing.Point(117, 1);
             this.txtUnvanNo.CustomButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUnvanNo.CustomButton.Name = "";
             this.txtUnvanNo.CustomButton.Size = new System.Drawing.Size(27, 27);
@@ -61,7 +61,7 @@
             this.txtUnvanNo.CustomButton.UseSelectable = true;
             this.txtUnvanNo.CustomButton.Visible = false;
             this.txtUnvanNo.Lines = new string[0];
-            this.txtUnvanNo.Location = new System.Drawing.Point(128, 85);
+            this.txtUnvanNo.Location = new System.Drawing.Point(128, 72);
             this.txtUnvanNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUnvanNo.MaxLength = 32767;
             this.txtUnvanNo.Name = "txtUnvanNo";
@@ -83,7 +83,7 @@
             // 
             // 
             this.txtUnvanAdi.CustomButton.Image = null;
-            this.txtUnvanAdi.CustomButton.Location = new System.Drawing.Point(165, 1);
+            this.txtUnvanAdi.CustomButton.Location = new System.Drawing.Point(211, 1);
             this.txtUnvanAdi.CustomButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUnvanAdi.CustomButton.Name = "";
             this.txtUnvanAdi.CustomButton.Size = new System.Drawing.Size(27, 27);
@@ -93,7 +93,7 @@
             this.txtUnvanAdi.CustomButton.UseSelectable = true;
             this.txtUnvanAdi.CustomButton.Visible = false;
             this.txtUnvanAdi.Lines = new string[0];
-            this.txtUnvanAdi.Location = new System.Drawing.Point(128, 119);
+            this.txtUnvanAdi.Location = new System.Drawing.Point(128, 106);
             this.txtUnvanAdi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUnvanAdi.MaxLength = 32767;
             this.txtUnvanAdi.Name = "txtUnvanAdi";
@@ -112,7 +112,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(36, 90);
+            this.metroLabel1.Location = new System.Drawing.Point(36, 77);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(70, 19);
@@ -122,7 +122,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(36, 124);
+            this.metroLabel2.Location = new System.Drawing.Point(36, 111);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(72, 19);
@@ -137,10 +137,10 @@
             this.listUnvan.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listUnvan.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listUnvan.FullRowSelect = true;
-            this.listUnvan.Location = new System.Drawing.Point(20, 207);
+            this.listUnvan.Location = new System.Drawing.Point(20, 193);
             this.listUnvan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listUnvan.Name = "listUnvan";
-            this.listUnvan.Size = new System.Drawing.Size(401, 208);
+            this.listUnvan.Size = new System.Drawing.Size(401, 222);
             this.listUnvan.TabIndex = 10;
             this.listUnvan.UseCompatibleStateImageBehavior = false;
             this.listUnvan.View = System.Windows.Forms.View.Details;
@@ -174,7 +174,7 @@
             this.btnYeni.FlatAppearance.BorderSize = 0;
             this.btnYeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYeni.Image = global::telekomAidatTakip.Properties.Resources.if_ic_control_point_48px_352288;
-            this.btnYeni.Location = new System.Drawing.Point(211, 154);
+            this.btnYeni.Location = new System.Drawing.Point(223, 140);
             this.btnYeni.Margin = new System.Windows.Forms.Padding(0);
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(48, 48);
@@ -191,7 +191,7 @@
             this.btnKaydet.FlatAppearance.BorderSize = 0;
             this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
-            this.btnKaydet.Location = new System.Drawing.Point(265, 154);
+            this.btnKaydet.Location = new System.Drawing.Point(271, 140);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(48, 48);
@@ -208,7 +208,7 @@
             this.btnSil.FlatAppearance.BorderSize = 0;
             this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSil.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
-            this.btnSil.Location = new System.Drawing.Point(319, 153);
+            this.btnSil.Location = new System.Drawing.Point(319, 140);
             this.btnSil.Margin = new System.Windows.Forms.Padding(0);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(48, 48);
@@ -239,6 +239,7 @@
             this.Text = "       Ünvan Tanımlama";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTanimUnvan_FormClosing);
             this.Load += new System.EventHandler(this.frmTanimUnvan_Load);
+            this.Resize += new System.EventHandler(this.frmTanimUnvan_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

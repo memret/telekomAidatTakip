@@ -19,8 +19,9 @@ namespace telekomAidatTakip
 
         private void frmTanimTahsil_Load(object sender, EventArgs e)
         {
-            try { 
-            TahsilListesiDoldur();
+            try
+            {
+                TahsilListesiDoldur();
 
             }
             catch (Exception ex)
@@ -57,25 +58,26 @@ namespace telekomAidatTakip
             btnYeni.Enabled = true;
 
         }
-        
+
 
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            try { 
-            if (txtTahsilKodu.Text != string.Empty && txtTahsilAd.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
+            try
             {
-                Database db = new Database();
-                db.Sorgu("update Tahsil set tahsilAdi=@0 where tahsilNo=@1", txtTahsilAd.Text, txtTahsilKodu.Text);
+                if (txtTahsilKodu.Text != string.Empty && txtTahsilAd.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
+                {
+                    Database db = new Database();
+                    db.Sorgu("update Tahsil set tahsilAdi=@0 where tahsilNo=@1", txtTahsilAd.Text, txtTahsilKodu.Text);
 
-                txtTahsilAd.Text = string.Empty;
-                txtTahsilKodu.Text = string.Empty;
-                txtTahsilAd.Enabled = false;
-                txtTahsilAd.Enabled = false;
-                btnKaydet.Enabled = false;
-                btnSil.Enabled = false;
-                TahsilListesiDoldur();
-            }
+                    txtTahsilAd.Text = string.Empty;
+                    txtTahsilKodu.Text = string.Empty;
+                    txtTahsilAd.Enabled = false;
+                    txtTahsilAd.Enabled = false;
+                    btnKaydet.Enabled = false;
+                    btnSil.Enabled = false;
+                    TahsilListesiDoldur();
+                }
 
             }
             catch (Exception ex)
@@ -86,42 +88,43 @@ namespace telekomAidatTakip
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            try { 
-            if (txtTahsilKodu.Text != string.Empty) //plaka kodu olmadan veri silmek tabiki biraz zor olur
+            try
             {
-                Database db2 = new Database();
-                string countKisi = "0";
-                var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE tahsilNo = @0", txtTahsilKodu.Text);
-                if (data2.Read())
+                if (txtTahsilKodu.Text != string.Empty) //plaka kodu olmadan veri silmek tabiki biraz zor olur
                 {
-                    countKisi = data2["count"].ToString();
-                }
+                    Database db2 = new Database();
+                    string countKisi = "0";
+                    var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE tahsilNo = @0", txtTahsilKodu.Text);
+                    if (data2.Read())
+                    {
+                        countKisi = data2["count"].ToString();
+                    }
 
-                Database db3 = new Database();
-                string countAidat = "0";
-                var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.tahsilno = @0", txtTahsilKodu.Text);
-                if (data3.Read())
-                {
-                    countAidat = data3["count"].ToString();
+                    Database db3 = new Database();
+                    string countAidat = "0";
+                    var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.tahsilno = @0", txtTahsilKodu.Text);
+                    if (data3.Read())
+                    {
+                        countAidat = data3["count"].ToString();
+                    }
+                    // 0dan büyüklerse bu soruyu sormak lazım.
+                    DialogResult dialogResult;
+                    if (countAidat != "0" && countKisi != "0")
+                        dialogResult = MessageBox.Show("Bu işlem ile sadece seçtiğiniz tahsili değil, ona kayıtlı olan kişileri ve aidat kayıtlarınıda sileceksiniz. \nSilinecek kişi sayısı: " + countKisi + "\nSilinecek aidat kaydı: " + countAidat + " \nEmin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    else
+                        dialogResult = MessageBox.Show("Seçili birim silinecek. Emin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        Database db = new Database();
+                        db.Sorgu("delete from Tahsil where tahsilNo=@0", txtTahsilKodu.Text);
+                        TahsilListesiDoldur();
+                        txtTahsilAd.Text = string.Empty;
+                        txtTahsilKodu.Text = string.Empty;
+                    }
                 }
-                // 0dan büyüklerse bu soruyu sormak lazım.
-                DialogResult dialogResult;
-                if (countAidat != "0" && countKisi != "0")
-                    dialogResult = MessageBox.Show("Bu işlem ile sadece seçtiğiniz tahsili değil, ona kayıtlı olan kişileri ve aidat kayıtlarınıda sileceksiniz. \nSilinecek kişi sayısı: " + countKisi + "\nSilinecek aidat kaydı: " + countAidat + " \nEmin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 else
-                    dialogResult = MessageBox.Show("Seçili birim silinecek. Emin misiniz?", "Birim Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    Database db = new Database();
-                    db.Sorgu("delete from Tahsil where tahsilNo=@0", txtTahsilKodu.Text);
-                    TahsilListesiDoldur();
-                    txtTahsilAd.Text = string.Empty;
-                    txtTahsilKodu.Text = string.Empty;
-                }
-            }
-            else
-                MessageBox.Show("Tahsil no kısmı boş");
+                    MessageBox.Show("Tahsil no kısmı boş");
 
             }
             catch (Exception ex)
@@ -130,27 +133,28 @@ namespace telekomAidatTakip
             }
         }
 
-      
+
 
         private void frmTanimTahsil_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try { 
-            //burda form penceresi kapatılırken çalışacak kodlar bulunuyor
-            if (btnYeni.Text == "Ekle" || btnKaydet.Enabled) //btnYeni nin ismi Ekle ise veya btnKaydet aktif ise bir düzenleme veya kayıt yapılıyor demektir.
+            try
             {
-                DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
-                if (dialogResult == DialogResult.Yes)
+                //burda form penceresi kapatılırken çalışacak kodlar bulunuyor
+                if (btnYeni.Text == "Ekle" || btnKaydet.Enabled) //btnYeni nin ismi Ekle ise veya btnKaydet aktif ise bir düzenleme veya kayıt yapılıyor demektir.
                 {
-                    if (btnYeni.Text == "Ekle")
-                        btnYeni_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
-                    else
-                        btnKaydet_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
+                    DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        if (btnYeni.Text == "Ekle")
+                            btnYeni_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
+                        else
+                            btnKaydet_Click(this, null); //btnYeni_Click fonksiyonunu çağırdık
+                    }
+                    else if (dialogResult == DialogResult.Cancel)
+                    {
+                        e.Cancel = true; //bu işlem ile formun kapanma işlemi iptal ediliyor
+                    }
                 }
-                else if (dialogResult == DialogResult.Cancel)
-                {
-                    e.Cancel = true; //bu işlem ile formun kapanma işlemi iptal ediliyor
-                }
-            }
 
             }
             catch (Exception ex)
@@ -163,50 +167,51 @@ namespace telekomAidatTakip
         bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
-            try { 
-            // butonun ismine göre yeni kaydın veritabanına ekleneceğini mi yoksa ekleme sayfasına mı geçileceğini mi tespit ediyoruz
-
-            if (yeniKayit) // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
+            try
             {
-                if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
-                {
-                    DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
-                    if (dialogResult == DialogResult.Yes)
-                        btnKaydet_Click(this, null);
-                    else if (dialogResult == DialogResult.Cancel)
-                        return;
-                }
-                yeniKayit = false;
-                txtTahsilKodu.Text = string.Empty;
-                txtTahsilAd.Text = string.Empty;
-                txtTahsilKodu.Enabled = true;
-                txtTahsilAd.Enabled = true;
-                toolTip.SetToolTip(btnYeni, "Ekle");
-                btnKaydet.Enabled = false;
-                btnSil.Enabled = false;
-            }
-            else //butonun ismi Yeni değilse demekki yeni kayıt sayfasındayız
-            {
-                if (txtTahsilAd.Text != string.Empty && txtTahsilKodu.Text != string.Empty) //yeni kayıt eklemek için bu iki verinin boş olmaması gerekiyor
-                {
-                    Database db = new Database();
-                    db.Sorgu("insert into Tahsil (tahsilAdi,tahsilNo) values (@0,@1)", txtTahsilAd.Text, txtTahsilKodu.Text);
+                // butonun ismine göre yeni kaydın veritabanına ekleneceğini mi yoksa ekleme sayfasına mı geçileceğini mi tespit ediyoruz
 
-                    txtTahsilAd.Enabled = false;
-                    txtTahsilKodu.Enabled = false;
-                    TahsilListesiDoldur();
-                    txtTahsilAd.Text = string.Empty;
-                    txtTahsilKodu.Text = string.Empty;
-                    btnYeni.Focus(); //görsel amaçlı
+                if (yeniKayit) // butonun ismi "Yeni" ise ekleme sayfası oluşturulmalı
+                {
+                    if (btnKaydet.Enabled) // yeni butonuna basıldığı sırada bir kayıt düzenleniyor ise bunu tespit edip, kayıt için soruyor
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Değişiklikleri kaydetmek istiyor musunuz?", "", MessageBoxButtons.YesNoCancel);
+                        if (dialogResult == DialogResult.Yes)
+                            btnKaydet_Click(this, null);
+                        else if (dialogResult == DialogResult.Cancel)
+                            return;
+                    }
                     yeniKayit = false;
-                    toolTip.SetToolTip(btnYeni, "Yeni Kayıt");
+                    txtTahsilKodu.Text = string.Empty;
+                    txtTahsilAd.Text = string.Empty;
+                    txtTahsilKodu.Enabled = true;
+                    txtTahsilAd.Enabled = true;
+                    toolTip.SetToolTip(btnYeni, "Ekle");
+                    btnKaydet.Enabled = false;
+                    btnSil.Enabled = false;
                 }
-                else
+                else //butonun ismi Yeni değilse demekki yeni kayıt sayfasındayız
                 {
-                    MessageBox.Show("Tahsil kodu veya adı kısmı boş!");
-                }
+                    if (txtTahsilAd.Text != string.Empty && txtTahsilKodu.Text != string.Empty) //yeni kayıt eklemek için bu iki verinin boş olmaması gerekiyor
+                    {
+                        Database db = new Database();
+                        db.Sorgu("insert into Tahsil (tahsilAdi,tahsilNo) values (@0,@1)", txtTahsilAd.Text, txtTahsilKodu.Text);
 
-            }
+                        txtTahsilAd.Enabled = false;
+                        txtTahsilKodu.Enabled = false;
+                        TahsilListesiDoldur();
+                        txtTahsilAd.Text = string.Empty;
+                        txtTahsilKodu.Text = string.Empty;
+                        btnYeni.Focus(); //görsel amaçlı
+                        yeniKayit = false;
+                        toolTip.SetToolTip(btnYeni, "Yeni Kayıt");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tahsil kodu veya adı kısmı boş!");
+                    }
+
+                }
 
             }
             catch (Exception ex)
@@ -217,8 +222,9 @@ namespace telekomAidatTakip
 
         private void frmTanimTahsil_Resize(object sender, EventArgs e)
         {
-            try { 
-            listvTanimTahsil.Size = new Size(listvTanimTahsil.Size.Width, this.Size.Height - 258);
+            try
+            {
+                listvTanimTahsil.Size = new Size(listvTanimTahsil.Size.Width, this.Size.Height - 209);
                 // pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y);
 
             }
@@ -230,20 +236,21 @@ namespace telekomAidatTakip
 
         private void listvTanimTahsil_DoubleClick_1(object sender, EventArgs e)
         {
-            try { 
-            string plakakodu = listvTanimTahsil.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
+            try
+            {
+                string plakakodu = listvTanimTahsil.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
 
-            Database db = new Database();
-            //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
-            txtTahsilAd.Text = db.DataOkuTek("select tahsilAdi from Tahsil where tahsilNo=@0", "tahsilAdi", plakakodu);
+                Database db = new Database();
+                //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
+                txtTahsilAd.Text = db.DataOkuTek("select tahsilAdi from Tahsil where tahsilNo=@0", "tahsilAdi", plakakodu);
 
-            txtTahsilKodu.Text = plakakodu;
-            btnKaydet.Enabled = true;
-            btnSil.Enabled = true;
-            txtTahsilAd.Enabled = true;
-            txtTahsilKodu.Enabled = true;
-            yeniKayit = true;
-            toolTip.SetToolTip(btnYeni, "Yeni Kayıt");
+                txtTahsilKodu.Text = plakakodu;
+                btnKaydet.Enabled = true;
+                btnSil.Enabled = true;
+                txtTahsilAd.Enabled = true;
+                txtTahsilKodu.Enabled = true;
+                yeniKayit = true;
+                toolTip.SetToolTip(btnYeni, "Yeni Kayıt");
 
             }
             catch (Exception ex)

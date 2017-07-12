@@ -68,7 +68,7 @@
             this.txtTahsilAd.CustomButton.UseSelectable = true;
             this.txtTahsilAd.CustomButton.Visible = false;
             this.txtTahsilAd.Lines = new string[0];
-            this.txtTahsilAd.Location = new System.Drawing.Point(154, 115);
+            this.txtTahsilAd.Location = new System.Drawing.Point(154, 106);
             this.txtTahsilAd.MaxLength = 32767;
             this.txtTahsilAd.Name = "txtTahsilAd";
             this.txtTahsilAd.PasswordChar = '\0';
@@ -98,7 +98,7 @@
             this.txtTahsilKodu.CustomButton.UseSelectable = true;
             this.txtTahsilKodu.CustomButton.Visible = false;
             this.txtTahsilKodu.Lines = new string[0];
-            this.txtTahsilKodu.Location = new System.Drawing.Point(154, 80);
+            this.txtTahsilKodu.Location = new System.Drawing.Point(154, 71);
             this.txtTahsilKodu.MaxLength = 32767;
             this.txtTahsilKodu.Name = "txtTahsilKodu";
             this.txtTahsilKodu.PasswordChar = '\0';
@@ -116,7 +116,7 @@
             // tahsilAd
             // 
             this.tahsilAd.AutoSize = true;
-            this.tahsilAd.Location = new System.Drawing.Point(65, 120);
+            this.tahsilAd.Location = new System.Drawing.Point(65, 111);
             this.tahsilAd.Name = "tahsilAd";
             this.tahsilAd.Size = new System.Drawing.Size(63, 19);
             this.tahsilAd.TabIndex = 9;
@@ -125,7 +125,7 @@
             // tahsilNo
             // 
             this.tahsilNo.AutoSize = true;
-            this.tahsilNo.Location = new System.Drawing.Point(65, 85);
+            this.tahsilNo.Location = new System.Drawing.Point(65, 76);
             this.tahsilNo.Name = "tahsilNo";
             this.tahsilNo.Size = new System.Drawing.Size(69, 19);
             this.tahsilNo.TabIndex = 8;
@@ -150,9 +150,9 @@
             this.listvTanimTahsil.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listvTanimTahsil.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listvTanimTahsil.FullRowSelect = true;
-            this.listvTanimTahsil.Location = new System.Drawing.Point(20, 198);
+            this.listvTanimTahsil.Location = new System.Drawing.Point(20, 189);
             this.listvTanimTahsil.Name = "listvTanimTahsil";
-            this.listvTanimTahsil.Size = new System.Drawing.Size(433, 191);
+            this.listvTanimTahsil.Size = new System.Drawing.Size(433, 200);
             this.listvTanimTahsil.TabIndex = 13;
             this.listvTanimTahsil.UseCompatibleStateImageBehavior = false;
             this.listvTanimTahsil.View = System.Windows.Forms.View.Details;
@@ -175,7 +175,7 @@
             this.btnYeni.FlatAppearance.BorderSize = 0;
             this.btnYeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYeni.Image = global::telekomAidatTakip.Properties.Resources.if_ic_control_point_48px_352288;
-            this.btnYeni.Location = new System.Drawing.Point(244, 147);
+            this.btnYeni.Location = new System.Drawing.Point(244, 138);
             this.btnYeni.Margin = new System.Windows.Forms.Padding(0);
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(48, 48);
@@ -192,7 +192,7 @@
             this.btnKaydet.FlatAppearance.BorderSize = 0;
             this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
-            this.btnKaydet.Location = new System.Drawing.Point(292, 147);
+            this.btnKaydet.Location = new System.Drawing.Point(292, 138);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(48, 48);
@@ -208,7 +208,7 @@
             this.btnSil.FlatAppearance.BorderSize = 0;
             this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSil.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
-            this.btnSil.Location = new System.Drawing.Point(340, 147);
+            this.btnSil.Location = new System.Drawing.Point(340, 138);
             this.btnSil.Margin = new System.Windows.Forms.Padding(0);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(48, 48);

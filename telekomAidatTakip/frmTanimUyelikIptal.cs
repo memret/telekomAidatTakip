@@ -203,6 +203,10 @@ namespace telekomAidatTakip
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
+        private void frmTanimUyelikIptal_Resize_1(object sender, EventArgs e)
+        {
+            listvSilinme.Size = new Size(listvSilinme.Size.Width, this.Size.Height - 217);
+        }
     }
 }

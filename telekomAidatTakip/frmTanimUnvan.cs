@@ -224,6 +224,11 @@ namespace telekomAidatTakip
             }
         }
 
+        private void frmTanimUnvan_Resize(object sender, EventArgs e)
+        {
+            listUnvan.Size = new Size(listUnvan.Size.Width, this.Size.Height - 213);
+        }
+
 
 
 

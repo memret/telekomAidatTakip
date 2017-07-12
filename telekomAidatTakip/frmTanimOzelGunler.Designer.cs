@@ -71,10 +71,10 @@
             this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(20, 450);
+            this.listView1.Location = new System.Drawing.Point(20, 424);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(565, 155);
+            this.listView1.Size = new System.Drawing.Size(565, 181);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -394,7 +394,7 @@
             this.btnYeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYeni.Image = global::telekomAidatTakip.Properties.Resources.if_ic_control_point_48px_352288;
             this.btnYeni.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnYeni.Location = new System.Drawing.Point(321, 387);
+            this.btnYeni.Location = new System.Drawing.Point(321, 373);
             this.btnYeni.Margin = new System.Windows.Forms.Padding(0);
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(48, 48);
@@ -412,7 +412,7 @@
             this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKaydet.Image = global::telekomAidatTakip.Properties.Resources.if_icons_check_1564499;
             this.btnKaydet.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnKaydet.Location = new System.Drawing.Point(375, 387);
+            this.btnKaydet.Location = new System.Drawing.Point(375, 373);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(48, 48);
@@ -430,7 +430,7 @@
             this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSil.Image = global::telekomAidatTakip.Properties.Resources.if_icons_exit_1564505;
             this.btnSil.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSil.Location = new System.Drawing.Point(429, 387);
+            this.btnSil.Location = new System.Drawing.Point(429, 373);
             this.btnSil.Margin = new System.Windows.Forms.Padding(0);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(48, 48);

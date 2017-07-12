@@ -263,6 +263,7 @@
             this.Text = "       Silinme Nedeni Tanımlama";
             this.Load += new System.EventHandler(this.frmTanimUyelikIptal_Load);
             this.BackColorChanged += new System.EventHandler(this.frmTanimUyelikIptal_Resize);
+            this.Resize += new System.EventHandler(this.frmTanimUyelikIptal_Resize_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

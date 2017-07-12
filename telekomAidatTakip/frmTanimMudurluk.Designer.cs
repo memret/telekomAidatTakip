@@ -283,6 +283,7 @@
             this.Text = "       MÜDÜRLÜK TANIMLAMA";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmTanimMudurluk_Load);
+            this.Resize += new System.EventHandler(this.frmTanimMudurluk_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -294,6 +294,11 @@ namespace telekomAidatTakip
             }
         }
 
+        private void frmTanimMudurluk_Resize(object sender, EventArgs e)
+        {
+            listvMdr.Size = new Size(listvMdr.Size.Width, this.Size.Height - 264);
+        }
+
         /*private void frmTanimMudurluk_Resize(object sender, EventArgs e)
         {
             groupBox2.Width = this.Width - 46;
