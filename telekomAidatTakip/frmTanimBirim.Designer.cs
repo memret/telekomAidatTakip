@@ -194,7 +194,7 @@
             // pictureBox2
             // 
             this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
-            this.pictureBox2.Image = global::telekomAidatTakip.Properties.Resources.telekom1;
+            this.pictureBox2.Image = global::telekomAidatTakip.Properties.Resources.telekom;
             this.pictureBox2.Location = new System.Drawing.Point(15, 20);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 38);

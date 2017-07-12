@@ -38,6 +38,7 @@ namespace telekomAidatTakip
             cBoxMudurluk.DisplayMember = "Value";
             cBoxMudurluk.ValueMember = "Key";
             db.Kapat();
+            cBoxMudurluk.SelectedIndex = -1;
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
