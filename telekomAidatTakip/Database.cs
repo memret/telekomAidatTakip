@@ -12,6 +12,8 @@ namespace telekomAidatTakip
         SqlConnection bag;
         SqlCommand kmt;
         SqlDataReader data;
+        Exception excepBaglanti = new Exception("Bağlantı hatası");
+
         public Database(string connectstring)
         {
             bag = new SqlConnection(connectstring);
@@ -25,7 +27,14 @@ namespace telekomAidatTakip
             kmt = new SqlCommand();
             kmt.Connection = bag;
             kmt.CommandTimeout = 15;
-            bag.Open();
+            try
+            {
+                bag.Open();
+            }
+            catch
+            {
+                throw excepBaglanti;
+            }
         }
         public void Dispose()
         {
@@ -45,17 +54,35 @@ namespace telekomAidatTakip
         {
             Dispose(false);
         }
-        
+
         public SqlDataReader DataOku(string query)
         {
             kmt.CommandText = query;
-            data = kmt.ExecuteReader();
+            try
+            {
+                data = kmt.ExecuteReader();
+            }
+            catch
+            {
+                this.Kapat();
+                throw excepBaglanti;
+
+            }
             return data;
         }
         public string DataOkuTek(string query, string column)
         {
             kmt.CommandText = query;
-            data = kmt.ExecuteReader();
+            try
+            {
+                data = kmt.ExecuteReader();
+            }
+            catch
+            {
+                this.Kapat();
+                throw excepBaglanti;
+
+            }
             if (data.Read())
                 return data[column].ToString();
             return string.Empty;
@@ -68,7 +95,16 @@ namespace telekomAidatTakip
             {
                 kmt.Parameters.AddWithValue("@" + i, param[i]);
             }
-            data = kmt.ExecuteReader();
+            try
+            {
+                data = kmt.ExecuteReader();
+            }
+            catch
+            {
+                this.Kapat();
+                throw excepBaglanti;
+
+            }
             return data;
         }
         public SqlDataReader DataOku(string query, List<SqlParameter> param)
@@ -79,7 +115,16 @@ namespace telekomAidatTakip
             {
                 kmt.Parameters.Add(item);
             }
-            data = kmt.ExecuteReader();
+            try
+            {
+                data = kmt.ExecuteReader();
+            }
+            catch
+            {
+                this.Kapat();
+                throw excepBaglanti;
+
+            }
             return data;
         }
         public string DataOkuTek(string query, string column, params object[] param)
@@ -90,7 +135,16 @@ namespace telekomAidatTakip
             {
                 kmt.Parameters.AddWithValue("@" + i, param[i]);
             }
-            data = kmt.ExecuteReader();
+            try
+            {
+                data = kmt.ExecuteReader();
+            }
+            catch
+            {
+                this.Kapat();
+                throw excepBaglanti;
+
+            }
             if (data.Read())
                 return data[column].ToString();
             return string.Empty;
@@ -98,7 +152,16 @@ namespace telekomAidatTakip
         public void Sorgu(string query)
         {
             kmt.CommandText = query;
-            kmt.ExecuteNonQuery();
+            try
+            {
+                kmt.ExecuteNonQuery();
+            }
+            catch
+            {
+                this.Kapat();
+                throw excepBaglanti;
+
+            }
         }
         public void Sorgu(string query, params object[] param)
         {
@@ -108,7 +171,16 @@ namespace telekomAidatTakip
             {
                 kmt.Parameters.AddWithValue("@" + i, param[i]);
             }
-            kmt.ExecuteNonQuery();
+            try
+            {
+                kmt.ExecuteNonQuery();
+            }
+            catch
+            {
+                this.Kapat();
+                throw excepBaglanti;
+
+            }
         }
         public void Sorgu(string query, SqlParameter param2, params object[] param)
         {
@@ -119,28 +191,48 @@ namespace telekomAidatTakip
             {
                 kmt.Parameters.AddWithValue("@" + i, param[i]);
             }
-            kmt.ExecuteNonQuery();
+            try
+            {
+                kmt.ExecuteNonQuery();
+            }
+            catch
+            {
+                this.Kapat();
+                throw excepBaglanti;
+
+            }
         }
         public void Kapat()
         {
-            bag.Close();
+            if (bag != null && bag.State == System.Data.ConnectionState.Open)
+                bag.Close();
         }
         static public void Restore(string path)
         {
             SqlConnection bag;
             SqlCommand kmt;
-            bag = new SqlConnection(Program.connectstring.Replace("telekomAidat","master"));
+            bag = new SqlConnection(Program.connectstring.Replace("telekomAidat", "master"));
             kmt = new SqlCommand();
             kmt.Connection = bag;
             kmt.CommandTimeout = 15;
-            bag.Open();
-            kmt.CommandText = "alter database telekomAidat set offline with rollback immediate";
-            kmt.ExecuteNonQuery();
-            kmt.CommandText = "restore database telekomAidat from disk=@0";
-            kmt.Parameters.AddWithValue("@0",path);
-            kmt.ExecuteNonQuery();
-            kmt.CommandText = "alter database telekomAidat set online";
-            kmt.ExecuteNonQuery();
+            try
+            {
+                bag.Open();
+                kmt.CommandText = "alter database telekomAidat set offline with rollback immediate";
+                kmt.ExecuteNonQuery();
+                kmt.CommandText = "restore database telekomAidat from disk=@0";
+                kmt.Parameters.AddWithValue("@0", path);
+                kmt.ExecuteNonQuery();
+                kmt.CommandText = "alter database telekomAidat set online";
+                kmt.ExecuteNonQuery();
+            }
+            catch
+            {
+                if (bag != null && bag.State == System.Data.ConnectionState.Open)
+                    bag.Close();
+                throw new Exception("Bağlantı hatası");
+
+            }
         }
     }
 }
