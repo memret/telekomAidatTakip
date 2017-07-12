@@ -175,9 +175,14 @@ namespace telekomAidatTakip
             {
                 kmt.ExecuteNonQuery();
             }
-            catch
+            catch(SqlException exception)
             {
                 this.Kapat();
+                if (exception.Number == 2627)
+                {
+                    throw new Exception("Girilen numara kullanılmakta");
+                }
+                
                 throw excepBaglanti;
 
             }

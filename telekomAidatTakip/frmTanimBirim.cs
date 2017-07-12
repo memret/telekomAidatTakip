@@ -46,7 +46,7 @@ namespace telekomAidatTakip
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                this.Close();
+                this.BeginInvoke(new MethodInvoker(Close));
             }
         }
 
