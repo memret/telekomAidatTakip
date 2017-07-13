@@ -111,8 +111,8 @@ namespace telekomAidatTakip
                     btnBirim.Enabled = true;
                     txtBaslik.WaterMark = "Başlık giriniz.";
                     txtGunNo.WaterMark = "Özel gün no giriniz.";
-                    txtMsj.WaterMark = "Mesaj giriniz";
-                    txtYorum.WaterMark = "Yorum giriniz";
+                    txtMsj.WaterMark = "Mesaj giriniz.";
+                    txtYorum.WaterMark = "Yorum giriniz.";
 
                     toolTip1.SetToolTip(btnYeni, "Ekle");
 
