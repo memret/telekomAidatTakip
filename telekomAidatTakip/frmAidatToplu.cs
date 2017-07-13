@@ -188,6 +188,7 @@ namespace telekomAidatTakip
                     txtAidatMiktari.Text = db2.DataOkuTek("SELECT * FROM aidatmiktar WHERE birimno =@0 ", "aidat", birimNo);
                     db2.Kapat();
                 }
+                db.Kapat();
             }
             catch (Exception ex)
             {

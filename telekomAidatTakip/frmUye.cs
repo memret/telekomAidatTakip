@@ -103,6 +103,7 @@ namespace telekomAidatTakip
             {
                 imgBytes = (byte[])data["fotograf"];
             }
+            db.Kapat();
 
             if (imgBytes == null || imgBytes.Length == 0)
             {
@@ -116,7 +117,6 @@ namespace telekomAidatTakip
             Bitmap foto = (Bitmap)tc.ConvertFrom(imgBytes);
             pictureBox1.Image = foto;
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            db.Kapat();
 
         }
 
@@ -184,6 +184,7 @@ namespace telekomAidatTakip
                     Database db2 = new Database();
 
                     lblSilinmeBilgisi.Text = db2.DataOkuTek("select silinmenedeni from silinmenedeni where silinmenedenno = @0", "silinmenedeni", data["silinmenedenino"]);
+                    db2.Kapat();
                     lblSilinmeBilgisi.Visible = true;
                     lblSilinmeBilgisiLabeli.Visible = true;
                     btnAktiflestir.Location = new Point(lblSilinmeBilgisi.Location.X + lblSilinmeBilgisi.Size.Width + 5, btnAktiflestir.Location.Y);
@@ -362,11 +363,14 @@ namespace telekomAidatTakip
                 if (data.Read())
                 {
                     db3.Sorgu("UPDATE uyeFotograf SET fotograf = @0 WHERE sicilNo = @1", resim, sicilno);
+                    db3.Kapat();
                 }
                 else
                 {
                     db3.Sorgu("insert into UyeFotograf (sicilNo,Fotograf) values (@0,@1)", sicilno, resim);
+                    db3.Kapat();
                 }
+                db2.Kapat();
 
                 MessageBox.Show("Kayıt güncellendi!", "Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
@@ -540,6 +544,7 @@ namespace telekomAidatTakip
                         txtSicilNo.Select();
                     }
                 }
+                db.Kapat();
 
             }
             catch (Exception ex)
@@ -554,6 +559,7 @@ namespace telekomAidatTakip
             {
                 Database db = new Database();
                 db.Sorgu("update uyeler set aktif = 1, silinmenedenino= NULL where sicilno=@0", sicilno);
+                db.Kapat();
                 lblSilinmeBilgisi.Visible = false;
                 lblSilinmeBilgisiLabeli.Visible = false;
                 btnAktiflestir.Visible = false;

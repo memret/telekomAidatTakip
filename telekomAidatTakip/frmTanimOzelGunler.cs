@@ -66,6 +66,7 @@ namespace telekomAidatTakip
                 listView1.Items.Add(item);
                 //oluşturulan item liste eklenir
             }
+            db.Kapat();
 
             txtBaslik.Enabled = false;
             dateTimeTarih.Enabled = false;
@@ -157,6 +158,7 @@ namespace telekomAidatTakip
                     // System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@3", dt);
                     db.Sorgu("update OzelGunler set baslik=@0, mesaj=@1, yorum=@2, tarih=@3 where ozelGunNo=@4", txtBaslik.Text, txtMsj.Text, txtYorum.Text, this.dateTimeTarih.Value.Date, txtGunNo.Text);
 
+                    db.Kapat();
                     sayfayıtemizle();
                     dateTimeTarih.Enabled = false;
                     txtBaslik.Enabled = false;
@@ -187,6 +189,7 @@ namespace telekomAidatTakip
 
                     Database db = new Database();
                     db.Sorgu("DELETE FROM OzelGunler Where ozelGunNo = @0", txtGunNo.Text);
+                    db.Kapat();
                     listView1.Items.Clear();
                     tabloDoldur();
                     sayfayıtemizle();
@@ -217,6 +220,7 @@ namespace telekomAidatTakip
                     txtMsj.Text = data["mesaj"].ToString();
                     txtYorum.Text = data["yorum"].ToString();
                 }
+                db.Kapat();
 
                 btnKaydet.Enabled = true;
                 btnSil.Enabled = true;

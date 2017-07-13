@@ -52,6 +52,7 @@ namespace telekomAidatTakip
                 listvTanimTahsil.Items.Add(item);
                 //oluşturulan item liste eklenir
             }
+            db.Kapat();
 
             txtTahsilAd.Enabled = false;
             txtTahsilKodu.Enabled = false;
@@ -71,6 +72,7 @@ namespace telekomAidatTakip
                 {
                     Database db = new Database();
                     db.Sorgu("update Tahsil set tahsilAdi=@0,tahsilNo=@1 where tahsilNo=@2", txtTahsilAd.Text, txtTahsilKodu.Text, tahsilKodu);
+                    db.Kapat();
 
                     txtTahsilAd.Text = string.Empty;
                     txtTahsilKodu.Text = string.Empty;
@@ -102,6 +104,7 @@ namespace telekomAidatTakip
                     {
                         countKisi = data2["count"].ToString();
                     }
+                    db2.Kapat();
 
                     Database db3 = new Database();
                     string countAidat = "0";
@@ -110,6 +113,7 @@ namespace telekomAidatTakip
                     {
                         countAidat = data3["count"].ToString();
                     }
+                    db3.Kapat();
                     // 0dan büyüklerse bu soruyu sormak lazım.
                     DialogResult dialogResult;
                     if (countAidat != "0" && countKisi != "0")
@@ -121,6 +125,7 @@ namespace telekomAidatTakip
                     {
                         Database db = new Database();
                         db.Sorgu("delete from Tahsil where tahsilNo=@0", tahsilKodu);
+                        db.Kapat();
                         TahsilListesiDoldur();
                         txtTahsilAd.Text = string.Empty;
                         tahsilKodu = string.Empty;
@@ -199,6 +204,7 @@ namespace telekomAidatTakip
                     {
                         Database db = new Database();
                         db.Sorgu("insert into Tahsil (tahsilAdi,tahsilNo) values (@0,@1)", txtTahsilAd.Text, txtTahsilKodu.Text);
+                        db.Kapat();
 
                         txtTahsilAd.Enabled = false;
                         txtTahsilKodu.Enabled = false;
@@ -248,6 +254,7 @@ namespace telekomAidatTakip
                     Database db = new Database();
                     //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
                     txtTahsilAd.Text = db.DataOkuTek("select tahsilAdi from Tahsil where tahsilNo=@0", "tahsilAdi", tahsilKodu);
+                    db.Kapat();
 
                     txtTahsilKodu.Text = tahsilKodu;
                     btnKaydet.Enabled = true;

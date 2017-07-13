@@ -49,6 +49,7 @@ namespace telekomAidatTakip
                 listUnvan.Items.Add(item);
 
             }
+            db.Kapat();
             txtUnvanAdi.WaterMark = "Yeni kayıt açınız.";
             txtUnvanNo.WaterMark = "Yeni kayıt açınız.";
             txtUnvanAdi.Enabled = false;
@@ -92,6 +93,7 @@ namespace telekomAidatTakip
                     {
                         Database db = new Database();
                         db.Sorgu("insert into unvan (unvanNo,unvanAdi) values (@0,@1)", txtUnvanNo.Text, txtUnvanAdi.Text);
+                        db.Kapat();
 
                         txtUnvanNo.Enabled = false;
                         txtUnvanAdi.Enabled = false;
@@ -127,6 +129,7 @@ namespace telekomAidatTakip
                 {
                     Database db = new Database();
                     db.Sorgu("update unvan set unvanAdi=@0,unvanNo=@1 where unvanNo=@2", txtUnvanAdi.Text, txtUnvanNo.Text,unvanKodu);
+                    db.Kapat();
 
                     txtUnvanAdi.Text = string.Empty;
                     txtUnvanNo.Text = string.Empty;
@@ -160,6 +163,7 @@ namespace telekomAidatTakip
                     {
                         countKisi = data2["count"].ToString();
                     }
+                    db2.Kapat();
 
                     Database db3 = new Database();
                     string countAidat = "0";
@@ -168,6 +172,7 @@ namespace telekomAidatTakip
                     {
                         countAidat = data3["count"].ToString();
                     }
+                    db3.Kapat();
                     // 0dan büyüklerse bu soruyu sormak lazım.
                     DialogResult dialogResult;
                     if (countAidat != "0" && countKisi != "0")
@@ -181,6 +186,7 @@ namespace telekomAidatTakip
                         {
                             Database db = new Database();
                             db.Sorgu("delete from unvan where unvanNo=@0", unvanKodu);
+                            db.Kapat();
                             txtUnvanAdi.Text = string.Empty;
                             txtUnvanNo.Text = string.Empty;
                             unvanKodu = string.Empty;
@@ -245,6 +251,7 @@ namespace telekomAidatTakip
                     Database db = new Database();
 
                     txtUnvanAdi.Text = db.DataOkuTek("select unvanAdi from unvan where unvanNo=@0", "unvanAdi", unvanKodu);
+                    db.Kapat();
 
                     txtUnvanNo.Text = unvanKodu;
                     btnKaydet.Enabled = true;
