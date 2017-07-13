@@ -53,10 +53,11 @@
             // 
             this.cBoxMudurluk.Enabled = false;
             this.cBoxMudurluk.FormattingEnabled = true;
-            this.cBoxMudurluk.ItemHeight = 23;
+            this.cBoxMudurluk.ItemHeight = 24;
             this.cBoxMudurluk.Location = new System.Drawing.Point(157, 137);
             this.cBoxMudurluk.Name = "cBoxMudurluk";
-            this.cBoxMudurluk.Size = new System.Drawing.Size(279, 29);
+            this.cBoxMudurluk.PromptText = "-";
+            this.cBoxMudurluk.Size = new System.Drawing.Size(279, 30);
             this.cBoxMudurluk.TabIndex = 7;
             this.cBoxMudurluk.UseSelectable = true;
             // 
@@ -80,6 +81,7 @@
             this.txtBirimKodu.MaxLength = 32767;
             this.txtBirimKodu.Name = "txtBirimKodu";
             this.txtBirimKodu.PasswordChar = '\0';
+            this.txtBirimKodu.PromptText = "Birim no giriniz.";
             this.txtBirimKodu.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtBirimKodu.SelectedText = "";
             this.txtBirimKodu.SelectionLength = 0;
@@ -88,6 +90,7 @@
             this.txtBirimKodu.Size = new System.Drawing.Size(161, 29);
             this.txtBirimKodu.TabIndex = 8;
             this.txtBirimKodu.UseSelectable = true;
+            this.txtBirimKodu.WaterMark = "Birim no giriniz.";
             this.txtBirimKodu.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBirimKodu.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtBirimKodu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBirimKodu_KeyPress);
@@ -112,6 +115,7 @@
             this.txtBirimAdi.MaxLength = 32767;
             this.txtBirimAdi.Name = "txtBirimAdi";
             this.txtBirimAdi.PasswordChar = '\0';
+            this.txtBirimAdi.PromptText = "Birim adı giriniz.";
             this.txtBirimAdi.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtBirimAdi.SelectedText = "";
             this.txtBirimAdi.SelectionLength = 0;
@@ -120,6 +124,7 @@
             this.txtBirimAdi.Size = new System.Drawing.Size(280, 29);
             this.txtBirimAdi.TabIndex = 8;
             this.txtBirimAdi.UseSelectable = true;
+            this.txtBirimAdi.WaterMark = "Birim adı giriniz.";
             this.txtBirimAdi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBirimAdi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -128,7 +133,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(73, 72);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(65, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(66, 20);
             this.metroLabel1.TabIndex = 9;
             this.metroLabel1.Text = "Birim No:";
             // 
@@ -137,7 +142,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(73, 107);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(43, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(43, 20);
             this.metroLabel2.TabIndex = 9;
             this.metroLabel2.Text = "Birim:";
             // 
@@ -146,7 +151,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(73, 142);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(67, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(71, 20);
             this.metroLabel3.TabIndex = 9;
             this.metroLabel3.Text = "Müdürlük:";
             // 
