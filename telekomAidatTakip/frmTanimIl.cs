@@ -24,8 +24,8 @@ namespace telekomAidatTakip
                 this.MinimumSize = this.Size;
                 frmTanimIl_Resize(this, null);
                 IlListesiniDoldur();
-                txtPlakaKodu.WaterMark = "Yeni kayıt açınız...";
-                txtAdi.WaterMark = "Yeni kayıt açınız...";
+                txtPlakaKodu.WaterMark = "Yeni kayıt açınız.";
+                txtAdi.WaterMark = "Yeni kayıt açınız.";
 
             }
             catch (Exception ex)
@@ -157,7 +157,11 @@ namespace telekomAidatTakip
                     {
                         countAidatLog = data4["count"].ToString();
                     }
-                    DialogResult dialogresult = MessageBox.Show("Bu işlem ile sadece ili değil, onun altında kayıtlı olan müdürlükleri, birimleri, kişileri ve aidat kayıtlarını da sileceksiniz.\n" + " \nSilinecek Müdürlük Sayısı: " + countMudurluk + "\nSilinecek Birim Sayısı: " + countBirim + "\nSilinecek Üye Sayısı:" + countUye + "\nSilinecek Aidat Kaydı:" + countAidatLog + "\n\nDevam etmek istediğinize emin misiniz?", "İl Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult dialogresult;
+                    if (countAidatLog != "0" && countBirim != "0" && countMudurluk != "0" && countUye != "0")
+                        dialogresult = MessageBox.Show("Bu işlem ile sadece ili değil, onun altında kayıtlı olan müdürlükleri, birimleri, kişileri ve aidat kayıtlarını da sileceksiniz.\n" + " \nSilinecek Müdürlük Sayısı: " + countMudurluk + "\nSilinecek Birim Sayısı: " + countBirim + "\nSilinecek Üye Sayısı:" + countUye + "\nSilinecek Aidat Kaydı:" + countAidatLog + "\n\nDevam etmek istediğinize emin misiniz?", "İl Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    else
+                        dialogresult = MessageBox.Show("Seçili il silinecek. Emin misiniz?", "İl Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (dialogresult == DialogResult.Yes)
                     {
@@ -175,8 +179,8 @@ namespace telekomAidatTakip
                         IlListesiniDoldur();
                         txtAdi.Clear();
                         txtPlakaKodu.Clear();
-                        txtPlakaKodu.WaterMark = "Yeni kayıt açınız...";
-                        txtAdi.WaterMark = "Yeni kayıt açınız...";
+                        txtPlakaKodu.WaterMark = "Yeni kayıt açınız.";
+                        txtAdi.WaterMark = "Yeni kayıt açınız.";
                         MessageBox.Show("Seçili il silindi!", "Kayıt Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (dialogresult == DialogResult.Cancel)
