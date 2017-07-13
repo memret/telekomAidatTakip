@@ -34,8 +34,6 @@
             this.metroLabelKod = new MetroFramework.Controls.MetroLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.aidatMiktarTableAdapter1 = new telekomAidatTakip.telekomAidatDataSetTableAdapters.AidatMiktarTableAdapter();
-            this.ilTableAdapter1 = new telekomAidatTakip.telekomAidatDataSetTableAdapters.ilTableAdapter();
             this.listvSilinme = new System.Windows.Forms.ListView();
             this.columnHeaderKod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderAciklama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -82,14 +80,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 84);
             this.label2.TabIndex = 21;
-            // 
-            // aidatMiktarTableAdapter1
-            // 
-            this.aidatMiktarTableAdapter1.ClearBeforeFill = true;
-            // 
-            // ilTableAdapter1
-            // 
-            this.ilTableAdapter1.ClearBeforeFill = true;
             // 
             // listvSilinme
             // 
@@ -276,8 +266,6 @@
         private MetroFramework.Controls.MetroLabel metroLabelKod;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private telekomAidatDataSetTableAdapters.AidatMiktarTableAdapter aidatMiktarTableAdapter1;
-        private telekomAidatDataSetTableAdapters.ilTableAdapter ilTableAdapter1;
         private System.Windows.Forms.ListView listvSilinme;
         private System.Windows.Forms.ColumnHeader columnHeaderKod;
         private System.Windows.Forms.ColumnHeader columnHeaderAciklama;

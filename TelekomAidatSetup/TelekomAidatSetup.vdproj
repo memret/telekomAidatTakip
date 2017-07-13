@@ -15,8 +15,20 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_089901FC8A794DADB7CFCFF37DA4D007"
-        "OwnerKey" = "8:_EBB4CBCF7EA741DBAAD709130DD74A96"
+        "MsmKey" = "8:_08E2F86FD59F5AE72179AAB7A18CF341"
+        "OwnerKey" = "8:_F5D73E57AC3031CB371D555DAA7B747E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_08E2F86FD59F5AE72179AAB7A18CF341"
+        "OwnerKey" = "8:_C159A424247071D874380FB69765E7F5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_08E2F86FD59F5AE72179AAB7A18CF341"
+        "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -28,13 +40,13 @@
         "Entry"
         {
         "MsmKey" = "8:_613E2901E969C4A88F6F4EE475DB6B7B"
-        "OwnerKey" = "8:_EBB4CBCF7EA741DBAAD709130DD74A96"
+        "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_613E2901E969C4A88F6F4EE475DB6B7B"
-        "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
+        "OwnerKey" = "8:_EBB4CBCF7EA741DBAAD709130DD74A96"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -51,32 +63,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9F8F11677CB9C9417714AA530F5D8863"
+        "MsmKey" = "8:_AD9F2588FF4553993ECFE96A20D097EB"
+        "OwnerKey" = "8:_EBB4CBCF7EA741DBAAD709130DD74A96"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C159A424247071D874380FB69765E7F5"
         "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C765607468F854B3C9BDB4A973B96FF7"
-        "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DAC12430C8EA2A19B89CAD65FA94D2D6"
-        "OwnerKey" = "8:_9F8F11677CB9C9417714AA530F5D8863"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DAC12430C8EA2A19B89CAD65FA94D2D6"
-        "OwnerKey" = "8:_C765607468F854B3C9BDB4A973B96FF7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DAC12430C8EA2A19B89CAD65FA94D2D6"
-        "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
+        "MsmKey" = "8:_E906B5A383834B499D5940F0AB43538A"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -87,7 +87,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_F5D73E57AC3031CB371D555DAA7B747E"
         "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -100,25 +100,31 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_089901FC8A794DADB7CFCFF37DA4D007"
+        "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C765607468F854B3C9BDB4A973B96FF7"
+        "OwnerKey" = "8:_C159A424247071D874380FB69765E7F5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9F8F11677CB9C9417714AA530F5D8863"
+        "OwnerKey" = "8:_F5D73E57AC3031CB371D555DAA7B747E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DAC12430C8EA2A19B89CAD65FA94D2D6"
+        "OwnerKey" = "8:_08E2F86FD59F5AE72179AAB7A18CF341"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_AD9F2588FF4553993ECFE96A20D097EB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -190,6 +196,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
     }
@@ -197,13 +211,27 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_76262A1A0F0E4836B83C4DA4BA8CEBA8"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_4D1FEC46659F4781BCE794627D146FD2"
+            {
+            "Name" = "8:cronAdder del"
+            "Condition" = "8:"
+            "Object" = "8:_EBB4CBCF7EA741DBAAD709130DD74A96"
+            "FileType" = "3:2"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:a"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_257980FA_D4A5_46FD_8A47_93BE811A2668"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_C6B7A4D2DEE34DA2BE9F22EDDDDDC62E"
             {
             "Name" = "8:cronAdder"
             "Condition" = "8:"
             "Object" = "8:_EBB4CBCF7EA741DBAAD709130DD74A96"
             "FileType" = "3:2"
-            "InstallAction" = "3:1"
+            "InstallAction" = "3:2"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
@@ -234,20 +262,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_089901FC8A794DADB7CFCFF37DA4D007"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_08E2F86FD59F5AE72179AAB7A18CF341"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.Win32.TaskScheduler, Version=2.5.28.0, Culture=neutral, PublicKeyToken=0d013ddd5178a2ae, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_089901FC8A794DADB7CFCFF37DA4D007"
+                    "_08E2F86FD59F5AE72179AAB7A18CF341"
                     {
-                    "Name" = "8:Microsoft.Win32.TaskScheduler.dll"
+                    "Name" = "8:MetroFramework.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Microsoft.Win32.TaskScheduler.dll"
+            "SourcePath" = "8:MetroFramework.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_27111115C56A46F3888F8F81AA0BAF4C"
@@ -296,20 +324,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9F8F11677CB9C9417714AA530F5D8863"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AD9F2588FF4553993ECFE96A20D097EB"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Microsoft.Win32.TaskScheduler, Version=2.5.28.0, Culture=neutral, PublicKeyToken=0d013ddd5178a2ae, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9F8F11677CB9C9417714AA530F5D8863"
+                    "_AD9F2588FF4553993ECFE96A20D097EB"
                     {
-                    "Name" = "8:MetroFramework.Design.dll"
+                    "Name" = "8:Microsoft.Win32.TaskScheduler.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:MetroFramework.Design.dll"
+            "SourcePath" = "8:Microsoft.Win32.TaskScheduler.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_27111115C56A46F3888F8F81AA0BAF4C"
@@ -327,14 +355,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C765607468F854B3C9BDB4A973B96FF7"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C159A424247071D874380FB69765E7F5"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C765607468F854B3C9BDB4A973B96FF7"
+                    "_C159A424247071D874380FB69765E7F5"
                     {
                     "Name" = "8:MetroFramework.Fonts.dll"
                     "Attributes" = "3:512"
@@ -358,20 +386,40 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DAC12430C8EA2A19B89CAD65FA94D2D6"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E906B5A383834B499D5940F0AB43538A"
+            {
+            "SourcePath" = "8:..\\telekomAidatTakip\\Resources\\telekom_icon.ico"
+            "TargetName" = "8:telekom_icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_27111115C56A46F3888F8F81AA0BAF4C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F5D73E57AC3031CB371D555DAA7B747E"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_DAC12430C8EA2A19B89CAD65FA94D2D6"
+                    "_F5D73E57AC3031CB371D555DAA7B747E"
                     {
-                    "Name" = "8:MetroFramework.dll"
+                    "Name" = "8:MetroFramework.Design.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:MetroFramework.dll"
+            "SourcePath" = "8:MetroFramework.Design.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_27111115C56A46F3888F8F81AA0BAF4C"
@@ -444,9 +492,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:TelekomAidatSetup"
+        "ProductName" = "8:Telekom Dernek Aidat"
         "ProductCode" = "8:{129BC3D5-8982-429F-A1FC-EFC1106551D6}"
-        "PackageCode" = "8:{9D5B9C51-2F2C-4FE3-A240-779E906F8CB3}"
+        "PackageCode" = "8:{FFE1BB84-0873-4995-8B1C-B8EFE2574F43}"
         "UpgradeCode" = "8:{A0E3E45A-E72B-43D4-A269-DBE8D6BD1932}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -454,12 +502,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Telekom"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:TelekomAidatSetup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Telekom"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -577,7 +625,7 @@
             "Target" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
             "Folder" = "8:_D5C04DD8B38C4160B987CCDBAF848851"
             "WorkingFolder" = "8:_27111115C56A46F3888F8F81AA0BAF4C"
-            "Icon" = "8:"
+            "Icon" = "8:_E906B5A383834B499D5940F0AB43538A"
             "Feature" = "8:"
             }
         }
