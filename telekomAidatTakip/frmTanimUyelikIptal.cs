@@ -119,7 +119,7 @@ namespace telekomAidatTakip
             {
                 Database db2 = new Database();
                 string countKisi = "0";
-                var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE silinmeNedeniNo = @0", txtKod.Text);
+                var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE silinmeNedeniNo = @0", kod);
                 if (data2.Read())
                 {
                     countKisi = data2["count"].ToString();
@@ -127,7 +127,7 @@ namespace telekomAidatTakip
 
                 Database db3 = new Database();
                 string countAidat = "0";
-                var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.silinmeNedeniNo = @0", txtKod.Text);
+                var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.silinmeNedeniNo = @0", kod);
                 if (data3.Read())
                 {
                     countAidat = data3["count"].ToString();
@@ -141,10 +141,10 @@ namespace telekomAidatTakip
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    if (txtKod.Text != string.Empty)
+                    if (kod != string.Empty)
                     {
                         Database db = new Database();
-                        db.Sorgu("delete from SilinmeNedeni where SilinmeNedenNo=@0", txtKod.Text);
+                        db.Sorgu("delete from SilinmeNedeni where SilinmeNedenNo=@0", kod);
                         SilinmeListesiniDoldur();
                     }
                 }
@@ -164,10 +164,11 @@ namespace telekomAidatTakip
                 if (txtKod.Text != string.Empty && txtAciklama.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
                 {
                     Database db = new Database();
-                    db.Sorgu("update SilinmeNedeni set silinmeNedeni=@0 where silinmeNedenNo=@1", txtAciklama.Text, txtKod.Text);
+                    db.Sorgu("update SilinmeNedeni set silinmeNedeni=@0,silinmeNedenNo=@1 where silinmeNedenNo=@2", txtAciklama.Text, txtKod.Text,kod);
 
                     txtAciklama.Text = string.Empty;
                     txtKod.Text = string.Empty;
+                    kod = string.Empty;
                     txtAciklama.Enabled = false;
                     txtKod.Enabled = false;
                     btnKaydet.Enabled = false;
@@ -213,12 +214,12 @@ namespace telekomAidatTakip
             //groupBox4.Width = this.Width - 48; //design sekmesindeki boyut farklarını buraya yazdık
             //groupBox4.Height = this.Height - 237;
         }
-
+        string kod;
         private void listvSilinme_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-                string kod = listvSilinme.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
+                kod = listvSilinme.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
 
                 Database db = new Database();
                 //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
