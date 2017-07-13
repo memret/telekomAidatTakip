@@ -66,6 +66,7 @@
             this.txtUnvanNo.MaxLength = 32767;
             this.txtUnvanNo.Name = "txtUnvanNo";
             this.txtUnvanNo.PasswordChar = '\0';
+            this.txtUnvanNo.PromptText = "Ünvan no girniz.";
             this.txtUnvanNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtUnvanNo.SelectedText = "";
             this.txtUnvanNo.SelectionLength = 0;
@@ -74,6 +75,7 @@
             this.txtUnvanNo.Size = new System.Drawing.Size(145, 29);
             this.txtUnvanNo.TabIndex = 4;
             this.txtUnvanNo.UseSelectable = true;
+            this.txtUnvanNo.WaterMark = "Ünvan no girniz.";
             this.txtUnvanNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtUnvanNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtUnvanNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnvanNo_KeyPress);
@@ -99,6 +101,7 @@
             this.txtUnvanAdi.MaxLength = 32767;
             this.txtUnvanAdi.Name = "txtUnvanAdi";
             this.txtUnvanAdi.PasswordChar = '\0';
+            this.txtUnvanAdi.PromptText = "Ünvan adı giriniz.";
             this.txtUnvanAdi.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtUnvanAdi.SelectedText = "";
             this.txtUnvanAdi.SelectionLength = 0;
@@ -107,6 +110,7 @@
             this.txtUnvanAdi.Size = new System.Drawing.Size(239, 29);
             this.txtUnvanAdi.TabIndex = 5;
             this.txtUnvanAdi.UseSelectable = true;
+            this.txtUnvanAdi.WaterMark = "Ünvan adı giriniz.";
             this.txtUnvanAdi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtUnvanAdi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -116,7 +120,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(36, 77);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(70, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(75, 20);
             this.metroLabel1.TabIndex = 8;
             this.metroLabel1.Text = "Ünvan No:";
             // 
@@ -126,7 +130,7 @@
             this.metroLabel2.Location = new System.Drawing.Point(36, 111);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(72, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(76, 20);
             this.metroLabel2.TabIndex = 9;
             this.metroLabel2.Text = "Ünvan Adı:";
             // 
@@ -220,7 +224,7 @@
             // 
             // frmTanimUnvan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 435);
             this.Controls.Add(this.btnYeni);

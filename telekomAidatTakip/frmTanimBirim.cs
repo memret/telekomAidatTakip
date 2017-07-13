@@ -104,31 +104,7 @@ namespace telekomAidatTakip
             }
         }
 
-        private void listvil_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                string birimKodu = listBirim.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
-
-                Database db = new Database();
-                //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
-                var data = db.DataOku("select birimNo,birimAdi,mudurlukAdi from birim b, Mudurluk m where b.mudurlukNo = m.mudurlukNo AND birimNo = @0", birimKodu);
-
-                while (data.Read())
-                {
-                    txtBirimKodu.Text = data["birimNo"].ToString();
-                    txtBirimAdi.Text = data["birimAdi"].ToString();
-                    cBoxMudurluk.Text = data["mudurlukAdi"].ToString();
-
-                    txtBirimAdi.Enabled = true;
-                    cBoxMudurluk.Enabled = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+       
 
         private void listeDoldur()
         {
@@ -156,11 +132,11 @@ namespace telekomAidatTakip
         {
             try
             {
-                if (txtBirimKodu.Text != string.Empty)
+                if (birimNo != string.Empty)
                 {
                     Database db2 = new Database();
                     string countKisi = "0";
-                    var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE birimNo = @0", txtBirimKodu.Text);
+                    var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE birimNo = @0", birimNo);
                     if (data2.Read())
                     {
                         countKisi = data2["count"].ToString();
@@ -168,7 +144,7 @@ namespace telekomAidatTakip
 
                     Database db3 = new Database();
                     string countAidat = "0";
-                    var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.birimNo = @0", txtBirimKodu.Text);
+                    var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.birimNo = @0", birimNo);
                     if (data3.Read())
                     {
                         countAidat = data3["count"].ToString();
@@ -183,14 +159,14 @@ namespace telekomAidatTakip
                     if (dialogResult == DialogResult.Yes)
                     {
                         Database db = new Database();
-                        db.Sorgu("DELETE FROM Birim Where birimNo = @0", txtBirimKodu.Text);
+                        db.Sorgu("DELETE FROM Birim Where birimNo = @0", birimNo);
                         listBirim.Items.Clear();
                         listeDoldur();
                         db.Kapat();
                         MessageBox.Show("Seçili birim silindi!", "Birim Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtBirimAdi.Text = string.Empty;
                         txtBirimKodu.Text = string.Empty;
-
+                        birimNo = string.Empty;
                         txtBirimAdi.Enabled = false;
                         cBoxMudurluk.Enabled = false;
                     }
@@ -204,29 +180,32 @@ namespace telekomAidatTakip
                 MessageBox.Show(ex.Message);
             }
         }
-
+        string birimNo;
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             try
             {
-                Database db = new Database();
-                int mudurlukNo = ((KeyValuePair<int, string>)cBoxMudurluk.SelectedItem).Key;
-                db.Sorgu("UPDATE Birim Set birimAdi = @0, mudurlukNo=@1 WHERE birimNo=@2", txtBirimAdi.Text, mudurlukNo.ToString(), txtBirimKodu.Text);
-                listBirim.Items.Clear();
-                listeDoldur();
-                db.Kapat();
+                if (txtBirimKodu.Text != string.Empty && txtBirimAdi.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
+                {
+                    Database db = new Database();
+                    int mudurlukNo = ((KeyValuePair<int, string>)cBoxMudurluk.SelectedItem).Key;
+                    db.Sorgu("UPDATE Birim Set birimAdi = @0, mudurlukNo=@1,birimNo=@2 WHERE birimNo=@3", txtBirimAdi.Text, mudurlukNo.ToString(), txtBirimKodu.Text, birimNo);
+                    listBirim.Items.Clear();
+                    listeDoldur();
+                    db.Kapat();
 
-                btnKaydet.Enabled = false;
-                //btnKaydet.UseCustomBackColor = true;
-                btnSil.Enabled = false;
-                //btnSil.UseCustomBackColor = true;
-                txtBirimAdi.Text = string.Empty;
-                txtBirimKodu.Text = string.Empty;
+                    btnKaydet.Enabled = false;
+                    //btnKaydet.UseCustomBackColor = true;
+                    btnSil.Enabled = false;
+                    //btnSil.UseCustomBackColor = true;
+                    txtBirimAdi.Text = string.Empty;
+                    txtBirimKodu.Text = string.Empty;
+                    birimNo = string.Empty;
 
 
-                txtBirimAdi.Enabled = false;
-                cBoxMudurluk.Enabled = false;
-
+                    txtBirimAdi.Enabled = false;
+                    cBoxMudurluk.Enabled = false;
+                }
             }
             catch (Exception ex)
             {
@@ -245,35 +224,38 @@ namespace telekomAidatTakip
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void listvil_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-                btnKaydet.Enabled = true;
-                btnSil.Enabled = true;
-                //btnKaydet.UseCustomBackColor = false;
-                //btnSil.UseCustomBackColor = false;
-                txtBirimAdi.Enabled = true;
-                cBoxMudurluk.Enabled = true;
-                txtBirimKodu.Enabled = false;
-                yeniKayit = true;
-                toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
-                Database db = new Database();
-                String mudurlukAdi = listBirim.SelectedItems[0].SubItems[3].Text;
-                String birimKodu = listBirim.SelectedItems[0].SubItems[0].Text;
-                var data = db.DataOku("SELECT b.birimAdi,b.birimNo,m.mudurlukAdi " +
-                      "FROM Mudurluk m, Birim b WHERE m.mudurlukNo = b.mudurlukNo AND m.mudurlukAdi = @0 AND b.birimNo =@1", mudurlukAdi, birimKodu);
-
-                if (data.Read())
+                if (listBirim.SelectedItems.Count > 0)
                 {
 
-                    txtBirimAdi.Text = data["birimAdi"].ToString();
-                    txtBirimKodu.Text = data["birimNo"].ToString();
-                    cBoxMudurluk.Text = data["mudurlukAdi"].ToString();
-                }
-                db.Kapat();
+                    Database db = new Database();
+                    string mudurlukAdi = listBirim.SelectedItems[0].SubItems[3].Text;
+                    birimNo = listBirim.SelectedItems[0].SubItems[0].Text;
+                    var data = db.DataOku("SELECT b.birimAdi,b.birimNo,m.mudurlukAdi " +
+                          "FROM Mudurluk m, Birim b WHERE m.mudurlukNo = b.mudurlukNo AND m.mudurlukAdi = @0 AND b.birimNo =@1", mudurlukAdi, birimNo);
 
+                    if (data.Read())
+                    {
+
+                        txtBirimAdi.Text = data["birimAdi"].ToString();
+                        txtBirimKodu.Text = data["birimNo"].ToString();
+                        cBoxMudurluk.Text = data["mudurlukAdi"].ToString();
+                    }
+                    db.Kapat();
+
+                    btnKaydet.Enabled = true;
+                    btnSil.Enabled = true;
+                    //btnKaydet.UseCustomBackColor = false;
+                    //btnSil.UseCustomBackColor = false;
+                    txtBirimAdi.Enabled = true;
+                    cBoxMudurluk.Enabled = true;
+                    txtBirimKodu.Enabled = false;
+                    yeniKayit = true;
+                    toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
+                }
 
             }
             catch (Exception ex)
