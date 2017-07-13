@@ -237,7 +237,7 @@
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(48, 48);
-            this.btnKaydet.TabIndex = 0;
+            this.btnKaydet.TabIndex = 38;
             this.toolTip1.SetToolTip(this.btnKaydet, "Kaydet");
             this.btnKaydet.UseVisualStyleBackColor = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
@@ -253,7 +253,7 @@
             this.btnSil.Margin = new System.Windows.Forms.Padding(0);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(48, 48);
-            this.btnSil.TabIndex = 55;
+            this.btnSil.TabIndex = 39;
             this.toolTip1.SetToolTip(this.btnSil, "Sil");
             this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Visible = false;
@@ -265,7 +265,7 @@
             this.btnResimSil.Location = new System.Drawing.Point(482, 234);
             this.btnResimSil.Name = "btnResimSil";
             this.btnResimSil.Size = new System.Drawing.Size(76, 40);
-            this.btnResimSil.TabIndex = 31;
+            this.btnResimSil.TabIndex = 37;
             this.btnResimSil.Text = "Resmi Sil";
             this.btnResimSil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnResimSil.UseSelectable = true;
@@ -277,7 +277,7 @@
             this.btnYeniResim.Location = new System.Drawing.Point(380, 234);
             this.btnYeniResim.Name = "btnYeniResim";
             this.btnYeniResim.Size = new System.Drawing.Size(82, 40);
-            this.btnYeniResim.TabIndex = 31;
+            this.btnYeniResim.TabIndex = 36;
             this.btnYeniResim.Text = "Yeni Resim";
             this.btnYeniResim.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnYeniResim.UseSelectable = true;
@@ -289,7 +289,7 @@
             this.btnAktiflestir.Location = new System.Drawing.Point(150, 366);
             this.btnAktiflestir.Name = "btnAktiflestir";
             this.btnAktiflestir.Size = new System.Drawing.Size(73, 40);
-            this.btnAktiflestir.TabIndex = 30;
+            this.btnAktiflestir.TabIndex = 35;
             this.btnAktiflestir.Text = "Aktifleştir";
             this.btnAktiflestir.UseSelectable = true;
             this.btnAktiflestir.Visible = false;
@@ -319,7 +319,7 @@
             this.dateKayit.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateKayit.Name = "dateKayit";
             this.dateKayit.Size = new System.Drawing.Size(200, 29);
-            this.dateKayit.TabIndex = 29;
+            this.dateKayit.TabIndex = 34;
             // 
             // metroLabel11
             // 
@@ -345,7 +345,7 @@
             this.dateGiris.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateGiris.Name = "dateGiris";
             this.dateGiris.Size = new System.Drawing.Size(200, 29);
-            this.dateGiris.TabIndex = 28;
+            this.dateGiris.TabIndex = 33;
             // 
             // txtAdSoyad
             // 
@@ -372,7 +372,7 @@
             this.txtAdSoyad.SelectionStart = 0;
             this.txtAdSoyad.ShortcutsEnabled = true;
             this.txtAdSoyad.Size = new System.Drawing.Size(200, 29);
-            this.txtAdSoyad.TabIndex = 20;
+            this.txtAdSoyad.TabIndex = 1;
             this.txtAdSoyad.UseSelectable = true;
             this.txtAdSoyad.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAdSoyad.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -403,7 +403,7 @@
             this.cboxMudurluk.Location = new System.Drawing.Point(150, 191);
             this.cboxMudurluk.Name = "cboxMudurluk";
             this.cboxMudurluk.Size = new System.Drawing.Size(200, 29);
-            this.cboxMudurluk.TabIndex = 26;
+            this.cboxMudurluk.TabIndex = 30;
             this.cboxMudurluk.UseSelectable = true;
             this.cboxMudurluk.SelectionChangeCommitted += new System.EventHandler(this.cboxMudurluk_SelectionChangeCommitted);
             // 
@@ -432,7 +432,7 @@
             this.txtSicilNo.SelectionStart = 0;
             this.txtSicilNo.ShortcutsEnabled = true;
             this.txtSicilNo.Size = new System.Drawing.Size(200, 29);
-            this.txtSicilNo.TabIndex = 21;
+            this.txtSicilNo.TabIndex = 26;
             this.txtSicilNo.UseSelectable = true;
             this.txtSicilNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSicilNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -465,7 +465,7 @@
             this.cboxUyelikTipi.Location = new System.Drawing.Point(150, 261);
             this.cboxUyelikTipi.Name = "cboxUyelikTipi";
             this.cboxUyelikTipi.Size = new System.Drawing.Size(200, 29);
-            this.cboxUyelikTipi.TabIndex = 25;
+            this.cboxUyelikTipi.TabIndex = 32;
             this.cboxUyelikTipi.UseSelectable = true;
             // 
             // cboxTahsil
@@ -503,7 +503,7 @@
             this.cboxIl.Location = new System.Drawing.Point(150, 156);
             this.cboxIl.Name = "cboxIl";
             this.cboxIl.Size = new System.Drawing.Size(200, 29);
-            this.cboxIl.TabIndex = 23;
+            this.cboxIl.TabIndex = 29;
             this.cboxIl.UseSelectable = true;
             this.cboxIl.SelectionChangeCommitted += new System.EventHandler(this.cboxIl_SelectionChangeCommitted);
             // 
@@ -514,7 +514,7 @@
             this.cboxUnvan.Location = new System.Drawing.Point(150, 121);
             this.cboxUnvan.Name = "cboxUnvan";
             this.cboxUnvan.Size = new System.Drawing.Size(200, 29);
-            this.cboxUnvan.TabIndex = 22;
+            this.cboxUnvan.TabIndex = 28;
             this.cboxUnvan.UseSelectable = true;
             // 
             // metroLabel5
@@ -542,7 +542,7 @@
             this.cboxBirim.Location = new System.Drawing.Point(150, 226);
             this.cboxBirim.Name = "cboxBirim";
             this.cboxBirim.Size = new System.Drawing.Size(200, 29);
-            this.cboxBirim.TabIndex = 24;
+            this.cboxBirim.TabIndex = 31;
             this.cboxBirim.UseSelectable = true;
             // 
             // metroTabPage2
@@ -707,7 +707,7 @@
             this.txtAdresEmail.SelectionStart = 0;
             this.txtAdresEmail.ShortcutsEnabled = true;
             this.txtAdresEmail.Size = new System.Drawing.Size(200, 29);
-            this.txtAdresEmail.TabIndex = 4;
+            this.txtAdresEmail.TabIndex = 40;
             this.txtAdresEmail.UseSelectable = true;
             this.txtAdresEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAdresEmail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -738,7 +738,7 @@
             this.txtIsTel.SelectionStart = 0;
             this.txtIsTel.ShortcutsEnabled = true;
             this.txtIsTel.Size = new System.Drawing.Size(200, 29);
-            this.txtIsTel.TabIndex = 4;
+            this.txtIsTel.TabIndex = 30;
             this.txtIsTel.UseSelectable = true;
             this.txtIsTel.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtIsTel.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -769,7 +769,7 @@
             this.txtCepTel.SelectionStart = 0;
             this.txtCepTel.ShortcutsEnabled = true;
             this.txtCepTel.Size = new System.Drawing.Size(200, 29);
-            this.txtCepTel.TabIndex = 4;
+            this.txtCepTel.TabIndex = 39;
             this.txtCepTel.UseSelectable = true;
             this.txtCepTel.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCepTel.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -800,7 +800,7 @@
             this.txtEvTel.SelectionStart = 0;
             this.txtEvTel.ShortcutsEnabled = true;
             this.txtEvTel.Size = new System.Drawing.Size(200, 29);
-            this.txtEvTel.TabIndex = 4;
+            this.txtEvTel.TabIndex = 29;
             this.txtEvTel.UseSelectable = true;
             this.txtEvTel.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtEvTel.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -813,7 +813,7 @@
             this.cboxIsIl.Location = new System.Drawing.Point(150, 202);
             this.cboxIsIl.Name = "cboxIsIl";
             this.cboxIsIl.Size = new System.Drawing.Size(200, 29);
-            this.cboxIsIl.TabIndex = 3;
+            this.cboxIsIl.TabIndex = 28;
             this.cboxIsIl.UseSelectable = true;
             // 
             // cboxEvIl
@@ -823,7 +823,7 @@
             this.cboxEvIl.Location = new System.Drawing.Point(150, 91);
             this.cboxEvIl.Name = "cboxEvIl";
             this.cboxEvIl.Size = new System.Drawing.Size(200, 29);
-            this.cboxEvIl.TabIndex = 3;
+            this.cboxEvIl.TabIndex = 26;
             this.cboxEvIl.UseSelectable = true;
             // 
             // txtIsAdresi
@@ -846,13 +846,13 @@
             this.txtIsAdresi.Multiline = true;
             this.txtIsAdresi.Name = "txtIsAdresi";
             this.txtIsAdresi.PasswordChar = '\0';
-            this.txtIsAdresi.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtIsAdresi.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtIsAdresi.SelectedText = "";
             this.txtIsAdresi.SelectionLength = 0;
             this.txtIsAdresi.SelectionStart = 0;
             this.txtIsAdresi.ShortcutsEnabled = true;
             this.txtIsAdresi.Size = new System.Drawing.Size(200, 70);
-            this.txtIsAdresi.TabIndex = 2;
+            this.txtIsAdresi.TabIndex = 27;
             this.txtIsAdresi.UseSelectable = true;
             this.txtIsAdresi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtIsAdresi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -877,13 +877,13 @@
             this.txtEvAdresi.Multiline = true;
             this.txtEvAdresi.Name = "txtEvAdresi";
             this.txtEvAdresi.PasswordChar = '\0';
-            this.txtEvAdresi.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtEvAdresi.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtEvAdresi.SelectedText = "";
             this.txtEvAdresi.SelectionLength = 0;
             this.txtEvAdresi.SelectionStart = 0;
             this.txtEvAdresi.ShortcutsEnabled = true;
             this.txtEvAdresi.Size = new System.Drawing.Size(200, 70);
-            this.txtEvAdresi.TabIndex = 2;
+            this.txtEvAdresi.TabIndex = 25;
             this.txtEvAdresi.UseSelectable = true;
             this.txtEvAdresi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtEvAdresi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -965,10 +965,10 @@
             // 
             this.dateNufusDogum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateNufusDogum.Location = new System.Drawing.Point(251, 85);
-            this.dateNufusDogum.MinimumSize = new System.Drawing.Size(4, 29);
+            this.dateNufusDogum.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateNufusDogum.Name = "dateNufusDogum";
             this.dateNufusDogum.Size = new System.Drawing.Size(99, 29);
-            this.dateNufusDogum.TabIndex = 14;
+            this.dateNufusDogum.TabIndex = 11;
             // 
             // metroLabel27
             // 
@@ -1013,7 +1013,7 @@
             this.cboxNufusIl.Location = new System.Drawing.Point(150, 225);
             this.cboxNufusIl.Name = "cboxNufusIl";
             this.cboxNufusIl.Size = new System.Drawing.Size(200, 29);
-            this.cboxNufusIl.TabIndex = 12;
+            this.cboxNufusIl.TabIndex = 14;
             this.cboxNufusIl.UseSelectable = true;
             // 
             // cboxNufusKan
@@ -1023,7 +1023,7 @@
             this.cboxNufusKan.Location = new System.Drawing.Point(150, 155);
             this.cboxNufusKan.Name = "cboxNufusKan";
             this.cboxNufusKan.Size = new System.Drawing.Size(200, 29);
-            this.cboxNufusKan.TabIndex = 12;
+            this.cboxNufusKan.TabIndex = 13;
             this.cboxNufusKan.UseSelectable = true;
             // 
             // cboxNufusMedeni
@@ -1137,7 +1137,7 @@
             this.txtNufusCilt.SelectionStart = 0;
             this.txtNufusCilt.ShortcutsEnabled = true;
             this.txtNufusCilt.Size = new System.Drawing.Size(200, 29);
-            this.txtNufusCilt.TabIndex = 6;
+            this.txtNufusCilt.TabIndex = 17;
             this.txtNufusCilt.UseSelectable = true;
             this.txtNufusCilt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNufusCilt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1168,7 +1168,7 @@
             this.txtNufusSira.SelectionStart = 0;
             this.txtNufusSira.ShortcutsEnabled = true;
             this.txtNufusSira.Size = new System.Drawing.Size(200, 29);
-            this.txtNufusSira.TabIndex = 7;
+            this.txtNufusSira.TabIndex = 19;
             this.txtNufusSira.UseSelectable = true;
             this.txtNufusSira.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNufusSira.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1199,7 +1199,7 @@
             this.txtNufusAile.SelectionStart = 0;
             this.txtNufusAile.ShortcutsEnabled = true;
             this.txtNufusAile.Size = new System.Drawing.Size(200, 29);
-            this.txtNufusAile.TabIndex = 7;
+            this.txtNufusAile.TabIndex = 18;
             this.txtNufusAile.UseSelectable = true;
             this.txtNufusAile.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNufusAile.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1230,7 +1230,7 @@
             this.txtNufusIlce.SelectionStart = 0;
             this.txtNufusIlce.ShortcutsEnabled = true;
             this.txtNufusIlce.Size = new System.Drawing.Size(200, 29);
-            this.txtNufusIlce.TabIndex = 6;
+            this.txtNufusIlce.TabIndex = 15;
             this.txtNufusIlce.UseSelectable = true;
             this.txtNufusIlce.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNufusIlce.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1260,7 +1260,7 @@
             this.txtNufusMahalle.SelectionStart = 0;
             this.txtNufusMahalle.ShortcutsEnabled = true;
             this.txtNufusMahalle.Size = new System.Drawing.Size(200, 29);
-            this.txtNufusMahalle.TabIndex = 7;
+            this.txtNufusMahalle.TabIndex = 16;
             this.txtNufusMahalle.UseSelectable = true;
             this.txtNufusMahalle.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNufusMahalle.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1290,7 +1290,7 @@
             this.txtNufusAnne.SelectionStart = 0;
             this.txtNufusAnne.ShortcutsEnabled = true;
             this.txtNufusAnne.Size = new System.Drawing.Size(200, 29);
-            this.txtNufusAnne.TabIndex = 6;
+            this.txtNufusAnne.TabIndex = 9;
             this.txtNufusAnne.UseSelectable = true;
             this.txtNufusAnne.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNufusAnne.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1320,7 +1320,7 @@
             this.txtNufusDogumYeri.SelectionStart = 0;
             this.txtNufusDogumYeri.ShortcutsEnabled = true;
             this.txtNufusDogumYeri.Size = new System.Drawing.Size(95, 29);
-            this.txtNufusDogumYeri.TabIndex = 7;
+            this.txtNufusDogumYeri.TabIndex = 10;
             this.txtNufusDogumYeri.UseSelectable = true;
             this.txtNufusDogumYeri.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNufusDogumYeri.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1476,7 +1476,7 @@
             this.dateAidatTarih.CustomFormat = "MMMMMM / yyyy";
             this.dateAidatTarih.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateAidatTarih.Location = new System.Drawing.Point(411, 15);
-            this.dateAidatTarih.MinimumSize = new System.Drawing.Size(4, 29);
+            this.dateAidatTarih.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateAidatTarih.Name = "dateAidatTarih";
             this.dateAidatTarih.Size = new System.Drawing.Size(130, 29);
             this.dateAidatTarih.TabIndex = 2;
@@ -1551,7 +1551,7 @@
             this.txtNot.Multiline = true;
             this.txtNot.Name = "txtNot";
             this.txtNot.PasswordChar = '\0';
-            this.txtNot.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNot.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtNot.SelectedText = "";
             this.txtNot.SelectionLength = 0;
             this.txtNot.SelectionStart = 0;

@@ -39,7 +39,6 @@ namespace telekomAidatTakip
                 this.MinimumSize = this.Size;
                 if (sicilno != null)
                 {
-                    DoldurKomple(sicilno);
                     btnSil.Enabled = true;
                     btnSil.Visible = true;
                     btnSil2.Enabled = true;
@@ -50,6 +49,8 @@ namespace telekomAidatTakip
                     btnSil4.Visible = true;
                     btnSil5.Enabled = true;
                     btnSil5.Visible = true;
+                    DoldurKomple(sicilno);
+                    
                 }
                 else
                 {
@@ -188,6 +189,10 @@ namespace telekomAidatTakip
                     btnAktiflestir.Location = new Point(lblSilinmeBilgisi.Location.X + lblSilinmeBilgisi.Size.Width + 5, btnAktiflestir.Location.Y);
                     btnAktiflestir.Visible = true;
                     btnSil.Visible = false;
+                    btnSil2.Visible = false;
+                    btnSil3.Visible = false;
+                    btnSil4.Visible = false;
+                    btnSil5.Visible = false;
                 }
 
                 dateGiris.Value = Convert.ToDateTime(data["girisTarihi"]);
@@ -201,6 +206,7 @@ namespace telekomAidatTakip
             Database db = new Database();
 
             var data = db.DataOku("select * from aidatlog where sicilno=@0", sicilno);
+            listAidatLog.Items.Clear();
             while (data.Read())
             {
                 ListViewItem item = new ListViewItem();
@@ -435,7 +441,7 @@ namespace telekomAidatTakip
             try
             {
                 Database db = new Database();
-                db.Sorgu("insert into aidatlog (sicilNo,miktar,tarih) Values (@0, @1,@2)", sicilno, txtAidatMiktari.Text, dateAidatTarih.Value.ToShortDateString());
+                db.Sorgu("insert into aidatlog (sicilNo,miktar,tarih) Values (@0, @1,@2)", sicilno, txtAidatMiktari.Text, dateAidatTarih.Value.ToString("MM.dd.yyyy"));
                 db.Kapat();
                 DoldurAidatBilgileri(sicilno);
 

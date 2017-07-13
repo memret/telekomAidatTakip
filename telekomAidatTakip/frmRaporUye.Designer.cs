@@ -271,10 +271,12 @@
             // radioAktif
             // 
             this.radioAktif.AutoSize = true;
+            this.radioAktif.Checked = true;
             this.radioAktif.Location = new System.Drawing.Point(23, 316);
             this.radioAktif.Name = "radioAktif";
             this.radioAktif.Size = new System.Drawing.Size(84, 15);
             this.radioAktif.TabIndex = 4;
+            this.radioAktif.TabStop = true;
             this.radioAktif.Text = "Aktif Üyeler";
             this.radioAktif.UseSelectable = true;
             // 
