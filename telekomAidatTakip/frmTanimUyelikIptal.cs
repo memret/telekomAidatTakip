@@ -24,6 +24,8 @@ namespace telekomAidatTakip
             {
                 this.MinimumSize = this.Size;
                 SilinmeListesiniDoldur();
+                txtKod.WaterMark = "Yeni kayıt açınız.";
+                txtAciklama.WaterMark = "Yeni kayıt açınız.";
 
             }
             catch (Exception ex)
@@ -81,6 +83,8 @@ namespace telekomAidatTakip
                     //btnYeni.Text = "Ekle";
                     btnKaydet.Enabled = false;
                     btnSil.Enabled = false;
+                    txtAciklama.WaterMark = "Açıklama giriniz.";
+                    txtKod.WaterMark = "Açıklama kodu giriniz.";
                     toolTip1.SetToolTip(btnYeni, "Ekle");
                 }
                 else
@@ -99,7 +103,10 @@ namespace telekomAidatTakip
                         SilinmeListesiniDoldur();
                         txtKod.Text = string.Empty;
                         txtAciklama.Text = string.Empty;
+                        txtAciklama.WaterMark = "Yeni kayıt açınız.";
+                        txtKod.WaterMark = "Yeni kayıt açınız.";
                         btnYeni.Focus();
+
                     }
 
                     else
@@ -151,6 +158,10 @@ namespace telekomAidatTakip
                         db.Sorgu("delete from SilinmeNedeni where SilinmeNedenNo=@0", kod);
                         db.Kapat();
                         SilinmeListesiniDoldur();
+                        txtAciklama.Clear();
+                        txtKod.Clear();
+                        txtKod.WaterMark = "Yeni kayıt açınız.";
+                        txtAciklama.WaterMark = "Yeni kayıt açınız.";
                     }
                 }
             }
@@ -180,6 +191,9 @@ namespace telekomAidatTakip
                     btnKaydet.Enabled = false;
                     btnSil.Enabled = false;
                     SilinmeListesiniDoldur();
+
+                    txtKod.WaterMark = "Yeni kayıt açınız.";
+                    txtAciklama.WaterMark = "Yeni kayıt açınız.";
                 }
             }
             catch (Exception ex)
