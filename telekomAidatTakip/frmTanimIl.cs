@@ -36,30 +36,30 @@ namespace telekomAidatTakip
         }
         private void IlListesiniDoldur()
         {
-                Database db = new Database();
-                //data objesi sqlreadera dönüşüp veriyi alır. 
-                //direk sqldatareaderda yazılabilir fakat bu sefer forum içerisinde using bilmemne yazmamız gerekir
-                //var kelimesi ile tanımlanan değişkene ilk olarak ne eşitlersek o değişken tipinde olur
-                var data = db.DataOku("select * from il");
+            Database db = new Database();
+            //data objesi sqlreadera dönüşüp veriyi alır. 
+            //direk sqldatareaderda yazılabilir fakat bu sefer forum içerisinde using bilmemne yazmamız gerekir
+            //var kelimesi ile tanımlanan değişkene ilk olarak ne eşitlersek o değişken tipinde olur
+            var data = db.DataOku("select * from il");
 
-                //listview içeriğini boşaltmamız gerekiyor il önce
-                listvil.Items.Clear();
+            //listview içeriğini boşaltmamız gerekiyor il önce
+            listvil.Items.Clear();
 
-                while (data.Read())
-                {
-                    ListViewItem item = new ListViewItem();
-                    item.Text = data["ilNo"].ToString();
-                    item.SubItems.Add(data["ilAdi"].ToString());
+            while (data.Read())
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = data["ilNo"].ToString();
+                item.SubItems.Add(data["ilAdi"].ToString());
 
-                    listvil.Items.Add(item);
-                    //oluşturulan item liste eklenir
-                }
-
-                txtAdi.Enabled = false;
-                txtPlakaKodu.Enabled = false;
-                btnSil.Enabled = false;
-                btnKaydet.Enabled = false;
-                btnYeni.Enabled = true;
+                listvil.Items.Add(item);
+                //oluşturulan item liste eklenir
+            }
+            db.Kapat();
+            txtAdi.Enabled = false;
+            txtPlakaKodu.Enabled = false;
+            btnSil.Enabled = false;
+            btnKaydet.Enabled = false;
+            btnYeni.Enabled = true;
         }
         bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace telekomAidatTakip
                     {
                         Database db = new Database();
                         db.Sorgu("insert into il (ilno,iladi) values (@0,@1)", txtPlakaKodu.Text, txtAdi.Text);
-
+                        db.Kapat();
                         DialogResult dialogResult = MessageBox.Show("Yeni kayıt eklendi.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtPlakaKodu.Enabled = false;
                         txtAdi.Enabled = false;
@@ -138,6 +138,7 @@ namespace telekomAidatTakip
                     {
                         countMudurluk = data["count"].ToString();
                     }
+                    db1.Kapat();
                     Database db2 = new Database();
                     string countUye = "0";
 
@@ -146,6 +147,7 @@ namespace telekomAidatTakip
                     {
                         countUye = data2["count"].ToString();
                     }
+                    db2.Kapat();
                     Database db3 = new Database();
                     string countBirim = "0";
                     var data3 = db3.DataOku("select count(birimno) 'count' from Birim b join mudurluk m on m.mudurlukno = b.mudurlukno where m.ilno =@0", plakakodu);
@@ -153,6 +155,7 @@ namespace telekomAidatTakip
                     {
                         countBirim = data3["count"].ToString();
                     }
+                    db3.Kapat();
                     Database db4 = new Database();
                     string countAidatLog = "0";
                     var data4 = db4.DataOku("select count(aidatLogNo) 'count' from AidatLog a join Uyeler u on u.sicilNo = a.sicilNo where u.ilNo =@0", plakakodu);
@@ -160,6 +163,7 @@ namespace telekomAidatTakip
                     {
                         countAidatLog = data4["count"].ToString();
                     }
+                    db4.Kapat();
                     DialogResult dialogresult;
                     if (countAidatLog != "0" && countBirim != "0" && countMudurluk != "0" && countUye != "0")
                         dialogresult = MessageBox.Show("Bu işlem ile sadece ili değil, onun altında kayıtlı olan müdürlükleri, birimleri, kişileri ve aidat kayıtlarını da sileceksiniz.\n" + " \nSilinecek Müdürlük Sayısı: " + countMudurluk + "\nSilinecek Birim Sayısı: " + countBirim + "\nSilinecek Üye Sayısı:" + countUye + "\nSilinecek Aidat Kaydı:" + countAidatLog + "\n\nDevam etmek istediğinize emin misiniz?", "İl Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -176,7 +180,7 @@ namespace telekomAidatTakip
                         // db6.Sorgu("delete from Uyeler where ilNo=@0",txtPlakaKodu.Text);
                         //  db5.Sorgu("delete from Mudurluk where ilNo=@0", txtPlakaKodu.Text);
                         db.Sorgu("delete from il where ilNo=@0", plakakodu);
-
+                        db.Kapat();
 
 
                         IlListesiniDoldur();
@@ -207,6 +211,7 @@ namespace telekomAidatTakip
                 Database db = new Database();
                 //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
                 txtAdi.Text = db.DataOkuTek("select iladi from il where ilNo=@0", "ilAdi", plakakodu);
+                db.Kapat();
 
                 txtPlakaKodu.Text = plakakodu;
                 btnKaydet.Enabled = true;
@@ -214,7 +219,6 @@ namespace telekomAidatTakip
                 txtAdi.Enabled = true;
                 txtPlakaKodu.Enabled = true;
                 // btnYeni.Text = "Yeni";
-
             }
             catch (Exception ex)
             {
@@ -231,6 +235,7 @@ namespace telekomAidatTakip
                 {
                     Database db = new Database();
                     db.Sorgu("update il set iladi=@0,ilno=@1 where ilno=@2", txtAdi.Text, txtPlakaKodu.Text, plakakodu);
+                    db.Kapat();
 
                     DialogResult dialogResult = MessageBox.Show("Değişiklikler kaydedildi.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtAdi.Text = string.Empty;
@@ -306,6 +311,7 @@ namespace telekomAidatTakip
                             txtPlakaKodu.Select();
                         }
                     }
+                    db.Kapat();
                 }
 
             }

@@ -57,6 +57,7 @@ namespace telekomAidatTakip
                 listvMdr.Items.Add(item);
                 //oluşturulan item liste eklenir
             }
+            db.Kapat();
 
             txtMdrKod.Enabled = false;
             txtMdrAd.Enabled = false;
@@ -79,6 +80,7 @@ namespace telekomAidatTakip
             {
                 cboxSource.Add(Convert.ToInt32(data["ilNo"]), data["ilAdi"].ToString());
             }
+            db2.Kapat();
 
             comboBox_il.DataSource = new BindingSource(cboxSource, null);
             comboBox_il.DisplayMember = "Value";
@@ -127,6 +129,7 @@ namespace telekomAidatTakip
                         Database db = new Database();
                         int ilNo = ((KeyValuePair<int, string>)comboBox_il.SelectedItem).Key;
                         db.Sorgu("insert into Mudurluk values (@0,@1,@2)", txtMdrKod.Text, txtMdrAd.Text, ilNo.ToString());
+                        db.Kapat();
 
                         txtMdrKod.Enabled = false;
                         txtMdrAd.Enabled = false;
@@ -163,6 +166,7 @@ namespace telekomAidatTakip
                     int ilNo = PRG.cboxKeyGetir(ref comboBox_il);
                     db.Sorgu("update Mudurluk set mudurlukAdi=@0, ilNo=@1,mudurlukNo=@2 where mudurlukNo=@3", txtMdrAd.Text, ilNo.ToString(), txtMdrKod.Text, mudurlukno);
 
+                    db.Kapat();
                     txtMdrAd.Text = string.Empty;
                     txtMdrKod.Text = string.Empty;
                     mudurlukno = string.Empty;
@@ -193,6 +197,7 @@ namespace telekomAidatTakip
                 {
                     countBirim = data["count"].ToString();
                 }
+                db1.Kapat();
                 Database db2 = new Database();
                 string countKisi = "0";
                 var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE mudurlukNo = @0", mudurlukno);
@@ -200,6 +205,7 @@ namespace telekomAidatTakip
                 {
                     countKisi = data2["count"].ToString();
                 }
+                db2.Kapat();
 
                 Database db3 = new Database();
                 string countAidat = "0";
@@ -208,6 +214,7 @@ namespace telekomAidatTakip
                 {
                     countAidat = data3["count"].ToString();
                 }
+                db3.Kapat();
                 DialogResult dialogResult;
                 if (countAidat != "0" && countBirim != "0" && countKisi != "0")
                     dialogResult = MessageBox.Show("Seçili müdürlük ve altında kayıtlı birimler silinecek.\nSilinecek birim sayısı: " + countBirim + "\nSilinecek kişi sayısı: " + countKisi + "\nSilinecek aidat kaydı: " + countAidat + " \nEmin misiniz?", "Müdürlük Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -221,6 +228,7 @@ namespace telekomAidatTakip
                         Database db = new Database();
 
                         db.Sorgu("DELETE FROM Mudurluk Where mudurlukNo = @0", mudurlukno);
+                        db.Kapat();
 
                         listvMdr.Items.Clear();
                         txtMdrAd.Text = string.Empty;
@@ -263,6 +271,7 @@ namespace telekomAidatTakip
                         comboBox_il.Text = data["ilAdi"].ToString();
 
                     }
+                    db.Kapat();
 
                     // txtMdrKod.Text = mdrKod;
                     btnKaydet.Enabled = true;

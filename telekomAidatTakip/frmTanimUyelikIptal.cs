@@ -51,6 +51,7 @@ namespace telekomAidatTakip
                 listvSilinme.Items.Add(item);
                 //oluşturulan item listeye eklendi
             }
+            db.Kapat();
 
             txtAciklama.Enabled = false;
             txtKod.Enabled = false;
@@ -92,6 +93,7 @@ namespace telekomAidatTakip
                     {
                         Database db = new Database();
                         db.Sorgu("insert into SilinmeNedeni (SilinmeNedenNo,SilinmeNedeni) values (@0,@1)", txtKod.Text, txtAciklama.Text);
+                        db.Kapat();
 
 
                         txtKod.Enabled = false;
@@ -128,6 +130,7 @@ namespace telekomAidatTakip
                 {
                     countKisi = data2["count"].ToString();
                 }
+                db2.Kapat();
 
                 Database db3 = new Database();
                 string countAidat = "0";
@@ -136,6 +139,7 @@ namespace telekomAidatTakip
                 {
                     countAidat = data3["count"].ToString();
                 }
+                db3.Kapat();
                 // 0dan büyüklerse bu soruyu sormak lazım.
                 DialogResult dialogResult;
                 if (countAidat != "0" && countKisi != "0")
@@ -149,6 +153,7 @@ namespace telekomAidatTakip
                     {
                         Database db = new Database();
                         db.Sorgu("delete from SilinmeNedeni where SilinmeNedenNo=@0", kod);
+                        db.Kapat();
                         SilinmeListesiniDoldur();
 
                         txtKod.WaterMark = "Yeni kayıt açınız.";
@@ -172,6 +177,7 @@ namespace telekomAidatTakip
                 {
                     Database db = new Database();
                     db.Sorgu("update SilinmeNedeni set silinmeNedeni=@0,silinmeNedenNo=@1 where silinmeNedenNo=@2", txtAciklama.Text, txtKod.Text,kod);
+                    db.Kapat();
 
                     txtAciklama.Text = string.Empty;
                     txtKod.Text = string.Empty;
@@ -234,7 +240,8 @@ namespace telekomAidatTakip
                 Database db = new Database();
                 //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
                 txtAciklama.Text = db.DataOkuTek("select silinmeNedeni from SilinmeNedeni where silinmeNedenNo=@0", "silinmeNedeni", kod);
-               
+                db.Kapat();
+
                 txtKod.Text = kod;
                 btnKaydet.Enabled = true;
                 btnSil.Enabled = true;

@@ -49,6 +49,7 @@ namespace telekomAidatTakip
             {
                 Database db = new Database();
                 db.Sorgu("update uyeler set aktif = 0, silinmenedenino=@0 where sicilno=@1", PRG.cboxKeyGetir(ref comboBox1), sicilno);
+                db.Kapat();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
 
