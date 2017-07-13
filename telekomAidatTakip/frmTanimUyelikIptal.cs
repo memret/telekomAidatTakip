@@ -24,6 +24,8 @@ namespace telekomAidatTakip
             {
                 this.MinimumSize = this.Size;
                 SilinmeListesiniDoldur();
+                txtKod.WaterMark = "Yeni kayıt açınız.";
+                txtAciklama.WaterMark = "Yeni kayıt açınız.";
 
             }
             catch (Exception ex)
@@ -80,6 +82,8 @@ namespace telekomAidatTakip
                     //btnYeni.Text = "Ekle";
                     btnKaydet.Enabled = false;
                     btnSil.Enabled = false;
+                    txtAciklama.WaterMark = "Açıklama giriniz.";
+                    txtKod.WaterMark = "Açıklama kodu giriniz.";
                     toolTip1.SetToolTip(btnYeni, "Ekle");
                 }
                 else
@@ -146,6 +150,9 @@ namespace telekomAidatTakip
                         Database db = new Database();
                         db.Sorgu("delete from SilinmeNedeni where SilinmeNedenNo=@0", kod);
                         SilinmeListesiniDoldur();
+
+                        txtKod.WaterMark = "Yeni kayıt açınız.";
+                        txtAciklama.WaterMark = "Yeni kayıt açınız.";
                     }
                 }
             }
@@ -174,6 +181,9 @@ namespace telekomAidatTakip
                     btnKaydet.Enabled = false;
                     btnSil.Enabled = false;
                     SilinmeListesiniDoldur();
+
+                    txtKod.WaterMark = "Yeni kayıt açınız.";
+                    txtAciklama.WaterMark = "Yeni kayıt açınız.";
                 }
             }
             catch (Exception ex)
