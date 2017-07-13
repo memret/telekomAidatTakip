@@ -123,6 +123,8 @@ namespace telekomAidatTakipCron
 
                 }
             }
+            db.Kapat();
+            db2.Kapat();
             return gonderiler;
 
 
@@ -203,6 +205,9 @@ namespace telekomAidatTakipCron
 
                 }
             }
+
+            db.Kapat();
+            db2.Kapat();
             return gonderiler;
         }
     }
