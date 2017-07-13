@@ -86,27 +86,7 @@ namespace telekomAidatTakip
             comboBox_il.SelectedIndex = -1;
 
         }
-
-
-        private void listvMdr_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMdrAd_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMdrKod_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox_il_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+               
         bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
