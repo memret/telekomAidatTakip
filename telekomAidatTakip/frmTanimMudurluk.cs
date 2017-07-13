@@ -157,7 +157,7 @@ namespace telekomAidatTakip
         {
             try
             {
-                if (mudurlukno != string.Empty && txtMdrAd.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
+                if (txtMdrKod.Text != string.Empty && txtMdrAd.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
                 {
                     Database db = new Database();
                     int ilNo = PRG.cboxKeyGetir(ref comboBox_il);
