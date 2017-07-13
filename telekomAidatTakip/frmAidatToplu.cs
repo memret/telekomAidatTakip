@@ -155,11 +155,6 @@ namespace telekomAidatTakip
             }
         }
 
-        private void cboxBirim_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void cboxil_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -180,14 +175,18 @@ namespace telekomAidatTakip
                     lblKisiSayisi.Text = "";
 
 
-                    int birimNo = ((KeyValuePair<int, string>)cboxBirim.SelectedItem).Key;
+                    int birimNo = PRG.cboxKeyGetir(ref cboxBirim);
                     var data = db.DataOku("select count (sicilNo) 'count' from Uyeler u join Birim b on u.birimNo=b.birimNo where b.birimNo=@0", birimNo);
                     if (data.Read())
                     {
                         countkisi = data["count"].ToString();
                     }
-
+                    db.Kapat();
                     lblKisiSayisi.Text = "Kişi Sayısı: " + countkisi;
+                    
+                    Database db2 = new Database();
+                    txtAidatMiktari.Text = db2.DataOkuTek("SELECT * FROM aidatmiktar WHERE birimno =@0 ", "aidat", birimNo);
+                    db2.Kapat();
                 }
             }
             catch (Exception ex)

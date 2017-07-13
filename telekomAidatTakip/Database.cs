@@ -138,15 +138,14 @@ namespace telekomAidatTakip
             try
             {
                 data = kmt.ExecuteReader();
+                if (data.Read())
+                    return data[column].ToString();
             }
             catch
             {
                 this.Kapat();
                 throw excepBaglanti;
-
             }
-            if (data.Read())
-                return data[column].ToString();
             return string.Empty;
         }
         public void Sorgu(string query)

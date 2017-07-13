@@ -217,6 +217,9 @@ namespace telekomAidatTakip
                 listAidatLog.Items.Add(item);
             }
             db.Kapat();
+            Database db2 = new Database();
+            txtAidatMiktari.Text = db2.DataOkuTek("SELECT * FROM aidatmiktar WHERE birimno =@0 ", "aidat", PRG.cboxKeyGetir(ref cboxBirim));
+            db2.Kapat();
         }
         public string BosYerVarMi()
         {
