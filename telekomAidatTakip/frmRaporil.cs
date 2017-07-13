@@ -28,6 +28,12 @@ namespace telekomAidatTakip
                 string query = "SELECT distinct i.ilAdi, i.ilNo, coalesce((Select Count(*) from Uyeler u2 where aktif = 'true' AND u.ilNo = u2.ilNo group by ilno),0) 'aktif', coalesce((Select Count(*) from Uyeler u2 where aktif = 'false' AND u.ilNo = u2.ilNo group by ilno) ,0) 'pasif', coalesce((Select Count(*) from Uyeler u2 where u.ilNo = u2.ilNo group by ilno),0) 'toplam' FROM Uyeler u , il i where u.ilno = i.ilno";
                 var data = db.DataOku(query);
                 listIl.Items.Clear();
+                if (data.HasRows)
+                {
+                    yazdir.list = listIl;
+                    yazdir.baslik = "İl Listesi";
+                    btnYazdir.Enabled = true;
+                }
                 while (data.Read())
                 {
 
@@ -40,9 +46,6 @@ namespace telekomAidatTakip
                     listIl.Items.Add(item);
                 }
                 db.Kapat();
-                yazdir.list = listIl;
-                yazdir.baslik = "İl Listesi";
-                btnYazdir.Enabled = true;
 
 
 

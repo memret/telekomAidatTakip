@@ -338,6 +338,12 @@ namespace telekomAidatTakip
                 var data = db.DataOku(temelSorgu, paramList);
                 listUye.Items.Clear();
                 listUye.Items.Clear();
+                if (data.HasRows)
+                {
+                    btnYazdir.Enabled = true;
+                    yazdir.list = listUye;
+                    yazdir.baslik = "Üye Listesi";
+                }
                 while (data.Read())
                 {
                     string ilMudBir = data["ilAdi"].ToString() + "/" + data["mudurlukAdi"].ToString() + "/" + data["birimAdi"].ToString();
@@ -352,25 +358,6 @@ namespace telekomAidatTakip
                     listUye.Items.Add(item);
                 }
                 db.Kapat();
-
-
-                yazdir.list = listUye;
-
-                /*yazdir.items = listUye.Items;
-                Dictionary<string, int> basliklar = new Dictionary<string, int>();
-                basliklar.Add("Sicil No",60);
-                basliklar.Add("Ad Soyad",120);
-                basliklar.Add("Kan Grubu",80);
-                basliklar.Add("İl/Müdürlük/Kısım",180);
-                basliklar.Add("Ünvan",70);
-                basliklar.Add("Tahsil",70);
-
-
-                yazdir.basliklar = basliklar;
-                */
-                yazdir.baslik = "Üye Listesi";
-                btnYazdir.Enabled = true;
-
             }
             catch (Exception ex)
             {

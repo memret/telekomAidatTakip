@@ -106,6 +106,12 @@ namespace telekomAidatTakip
 
                 var data = db.DataOku(query, paramList);
                 listUyeKayitlari.Items.Clear();
+                if (data.HasRows)
+                {
+                    yazdir.list = listUyeKayitlari;
+                    yazdir.baslik = "Aidat Listesi";
+                    btnYazdir.Enabled = true;
+                }
                 while (data.Read())
                 {
 
@@ -130,21 +136,6 @@ namespace telekomAidatTakip
                 }
                 db.Kapat();
 
-                yazdir.list = listUyeKayitlari;
-                /*
-                yazdir.items = listUyeKayitlari.Items;
-                Dictionary<string, int> basliklar = new Dictionary<string, int>();
-                basliklar.Add("Sıra No", 60);
-                basliklar.Add("Ad Soyad", 120);
-                basliklar.Add("Aidat", 80);
-                basliklar.Add("İl/Müdürlük/Kısım", 180);
-                basliklar.Add("Ünvan", 70);
-                basliklar.Add("Tahsil", 70);
-
-                yazdir.basliklar = basliklar;
-                */
-                yazdir.baslik = "Aidat Listesi";
-                btnYazdir.Enabled = true;
 
 
 
