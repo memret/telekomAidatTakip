@@ -157,14 +157,15 @@ namespace telekomAidatTakip
         {
             try
             {
-                if (txtMdrKod.Text != string.Empty && txtMdrAd.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
+                if (mudurlukno != string.Empty && txtMdrAd.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
                 {
                     Database db = new Database();
-                    int ilNo = ((KeyValuePair<int, string>)comboBox_il.SelectedItem).Key;
-                    db.Sorgu("update Mudurluk set mudurlukAdi=@0, ilNo=@1 where mudurlukNo=@2", txtMdrAd.Text, ilNo.ToString(), txtMdrKod.Text);
+                    int ilNo = PRG.cboxKeyGetir(ref comboBox_il);
+                    db.Sorgu("update Mudurluk set mudurlukAdi=@0, ilNo=@1,mudurlukNo=@2 where mudurlukNo=@3", txtMdrAd.Text, ilNo.ToString(), txtMdrKod.Text, mudurlukno);
 
                     txtMdrAd.Text = string.Empty;
                     txtMdrKod.Text = string.Empty;
+                    mudurlukno = string.Empty;
                     txtMdrAd.Enabled = false;
                     txtMdrKod.Enabled = false;
                     btnKaydet.Enabled = false;
@@ -187,14 +188,14 @@ namespace telekomAidatTakip
             {
                 Database db1 = new Database();
                 string countBirim = "0";
-                var data = db1.DataOku("SELECT COUNT (birimNo) 'count' FROM birim WHERE mudurlukNo = @0", txtMdrKod.Text);
+                var data = db1.DataOku("SELECT COUNT (birimNo) 'count' FROM birim WHERE mudurlukNo = @0", mudurlukno);
                 if (data.Read())
                 {
                     countBirim = data["count"].ToString();
                 }
                 Database db2 = new Database();
                 string countKisi = "0";
-                var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE mudurlukNo = @0", txtMdrKod.Text);
+                var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE mudurlukNo = @0", mudurlukno);
                 if (data2.Read())
                 {
                     countKisi = data2["count"].ToString();
@@ -202,7 +203,7 @@ namespace telekomAidatTakip
 
                 Database db3 = new Database();
                 string countAidat = "0";
-                var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.mudurlukNo = @0", txtMdrKod.Text);
+                var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.mudurlukNo = @0", mudurlukno);
                 if (data3.Read())
                 {
                     countAidat = data3["count"].ToString();
@@ -215,15 +216,16 @@ namespace telekomAidatTakip
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    if (txtMdrKod.Text != string.Empty)
+                    if (mudurlukno != string.Empty)
                     {
                         Database db = new Database();
 
-                        db.Sorgu("DELETE FROM Mudurluk Where mudurlukNo = @0", txtMdrKod.Text);
+                        db.Sorgu("DELETE FROM Mudurluk Where mudurlukNo = @0", mudurlukno);
 
                         listvMdr.Items.Clear();
                         txtMdrAd.Text = string.Empty;
                         txtMdrKod.Text = string.Empty;
+                        mudurlukno = string.Empty;
                         kayitliMdrDoldur();
                         comboBox_il.SelectedIndex = -1;
                         MessageBox.Show("Müdürlük silindi!", "Müdürlük Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -239,34 +241,37 @@ namespace telekomAidatTakip
                 MessageBox.Show(ex.Message);
             }
         }
-
+        string mudurlukno;
         private void listvMdr_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             try
             {
-                Database db = new Database();
-                String mudurlukno = listvMdr.SelectedItems[0].SubItems[0].Text;
-                String ilKodu = listvMdr.SelectedItems[0].SubItems[2].Text;
-                var data = db.DataOku("SELECT i.ilAdi,m.mudurlukNo,m.mudurlukAdi " +
-                      "FROM Mudurluk m, il i WHERE m.ilNo = i.ilNo AND m.mudurlukno = @0 AND i.ilNo =@1", mudurlukno, ilKodu);
-
-                if (data.Read())
+                if (listvMdr.SelectedItems.Count> 0)
                 {
 
-                    txtMdrKod.Text = data["mudurlukNo"].ToString();
-                    txtMdrAd.Text = data["mudurlukAdi"].ToString();
-                    comboBox_il.Text = data["ilAdi"].ToString();
+                    Database db = new Database();
+                    mudurlukno = listvMdr.SelectedItems[0].SubItems[0].Text;
+                    string ilKodu = listvMdr.SelectedItems[0].SubItems[2].Text;
+                    var data = db.DataOku("SELECT i.ilAdi,m.mudurlukNo,m.mudurlukAdi " +
+                          "FROM Mudurluk m, il i WHERE m.ilNo = i.ilNo AND m.mudurlukno = @0 AND i.ilNo =@1", mudurlukno, ilKodu);
 
+                    if (data.Read())
+                    {
+
+                        txtMdrKod.Text = data["mudurlukNo"].ToString();
+                        txtMdrAd.Text = data["mudurlukAdi"].ToString();
+                        comboBox_il.Text = data["ilAdi"].ToString();
+
+                    }
+
+                    // txtMdrKod.Text = mdrKod;
+                    btnKaydet.Enabled = true;
+                    btnSil.Enabled = true;
+                    txtMdrAd.Enabled = true;
+                    txtMdrKod.Enabled = false;
+                    comboBox_il.Enabled = true;
+                    //btnYeni.Text = "Yeni";
                 }
-
-                // txtMdrKod.Text = mdrKod;
-                btnKaydet.Enabled = true;
-                btnSil.Enabled = true;
-                txtMdrAd.Enabled = true;
-                txtMdrKod.Enabled = false;
-                comboBox_il.Enabled = true;
-                //btnYeni.Text = "Yeni";
-
             }
             catch (Exception ex)
             {
