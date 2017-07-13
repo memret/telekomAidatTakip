@@ -70,10 +70,11 @@ namespace telekomAidatTakip
                 if (txtTahsilKodu.Text != string.Empty && txtTahsilAd.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
                 {
                     Database db = new Database();
-                    db.Sorgu("update Tahsil set tahsilAdi=@0 where tahsilNo=@1", txtTahsilAd.Text, txtTahsilKodu.Text);
+                    db.Sorgu("update Tahsil set tahsilAdi=@0,tahsilNo=@1 where tahsilNo=@2", txtTahsilAd.Text, txtTahsilKodu.Text, tahsilKodu);
 
                     txtTahsilAd.Text = string.Empty;
                     txtTahsilKodu.Text = string.Empty;
+                    tahsilKodu = string.Empty;
                     txtTahsilAd.Enabled = false;
                     txtTahsilAd.Enabled = false;
                     btnKaydet.Enabled = false;
@@ -92,11 +93,11 @@ namespace telekomAidatTakip
         {
             try
             {
-                if (txtTahsilKodu.Text != string.Empty) //plaka kodu olmadan veri silmek tabiki biraz zor olur
+                if (tahsilKodu != string.Empty) //plaka kodu olmadan veri silmek tabiki biraz zor olur
                 {
                     Database db2 = new Database();
                     string countKisi = "0";
-                    var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE tahsilNo = @0", txtTahsilKodu.Text);
+                    var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE tahsilNo = @0", tahsilKodu);
                     if (data2.Read())
                     {
                         countKisi = data2["count"].ToString();
@@ -104,7 +105,7 @@ namespace telekomAidatTakip
 
                     Database db3 = new Database();
                     string countAidat = "0";
-                    var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.tahsilno = @0", txtTahsilKodu.Text);
+                    var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.tahsilno = @0", tahsilKodu);
                     if (data3.Read())
                     {
                         countAidat = data3["count"].ToString();
@@ -119,10 +120,10 @@ namespace telekomAidatTakip
                     if (dialogResult == DialogResult.Yes)
                     {
                         Database db = new Database();
-                        db.Sorgu("delete from Tahsil where tahsilNo=@0", txtTahsilKodu.Text);
+                        db.Sorgu("delete from Tahsil where tahsilNo=@0", tahsilKodu);
                         TahsilListesiDoldur();
                         txtTahsilAd.Text = string.Empty;
-                        txtTahsilKodu.Text = string.Empty;
+                        tahsilKodu = string.Empty;
                     }
                 }
                 else
@@ -235,24 +236,27 @@ namespace telekomAidatTakip
                 MessageBox.Show(ex.Message);
             }
         }
-
+        string tahsilKodu;
         private void listvTanimTahsil_DoubleClick_1(object sender, EventArgs e)
         {
             try
             {
-                string plakakodu = listvTanimTahsil.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
+                if (listvTanimTahsil.SelectedItems.Count > 0)
+                {
+                    tahsilKodu = listvTanimTahsil.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
 
-                Database db = new Database();
-                //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
-                txtTahsilAd.Text = db.DataOkuTek("select tahsilAdi from Tahsil where tahsilNo=@0", "tahsilAdi", plakakodu);
+                    Database db = new Database();
+                    //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
+                    txtTahsilAd.Text = db.DataOkuTek("select tahsilAdi from Tahsil where tahsilNo=@0", "tahsilAdi", tahsilKodu);
 
-                txtTahsilKodu.Text = plakakodu;
-                btnKaydet.Enabled = true;
-                btnSil.Enabled = true;
-                txtTahsilAd.Enabled = true;
-                txtTahsilKodu.Enabled = true;
-                yeniKayit = true;
-                toolTip.SetToolTip(btnYeni, "Yeni Kayıt");
+                    txtTahsilKodu.Text = tahsilKodu;
+                    btnKaydet.Enabled = true;
+                    btnSil.Enabled = true;
+                    txtTahsilAd.Enabled = true;
+                    txtTahsilKodu.Enabled = true;
+                    yeniKayit = true;
+                    toolTip.SetToolTip(btnYeni, "Yeni Kayıt");
+                }
 
             }
             catch (Exception ex)
