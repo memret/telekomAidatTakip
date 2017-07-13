@@ -23,7 +23,8 @@ namespace telekomAidatTakip
             {
                 this.MinimumSize = this.Size;
                 TahsilListesiDoldur();
-
+                txtTahsilAd.WaterMark = "Yeni kayıt açınız.";
+                txtTahsilKodu.WaterMark = "Yeni kayıt açınız.";
             }
             catch (Exception ex)
             {
@@ -126,6 +127,10 @@ namespace telekomAidatTakip
                         Database db = new Database();
                         db.Sorgu("delete from Tahsil where tahsilNo=@0", tahsilKodu);
                         db.Kapat();
+                        txtTahsilKodu.Clear();
+                        txtTahsilAd.Clear();
+                        txtTahsilAd.WaterMark = "Yeni kayıt açınız.";
+                        txtTahsilKodu.WaterMark = "Yeni kayıt açınız.";
                         TahsilListesiDoldur();
                         txtTahsilAd.Text = string.Empty;
                         tahsilKodu = string.Empty;
@@ -197,6 +202,8 @@ namespace telekomAidatTakip
                     toolTip.SetToolTip(btnYeni, "Ekle");
                     btnKaydet.Enabled = false;
                     btnSil.Enabled = false;
+                    txtTahsilAd.WaterMark = "Tahsil adını giriniz.";
+                    txtTahsilKodu.WaterMark = "Tahsil kodunu giriniz.";
                 }
                 else //butonun ismi Yeni değilse demekki yeni kayıt sayfasındayız
                 {
@@ -214,6 +221,8 @@ namespace telekomAidatTakip
                         btnYeni.Focus(); //görsel amaçlı
                         yeniKayit = false;
                         toolTip.SetToolTip(btnYeni, "Yeni Kayıt");
+                        txtTahsilAd.WaterMark = "Yeni kayıt açınız.";
+                        txtTahsilKodu.WaterMark = "Yeni kayıt açınız.";
                     }
                     else
                     {
