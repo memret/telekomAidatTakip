@@ -116,7 +116,7 @@
             this.btnYazdir.Enabled = false;
             this.btnYazdir.FlatAppearance.BorderSize = 0;
             this.btnYazdir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYazdir.Image = global::telekomAidatTakip.Properties.Resources.if_ic_format_paint_48px_352391;
+            this.btnYazdir.Image = global::telekomAidatTakip.Properties.Resources.if_ic_local_print_shop_48px_352513;
             this.btnYazdir.Location = new System.Drawing.Point(418, 66);
             this.btnYazdir.Margin = new System.Windows.Forms.Padding(0);
             this.btnYazdir.Name = "btnYazdir";
