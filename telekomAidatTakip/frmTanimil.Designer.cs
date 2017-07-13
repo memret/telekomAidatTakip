@@ -53,6 +53,7 @@
             this.txtAdi.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.txtAdi.CustomButton.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("resource.ImeMode")));
             this.txtAdi.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location")));
+            this.txtAdi.CustomButton.Margin = ((System.Windows.Forms.Padding)(resources.GetObject("resource.Margin")));
             this.txtAdi.CustomButton.Name = "";
             this.txtAdi.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size")));
             this.txtAdi.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -82,6 +83,7 @@
             this.txtPlakaKodu.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.txtPlakaKodu.CustomButton.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("resource.ImeMode1")));
             this.txtPlakaKodu.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location1")));
+            this.txtPlakaKodu.CustomButton.Margin = ((System.Windows.Forms.Padding)(resources.GetObject("resource.Margin1")));
             this.txtPlakaKodu.CustomButton.Name = "";
             this.txtPlakaKodu.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size1")));
             this.txtPlakaKodu.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
