@@ -103,7 +103,10 @@ namespace telekomAidatTakip
                         SilinmeListesiniDoldur();
                         txtKod.Text = string.Empty;
                         txtAciklama.Text = string.Empty;
+                        txtAciklama.WaterMark = "Yeni kayıt açınız.";
+                        txtKod.WaterMark = "Yeni kayıt açınız.";
                         btnYeni.Focus();
+
                     }
 
                     else
@@ -155,7 +158,8 @@ namespace telekomAidatTakip
                         db.Sorgu("delete from SilinmeNedeni where SilinmeNedenNo=@0", kod);
                         db.Kapat();
                         SilinmeListesiniDoldur();
-
+                        txtAciklama.Clear();
+                        txtKod.Clear();
                         txtKod.WaterMark = "Yeni kayıt açınız.";
                         txtAciklama.WaterMark = "Yeni kayıt açınız.";
                     }
