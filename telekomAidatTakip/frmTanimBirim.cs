@@ -185,25 +185,27 @@ namespace telekomAidatTakip
         {
             try
             {
-                Database db = new Database();
-                int mudurlukNo = ((KeyValuePair<int, string>)cBoxMudurluk.SelectedItem).Key;
-                db.Sorgu("UPDATE Birim Set birimAdi = @0, mudurlukNo=@1,birimNo=@2 WHERE birimNo=@3", txtBirimAdi.Text, mudurlukNo.ToString(), txtBirimKodu.Text, birimNo);
-                listBirim.Items.Clear();
-                listeDoldur();
-                db.Kapat();
+                if (txtBirimKodu.Text != string.Empty && txtBirimAdi.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
+                {
+                    Database db = new Database();
+                    int mudurlukNo = ((KeyValuePair<int, string>)cBoxMudurluk.SelectedItem).Key;
+                    db.Sorgu("UPDATE Birim Set birimAdi = @0, mudurlukNo=@1,birimNo=@2 WHERE birimNo=@3", txtBirimAdi.Text, mudurlukNo.ToString(), txtBirimKodu.Text, birimNo);
+                    listBirim.Items.Clear();
+                    listeDoldur();
+                    db.Kapat();
 
-                btnKaydet.Enabled = false;
-                //btnKaydet.UseCustomBackColor = true;
-                btnSil.Enabled = false;
-                //btnSil.UseCustomBackColor = true;
-                txtBirimAdi.Text = string.Empty;
-                txtBirimKodu.Text = string.Empty;
-                birimNo = string.Empty;
+                    btnKaydet.Enabled = false;
+                    //btnKaydet.UseCustomBackColor = true;
+                    btnSil.Enabled = false;
+                    //btnSil.UseCustomBackColor = true;
+                    txtBirimAdi.Text = string.Empty;
+                    txtBirimKodu.Text = string.Empty;
+                    birimNo = string.Empty;
 
 
-                txtBirimAdi.Enabled = false;
-                cBoxMudurluk.Enabled = false;
-
+                    txtBirimAdi.Enabled = false;
+                    cBoxMudurluk.Enabled = false;
+                }
             }
             catch (Exception ex)
             {
