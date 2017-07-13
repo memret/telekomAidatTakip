@@ -23,6 +23,10 @@ namespace telekomAidatTakip
             {
                 this.MinimumSize = this.Size;
                 tabloDoldur();
+                txtBaslik.WaterMark = "Yeni kayıt açınız.";
+                txtGunNo.WaterMark = "Yeni kayıt açınız.";
+                txtMsj.WaterMark = "-";
+                txtYorum.WaterMark = "-";
 
             }
             catch (Exception ex)
@@ -105,6 +109,11 @@ namespace telekomAidatTakip
                     btnSehir.Enabled = true;
                     btnMudurluk.Enabled = true;
                     btnBirim.Enabled = true;
+                    txtBaslik.WaterMark = "Başlık giriniz.";
+                    txtGunNo.WaterMark = "Özel gün no giriniz.";
+                    txtMsj.WaterMark = "Mesaj giriniz";
+                    txtYorum.WaterMark = "Yorum giriniz";
+
                     toolTip1.SetToolTip(btnYeni, "Ekle");
 
                     //  btnYeni.Text = "Ekle";
@@ -131,6 +140,11 @@ namespace telekomAidatTakip
                         sayfayıtemizle();
                         MessageBox.Show("Yeni özel gün kaydedildi.", "Özel Gün Tanımlama", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnYeni.Focus(); //görsel amaçlı imiş
+                        txtBaslik.WaterMark = "Yeni kayıt açınız.";
+                        txtGunNo.WaterMark = "Yeni kayıt açınız.";
+                        txtMsj.WaterMark = "-";
+                        txtYorum.WaterMark = "-";
+                        yeniKayit = true;
                     }
                     else
                     {
@@ -168,6 +182,10 @@ namespace telekomAidatTakip
                     MessageBox.Show("Özel gün güncellendi.", "Özel Gün Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     tabloDoldur();
+                    txtBaslik.WaterMark = "Yeni kayıt açınız.";
+                    txtGunNo.WaterMark = "Yeni kayıt açınız.";
+                    txtMsj.WaterMark = "-";
+                    txtYorum.WaterMark = "-";
                 }
 
             }
