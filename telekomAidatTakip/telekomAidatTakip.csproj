@@ -65,12 +65,6 @@
     <Compile Include="frmAnaMenu.Designer.cs">
       <DependentUpon>frmAnaMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHakkimizda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHakkimizda.Designer.cs">
-      <DependentUpon>frmHakkimizda.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmRaporAidat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,9 +177,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAnaMenu.resx">
       <DependentUpon>frmAnaMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHakkimizda.resx">
-      <DependentUpon>frmHakkimizda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRaporAidat.resx">
       <DependentUpon>frmRaporAidat.cs</DependentUpon>
