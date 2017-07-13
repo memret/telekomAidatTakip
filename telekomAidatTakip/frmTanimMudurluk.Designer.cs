@@ -75,27 +75,25 @@
             this.txtMdrKod.SelectionStart = 0;
             this.txtMdrKod.ShortcutsEnabled = true;
             this.txtMdrKod.Size = new System.Drawing.Size(122, 30);
-            this.txtMdrKod.TabIndex = 27;
+            this.txtMdrKod.TabIndex = 0;
             this.txtMdrKod.UseSelectable = true;
             this.txtMdrKod.WaterMark = "Müdürlük no giriniz.";
             this.txtMdrKod.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMdrKod.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-           
             this.txtMdrKod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMdrKod_KeyPress);
             // 
             // comboBox_il
             // 
             this.comboBox_il.Enabled = false;
             this.comboBox_il.FormattingEnabled = true;
-            this.comboBox_il.ItemHeight = 23;
+            this.comboBox_il.ItemHeight = 24;
             this.comboBox_il.Location = new System.Drawing.Point(159, 142);
             this.comboBox_il.Name = "comboBox_il";
             this.comboBox_il.PromptText = "İl seçiniz.";
-            this.comboBox_il.Size = new System.Drawing.Size(369, 29);
-            this.comboBox_il.TabIndex = 19;
+            this.comboBox_il.Size = new System.Drawing.Size(369, 30);
+            this.comboBox_il.TabIndex = 2;
             this.comboBox_il.Tag = "";
             this.comboBox_il.UseSelectable = true;
-         
             // 
             // txtMdrAd
             // 
@@ -123,19 +121,18 @@
             this.txtMdrAd.SelectionStart = 0;
             this.txtMdrAd.ShortcutsEnabled = true;
             this.txtMdrAd.Size = new System.Drawing.Size(369, 30);
-            this.txtMdrAd.TabIndex = 26;
+            this.txtMdrAd.TabIndex = 1;
             this.txtMdrAd.UseSelectable = true;
             this.txtMdrAd.WaterMark = "Müdürlük adı giriniz.";
             this.txtMdrAd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMdrAd.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-        
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(30, 110);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(71, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(75, 20);
             this.metroLabel1.TabIndex = 25;
             this.metroLabel1.Text = "Müdürlük: ";
             // 
@@ -144,7 +141,7 @@
             this.labelMdrNo.AutoSize = true;
             this.labelMdrNo.Location = new System.Drawing.Point(30, 73);
             this.labelMdrNo.Name = "labelMdrNo";
-            this.labelMdrNo.Size = new System.Drawing.Size(93, 19);
+            this.labelMdrNo.Size = new System.Drawing.Size(98, 20);
             this.labelMdrNo.TabIndex = 24;
             this.labelMdrNo.Text = "Müdürlük No: ";
             // 
@@ -161,7 +158,7 @@
             this.listvMdr.Location = new System.Drawing.Point(27, 239);
             this.listvMdr.Name = "listvMdr";
             this.listvMdr.Size = new System.Drawing.Size(501, 252);
-            this.listvMdr.TabIndex = 28;
+            this.listvMdr.TabIndex = 6;
             this.listvMdr.UseCompatibleStateImageBehavior = false;
             this.listvMdr.View = System.Windows.Forms.View.Details;
             this.listvMdr.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvMdr_MouseDoubleClick);
@@ -191,7 +188,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(30, 147);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(18, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(18, 20);
             this.metroLabel2.TabIndex = 25;
             this.metroLabel2.Text = "İl:";
             // 
@@ -217,7 +214,7 @@
             this.btnYeni.Margin = new System.Windows.Forms.Padding(0);
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(48, 48);
-            this.btnYeni.TabIndex = 49;
+            this.btnYeni.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btnYeni, "Yeni Kayıt");
             this.btnYeni.UseVisualStyleBackColor = false;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
@@ -234,7 +231,7 @@
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(48, 48);
-            this.btnKaydet.TabIndex = 50;
+            this.btnKaydet.TabIndex = 4;
             this.toolTip1.SetToolTip(this.btnKaydet, "Kaydet");
             this.btnKaydet.UseVisualStyleBackColor = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
@@ -251,14 +248,14 @@
             this.btnSil.Margin = new System.Windows.Forms.Padding(0);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(48, 48);
-            this.btnSil.TabIndex = 51;
+            this.btnSil.TabIndex = 5;
             this.toolTip1.SetToolTip(this.btnSil, "Sil");
             this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // frmTanimMudurluk
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 516);
             this.Controls.Add(this.btnSil);
@@ -279,7 +276,7 @@
             this.MinimumSize = new System.Drawing.Size(555, 516);
             this.Name = "frmTanimMudurluk";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
-            this.Style = MetroFramework.MetroColorStyle.Lime;
+            this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "       MÜDÜRLÜK TANIMLAMA";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmTanimMudurluk_Load);

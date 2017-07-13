@@ -58,7 +58,7 @@
             this.cBoxMudurluk.Name = "cBoxMudurluk";
             this.cBoxMudurluk.PromptText = "-";
             this.cBoxMudurluk.Size = new System.Drawing.Size(279, 30);
-            this.cBoxMudurluk.TabIndex = 7;
+            this.cBoxMudurluk.TabIndex = 2;
             this.cBoxMudurluk.UseSelectable = true;
             // 
             // txtBirimKodu
@@ -88,7 +88,7 @@
             this.txtBirimKodu.SelectionStart = 0;
             this.txtBirimKodu.ShortcutsEnabled = true;
             this.txtBirimKodu.Size = new System.Drawing.Size(161, 29);
-            this.txtBirimKodu.TabIndex = 8;
+            this.txtBirimKodu.TabIndex = 0;
             this.txtBirimKodu.UseSelectable = true;
             this.txtBirimKodu.WaterMark = "Birim no giriniz.";
             this.txtBirimKodu.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -122,7 +122,7 @@
             this.txtBirimAdi.SelectionStart = 0;
             this.txtBirimAdi.ShortcutsEnabled = true;
             this.txtBirimAdi.Size = new System.Drawing.Size(280, 29);
-            this.txtBirimAdi.TabIndex = 8;
+            this.txtBirimAdi.TabIndex = 1;
             this.txtBirimAdi.UseSelectable = true;
             this.txtBirimAdi.WaterMark = "Birim adı giriniz.";
             this.txtBirimAdi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -171,7 +171,7 @@
             this.listBirim.MultiSelect = false;
             this.listBirim.Name = "listBirim";
             this.listBirim.Size = new System.Drawing.Size(472, 214);
-            this.listBirim.TabIndex = 16;
+            this.listBirim.TabIndex = 6;
             this.listBirim.UseCompatibleStateImageBehavior = false;
             this.listBirim.View = System.Windows.Forms.View.Details;
             this.listBirim.DoubleClick += new System.EventHandler(this.listvil_DoubleClick);
@@ -219,7 +219,7 @@
             this.btnSil.Margin = new System.Windows.Forms.Padding(0);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(48, 48);
-            this.btnSil.TabIndex = 48;
+            this.btnSil.TabIndex = 5;
             this.toolTip1.SetToolTip(this.btnSil, "Sil");
             this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -236,7 +236,7 @@
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(48, 48);
-            this.btnKaydet.TabIndex = 48;
+            this.btnKaydet.TabIndex = 4;
             this.toolTip1.SetToolTip(this.btnKaydet, "Kaydet");
             this.btnKaydet.UseVisualStyleBackColor = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
@@ -252,7 +252,7 @@
             this.btnYeni.Margin = new System.Windows.Forms.Padding(0);
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(48, 48);
-            this.btnYeni.TabIndex = 48;
+            this.btnYeni.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btnYeni, "Yeni Kayıt");
             this.btnYeni.UseVisualStyleBackColor = false;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
