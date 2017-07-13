@@ -222,8 +222,8 @@ namespace telekomAidatTakip
 
                 Database db = new Database();
                 //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
-                txtAciklama.Text = db.DataOkuTek("select silinmeNedeni from SilinmeNedeni where silinmeNedeni=@0", "silinmeNedenNo", kod);
-
+                txtAciklama.Text = db.DataOkuTek("select silinmeNedeni from SilinmeNedeni where silinmeNedenNo=@0", "silinmeNedeni", kod);
+               
                 txtKod.Text = kod;
                 btnKaydet.Enabled = true;
                 btnSil.Enabled = true;
