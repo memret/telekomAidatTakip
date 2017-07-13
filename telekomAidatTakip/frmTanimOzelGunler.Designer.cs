@@ -75,7 +75,7 @@
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(565, 181);
-            this.listView1.TabIndex = 1;
+            this.listView1.TabIndex = 13;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
@@ -130,7 +130,7 @@
             this.txtGunNo.SelectionStart = 0;
             this.txtGunNo.ShortcutsEnabled = true;
             this.txtGunNo.Size = new System.Drawing.Size(107, 29);
-            this.txtGunNo.TabIndex = 5;
+            this.txtGunNo.TabIndex = 0;
             this.txtGunNo.UseSelectable = true;
             this.txtGunNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGunNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -144,7 +144,7 @@
             this.btnBirim.Name = "btnBirim";
             this.btnBirim.Size = new System.Drawing.Size(80, 35);
             this.btnBirim.Style = MetroFramework.MetroColorStyle.Blue;
-            this.btnBirim.TabIndex = 41;
+            this.btnBirim.TabIndex = 8;
             this.btnBirim.Text = "Birim";
             this.btnBirim.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnBirim.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
@@ -160,7 +160,7 @@
             this.btnMudurluk.Name = "btnMudurluk";
             this.btnMudurluk.Size = new System.Drawing.Size(80, 35);
             this.btnMudurluk.Style = MetroFramework.MetroColorStyle.Blue;
-            this.btnMudurluk.TabIndex = 40;
+            this.btnMudurluk.TabIndex = 7;
             this.btnMudurluk.Text = "Müdürlük";
             this.btnMudurluk.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
             this.btnMudurluk.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
@@ -175,7 +175,7 @@
             this.btnSehir.Name = "btnSehir";
             this.btnSehir.Size = new System.Drawing.Size(80, 35);
             this.btnSehir.Style = MetroFramework.MetroColorStyle.Blue;
-            this.btnSehir.TabIndex = 39;
+            this.btnSehir.TabIndex = 6;
             this.btnSehir.Text = "Şehir";
             this.btnSehir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSehir.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
@@ -191,7 +191,7 @@
             this.btnSicilNo.Name = "btnSicilNo";
             this.btnSicilNo.Size = new System.Drawing.Size(80, 35);
             this.btnSicilNo.Style = MetroFramework.MetroColorStyle.Blue;
-            this.btnSicilNo.TabIndex = 38;
+            this.btnSicilNo.TabIndex = 5;
             this.btnSicilNo.Text = "Sicil No";
             this.btnSicilNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSicilNo.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
@@ -208,7 +208,7 @@
             this.btnAdi.Name = "btnAdi";
             this.btnAdi.Size = new System.Drawing.Size(80, 35);
             this.btnAdi.Style = MetroFramework.MetroColorStyle.Blue;
-            this.btnAdi.TabIndex = 37;
+            this.btnAdi.TabIndex = 4;
             this.btnAdi.Text = "Ad Soyad";
             this.btnAdi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAdi.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -289,7 +289,7 @@
             this.txtBaslik.SelectionStart = 0;
             this.txtBaslik.ShortcutsEnabled = true;
             this.txtBaslik.Size = new System.Drawing.Size(357, 29);
-            this.txtBaslik.TabIndex = 42;
+            this.txtBaslik.TabIndex = 1;
             this.txtBaslik.UseSelectable = true;
             this.txtBaslik.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBaslik.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -300,7 +300,7 @@
             this.dateTimeTarih.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateTimeTarih.Name = "dateTimeTarih";
             this.dateTimeTarih.Size = new System.Drawing.Size(357, 29);
-            this.dateTimeTarih.TabIndex = 43;
+            this.dateTimeTarih.TabIndex = 2;
             // 
             // txtMsj
             // 
@@ -328,7 +328,7 @@
             this.txtMsj.SelectionStart = 0;
             this.txtMsj.ShortcutsEnabled = true;
             this.txtMsj.Size = new System.Drawing.Size(357, 90);
-            this.txtMsj.TabIndex = 44;
+            this.txtMsj.TabIndex = 3;
             this.txtMsj.UseSelectable = true;
             this.txtMsj.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMsj.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -359,7 +359,7 @@
             this.txtYorum.SelectionStart = 0;
             this.txtYorum.ShortcutsEnabled = true;
             this.txtYorum.Size = new System.Drawing.Size(357, 90);
-            this.txtYorum.TabIndex = 45;
+            this.txtYorum.TabIndex = 9;
             this.txtYorum.UseSelectable = true;
             this.txtYorum.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtYorum.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -399,7 +399,7 @@
             this.btnYeni.Margin = new System.Windows.Forms.Padding(0);
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(48, 48);
-            this.btnYeni.TabIndex = 52;
+            this.btnYeni.TabIndex = 10;
             this.toolTip1.SetToolTip(this.btnYeni, "Yeni Kayıt");
             this.btnYeni.UseVisualStyleBackColor = false;
             this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
@@ -417,7 +417,7 @@
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(0);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(48, 48);
-            this.btnKaydet.TabIndex = 53;
+            this.btnKaydet.TabIndex = 11;
             this.toolTip1.SetToolTip(this.btnKaydet, " Kaydet");
             this.btnKaydet.UseVisualStyleBackColor = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
@@ -435,7 +435,7 @@
             this.btnSil.Margin = new System.Windows.Forms.Padding(0);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(48, 48);
-            this.btnSil.TabIndex = 54;
+            this.btnSil.TabIndex = 12;
             this.toolTip1.SetToolTip(this.btnSil, "Sil");
             this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
