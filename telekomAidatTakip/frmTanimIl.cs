@@ -128,12 +128,12 @@ namespace telekomAidatTakip
         {
             try
             {
-                if (txtPlakaKodu.Text != string.Empty) //plaka kodu olmadan veri silmek tabiki biraz zor olur
+                if (plakakodu != string.Empty) //plaka kodu olmadan veri silmek tabiki biraz zor olur
                 {
                     Database db1 = new Database();
                     string countMudurluk = "0";
 
-                    var data = db1.DataOku("select count(mudurlukNo) 'count' from Mudurluk where ilNo=@0", txtPlakaKodu.Text);
+                    var data = db1.DataOku("select count(mudurlukNo) 'count' from Mudurluk where ilNo=@0", plakakodu);
                     if (data.Read())
                     {
                         countMudurluk = data["count"].ToString();
@@ -141,21 +141,21 @@ namespace telekomAidatTakip
                     Database db2 = new Database();
                     string countUye = "0";
 
-                    var data2 = db2.DataOku("select count(sicilNo) 'count' from Uyeler where ilNo=@0", txtPlakaKodu.Text);
+                    var data2 = db2.DataOku("select count(sicilNo) 'count' from Uyeler where ilNo=@0", plakakodu);
                     if (data2.Read())
                     {
                         countUye = data2["count"].ToString();
                     }
                     Database db3 = new Database();
                     string countBirim = "0";
-                    var data3 = db3.DataOku("select count(birimno) 'count' from Birim b join mudurluk m on m.mudurlukno = b.mudurlukno where m.ilno =@0", txtPlakaKodu.Text);
+                    var data3 = db3.DataOku("select count(birimno) 'count' from Birim b join mudurluk m on m.mudurlukno = b.mudurlukno where m.ilno =@0", plakakodu);
                     if (data3.Read())
                     {
                         countBirim = data3["count"].ToString();
                     }
                     Database db4 = new Database();
                     string countAidatLog = "0";
-                    var data4 = db4.DataOku("select count(aidatLogNo) 'count' from AidatLog a join Uyeler u on u.sicilNo = a.sicilNo where u.ilNo =@0", txtPlakaKodu.Text);
+                    var data4 = db4.DataOku("select count(aidatLogNo) 'count' from AidatLog a join Uyeler u on u.sicilNo = a.sicilNo where u.ilNo =@0", plakakodu);
                     if (data4.Read())
                     {
                         countAidatLog = data4["count"].ToString();
@@ -175,13 +175,14 @@ namespace telekomAidatTakip
 
                         // db6.Sorgu("delete from Uyeler where ilNo=@0",txtPlakaKodu.Text);
                         //  db5.Sorgu("delete from Mudurluk where ilNo=@0", txtPlakaKodu.Text);
-                        db.Sorgu("delete from il where ilNo=@0", txtPlakaKodu.Text);
+                        db.Sorgu("delete from il where ilNo=@0", plakakodu);
 
 
 
                         IlListesiniDoldur();
                         txtAdi.Clear();
                         txtPlakaKodu.Clear();
+                        plakakodu = string.Empty;
                         txtPlakaKodu.WaterMark = "Yeni kayıt açınız.";
                         txtAdi.WaterMark = "Yeni kayıt açınız.";
                         MessageBox.Show("Seçili il silindi!", "Kayıt Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -196,12 +197,12 @@ namespace telekomAidatTakip
                 MessageBox.Show(ex.Message);
             }
         }
-
+        string plakakodu;
         private void listvil_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             try
             {
-                string plakakodu = listvil.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
+                plakakodu = listvil.SelectedItems[0].Text; //listvilde seçili olan satırlardan ilkini alıp, bunun ilk sütunundaki veriyi çekiyor
 
                 Database db = new Database();
                 //iladi nı veritabanından çekiyoruz ki güncel olsun. listvil den alabilirdik direk fakat böyle daha güvenli (tabi biraz daha yavaş fakat localde önemsenmeyecek kadar az)
@@ -229,11 +230,12 @@ namespace telekomAidatTakip
                 if (txtPlakaKodu.Text != string.Empty && txtAdi.Text != string.Empty) // yine boş verilerle bir yeri update edemeyiz
                 {
                     Database db = new Database();
-                    db.Sorgu("update il set iladi=@0 where ilno=@1", txtAdi.Text, txtPlakaKodu.Text);
+                    db.Sorgu("update il set iladi=@0,ilno=@1 where ilno=@2", txtAdi.Text, txtPlakaKodu.Text, plakakodu);
 
                     DialogResult dialogResult = MessageBox.Show("Değişiklikler kaydedildi.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtAdi.Text = string.Empty;
                     txtPlakaKodu.Text = string.Empty;
+                    plakakodu = string.Empty;
                     txtAdi.Enabled = false;
                     txtPlakaKodu.Enabled = false;
                     btnKaydet.Enabled = false;
