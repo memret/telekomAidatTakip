@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "telekomAidatTakip", "teleko
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "telekomAidatTakipCron", "telekomAidatTakipCron\telekomAidatTakipCron.csproj", "{8A263B8F-B74C-4B38-83C3-714F39F5B8D6}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TelekomAidatSetup", "TelekomAidatSetup\TelekomAidatSetup.vdproj", "{4220B5AF-A287-4DD9-B98D-5B3B179BBB82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{8A263B8F-B74C-4B38-83C3-714F39F5B8D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A263B8F-B74C-4B38-83C3-714F39F5B8D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A263B8F-B74C-4B38-83C3-714F39F5B8D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4220B5AF-A287-4DD9-B98D-5B3B179BBB82}.Debug|Any CPU.ActiveCfg = Debug
+		{4220B5AF-A287-4DD9-B98D-5B3B179BBB82}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
