@@ -441,7 +441,7 @@ namespace telekomAidatTakip
             try
             {
                 Database db = new Database();
-                db.Sorgu("insert into aidatlog (sicilNo,miktar,tarih) Values (@0, @1,@2)", sicilno, txtAidatMiktari.Text, dateAidatTarih.Value.ToString("MM.dd.yyyy"));
+                db.Sorgu("insert into aidatlog (sicilNo,miktar,tarih) Values (@0, @1,@2)", sicilno, txtAidatMiktari.Text, dateAidatTarih.Value.Date);
                 db.Kapat();
                 DoldurAidatBilgileri(sicilno);
 
