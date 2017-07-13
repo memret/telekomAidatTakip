@@ -40,6 +40,9 @@ namespace telekomAidatTakip
                 cBoxMudurluk.ValueMember = "Key";
                 db.Kapat();
                 cBoxMudurluk.SelectedIndex = -1;
+                txtBirimAdi.WaterMark = "Yeni kayıt açınız.";
+                txtBirimKodu.WaterMark = "Yeni kayıt açınız.";
+                cBoxMudurluk.PromptText = "-";
 
             }
             catch (Exception ex)
@@ -69,6 +72,9 @@ namespace telekomAidatTakip
                     txtBirimAdi.Enabled = true;
                     txtBirimKodu.Enabled = true;
                     cBoxMudurluk.Enabled = true;
+                    txtBirimAdi.WaterMark = "Birim adı giriniz.";
+                    txtBirimKodu.WaterMark = "Birim no giriniz.";
+                    cBoxMudurluk.PromptText = "-";
                     txtBirimAdi.Clear();
                     txtBirimKodu.Clear();
                     cBoxMudurluk.SelectedIndex = -1;
@@ -86,15 +92,21 @@ namespace telekomAidatTakip
                     db.Kapat();
                     //btnYeni.Image = telekomAidatTakip.Properties.Resources.if_save_101946;
 
-
+                    txtBirimKodu.Enabled = false;
                     txtBirimAdi.Enabled = false;
                     cBoxMudurluk.Enabled = false;
+                    txtBirimAdi.Clear();
+                    txtBirimKodu.Clear();
+                    cBoxMudurluk.SelectedIndex = -1;
+                    txtBirimAdi.WaterMark = "Yeni kayıt açınız.";
+                    txtBirimKodu.WaterMark = "Yeni kayıt açınız.";
+                    cBoxMudurluk.PromptText = "-";
                     yeniKayit = true;
                     toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
                 }
                 else
                 {
-                    MessageBox.Show("Bİrim adı veya Birim Kodu eksik.");
+                    MessageBox.Show("Birim adı veya Birim Kodu eksik.");
                 }
 
             }
@@ -141,6 +153,7 @@ namespace telekomAidatTakip
                     {
                         countKisi = data2["count"].ToString();
                     }
+                    db2.Kapat();
 
                     Database db3 = new Database();
                     string countAidat = "0";
@@ -149,6 +162,7 @@ namespace telekomAidatTakip
                     {
                         countAidat = data3["count"].ToString();
                     }
+                    db3.Kapat();
                     // 0dan büyüklerse bu soruyu sormak lazım.
                     DialogResult dialogResult;
                     if (countAidat != "0" && countKisi != "0")
@@ -166,9 +180,15 @@ namespace telekomAidatTakip
                         MessageBox.Show("Seçili birim silindi!", "Birim Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtBirimAdi.Text = string.Empty;
                         txtBirimKodu.Text = string.Empty;
+                        cBoxMudurluk.SelectedIndex = -1;
                         birimNo = string.Empty;
+                        txtBirimKodu.Enabled = false;
                         txtBirimAdi.Enabled = false;
                         cBoxMudurluk.Enabled = false;
+                        txtBirimAdi.WaterMark = "Yeni kayıt açınız.";
+                        txtBirimKodu.WaterMark = "Yeni kayıt açınız.";
+                        cBoxMudurluk.PromptText = "-";
+
                     }
                 }
                 else
@@ -202,9 +222,12 @@ namespace telekomAidatTakip
                     txtBirimKodu.Text = string.Empty;
                     birimNo = string.Empty;
 
-
+                    txtBirimKodu.Enabled = false;
                     txtBirimAdi.Enabled = false;
                     cBoxMudurluk.Enabled = false;
+                    txtBirimAdi.WaterMark = "Yeni kayıt açınız.";
+                    txtBirimKodu.WaterMark = "Yeni kayıt açınız.";
+                    cBoxMudurluk.PromptText = "-";
                 }
             }
             catch (Exception ex)
@@ -252,7 +275,10 @@ namespace telekomAidatTakip
                     //btnSil.UseCustomBackColor = false;
                     txtBirimAdi.Enabled = true;
                     cBoxMudurluk.Enabled = true;
-                    txtBirimKodu.Enabled = false;
+                    txtBirimKodu.Enabled = true;
+                    txtBirimAdi.WaterMark = "Birim adı giriniz.";
+                    txtBirimKodu.WaterMark = "Birim kodu giriniz.";
+                    cBoxMudurluk.PromptText = "-";
                     yeniKayit = true;
                     toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
                 }
