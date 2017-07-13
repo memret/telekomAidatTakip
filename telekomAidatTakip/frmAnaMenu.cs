@@ -44,6 +44,7 @@ namespace telekomAidatTakip
         frmUye uye;
 
         frmYedekleme yedekleme;
+        frmGelistiriciler gelistiriciler;
         Form acikForm;
 
         public bool tekPencere()
@@ -335,6 +336,26 @@ namespace telekomAidatTakip
                     tanimOzelGunler.MdiParent = this;
                     tanimOzelGunler.Show();
                     tanimOzelGunler.Focus();
+                }
+            }
+        }
+
+        private void geliştiricilerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tekPencere())
+            {
+                if (gelistiriciler == null || gelistiriciler.IsDisposed)
+                {
+                    gelistiriciler = new frmGelistiriciler();
+                    gelistiriciler.MdiParent = this;
+                    acikForm = gelistiriciler;
+                    gelistiriciler.Show();
+                }
+                else
+                {
+                    gelistiriciler.MdiParent = this;
+                    gelistiriciler.Show();
+                    gelistiriciler.Focus();
                 }
             }
         }

@@ -50,6 +50,7 @@
             this.otomasyonİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yedeklemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.geliştiricilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -205,7 +206,8 @@
             // otomasyonİşlemleriToolStripMenuItem
             // 
             this.otomasyonİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.yedeklemeToolStripMenuItem});
+            this.yedeklemeToolStripMenuItem,
+            this.geliştiricilerToolStripMenuItem});
             this.otomasyonİşlemleriToolStripMenuItem.Name = "otomasyonİşlemleriToolStripMenuItem";
             this.otomasyonİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
             this.otomasyonİşlemleriToolStripMenuItem.Text = "Otomasyon Ayarları";
@@ -213,7 +215,7 @@
             // yedeklemeToolStripMenuItem
             // 
             this.yedeklemeToolStripMenuItem.Name = "yedeklemeToolStripMenuItem";
-            this.yedeklemeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.yedeklemeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.yedeklemeToolStripMenuItem.Text = "Yedekleme";
             this.yedeklemeToolStripMenuItem.Click += new System.EventHandler(this.yedeklemeToolStripMenuItem_Click);
             // 
@@ -227,6 +229,13 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
+            // 
+            // geliştiricilerToolStripMenuItem
+            // 
+            this.geliştiricilerToolStripMenuItem.Name = "geliştiricilerToolStripMenuItem";
+            this.geliştiricilerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.geliştiricilerToolStripMenuItem.Text = "Geliştiriciler";
+            this.geliştiricilerToolStripMenuItem.Click += new System.EventHandler(this.geliştiricilerToolStripMenuItem_Click);
             // 
             // frmAnaMenu
             // 
@@ -270,6 +279,7 @@
         private System.Windows.Forms.ToolStripMenuItem aidatRaporuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem özelGünlerToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem geliştiricilerToolStripMenuItem;
     }
 }
 
