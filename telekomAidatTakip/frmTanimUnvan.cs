@@ -49,7 +49,8 @@ namespace telekomAidatTakip
                 listUnvan.Items.Add(item);
 
             }
-
+            txtUnvanAdi.WaterMark = "Yeni kayıt açınız.";
+            txtUnvanNo.WaterMark = "Yeni kayıt açınız.";
             txtUnvanAdi.Enabled = false;
             txtUnvanNo.Enabled = false;
             btnSil.Enabled = false;
@@ -77,6 +78,8 @@ namespace telekomAidatTakip
                     txtUnvanNo.Text = string.Empty;
                     txtUnvanNo.Enabled = true;
                     txtUnvanAdi.Enabled = true;
+                    txtUnvanAdi.WaterMark = "Ünvan adı giriniz.";
+                    txtUnvanNo.WaterMark = "Ünvan no giriniz.";
                     //btnYeni.Text = "Ekle";
                     yeniKayit = false;
                     btnKaydet.Enabled = false;
@@ -98,6 +101,8 @@ namespace telekomAidatTakip
 
                         txtUnvanAdi.Text = string.Empty;
                         txtUnvanNo.Text = string.Empty;
+                        txtUnvanAdi.WaterMark = "Yeni kayıt açınız.";
+                        txtUnvanNo.WaterMark = "Yeni kayıt açınız.";
                         btnYeni.Focus();
                         toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
                     }
@@ -126,6 +131,8 @@ namespace telekomAidatTakip
                     txtUnvanAdi.Text = string.Empty;
                     txtUnvanNo.Text = string.Empty;
                     unvanKodu = string.Empty;
+                    txtUnvanAdi.WaterMark = "Yeni kayıt açınız.";
+                    txtUnvanNo.WaterMark = "Yeni kayıt açınız.";
                     txtUnvanAdi.Enabled = false;
                     txtUnvanNo.Enabled = false;
                     btnKaydet.Enabled = false;
@@ -174,6 +181,15 @@ namespace telekomAidatTakip
                         {
                             Database db = new Database();
                             db.Sorgu("delete from unvan where unvanNo=@0", unvanKodu);
+                            txtUnvanAdi.Text = string.Empty;
+                            txtUnvanNo.Text = string.Empty;
+                            unvanKodu = string.Empty;
+                            txtUnvanAdi.WaterMark = "Yeni kayıt açınız.";
+                            txtUnvanNo.WaterMark = "Yeni kayıt açınız.";
+                            txtUnvanAdi.Enabled = false;
+                            txtUnvanNo.Enabled = false;
+                            btnKaydet.Enabled = false;
+                            btnSil.Enabled = false;
                             UnvanListesiniDoldur();
                         }
 
@@ -235,6 +251,8 @@ namespace telekomAidatTakip
                     btnSil.Enabled = true;
                     txtUnvanAdi.Enabled = true;
                     txtUnvanNo.Enabled = true;
+                    txtUnvanAdi.WaterMark = "Ünvan adı giriniz.";
+                    txtUnvanNo.WaterMark = "Ünvan no giriniz.";
                     // btnYeni.Text = "Yeni";
                     yeniKayit = true;
                     toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
