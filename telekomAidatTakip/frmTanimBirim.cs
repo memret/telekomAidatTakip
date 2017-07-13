@@ -243,11 +243,7 @@ namespace telekomAidatTakip
         {
             try
             {
-                //groupBox2.Width = this.Width - 44;
-                // groupBox2.Height = this.Height - 288;
-                listBirim.Size = new Size(listBirim.Size.Width, this.Size.Height - 250);
-                // pictureBox1.Location = new Point(this.Width - 70, pictureBox1.Location.Y );
-
+                 listBirim.Size = new Size(listBirim.Size.Width, this.Size.Height - 250);
             }
             catch (Exception ex)
             {
@@ -283,12 +279,6 @@ namespace telekomAidatTakip
                 }
                 db.Kapat();
 
-
-                /*  String birimKodu = listvil.SelectedItems[0].SubItems[0].Text;
-                  String birimAdi = listvil.SelectedItems[0].SubItems[1].Text;
-                  txtBirimKodu.Text = birimKodu;
-                  txtBirimAdi.Text = birimAdi;
-                  cBoxMudurluk.Text = listvil.SelectedItems[0].SubItems[3].Text;*/
 
             }
             catch (Exception ex)
