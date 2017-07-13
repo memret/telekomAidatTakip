@@ -18,6 +18,10 @@ namespace telekomAidatTakipCron
 
         static void Main(string[] args)
         {
+
+            Database db = new Database();
+            db.Sorgu("UPDATE OzelGunler set tarih = @0 where ozelGunNo = 10;", DateTime.Now.ToString());
+            db.Kapat();
             dogumGunuTarihKontrol();
             //string[] mailListesi = {"m.emret94@gmail.com", "omertanis123@gmail.com" };
             //MailTopluGonder(mailListesi, "doğum günü", "doğum günün kutlu olsun reis");
