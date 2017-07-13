@@ -164,7 +164,6 @@
             this.listvMdr.TabIndex = 28;
             this.listvMdr.UseCompatibleStateImageBehavior = false;
             this.listvMdr.View = System.Windows.Forms.View.Details;
-          ;
             this.listvMdr.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvMdr_MouseDoubleClick);
             // 
             // columnHeader1
