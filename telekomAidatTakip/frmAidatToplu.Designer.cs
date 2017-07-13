@@ -132,7 +132,6 @@
             this.cboxBirim.Size = new System.Drawing.Size(178, 29);
             this.cboxBirim.TabIndex = 8;
             this.cboxBirim.UseSelectable = true;
-            this.cboxBirim.SelectedIndexChanged += new System.EventHandler(this.cboxBirim_SelectedIndexChanged);
             this.cboxBirim.SelectionChangeCommitted += new System.EventHandler(this.cboxBirim_SelectionChangeCommitted);
             // 
             // cboxMudurluk

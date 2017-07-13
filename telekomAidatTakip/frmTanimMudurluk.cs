@@ -25,7 +25,6 @@ namespace telekomAidatTakip
 
                 kayitliMdrDoldur();
                 cBoxIlDoldur();
-                //frmTanimMudurluk_Resize(this, null);
             }
             catch (Exception ex)
             {
@@ -87,27 +86,7 @@ namespace telekomAidatTakip
             comboBox_il.SelectedIndex = -1;
 
         }
-
-
-        private void listvMdr_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMdrAd_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMdrKod_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox_il_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+               
         bool yeniKayit = true;
         private void btnYeni_Click(object sender, EventArgs e)
         {
@@ -297,18 +276,20 @@ namespace telekomAidatTakip
 
         private void frmTanimMudurluk_Resize(object sender, EventArgs e)
         {
-            listvMdr.Size = new Size(listvMdr.Size.Width, this.Size.Height - 264);
-        }
+            try
+            { 
+                listvMdr.Size = new Size(listvMdr.Size.Width, this.Size.Height - 264);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+}
 
         private void txtMdrKod_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) { e.Handled = true; }
         }
 
-        /*private void frmTanimMudurluk_Resize(object sender, EventArgs e)
-        {
-            groupBox2.Width = this.Width - 46;
-            groupBox2.Height = this.Height - 273;
-        }*/
     }
 }

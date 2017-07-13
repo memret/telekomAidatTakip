@@ -80,7 +80,7 @@
             this.txtMdrKod.WaterMark = "Müdürlük no giriniz.";
             this.txtMdrKod.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMdrKod.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtMdrKod.TextChanged += new System.EventHandler(this.txtMdrKod_TextChanged);
+           
             this.txtMdrKod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMdrKod_KeyPress);
             // 
             // comboBox_il
@@ -95,7 +95,7 @@
             this.comboBox_il.TabIndex = 19;
             this.comboBox_il.Tag = "";
             this.comboBox_il.UseSelectable = true;
-            this.comboBox_il.SelectedIndexChanged += new System.EventHandler(this.comboBox_il_SelectedIndexChanged);
+         
             // 
             // txtMdrAd
             // 
@@ -128,7 +128,7 @@
             this.txtMdrAd.WaterMark = "Müdürlük adı giriniz.";
             this.txtMdrAd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMdrAd.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtMdrAd.TextChanged += new System.EventHandler(this.txtMdrKod_TextChanged);
+        
             // 
             // metroLabel1
             // 
@@ -164,7 +164,7 @@
             this.listvMdr.TabIndex = 28;
             this.listvMdr.UseCompatibleStateImageBehavior = false;
             this.listvMdr.View = System.Windows.Forms.View.Details;
-            this.listvMdr.SelectedIndexChanged += new System.EventHandler(this.comboBox_il_SelectedIndexChanged);
+          ;
             this.listvMdr.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listvMdr_MouseDoubleClick);
             // 
             // columnHeader1

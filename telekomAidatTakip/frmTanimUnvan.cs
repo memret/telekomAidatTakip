@@ -16,6 +16,7 @@ namespace telekomAidatTakip
         {
             InitializeComponent();
         }
+        string unvanKodu;
         private void frmTanimUnvan_Load(object sender, EventArgs e)
         {
             try
@@ -113,8 +114,6 @@ namespace telekomAidatTakip
                 MessageBox.Show(ex.Message);
             }
         }
-
-
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             try
@@ -122,10 +121,11 @@ namespace telekomAidatTakip
                 if (txtUnvanNo.Text != string.Empty && txtUnvanAdi.Text != string.Empty)
                 {
                     Database db = new Database();
-                    db.Sorgu("update unvan set unvanAdi=@0 where unvanNo=@1", txtUnvanAdi.Text, txtUnvanNo.Text);
+                    db.Sorgu("update unvan set unvanAdi=@0,unvanNo=@1 where unvanNo=@2", txtUnvanAdi.Text, txtUnvanNo.Text,unvanKodu);
 
                     txtUnvanAdi.Text = string.Empty;
                     txtUnvanNo.Text = string.Empty;
+                    unvanKodu = string.Empty;
                     txtUnvanAdi.Enabled = false;
                     txtUnvanNo.Enabled = false;
                     btnKaydet.Enabled = false;
@@ -148,7 +148,7 @@ namespace telekomAidatTakip
                 {
                     Database db2 = new Database();
                     string countKisi = "0";
-                    var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE unvanno = @0", txtUnvanNo.Text);
+                    var data2 = db2.DataOku("SELECT COUNT (sicilNo) 'count' FROM Uyeler WHERE unvanno = @0", unvanKodu);
                     if (data2.Read())
                     {
                         countKisi = data2["count"].ToString();
@@ -156,7 +156,7 @@ namespace telekomAidatTakip
 
                     Database db3 = new Database();
                     string countAidat = "0";
-                    var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.unvanno = @0", txtUnvanNo.Text);
+                    var data3 = db3.DataOku("SELECT COUNT (aidatLogNo) 'count' FROM Uyeler u JOIN AidatLog a on u.sicilNo=a.sicilNo WHERE u.unvanno = @0", unvanKodu);
                     if (data3.Read())
                     {
                         countAidat = data3["count"].ToString();
@@ -170,10 +170,10 @@ namespace telekomAidatTakip
 
                     if (dialogResult == DialogResult.Yes)
                     {
-                        if (txtUnvanNo.Text != string.Empty)
+                        if (unvanKodu != string.Empty)
                         {
                             Database db = new Database();
-                            db.Sorgu("delete from unvan where unvanNo=@0", txtUnvanNo.Text);
+                            db.Sorgu("delete from unvan where unvanNo=@0", unvanKodu);
                             UnvanListesiniDoldur();
                         }
 
@@ -224,7 +224,7 @@ namespace telekomAidatTakip
             {
                 if (listUnvan.SelectedItems.Count > 0)
                 {
-                    string unvanKodu = listUnvan.SelectedItems[0].Text;
+                    unvanKodu = listUnvan.SelectedItems[0].Text;
 
                     Database db = new Database();
 
