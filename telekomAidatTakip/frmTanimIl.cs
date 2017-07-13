@@ -78,8 +78,8 @@ namespace telekomAidatTakip
                         else if (dialogResult == DialogResult.Cancel)
                             return;
                     }
-                    txtPlakaKodu.WaterMark = "Plaka kodunu giriniz...";
-                    txtAdi.WaterMark = "İl adını giriniz...";
+                    txtPlakaKodu.WaterMark = "Plaka kodunu giriniz.";
+                    txtAdi.WaterMark = "İl adını giriniz.";
                     txtAdi.Text = string.Empty;
                     txtPlakaKodu.Text = string.Empty;
                     yeniKayit = false;
@@ -97,12 +97,15 @@ namespace telekomAidatTakip
                         Database db = new Database();
                         db.Sorgu("insert into il (ilno,iladi) values (@0,@1)", txtPlakaKodu.Text, txtAdi.Text);
 
+                        DialogResult dialogResult = MessageBox.Show("Yeni kayıt eklendi.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtPlakaKodu.Enabled = false;
                         txtAdi.Enabled = false;
                         //  btnYeni.Text = "Yeni";
                         IlListesiniDoldur();
                         txtAdi.Text = string.Empty;
                         txtPlakaKodu.Text = string.Empty;
+                        txtPlakaKodu.WaterMark = "Yeni kayıt açınız.";
+                        txtAdi.WaterMark = "Yeni kayıt açınız.";
                         btnYeni.Focus(); //görsel amaçlı
                         yeniKayit = true;
                         // toolTip1.SetToolTip(btnYeni, "Yeni Kayıt");
@@ -228,6 +231,7 @@ namespace telekomAidatTakip
                     Database db = new Database();
                     db.Sorgu("update il set iladi=@0 where ilno=@1", txtAdi.Text, txtPlakaKodu.Text);
 
+                    DialogResult dialogResult = MessageBox.Show("Değişiklikler kaydedildi.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtAdi.Text = string.Empty;
                     txtPlakaKodu.Text = string.Empty;
                     txtAdi.Enabled = false;
@@ -235,8 +239,8 @@ namespace telekomAidatTakip
                     btnKaydet.Enabled = false;
                     btnSil.Enabled = false;
                     IlListesiniDoldur();
-                    txtPlakaKodu.WaterMark = "Yeni kayıt açınız...";
-                    txtAdi.WaterMark = "Yeni kayıt açınız...";
+                    txtPlakaKodu.WaterMark = "Yeni kayıt açınız.";
+                    txtAdi.WaterMark = "Yeni kayıt açınız.";
                 }
 
             }

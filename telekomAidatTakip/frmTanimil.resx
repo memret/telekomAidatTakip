@@ -126,10 +126,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="resource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 1</value>
+    <value>255, 3</value>
+  </data>
+  <data name="resource.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
   </data>
   <data name="resource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 27</value>
+    <value>44, 43</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="resource.TabIndex" type="System.Int32, mscorlib">
@@ -139,10 +142,13 @@
     <value>False</value>
   </data>
   <data name="txtAdi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 117</value>
+    <value>177, 153</value>
+  </data>
+  <data name="txtAdi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtAdi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 29</value>
+    <value>227, 38</value>
   </data>
   <data name="txtAdi.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -166,10 +172,13 @@
     <value>NoControl</value>
   </data>
   <data name="resource.Location1" type="System.Drawing.Point, System.Drawing">
-    <value>56, 1</value>
+    <value>119, 2</value>
+  </data>
+  <data name="resource.Margin1" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
   </data>
   <data name="resource.Size1" type="System.Drawing.Size, System.Drawing">
-    <value>27, 27</value>
+    <value>33, 33</value>
   </data>
   <data name="resource.TabIndex1" type="System.Int32, mscorlib">
     <value>1</value>
@@ -178,10 +187,13 @@
     <value>False</value>
   </data>
   <data name="txtPlakaKodu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 82</value>
+    <value>177, 107</value>
+  </data>
+  <data name="txtPlakaKodu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtPlakaKodu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 29</value>
+    <value>170, 38</value>
   </data>
   <data name="txtPlakaKodu.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -202,10 +214,13 @@
     <value>True</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 87</value>
+    <value>48, 114</value>
+  </data>
+  <data name="Label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 19</value>
+    <value>98, 20</value>
   </data>
   <data name="Label1.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -229,10 +244,13 @@
     <value>True</value>
   </data>
   <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 122</value>
+    <value>48, 160</value>
+  </data>
+  <data name="Label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 19</value>
+    <value>20, 20</value>
   </data>
   <data name="Label2.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -252,18 +270,6 @@
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>İl Plaka Kodu</value>
-  </data>
-  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
-    <value>165</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>İl</value>
-  </data>
-  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
-    <value>119</value>
-  </data>
   <data name="listvil.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
@@ -271,10 +277,13 @@
     <value>Segoe UI, 10pt</value>
   </data>
   <data name="listvil.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 201</value>
+    <value>17, 264</value>
+  </data>
+  <data name="listvil.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="listvil.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 203</value>
+    <value>450, 264</value>
   </data>
   <data name="listvil.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -290,6 +299,18 @@
   </data>
   <data name="&gt;&gt;listvil.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>İl Plaka Kodu</value>
+  </data>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>165</value>
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>İl</value>
+  </data>
+  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
+    <value>119</value>
   </data>
   <data name="pictureBox2.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -525,10 +546,13 @@
 </value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 20</value>
+    <value>20, 26</value>
+  </data>
+  <data name="pictureBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 38</value>
+    <value>67, 50</value>
   </data>
   <data name="pictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -548,6 +572,9 @@
   <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="btnYeni.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -558,20 +585,17 @@
     <value>NoControl</value>
   </data>
   <data name="btnYeni.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 150</value>
+    <value>196, 196</value>
   </data>
   <data name="btnYeni.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="btnYeni.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 48</value>
+    <value>64, 63</value>
   </data>
   <data name="btnYeni.TabIndex" type="System.Int32, mscorlib">
     <value>49</value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="btnYeni.ToolTip" xml:space="preserve">
     <value>Yeni Kayıt</value>
   </data>
@@ -597,13 +621,13 @@
     <value>Flat</value>
   </data>
   <data name="btnKaydet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>201, 150</value>
+    <value>268, 196</value>
   </data>
   <data name="btnKaydet.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="btnKaydet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 48</value>
+    <value>64, 63</value>
   </data>
   <data name="btnKaydet.TabIndex" type="System.Int32, mscorlib">
     <value>50</value>
@@ -633,13 +657,13 @@
     <value>Flat</value>
   </data>
   <data name="btnSil.Location" type="System.Drawing.Point, System.Drawing">
-    <value>255, 149</value>
+    <value>340, 195</value>
   </data>
   <data name="btnSil.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="btnSil.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 48</value>
+    <value>64, 63</value>
   </data>
   <data name="btnSil.TabIndex" type="System.Int32, mscorlib">
     <value>51</value>
@@ -659,17 +683,20 @@
   <data name="&gt;&gt;btnSil.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 17</value>
   </data>
   <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>363, 417</value>
+    <value>484, 545</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -677,11 +704,14 @@
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 10</value>
   </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>361, 417</value>
+    <value>481, 545</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>13, 60, 13, 13</value>
+    <value>17, 78, 17, 17</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>       İL TANIMLAMA</value>
