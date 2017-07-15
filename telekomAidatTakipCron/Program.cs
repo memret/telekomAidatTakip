@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.Win32.TaskScheduler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,40 +23,57 @@ namespace telekomAidatTakipCron
 
         static void Main(string[] args)
         {
-            Database db = new Database();
-            var kontrol = db.DataOkuTek("select tarih from cron", "tarih");
-            db.Kapat();
-
-
-            db = new Database();
-            if (DateTime.Today.ToString() != kontrol)
+            if (args.Length > 0)
             {
-                
-                mailServer.EnableSsl = true;
-                mailServer.Credentials = new System.Net.NetworkCredential("telekomstaj2017@gmail.com", "telekom123");
-
-                List<Gonderi> gonderiler = TarihKontrol();
-
-                foreach (Gonderi gonderi in gonderiler)
+                if (args[0] == "add")
                 {
-                    MailTekliGonder(gonderi.mail, gonderi.baslik, gonderi.icerik);
+                    TaskService.Instance.AddTask("Telekom Aidat Cron", QuickTriggerType.Logon, Assembly.GetExecutingAssembly().Location);
+
                 }
-                gonderiler.Clear();
-
-                List<Gonderi> dogumGunuGonderiler = dogumGunuTarihKontrol();
-
-                foreach (Gonderi gonderi in dogumGunuGonderiler)
+                else if (args[0] == "del")
                 {
-                    MailTekliGonder(gonderi.mail, gonderi.baslik, gonderi.icerik);
+                    Microsoft.Win32.TaskScheduler.Task task = TaskService.Instance.FindTask("Telekom Aidat Cron");
+                    if (task != null)
+                        task.Enabled = false;
                 }
-
-                db.Sorgu("update cron set tarih=@0", DateTime.Today); // sona koydukki tamamlanınca işaret koysun
             }
+            else
+            {
+
+                Database db = new Database();
+                var kontrol = db.DataOkuTek("select tarih from cron", "tarih");
+                db.Kapat();
+
+
+                db = new Database();
+                if (DateTime.Today.ToString() != kontrol)
+                {
+
+                    mailServer.EnableSsl = true;
+                    mailServer.Credentials = new System.Net.NetworkCredential("telekomstaj2017@gmail.com", "telekom123");
+
+                    List<Gonderi> gonderiler = TarihKontrol();
+
+                    foreach (Gonderi gonderi in gonderiler)
+                    {
+                        MailTekliGonder(gonderi.mail, gonderi.baslik, gonderi.icerik);
+                    }
+                    gonderiler.Clear();
+
+                    List<Gonderi> dogumGunuGonderiler = dogumGunuTarihKontrol();
+
+                    foreach (Gonderi gonderi in dogumGunuGonderiler)
+                    {
+                        MailTekliGonder(gonderi.mail, gonderi.baslik, gonderi.icerik);
+                    }
+
+                    db.Sorgu("update cron set tarih=@0", DateTime.Today); // sona koydukki tamamlanınca işaret koysun
+                }
 
 
 
-            //db.Sorgu("update cron set tarih=@0", DateTime.Today.AddDays(-1));
-
+                //db.Sorgu("update cron set tarih=@0", DateTime.Today.AddDays(-1));
+            }
         }
 
         static void MailTekliGonder(string mail, string baslik, string icerik)
@@ -102,7 +121,7 @@ namespace telekomAidatTakipCron
             " AND nfb.sicilNo = u.sicilNo");
 
             Database db2 = new Database();
-            var data2 = db2.DataOku("select baslik,mesaj,tarih from OzelGunler WHERE tarih LIKE '%" + DateTime.Now.ToString("MM-dd") + "%' AND ozelGunNo = 10");
+            var data2 = db2.DataOku("select baslik,mesaj,tarih from OzelGunler WHERE ozelGunNo = 10");
 
             while (data2.Read())
             {

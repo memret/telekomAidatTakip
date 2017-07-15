@@ -14,12 +14,7 @@ namespace telekomAidatCronTaskAdder
     {
         static void Main(string[] args)
         {
-            if (args.Length > 0)
-            {
-                TaskService.Instance.FindTask("Telekom Aidat Cron").Enabled = false;
-            }
-            else
-                TaskService.Instance.AddTask("Telekom Aidat Cron", QuickTriggerType.Logon , Assembly.GetExecutingAssembly().Location);
+            
         }
     }
 }

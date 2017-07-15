@@ -4,9 +4,9 @@
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:TelekomAidatSetup"
-"LanguageId" = "3:1033"
-"CodePage" = "3:1252"
-"UILanguageId" = "3:1033"
+"LanguageId" = "3:1055"
+"CodePage" = "3:1254"
+"UILanguageId" = "3:1055"
 "SccProjectName" = "8:"
 "SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
@@ -22,13 +22,13 @@
         "Entry"
         {
         "MsmKey" = "8:_08E2F86FD59F5AE72179AAB7A18CF341"
-        "OwnerKey" = "8:_C159A424247071D874380FB69765E7F5"
+        "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_08E2F86FD59F5AE72179AAB7A18CF341"
-        "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
+        "OwnerKey" = "8:_C159A424247071D874380FB69765E7F5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -41,12 +41,6 @@
         {
         "MsmKey" = "8:_613E2901E969C4A88F6F4EE475DB6B7B"
         "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_613E2901E969C4A88F6F4EE475DB6B7B"
-        "OwnerKey" = "8:_EBB4CBCF7EA741DBAAD709130DD74A96"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -63,12 +57,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_AD9F2588FF4553993ECFE96A20D097EB"
-        "OwnerKey" = "8:_EBB4CBCF7EA741DBAAD709130DD74A96"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C159A424247071D874380FB69765E7F5"
         "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
         "MsmSig" = "8:_UNDEFINED"
@@ -81,12 +69,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_EBB4CBCF7EA741DBAAD709130DD74A96"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_F5D73E57AC3031CB371D555DAA7B747E"
         "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
         "MsmSig" = "8:_UNDEFINED"
@@ -94,37 +76,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EBB4CBCF7EA741DBAAD709130DD74A96"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C159A424247071D874380FB69765E7F5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F5D73E57AC3031CB371D555DAA7B747E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_08E2F86FD59F5AE72179AAB7A18CF341"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AD9F2588FF4553993ECFE96A20D097EB"
+        "OwnerKey" = "8:_613E2901E969C4A88F6F4EE475DB6B7B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -136,7 +88,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_613E2901E969C4A88F6F4EE475DB6B7B"
+        "OwnerKey" = "8:_08E2F86FD59F5AE72179AAB7A18CF341"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_F5D73E57AC3031CB371D555DAA7B747E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C159A424247071D874380FB69765E7F5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9455E74152EE4EBEB0D8B42EFB577CCF"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -211,31 +181,31 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_4D1FEC46659F4781BCE794627D146FD2"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_17A2B3A840744F189E980E707C50C6C1"
             {
-            "Name" = "8:cronAdder del"
+            "Name" = "8:cronAdd"
             "Condition" = "8:"
-            "Object" = "8:_EBB4CBCF7EA741DBAAD709130DD74A96"
+            "Object" = "8:_7788816E49624BC8A24C81611E9A084C"
             "FileType" = "3:2"
-            "InstallAction" = "3:4"
-            "Arguments" = "8:a"
+            "InstallAction" = "3:2"
+            "Arguments" = "8:add"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_257980FA_D4A5_46FD_8A47_93BE811A2668"
+            "Identifier" = "8:_C415CFB7_5AC7_4FD9_9233_6ADAAB0EC60B"
             "InstallerClass" = "11:FALSE"
             "CustomActionData" = "8:"
             }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_C6B7A4D2DEE34DA2BE9F22EDDDDDC62E"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_CFC3E70CE9E04D7AAE625ED531D44C09"
             {
-            "Name" = "8:cronAdder"
+            "Name" = "8:cronDel"
             "Condition" = "8:"
-            "Object" = "8:_EBB4CBCF7EA741DBAAD709130DD74A96"
+            "Object" = "8:_7788816E49624BC8A24C81611E9A084C"
             "FileType" = "3:2"
-            "InstallAction" = "3:2"
-            "Arguments" = "8:"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:del"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_EF136AE9_3317_46D3_BB0B_3D13AE40550E"
+            "Identifier" = "8:_257894BA_9677_4BE6_8C41_AC5197068459"
             "InstallerClass" = "11:FALSE"
             "CustomActionData" = "8:"
             }
@@ -269,11 +239,6 @@
             "AssemblyAsmDisplayName" = "8:MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_08E2F86FD59F5AE72179AAB7A18CF341"
-                    {
-                    "Name" = "8:MetroFramework.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:MetroFramework.dll"
             "TargetName" = "8:"
@@ -300,44 +265,8 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_613E2901E969C4A88F6F4EE475DB6B7B"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_27111115C56A46F3888F8F81AA0BAF4C"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AD9F2588FF4553993ECFE96A20D097EB"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.Win32.TaskScheduler, Version=2.5.28.0, Culture=neutral, PublicKeyToken=0d013ddd5178a2ae, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_AD9F2588FF4553993ECFE96A20D097EB"
-                    {
-                    "Name" = "8:Microsoft.Win32.TaskScheduler.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.Win32.TaskScheduler.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_27111115C56A46F3888F8F81AA0BAF4C"
@@ -362,11 +291,6 @@
             "AssemblyAsmDisplayName" = "8:MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C159A424247071D874380FB69765E7F5"
-                    {
-                    "Name" = "8:MetroFramework.Fonts.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:MetroFramework.Fonts.dll"
             "TargetName" = "8:"
@@ -413,11 +337,6 @@
             "AssemblyAsmDisplayName" = "8:MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_F5D73E57AC3031CB371D555DAA7B747E"
-                    {
-                    "Name" = "8:MetroFramework.Design.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:MetroFramework.Design.dll"
             "TargetName" = "8:"
@@ -486,7 +405,7 @@
         }
         "MsiBootstrapper"
         {
-        "LangId" = "3:1033"
+        "LangId" = "3:1055"
         "RequiresElevation" = "11:FALSE"
         }
         "Product"
@@ -494,7 +413,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Telekom Dernek Aidat"
         "ProductCode" = "8:{129BC3D5-8982-429F-A1FC-EFC1106551D6}"
-        "PackageCode" = "8:{FFE1BB84-0873-4995-8B1C-B8EFE2574F43}"
+        "PackageCode" = "8:{3D1B6FA1-3963-442D-A169-121E54F3F4AB}"
         "UpgradeCode" = "8:{A0E3E45A-E72B-43D4-A269-DBE8D6BD1932}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -505,7 +424,7 @@
         "Manufacturer" = "8:Telekom"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:TelekomAidatSetup"
+        "Title" = "8:Telekom Aidat Setup"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Telekom"
         "Keywords" = "8:"
@@ -1078,34 +997,6 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{02851793-3806-4E00-B366-0067F0F05C09}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EBB4CBCF7EA741DBAAD709130DD74A96"
-            {
-            "SourcePath" = "8:..\\telekomAidatCronTaskAdder\\obj\\Debug\\telekomAidatCronTaskAdder.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_27111115C56A46F3888F8F81AA0BAF4C"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{1D845C8A-CD87-4CA7-943F-7F78C2E59B82}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {

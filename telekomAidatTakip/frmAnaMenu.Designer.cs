@@ -49,8 +49,8 @@
             this.topluAidatÖdemesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otomasyonİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yedeklemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.geliştiricilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -215,9 +215,16 @@
             // yedeklemeToolStripMenuItem
             // 
             this.yedeklemeToolStripMenuItem.Name = "yedeklemeToolStripMenuItem";
-            this.yedeklemeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yedeklemeToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.yedeklemeToolStripMenuItem.Text = "Yedekleme";
             this.yedeklemeToolStripMenuItem.Click += new System.EventHandler(this.yedeklemeToolStripMenuItem_Click);
+            // 
+            // geliştiricilerToolStripMenuItem
+            // 
+            this.geliştiricilerToolStripMenuItem.Name = "geliştiricilerToolStripMenuItem";
+            this.geliştiricilerToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.geliştiricilerToolStripMenuItem.Text = "Geliştiriciler";
+            this.geliştiricilerToolStripMenuItem.Click += new System.EventHandler(this.geliştiricilerToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -230,13 +237,6 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // geliştiricilerToolStripMenuItem
-            // 
-            this.geliştiricilerToolStripMenuItem.Name = "geliştiricilerToolStripMenuItem";
-            this.geliştiricilerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.geliştiricilerToolStripMenuItem.Text = "Geliştiriciler";
-            this.geliştiricilerToolStripMenuItem.Click += new System.EventHandler(this.geliştiricilerToolStripMenuItem_Click);
-            // 
             // frmAnaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,6 +248,7 @@
             this.Name = "frmAnaMenu";
             this.Text = "       Türk Telekom Teknisyen Derneği Otomasyonu";
             this.TransparencyKey = System.Drawing.Color.Empty;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmAnaMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
