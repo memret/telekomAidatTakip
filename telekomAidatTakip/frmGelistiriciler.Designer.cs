@@ -54,7 +54,7 @@
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(94, 285);
             this.metroLabel3.TabIndex = 3;
-            this.metroLabel3.Text = "0539 897 5236\r\n\r\n0507 585 2755\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n0534 896 1535\r\n\r\n\r\n\r\n0554 789 0002";
+            this.metroLabel3.Text = "";
             // 
             // metroLabel2
             // 
